@@ -3,7 +3,7 @@
     "NAME": "Consolation Prize",
     "FLAVOR": "Gold oozes from your wounds.",
     "DESCRIPTIONS": [
-      "When you lose health, gain that much Gold."
+      "Whenever you lose HP, gain that much Gold."
     ]
   },
   "vexMod:PlagueVial": {
@@ -31,7 +31,7 @@
     "NAME": "Protector Bot",
     "FLAVOR": "This little bot dives in to take attacks when you're wide open.",
     "DESCRIPTIONS": [
-      "When you play #b1 or less cards in a turn, gain #b8 Block."
+      "When you play #b1 or less cards in a turn, gain #b8 Block at the end of the turn.."
     ]
   },
   "vexMod:PainConverter": {
@@ -101,14 +101,14 @@
     "NAME": "Invisible Cloak",
     "FLAVOR": "You're far too modest to \"wear\" this.",
     "DESCRIPTIONS":[
-      "ALL enemies start with minus #b1 Strength."
+      "At the start of combat, ALL enemies lose #b1 #yStrength."
     ]
   },
   "vexMod:CodeSmelter": {
     "NAME": "Code Smelter",
     "FLAVOR": "Combines subprocesses into one big clump. Simple!",
     "DESCRIPTIONS": [
-      "Whenever you channel an Orb, activate its passive ability."
+      "Whenever you channel an Orb, trigger its passive ability."
     ]
   },
   "vexMod:TanglingVine": {
@@ -129,7 +129,7 @@
     "NAME": "Spin Shoes",
     "FLAVOR": "You cannot remove these shoes, and they keep making you trip.",
     "DESCRIPTIONS": [
-      "Upon pickup, Transform your entire deck into Clumsy cards.",
+      "Upon pickup, transform ALL cards in your deck into #rClumsy.",
       "Oops! You fell down..."
     ]
   },
@@ -137,14 +137,14 @@
     "NAME": "Happy Drink",
     "FLAVOR": "The shop offers free refills.",
     "DESCRIPTIONS": [
-      "Gain #b1 Max HP. NL Whenever you enter a shop, gain #b1 Max HP."
+      "Upon pickup, gain #b1 Max HP. NL Whenever you enter a shop, gain #b1 Max HP."
     ]
   },
   "vexMod:ShortStop": {
     "NAME": "Short Stop",
     "FLAVOR": "Weathered from hundreds of home runs.",
     "DESCRIPTIONS": [
-      "Makes future maps shorter."
+      "Future maps are only 9 floors "
     ]
   },
   "vexMod:EnergyShake": {
@@ -208,7 +208,7 @@
     "NAME": "Strike Shooter",
     "FLAVOR": "All your sword-firing needs in one medium package!",
     "DESCRIPTIONS": [
-      "Every third turn, play a Strike at a random target."
+      "At the start of every third turn, play a Strike at a random target."
     ]
   },
   "vexMod:SystemVirus": {
@@ -229,7 +229,7 @@
     "NAME": "Sticky Tar",
     "FLAVOR": "\"Quiet one, you think yourself so clever with your dodgy moves. Be exposed!\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL Start each combat with minus #b1 Dexterity."
+      "Gain [E] at the start of your turn. NL At the start of combat, lose #b1 #yDexterity."
     ]
   },
   "vexMod:BigBerry": {
@@ -243,7 +243,7 @@
     "NAME": "Retaliation Kit",
     "FLAVOR": "All you need to disappear in a burst of smoke! Smoke not included.",
     "DESCRIPTIONS": [
-      "The first time your Block is broken each combat, inflict 2 Weak on ALL enemies."
+      "The first time your Block is broken each combat, apply 2 Weak to ALL enemies."
     ]
   },
   "vexMod:KeyChain": {
