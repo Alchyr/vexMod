@@ -22,7 +22,6 @@ import vexMod.events.StrangeSmithEvent;
 import vexMod.events.TripleChoiceEvent;
 import vexMod.relics.*;
 import vexMod.util.TextureLoader;
-import vexMod.variables.DefaultCustomVariable;
 import vexMod.variables.DefaultSecondMagicNumber;
 
 import java.nio.charset.StandardCharsets;
@@ -269,7 +268,6 @@ public class VexMod implements
         // Add the Custom Dynamic Variables
         logger.info("Add variabls");
         // Add the Custom Dynamic variabls
-        BaseMod.addDynamicVariable(new DefaultCustomVariable());
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
 
         logger.info("Adding cards");
@@ -297,6 +295,7 @@ public class VexMod implements
         BaseMod.addCard(new PotOfGreed());
         BaseMod.addCard(new BloodGuard());
         BaseMod.addCard(new Jackpot());
+        BaseMod.addCard(new SnowShield());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -323,6 +322,7 @@ public class VexMod implements
         UnlockTracker.unlockCard(PotOfGreed.ID);
         UnlockTracker.unlockCard(BloodGuard.ID);
         UnlockTracker.unlockCard(Jackpot.ID);
+        UnlockTracker.unlockCard(SnowShield.ID);
 
         logger.info("Done adding cards!");
     }

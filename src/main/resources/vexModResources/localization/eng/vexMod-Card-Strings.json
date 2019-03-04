@@ -1,24 +1,4 @@
 {
-  "vexMod:DefaultCommonAttack": {
-    "NAME": "Strike",
-    "DESCRIPTION": "Deal !D! Damage. NL [#0000ff]This[] [#ff0000]Is[] [#ffff00]How[] [#88888]color[] [#ff00ff]works.[]"
-  },
-  "vexMod:DefaultCommonSkill": {
-    "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! Block."
-  },
-  "vexMod:DefaultUncommonAttack": {
-    "NAME": "Big slap",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
-  "vexMod:DefaultUncommonSkill": {
-    "NAME": "A Better Defend",
-    "DESCRIPTION": "Gain !B! Plated Armor. Affected by Dexterity."
-  },
-  "vexMod:DefaultRareAttack": {
-    "NAME": "TOUCH",
-    "DESCRIPTION": "Deal !D! Damage."
-  },
   "vexMod:BlockBeam": {
     "NAME": "Block Beam",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage."
@@ -69,13 +49,13 @@
   },
   "vexMod:BurstPulse": {
     "NAME": "Burst Pulse",
-    "DESCRIPTION": "Trigger the passive abilities of your Orbs.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Lightning. NL Trigger the passive abilities of your Orbs."
+    "DESCRIPTION": "Trigger the passive abilities of your orbs.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Lightning. NL Trigger the passive abilities of all orbs."
   },
   "vexMod:Overload": {
     "NAME": "Overload",
     "DESCRIPTION": "Channel a random orb for each Orb Slot you have. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Channel a random orb for each Orb Slot you have. NL Gain 2 Orb Slots. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Channel a random orb for each Orb Slot you have. NL Gain 2 Orb slots. NL Exhaust."
   },
   "vexMod:CrumblingCrash": {
     "NAME": "Crumbling Crash",
@@ -106,5 +86,10 @@
   "vexMod:Jackpot": {
     "NAME": "Jackpot",
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison. NL Gain !vexMod:SecondMagic! Gold. NL Exhaust."
+  },
+  "vexMod:SnowShield": {
+    "NAME": "Snow Shield",
+    "DESCRIPTION": "Channel 1 Frost. NL Trigger the passive abilities of all Frost orbs.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Frost. NL Trigger the passive abilities of all orbs."
   }
 }

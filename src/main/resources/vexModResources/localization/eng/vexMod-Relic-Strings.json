@@ -31,14 +31,14 @@
     "NAME": "Protector Bot",
     "FLAVOR": "This little bot dives in to take attacks when you're wide open.",
     "DESCRIPTIONS": [
-      "When you play #b1 or less cards in a turn, gain #b8 Block at the end of the turn."
+      "When you play #b1 or less cards in a turn, gain #b8 #yBlock at the end of the turn."
     ]
   },
   "vexMod:PainConverter": {
     "NAME": "Pain Converter",
     "FLAVOR": "The machine seems to be magnetically attracted to your exposed injuries.",
     "DESCRIPTIONS": [
-      "When you take #b15 or more damage in one hit, gain #b1 Energy and draw a card next turn."
+      "When you take #b15 or more damage in one hit, gain [E] and draw a card next turn."
     ]
   },
   "vexMod:BetterTron": {
@@ -87,7 +87,7 @@
     "NAME": "Cooling Fan",
     "FLAVOR": "This fan helps you save processes when performing monster solution options.",
     "DESCRIPTIONS": [
-      "Whenever you channel an Orb, gain 2 Block."
+      "Whenever you #yChannel an orb, gain 2 Block."
     ]
   },
   "vexMod:Cooldron": {
@@ -144,7 +144,7 @@
     "NAME": "Short Stop",
     "FLAVOR": "Weathered from hundreds of home runs.",
     "DESCRIPTIONS": [
-      "Future maps are only 9 floors "
+      "Future maps are only 9 floors long."
     ]
   },
   "vexMod:EnergyShake": {
@@ -166,14 +166,14 @@
     "NAME": "Pitiful Bounty",
     "FLAVOR": "Whoever this criminal was, you'd only get a gold piece for them.",
     "DESCRIPTIONS": [
-      "Whenever an enemy dies, gain #b3 Block."
+      "Whenever an enemy dies, gain #b3 #yBlock."
     ]
   },
   "vexMod:ThoughtMold": {
     "NAME": "Helpful Mold",
     "FLAVOR": "This mold siphons off bits of your shield to feed you.",
     "DESCRIPTIONS": [
-      "Whenever you gain Block, gain #b1 Strength this turn only."
+      "Whenever you gain Block, gain #b1 #yStrength this turn only."
     ]
   },
   "vexMod:SalvageTools": {
@@ -187,7 +187,7 @@
     "NAME": "Charge Upper",
     "FLAVOR": "\"Oops, I fell asleep without plugging it in...\"",
     "DESCRIPTIONS": [
-      "Every time you gain #b25 Block, gain #b1 Strength."
+      "Every time you gain #b25 Block, gain #b1 #yStrength."
     ]
   },
   "vexMod:FocusSash": {
@@ -201,7 +201,7 @@
     "NAME": "Power Charger",
     "FLAVOR": "Conserve energy! Shut off Orb Slots when you're not using them.",
     "DESCRIPTIONS": [
-      "At the end of your turn, gain #b1 Block for each empty Orb Slot."
+      "At the end of your turn, gain #b1 Block for each empty Orb slot."
     ]
   },
   "vexMod:StrikeShooter": {
@@ -215,7 +215,7 @@
     "NAME": "System Virus",
     "FLAVOR": "\"Defective one, your creativity needs... dulling.\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL Start each combat with #b1 Orb Slot."
+      "Gain [E] at the start of your turn. NL Start each combat with #b1 Orb slot."
     ]
   },
   "vexMod:MoralityCore": {

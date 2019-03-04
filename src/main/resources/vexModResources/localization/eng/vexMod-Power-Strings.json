@@ -1,26 +1,26 @@
 {
-        "vexMod:ChaoticReactorPower": {
-                "NAME": "Chaotic Reactor",
-                "DESCRIPTIONS": [
-                        "Channel ",
-                        " random Orb at the start of your turn.",
-                        " random Orbs at the start of your turn."
-                ]
-        },
-        "vexMod:StrikeStormPower": {
-                "NAME": "Strike Storm",
-                "DESCRIPTIONS": [
-                        "Whenever you play a card, play ",
-                        " Strike.",
-                        " Strikes."
-                ]
-        },
-        "vexMod:MidasTouchPower": {
-                "NAME": "Golden Touch",
-                "DESCRIPTIONS": [
-                        "Whenever you deal unblocked Attack damage, gain that much gold.",
-                        "Give me your gold!",
-                        "Hand it over!"
-                ]
-        }
+  "vexMod:ChaoticReactorPower": {
+    "NAME": "Chaotic Reactor",
+    "DESCRIPTIONS": [
+      "Channel ",
+      " random Orb at the start of your turn.",
+      " random Orbs at the start of your turn."
+    ]
+  },
+  "vexMod:StrikeStormPower": {
+    "NAME": "Strike Storm",
+    "DESCRIPTIONS": [
+      "Whenever you play a card, play ",
+      " Strike.",
+      " Strikes."
+    ]
+  },
+  "vexMod:MidasTouchPower": {
+    "NAME": "Golden Touch",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked Attack damage, gain that much gold.",
+      "Give me your gold!",
+      "Hand it over!"
+    ]
+  }
 }

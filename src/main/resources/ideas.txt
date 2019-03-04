@@ -1,17 +1,16 @@
-
 -- RELICS --
 *Common (BLUE) - at the start of each combat, channel 1 Frost.
-*Common(RED) - Every 25 Block you gain, gain 1 Strength.
+*Common(RED) - Every 20 Block you gain, gain 1 Strength.
 *Common (GREEN) - At the end of each combat's first turn, Retain your hand.
 
-*Uncommon (BLUE) - At the end of your turn, gain Block equal to your amount of empty orb Slots. (Fix empty orb slot interaction with none)
+*Uncommon (BLUE) - At the end of your turn, gain Block equal to your amount of empty orb Slots.
 *Uncommon (RED) - Every third turn, play a Strike for free.
 *Uncommon (GREEN) - Apply -1 Attack on all enemies at the start of battle.
 
 *Rare (RED) - Whenever you gain Block, gain 1 STR this turn only.
 *Rare (BLUE) - When you channel an Orb, activate its Passive ability.
 *Rare (BLUE) - Whenever you have 3 of the same Orb in a row, Evoke them and channel 2 Random orbs. 
-*Rare (BLUE) - Whenever you channel an Orb, gain 3 Block.
+*Rare (BLUE) - Whenever you channel an Orb, gain 2 Block.
 *Rare (GREEN) - Whenever you discard a card, reduce the cost of a random cost in your hand by 1.
 
 *Shop (BLUE) - When you play 2 Powers in a turn, gain 1 Focus.
@@ -47,12 +46,12 @@
 *Shop - Strikes and Defends have Exhaust.
 *Shop - Whenever you end your turn with 1 card in your hand, Retain it.
 
-*Event - Future maps have 50% less size.
+*Event - Future maps are nine floors long.
 *Event - Replace your deck with Clumsy cards.
 *Event - Gain 1 Max HP. Whenever you visit a Shop, gain 1 Max HP.
 *Event - Upon pickup, brews 1 random potion.
 *Event - Gain 2 gold at the end of battle.
-*Event - Whenever you kill an enemy, gain 2 Block.
+*Event - Whenever you kill an enemy, gain 3 Block.
 
 -- CARDS --
 
@@ -68,7 +67,7 @@ Common Attack (RED) -
 Rare Skill (RED) -
 Rare Skill (RED) -
 
-*Uncommon Skill (RED) - Lose 4 HP. Gain 16 Block.
+*Uncommon Skill (RED) - Lose 4 HP. Gain 16(19) Block.
 Uncommon Skill (RED) -
 
 Common Skill (RED) -
@@ -110,7 +109,7 @@ Common Attack (BLUE) -
 *Rare Skill (BLUE) - 3 Cost - Channel a random Orb for each Orb Slot you have. (Gain 2 Orb Slots.) Exhaust.
 Rare Skill (BLUE) -
 
-*Uncommon Skill (BLUE) - 1 Cost - Channel 2(3) Frost if target enemy is going to attack. Channel 2 Lightning(Dark) otherwise.
+*Uncommon Skill (BLUE) - 2 Cost - Channel 2(3) Frost if target enemy is going to attack. Channel 2 Lightning(Dark) otherwise.
 Uncommon Skill (BLUE) -
 
 *Common Skill (BLUE) - 1 Cost - Channel 1 Lightning and 1 Frost. (Activate the passive abilities of your Orbs.)
@@ -138,7 +137,7 @@ Uncommon Power (COLORLESS) -
 -- EVENTS --
 
 Exordium - Fight with a few Beyond enemies for a Relic.
-Exordium - Remove 2 or 3 cards in exchange for a Regret curse.
+Exordium - Remove 2 or 3 cards in exchange for a random curse.
 Exordium -
 City - Strange Smith event.
 *City - Genie event.
