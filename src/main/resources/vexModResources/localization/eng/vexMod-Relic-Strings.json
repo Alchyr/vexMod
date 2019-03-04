@@ -271,7 +271,7 @@
     "NAME": "Thoughtsguard",
     "FLAVOR": "\"Begone, thoughts!\"",
     "DESCRIPTIONS": [
-      "Whenever you draw a card, gain 2 Block."
+      "Whenever you draw a card (besides your opening hand), gain 2 Block."
     ]
   },
   "vexMod:BrokenBowl": {
