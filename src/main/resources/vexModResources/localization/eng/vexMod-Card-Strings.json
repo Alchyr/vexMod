@@ -69,8 +69,8 @@
   },
   "vexMod:BurstPulse": {
     "NAME": "Burst Pulse",
-    "DESCRIPTION": "Activate the passive abilities of your Orbs.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Lightning. NL Activate the passive abilities of your Orbs."
+    "DESCRIPTION": "Trigger the passive abilities of your Orbs.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Lightning. NL Trigger the passive abilities of your Orbs."
   },
   "vexMod:Overload": {
     "NAME": "Overload",
@@ -79,7 +79,7 @@
   },
   "vexMod:CrumblingCrash": {
     "NAME": "Crumbling Crash",
-    "DESCRIPTION": "Remove an enemy's Block. NL Gain !B! Block. NL Apply 2 Vulnerable. NL Draw a card."
+    "DESCRIPTION": "Remove all Block from the enemy. NL Gain !B! Block. NL Apply 2 Vulnerable. NL Draw a card."
   },
   "vexMod:ComboTrick": {
     "NAME": "Combo Trick",
