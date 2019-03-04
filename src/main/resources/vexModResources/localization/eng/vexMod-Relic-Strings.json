@@ -10,7 +10,7 @@
     "NAME": "Plague Vial",
     "FLAVOR": "This sentient sickness seeks dangerous entities.",
     "DESCRIPTIONS": [
-      "Non-Boss enemies have #b", "% less HP."
+      "Non-Boss enemies have #b15 % less HP."
     ]
   },
   "vexMod:ColdYogurt": {
@@ -31,7 +31,7 @@
     "NAME": "Protector Bot",
     "FLAVOR": "This little bot dives in to take attacks when you're wide open.",
     "DESCRIPTIONS": [
-      "When you play #b1 or less cards in a turn, gain #b8 Block at the end of the turn.."
+      "When you play #b1 or less cards in a turn, gain #b8 Block at the end of the turn."
     ]
   },
   "vexMod:PainConverter": {
