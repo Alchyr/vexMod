@@ -1,0 +1,51 @@
+{
+  "vexMod:GenieBoonEvent": {
+    "NAME": "Genie's Boon",
+    "DESCRIPTIONS": [
+      "As you're going through The City, you find a ~Genie's~ ~Lamp.~ NL A Genie soon emerges and says, \"Wow, you're such a champ!\" NL \"Hello there! Have a wish!\" he says, with a wink. NL You have a feeling that this wish is really gonna stink.",
+      "\"Ho ho!\" the Genie says, waving his arms, NL \"I promise, with this tool, you'll win with no harm.\"",
+      "\"You wish to go faster?\" The Genie says, smug. NL \"Oh yes, I can do it, but beware the bug!\"",
+      "\"Oh? You want challenge? Sure, have these shoes.\" NL \"I warn you, however, you'll get quite a bruise!\""
+    ],
+    "OPTIONS": [
+      "[Ease] Gain a helpful relic.",
+      "[Speed] Gain a relic that makes things quicker.",
+      "[Challenge] Make things impossibly difficult.",
+      "[Leave]"
+    ]
+  },
+  "vexMod:TripleChoiceEvent": {
+    "NAME": "Triple Choice",
+    "DESCRIPTIONS": [
+      "As you climb, you have a sudden burst of insight.",
+      "The ghostly blade shall serve you well.",
+      "Surely, this shall help in a pinch.",
+      "This one's always fun to use."
+    ],
+    "OPTIONS": [
+      "[Attack] Gain an Infernal Blade+.",
+      "[Skill] Gain a Distraction+.",
+      "[Power] Gain a White Noise+.",
+      "[Leave]"
+    ]
+  },
+  "vexMod:StrangeSmithEvent": {
+    "NAME": "Strange Smith",
+    "DESCRIPTIONS": [
+      "A smith has housed herself here. NL She's hard at work when you pass by, but invites you in to rest. NL \"So, anything I can do for you? I've a variety of skills.\"",
+      "The smith looks intensely embarrassed. NL \"Uh... I broke it... Sorry.\" NL You shrug and go on your way.",
+      "\"Hi-yah!\" the smith yells, finishing up. NL She gives you a smile. NL \"Happy to help!\"",
+      "\"Hoo, this was hard work. Here's a perfectly fine blade!\" NL The smith seems quite proud of her creation. NL You are a touch fazed by the unique aspect...",
+      "The smith watches expectantly as you down the meal, NL some soup with slightly Blighted potatoes. NL It tastes good, but you feel slightly ill...",
+      "You shake your head and get ready to continue. NL The smith seems disappointed."
+    ],
+    "OPTIONS": [
+      "[Smith Card] #g50%: #gUpgrade #gCard. #g50%: #gRemove #gCard.",
+      "[Smith Sword] #gGain #ga #gspecial #grelic... #rwith #rstrings #rattached.",
+      "[Smith Meal] #gHeal #g30 #gHP. #rLose #r10 #rMax #rHP.",
+      "[Leave]",
+      "[Leave]",
+      "Smithing...?"
+    ]
+  }
+}

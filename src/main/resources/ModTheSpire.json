@@ -1,0 +1,12 @@
+{
+  "modid": "vexMod",
+  "name": "vexMod",
+  "author_list": ["DarkVexon"],
+  "description": "A minor content mod.",
+  "version": "${project.version}",
+  "sts_version": "${SlayTheSpire.version}",
+  "mts_version": "${ModTheSpire.version}",
+  "dependencies": ["basemod", "stslib"],
+  "update_json": ""
+}
+
