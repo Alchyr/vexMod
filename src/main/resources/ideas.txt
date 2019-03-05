@@ -3,7 +3,7 @@
 *Common(RED) - Charge Upper - Every time you gain 25 Block, gain 1 Strength.
 *Common (GREEN) - Memory Stick - On the first turn of each combat, Retain your hand.
 
-*Uncommon (BLUE) - Power Charger - At the end of your turn, gain 1 Block for each empty Orb slot.
+*Uncommon (BLUE) - Power Charger - At the end of your turn, if you have empty Orb slots, gain 4 Block.
 *Uncommon (RED) - Strike Shooter - At the start of every third turn, play a Strike at a random target.
 *Uncommon (GREEN) - Invisible Cloak - At the start of each combat, ALL enemies lose 1 Strength.
 
