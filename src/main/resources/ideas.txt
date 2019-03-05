@@ -82,7 +82,7 @@ Rare Skill (RED) -
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
 
-Common Skill (RED) -
+Common Skill (RED) - Debris Guard - Gain 8 Block. Exhaust.
 Common Skill (RED) -
 
 *Rare Power (RED) - Strike Storm - 3 cost - (!Ethereal!) Whenever you play a card, play a Strike.
