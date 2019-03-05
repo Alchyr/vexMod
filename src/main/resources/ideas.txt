@@ -76,7 +76,7 @@ Uncommon Attack (RED) -
 *Common Attack (RED) - Clever Clash - 1 cost - If the enemy intends to attack, gain 8(11) Block. If not, deal 9(11) damage.
 Common Attack (RED) -
 
-Rare Skill (RED) -
+Rare Skill (RED) - Taunt - X cost - Apply X Weak. Apply X Vulnerable. Gain X Strength. Exhaust.
 Rare Skill (RED) -
 
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
