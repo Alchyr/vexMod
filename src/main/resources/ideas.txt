@@ -5,7 +5,7 @@
 
 *Uncommon (BLUE) - Power Charger - At the end of your turn, gain 1 Block for each empty Orb slot.
 *Uncommon (RED) - Strike Shooter - At the start of every third turn, play a Strike at a random target.
-*Uncommon (GREEN) - Invisible Cloak - At the start of combat, ALL enemies lose 1 Strength.
+*Uncommon (GREEN) - Invisible Cloak - At the start of each combat, ALL enemies lose 1 Strength.
 
 *Rare (RED) - Helpful Mold - Whenever you gain Block, gain 1 Strength this turn only.
 *Rare (BLUE) - Code Smelter - Whenever you channel an Orb, trigger its passive ability.
@@ -13,13 +13,13 @@
 *Rare (BLUE) - Cooling Fan - Whenever you Channel an orb, gain 2 Block.
 *Rare (GREEN) - Salvaging Tools - Whenever you discard a card, reduce the cost of a random card in your hand by 1 this turn.
 
-*Shop (BLUE) - Concentration Valve - Every time you play #b2 Powers in a turn, gain #b1 Focus.
-*Shop (RED) / EVENT - Sword of Lies - Start each combat with 2 Strength. At the start of each combat, add a random Curse to your hand.
+*Shop (BLUE) - Concentration Valve - Every time you play 2 Powers in a turn, gain 1 Focus.
+*Shop (RED) - Sword of Lies - Start each combat with 2 Strength. At the start of each combat, add a random Curse to your hand.
 *Shop (GREEN) - Retaliation Kit - The first time your Block is broken each combat, apply 2 Weak to ALL enemies.
 
 *Boss (BLUE) - System Virus - Gain [E] at the start of your turn. At the start of combat, lose 2 Orb slots.
 *Boss (RED) - Morality Core - Gain [E] at the start of your turn. At the start of combat, gain 3 Weak.
-*Boss (GREEN) - Sticky Tar - Gain [E] at the start of your turn. At the start of combat, lose #b1 #yDexterity.
+*Boss (GREEN) - Sticky Tar - Gain [E] at the start of your turn. At the start of combat, lose 1 Dexterity.
 
 *Common - Consolation Prize - Whenever you lose HP, gain that much Gold.
 *Common - Better-O-Tron - The next three unupgraded cards you add to your deck are upgraded.
@@ -52,6 +52,18 @@
 *Event - Energy Drink - Upon pickup, brews 1 random potion.
 *Event - Puke Worm - At the end of battle, gain 2 Gold.
 *Event - Pitiful Bounty - Whenever an enemy dies, gain 3 Block.
+Event - Toy Sword - Your Attacks Shackle the target for 1 Strength. At the start of each combat, lose 1 Strength.
+Event - Double-Edged Sword - Start each combat with 2 Strength. At the start of each combat, each enemy gains 2 Thorns.
+Event - Broadsword - Start each combat with 3 Strength. Draw 2 less cards per turn.
+Event - Diamond Sword - Whenever you play an Attack, gain 5 gold and Exhaust it.
+Event - Rusty Sword - At the start of each combat, you and all enemies lose 1 Attack.
+Event - Toxic Sword - At the start of each combat, gain 5 Poison. Your attacks apply 2 Poison.
+Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
+Event - Imaginary Sword - Upon pickup, remove all Attacks from your deck...
+Event - Excalibur - At the start of each combat, gain 1 Attack, draw a card, and heal 4 HP.
+Event - Voice Box - Your character talks.
+
+
 
 -- CARDS --
 
@@ -68,7 +80,7 @@ Rare Skill (RED) -
 Rare Skill (RED) -
 
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
-Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
+*Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
 
 Common Skill (RED) -
 Common Skill (RED) -
@@ -88,10 +100,10 @@ Uncommon Attack (GREEN) -
 Common Attack (GREEN) -
 Common Attack (GREEN) -
 
-?Rare Skill (GREEN) - Cursed Body - 2 cost - Gain 3(4) Intangible. Become Cursed - Injury(Clumsy). Exhaust.
+!Rare Skill (GREEN) - Cursed Body - 2 cost - Gain 3(4) Intangible. Become Cursed - Injury(Clumsy). Exhaust.
 *Rare Skill (GREEN) - Deadly Dodge - 1(0) cost - If the enemy intends to attack, Exhaust and gain 1 Intangible. If not, apply 6 Poison."
 
-Uncommon Skill (GREEN) - Combo Trick - 1 cost - Add a Shiv to your hand. Apply 3 Poison. Gain 3(5) Block next turn. Draw 2 cards. Discard 1 card.
+*Uncommon Skill (GREEN) - Combo Trick - 1 cost - Add a Shiv to your hand. Apply 3 Poison. Gain 3(5) Block next turn. Draw 2 cards. Discard 1 card.
 Uncommon Skill (GREEN) -
 
 *Common Skill (GREEN) - Venom Sigh - 1(0) cost - Gain 4 Block. Apply 4 Poison.
