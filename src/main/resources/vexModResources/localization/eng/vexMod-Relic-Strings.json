@@ -3,7 +3,7 @@
     "NAME": "Consolation Prize",
     "FLAVOR": "Gold oozes from your wounds.",
     "DESCRIPTIONS": [
-      "Whenever you lose HP, gain that much Gold."
+      "Whenever you lose HP, gain that much #yGold."
     ]
   },
   "vexMod:PlagueVial": {
@@ -17,14 +17,14 @@
     "NAME": "Cold Yogurt",
     "FLAVOR":  "Tasteless, yet appetizing.",
     "DESCRIPTIONS": [
-      "At the start of each combat, Channel #b1 Frost."
+      "At the start of each combat, #yChannel #b1 #yFrost."
     ]
   },
   "vexMod:ShiftingSkin": {
     "NAME": "Shifting Skin",
     "FLAVOR": "Your body flows fluidly, becoming subtly spikier in response to blows.",
     "DESCRIPTIONS": [
-      "When hit, gain temporary #yThorns equal to damage taken."
+      "After being attacked, gain temporary #yThorns equal to damage intended."
     ]
   },
   "vexMod:ProtectorBot": {
@@ -45,14 +45,14 @@
     "NAME": "Better-O-Tron",
     "FLAVOR": "This mechanical worm lurches for your head intermittently.",
     "DESCRIPTIONS": [
-      "The next three unupgraded cards you add to your deck are upgraded."
+      "The next #b3 unupgraded cards you add to your deck are #yUpgraded."
     ]
   },
   "vexMod:GhostlyGear": {
     "NAME": "Ghostly Gear",
     "FLAVOR": "The sword and shield are more difficult to see each time you look.",
     "DESCRIPTIONS": [
-      "Whenever you play a Strike or Defend, Exhaust it."
+      "Whenever you play a Strike or Defend, #yExhaust it."
     ]
   },
   "vexMod:CursedCompass": {
@@ -66,28 +66,28 @@
     "NAME": "Concentration Valve",
     "FLAVOR": "The more you focus, the more it focuses you.",
     "DESCRIPTIONS": [
-      "Every time you play #b2 Powers in a turn, gain #b1 Focus."
+      "Every time you play #b2 #yPowers in a turn, gain #b1 #yFocus."
     ]
   },
   "vexMod:BejeweledOrb": {
     "NAME": "Bejeweled Orb",
     "FLAVOR": "You have an urge to match items of similar color.",
     "DESCRIPTIONS": [
-      "Whenever you have #b3 of the same type of Orb in a row, Evoke them and Channel #b2 random Orbs."
+      "Whenever you have #b3 of the same type of Orb in a row, Evoke them and #yChannel #b2 random Orbs."
     ]
   },
   "vexMod:MemoryStick": {
     "NAME": "Memory Stick",
     "FLAVOR": "Holding it makes you think back to distant memories.",
     "DESCRIPTIONS": [
-      "On the first turn of each combat, Retain your hand."
+      "On the first turn of each combat, #yRetain your hand."
     ]
   },
   "vexMod:CoolingFan": {
     "NAME": "Cooling Fan",
     "FLAVOR": "This fan helps you save processes when performing monster solution options.",
     "DESCRIPTIONS": [
-      "Whenever you #yChannel an orb, gain #b2 #yBlock."
+      "Whenever you #yChannel an Orb, gain #b2 #yBlock."
     ]
   },
   "vexMod:Cooldron": {
@@ -108,14 +108,14 @@
     "NAME": "Code Smelter",
     "FLAVOR": "Combines subprocesses into one big clump. Simple!",
     "DESCRIPTIONS": [
-      "Whenever you channel an Orb, trigger its passive ability."
+      "Whenever you #yChannel an Orb, trigger its passive ability."
     ]
   },
   "vexMod:TanglingVine": {
     "NAME": "Tangling Vine",
     "FLAVOR": "It reaches at you, filled with malicious intents...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL At the start of your turn, gain #b1 Constricted."
+      "Gain [E] at the start of your turn. NL At the start of your turn, gain #b1 #yConstricted."
     ]
   },
   "vexMod:MindDevourer": {
@@ -129,7 +129,7 @@
     "NAME": "Spin Shoes",
     "FLAVOR": "You cannot remove these shoes, and they keep making you trip.",
     "DESCRIPTIONS": [
-      "Upon pickup, transform ALL cards in your deck into #rClumsy.",
+      "Upon pickup, #yTransform ALL cards in your deck into #rClumsy.",
       "Oops! You fell down..."
     ]
   },
@@ -159,7 +159,7 @@
     "NAME": "Puke Worm",
     "FLAVOR": "This tiny worm pukes up coins when you impress it.",
     "DESCRIPTIONS": [
-      "At the end of battle, gain #b2 Gold."
+      "At the end of battle, gain #b2 #yGold."
     ]
   },
   "vexMod:PitifulBounty": {
@@ -173,7 +173,7 @@
     "NAME": "Helpful Mold",
     "FLAVOR": "This mold siphons off bits of your shield to feed you.",
     "DESCRIPTIONS": [
-      "Whenever you gain Block, gain #b1 #yStrength this turn only."
+      "Whenever you gain #yBlock, gain #b1 #yStrength this turn only."
     ]
   },
   "vexMod:SalvageTools": {
@@ -187,7 +187,7 @@
     "NAME": "Charge Upper",
     "FLAVOR": "\"Oops, I fell asleep without plugging it in...\"",
     "DESCRIPTIONS": [
-      "Every time you gain #b25 Block, gain #b1 #yStrength."
+      "Every time you gain #b25 #yBlock, gain #b1 #yStrength."
     ]
   },
   "vexMod:FocusSash": {
@@ -199,7 +199,7 @@
   },
   "vexMod:PowerCharger": {
     "NAME": "Power Charger",
-    "FLAVOR": "Conserve energy! Shut off Orb Slots when you're not using them.",
+    "FLAVOR": "Conserve energy! Shut off Orb slots when you're not using them.",
     "DESCRIPTIONS": [
       "At the end of your turn, gain #b1 Block for each empty Orb slot."
     ]
@@ -222,7 +222,7 @@
     "NAME": "Morality Core",
     "FLAVOR": "\"Iron one, you gave so much for your strength... and now you give it up as well.\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL At the start of each combat, gain #b3 Weak."
+      "Gain [E] at the start of your turn. NL At the start of each combat, gain #b3 #yWeak."
     ]
   },
   "vexMod:StickyTar": {
@@ -243,14 +243,14 @@
     "NAME": "Retaliation Kit",
     "FLAVOR": "All you need to disappear in a burst of smoke! Smoke not included.",
     "DESCRIPTIONS": [
-      "The first time your Block is broken each combat, apply 2 Weak to ALL enemies."
+      "The first time your #yBlock is broken each combat, apply #b2 #yWeak to ALL enemies."
     ]
   },
   "vexMod:KeyChain": {
     "NAME": "Key Chain",
     "FLAVOR": "Surprisingly sharp!",
     "DESCRIPTIONS": [
-      "Your first Attack each combat Shackles its target for damage dealt."
+      "Your first #yAttack each combat Shackles its target for damage dealt."
     ]
   },
   "vexMod:CardConverter": {
@@ -264,14 +264,14 @@
     "NAME": "Sword of Lies",
     "FLAVOR": "\"I am the Sword of Truth.\"",
     "DESCRIPTIONS": [
-      "Start each combat with 2 Strength. At the start of each combat, add a random Curse to your hand."
+      "Start each combat with #b2 #yStrength. At the start of each combat, add a random #rCurse to your hand."
     ]
   },
   "vexMod:DrawConverter": {
     "NAME": "Thoughtsguard",
     "FLAVOR": "\"Begone, thoughts!\"",
     "DESCRIPTIONS": [
-      "Whenever you draw a card (besides your opening hand), gain 2 Block."
+      "Whenever you draw a card (besides your opening hand), gain #b2 #yBlock."
     ]
   },
   "vexMod:BrokenBowl": {
@@ -292,14 +292,14 @@
     "NAME": "Scavenger Helm",
     "FLAVOR": "Used by the tribes far from the City.",
     "DESCRIPTIONS": [
-      "If you have #b1 card in your hand at the end of your turn, you may Retain it."
+      "If you have #b1 card in your hand at the end of your turn, you may #yRetain it."
     ]
   },
   "vexMod:ScavengeHelm": {
     "NAME": "Writhing Mask",
     "FLAVOR": "It squirms on your face uncomfortably.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain 3 Malleable."
+      "At the start of each combat, gain #b3 #yMalleable."
     ]
   }
 }
