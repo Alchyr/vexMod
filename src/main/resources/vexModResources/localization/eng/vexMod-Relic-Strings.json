@@ -24,7 +24,7 @@
     "NAME": "Shifting Skin",
     "FLAVOR": "Your body flows fluidly, becoming subtly spikier in response to blows.",
     "DESCRIPTIONS": [
-      "When hit, gain temporary Thorns equal to damage taken."
+      "When hit, gain temporary #yThorns equal to damage taken."
     ]
   },
   "vexMod:ProtectorBot": {
@@ -87,7 +87,7 @@
     "NAME": "Cooling Fan",
     "FLAVOR": "This fan helps you save processes when performing monster solution options.",
     "DESCRIPTIONS": [
-      "Whenever you #yChannel an orb, gain 2 Block."
+      "Whenever you #yChannel an orb, gain #b2 #yBlock."
     ]
   },
   "vexMod:Cooldron": {
@@ -115,7 +115,7 @@
     "NAME": "Tangling Vine",
     "FLAVOR": "It reaches at you, filled with malicious intents...",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL At the start of your turn, gain #b1 Entangled."
+      "Gain [E] at the start of your turn. NL At the start of your turn, gain #b1 Constricted."
     ]
   },
   "vexMod:MindDevourer": {
@@ -144,14 +144,14 @@
     "NAME": "Short Stop",
     "FLAVOR": "Weathered from hundreds of home runs.",
     "DESCRIPTIONS": [
-      "Future maps are only 9 floors long."
+      "Future maps are 9 floors long."
     ]
   },
   "vexMod:EnergyShake": {
     "NAME": "Energy Shake",
     "FLAVOR": "Tasty.",
     "DESCRIPTIONS": [
-      "Upon pickup, brews #b1 potion.",
+      "Upon pickup, brews #b1 random potion.",
       "Mm, protein..."
     ]
   },
@@ -215,21 +215,21 @@
     "NAME": "System Virus",
     "FLAVOR": "\"Defective one, your creativity needs... dulling.\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL Start each combat with #b1 Orb slot."
+      "Gain [E] at the start of your turn. NL At the start of each combat, lose #b2 Orb slots."
     ]
   },
   "vexMod:MoralityCore": {
     "NAME": "Morality Core",
     "FLAVOR": "\"Iron one, you gave so much for your strength... and now you give it up as well.\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL Start each combat with #b3 Weak."
+      "Gain [E] at the start of your turn. NL At the start of each combat, gain #b3 Weak."
     ]
   },
   "vexMod:StickyTar": {
     "NAME": "Sticky Tar",
     "FLAVOR": "\"Quiet one, you think yourself so clever with your dodgy moves. Be exposed!\"",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. NL At the start of combat, lose #b1 #yDexterity."
+      "Gain [E] at the start of your turn. NL At the start of each combat, lose #b1 #yDexterity."
     ]
   },
   "vexMod:BigBerry": {
@@ -257,7 +257,7 @@
     "NAME": "Box of Bandaids",
     "FLAVOR": "Vends only when shown cool techniques.",
     "DESCRIPTIONS": [
-      "Whenever you add a card to your deck, heal 5 HP."
+      "Whenever you add a card to your deck, heal #b5 HP."
     ]
   },
   "vexMod:CursedBlade": {
@@ -278,7 +278,7 @@
     "NAME": "Broken Bowl",
     "FLAVOR": "Sand drains from it endlessly.",
     "DESCRIPTIONS": [
-      "Whenever you add an unupgraded card to your deck, Upgrade it and lose 2 Max HP."
+      "Whenever you add an unupgraded card to your deck, #yUpgrade it and lose #b2 Max HP."
     ]
   },
   "vexMod:PillTracker": {

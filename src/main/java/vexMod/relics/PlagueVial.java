@@ -51,7 +51,7 @@ public class PlagueVial extends CustomRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return this.DESCRIPTIONS[0] + 15 + this.DESCRIPTIONS[1];
+        return this.DESCRIPTIONS[0];
     }
 
 }

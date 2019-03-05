@@ -49,7 +49,7 @@
   },
   "vexMod:BurstPulse": {
     "NAME": "Burst Pulse",
-    "DESCRIPTION": "Trigger the passive abilities of your orbs.",
+    "DESCRIPTION": "Trigger the passive abilities of all orbs.",
     "UPGRADE_DESCRIPTION": "Channel 1 Lightning. NL Trigger the passive abilities of all orbs."
   },
   "vexMod:Overload": {
@@ -89,7 +89,7 @@
   },
   "vexMod:SnowShield": {
     "NAME": "Snow Shield",
-    "DESCRIPTION": "Channel 1 Frost. NL Trigger the passive abilities of all Frost orbs.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Frost. NL Trigger the passive abilities of all orbs."
+    "DESCRIPTION": "Trigger the passive abilities of all Frost orbs. NL Channel 1 Frost.",
+    "UPGRADE_DESCRIPTION": "Trigger the passive abilities of all orbs. NL Channel 1 Frost."
   }
 }

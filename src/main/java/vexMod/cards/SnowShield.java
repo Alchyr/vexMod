@@ -40,7 +40,7 @@ public class SnowShield extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.BLUE;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
 
     // /STAT DECLARATION/
 
