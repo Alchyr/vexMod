@@ -76,13 +76,13 @@ Uncommon Attack (RED) -
 *Common Attack (RED) - Clever Clash - 1 cost - If the enemy intends to attack, gain 8(11) Block. If not, deal 9(11) damage.
 Common Attack (RED) -
 
-Rare Skill (RED) - Taunt - X cost - Apply X Weak. Apply X Vulnerable. Gain X Strength. Exhaust.
+Rare Skill (RED) - Taunt - X cost - Apply X(+1) Weak. Apply X(+1) Vulnerable. Gain X(+1) Strength. Exhaust.
 Rare Skill (RED) -
 
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
 
-Common Skill (RED) - Debris Guard - Gain 8 Block. Exhaust.
+Common Skill (RED) - Debris Guard - Gain 8(12) Block. Exhaust.
 Common Skill (RED) -
 
 *Rare Power (RED) - Strike Storm - 3 cost - (!Ethereal!) Whenever you play a card, play a Strike.
@@ -94,7 +94,7 @@ Uncommon Power (RED) -
 *Rare Attack (GREEN) - Jackpot - 1(0) cost - Deal 7 damage. Apply 7 Poison. Gain 7 Gold. Exhaust.
 Rare Attack (GREEN) -
 
-Uncommon Attack (GREEN) -
+Uncommon Attack (GREEN) - Postulation - 0 cost - Draw a card. If it's an Attack, deal 3(5) damage.
 Uncommon Attack (GREEN) -
 
 Common Attack (GREEN) -
@@ -112,7 +112,7 @@ Common Skill (GREEN) -
 *Rare Attack (BLUE) - Block Beam - 3 cost - Gain 15(19) Block. Deal 15(19) damage.
 Rare Attack (BLUE) -
 
-Uncommon Attack (BLUE) - Shock Storm - 2 cost - Deal 7 damage. Gain 2 Focus this turn only.
+Uncommon Attack (BLUE) - Shock Storm - 2 cost - Deal 7(10) damage. Gain 2 Focus this turn only.
 Uncommon Attack (BLUE) -
 
 Common Attack (BLUE) -
