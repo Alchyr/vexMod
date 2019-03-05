@@ -56,11 +56,11 @@ Event - Toy Sword - Your Attacks Shackle the target for 1 Strength. At the start
 Event - Double-Edged Sword - Start each combat with 2 Strength. At the start of each combat, each enemy gains 2 Thorns.
 Event - Broadsword - Start each combat with 3 Strength. Draw 2 less cards per turn.
 Event - Diamond Sword - Whenever you play an Attack, gain 5 gold and Exhaust it.
-Event - Rusty Sword - At the start of each combat, you and all enemies lose 1 Attack.
+Event - Rusty Sword - At the start of each combat, you and all enemies lose 1 Strength.
 Event - Toxic Sword - At the start of each combat, gain 5 Poison. Your attacks apply 2 Poison.
 Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
 Event - Imaginary Sword - Upon pickup, remove all Attacks from your deck...
-Event - Excalibur - At the start of each combat, gain 1 Attack, draw a card, and heal 4 HP.
+Event - Excalibur - At the start of each combat, gain 1 Strength., draw a card, and heal 4 HP.
 Event - Voice Box - Your character talks.
 
 
