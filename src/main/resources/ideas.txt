@@ -107,13 +107,13 @@ Common Attack (BLUE) -
 Common Attack (BLUE) -
 
 *Rare Skill (BLUE) - Overload - 3 cost - Channel a random Orb for each Orb Slot you have. (Gain 2 Orb Slots.) Exhaust.
-Rare Skill (BLUE) -
+*Rare Skill (BLUE) - Reflex Channel - 2 cost - If the enemy intends to attack, Channel 2(3) Frost. If not, Channel 2 Lightning(Dark).
 
-*Uncommon Skill (BLUE) - Reflex Channel - 2 cost - If the enemy intends to attack, Channel 2(3) Frost. If not, Channel 2 Lightning(Dark).
-*Uncommon Skill (BLUE) - Charge Up - 0 cost - Channel 1 Frost. Add a random Power to your hand. (!Exhaust.!)
+*Uncommon Skill (BLUE) - Snow Shield - 1 cost - Channel 1 Frost. Trigger the passive abilities of all Frost orbs. (all orbs.)
+*Uncommon Skill (BLUE) - Charge Up - 0 cost - Channel 1 random orb. Add a random Power to your hand. (!Exhaust.!)
 
 *Common Skill (BLUE) - Burst Pulse - 1 cost - Activate the passive abilities of your Orbs. (Channel 1 Lightning.)
-Common Skill (BLUE) - Snow Shield - 1 cost - Channel 1 Frost. Trigger the passive abilities of all Frost orbs. (all orbs.)
+Common Skill (BLUE) - Detect Intruder - 0 cost - Apply 2(3) Lock-On. Evoke your rightmost Orb.
 
 Rare Power (BLUE) - 
 Rare Power (BLUE) -
