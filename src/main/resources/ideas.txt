@@ -100,7 +100,7 @@ Common Skill (GREEN) -
 *Rare Attack (BLUE) - Block Beam - 3 cost - Gain 15(19) Block. Deal 15(19) damage.
 Rare Attack (BLUE) -
 
-Uncommon Attack (BLUE) -
+Uncommon Attack (BLUE) - Shock Storm - 2 cost - Deal 7 damage. Gain 2 Focus this turn only.
 Uncommon Attack (BLUE) -
 
 Common Attack (BLUE) -
