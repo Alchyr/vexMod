@@ -327,7 +327,7 @@
     "NAME": "Diamond Sword",
     "FLAVOR": "The smith fashioned you a rather blocky sword!",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack, gain 5 Gold and exhaust it."
+      "Whenever you play an Attack, gain 3 Gold."
     ]
   },
   "vexMod:RustySword": {
@@ -341,7 +341,7 @@
     "NAME": "Draining Sword",
     "FLAVOR": "The smith fashioned you a vampiric sword!",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack, gain 3 HP. You start each combat with -1 Strength."
+      "Whenever you play an Attack, heal 1 HP. You start each combat with -1 Strength."
     ]
   },
   "vexMod:ImaginarySword": {

@@ -70,8 +70,4 @@ public class ImaginarySword extends CustomRelic {
         }
 
     }
-
-    public AbstractRelic makeCopy() {
-        return new EmptyCage();
-    }
 }

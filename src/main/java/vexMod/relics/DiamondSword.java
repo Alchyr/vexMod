@@ -36,16 +36,8 @@ public class DiamondSword extends CustomRelic {
         if (card.type == AbstractCard.CardType.ATTACK)
         {
             this.flash();
-            AbstractDungeon.player.gainGold(5);
-            action.exhaustCard = true;
+            AbstractDungeon.player.gainGold(4);
         }
-    }
-
-    @Override
-    public void atBattleStart() {
-        this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player,  -1),1));
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
     // Description
