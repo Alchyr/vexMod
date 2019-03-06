@@ -91,5 +91,30 @@
     "NAME": "Snow Shield",
     "DESCRIPTION": "Trigger the passive abilities of all Frost Orbs. NL Channel 1 Frost.",
     "UPGRADE_DESCRIPTION": "Trigger the passive abilities of all Orbs. NL Channel 1 Frost."
+  },
+  "vexMod:DebrisGuard": {
+    "NAME": "Debris Guard",
+    "DESCRIPTION": "Gain !B! Block. NL  If this card is Exhausted, gain 15 Block."
+  },
+  "vexMod:DebrisSlash": {
+    "NAME": "Debris Slash",
+    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, add a random card to your hand. Ethereal."
+  },
+  "vexMod:EntryPlan": {
+    "NAME": "Entry Plan",
+    "DESCRIPTION": "Draw a card. NL If it's an Attack, deal !D! damage."
+  },
+  "vexMod:PrepareVictim": {
+    "NAME": "Prepare Victim",
+    "DESCRIPTION": "Make an enemy Slow. NL Exhaust."
+  },
+  "vexMod:ShockKick": {
+    "NAME": "Shock Kick",
+    "DESCRIPTION": "Deal !D! damage. NL Gain 2 Focus until the start of your next turn."
+  },
+  "vexMod:Taunt": {
+    "NAME": "Taunt",
+    "DESCRIPTION": "Apply X Weak. NL Apply X Vulnerable. NL Gain X Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply X+1 Weak. NL Apply X+1 Vulnerable. NL Gain X+1 Strength. NL Exhaust."
   }
 }

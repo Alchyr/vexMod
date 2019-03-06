@@ -3,6 +3,7 @@ package vexMod.events;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
@@ -59,11 +60,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
 
                         AbstractRelic relicToAdd = (AbstractRelic)possibleRelics.get(AbstractDungeon.miscRng.random(possibleRelics.size() - 1));
                         // Get a random "bonus" relic
-
-                        AbstractDungeon.getCurrRoom().rewards.clear();
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(relicToAdd);
-                        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-                        AbstractDungeon.combatRewardScreen.open();
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2), relicToAdd);
 
                         break; // Onto screen 1 we go.
                     case 1: // If you press button the second button (Button at index 1), in this case: Ease

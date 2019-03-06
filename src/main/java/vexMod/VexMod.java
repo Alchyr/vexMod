@@ -11,6 +11,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -18,6 +19,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
 import vexMod.events.GenieBoonEvent;
+import vexMod.events.LookAheadEvent;
 import vexMod.events.StrangeSmithEvent;
 import vexMod.events.TripleChoiceEvent;
 import vexMod.relics.*;
@@ -147,6 +149,7 @@ public class VexMod implements
         BaseMod.addEvent(GenieBoonEvent.ID, GenieBoonEvent.class, TheCity.ID);
         BaseMod.addEvent(TripleChoiceEvent.ID, TripleChoiceEvent.class);
         BaseMod.addEvent(StrangeSmithEvent.ID, StrangeSmithEvent.class, TheCity.ID);
+        BaseMod.addEvent(LookAheadEvent.ID, LookAheadEvent.class, Exordium.ID);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");
@@ -309,6 +312,12 @@ public class VexMod implements
         BaseMod.addCard(new BloodGuard());
         BaseMod.addCard(new Jackpot());
         BaseMod.addCard(new SnowShield());
+        BaseMod.addCard(new DebrisGuard());
+        BaseMod.addCard(new DebrisSlash());
+        // BaseMod.addCard(new EntryPlan());
+        BaseMod.addCard(new PrepareVictim());
+        BaseMod.addCard(new ShockKick());
+        BaseMod.addCard(new Taunt());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -336,6 +345,12 @@ public class VexMod implements
         UnlockTracker.unlockCard(BloodGuard.ID);
         UnlockTracker.unlockCard(Jackpot.ID);
         UnlockTracker.unlockCard(SnowShield.ID);
+        UnlockTracker.unlockCard(DebrisGuard.ID);
+        UnlockTracker.unlockCard(DebrisSlash.ID);
+        // UnlockTracker.unlockCard(EntryPlan.ID);
+        UnlockTracker.unlockCard(PrepareVictim.ID);
+        UnlockTracker.unlockCard(ShockKick.ID);
+        UnlockTracker.unlockCard(Taunt.ID);
 
         logger.info("Done adding cards!");
     }

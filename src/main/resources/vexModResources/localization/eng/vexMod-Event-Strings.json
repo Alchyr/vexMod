@@ -47,5 +47,22 @@
       "[Leave]",
       "Smithing...?"
     ]
+  },
+  "vexMod:LookAheadEvent": {
+    "NAME": "Glimpse Ahead",
+    "DESCRIPTIONS": [
+      "You see ahead of you a strange window in the air. NL There's something faint through it. NL What do you want to see?",
+      "Just ahead, a fight... or what could have been one.",
+      "You stare deeply into riches, ignoring a slight stomach pain. NL You feel sickly, but enriched.",
+      "As the great whale roars, you feel terrible, dead... and strong.",
+      "The window fades as you continue on."
+    ],
+    "OPTIONS": [
+      "[Battle] #rFight #ran #rAct #r1 #rBoss. #gGain #ggreat #grewards.",
+      "[Riches] #rLose #r5 #rMax #rHP. #gGain #ga #grandom #gcommon #gRelic.",
+      "[Life] #rBecome #rCursed. #gGain #ga #gNeow's #gLament.",
+      "[Leave]",
+      "[Leave]"
+    ]
   }
 }
