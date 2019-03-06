@@ -1,0 +1,12 @@
+1. Sync commit from home PC
+2. Increase Jackpot cost to 2 (1 when upgraded)
+3. Increase Chaotic Reactor rarity to Rare
+4. Reduce Cursed Body Intangible by 1 or 2
+5. Reflex Channel to 3 cost (2 upgraded), remove current upgrade effects
+6. Switch Salvage Tools and Retaliation Kit rarities
+7. Add card explanations to ideas.txt
+8. Common Defect Attack - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
+9. Common Silent Attack - Shadow Strike - 1 cost - Deal 6(8) damage. Gain 5(7) block Next turn.
+10. Uncommon Colorless Attack - Slam Slice - 2 cost - Deal 8(10) damage. Deal 2 damage to a random enemy 4(5) times.
+11. Rare Colorless Attack - Full Service - 3 cost - Deal 5 damage. Gain 5 block. Gain 5 Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
+12. Uncommon Colorless Skill - Plotting - 0 cost - Draw an additional card at the start of the next 2(3) turns.
