@@ -1,0 +1,21 @@
+1. Sync commit from home PC
+2. Increase Jackpot cost to 2 (1 when upgraded)
+3. Increase Chaotic Reactor rarity to Rare
+4. Reduce Cursed Body Intangible by 1 or 2
+5. Reflex Channel to 3 cost (2 upgraded), remove current upgrade effects
+6. Switch Salvage Tools and Retaliation Kit rarities
+7. Add card explanations to ideas.txt
+8. Common Defect Attack - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
+9. Common Silent Attack - Shadow Strike - 1 cost - Deal 6(8) damage. Gain 5(7) block Next turn.
+10. Uncommon Colorless Attack - Slam Slice - 2 cost - Deal 8(10) damage. Deal 2 damage to a random enemy 4(5) times.
+11. Rare Colorless Attack - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
+12. Uncommon Colorless Skill - Plotting - 0 cost - Draw an additional card at the start of the next 2(3) turns.
+13. Uncommon Defect Attack - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
+14. Rare Defect Attack - Blazebeam - 1 cost - Deal 9 damage. Gain 2(3) stacks of a random effect. Exhaust.
+15. Rare Ironclad Attack - Devastation - 1 cost - Lose 6(3) HP. Deal damage equal to your missing HP. Exhaust.
+16. Uncommon Ironclad Attack - Elimination - 1 cost - Deal 10(13) damage. Exhaust your hand.
+17. Uncommon Ironclad Power - Armor Up! - 1(0) cost - If a source would deal damage to you, prevent 1 of that damage. (Alternatively: Gain 4(5) Plated Armor)
+18. Uncommon Silent Attack - Bandage Whip - 1 cost - Deal 5(8) damage. Shackle the enemy for 2(3) Strength.
+19. Add gold gain FX for all related items
+20. Common Silent Attack - Pinpoint Kick - 1 cost - Deal 8(10) damage. If this breaks the enemy's Block, apply 1(2) Vulnerable.
+21. Common Ironclad Attack - Cruel Stab - 1 cost - Deal 5(7) damage. Deal 5(7) damage for every Cruel Stab played this turn.
