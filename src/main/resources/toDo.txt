@@ -15,5 +15,6 @@
 15. Rare Ironclad Attack - Devastation - 1 cost - Lose 6(3) HP. Deal damage equal to your missing HP. Exhaust.
 16. Uncommon Ironclad Attack - Elimination - 1 cost - Deal 10(13) damage. Exhaust your hand.
 17. Uncommon Ironclad Power - Armor Up! - 1(0) cost - If a source would deal damage to you, prevent 1 of that damage. (Alternatively: Gain 4(5) Plated Armor)
-18. Common Silent Attack - Bandage Whip - 1 cost - Deal 5(8) damage. Shackle the enemy for 2(3) Strength.
+18. Uncommon Silent Attack - Bandage Whip - 1 cost - Deal 5(8) damage. Shackle the enemy for 2(3) Strength.
 19. Add gold gain FX for all related items
+20. Common Silent Attack - Pinpoint Kick - 1 cost - Deal 8(10) damage. If this breaks the enemy's Block, apply 1(2) Vulnerable.
