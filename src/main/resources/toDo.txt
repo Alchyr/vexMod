@@ -18,3 +18,4 @@
 18. Uncommon Silent Attack - Bandage Whip - 1 cost - Deal 5(8) damage. Shackle the enemy for 2(3) Strength.
 19. Add gold gain FX for all related items
 20. Common Silent Attack - Pinpoint Kick - 1 cost - Deal 8(10) damage. If this breaks the enemy's Block, apply 1(2) Vulnerable.
+21. Common Ironclad Attack - Cruel Stab - 1 cost - Deal 5(7) damage. Deal 5(7) damage for every Cruel Stab played this turn.
