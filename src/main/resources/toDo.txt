@@ -8,5 +8,7 @@
 8. Common Defect Attack - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
 9. Common Silent Attack - Shadow Strike - 1 cost - Deal 6(8) damage. Gain 5(7) block Next turn.
 10. Uncommon Colorless Attack - Slam Slice - 2 cost - Deal 8(10) damage. Deal 2 damage to a random enemy 4(5) times.
-11. Rare Colorless Attack - Full Service - 3 cost - Deal 5 damage. Gain 5 block. Gain 5 Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
+11. Rare Colorless Attack - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
 12. Uncommon Colorless Skill - Plotting - 0 cost - Draw an additional card at the start of the next 2(3) turns.
+13. Uncommon Defect Attack - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
+14. Rare Defect Attack - Blazebeam - 1 cost - Deal 9 damage. Gain 2(3) stacks of a random effect. Exhaust.
