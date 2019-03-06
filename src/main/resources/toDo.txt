@@ -12,3 +12,5 @@
 12. Uncommon Colorless Skill - Plotting - 0 cost - Draw an additional card at the start of the next 2(3) turns.
 13. Uncommon Defect Attack - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
 14. Rare Defect Attack - Blazebeam - 1 cost - Deal 9 damage. Gain 2(3) stacks of a random effect. Exhaust.
+15. Rare Ironclad Attack - Devastation - 1 cost - Lose 6(3) HP. Deal damage equal to your missing HP. Exhaust.
+16. Uncommon Ironclad Attack - Elimination - 1 cost - Deal 10(13) damage. Exhaust your hand.
