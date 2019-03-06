@@ -18,7 +18,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import vexMod.VexMod;
-import vexMod.relics.CursedBlade;
+import vexMod.relics.*;
 
 import java.util.ArrayList;
 
@@ -96,6 +96,13 @@ public class StrangeSmithEvent extends AbstractImageEvent {
                         // (in our case, that's the final screen, but you can chain as many as you want like that)
                         ArrayList<AbstractRelic> possibleRelics = new ArrayList();
                         possibleRelics.add(RelicLibrary.getRelic(CursedBlade.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(ToySword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(DoubleEdgedSword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(BroadSword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(DiamondSword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(RustySword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(DrainingSword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(ImaginarySword.ID));
 
                         AbstractRelic relicToAdd = (AbstractRelic)possibleRelics.get(AbstractDungeon.miscRng.random(possibleRelics.size() - 1));
                         // Get a random "bonus" relic

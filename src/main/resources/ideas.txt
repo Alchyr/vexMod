@@ -52,15 +52,13 @@
 *Event - Energy Drink - Upon pickup, brews 1 random potion.
 *Event - Puke Worm - At the end of battle, gain 2 Gold.
 *Event - Pitiful Bounty - Whenever an enemy dies, gain 3 Block.
-Event - Toy Sword - Your Attacks Shackle the target for 1 Strength. At the start of each combat, lose 1 Strength.
-Event - Double-Edged Sword - Start each combat with 2 Strength. At the start of each combat, each enemy gains 2 Thorns.
-Event - Broadsword - Start each combat with 3 Strength. Draw 2 less cards per turn.
-Event - Diamond Sword - Whenever you play an Attack, gain 5 gold and Exhaust it.
-Event - Rusty Sword - At the start of each combat, you and all enemies lose 1 Strength.
-Event - Toxic Sword - At the start of each combat, gain 5 Poison. Your attacks apply 2 Poison.
-Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
-Event - Imaginary Sword - Upon pickup, remove all Attacks from your deck...
-Event - Excalibur - At the start of each combat, gain 1 Strength., draw a card, and heal 4 HP.
+*Event - Toy Sword - Your Attacks Shackle the target for 2 Strength. At the start of each combat, lose 1 Strength.
+*Event - Double-Edged Sword - Start each combat with 2 Strength. At the start of each combat, each enemy gains 2 Thorns.
+*Event - Broadsword - Start each combat with 3 Strength. Draw 1 less card per turn.
+*Event - Diamond Sword - Whenever you play an Attack, gain 5 gold and Exhaust it.
+*Event - Rusty Sword - At the start of each combat, you lose 1 Strength and all enemies lose 2 Strength.
+*Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
+*Event - Imaginary Sword - Upon pickup, remove 2 Attacks from your deck.
 Event - Voice Box - Your character talks.
 
 
@@ -77,7 +75,7 @@ Uncommon Attack (RED) -
 Common Attack (RED) -
 
 Rare Skill (RED) - Taunt - X cost - Apply X(+1) Weak. Apply X(+1) Vulnerable. Gain X(+1) Strength. Exhaust.
-Rare Skill (RED) - Paralyze - 1 cost - Gain 1(2) Strength. The enemy loses attack equal to your Strength. Exhaust.
+Rare Skill (RED) - Paralyze - 1 cost - Gain 1(2) Strength. The enemy loses attack equal to your Strength this turn. Exhaust.
 
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.

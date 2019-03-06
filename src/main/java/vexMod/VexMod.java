@@ -202,11 +202,18 @@ public class VexMod implements
         BaseMod.addRelic(new BigBerry(), RelicType.SHARED);
         BaseMod.addRelic(new KeyChain(), RelicType.SHARED);
         BaseMod.addRelic(new CardConverter(), RelicType.SHARED);
-        BaseMod.addRelic(new DrawConverter(), RelicType.SHARED);
+        // BaseMod.addRelic(new DrawConverter(), RelicType.SHARED);
         BaseMod.addRelic(new BrokenBowl(), RelicType.SHARED);
         BaseMod.addRelic(new PillTracker(), RelicType.SHARED);
         BaseMod.addRelic(new SlimeArmor(), RelicType.SHARED);
         BaseMod.addRelic(new ScavengeHelm(), RelicType.SHARED);
+        BaseMod.addRelic(new BroadSword(), RelicType.SHARED);
+        BaseMod.addRelic(new DiamondSword(), RelicType.SHARED);
+        BaseMod.addRelic(new DoubleEdgedSword(), RelicType.SHARED);
+        BaseMod.addRelic(new DrainingSword(), RelicType.SHARED);
+        BaseMod.addRelic(new ImaginarySword(), RelicType.SHARED);
+        BaseMod.addRelic(new ToySword(), RelicType.SHARED);
+        BaseMod.addRelic(new RustySword(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -246,11 +253,18 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(KeyChain.ID);
         UnlockTracker.markRelicAsSeen(CursedBlade.ID);
         UnlockTracker.markRelicAsSeen(CardConverter.ID);
-        UnlockTracker.markRelicAsSeen(DrawConverter.ID);
+        // UnlockTracker.markRelicAsSeen(DrawConverter.ID);
         UnlockTracker.markRelicAsSeen(BrokenBowl.ID);
         UnlockTracker.markRelicAsSeen(PillTracker.ID);
         UnlockTracker.markRelicAsSeen(SlimeArmor.ID);
         UnlockTracker.markRelicAsSeen(ScavengeHelm.ID);
+        UnlockTracker.markRelicAsSeen(BroadSword.ID);
+        UnlockTracker.markRelicAsSeen(DiamondSword.ID);
+        UnlockTracker.markRelicAsSeen(DoubleEdgedSword.ID);
+        UnlockTracker.markRelicAsSeen(DrainingSword.ID);
+        UnlockTracker.markRelicAsSeen(ImaginarySword.ID);
+        UnlockTracker.markRelicAsSeen(RustySword.ID);
+        UnlockTracker.markRelicAsSeen(ToySword.ID);
 
         logger.info("Done adding relics!");
     }
