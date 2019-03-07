@@ -4,8 +4,9 @@
 4. Common Skill (RED) - Cardboard Carapace - 1 cost - Gain 1 Block for each card in your draw pile(+3)
 5. Common Skill (GREEN) - Gather Tools - 1 cost - Gain 1 Block for each card in your hand(+3)
 6. Rare Power (GREEN) - Evasive Thoughts - 3(2) cost - At the start of your turn, add a random Skill to your hand. It costs 0 this turn
-7. Add new Sword relic.
-8. Consider implementation of specific description dialogues depending on Sword generation.
-9. Begin Voice Box work.
-10. Test cards
-11. Bug fixes I guess....
+7. Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attack, Channel 1 Frost. If not, Channel 1 Dark.
+8. Event - Infernal Sword - At the start of each combat, add a random Attack to your hand. It costs 0 this turn.
+9. Consider implementation of specific description dialogues depending on Sword generation.
+10. Begin Voice Box work.
+11. Test cards
+12. Bug fixes I guess....
