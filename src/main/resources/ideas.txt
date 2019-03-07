@@ -127,7 +127,7 @@ Common Skill (BLUE) -
 
 *Rare Power (BLUE) - Chaotic Reactor - 1 cost - (Innate.) At the start of your turn, Channel a random Orb.
 
-Uncommon Power (BLUE) - 
+Uncommon Power (BLUE) - Sharp Orbs - 1 cost - Whenever you're attacked, deal 1 damage back for each of your Orbs.
 
 *Rare Attack (COLORLESS) - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
 Uncommon Attack (COLORLESS) -
