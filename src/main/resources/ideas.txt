@@ -106,7 +106,7 @@ Common Skill (GREEN) - Gather Tools - 1 cost - Gain 1 Block for each card in you
 
 Rare Power (GREEN) - Evasive Thoughts - 3(2) cost - At the start of your turn, add a random Skill to your hand. It costs 0 this turn.
 
-Uncommon Power (GREEN) - Camoflauge - 1 cost - (Innate). You cannot become Weak, Vulnerable or Frail.
+Uncommon Power (GREEN) - Camoflauge - 1 cost - (Innate). At the start of your turn, gain 1 Plated Armor.
 
 *Rare Attack (BLUE) - Block Beam - 3 cost - Gain 15(19) Block. Deal 15(19) damage.
 Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks of ANY random power. Exhaust.
