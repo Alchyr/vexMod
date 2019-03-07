@@ -135,7 +135,7 @@ Uncommon Power (BLUE) -
 Uncommon Attack (COLORLESS) -
 
 *Rare Skill (COLORLESS) - Resourcefulness - 0 cost - Draw 2 cards. (Put one card from your draw pile into your hand. Draw 1 card.)
-*Uncommon Skill (COLORLESS) - Plotting - 0 cost - Draw an additional card for the next 2(3) turns.
+*Uncommon Skill (COLORLESS) - Plotting - 0 cost - Draw 2(3) additional cards next turn.
 
 *Rare Power (COLORLESS) - Golden Touch - 2(1) cost - Whenever you deal unblocked Attack damage, gain that much Gold.
 
