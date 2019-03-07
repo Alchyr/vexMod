@@ -33,7 +33,7 @@ public class RetaliationKit extends CustomRelic implements OnLoseBlockRelic {
     }
 
     public RetaliationKit() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
     }
 
     @Override

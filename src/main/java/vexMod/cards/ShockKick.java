@@ -42,7 +42,7 @@ public class ShockKick extends AbstractDefaultCard {
 
     private static final int COST = 2;  // COST = ${COST}
 
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DAMAGE = 4;
 
     // /STAT DECLARATION/

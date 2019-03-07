@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
@@ -36,7 +37,10 @@ public class DiamondSword extends CustomRelic {
         if (card.type == AbstractCard.CardType.ATTACK)
         {
             this.flash();
-            AbstractDungeon.player.gainGold(4);
+            AbstractDungeon.player.gainGold(3);
+            for(int i = 0; i < 3; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+            }
         }
     }
 

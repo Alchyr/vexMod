@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -52,6 +53,9 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS ) {
             this.flash();
             AbstractDungeon.player.gainGold(damageAmount);
+            for(int i = 0; i < damageAmount; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, target.hb.cX, target.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+            }
             if (MathUtils.randomBoolean(0.05f))
             {
                 playSfx();

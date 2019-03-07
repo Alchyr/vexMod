@@ -268,6 +268,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(ImaginarySword.ID);
         UnlockTracker.markRelicAsSeen(RustySword.ID);
         UnlockTracker.markRelicAsSeen(ToySword.ID);
+        UnlockTracker.markRelicAsSeen(RetaliationKit.ID);
 
         logger.info("Done adding relics!");
     }
@@ -318,6 +319,15 @@ public class VexMod implements
         BaseMod.addCard(new PrepareVictim());
         BaseMod.addCard(new ShockKick());
         BaseMod.addCard(new Taunt());
+        BaseMod.addCard(new BandageWhip());
+        BaseMod.addCard(new BeamPop());
+        BaseMod.addCard(new ChargeBeam());
+        BaseMod.addCard(new Devastation());
+        BaseMod.addCard(new Elimination());
+        BaseMod.addCard(new FullService());
+        BaseMod.addCard(new PinpointKick());
+        BaseMod.addCard(new Plotting());
+        BaseMod.addCard(new ShadowStrike());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -351,6 +361,15 @@ public class VexMod implements
         UnlockTracker.unlockCard(PrepareVictim.ID);
         UnlockTracker.unlockCard(ShockKick.ID);
         UnlockTracker.unlockCard(Taunt.ID);
+        UnlockTracker.unlockCard(BandageWhip.ID);
+        UnlockTracker.unlockCard(BeamPop.ID);
+        UnlockTracker.unlockCard(ChargeBeam.ID);
+        UnlockTracker.unlockCard(Devastation.ID);
+        UnlockTracker.unlockCard(Elimination.ID);
+        UnlockTracker.unlockCard(FullService.ID);
+        UnlockTracker.unlockCard(PinpointKick.ID);
+        UnlockTracker.unlockCard(Plotting.ID);
+        UnlockTracker.unlockCard(ShadowStrike.ID);
 
         logger.info("Done adding cards!");
     }

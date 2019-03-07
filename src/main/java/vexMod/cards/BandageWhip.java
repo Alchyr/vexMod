@@ -9,18 +9,18 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.PoisonPower;
-import com.megacrit.cardcrawl.vfx.GainPennyEffect;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDefaultCard
-public class Jackpot extends AbstractDefaultCard {
+public class BandageWhip extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = VexMod.makeID("Jackpot"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("BandageWhip"); // VexMod.makeID("${NAME}");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
@@ -34,38 +34,36 @@ public class Jackpot extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = CardColor.GREEN;
 
-    private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int COST = 1;  // COST = ${COST}
 
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
-    private static final int PSN = 7;
-    private static final int GOLD = 7;
+    private static final int DAMAGE = 5;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+
+    private static final int SDOWN = 2;
+    private static final int SDOWN_UP = 1;
 
     // /STAT DECLARATION/
 
 
-    public Jackpot() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public BandageWhip() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        magicNumber = baseMagicNumber = PSN;
-        defaultSecondMagicNumber = defaultBaseSecondMagicNumber = GOLD;
-        this.exhaust = true;
+        baseMagicNumber = magicNumber = SDOWN;
     }
 
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber, AbstractGameAction.AttackEffect.POISON));
-        AbstractDungeon.player.gainGold(this.defaultSecondMagicNumber);
-        for(int i = 0; i < this.defaultSecondMagicNumber; ++i) {
-            AbstractDungeon.effectList.add(new GainPennyEffect(p, m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, true));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new StrengthPower(m, -magicNumber), -magicNumber));
+        if (m != null && !m.hasPower("Artifact")) {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new GainStrengthPower(m, magicNumber), magicNumber));
         }
     }
 
@@ -75,7 +73,8 @@ public class Jackpot extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeDamage(UPGRADE_PLUS_DMG);
+            upgradeMagicNumber(SDOWN_UP);
             initializeDescription();
         }
     }

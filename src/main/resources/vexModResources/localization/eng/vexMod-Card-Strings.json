@@ -22,8 +22,7 @@
   },
   "vexMod:ReflexChannel": {
     "NAME": "Reflex Channel",
-    "DESCRIPTION": "If the enemy intends to attack, Channel !M! Frost. NL If not, Channel 2 Lightning.",
-    "UPGRADE_DESCRIPTION": "If the enemy intends to attack, Channel !M! Frost. NL If not, Channel 2 Dark."
+    "DESCRIPTION": "If the enemy intends to attack, Channel 2 Frost. NL If not, Channel 2 Lightning."
   },
   "vexMod:Fear": {
     "NAME": "Fear",
@@ -116,5 +115,46 @@
     "NAME": "Taunt",
     "DESCRIPTION": "Apply X Weak. NL Apply X Vulnerable. NL Gain X Strength. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Apply X+1 Weak. NL Apply X+1 Vulnerable. NL Gain X+1 Strength. NL Exhaust."
+  },
+  "vexMod:BandageWhip": {
+    "NAME": "Bandage Whip",
+    "DESCRIPTION": "Deal !D! damage. NL The enemy loses !M! Strength this turn."
+  },
+  "vexMod:BeamPop": {
+    "NAME": "Beam Pop",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Lock-On."
+  },
+  "vexMod:BlazeBeam": {
+    "NAME": "Blaze Beam",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! stacks of a random ability."
+  },
+  "vexMod:ChargeBeam": {
+    "NAME": "Charge Beam",
+    "DESCRIPTION": "Deal !D! damage. NL Draw an additional card next turn."
+  },
+  "vexMod:Devastation": {
+    "NAME": "Devastation",
+    "DESCRIPTION": "Lose !M! HP. NL Deal damage equal to your missing HP. NL Exhaust."
+  },
+  "vexMod:Elimination": {
+    "NAME": "Elimination",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust any number of cards in your hand."
+  },
+  "vexMod:FullService": {
+    "NAME": "Full Service",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Gold. NL Apply 2 Weak. NL Apply 2 Vulnerable. NL Draw 2 cards. NL Heal 2 HP."
+  },
+  "vexMod:PinpointKick": {
+    "NAME": "Pinpoint Kick",
+    "DESCRIPTION": "Deal !D! damage. If this breaks the enemy's Block, apply !M! Vulnerable."
+  },
+  "vexMod:Plotting": {
+    "NAME": "Plotting",
+    "DESCRIPTION": "Draw !M! additional cards next turn."
+  },
+  "vexMod:ShadowStrike": {
+    "NAME": "Shadow Strike",
+    "DESCRIPTION": "Deal !D! damage. Gain !B! Block next turn."
   }
 }

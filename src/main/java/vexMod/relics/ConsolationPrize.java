@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -33,6 +34,9 @@ public class ConsolationPrize
         {
             AbstractDungeon.player.gainGold(damageAmount);
             this.flash();
+            for(int i = 0; i < damageAmount; ++i) {
+                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+            }
         }
         return damageAmount;
     }

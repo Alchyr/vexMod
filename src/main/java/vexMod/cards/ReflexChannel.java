@@ -26,7 +26,6 @@ public class ReflexChannel extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -38,10 +37,8 @@ public class ReflexChannel extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.BLUE;
 
-    private static final int COST = 2;  // COST = ${COST}
-
-    private static final int MAGIC_NUMBER = 2;
-    private static final int UPGRADE_PLUS_MAGIC_NUMBER = 1;
+    private static final int COST = 3;  // COST = ${COST}
+    private static final int UPGRADED_COST = 2; // UPGRADED_COST = ${UPGRADED_COST}
 
 
     // /STAT DECLARATION/
@@ -49,7 +46,6 @@ public class ReflexChannel extends AbstractDefaultCard {
 
     public ReflexChannel() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseMagicNumber = magicNumber = MAGIC_NUMBER;
     }
 
 
@@ -57,19 +53,11 @@ public class ReflexChannel extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m == null || m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
-            if (upgraded) {
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Dark()));
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Dark()));
-            }
-            else {
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
-            }
-        }
-        else {
-            for (int i=0; i < magicNumber; i++){
-                AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
-            }
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
+        } else {
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
         }
     }
 
@@ -79,8 +67,7 @@ public class ReflexChannel extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(UPGRADE_PLUS_MAGIC_NUMBER);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

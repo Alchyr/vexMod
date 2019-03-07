@@ -42,7 +42,7 @@ public class DeadlyDodge extends AbstractDefaultCard {
 
     private static final int INTANG = 1;
 
-    private static final int POISON = 6;
+    private static final int POISON = 4;
 
     // /STAT DECLARATION/
 
