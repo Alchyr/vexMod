@@ -79,7 +79,7 @@ Rare Skill (RED) -
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
 
 *Common Skill (RED) - Debris Guard - Gain 9(12) Block. If this card is exhausted, gain 15 Block.
-Common Skill (RED) -
+Common Skill (RED) - Cardboard Carapace - Gain 4 Block. Gain 1 Block for each card in your draw pile.
 
 *Rare Power (RED) - Strike Storm - 3 cost - (!Ethereal!) Whenever you play a card, play a Strike.
 
