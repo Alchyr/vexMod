@@ -57,7 +57,7 @@
 *Event - Broadsword - Start each combat with 3 Strength. Draw 1 less card per turn.
 *Event - Diamond Sword - Whenever you play an Attack, gain 3 gold.
 *Event - Rusty Sword - At the start of each combat, you lose 1 Strength and all enemies lose 2 Strength.
-*Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
+*Event - Draining Sword - Whenever you play an Attack, gain 2 HP. You start combat with -1 Strength.
 *Event - Imaginary Sword - Upon pickup, remove 2 Attacks from your deck.
 Event - Infernal Sword - At the start of each combat, add a random Attack to your hand. It costs 0 this turn.
 Event - Voice Box - Your character talks.
