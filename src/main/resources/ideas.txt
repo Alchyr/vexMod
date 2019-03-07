@@ -131,7 +131,7 @@ Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attac
 Uncommon Power (BLUE) - Sharp Orbs - 1(0) cost - At the end of your turn, deal 1 damage to a random enemy for each of your Orbs.
 
 *Rare Attack (COLORLESS) - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
-Uncommon Attack (COLORLESS) -
+Uncommon Attack (COLORLESS) - Boulder Throw - 2 cost - Deal 35 damage. Exhaust. Always begins on the bottom of your draw pile.
 
 *Rare Skill (COLORLESS) - Resourcefulness - 0 cost - Draw 2 cards. (Put one card from your draw pile into your hand. Draw 1 card.)
 *Uncommon Skill (COLORLESS) - Plotting - 0 cost - Draw 2(3) additional cards next turn.
