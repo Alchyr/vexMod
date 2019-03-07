@@ -115,7 +115,7 @@ Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks o
 *Uncommon Attack (BLUE) - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
 
 *Common Attack (BLUE) - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
-Common Attack (BLUE) - 
+Common Attack (BLUE) - Rocket Punch - 1 cost - Deal 5(7) damage. Deal 5(7) damage for each Rocket Punch played before during this turn. 
 
 *Rare Skill (BLUE) - Overload - 3 cost - Channel a random Orb for each Orb Slot you have. (Gain 2 Orb Slots.) Exhaust.
 *Rare Skill (BLUE) - Reflex Channel - 3(2) cost - If the enemy intends to attack, Channel 2 Frost. If not, Channel 2 Lightning.
@@ -128,7 +128,7 @@ Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attac
 
 *Rare Power (BLUE) - Chaotic Reactor - 1 cost - (Innate.) At the start of your turn, Channel a random Orb.
 
-Uncommon Power (BLUE) - Sharp Orbs - 1(0) cost - At the end of your turn, deal 1 damage to a random enemy for each of your Orbs.
+Uncommon Power (BLUE) -
 
 *Rare Attack (COLORLESS) - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
 Uncommon Attack (COLORLESS) - Boulder Throw - 2 cost - Deal 35 damage. Exhaust. Always begins on the bottom of your draw pile.
