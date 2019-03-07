@@ -61,8 +61,6 @@
 *Event - Imaginary Sword - Upon pickup, remove 2 Attacks from your deck.
 Event - Voice Box - Your character talks.
 
-
-
 -- CARDS --
 
 *Rare Attack (RED) - Draining Doom - 1 cost - Deal 30(40) damage. Lose 5 Max HP. Exhaust. Ethereal.
