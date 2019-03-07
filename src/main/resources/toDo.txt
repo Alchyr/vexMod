@@ -1,6 +1,11 @@
 1. Finish Blaze Beam Action. Consider making only Buffs
-2. Implement new cards.
-3. Add new Sword relic.
-4. Consider implementation of specific description dialogues depending on Sword generation.
-5. Begin Voice Box work.
-6. Test cards
+2. Uncommon Attack (RED) - Ground Pound - 2 cost - Deal 8(10) damage. Deal 8(10) damage to ALL enemies
+3. Rare Skill (RED) - Battle Stance - 3 cost - Gain 12 Block. Gain 2(3) Metallicize
+4. Common Skill (RED) - Cardboard Carapace - 1 cost - Gain 1 Block for each card in your draw pile(+3)
+5. Common Skill (GREEN) - Gather Tools - 1 cost - Gain 1 Block for each card in your hand(+3)
+6. Rare Power (GREEN) - Evasive Thoughts - 3(2) cost - At the start of your turn, add a random Skill to your hand. It costs 0 this turn
+7. Add new Sword relic.
+8. Consider implementation of specific description dialogues depending on Sword generation.
+9. Begin Voice Box work.
+10. Test cards
+11. Bug fixes I guess....
