@@ -128,7 +128,7 @@ Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attac
 
 *Rare Power (BLUE) - Chaotic Reactor - 1 cost - (Innate.) At the start of your turn, Channel a random Orb.
 
-Uncommon Power (BLUE) -
+Uncommon Power (BLUE) - Sharp Orbs - 1(0) cost - Gain 1 Orb slot. At the end of your turn, deal 1 damage to a random enemy for each Orb channeled.
 
 *Rare Attack (COLORLESS) - Full Service - 3 cost - Deal 5(6) damage. Gain 5(6) block. Gain 5(6) Gold. Apply 2 Weak. Apply 2 Vulnerable. Draw 2 cards. Heal 2 HP. Exhaust.
 Uncommon Attack (COLORLESS) - Boulder Throw - 2 cost - Deal 35 damage. Exhaust. Always begins on the bottom of your draw pile.
