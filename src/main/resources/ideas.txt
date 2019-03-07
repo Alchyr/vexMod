@@ -59,6 +59,7 @@
 *Event - Rusty Sword - At the start of each combat, you lose 1 Strength and all enemies lose 2 Strength.
 *Event - Draining Sword - Whenever you play an Attack, gain 3 HP. You start combat with -2 Strength.
 *Event - Imaginary Sword - Upon pickup, remove 2 Attacks from your deck.
+Event - Infernal Sword - At the start of each combat, add a random Attack to your hand. It costs 0 this turn.
 Event - Voice Box - Your character talks.
 
 -- CARDS --
@@ -83,7 +84,7 @@ Common Skill (RED) - Cardboard Carapace - Gain 4 Block. Gain 1 Block for each ca
 
 *Rare Power (RED) - Strike Storm - 3 cost - (!Ethereal!) Whenever you play a card, play a Strike.
 
-Uncommon Power (RED) -
+Uncommon Power (RED) - Hatred - 1 cost - (Innate.) At the start of each turn, add a random Attack to your hand.
 
 *Rare Attack (GREEN) - Jackpot - 2(1) cost - Deal 7 damage. Apply 7 Poison. Gain 7 Gold. Exhaust.
 Rare Attack (GREEN) -
