@@ -68,7 +68,7 @@ Event - Voice Box - Your character talks.
 *Rare Attack (RED) - Devastation - 1 cost - Lose 6(3) HP. Deal damage equal to your missing HP. Exhaust.
 
 *Uncommon Attack (RED) - Elimination - 1 cost - Deal 10(13) damage. Exhaust your hand. (Exhaust any number of cards from your hand.)
-Uncommon Attack (RED) -
+Uncommon Attack (RED) - Ground Pound - 2 cost - Deal 8(10) damage. Deal 8(10) damage to ALL enemies.
 
 *Common Attack (RED) - Clever Clash - 1 cost - If the enemy intends to attack, gain 8(11) Block. If not, deal 9(11) damage.
 *Common Attack (RED) - Debris Slash - Deal 8(11) damage. If this card is exhausted, add a random card to your hand. Ethereal.
@@ -79,15 +79,15 @@ Rare Skill (RED) - Battle Stance - 3 cost - Gain 12 Block. Gain 2(3) Metallicize
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
 
-*Common Skill (RED) - Debris Guard - Gain 9(12) Block. If this card is exhausted, gain 15 Block.
-Common Skill (RED) - Cardboard Carapace - Gain 4 Block. Gain 1 Block for each card in your draw pile.
+*Common Skill (RED) - Debris Guard - 1 cost - Gain 9(12) Block. If this card is exhausted, gain 15 Block.
+Common Skill (RED) - Cardboard Carapace - 1 cost - Gain 1 Block for each card in your draw pile(+3).
 
 *Rare Power (RED) - Strike Storm - 3 cost - (!Ethereal!) Whenever you play a card, play a Strike.
 
 Uncommon Power (RED) - Hatred - 1 cost - (Innate.) At the start of each turn, add a random Attack to your hand.
 
 *Rare Attack (GREEN) - Jackpot - 2(1) cost - Deal 7 damage. Apply 7 Poison. Gain 7 Gold. Exhaust.
-Rare Attack (GREEN) -
+Rare Attack (GREEN) - Coup De Grace - 0 cost - Can only be played if you've played 6 other cards this turn. Deal 44 damage.
 
 !Uncommon Attack (GREEN) - Entry Plan - 0 cost - Draw a card. If it's an Attack, deal 3(5) damage.
 *Uncommon Attack (GREEN) - Bandage Whip - 1 cost - Deal 5(8) damage. The enemy loses 2(3) Strength until your next turn.
@@ -102,11 +102,11 @@ Rare Attack (GREEN) -
 *Uncommon Skill (GREEN) - Prepare Victim - 1 cost - An enemy becomes Slow. Exhaust.
 
 *Common Skill (GREEN) - Venom Sigh - 1(0) cost - Gain 4 Block. Apply 4 Poison.
-Common Skill (GREEN) -
+Common Skill (GREEN) - Gather Tools - 1 cost - Gain 1 Block for each card in your hand(+3).
 
-Rare Power (GREEN) -
+Rare Power (GREEN) - Evasive Thoughts - 3(2) cost - At the start of your turn, add a random Skill to your hand. It costs 0 this turn.
 
-Uncommon Power (GREEN) -
+Uncommon Power (GREEN) - 
 
 *Rare Attack (BLUE) - Block Beam - 3 cost - Gain 15(19) Block. Deal 15(19) damage.
 Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks of ANY random power. Exhaust.
@@ -115,7 +115,7 @@ Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks o
 *Uncommon Attack (BLUE) - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
 
 *Common Attack (BLUE) - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
-Common Attack (BLUE) -
+Common Attack (BLUE) - 
 
 *Rare Skill (BLUE) - Overload - 3 cost - Channel a random Orb for each Orb Slot you have. (Gain 2 Orb Slots.) Exhaust.
 *Rare Skill (BLUE) - Reflex Channel - 3(2) cost - If the enemy intends to attack, Channel 2 Frost. If not, Channel 2 Lightning.
@@ -124,7 +124,7 @@ Common Attack (BLUE) -
 *Uncommon Skill (BLUE) - Charge Up - 0 cost - Channel 1 random orb. Add a random Power to your hand. (!Exhaust.!)
 
 *Common Skill (BLUE) - Burst Pulse - 1 cost - Activate the passive abilities of your Orbs. (Channel 1 Lightning.)
-Common Skill (BLUE) -
+*Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attack, Channel 1 Frost. If not, Channel 1 Dark.
 
 *Rare Power (BLUE) - Chaotic Reactor - 1 cost - (Innate.) At the start of your turn, Channel a random Orb.
 
