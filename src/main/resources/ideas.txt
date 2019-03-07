@@ -106,7 +106,7 @@ Common Skill (GREEN) - Gather Tools - 1 cost - Gain 1 Block for each card in you
 
 Rare Power (GREEN) - Evasive Thoughts - 3(2) cost - At the start of your turn, add a random Skill to your hand. It costs 0 this turn.
 
-Uncommon Power (GREEN) - 
+Uncommon Power (GREEN) - Camoflauge - 1 cost - (Innate). You cannot become Weak, Vulnerable or Frail.
 
 *Rare Attack (BLUE) - Block Beam - 3 cost - Gain 15(19) Block. Deal 15(19) damage.
 Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks of ANY random power. Exhaust.
@@ -115,7 +115,7 @@ Rare Attack (BLUE) - Blaze Beam - 1 cost - Deal 9(11) damage. Gain 2(3) stacks o
 *Uncommon Attack (BLUE) - Beam Pop - 0 cost - Deal 3(5) damage. Apply 2(3) Lock-On.
 
 *Common Attack (BLUE) - Charge Beam - 1 cost - Deal 7(10) damage. Draw an additional card next turn.
-Common Attack (BLUE) - Rocket Punch - 1 cost - Deal 5(7) damage. Deal 5(7) damage for each Rocket Punch played before during this turn. 
+Common Attack (BLUE) - Rocket Punch - 1 cost - Deal 6(8) damage. Add a Rocket Punch to your hand. (Exhaust.)
 
 *Rare Skill (BLUE) - Overload - 3 cost - Channel a random Orb for each Orb Slot you have. (Gain 2 Orb Slots.) Exhaust.
 *Rare Skill (BLUE) - Reflex Channel - 3(2) cost - If the enemy intends to attack, Channel 2 Frost. If not, Channel 2 Lightning.
