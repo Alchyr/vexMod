@@ -1,2 +1,6 @@
 1. Finish Blaze Beam Action. Consider making only Buffs
-
+2. Implement new cards.
+3. Add new Sword relic.
+4. Consider implementation of specific description dialogues depending on Sword generation.
+5. Begin Voice Box work.
+6. Test cards
