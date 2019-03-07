@@ -124,7 +124,7 @@ Common Attack (BLUE) -
 *Uncommon Skill (BLUE) - Charge Up - 0 cost - Channel 1 random orb. Add a random Power to your hand. (!Exhaust.!)
 
 *Common Skill (BLUE) - Burst Pulse - 1 cost - Activate the passive abilities of your Orbs. (Channel 1 Lightning.)
-*Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attack, Channel 1 Frost. If not, Channel 1 Dark.
+Common Skill (BLUE) - Choice Channel - 1(0) cost - If the enemy intends to attack, Channel 1 Frost. If not, Channel 1 Dark.
 
 *Rare Power (BLUE) - Chaotic Reactor - 1 cost - (Innate.) At the start of your turn, Channel a random Orb.
 
