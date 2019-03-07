@@ -73,7 +73,7 @@ Uncommon Attack (RED) -
 *Common Attack (RED) - Debris Slash - Deal 8(11) damage. If this card is exhausted, add a random card to your hand. Ethereal.
 
 *Rare Skill (RED) - Taunt - X cost - Apply X(+1) Weak. Apply X(+1) Vulnerable. Gain X(+1) Strength. Exhaust.
-Rare Skill (RED) - 
+Rare Skill (RED) - Battle Stance - 3 cost - Gain 12 Block. Gain 2(3) Metallicize.
 
 *Uncommon Skill (RED) - Blood Guard - 1 cost - Lose 4 HP. Gain 16(19) Block.
 *Uncommon Skill (RED) - Crumbling Crash - 1 cost - Remove all Block from the enemy. Gain 3(6) Block. Apply 2 Vulnerable. Draw a card.
