@@ -68,7 +68,7 @@
   "vexMod:ChargeUp": {
     "NAME": "Charge-Up",
     "DESCRIPTION": "Channel 1 Frost. NL Add a random Power to your hand. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Channel 1 Frost. NL Add a random Power to your hand."
+    "UPGRADE_DESCRIPTION": "Channel 1 Frost. NL Add a random upgraded Power to your hand. NL Exhaust."
   },
   "vexMod:MidasTouch": {
     "NAME": "Golden Touch",
@@ -98,7 +98,8 @@
   },
   "vexMod:DebrisSlash": {
     "NAME": "Debris Slash",
-    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, add a random card to your hand. Ethereal."
+    "DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, add a random card to your hand. NL Ethereal.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL If this card is Exhausted, add a random upgraded card to your hand. NL Ethereal."
   },
   "vexMod:EntryPlan": {
     "NAME": "Entry Plan",
@@ -106,7 +107,7 @@
   },
   "vexMod:PrepareVictim": {
     "NAME": "Prepare Victim",
-    "DESCRIPTION": "Make an enemy Slow. NL Exhaust."
+    "DESCRIPTION": "Apply Slow to an enemy. NL Exhaust."
   },
   "vexMod:ShockKick": {
     "NAME": "Shock Kick",
@@ -168,10 +169,12 @@
   },
   "vexMod:MidnightStrike": {
     "NAME": "Midnight Strike",
-    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal 60 damage.",
-    "UPGRADE_DESCRIPTION": "I haven't played !M! cards!",
+    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal 60 damage. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
-      " NL (!vexMod:SecondMagic! cards left.)"
+      " NL ( !vexMod:SecondMagic! cards left.)",
+      "I haven't played ",
+      " cards!",
+      " NL (TOO LATE!)"
     ]
   },
   "vexMod:GatherTools": {
@@ -184,7 +187,7 @@
   },
   "vexMod:BattleStance": {
     "NAME": "Battle Stance",
-    "DESCRIPTION": "Gain !B! Block. NL At the end of your turns, gain !M! Block."
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
   },
   "vexMod:BoulderThrow": {
     "NAME": "Boulder Throw",
@@ -228,7 +231,7 @@
   },
   "vexMod:CoinToss": {
     "NAME": "Coin Toss",
-    "DESCRIPTION": "Deal 12 damage. NL Gain some gold. NL Exhaust."
+    "DESCRIPTION": "Deal 12 damage. NL Gain 0-30 Gold. NL Exhaust."
   },
   "vexMod:SystemUpdate": {
     "NAME": "System Update",

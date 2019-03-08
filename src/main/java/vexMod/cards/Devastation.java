@@ -42,7 +42,7 @@ public class Devastation extends AbstractDefaultCard {
     private static final int COST = 1;  // COST = ${COST}
 
     private static final int PAYMENT = 6;
-    private static final int PAYDOWN = 3;
+    private static final int PAYDOWN = -3;
 
     // /STAT DECLARATION/
 

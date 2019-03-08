@@ -320,7 +320,7 @@
     "NAME": "Broadsword",
     "FLAVOR": "The smith fashioned you a slightly oversized weapon!",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain 3 Strength. You draw one less card each turn."
+      "At the start of each combat, gain 2 Strength. You draw one less card each turn."
     ]
   },
   "vexMod:DiamondSword": {

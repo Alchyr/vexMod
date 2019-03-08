@@ -29,6 +29,7 @@ public class DebrisSlash extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -63,7 +64,12 @@ public class DebrisSlash extends AbstractDefaultCard {
 
     @Override
     public void triggerOnExhaust() {
-        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy(), true));
+        AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat().makeCopy();
+        if (upgraded)
+        {
+            c.upgrade();
+        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
     }
 
 
@@ -73,6 +79,7 @@ public class DebrisSlash extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

@@ -29,7 +29,6 @@ public class MidnightStrike extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
@@ -42,12 +41,12 @@ public class MidnightStrike extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = CardColor.GREEN;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
+    private static final int UPGRADE_COST = 0;
 
     private static final int DAMAGE = 60;    // DAMAGE = ${DAMAGE}
 
     private static final int TIMELEFT = 11;
-    private static final int TIMEDOWN = -3;
 
     private static int TIMER;
 
@@ -59,6 +58,7 @@ public class MidnightStrike extends AbstractDefaultCard {
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = TIMELEFT;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = 0;
+        this.exhaust = true;
     }
 
 
@@ -71,17 +71,16 @@ public class MidnightStrike extends AbstractDefaultCard {
     @Override
     public void applyPowers() {
 
-        this.defaultSecondMagicNumber = this.magicNumber - AbstractDungeon.player.cardsPlayedThisTurn;
+        super.applyPowers();
 
-        if (this.defaultSecondMagicNumber < 0)
-        {
-            this.defaultSecondMagicNumber = 0;
+        this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = this.magicNumber - AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
+
+        if (this.defaultSecondMagicNumber < 0) {
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION [3];
+        } else {
+            this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
         }
 
-        super.applyPowers();
-        this.rawDescription = DESCRIPTION;
-
-        this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
     }
 
@@ -90,8 +89,8 @@ public class MidnightStrike extends AbstractDefaultCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
-        } else if (this.defaultSecondMagicNumber > 0) {
-            this.cantUseMessage = UPGRADE_DESCRIPTION;
+        } else if (this.defaultSecondMagicNumber > 0 || this.defaultSecondMagicNumber < 0 ) {
+            this.cantUseMessage = EXTENDED_DESCRIPTION[1] + this.magicNumber + EXTENDED_DESCRIPTION[2] ;
             return false;
         } else {
             return canUse;
@@ -103,7 +102,7 @@ public class MidnightStrike extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeMagicNumber(TIMEDOWN);
+            upgradeBaseCost(UPGRADE_COST);
             initializeDescription();
         }
     }

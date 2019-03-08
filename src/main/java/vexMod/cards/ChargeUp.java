@@ -61,6 +61,10 @@ public class ChargeUp extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.player.channelOrb(new Frost());
         AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(CardType.POWER).makeCopy();
+        if (upgraded)
+        {
+            c.upgrade();
+        }
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
     }
 
@@ -70,7 +74,6 @@ public class ChargeUp extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust=false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

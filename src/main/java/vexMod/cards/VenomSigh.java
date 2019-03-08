@@ -39,9 +39,9 @@ public class VenomSigh extends AbstractDefaultCard {
     public static final CardColor COLOR = CardColor.GREEN;
 
     private static final int COST = 1;  // COST = ${COST}
-    private static final int UPGRADED_COST = 0; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int BLOCK = 4;
+    private static final int UPGRADE_PLUS_BLOCK = 2;
 
     private static final int POISON = 4;
 
@@ -68,7 +68,7 @@ public class VenomSigh extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            upgradeBlock(UPGRADE_PLUS_BLOCK);
             initializeDescription();
         }
     }

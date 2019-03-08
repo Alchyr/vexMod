@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
+import com.megacrit.cardcrawl.powers.PlatedArmorPower;
 import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
@@ -41,8 +42,8 @@ public class BattleStance extends AbstractDefaultCard {
 
     private static final int COST = 3;  // COST = ${COST}
 
-    private static final int BLOCK = 10;
-    private static final int UPGRADE_PLUS_BLOCK = 2;
+    private static final int BLOCK = 6;
+    private static final int UPGRADE_PLUS_BLOCK = 3;
 
     private static final int METALLICIZE = 2;
     private static final int METALLICIZE_UP = 1;
@@ -62,7 +63,7 @@ public class BattleStance extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m)
     {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MetallicizePower(p, this.magicNumber), this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));
     }
 
 

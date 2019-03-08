@@ -35,8 +35,8 @@ public class MidasTouch extends CustomCard {
     private static final CardType TYPE = CardType.POWER;
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 2;
-    private static final int UPGRADED_COST = 1;
+    private static final int COST = 3;
+    private static final int UPGRADED_COST = 2;
 
     private static final int MAGIC = 1;
 
@@ -44,19 +44,16 @@ public class MidasTouch extends CustomCard {
 
 
     public MidasTouch() {
-
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-
         magicNumber = baseMagicNumber = MAGIC;
         this.tags.add(BaseModCardTags.FORM); //Tag your strike, defend and form cards so that they work correctly.
-
+        this.isEthereal=true;
     }
 
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(
-                new ApplyPowerAction(p, p, new MidasTouchPower(p, p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MidasTouchPower(p, p, magicNumber), magicNumber));
     }
 
     //Upgraded stats.
