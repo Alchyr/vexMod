@@ -26,16 +26,16 @@
   "vexMod:CamoPower": {
     "NAME": "Camouflage",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain ",
-      " Plated Armor."
+      "If you do not play any Attacks this turn, gain ",
+      " Blur next turn."
     ]
   },
   "vexMod:EvasivePower": {
     "NAME": "Evasive Thoughts",
     "DESCRIPTIONS": [
       "At the start of your turn, add ",
-      "random Skill to your hand. It costs 0 this turn.",
-      "random Skills to your hand. They cost 0 this turn."
+      " random Skill to your hand. It costs 0 this turn.",
+      " random Skills to your hand. They cost 0 this turn."
     ]
   },
   "vexMod:HatredPower": {

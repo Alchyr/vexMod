@@ -195,8 +195,8 @@
   },
   "vexMod:Camo": {
     "NAME": "Camouflage",
-    "DESCRIPTION": "At the start of your turn, gain 1 Plated Armor.",
-    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, gain 1 Plated Armor."
+    "DESCRIPTION": "If you do not play any Attacks during your turn, gain 1 Blur next turn.",
+    "UPGRADE_DESCRIPTION": "Innate. NL If you do not play any Attacks during your turn, gain 1 Blur next turn."
   },
   "vexMod:EvasiveThoughts": {
     "NAME": "Evasive Thoughts",

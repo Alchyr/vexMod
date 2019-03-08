@@ -264,14 +264,14 @@
     "NAME": "Sword of Lies",
     "FLAVOR": "\"I am the Sword of Truth.\"",
     "DESCRIPTIONS": [
-      "Start each combat with #b2 #yStrength. At the start of each combat, add a random #rCurse to your hand."
+      "Start each combat with #b1 #yStrength. At the start of each combat, add a random #rCurse to your hand."
     ]
   },
   "vexMod:DrawConverter": {
     "NAME": "Thoughtsguard",
     "FLAVOR": "\"Begone, thoughts!\"",
     "DESCRIPTIONS": [
-      "Whenever you draw a card (besides your opening hand), gain #b2 #yBlock."
+      "Whenever you draw a card (besides your opening hand), gain #b1 #yBlock."
     ]
   },
   "vexMod:BrokenBowl": {
@@ -306,49 +306,49 @@
     "NAME": "Toy Sword",
     "FLAVOR": "The smith fashioned you a little sword charm!",
     "DESCRIPTIONS": [
-      "Your attacks Shackle their targets for 2 Strength. Start each combat with -1 Strength."
+      "Your attacks Shackle their targets for #b2 #yStrength. Start each combat with - #b1 #yStrength."
     ]
   },
   "vexMod:DoubleEdgedSword": {
     "NAME": "Double-Edged Sword",
     "FLAVOR": "The smith fashioned you an overly sharp blade!",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain 2 Strength and each enemy gains 2 Thorns."
+      "At the start of each combat, gain #b2 #yStrength and each enemy gains #b2 #yThorns."
     ]
   },
   "vexMod:BroadSword": {
     "NAME": "Broadsword",
     "FLAVOR": "The smith fashioned you a slightly oversized weapon!",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain 2 Strength. You draw one less card each turn."
+      "At the start of each combat, gain #b2 #yStrength. You draw one less card each turn."
     ]
   },
   "vexMod:DiamondSword": {
     "NAME": "Diamond Sword",
     "FLAVOR": "The smith fashioned you a rather blocky sword!",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack, gain 3 Gold."
+      "Whenever you play an #yAttack, gain #b3 #yGold."
     ]
   },
   "vexMod:RustySword": {
     "NAME": "Rusty Sword",
     "FLAVOR": "The smith fashioned you a crumbling sword...",
     "DESCRIPTIONS": [
-      "You start each combat with -1 Strength. Enemies start each combat with -2 Strength."
+      "You start each combat with - #b1 #yStrength. Enemies start each combat with - #b2 #yStrength."
     ]
   },
   "vexMod:DrainingSword": {
     "NAME": "Draining Sword",
     "FLAVOR": "The smith fashioned you a vampiric sword!",
     "DESCRIPTIONS": [
-      "Whenever you play an Attack, heal 1 HP. You start each combat with -1 Strength."
+      "Whenever you play an Attack, heal #b1 HP. You start each combat with - #b1 #yStrength."
     ]
   },
   "vexMod:ImaginarySword": {
     "NAME": "Imaginary Sword",
     "FLAVOR": "Already, your memories of a smith feel faint...",
     "DESCRIPTIONS": [
-      "Upon pickup, remove two Attack cards from your deck.",
+      "Upon pickup, remove two #yAttack cards from your deck.",
       "You have forgotten..."
     ]
   },
@@ -356,7 +356,7 @@
     "NAME": "Infernal Sword",
     "FLAVOR": "This sword burns endlessly. You can't even hold it...",
     "DESCRIPTIONS": [
-      "At the start of each combat, add a random Attack to your hand. It costs 0 this turn."
+      "At the start of each combat, add a random #yAttack to your hand. It costs #b0 this turn."
     ]
   }
 }

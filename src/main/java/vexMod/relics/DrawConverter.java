@@ -2,6 +2,7 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -19,7 +20,7 @@ public class DrawConverter extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
-    private static boolean WORKING = false;
+    private boolean working = false;
 
     public DrawConverter() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
@@ -27,21 +28,30 @@ public class DrawConverter extends CustomRelic {
 
     public void onCardDraw(AbstractCard drawnCard)
     {
-        if (this.WORKING)
+        if (working)
         {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 2));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
     }
 
     public void onPlayerEndTurn()
     {
-        this.WORKING = false;
+        working = false;
     }
 
-    public void atTurnStart()
+    public void atBattleStart()
     {
-        this.WORKING = true;
+        working = false;
+    }
+
+    public void atTurnStartPostDraw() {
+        AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
+            public void update() {
+                working = true;
+                isDone=true;
+            }
+        });
     }
 
     // Description
