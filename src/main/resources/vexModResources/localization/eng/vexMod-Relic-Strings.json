@@ -22,9 +22,9 @@
   },
   "vexMod:ShiftingSkin": {
     "NAME": "Shifting Skin",
-    "FLAVOR": "Your body flows fluidly, becoming subtly spikier in response to blows.",
+    "FLAVOR": "Your body flows fluidly, changing to adapt to each situation...",
     "DESCRIPTIONS": [
-      "After being attacked, gain temporary #yThorns equal to damage intended."
+      "At the start of each combat, gain 1 stack of ANY random power."
     ]
   },
   "vexMod:ProtectorBot": {
