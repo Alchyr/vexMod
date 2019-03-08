@@ -72,7 +72,7 @@ public class Sloth extends AbstractDefaultCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Greed();
+        return new Sloth();
     }
 
     // Upgraded stats.

@@ -225,5 +225,13 @@
   "vexMod:Sloth": {
     "NAME": "Sloth",
     "DESCRIPTION": "Unplayable. NL At the end of your turn, draw one less card next turn."
+  },
+  "vexMod:CoinToss": {
+    "NAME": "Coin Toss",
+    "DESCRIPTION": "Deal 12 damage. NL Gain some gold. NL Exhaust."
+  },
+  "vexMod:SystemUpdate": {
+    "NAME": "System Update",
+    "DESCRIPTION": "Gain 1 Strength. NL Gain 1 Dexterity. NL Gain 1 Focus."
   }
 }

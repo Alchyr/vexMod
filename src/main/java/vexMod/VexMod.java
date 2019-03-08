@@ -205,7 +205,7 @@ public class VexMod implements
         BaseMod.addRelic(new BigBerry(), RelicType.SHARED);
         BaseMod.addRelic(new KeyChain(), RelicType.SHARED);
         BaseMod.addRelic(new CardConverter(), RelicType.SHARED);
-        // BaseMod.addRelic(new DrawConverter(), RelicType.SHARED);
+        BaseMod.addRelic(new DrawConverter(), RelicType.SHARED);
         BaseMod.addRelic(new BrokenBowl(), RelicType.SHARED);
         BaseMod.addRelic(new PillTracker(), RelicType.SHARED);
         BaseMod.addRelic(new SlimeArmor(), RelicType.SHARED);
@@ -257,7 +257,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(KeyChain.ID);
         UnlockTracker.markRelicAsSeen(CursedBlade.ID);
         UnlockTracker.markRelicAsSeen(CardConverter.ID);
-        // UnlockTracker.markRelicAsSeen(DrawConverter.ID);
+        UnlockTracker.markRelicAsSeen(DrawConverter.ID);
         UnlockTracker.markRelicAsSeen(BrokenBowl.ID);
         UnlockTracker.markRelicAsSeen(PillTracker.ID);
         UnlockTracker.markRelicAsSeen(SlimeArmor.ID);
@@ -314,10 +314,10 @@ public class VexMod implements
         BaseMod.addCard(new PotOfGreed());
         BaseMod.addCard(new BloodGuard());
         BaseMod.addCard(new Jackpot());
-        BaseMod.addCard(new SnowShield());
+        // BaseMod.addCard(new SnowShield());
         BaseMod.addCard(new DebrisGuard());
         BaseMod.addCard(new DebrisSlash());
-        // BaseMod.addCard(new EntryPlan());
+        BaseMod.addCard(new EntryPlan());
         BaseMod.addCard(new PrepareVictim());
         BaseMod.addCard(new ShockKick());
         BaseMod.addCard(new Taunt());
@@ -331,7 +331,7 @@ public class VexMod implements
         BaseMod.addCard(new Plotting());
         BaseMod.addCard(new ShadowStrike());
         BaseMod.addCard(new BattleStance());
-        // BaseMod.addCard(new BoulderThrow());
+        BaseMod.addCard(new CoinToss());
         BaseMod.addCard(new Camo());
         BaseMod.addCard(new CardboardBlock());
         BaseMod.addCard(new EvasiveThoughts());
@@ -344,6 +344,7 @@ public class VexMod implements
         BaseMod.addCard(new SharpOrbs());
         BaseMod.addCard(new Sloth());
         BaseMod.addCard(new BlazeBeam());
+        BaseMod.addCard(new SystemUpdate());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -370,10 +371,10 @@ public class VexMod implements
         UnlockTracker.unlockCard(PotOfGreed.ID);
         UnlockTracker.unlockCard(BloodGuard.ID);
         UnlockTracker.unlockCard(Jackpot.ID);
-        UnlockTracker.unlockCard(SnowShield.ID);
+        // UnlockTracker.unlockCard(SnowShield.ID);
         UnlockTracker.unlockCard(DebrisGuard.ID);
         UnlockTracker.unlockCard(DebrisSlash.ID);
-        // UnlockTracker.unlockCard(EntryPlan.ID);
+        UnlockTracker.unlockCard(EntryPlan.ID);
         UnlockTracker.unlockCard(PrepareVictim.ID);
         UnlockTracker.unlockCard(ShockKick.ID);
         UnlockTracker.unlockCard(Taunt.ID);
@@ -387,7 +388,7 @@ public class VexMod implements
         UnlockTracker.unlockCard(Plotting.ID);
         UnlockTracker.unlockCard(ShadowStrike.ID);
         UnlockTracker.unlockCard(BattleStance.ID);
-        // UnlockTracker.unlockCard(BoulderThrow.ID);
+        UnlockTracker.unlockCard(CoinToss.ID);
         UnlockTracker.unlockCard(Camo.ID);
         UnlockTracker.unlockCard(CardboardBlock.ID);
         UnlockTracker.unlockCard(EvasiveThoughts.ID);
@@ -400,6 +401,7 @@ public class VexMod implements
         UnlockTracker.unlockCard(SharpOrbs.ID);
         UnlockTracker.unlockCard(Sloth.ID);
         UnlockTracker.unlockCard(BlazeBeam.ID);
+        UnlockTracker.unlockCard(SystemUpdate.ID);
 
         logger.info("Done adding cards!");
     }

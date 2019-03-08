@@ -63,7 +63,7 @@ public class EntryPlan extends AbstractDefaultCard {
             AbstractDungeon.actionManager.addToBottom(new EmptyDeckShuffleAction());
         }
 
-        AbstractDungeon.actionManager.addToBottom(new EntryPlanAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
+        AbstractDungeon.actionManager.addToBottom(new EntryPlanAction(p, m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
 
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
     }

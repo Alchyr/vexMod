@@ -19,6 +19,7 @@ public class DrawConverter extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("placeholder_relic.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
+    private static boolean WORKING = false;
 
     public DrawConverter() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
@@ -26,8 +27,21 @@ public class DrawConverter extends CustomRelic {
 
     public void onCardDraw(AbstractCard drawnCard)
     {
-        this.flash();
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 2));
+        if (this.WORKING)
+        {
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 2));
+        }
+    }
+
+    public void onPlayerEndTurn()
+    {
+        this.WORKING = false;
+    }
+
+    public void atTurnStart()
+    {
+        this.WORKING = true;
     }
 
     // Description
