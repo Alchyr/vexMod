@@ -22,7 +22,8 @@
   },
   "vexMod:ReflexChannel": {
     "NAME": "Reflex Channel",
-    "DESCRIPTION": "If the enemy intends to attack, Channel 2 Frost. NL If not, Channel 2 Lightning."
+    "DESCRIPTION": "If the enemy intends to attack, Channel 2 Frost. NL If not, Channel 2 Lightning. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "If the enemy intends to attack, Channel 2 Frost. NL If not, Channel 2 Lightning."
   },
   "vexMod:Fear": {
     "NAME": "Fear",
@@ -125,8 +126,8 @@
     "DESCRIPTION": "Deal !D! damage. NL Apply !M! Lock-On."
   },
   "vexMod:BlazeBeam": {
-    "NAME": "Blaze Beam",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! stacks of a random ability."
+    "NAME": "Blaze Kick",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! stacks of a random ability. NL Exhaust."
   },
   "vexMod:ChargeBeam": {
     "NAME": "Charge Beam",
@@ -156,5 +157,73 @@
   "vexMod:ShadowStrike": {
     "NAME": "Shadow Strike",
     "DESCRIPTION": "Deal !D! damage. Gain !B! Block next turn."
+  },
+  "vexMod:CardboardBlock": {
+    "NAME": "Cardboard Shield",
+    "DESCRIPTION": "Gain Block equal to the number of cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your draw pile +3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
+  "vexMod:MidnightStrike": {
+    "NAME": "Midnight Strike",
+    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal 60 damage.",
+    "UPGRADE_DESCRIPTION": "I haven't played !M! cards!",
+    "EXTENDED_DESCRIPTION": [
+      " NL (!vexMod:SecondMagic! cards left.)"
+    ]
+  },
+  "vexMod:GatherTools": {
+    "NAME": "Gather Tools",
+    "DESCRIPTION": "Gain Block equal to the number of cards in your hand.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your hand +3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
+  "vexMod:BattleStance": {
+    "NAME": "Battle Stance",
+    "DESCRIPTION": "Gain !B! Block. NL At the end of your turns, gain !M! Block."
+  },
+  "vexMod:BoulderThrow": {
+    "NAME": "Boulder Throw",
+    "DESCRIPTION": "Deal !D! damage. NL At the start of combat, put this at the bottom of your draw pile. NL Exhaust."
+  },
+  "vexMod:Camo": {
+    "NAME": "Camouflage",
+    "DESCRIPTION": "At the start of your turn, gain 1 Plated Armor.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, gain 1 Plated Armor."
+  },
+  "vexMod:EvasiveThoughts": {
+    "NAME": "Evasive Thoughts",
+    "DESCRIPTION": "At the start of your turn, add a random Skill to your hand. NL It costs 0 this turn."
+  },
+  "vexMod:GroundPound": {
+    "NAME": "Ground Pound",
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+  },
+  "vexMod:Hatred": {
+    "NAME": "Hatred",
+    "DESCRIPTION": "At the start of your turn, add a random Attack to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a random Attack to your hand."
+  },
+  "vexMod:Hex": {
+    "NAME": "Hex",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Apply !M! Lock-On. NL Evoke your rightmost Orb."
+  },
+  "vexMod:RocketPunch": {
+    "NAME": "Rocket Punch",
+    "DESCRIPTION": "Deal !D! damage. NL Add a Rocket Punch to your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Add a Rocket Punch to your hand. NL Exhaust."
+  },
+  "vexMod:SharpOrbs": {
+    "NAME": "Sharp Orbs",
+    "DESCRIPTION": "Gain 1 Orb Slot. NL At the end of your turn, deal 1 damage to a random enemy for each of your Orbs.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Gain 1 Orb Slot. NL At the end of your turn, deal 1 damage to a random enemy for each of your Orbs."
+  },
+  "vexMod:Sloth": {
+    "NAME": "Sloth",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, draw one less card next turn."
   }
 }

@@ -217,6 +217,7 @@ public class VexMod implements
         BaseMod.addRelic(new ImaginarySword(), RelicType.SHARED);
         BaseMod.addRelic(new ToySword(), RelicType.SHARED);
         BaseMod.addRelic(new RustySword(), RelicType.SHARED);
+        BaseMod.addRelic(new InfernalSword(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -269,6 +270,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(RustySword.ID);
         UnlockTracker.markRelicAsSeen(ToySword.ID);
         UnlockTracker.markRelicAsSeen(RetaliationKit.ID);
+        UnlockTracker.markRelicAsSeen(InfernalSword.ID);
 
         logger.info("Done adding relics!");
     }
@@ -328,6 +330,20 @@ public class VexMod implements
         BaseMod.addCard(new PinpointKick());
         BaseMod.addCard(new Plotting());
         BaseMod.addCard(new ShadowStrike());
+        BaseMod.addCard(new BattleStance());
+        // BaseMod.addCard(new BoulderThrow());
+        BaseMod.addCard(new Camo());
+        BaseMod.addCard(new CardboardBlock());
+        BaseMod.addCard(new EvasiveThoughts());
+        BaseMod.addCard(new GatherTools());
+        BaseMod.addCard(new GroundPound());
+        BaseMod.addCard(new Hatred());
+        BaseMod.addCard(new Hex());
+        BaseMod.addCard(new MidnightStrike());
+        BaseMod.addCard(new RocketPunch());
+        BaseMod.addCard(new SharpOrbs());
+        BaseMod.addCard(new Sloth());
+        BaseMod.addCard(new BlazeBeam());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -370,6 +386,20 @@ public class VexMod implements
         UnlockTracker.unlockCard(PinpointKick.ID);
         UnlockTracker.unlockCard(Plotting.ID);
         UnlockTracker.unlockCard(ShadowStrike.ID);
+        UnlockTracker.unlockCard(BattleStance.ID);
+        // UnlockTracker.unlockCard(BoulderThrow.ID);
+        UnlockTracker.unlockCard(Camo.ID);
+        UnlockTracker.unlockCard(CardboardBlock.ID);
+        UnlockTracker.unlockCard(EvasiveThoughts.ID);
+        UnlockTracker.unlockCard(GatherTools.ID);
+        UnlockTracker.unlockCard(GroundPound.ID);
+        UnlockTracker.unlockCard(Hatred.ID);
+        UnlockTracker.unlockCard(Hex.ID);
+        UnlockTracker.unlockCard(MidnightStrike.ID);
+        UnlockTracker.unlockCard(RocketPunch.ID);
+        UnlockTracker.unlockCard(SharpOrbs.ID);
+        UnlockTracker.unlockCard(Sloth.ID);
+        UnlockTracker.unlockCard(BlazeBeam.ID);
 
         logger.info("Done adding cards!");
     }

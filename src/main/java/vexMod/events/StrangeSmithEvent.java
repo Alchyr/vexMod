@@ -103,6 +103,7 @@ public class StrangeSmithEvent extends AbstractImageEvent {
                         possibleRelics.add(RelicLibrary.getRelic(RustySword.ID));
                         possibleRelics.add(RelicLibrary.getRelic(DrainingSword.ID));
                         possibleRelics.add(RelicLibrary.getRelic(ImaginarySword.ID));
+                        possibleRelics.add(RelicLibrary.getRelic(InfernalSword.ID));
 
                         AbstractRelic relicToAdd = (AbstractRelic)possibleRelics.get(AbstractDungeon.miscRng.random(possibleRelics.size() - 1));
                         // Get a random "bonus" relic

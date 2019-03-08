@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import vexMod.VexMod;
+import vexMod.actions.BlazeAction;
 
 import static vexMod.VexMod.makeCardPath;
 
@@ -59,7 +60,7 @@ public class BlazeBeam extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        // AbstractDungeon.actionManager.addToBottom(new BlazeAction(p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new BlazeAction(p, this.magicNumber));
     }
 
 

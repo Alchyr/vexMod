@@ -26,6 +26,7 @@ public class ReflexChannel extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -37,15 +38,14 @@ public class ReflexChannel extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.BLUE;
 
-    private static final int COST = 3;  // COST = ${COST}
-    private static final int UPGRADED_COST = 2; // UPGRADED_COST = ${UPGRADED_COST}
-
+    private static final int COST = 2;  // COST = ${COST}
 
     // /STAT DECLARATION/
 
 
     public ReflexChannel() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.exhaust = true;
     }
 
 
@@ -67,7 +67,7 @@ public class ReflexChannel extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

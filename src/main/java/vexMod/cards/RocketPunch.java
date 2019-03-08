@@ -2,7 +2,7 @@ package vexMod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ExhaustAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -14,12 +14,11 @@ import vexMod.VexMod;
 import static vexMod.VexMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDefaultCard
-public class Elimination extends AbstractDefaultCard {
-
+public class RocketPunch extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = VexMod.makeID("Elimination"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("RocketPunch"); // VexMod.makeID("${NAME}");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
     public static final String IMG = makeCardPath("Attack.png");// "public static final String IMG = makeCardPath("${NAME}.png");
@@ -34,20 +33,20 @@ public class Elimination extends AbstractDefaultCard {
 
     // STAT DECLARATION
 
-    private static final CardRarity RARITY = CardRarity.UNCOMMON; //  Up to you, I like auto-complete on these
+    private static final CardRarity RARITY = CardRarity.COMMON; //  Up to you, I like auto-complete on these
     private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
     private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = CardColor.RED;
+    public static final CardColor COLOR = CardColor.BLUE;
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 3;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 6;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
 
-    public Elimination() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public RocketPunch() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
     }
@@ -57,18 +56,9 @@ public class Elimination extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if(!upgraded)
-        {
-            int count = AbstractDungeon.player.hand.size();
-            for(int i = 0; i < count; ++i) {
-                AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
-            }
-        }
-        else
-        {
-            AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, AbstractDungeon.player.hand.size(), false, true, true));
-        }
+        AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new RocketPunch(), true));
     }
+
 
 
     // Upgraded stats.
@@ -78,6 +68,7 @@ public class Elimination extends AbstractDefaultCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
             this.rawDescription = UPGRADE_DESCRIPTION;
+            this.exhaust = true;
             initializeDescription();
         }
     }
