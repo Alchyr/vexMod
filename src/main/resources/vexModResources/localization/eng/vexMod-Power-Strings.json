@@ -52,5 +52,12 @@
       "At the end of your turn, deal ",
       " damage to a random enemy for each Orb you have."
     ]
+  },
+  "vexMod:LoseFocusPower": {
+    "NAME": "Lose Focus",
+    "DESCRIPTIONS": [
+    "At the end of your turn, lose ",
+    " Focus."
+    ]
   }
 }

@@ -26,7 +26,6 @@ public class SharpOrbs extends CustomCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -66,7 +65,6 @@ public class SharpOrbs extends CustomCard {
         if (!upgraded) {
             upgradeName();
             upgradeBaseCost(UPGRADED_COST);
-            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }
