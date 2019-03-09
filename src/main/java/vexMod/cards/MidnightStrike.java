@@ -44,7 +44,7 @@ public class MidnightStrike extends AbstractDefaultCard {
     private static final int COST = 1;  // COST = ${COST}
     private static final int UPGRADE_COST = 0;
 
-    private static final int DAMAGE = 60;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 100;    // DAMAGE = ${DAMAGE}
 
     private static final int TIMELEFT = 11;
 

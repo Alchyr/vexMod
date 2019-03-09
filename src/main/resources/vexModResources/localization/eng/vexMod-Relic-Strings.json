@@ -313,7 +313,7 @@
     "NAME": "Double-Edged Sword",
     "FLAVOR": "The smith fashioned you an overly sharp blade!",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b2 #yStrength and each enemy gains #b2 #yThorns."
+      "At the start of each combat, gain #b2 #yStrength and each enemy gains #b1 #yThorns."
     ]
   },
   "vexMod:BroadSword": {

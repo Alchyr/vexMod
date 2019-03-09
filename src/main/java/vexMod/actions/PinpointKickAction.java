@@ -36,7 +36,7 @@ public class PinpointKickAction extends AbstractGameAction {
             {
                 hasBlock = true;
             }
-            AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.NONE));
+            AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_LIGHT));
             this.target.damage(this.info);
             if(target.currentBlock==0 && hasBlock)
             {

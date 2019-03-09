@@ -40,7 +40,7 @@ public class DoubleEdgedSword extends CustomRelic {
         while(var1.hasNext()) {
             AbstractMonster m = (AbstractMonster)var1.next();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            m.addPower(new ThornsPower(m, 2));
+            m.addPower(new ThornsPower(m, 1));
         }
 
         AbstractDungeon.onModifyPower();

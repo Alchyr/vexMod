@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.EnergizedPower;
+import com.megacrit.cardcrawl.powers.NextTurnBlockPower;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
@@ -50,6 +52,9 @@ public class FullService extends AbstractDefaultCard {
     private static final int GOLD = 5;
     private static final int UPGRADE_PLUS_GOLD = 1;
 
+    private static final int WACK = 2;
+    private static final int WACKUP = 1;
+
     // /STAT DECLARATION/
 
 
@@ -58,6 +63,7 @@ public class FullService extends AbstractDefaultCard {
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
         baseMagicNumber = magicNumber = GOLD;
+        defaultBaseSecondMagicNumber = defaultSecondMagicNumber = WACK;
         this.exhaust = true;
     }
 
@@ -67,14 +73,16 @@ public class FullService extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new NextTurnBlockPower(p, magicNumber), magicNumber));
         AbstractDungeon.player.gainGold(this.magicNumber);
         for(int i = 0; i < this.magicNumber; ++i) {
             AbstractDungeon.effectList.add(new GainPennyEffect(p, m.hb.cX, m.hb.cY, p.hb.cX, p.hb.cY, true));
         }
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 2, false), 2));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), 2));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
-        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, 2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, 2, false), this.defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), this.defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, 1),1));
     }
 
 
@@ -86,6 +94,7 @@ public class FullService extends AbstractDefaultCard {
             upgradeDamage(UPGRADE_PLUS_DMG);
             upgradeBlock(UPGRADE_PLUS_BLOCK);
             upgradeMagicNumber(UPGRADE_PLUS_GOLD);
+            upgradeDefaultSecondMagicNumber(WACKUP);
             initializeDescription();
         }
     }

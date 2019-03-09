@@ -30,7 +30,7 @@ public class ConsolationPrize
     // Gain 1 gold for each HP lost
     @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0)
+        if (damageAmount > 0 && AbstractDungeon.player.currentHealth > 0)
         {
             AbstractDungeon.player.gainGold(damageAmount);
             this.flash();

@@ -45,12 +45,16 @@ public class ShockKick extends AbstractDefaultCard {
     private static final int DAMAGE = 8;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DAMAGE = 4;
 
+    private static final int FOCUS = 2;
+    private static final int UPGRADE_PLUS_FOCUS = 1;
+
     // /STAT DECLARATION/
 
 
     public ShockKick() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
+        baseMagicNumber = magicNumber = FOCUS;
     }
 
 
@@ -58,8 +62,8 @@ public class ShockKick extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FocusPower(p, 2), 2));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseFocusPower(p, 2),2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new FocusPower(p, magicNumber), magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new LoseFocusPower(p, magicNumber),magicNumber));
     }
 
 
@@ -69,6 +73,7 @@ public class ShockKick extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DAMAGE);
+            upgradeMagicNumber(UPGRADE_PLUS_FOCUS);
             initializeDescription();
         }
     }

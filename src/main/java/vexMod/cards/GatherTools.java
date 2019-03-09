@@ -23,7 +23,6 @@ public class GatherTools extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
@@ -37,6 +36,7 @@ public class GatherTools extends AbstractDefaultCard {
     public static final CardColor COLOR = CardColor.GREEN;
 
     private static final int COST = 1;  // COST = ${COST}
+    private static final int UPGRADED_COST = 0;
 
     // /STAT DECLARATION/
 
@@ -51,11 +51,8 @@ public class GatherTools extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
-        if (!this.upgraded) {
-            this.rawDescription = DESCRIPTION;
-        } else {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        }
+        this.rawDescription = DESCRIPTION;
+
 
         this.initializeDescription();
     }
@@ -63,17 +60,12 @@ public class GatherTools extends AbstractDefaultCard {
 
     @Override
     public void applyPowers() {
-        this.baseBlock = AbstractDungeon.player.hand.size();
-        if (this.upgraded) {
-            this.baseBlock += 3;
-        }
+        this.baseBlock = (AbstractDungeon.player.hand.size() * 2);
 
         super.applyPowers();
-        if (!this.upgraded) {
-            this.rawDescription = DESCRIPTION;
-        } else {
-            this.rawDescription = UPGRADE_DESCRIPTION;
-        }
+
+        this.rawDescription = DESCRIPTION;
+
 
         this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[0];
         this.initializeDescription();
@@ -84,8 +76,7 @@ public class GatherTools extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.upgradeBlock(3);
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            this.upgradeBaseCost(UPGRADED_COST);
             initializeDescription();
         }
     }

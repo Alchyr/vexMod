@@ -39,8 +39,7 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new EchoPower(p, this.amount));
         blazeList.add(new PlatedArmorPower(p, this.amount));
         blazeList.add(new ThornsPower(p, this.amount));
-        blazeList.add(new TheBombPower(p, this.amount, this.amount));
-        blazeList.add(new PainfulStabsPower(p));
+        blazeList.add(new TheBombPower(p, this.amount, 50));
         blazeList.add(new AccuracyPower(p, this.amount));
         blazeList.add(new ThousandCutsPower(p, this.amount));
         blazeList.add(new RagePower(p, this.amount));
@@ -49,7 +48,7 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new AngryPower(p, this.amount));
         blazeList.add(new AmplifyPower(p, this.amount));
         blazeList.add(new BarricadePower(p));
-        blazeList.add(new BerserkPower("name", p, this.amount));
+        blazeList.add(new BerserkPower("Boosted", p, this.amount));
         blazeList.add(new BufferPower(p, this.amount));
         blazeList.add(new CombustPower(p, this.amount, this.amount));
         blazeList.add(new ConfusionPower(p));
@@ -92,7 +91,6 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new SadisticPower(p, this.amount));
         blazeList.add(new ShiftingPower(p));
         blazeList.add(new ToolsOfTheTradePower(p, this.amount));
-        blazeList.add(new CamoPower(p, p, this.amount));
         blazeList.add(new EvasivePower(p, p, this.amount));
         blazeList.add(new SharpOrbsPower(p, p, this.amount));
         blazeList.add(new HatredPower(p, p, this.amount));

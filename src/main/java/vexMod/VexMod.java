@@ -332,7 +332,6 @@ public class VexMod implements
         BaseMod.addCard(new ShadowStrike());
         BaseMod.addCard(new BattleStance());
         BaseMod.addCard(new CoinToss());
-        BaseMod.addCard(new Camo());
         BaseMod.addCard(new CardboardBlock());
         BaseMod.addCard(new EvasiveThoughts());
         BaseMod.addCard(new GatherTools());
@@ -389,7 +388,6 @@ public class VexMod implements
         UnlockTracker.unlockCard(ShadowStrike.ID);
         UnlockTracker.unlockCard(BattleStance.ID);
         UnlockTracker.unlockCard(CoinToss.ID);
-        UnlockTracker.unlockCard(Camo.ID);
         UnlockTracker.unlockCard(CardboardBlock.ID);
         UnlockTracker.unlockCard(EvasiveThoughts.ID);
         UnlockTracker.unlockCard(GatherTools.ID);
