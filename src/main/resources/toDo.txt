@@ -1,6 +1,0 @@
-4. Consider implementation of specific description dialogues depending on Sword generation.
-5. Begin Voice Box work.
-6. Test cards
-8. Consider making new VFX for some cards. Idea: Orbs firing little shapes with SharpOrbs.
-9.Staff of Magic Missle
-        Whenever you shuffle your deck, deal 4 damage to a random enemy 3 times.
