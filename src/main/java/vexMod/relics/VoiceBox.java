@@ -109,7 +109,7 @@ public class VoiceBox extends CustomRelic {
 
         }
         if (card.type == AbstractCard.CardType.ATTACK && !card.cardID.equals("Fiend Fire") && !card.cardID.equals("Immolate") && !card.cardID.equals("Feed") && !card.cardID.equals("Grand Finale") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Backstab") && !card.cardID.equals("Hyperbeam")) {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getAttackTaunt(action), 0.0F, 2.0F));
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getAttackTaunt(action), 0.0F, 1.5F));
         }
     }
 

@@ -145,7 +145,7 @@
   },
   "vexMod:FullService": {
     "NAME": "Full Service",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Gold. NL Apply !vexMod:SecondMagic! Weak. NL Apply !vexMod:SecondMagic! Vulnerable. NL Draw !vexMod:SecondMagic! cards. NL Heal !vexMod:SecondMagic! HP. NL Gain 5 Block next turn. NL Gain [E] next turn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Gold. NL Apply !vexMod:SecondMagic! Weak. NL Apply !vexMod:SecondMagic! Vulnerable. NL Draw !vexMod:SecondMagic! cards. NL Heal !vexMod:SecondMagic! HP. NL Gain !M! Block next turn. NL Gain 1 Energy next turn. NL Exhaust."
   },
   "vexMod:PinpointKick": {
     "NAME": "Pinpoint Kick",
@@ -169,7 +169,7 @@
   },
   "vexMod:MidnightStrike": {
     "NAME": "Midnight Strike",
-    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal !D! damage. NL Exhaust.",
+    "DESCRIPTION": "Can only be played if you have played exactly !M! cards this combat. NL Deal !D! damage. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL ( !vexMod:SecondMagic! cards left.)",
       "I haven't played ",

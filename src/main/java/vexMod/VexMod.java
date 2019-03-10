@@ -18,10 +18,7 @@ import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
-import vexMod.events.GenieBoonEvent;
-import vexMod.events.LookAheadEvent;
-import vexMod.events.StrangeSmithEvent;
-import vexMod.events.TripleChoiceEvent;
+import vexMod.events.*;
 import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
@@ -146,10 +143,11 @@ public class VexMod implements
         // part of the game, simply don't include the dungeon ID
         // If you want to have a character-specific event, look at slimebound (CityRemoveEventPatch).
         // Essentially, you need to patch the game and say "if a player is not playing my character class, remove the event from the pool"
-        BaseMod.addEvent(GenieBoonEvent.ID, GenieBoonEvent.class);
+        BaseMod.addEvent(GenieBoonEvent.ID, GenieBoonEvent.class, Exordium.ID);
         BaseMod.addEvent(TripleChoiceEvent.ID, TripleChoiceEvent.class);
         BaseMod.addEvent(StrangeSmithEvent.ID, StrangeSmithEvent.class, TheCity.ID);
         BaseMod.addEvent(LookAheadEvent.ID, LookAheadEvent.class, Exordium.ID);
+        BaseMod.addEvent(VoiceBoxEvent.ID, VoiceBoxEvent.class);
 
         // =============== /EVENTS/ =================
         logger.info("Done loading badge Image and mod options");

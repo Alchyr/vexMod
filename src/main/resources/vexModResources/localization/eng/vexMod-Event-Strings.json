@@ -64,5 +64,24 @@
       "[Leave]",
       "[Leave]"
     ]
+  },
+  "vexMod:VoiceBoxEvent": {
+    "NAME": "Mad Scientist",
+    "DESCRIPTIONS": [
+      "A funny looking fellow stops you as you walk by. NL \"Hey, buddy! I got some great stuff! Check it out?\" NL He seems trustworthy, but a little kooky.",
+      "\"Hoo hoo! You look forgetful. Hopefully it wasn't something important, eh?\"",
+      "\"Hey, will you look at that! The experiment worked! Thanks, buddy.\"",
+      "\"My goodness, you didn't have a voice box! Here ya go, buddy.\" NL You thank the scientist and go on your way. NL You are feeling ~rather~ ~talkative...~",
+      "\"Hoo hoo! Thank goodness Mr. Shopkeep lent me this! It works great in your digestive system!\"",
+      "\"Aw, what a spoilsport. Okay, see you later, buddy!\""
+    ],
+    "OPTIONS": [
+      "[Brain Food] #g50%: #gUpgrade #gCard. #g50%: #gRemove #gCard.",
+      "[Bodily Improvement] #gGain #ga #gspecial #grelic.",
+      "[Implantation] #gGain #ga #grandom #gShop #grelic. #rLose #r10 #rMax #rHP.",
+      "[Leave]",
+      "[Leave]",
+      "Improving...?"
+    ]
   }
 }
