@@ -8,9 +8,7 @@ import basemod.interfaces.*;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
-import com.google.gson.Gson;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.localization.*;
@@ -23,8 +21,8 @@ import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
 
-import java.nio.charset.StandardCharsets;
 
+@SuppressWarnings("WeakerAccess")
 @SpireInitializer
 public class VexMod implements
         EditCardsSubscriber,

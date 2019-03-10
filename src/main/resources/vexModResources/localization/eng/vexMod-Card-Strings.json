@@ -145,7 +145,7 @@
   },
   "vexMod:FullService": {
     "NAME": "Full Service",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL Gain !M! Gold. NL Apply !vexMod:SecondMagic! Weak. NL Apply !vexMod:SecondMagic! Vulnerable. NL Draw !vexMod:SecondMagic! cards. NL Heal !vexMod:SecondMagic! HP. NL Gain !M! Block next turn. NL Gain 1 Energy next turn. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. Gain !B! Block. NL Gain !M! Gold. Apply !vexMod:SecondMagic! Weak. NL Apply !vexMod:SecondMagic! Vulnerable. NL Draw !vexMod:SecondMagic! cards. NL Heal !vexMod:SecondMagic! HP. NL Gain !M! Block next turn. NL Gain 1 Energy next turn. Exhaust."
   },
   "vexMod:PinpointKick": {
     "NAME": "Pinpoint Kick",
@@ -187,15 +187,6 @@
   "vexMod:BattleStance": {
     "NAME": "Battle Stance",
     "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
-  },
-  "vexMod:BoulderThrow": {
-    "NAME": "Boulder Throw",
-    "DESCRIPTION": "Deal !D! damage. NL At the start of combat, put this at the bottom of your draw pile. NL Exhaust."
-  },
-  "vexMod:Camo": {
-    "NAME": "Camouflage",
-    "DESCRIPTION": "If you do not play any Attacks during your turn, gain 1 Blur next turn.",
-    "UPGRADE_DESCRIPTION": "Innate. NL If you do not play any Attacks during your turn, gain 1 Blur next turn."
   },
   "vexMod:EvasiveThoughts": {
     "NAME": "Evasive Thoughts",
