@@ -408,12 +408,12 @@
       "I'll obliterate you!",
       "I shall burn you away.",
       "Fear my demonic power!",
-      "The bigger the beast, the harder they fall.",
+      "The bigger the beast, NL the harder they fall.",
       "What grand prey...",
       "Not challenging.",
       "I am prepared.",
       "A big one...",
-      "[WARNING] Large object approaching",
+      "[WARNING] NL Large object approaching",
       "CHANCE_OF_SUCCESS = ",
       "WEAPONRY: ACTIVATED",
       "SELF DEFENCE MODE INITIATED",
@@ -430,7 +430,7 @@
       "What, does it hurt?",
       "ACTIVATING WEAPONRY",
       "DESTROY NL DESTROY NL DESTROY",
-      "ELIMINATE()",
+      "ELIMINATE();",
       "REMOVING LIFE FROM ",
       "AbstractMonster.HP -= AbstractCard.damage;",
       "Another fool falls.",
@@ -478,7 +478,7 @@
       "Treasure, my old friend!",
       "NEW ITEM",
       "CONTAINER LOCATED",
-      "AbstractDungeon.getRandomChest();",
+      "AbstractDungeon.Chest();",
       "BEGIN TAKING()",
       "TOOLS WITHIN",
       "I embrace my demonic strength!",
@@ -545,7 +545,7 @@
       "You're already dead.",
       "ATTACK_MONSTER()",
       "PURGING MONSTERS",
-      "Defect.Attack(AbstractCreature x);"
+      "Defect.Attack();"
     ]
   }
 }

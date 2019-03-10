@@ -59,7 +59,7 @@ public class VoiceBox extends CustomRelic {
             case "Demon Form":
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getDemonTaunt(), 0.0F, 2.0F));
                 break;
-            case "Shrug it Off":
+            case "Shrug It Off":
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getShrugTaunt(), 0.0F, 2.0F));
                 break;
             case "Corruption":
@@ -99,7 +99,7 @@ public class VoiceBox extends CustomRelic {
             case "Echo Form":
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getEchoTaunt(), 0.0F, 2.0F));
                 break;
-            case "BootSequence:":
+            case "BootSequence":
             case "Reboot":
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getBootTaunt(), 0.0F, 2.0F));
                 break;
