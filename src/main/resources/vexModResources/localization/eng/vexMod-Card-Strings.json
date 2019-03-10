@@ -169,7 +169,7 @@
   },
   "vexMod:MidnightStrike": {
     "NAME": "Midnight Strike",
-    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal 60 damage. NL Exhaust.",
+    "DESCRIPTION": "Can only be played if you have played !M! cards before this. NL Deal !D! damage. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       " NL ( !vexMod:SecondMagic! cards left.)",
       "I haven't played ",

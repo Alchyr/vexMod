@@ -218,6 +218,7 @@ public class VexMod implements
         BaseMod.addRelic(new ToySword(), RelicType.SHARED);
         BaseMod.addRelic(new RustySword(), RelicType.SHARED);
         BaseMod.addRelic(new InfernalSword(), RelicType.SHARED);
+        BaseMod.addRelic(new VoiceBox(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -271,6 +272,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(ToySword.ID);
         UnlockTracker.markRelicAsSeen(RetaliationKit.ID);
         UnlockTracker.markRelicAsSeen(InfernalSword.ID);
+        UnlockTracker.markRelicAsSeen(VoiceBox.ID);
 
         logger.info("Done adding relics!");
     }
