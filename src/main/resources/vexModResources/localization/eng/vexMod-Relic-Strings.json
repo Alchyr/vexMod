@@ -536,7 +536,16 @@
       "BIOS launched.",
       "PSHHHHHSHSHSHH",
       "PSSHHSHSHSSHHS",
-      "PHHSHSHSHHSHSS"
+      "PHHSHSHSHHSHSS",
+      "You're going down!",
+      "Psh. Weakling.",
+      "Feel my wrath!",
+      "Ha ha ha...",
+      "Gotcha.",
+      "You're already dead.",
+      "ATTACK_MONSTER()",
+      "PURGING MONSTERS",
+      "Defect.Attack(AbstractCreature x);"
     ]
   }
 }

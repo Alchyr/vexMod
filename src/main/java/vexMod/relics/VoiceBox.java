@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.vfx.SpeechBubble;
+import com.megacrit.cardcrawl.vfx.SpeechTextEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -114,9 +116,9 @@ public class VoiceBox extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom room) {
         if (room instanceof ShopRoom) {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getShopTaunt(), 0.0F, 2.0F));
+            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX,AbstractDungeon.player.dialogY,  getShopTaunt(), true));
         } else if (room instanceof TreasureRoom || room instanceof TreasureRoomBoss) {
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getChestTaunt(room), 0.0F, 2.0F));
+            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX,AbstractDungeon.player.dialogY,  getChestTaunt(room), true));
         }
 
     }
@@ -330,6 +332,9 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[57]);
             taunts.add(DESCRIPTIONS[58]);
             taunts.add(DESCRIPTIONS[59]);
+            taunts.add(DESCRIPTIONS[174]);
+            taunts.add(DESCRIPTIONS[175]);
+            taunts.add(DESCRIPTIONS[176]);
         }
         if (AbstractDungeon.player instanceof TheSilent) {
             taunts.add(DESCRIPTIONS[60]);
@@ -337,6 +342,9 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[62]);
             taunts.add(DESCRIPTIONS[63]);
             taunts.add(DESCRIPTIONS[64]);
+            taunts.add(DESCRIPTIONS[177]);
+            taunts.add(DESCRIPTIONS[178]);
+            taunts.add(DESCRIPTIONS[179]);
         }
         if (AbstractDungeon.player instanceof Defect) {
             taunts.add(DESCRIPTIONS[65]);
@@ -346,12 +354,15 @@ public class VoiceBox extends CustomRelic {
             if (action.target != null) {
                 taunts.add(DESCRIPTIONS[68] + action.target.id.toUpperCase());
             }
+            taunts.add(DESCRIPTIONS[180]);
+            taunts.add(DESCRIPTIONS[181]);
+            taunts.add(DESCRIPTIONS[182]);
         }
         return taunts.get(MathUtils.random(taunts.size() - 1));
     }
 
     public void onMonsterDeath(AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getDeathTaunt(m), 0.0F, 2.0F));
+        AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, getDeathTaunt(m), true));
     }
 
     private String getDeathTaunt(AbstractMonster m) {
