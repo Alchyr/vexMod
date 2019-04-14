@@ -1,0 +1,1000 @@
+{
+  "vexMod:ConsolationPrize": {
+    "NAME": "安慰奖",
+    "FLAVOR": "黄金从你的伤口中渗漏而出。",
+    "DESCRIPTIONS": [
+      "每当你失去HP时，获得与损失量相等的 #y金币 。"
+    ]
+  },
+  "vexMod:PlagueVial": {
+    "NAME": "瘟疫小瓶",
+    "FLAVOR": "BOSS们也得吃维生素片。",
+    "DESCRIPTIONS": [
+      "非BOSS战斗中的敌人的HP减少 #b15% 。"
+    ]
+  },
+  "vexMod:ColdYogurt": {
+    "NAME": "冷酸奶",
+    "FLAVOR": "你不禁好奇你的敌人们会不会乳糖不耐。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时， #y生成 #b1 个 #y冰霜 充能球。"
+    ]
+  },
+  "vexMod:ShiftingSkin": {
+    "NAME": "流变肌肤",
+    "FLAVOR": "你的身体像液体一般流转，不断变化以适应各种情境……",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b1 层任意的随机增益效果。",
+      " 在本场战斗中给予了 #y",
+      " 。"
+    ]
+  },
+  "vexMod:ProtectorBot": {
+    "NAME": "护卫机器人",
+    "FLAVOR": "这个小小的机器人会在你门户大开的时候冲上前去、替你承受攻击。",
+    "DESCRIPTIONS": [
+      "如果你在一回合内打出的牌少于等于 #b2 张，在回合结束时获得 #b5 点格挡。"
+    ]
+  },
+  "vexMod:PainConverter": {
+    "NAME": "疼痛转换器",
+    "FLAVOR": "这台机器似乎会被你露出在外的伤口吸引。",
+    "DESCRIPTIONS": [
+      "每当你受到 #b10 点或更多的攻击伤害时候，在下一回合获得 [E] 并额外抽 #b1 张牌。"
+    ]
+  },
+  "vexMod:BetterTron": {
+    "NAME": "改良系统",
+    "FLAVOR": "这只机械小虫时不时会朝着你的脑袋所在的方位钻一下。",
+    "DESCRIPTIONS": [
+      "你接下来加入牌组的 #b3 张未被升级的卡牌会得到 #y升级 。"
+    ]
+  },
+  "vexMod:GhostlyGear": {
+    "NAME": "幽灵兵装",
+    "FLAVOR": "你每朝这对剑盾看去一次，它们都会变得更难看清。",
+    "DESCRIPTIONS": [
+      "每当你打出一张 打击 或 防御 时，将其 #y消耗 。"
+    ]
+  },
+  "vexMod:CursedCompass": {
+    "NAME": "诅咒罗盘",
+    "FLAVOR": "无论你转向哪个方向，它都始终指着前方……",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 [E] 。之后的地图只有 #b1 条道路。"
+    ]
+  },
+  "vexMod:BejeweledOrb": {
+    "NAME": "宝球迷阵",
+    "FLAVOR": "你产生了一种将相同颜色的物件匹配起来的强烈冲动。",
+    "DESCRIPTIONS": [
+      "每当你有并列的 #b3 个同种充能球时， #y激发 它们并获得 #b1 个充能球栏位。"
+    ]
+  },
+  "vexMod:MemoryStick": {
+    "NAME": "纪念挂坠",
+    "FLAVOR": "如果你捏得足够用力，你就能回想起公开测试版来。",
+    "DESCRIPTIONS": [
+      "在你的第一个回合结束时， #y保留 你的手牌。"
+    ]
+  },
+  "vexMod:CoolingFan": {
+    "NAME": "冷却风扇",
+    "FLAVOR": "这架风扇能帮你节省执行怪物解决方案时的耗能。 ",
+    "DESCRIPTIONS": [
+      "每当你 #y生成 一个充能球时，获得 #b2 点 #y格挡 。"
+    ]
+  },
+  "vexMod:Cooldron": {
+    "NAME": "冷锅",
+    "FLAVOR": "这口大锅比普通的老锅子冷上许多。",
+    "DESCRIPTIONS": [
+      "你获得的所有药水都会变成混沌药水。"
+    ]
+  },
+  "vexMod:InvisibilityCloak": {
+    "NAME": "隐形斗篷",
+    "FLAVOR": "你太保守了，不能“穿”这个。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，所有敌人失去 #b1 点 #y力量 。"
+    ]
+  },
+  "vexMod:CodeSmelter": {
+    "NAME": "代码熔炉",
+    "FLAVOR": "把所有的子进程都丢进一个大团块里。简单明了！",
+    "DESCRIPTIONS": [
+      "每当你 #y生成 充能球时，触发其被动效果。"
+    ]
+  },
+  "vexMod:TanglingVine": {
+    "NAME": "缠卷之藤",
+    "FLAVOR": "别想歪了。",
+    "DESCRIPTIONS": [
+      "在每回合开始时候获得 [E] 与 #b1 层 #y缠绕 。"
+    ]
+  },
+  "vexMod:MindDevourer": {
+    "NAME": "心智吞噬者",
+    "FLAVOR": "嗯，亮闪闪的！等等，你叫啥来着？",
+    "DESCRIPTIONS": [
+      "在每回合开始时候获得 [E] 。每场战斗结束后，随机移除你牌组中的一张卡牌。"
+    ]
+  },
+  "vexMod:HappyDrink": {
+    "NAME": "快乐水",
+    "FLAVOR": "商店提供免费续杯。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命提升 #b2 。每当你进入商店房间时，将你的最大生命值提升 #b1 。"
+    ]
+  },
+  "vexMod:ShortStop": {
+    "NAME": "垒包",
+    "FLAVOR": "经历了上百次本垒打。",
+    "DESCRIPTIONS": [
+      "之后的地图变为 #b9 层。如果卡住了，就用控制台的debug true指令来传送到boss房间，然后用debug false。"
+    ]
+  },
+  "vexMod:ThoughtMold": {
+    "NAME": "益菌",
+    "FLAVOR": "这团霉菌会吸取你的一小部分护罩来喂养你。",
+    "DESCRIPTIONS": [
+      "每当你获得 #b格挡 时候，在本回合内获得 #b1 点 #y力量 。"
+    ]
+  },
+  "vexMod:SalvageTools": {
+    "NAME": "打捞工具",
+    "FLAVOR": "“真奇怪！这些原始的玩意儿没有任何作用。” ——兰伟德 。",
+    "DESCRIPTIONS": [
+      "每丢弃一张手牌，就在当前回合将你手牌中的一张随机牌的耗费减少 #b1 。"
+    ]
+  },
+  "vexMod:ChargeUpper": {
+    "NAME": "充电插槽",
+    "FLAVOR": "“哦，一拔掉它我就开始犯困……”",
+    "DESCRIPTIONS": [
+      "每当你获得 #b35 点 #y格挡 时 ， 获得 #b1  点 #y力量 。"
+    ]
+  },
+  "vexMod:FocusSash": {
+    "NAME": "气势披带",
+    "FLAVOR": "效果拔群！",
+    "DESCRIPTIONS": [
+      "当你将在剩余生命值为 #b10 点或以上的情况下死亡时，避免死亡并回复到 #b1 点生命。"
+    ]
+  },
+  "vexMod:PowerCharger": {
+    "NAME": "备用电池",
+    "FLAVOR": "节约电力！请在不使用时关上充能球槽位的开关。",
+    "DESCRIPTIONS": [
+      "如果你在回合结束时候有空余的充能球槽位，获得 #b3 点 #y格挡 。"
+    ]
+  },
+  "vexMod:StrikeShooter": {
+    "NAME": "打击枪",
+    "FLAVOR": "你所有射出刀剑的需求都能装进这个中等大小的包里！",
+    "DESCRIPTIONS": [
+      "每三回合，向一名随机目标打出一张 π打击 。"
+    ]
+  },
+  "vexMod:BigBerry": {
+    "NAME": "大莓果",
+    "FLAVOR": "你完全不知道这果子是怎么长到这么大的。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命提升 #b22 。"
+    ]
+  },
+  "vexMod:RetaliationKit": {
+    "NAME": "报复用具",
+    "FLAVOR": "想在一阵烟雾中消失？用这个就行了！现在烟雾也包括在内了！",
+    "DESCRIPTIONS": [
+      "拾取时，制作一瓶 #y烟雾弹 。每场战斗中你的 #y格挡 第一次被突破时，给予所有敌人 #b2 层 #y虚弱 。"
+    ]
+  },
+  "vexMod:KeyChain": {
+    "NAME": "钥匙串",
+    "FLAVOR": "出乎意料地锋利！",
+    "DESCRIPTIONS": [
+      "每场战斗中，当你第一次打出指定目标的 #y攻击牌 时， 被指定的敌人在本回合内失去与受到伤害数值相等点数的 #y力量 。"
+    ]
+  },
+  "vexMod:CardConverter": {
+    "NAME": "绷带盒",
+    "FLAVOR": "只会在成功炫技的时候贩售。",
+    "DESCRIPTIONS": [
+      "每当你向牌组中添加卡牌时，回复 #b3 点生命。"
+    ]
+  },
+  "vexMod:CursedBlade": {
+    "NAME": "谎言之剑",
+    "FLAVOR": "“吾乃真实之剑。”",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b1 点 #y力量 。 在每场战斗开始时，添加一张随机 #r诅咒牌 到你的手牌。"
+    ]
+  },
+  "vexMod:DrawConverter": {
+    "NAME": "生锈卡带",
+    "FLAVOR": "弄不清这款游戏本来是哪个系统上的。",
+    "DESCRIPTIONS": [
+      "每当你额外抽取（每回合初始手牌以外的）牌时，每抽一张获得 #b1 点 #y格挡 。"
+    ]
+  },
+  "vexMod:BrokenBowl": {
+    "NAME": "破碗",
+    "FLAVOR": "沙子不断从中流走。",
+    "DESCRIPTIONS": [
+      "每当你向牌组中添加未被升级的卡牌时，将其 #y升级 并失去 #b2 点最大生命值。"
+    ]
+  },
+  "vexMod:PillTracker": {
+    "NAME": "吃药提醒器",
+    "FLAVOR": "永远要记住按时服药！",
+    "DESCRIPTIONS": [
+      "在第 #b5 回合开始时，移除你身上的所有负面状态。"
+    ]
+  },
+  "vexMod:SlimeArmor": {
+    "NAME": "拾荒头盔",
+    "FLAVOR": "为远离高塔的部族所用。",
+    "DESCRIPTIONS": [
+      "在你的回合结束时， 保留 最多 #b1 张牌。"
+    ]
+  },
+  "vexMod:ScavengeHelm": {
+    "NAME": "蠕动面具",
+    "FLAVOR": "它在你脸上蠕动着，让你感觉很不舒服。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，获得 #b4 层 #y柔软 。"
+    ]
+  },
+  "vexMod:ToySword": {
+    "NAME": "玩具剑",
+    "FLAVOR": "铁匠给你打造了一把小小的剑形护身符！",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，失去 #b1 点 #y力量 。每当你打出 #y攻击牌 时，目标敌人在本回合内失去 #b2 点力量。"
+    ]
+  },
+  "vexMod:DoubleEdgedSword": {
+    "NAME": "双刃剑",
+    "FLAVOR": "铁匠给你打造了一把过分锋利的剑！",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b2 点 #y力量 。所有敌人初始拥有 #b1 点 #y荆棘 。"
+    ]
+  },
+  "vexMod:BroadSword": {
+    "NAME": "阔剑",
+    "FLAVOR": "铁匠给你打造了一把大得有点过头了的剑！",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b2 点 #y力量 。每回合少抽 #b1 张牌。"
+    ]
+  },
+  "vexMod:RustySword": {
+    "NAME": "锈剑",
+    "FLAVOR": "铁匠给你打造了一把发脆的剑……",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，失去 #b1 点 #y力量 。所有敌人初始在战斗开始时失去 #b2 点力量。"
+    ]
+  },
+  "vexMod:DrainingSword": {
+    "NAME": "饮血剑",
+    "FLAVOR": "铁匠给你打造了一把吸血剑！",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，失去 #b1 点 #y力量 。每当你打出 #y攻击牌 时，回复 #b1 点生命。"
+    ]
+  },
+  "vexMod:ImaginarySword": {
+    "NAME": "空想之剑",
+    "FLAVOR": "你对锻造它的记忆已经开始淡去了……",
+    "DESCRIPTIONS": [
+      "拾取时，选择移除牌组中的 #b2 张 #y攻击牌 。",
+      "你忘掉了……. "
+    ]
+  },
+  "vexMod:InfernalSword": {
+    "NAME": "炼狱之剑",
+    "FLAVOR": "这把剑永不止息地燃烧着。你甚至没法握住它……",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时候，增加一张 #y攻击牌 到你的手牌。这张牌在本回合耗能变为 #b0 。"
+    ]
+  },
+  "vexMod:VoiceBox": {
+    "NAME": "语音盒",
+    "FLAVOR": "你觉得写得很烂。你还觉得译者文笔太差翻译不出来。",
+    "DESCRIPTIONS": [
+      "现在你可以讲话了。",
+      "You shall feel unholy fury!",
+      "Prepare to feel my blade!",
+      "Face me, cursed creatures!",
+      "My sword shall purge you all...",
+      "I shall withstand any assault.",
+      "You will fall.",
+      "You cannot touch me.",
+      "You are prey.",
+      "Hush.",
+      "Just try and strike me.",
+      "BEGIN_COMBAT();",
+      "ACTIVATE_ORBS();",
+      "PREPARE_WEAPONS();",
+      "CHANCE_OF_SUCCESS = ",
+      "ERROR: NO TAUNT FOUND",
+      "You're going down!",
+      "Feel the power of the demons!",
+      "The demonic power surges within me!",
+      "You call that a weapon!?",
+      "Face my blade!",
+      "...",
+      "You are weak.",
+      "Prepare to fall.",
+      "I've already won.",
+      "I'm unstoppable.",
+      "FORMIDABLE FOE DETECTED",
+      "AbstractMonster.EnemyType = ELITE;",
+      "DEFENSE PROTOCOLS ACTIVATED",
+      "CHANCE_OF_SUCCESS = ",
+      "DESTROY_ELITE_ENEMY();",
+      "My devilish looks are better.",
+      "My rage burns hotter than yours!",
+      "You know nothing of anger!",
+      "My quarry returns to me.",
+      "Again we dance the endless battle.",
+      "Greetings, friend.",
+      "THIS INFORMATION IS HAZARDOUS",
+      "BOOK CANNOT BE PROCESSED",
+      "PAPERCUTS INCOMING",
+      "For the Ironclads!",
+      "You will fall!",
+      "I'll obliterate you!",
+      "I shall burn you away.",
+      "Fear my demonic power!",
+      "The bigger the beast, NL the harder they fall.",
+      "What grand prey...",
+      "Not challenging.",
+      "I am prepared.",
+      "A big one...",
+      "[WARNING] NL Large object approaching",
+      "CHANCE_OF_SUCCESS = ",
+      "WEAPONRY: ACTIVATED",
+      "SELF DEFENCE MODE INITIATED",
+      "YOU SHALL BE DEMOLISHED",
+      "Pah!",
+      "Take ~that!~",
+      "Taste it!",
+      "Ha! You are weak.",
+      "My strength is absolute.",
+      "Shh.",
+      "Don't cry...",
+      "Found you.",
+      "You're mine.",
+      "Does it hurt?",
+      "ACTIVATING WEAPONRY",
+      "DESTROY NL DESTROY NL DESTROY",
+      "ELIMINATE();",
+      "REMOVING LIFE FROM ",
+      "AbstractMonster.HP -= AbstractCard.damage;",
+      "Another fool falls.",
+      "My sword claims another.",
+      "You are nothing.",
+      "Such weak creatures.",
+      "I am the most powerful!",
+      "So easy.",
+      "You had no chance.",
+      "Pathetic.",
+      "...",
+      "Preyed upon.",
+      ".ALIVE = false;",
+      "LIFEFORM DESTROYED",
+      "COMPLETED TASK",
+      ".HP = 0;",
+      "YOU ARE OBSOLETE",
+      "Got something good?",
+      "Have any ale?",
+      "Make me more powerful.",
+      "Meh. Commerce.",
+      "Hey, shopkeep.",
+      "Oh, hello there.",
+      "Have you got any smoke bombs?",
+      "I do enjoy preparation.",
+      "Find anything good?",
+      "Shopping time!",
+      "It's always better to stay prepared.",
+      "I could use shivs...",
+      "I love shopping.",
+      "TIME TO REDUCE GOLD VALUE",
+      "VALUABLE ITEMS HELD: ",
+      "GREETINGS, FELLOW",
+      "HELLO MERCHANT",
+      "I SHALL SPEND",
+      "More power...",
+      "All mine.",
+      "Ho ho.",
+      "My deserved reward...",
+      "Coin and relic, well earned.",
+      "Another piece of my deadly puzzle.",
+      "I'll be taking this!",
+      "I so enjoy looting.",
+      "C'mon, have a Rare one!",
+      "Treasure, my old friend!",
+      "NEW ITEM",
+      "CONTAINER LOCATED",
+      "AbstractDungeon.Chest();",
+      "BEGIN TAKING()",
+      "TOOLS WITHIN",
+      "I embrace my demonic strength!",
+      "I AM THE DEMON!",
+      "~The~ ~power~ ~overwhelming...~",
+      "Meh.",
+      "Ha.",
+      "Pff.",
+      "It all fades away...",
+      "This power is fleeting...",
+      "How tenuous, this strength...",
+      "Taste the inferno!",
+      "Burn away!",
+      "Feel the flame!",
+      "Om nom nom.",
+      "Mmm, tasty...",
+      "Delicious meat.",
+      "I am untouchable...",
+      "One with the shadows...",
+      "You cannot find me...",
+      "Fear me.",
+      "You are helpless.",
+      "I am everywhere.",
+      "Come and get me.",
+      "Oops! I dropped ~these...~",
+      "Catch me if you can.",
+      "And now... your death!",
+      "Show's over!",
+      "You tried.",
+      "~Ah...~ NL ~..company...~",
+      "~Foolish..~ NL @FOOOLISH!@",
+      "Look! A Giant Head!",
+      "Look! A Giant Donut!",
+      "Look! A Snail Wizard!",
+      "Look! A Giant Gremlin!",
+      "Look! An Ironclad!",
+      "Look! Your mother!",
+      "Look! The Spire Heart!",
+      "Look! The Shopkeep!",
+      "Look! It's a Jedi!",
+      "Look! A Slaver!",
+      "Look! Free food!",
+      "Right behind you...",
+      "Boo. It's me.",
+      "I'm right behind you.",
+      "BWAAAAAM",
+      "new FIRING_MY_LASER()",
+      "REDUCING ORB POWER...",
+      "ECHO_FORM_ACTIVE NL ECHO_FORM_ACTIVE",
+      "PREPARE FOR DESTRUCTION NL PREPARE FOR DESTRUCTION",
+      "DESTROY DESTROY NL DESTROY DESTROY NL DESTROY DESTROY",
+      "new EchoPower; NL new EchoPower;",
+      "SpireOS loading...",
+      "Boot Error: BALANCE not found.",
+      "BIOS launched.",
+      "PSHHHHHSHSHSHH",
+      "PSSHHSHSHSSHHS",
+      "PHHSHSHSHHSHSS",
+      "You're going down!",
+      "Psh. Weakling.",
+      "Feel my wrath!",
+      "Ha ha ha...",
+      "Gotcha.",
+      "You're already dead.",
+      "ATTACK_MONSTER()",
+      "PURGING MONSTERS",
+      "Defect.Attack();",
+      "You're going down, boss!",
+      "You've got no chance, boss!",
+      "Elite enemy, meet my weaponry!",
+      "Face me, greater foe!",
+      "To battle!",
+      "Let's do this!",
+      "Defeated you!",
+      "Beat you, ha!",
+      "Take that!",
+      "Feel the pain!",
+      "Hello there, merchant.",
+      "My greetings, merchant.",
+      "Chest, woohoo!",
+      "Yay, a chest.",
+      "Bam!",
+      "Whap!",
+      "Pow!",
+      "Boof!",
+      "Bif!",
+      "Baf!",
+      "Wap!",
+      "Ping!",
+      "Huttah! Neck snap!"
+    ]
+  },
+  "vexMod:RobotsGift": {
+    "NAME": "机器人的礼物",
+    "FLAVOR": "来自一具奇怪机器的谢礼。",
+    "DESCRIPTIONS": [
+      "每场战斗开始时，获得 #b2 个额外充能球栏位。"
+    ]
+  },
+  "vexMod:MidasArmor": {
+    "NAME": "黄金护甲",
+    "FLAVOR": "价格昂贵……但或许值得？",
+    "DESCRIPTIONS": [
+      "你的生命值总是与你的 #y金币 数量相等。 NL 当你将要失去生命时，不失去生命而是失去减少值两倍的 #y金币 。 "
+    ]
+  },
+  "vexMod:TimeEaterHat": {
+    "NAME": "蜗牛钟表",
+    "FLAVOR": "某个人会想要把这东西要回去。",
+    "DESCRIPTIONS": [
+      "每当你在同一场战斗中打出 #b12 张牌时，结束回合并获得 #b2 点 #y力量 。"
+    ]
+  },
+  "vexMod:BerrySword": {
+    "NAME": "莓果之剑",
+    "FLAVOR": "咬上一小口这把剑就能让你精力充沛。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命增加 #b8 点。你在每场战斗中打出的前 #b2 张牌会从牌组中被移除。"
+    ]
+  },
+  "vexMod:Dragonfruit": {
+    "NAME": "火龙果",
+    "FLAVOR": "正如行家所说的一般，得劲。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命提升 #b5 。在你的回合结束时，你这一回合内每出过一张 #y攻击牌，就对所有敌人造成 #b1 点伤害。 "
+    ]
+  },
+  "vexMod:VialOfGreed": {
+    "NAME": "贪婪之瓶",
+    "FLAVOR": "你手上缺零钱的时候，它就会在你腿边晃荡。",
+    "DESCRIPTIONS": [
+      "每当你给予 #y中毒 状态时，获得与给予的 #y中毒 层数相同点数的 #y金币 。"
+    ]
+  },
+  "vexMod:RegenHeart": {
+    "NAME": "再生病毒",
+    "FLAVOR": "副作用嘛……最好就别提。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命值变为 #b30 。 NL 在战斗结束时，回复所有生命。"
+    ]
+  },
+  "vexMod:LichBottle": {
+    "NAME": "巫妖命匣",
+    "FLAVOR": "无论你做些什么，它摸起来都寒冷刺骨……",
+    "DESCRIPTIONS": [
+      "你的最大生命值会被永远锁定在 #b1 。阻止所有的生命值损失。每阻止 #b6 点损失，随机从你的牌组中移除一张卡牌。当你的牌组中没有卡牌时，你立即 #r死亡 。"
+    ]
+  },
+  "vexMod:BarristanHead": {
+    "NAME": "柔韧丝巾",
+    "FLAVOR": "在你最为奇诡的梦境中，它会出现并向你大吼规矩。",
+    "DESCRIPTIONS": [
+      "如果你的生命值少于或等于 #b30 ，在回合开始时候获得 #b5 点 #y格挡 。"
+    ]
+  },
+  "vexMod:HeadHunter": {
+    "NAME": "猎头者",
+    "FLAVOR": "你把一场冲突整到教人头大了。",
+    "DESCRIPTIONS": [
+      "精英敌人被打败时会额外掉落一张稀有牌。"
+    ]
+  },
+  "vexMod:ChestStatue": {
+    "NAME": "宝箱雕塑",
+    "FLAVOR": "由一位出了名的开箱达人所雕。",
+    "DESCRIPTIONS": [
+      "接下来的非BOSS宝箱里会包含 #b2 件遗物。"
+    ]
+  },
+  "vexMod:MallPass": {
+    "NAME": "商场年卡",
+    "FLAVOR": "现在你可以尽享大折了！",
+    "DESCRIPTIONS": [
+      "你会在所有的 #y? 房间遇见商店。每当你进入商店时，获得 #b50 点 #y金币 。"
+    ]
+  },
+  "vexMod:FloorLord": {
+    "NAME": "蛇血",
+    "FLAVOR": "你什么东西都能买得起！",
+    "DESCRIPTIONS": [
+      "你每爬一层楼，都会获得与爬过的层数相等的 #y金币 。"
+    ]
+  },
+  "vexMod:HatredEngine": {
+    "NAME": "憎恶引擎",
+    "FLAVOR": "他们都应该尝尝你的剑刃！上吧！去战斗！",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 [E] 。你会在所有的 #y? 房间遭遇普通战斗。"
+    ]
+  },
+  "vexMod:EndlessSickness": {
+    "NAME": "无尽疫病",
+    "FLAVOR": "总在不停复制。",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 [E] 。 在每场战斗开始时候，将一张 #r病毒 放入你的抽牌堆中。"
+    ]
+  },
+  "vexMod:GoldBooster": {
+    "NAME": "镀金神龛",
+    "FLAVOR": "熔化的金子源源不断地从神龛中流下。",
+    "DESCRIPTIONS": [
+      "每当你向牌组中添加卡牌时，获得 #b7 点 #y金币 。"
+    ]
+  },
+  "vexMod:TreasureMap": {
+    "NAME": "冒险地图",
+    "FLAVOR": "我们一路走来结交的朋友们才是真正的宝藏。",
+    "DESCRIPTIONS": [
+      "你会在所有的 #y? 房间遭遇事件。"
+    ]
+  },
+  "vexMod:RandomRelic": {
+    "NAME": "随机遗物",
+    "FLAVOR": "每次效果都不一样！ NL 出于偷懒只翻译了效果描述部分。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，获得 #b9 点 #y格挡 。",
+      "在每场战斗开始时，给予所有敌人 #b4 层 #y中毒 。",
+      "在你的回合开始时，对所有敌人造成 #b2 点伤害。",
+      "在每场战斗开始时，对所有敌人造成 #b9 点伤害。",
+      "在每场战斗开始时，额外抽 #b2 张牌。",
+      "每场战斗中你的 #y格挡  被第一次击破时，回复 #b4 点生命。",
+      "在每场战斗开始时，获得 #b3 层 #y多层护甲 。",
+      "在你的前 #b2 个回合获得 [E] 。",
+      "拾取时，将你的最大生命提升 #b9 。",
+      "在每场战斗开始时，获得 #b2 层 #y荆棘 。",
+      "在每场战斗开始时，回复 #b2 点生命。",
+      "你在 #y? 房间找到财宝的概率增加 #b8% 。",
+      "在每场战斗开始时，增加一张随机的已升级的无色牌到你的手牌。",
+      "每当敌人死去时，获得 #b6 点 #y金币 。",
+      "拾取时，制作 #b3 瓶随机药水。",
+      "拾取时，获得 #b125 点 #y金币 。",
+      "在每场战斗开始时，获得 #b5 点 #y格挡 .",
+      "在每场战斗开始时，给予所有敌人 #b3 层 #y中毒 。",
+      "在你的回合开始时，对所有敌人造成 #b1 点伤害。",
+      "在每场战斗开始时，对所有敌人造成 #b5 点伤害。",
+      "在每场战斗开始时，额外抽 #b1 张牌。",
+      "每场战斗中你的 #y格挡  被第一次击破时，回复 #b2 点生命。",
+      "在每场战斗开始时，获得 #b2 层 #y多层护甲 。",
+      "在每场战斗的第一个回合获得 [E] 。",
+      "拾取时，将你的最大生命增加 #b5.",
+      "在每场战斗开始时，获得 #b1 层 #y荆棘 。",
+      "在每场战斗开始时，回复 #b1 点生命。",
+      "你在 #y4 房间找到财宝的概率增加 #b8% 。",
+      "在每场战斗开始时，增加一张随机的无色牌到你的手牌。",
+      "每当敌人死去时，获得 #b6 点 #y金币 。",
+      "拾取时，制作 #b1 瓶随机药水。",
+      "拾取时，获得 #b40 点 #y金币 。",
+      " #g每次拾取时都会产生不同的效果 。",
+      "An artifact from ",
+      "Found at ",
+      "A rare find from ",
+      "Smuggled out of ",
+      "This antique is from ",
+      "This item was originally from ",
+      "This may have been from ",
+      "Perhaps a relic from ",
+      "It seems like it's from",
+      "Definitely from ",
+      "It could be from ",
+      "Discovered in ",
+      "the SCP Foundation.",
+      "the tribes outside the Spire.",
+      "the Spire.",
+      "the middle of the ocean.",
+      "Constantinople.",
+      "the Mushroom Kingdom.",
+      "Hoenn.",
+      "Archanta.",
+      "New York.",
+      "Jerry Seinfeld's apartment.",
+      "the Golden Pyramid.",
+      "Starbucks.",
+      "Ravnica.",
+      "Wall Street.",
+      "Terabitha.",
+      "Istanbul.",
+      "Melbourne.",
+      "Amboy.",
+      "D'Hara.",
+      "Ix.",
+      "Wisconsin.",
+      "Delft.",
+      "Australia.",
+      "Gorgossium.",
+      "the Gungeon.",
+      "the Crypt of the Necrodancer.",
+      "the Tomb of Tyrants.",
+      "the Deathstate.",
+      "Black Mesa.",
+      "the Darkest Dungeon.",
+      "the middle of space.",
+      "the MOTHERGUNSHIP.",
+      "Hallownest.",
+      "Blackwell Academy.",
+      "the Norwood Suite.",
+      "the Nuclear Throne.",
+      "Arstotzka.",
+      "Aperture Science.",
+      "Whispering Rock Psychic Summer Camp.",
+      "the Shrouded Isle.",
+      "the Tower of Guns.",
+      "Monkey Island.",
+      "New Vegas.",
+      "This one",
+      "The item",
+      "This relic",
+      "It",
+      "The antique",
+      "The artifact",
+      "The knickknack",
+      "This curio",
+      "The mystical object",
+      "This curiosity",
+      "This small ring",
+      "This letter of recommendation",
+      "This scroll with a bright smile",
+      "This amulet with a phrog on it",
+      "This aged love letter",
+      "This bottle of soda",
+      "This large toupee",
+      "This simple metronome",
+      "This brightly colored tissue box",
+      "This dessicated eyeball",
+      "This collection of gummy candies",
+      "This large pill bottle",
+      "This cracked mug",
+      "This table leg",
+      "This thumb-sized tooth",
+      "This purple fingernail",
+      "This discolored ribbon",
+      "This Q-shaped stone",
+      "This ominous ointment",
+      "This fascinating rock",
+      "This glass shard",
+      "This lanyard",
+      "This shadow",
+      "This sack of beans",
+      "This jigsaw piece",
+      "This goopy lump",
+      "This scorched doll's head",
+      "This rotting mouse head",
+      "These incomprehensible gears",
+      "This cursed map",
+      "This denim jacket",
+      "This clunky device",
+      "These smelly socks",
+      "This half-eaten sandwich",
+      "This badminton racket",
+      "This severed hand",
+      "This cowboy hat",
+      "This jaw worm figurine",
+      "This broken pair of sunglasses",
+      "This ornate ornament",
+      "This cracked marble",
+      "This oily rag",
+      "This piece of parchment",
+      "This fried circuit",
+      "This dragonfly wing",
+      "This waxy paper",
+      "This dimpled ball",
+      "This deflated balloon",
+      "This dented doorknob",
+      "This shredded fabric",
+      "This rainbow-colored crabshell",
+      "This meaty morsel",
+      "This savory cheese",
+      "This unrefined gelatin",
+      "This discarded hoof",
+      "This ashen pot",
+      "This flimsy shoelace",
+      "This stiff shirt collar",
+      "This golden hair barrette",
+      "This porcelain cat",
+      "This reflective oval",
+      " shines brightly.",
+      " glows blue.",
+      " makes noises intermittently.",
+      " smells awful.",
+      " shakes violently.",
+      " jiggles a bit when left alone.",
+      " is a little slimy.",
+      " trembles in your hands.",
+      " seems like it may hatch.",
+      " is warm to the touch.",
+      " sucks the light in.",
+      " watches you when you sleep.",
+      " smells like peppermint.",
+      " slowly grins at you.",
+      " glares at you sometimes.",
+      " sticks to your palm.",
+      " flings itself at shiny things.",
+      " lurches for your throat.",
+      " ticks every other second.",
+      "'s label always seems different.",
+      " makes your bag immensely heavy.",
+      " buzzes sometimes.",
+      " clinks, even when touching nothing.",
+      " emits an alarming stench.",
+      " hums your favorite song.",
+      " can't seem to stay upright.",
+      " wobbles, but never falls down.",
+      " lunges at whatever's next to it.",
+      " would scream if it had a mouth.",
+      "'s colors shift constantly.",
+      " beats like a heart.",
+      " won't let go of your finger.",
+      " looks like a nightmare.",
+      " disappears when not looked at.",
+      " keeps moving unless held still.",
+      " seems to disappear and reappear.",
+      " scrapes incessantly.",
+      " makes you feel hungry.",
+      " always ends up in your pocket.",
+      " sparkles when water is nearby.",
+      " gives you a sense of hope.",
+      " talks gibberish endlessly.",
+      " makes you forgetful.",
+      " ribbits sometimes.",
+      " stinks like blighted cabbage.",
+      " produces loud noises when shaken.",
+      " makes you feel famished.",
+      " #g每次找到时都会产生不同的效果 。"
+    ]
+  },
+  "vexMod:BerryBomb": {
+    "NAME": "莓果炸弹",
+    "FLAVOR": "味道很爆炸。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命增加 #b6 。 在 #b8 场战斗之，爆炸并对所有敌人造成 #b100 点伤害。"
+    ]
+  },
+  "vexMod:GazerBeam": {
+    "NAME": "激光眼",
+    "FLAVOR": "上次用还是释放“KRONOS”的时候。",
+    "DESCRIPTIONS": [
+      "你每场战斗中打出的第一张 #y攻击牌 将会给予目标敌人 #b2 层 #y跟踪锁定 。"
+    ]
+  },
+  "vexMod:TimesightGlass": {
+    "NAME": "往昔之镜",
+    "FLAVOR": "你能看到几分钟前的自己。",
+    "DESCRIPTIONS": [
+      "在每个奇数回合开始时，将弃牌堆中的一张随机卡牌放入手牌。"
+    ]
+  },
+  "vexMod:MadnessLens": {
+    "NAME": "疯狂之镜",
+    "FLAVOR": "从镜片中看去，高塔变成了一个宛如地狱的扭曲废土。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，使你手牌中的一张随机牌在本场战斗中耗能变为 #b0 。"
+    ]
+  },
+  "vexMod:BrainBlaster": {
+    "NAME": "脑浆爆破器",
+    "FLAVOR": "把它放到头边时，你会听到一阵让你感到眩晕的可怕轰鸣。",
+    "DESCRIPTIONS": [
+      "所有敌人初始具有 #y扭动 。"
+    ]
+  },
+  "vexMod:PlasmaPancake": {
+    "NAME": "电浆烧饼",
+    "FLAVOR": "如同字面意义一般火热。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命值增加 #b6 。 NL 在每场战斗开始时， 对所有敌人造成 #b11 点伤害。"
+    ]
+  },
+  "vexMod:ChompingNoodles": {
+    "NAME": "嚼嚼面",
+    "FLAVOR": "这些面条会反过来咬你。",
+    "DESCRIPTIONS": [
+      "每次进入 #y? 房间时，增加 #b3 点最大生命并失去 #b9 点生命。"
+    ]
+  },
+  "vexMod:RedPlottingStone": {
+    "NAME": "红色谋划石",
+    "FLAVOR": "很适合用来谋划邪恶行动——与绿色谋划石正好相反。",
+    "DESCRIPTIONS": [
+      "#p会在随机的某层闪动 。 NL 在闪动时右键点击将获得 #g大量奖赏 。 NL 在未闪动时右击将会导致 #r死亡 。"
+    ]
+  },
+  "vexMod:TealTab": {
+    "NAME": "青色标签",
+    "FLAVOR": "能在分类时派上用场。",
+    "DESCRIPTIONS": [
+      "将你在每场战斗中抽到的第 #b18 张牌的两张复制品增加到你的手牌。它们在本场战斗中的耗能变为 #b0 。"
+    ]
+  },
+  "vexMod:DeviousBotling": {
+    "NAME": "奸诈小bot",
+    "FLAVOR": "就喜欢把你惹烦。",
+    "DESCRIPTIONS": [
+      "在每回合开始时获得 [E] 。会在随机的时刻用各种独特的方式折磨你。"
+    ]
+  },
+  "vexMod:WellWornAnklet": {
+    "NAME": "磨损脚链",
+    "FLAVOR": "我还得再翻翻故纸堆来给这玩意儿找一条描述。",
+    "DESCRIPTIONS": [
+      "在第 #b3 和第 #b7 回合开始时，获得 #b7 点 #y格挡 ."
+    ]
+  },
+  "vexMod:GoldFlippers": {
+    "NAME": "挥金脚蹼",
+    "FLAVOR": "这双脚蹼让你很想大肆挥霍。",
+    "DESCRIPTIONS": [
+      "每当你爬一层楼时，获得 #b15 点 #y金币 。 每次离开商店时，你每拥有 #b5 点金币，就失去 #b1 点生命。"
+    ]
+  },
+  "vexMod:GorgonsHead": {
+    "NAME": "蛇发女妖之头",
+    "FLAVOR": "美丽，却仍旧令人生畏。",
+    "DESCRIPTIONS": [
+      "在战斗开始时候，所有敌人失去 #b3 点 #y力量 。"
+    ]
+  },
+  "vexMod:ExplorationPack": {
+    "NAME": "冒险包裹",
+    "FLAVOR": "你马上就要踏上旅程啦！",
+    "DESCRIPTIONS": [
+      "拾取时，将你牌组中的所有卡牌替换为 #y发现 。",
+      "一片满是冒险的大陆！"
+    ]
+  },
+  "vexMod:OrbOfGreed": {
+    "NAME": "贪婪之球",
+    "FLAVOR": "嗯，钱钱！",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时， #y生成 #b1 个 #y金色闪电 充能球 。"
+    ]
+  },
+  "vexMod:ImprovementManual": {
+    "NAME": "改良手册",
+    "FLAVOR": "啊，所以这就是你让一张牌变成固有的方法！",
+    "DESCRIPTIONS": [
+      "拾取时，选择 #y升级 #b3 张卡牌。",
+      "升级卡牌……!"
+    ]
+  },
+  "vexMod:TheWave": {
+    "NAME": "脉石",
+    "FLAVOR": "让人看得入神。",
+    "DESCRIPTIONS": [
+      "在战斗中右键点击来让你的遗物脉动起来。"
+    ]
+  },
+  "vexMod:ThirteenHourStone": {
+    "NAME": "十三刻之石",
+    "FLAVOR": "数字九是最重要的。",
+    "DESCRIPTIONS": [
+      "每当你抽取第 #b13 张牌时，抽 #b1 张牌。"
+    ]
+  },
+  "vexMod:LastWill": {
+    "NAME": "遗嘱",
+    "FLAVOR": "你将你的所有财产转赠给了商人。",
+    "DESCRIPTIONS": [
+      "拾取时，获得 #b111 点 #y金币 。当你死亡或赢得游戏时，@DBotling会发一条推特公告你的这局游戏。",
+      "拾取时，获得 #b111 点 #y金币 。"
+    ]
+  },
+  "vexMod:Starfruit": {
+    "NAME": "杨桃",
+    "FLAVOR": "吃起来就像是星星。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命提升 #b6 。在每场战斗开始时，将 #b3 张 #y魔法果实 放入你的抽牌堆。"
+    ]
+  },
+  "vexMod:FallenStar": {
+    "NAME": "落果",
+    "FLAVOR": "这颗果子一定是从高塔上掉下来了。",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，将 #b2 张 #y魔法果实 放入你的抽牌堆。"
+    ]
+  },
+  "vexMod:Jellybean": {
+    "NAME": "糖豆",
+    "FLAVOR": "尝起来粘粘的。",
+    "DESCRIPTIONS": [
+      "拾取时，将你的最大生命值提升 #b6 。在每场战斗开始时，获得 #b2 层 #y柔软 。"
+    ]
+  }
+}

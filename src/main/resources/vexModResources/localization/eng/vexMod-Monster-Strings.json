@@ -1,0 +1,91 @@
+{
+  "vexMod:BaseMonster": {
+    "NAME": "Base Monster",
+    "MOVES": [
+      "Bellow"
+    ],
+    "DIALOG": [
+      "rawr XD uWu NL whats this?"
+    ]
+  },
+  "vexMod:EvilCube": {
+    "NAME": "Evil Cube",
+    "DIALOG": [
+      "DESTROY? NL DESTROY? NL DESTROY...?"
+    ]
+  },
+  "vexMod:Octiver": {
+    "NAME": "Octiver",
+    "MOVES": [
+      "Ink Spray"
+    ],
+    "DIALOG": [
+      "~bloorp~ NL ~bloorp~"
+    ]
+  },
+  "vexMod:Gorgon": {
+    "NAME": "Gorgon",
+    "MOVES": [
+      "Stone Gaze"
+    ],
+    "DIALOG": [
+      "You ... rock!"
+    ]
+  },
+  "vexMod:InfectionBeast": {
+    "NAME": "Infection Beast",
+    "MOVES": [
+      "Deep Illness"
+    ],
+    "DIALOG": [
+      "The big debuff ... NL is ~permanent~ ~.~ ~.~ ~.~"
+    ]
+  },
+  "vexMod:CardEater": {
+    "NAME": "Card Collector",
+    "MOVES": [
+      "Sickening Shuffle"
+    ],
+    "DIALOG": [
+      "Want ... NL to trade ... NL cards?"
+    ]
+  },
+  "vexMod:SickeningThing": {
+    "NAME": "Sickening Thing",
+    "MOVES": [
+      "Putrid Pulse"
+    ],
+    "DIALOG": [
+      "Feeling ... NL ~i~ ~l~ ~l~ ~?~"
+    ]
+  },
+  "vexMod:CurseLord": {
+    "NAME": "Curse Lord",
+    "MOVES": [
+      "Curse Infection"
+    ],
+    "DIALOG": [
+      "~My~ ~curses~ ~stay~ ~forever~ ~.~ ~.~ ~.~",
+      "~Deadly~ ~permanent~ ~curse~ ~incoming~ ~!~"
+    ]
+  },
+  "vexMod:EvilSsserpent": {
+    "NAME": "Ssserpent",
+    "MOVES": [
+      "Oh So Golden..."
+    ],
+    "DIALOG": [
+      "~I~ ~.~ ~.~ ~.~ NL ~can~ ~buy~ ~.~ ~.~ ~.~ NL ~anything~ ~.~ ~.~ ~.~",
+      "~Ha~ ~ha~ ~ha~ NL ~ha~ ~ha~ ~ha~ NL ~ha~ ~ha~ ~ha~ NL ~ha~ ~ha~ ~ha~ ~!~"
+    ]
+  },
+  "vexMod:GildedGorgon": {
+    "NAME": "Gilded Gorgon",
+    "MOVES": [
+      "Golden Glare"
+    ],
+    "DIALOG": [
+      "Aww, wanting to fight me. NL How ~cute!~"
+    ]
+  }
+}

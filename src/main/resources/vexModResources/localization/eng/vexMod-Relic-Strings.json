@@ -1,0 +1,1163 @@
+{
+  "vexMod:ConsolationPrize": {
+    "NAME": "Consolation Prize",
+    "FLAVOR": "Gold oozes from your wounds.",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP, gain #yGold equal to HP lost."
+    ]
+  },
+  "vexMod:PlagueVial": {
+    "NAME": "Plague Vial",
+    "FLAVOR": "The bosses must take their vitamin gummies.",
+    "DESCRIPTIONS": [
+      "Enemies in non-Boss combats have #b15% less HP."
+    ]
+  },
+  "vexMod:ColdYogurt": {
+    "NAME": "Cold Yogurt",
+    "FLAVOR": "You wonder if your enemies are lactose-intolerant.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #yChannel #b1 #yFrost."
+    ]
+  },
+  "vexMod:ShiftingSkin": {
+    "NAME": "Shifting Skin",
+    "FLAVOR": "Your body flows fluidly, changing to adapt to each situation...",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b1 stack of ANY random #gbuff.",
+      " Conferred ",
+      " this combat."
+    ]
+  },
+  "vexMod:ProtectorBot": {
+    "NAME": "Protector Bot",
+    "FLAVOR": "This little bot dives in to take attacks when you're wide open.",
+    "DESCRIPTIONS": [
+      "Whenever you play #b2 or less cards during your turn, gain #b5 #yBlock at the end of the turn."
+    ]
+  },
+  "vexMod:PainConverter": {
+    "NAME": "Pain Converter",
+    "FLAVOR": "The machine seems to be magnetically attracted to your exposed injuries.",
+    "DESCRIPTIONS": [
+      "Whenever you receive #b10 or more unblocked attack damage, gain [E] next turn and draw #b1 additional card next turn."
+    ]
+  },
+  "vexMod:BetterTron": {
+    "NAME": "Better-O-Tron",
+    "FLAVOR": "This mechanical grub lurches for your head intermittently.",
+    "DESCRIPTIONS": [
+      "The next #b3 unupgraded cards you add into your deck are #yupgraded."
+    ]
+  },
+  "vexMod:GhostlyGear": {
+    "NAME": "Ghostly Gear",
+    "FLAVOR": "The sword and shield are more difficult to see each time you look.",
+    "DESCRIPTIONS": [
+      "Whenever you play a πStrike or Defend, #yExhaust it."
+    ]
+  },
+  "vexMod:CursedCompass": {
+    "NAME": "Cursed Compass",
+    "FLAVOR": "No matter which way you turn, it always points forwards ...",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Future maps contain only #b1 path."
+    ]
+  },
+  "vexMod:BejeweledOrb": {
+    "NAME": "Bejeweled Orb",
+    "FLAVOR": "You have an urge to match items of similar color.",
+    "DESCRIPTIONS": [
+      "Whenever you have #b3 of the same type of Orb in a row, #yEvoke them and gain #b1 Orb slot."
+    ]
+  },
+  "vexMod:MemoryStick": {
+    "NAME": "Memory Locket",
+    "FLAVOR": "If you squeeze it hard enough you can remember the open beta.",
+    "DESCRIPTIONS": [
+      "At the end of your first turn, #yRetain your hand."
+    ]
+  },
+  "vexMod:CoolingFan": {
+    "NAME": "Cooling Fan",
+    "FLAVOR": "This fan helps you save processes when performing monster solution options.",
+    "DESCRIPTIONS": [
+      "Whenever you #yChannel an Orb, gain #b2 #yBlock."
+    ]
+  },
+  "vexMod:Cooldron": {
+    "NAME": "Cooldron",
+    "FLAVOR": "This cauldron is a lot cooler than any regular old cauldron.",
+    "DESCRIPTIONS": [
+      "All Potions you obtain are Entropic Brews."
+    ]
+  },
+  "vexMod:InvisibilityCloak": {
+    "NAME": "Invisible Cloak",
+    "FLAVOR": "You're far too modest to \"wear\" this.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, ALL enemies lose #b1 #yStrength."
+    ]
+  },
+  "vexMod:CodeSmelter": {
+    "NAME": "Code Smelter",
+    "FLAVOR": "Combines subprocesses into one big clump. Simple!",
+    "DESCRIPTIONS": [
+      "Whenever you #yChannel an Orb, trigger its passive ability."
+    ]
+  },
+  "vexMod:TanglingVine": {
+    "NAME": "Tangling Vine",
+    "FLAVOR": "Don't take this the wrong way.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the end of your turn, take #b1 damage. At the start of your turn, increase this damage by #b1 this combat."
+    ]
+  },
+  "vexMod:MindDevourer": {
+    "NAME": "Mind Devourer",
+    "FLAVOR": "Mm, shiny! Wait, what was your name again?",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the end of combat, remove a random card in your deck."
+    ]
+  },
+  "vexMod:HappyDrink": {
+    "NAME": "Happy Drink",
+    "FLAVOR": "The shop offers free refills.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b2. Whenever you enter a shop, increase your Max HP by #b1."
+    ]
+  },
+  "vexMod:ShortStop": {
+    "NAME": "Short Stop",
+    "FLAVOR": "Weathered from hundreds of home runs.",
+    "DESCRIPTIONS": [
+      "Future maps are #b9 floors long. If stuck, use the console's debug true command to teleport to the boss, then use debug false."
+    ]
+  },
+  "vexMod:ThoughtMold": {
+    "NAME": "Helpful Mold",
+    "FLAVOR": "This mold siphons off bits of your shield to feed you.",
+    "DESCRIPTIONS": [
+      "Whenever you gain #yBlock, gain #b1 #yStrength this turn."
+    ]
+  },
+  "vexMod:SalvageTools": {
+    "NAME": "Salvaging Tools",
+    "FLAVOR": "\"Curious! These primitive things are utterly useless.\" -Ranwid",
+    "DESCRIPTIONS": [
+      "Whenever you discard a card, reduce the cost of a random card in your hand by #b1 this turn."
+    ]
+  },
+  "vexMod:ChargeUpper": {
+    "NAME": "Charge Upper",
+    "FLAVOR": "\"Oops, I fell asleep without plugging it in...\"",
+    "DESCRIPTIONS": [
+      "Every time you gain #b35 #yBlock, gain #b1 #yStrength."
+    ]
+  },
+  "vexMod:FocusSash": {
+    "NAME": "Focus Sash",
+    "FLAVOR": "It's super effective!",
+    "DESCRIPTIONS": [
+      "When you would die while you have at least #b10 HP, heal to #b1 HP instead."
+    ]
+  },
+  "vexMod:PowerCharger": {
+    "NAME": "Backup Battery",
+    "FLAVOR": "Conserve energy! Shut off Orb slots when you're not using them.",
+    "DESCRIPTIONS": [
+      "If you end your turn with any empty Orb slots, gain #b3 #yBlock."
+    ]
+  },
+  "vexMod:StrikeShooter": {
+    "NAME": "Strike Shooter",
+    "FLAVOR": "All your sword-firing needs in one medium package!",
+    "DESCRIPTIONS": [
+      "At the start of every third turn, play a πStrike at a random target."
+    ]
+  },
+  "vexMod:BigBerry": {
+    "NAME": "Big Berry",
+    "FLAVOR": "You had no idea they could get this big.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b22."
+    ]
+  },
+  "vexMod:RetaliationKit": {
+    "NAME": "Retaliation Kit",
+    "FLAVOR": "All you need to disappear in a burst of smoke! Smoke no longer included.",
+    "DESCRIPTIONS": [
+      "The first time your #yBlock is broken each combat, apply #b2 #yWeak to ALL enemies."
+    ]
+  },
+  "vexMod:KeyChain": {
+    "NAME": "Key Chain",
+    "FLAVOR": "Surprisingly sharp!",
+    "DESCRIPTIONS": [
+      "When you play your first targeted #yAttack each combat, the enemy loses #yStrength equal to damage taken until the end of this turn."
+    ]
+  },
+  "vexMod:CardConverter": {
+    "NAME": "Box of Bandaids",
+    "FLAVOR": "Vends only when shown cool techniques.",
+    "DESCRIPTIONS": [
+      "Whenever you add a card into your deck, heal #b3 HP."
+    ]
+  },
+  "vexMod:CursedBlade": {
+    "NAME": "Sword of Lies",
+    "FLAVOR": "\"I am the Sword of Truth.\"",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 #yStrength. At the start of each combat, add a random #rCurse into your hand."
+    ]
+  },
+  "vexMod:DrawConverter": {
+    "NAME": "Dusty Game Cartridge",
+    "FLAVOR": "It's unclear which system the game was meant for.",
+    "DESCRIPTIONS": [
+      "Whenever you draw a card (besides your hand each turn), gain #b1 #yBlock."
+    ]
+  },
+  "vexMod:BrokenBowl": {
+    "NAME": "Broken Bowl",
+    "FLAVOR": "Sand drains from it endlessly.",
+    "DESCRIPTIONS": [
+      "Whenever you add an unupgraded card to your deck, #yUpgrade it and lose #b2 Max HP."
+    ]
+  },
+  "vexMod:PillTracker": {
+    "NAME": "Pill Tracker",
+    "FLAVOR": "Always remember to take your medication on time!",
+    "DESCRIPTIONS": [
+      "At the start of turn #b5, remove all of your debuffs."
+    ]
+  },
+  "vexMod:SlimeArmor": {
+    "NAME": "Scavenger Helm",
+    "FLAVOR": "Used by the tribes far from the Spire.",
+    "DESCRIPTIONS": [
+      "At the end of your turn, #yRetain up to #b1 card."
+    ]
+  },
+  "vexMod:ScavengeHelm": {
+    "NAME": "Writhing Mask",
+    "FLAVOR": "It squirms on your face uncomfortably.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, gain #b4 #yMalleable."
+    ]
+  },
+  "vexMod:ToySword": {
+    "NAME": "Toy Sword",
+    "FLAVOR": "The smith fashioned you a little sword charm!",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 less #yStrength. Whenever you play an #yAttack, the enemy loses #b2 #yStrength this turn."
+    ]
+  },
+  "vexMod:DoubleEdgedSword": {
+    "NAME": "Double-Edged Sword",
+    "FLAVOR": "The smith fashioned you an overly sharp blade!",
+    "DESCRIPTIONS": [
+      "Start each combat with #b2 #yStrength. ALL enemies start combat with #b1 #yThorns."
+    ]
+  },
+  "vexMod:BroadSword": {
+    "NAME": "Broadsword",
+    "FLAVOR": "The smith fashioned you a slightly oversized weapon!",
+    "DESCRIPTIONS": [
+      "At the start of your turn, draw #b1 less card. Start each combat with #b2 #yStrength."
+    ]
+  },
+  "vexMod:RustySword": {
+    "NAME": "Rusty Sword",
+    "FLAVOR": "The smith fashioned you a crunchy sword...",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 less #yStrength. ALL enemies start combat with #b2 less #yStrength."
+    ]
+  },
+  "vexMod:DrainingSword": {
+    "NAME": "Draining Sword",
+    "FLAVOR": "The smith fashioned you a vampiric sword!",
+    "DESCRIPTIONS": [
+      "Start each combat with #b1 less #yStrength. Whenever you play an #yAttack, heal #b1 HP."
+    ]
+  },
+  "vexMod:ImaginarySword": {
+    "NAME": "Imaginary Sword",
+    "FLAVOR": "Already, your memories of a smith feel faint...",
+    "DESCRIPTIONS": [
+      "Upon pickup, remove #b2 #yAttacks from your deck.",
+      "You have forgotten..."
+    ]
+  },
+  "vexMod:InfernalSword": {
+    "NAME": "Infernal Sword",
+    "FLAVOR": "This sword burns endlessly. You can't even hold it...",
+    "DESCRIPTIONS": [
+      "At the start of each combat, add a random #yAttack into your hand. NL It costs #b0 this turn."
+    ]
+  },
+  "vexMod:VoiceBox": {
+    "NAME": "Voice Box",
+    "FLAVOR": "You feel badly written.",
+    "DESCRIPTIONS": [
+      "You can talk now.",
+      "You shall feel unholy fury!",
+      "Prepare to feel my blade!",
+      "Face me, cursed creatures!",
+      "My sword shall purge you all...",
+      "I shall withstand any assault.",
+      "You will fall.",
+      "You cannot touch me.",
+      "You are prey.",
+      "Hush.",
+      "Just try and strike me.",
+      "BEGIN_COMBAT();",
+      "ACTIVATE_ORBS();",
+      "PREPARE_WEAPONS();",
+      "CHANCE_OF_SUCCESS = ",
+      "ERROR: NO TAUNT FOUND",
+      "You're going down!",
+      "Feel the power of the demons!",
+      "The demonic power surges within me!",
+      "You call that a weapon!?",
+      "Face my blade!",
+      "...",
+      "You are weak.",
+      "Prepare to fall.",
+      "I've already won.",
+      "I'm unstoppable.",
+      "FORMIDABLE FOE DETECTED",
+      "AbstractMonster.EnemyType = ELITE;",
+      "DEFENSE PROTOCOLS ACTIVATED",
+      "CHANCE_OF_SUCCESS = ",
+      "DESTROY_ELITE_ENEMY();",
+      "My devilish looks are better.",
+      "My rage burns hotter than yours!",
+      "You know nothing of anger!",
+      "My quarry returns to me.",
+      "Again we dance the endless battle.",
+      "Greetings, friend.",
+      "THIS INFORMATION IS HAZARDOUS",
+      "BOOK CANNOT BE PROCESSED",
+      "PAPERCUTS INCOMING",
+      "For the Ironclads!",
+      "You will fall!",
+      "I'll obliterate you!",
+      "I shall burn you away.",
+      "Fear my demonic power!",
+      "The bigger the beast, NL the harder they fall.",
+      "What grand prey...",
+      "Not challenging.",
+      "I am prepared.",
+      "A big one...",
+      "[WARNING] NL Large object approaching",
+      "CHANCE_OF_SUCCESS = ",
+      "WEAPONRY: ACTIVATED",
+      "SELF DEFENCE MODE INITIATED",
+      "YOU SHALL BE DEMOLISHED",
+      "Pah!",
+      "Take ~that!~",
+      "Taste it!",
+      "Ha! You are weak.",
+      "My strength is absolute.",
+      "Shh.",
+      "Don't cry...",
+      "Found you.",
+      "You're mine.",
+      "Does it hurt?",
+      "ACTIVATING WEAPONRY",
+      "DESTROY NL DESTROY NL DESTROY",
+      "ELIMINATE();",
+      "REMOVING LIFE FROM ",
+      "AbstractMonster.HP -= AbstractCard.damage;",
+      "Another fool falls.",
+      "My sword claims another.",
+      "You are nothing.",
+      "Such weak creatures.",
+      "I am the most powerful!",
+      "So easy.",
+      "You had no chance.",
+      "Pathetic.",
+      "...",
+      "Preyed upon.",
+      ".ALIVE = false;",
+      "LIFEFORM DESTROYED",
+      "COMPLETED TASK",
+      ".HP = 0;",
+      "YOU ARE OBSOLETE",
+      "Got something good?",
+      "Have any ale?",
+      "Make me more powerful.",
+      "Meh. Commerce.",
+      "Hey, shopkeep.",
+      "Oh, hello there.",
+      "Have you got any smoke bombs?",
+      "I do enjoy preparation.",
+      "Find anything good?",
+      "Shopping time!",
+      "It's always better to stay prepared.",
+      "I could use shivs...",
+      "I love shopping.",
+      "TIME TO REDUCE GOLD VALUE",
+      "VALUABLE ITEMS HELD: ",
+      "GREETINGS, FELLOW",
+      "HELLO MERCHANT",
+      "I SHALL SPEND",
+      "More power...",
+      "All mine.",
+      "Ho ho.",
+      "My deserved reward...",
+      "Coin and relic, well earned.",
+      "Another piece of my deadly puzzle.",
+      "I'll be taking this!",
+      "I so enjoy looting.",
+      "C'mon, have a Rare one!",
+      "Treasure, my old friend!",
+      "NEW ITEM",
+      "CONTAINER LOCATED",
+      "AbstractDungeon.Chest();",
+      "BEGIN TAKING()",
+      "TOOLS WITHIN",
+      "I embrace my demonic strength!",
+      "I AM THE DEMON!",
+      "~The~ ~power~ ~overwhelming...~",
+      "Meh.",
+      "Ha.",
+      "Pff.",
+      "It all fades away...",
+      "This power is fleeting...",
+      "How tenuous, this strength...",
+      "Taste the inferno!",
+      "Burn away!",
+      "Feel the flame!",
+      "Om nom nom.",
+      "Mmm, tasty...",
+      "Delicious meat.",
+      "I am untouchable...",
+      "One with the shadows...",
+      "You cannot find me...",
+      "Fear me.",
+      "You are helpless.",
+      "I am everywhere.",
+      "Come and get me.",
+      "Oops! I dropped ~these...~",
+      "Catch me if you can.",
+      "And now... your death!",
+      "Show's over!",
+      "You tried.",
+      "~Ah...~ NL ~..company...~",
+      "~Foolish..~ NL @FOOOLISH!@",
+      "Look! A Giant Head!",
+      "Look! A Giant Donut!",
+      "Look! A Snail Wizard!",
+      "Look! A Giant Gremlin!",
+      "Look! An Ironclad!",
+      "Look! Your mother!",
+      "Look! The Spire Heart!",
+      "Look! The Shopkeep!",
+      "Look! It's a Jedi!",
+      "Look! A Slaver!",
+      "Look! Free food!",
+      "Right behind you...",
+      "Boo. It's me.",
+      "I'm right behind you.",
+      "BWAAAAAM",
+      "new FIRING_MY_LASER()",
+      "REDUCING ORB POWER...",
+      "ECHO_FORM_ACTIVE NL ECHO_FORM_ACTIVE",
+      "PREPARE FOR DESTRUCTION NL PREPARE FOR DESTRUCTION",
+      "DESTROY DESTROY NL DESTROY DESTROY NL DESTROY DESTROY",
+      "new EchoPower; NL new EchoPower;",
+      "SpireOS loading...",
+      "Boot Error: BALANCE not found.",
+      "BIOS launched.",
+      "PSHHHHHSHSHSHH",
+      "PSSHHSHSHSSHHS",
+      "PHHSHSHSHHSHSS",
+      "You're going down!",
+      "Psh. Weakling.",
+      "Feel my wrath!",
+      "Ha ha ha...",
+      "Gotcha.",
+      "You're already dead.",
+      "ATTACK_MONSTER()",
+      "PURGING MONSTERS",
+      "Defect.Attack();",
+      "You're going down, boss!",
+      "You've got no chance, boss!",
+      "Elite enemy, meet my weaponry!",
+      "Face me, greater foe!",
+      "To battle!",
+      "Let's do this!",
+      "Defeated you!",
+      "Beat you, ha!",
+      "Take that!",
+      "Feel the pain!",
+      "Hello there, merchant.",
+      "My greetings, merchant.",
+      "Chest, woohoo!",
+      "Yay, a chest.",
+      "Bam!",
+      "Whap!",
+      "Pow!",
+      "Boof!",
+      "Bif!",
+      "Baf!",
+      "Wap!",
+      "Ping!",
+      "Huttah! Neck snap!"
+    ]
+  },
+  "vexMod:RobotsGift": {
+    "NAME": "Robot's Gift",
+    "FLAVOR": "The thankful boon of a strange automaton.",
+    "DESCRIPTIONS": [
+      "Start each combat with #b2 Orb slots."
+    ]
+  },
+  "vexMod:MidasArmor": {
+    "NAME": "Golden Armor",
+    "FLAVOR": "Expensive... but worth it?",
+    "DESCRIPTIONS": [
+      "Your HP is ALWAYS equal to your #yGold. NL Instead of losing HP, lose twice that much #yGold."
+    ]
+  },
+  "vexMod:TimeEaterHat": {
+    "NAME": "Snail's Watch",
+    "FLAVOR": "Someone is going to want this back.",
+    "DESCRIPTIONS": [
+      "Whenever you play #b12 cards in a single combat, end your turn and gain #b2 #yStrength."
+    ]
+  },
+  "vexMod:BerrySword": {
+    "NAME": "Berry Sword",
+    "FLAVOR": "Tiny bites of this sword invigorate you.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b8. The first #b2 cards you play each combat are removed from your deck."
+    ]
+  },
+  "vexMod:Dragonfruit": {
+    "NAME": "Dragon Fruit",
+    "FLAVOR": "As a connoisseur would say, piquant.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b5. At the end of your turn, deal #b1 damage to ALL enemies for each #yAttack played this turn."
+    ]
+  },
+  "vexMod:VialOfGreed": {
+    "NAME": "Vial of Greed",
+    "FLAVOR": "It jiggles against your leg when you're short of change.",
+    "DESCRIPTIONS": [
+      "Whenever you apply #yPoison, gain #yGold equal to #yPoison applied."
+    ]
+  },
+  "vexMod:RegenHeart": {
+    "NAME": "Regenerative Virus",
+    "FLAVOR": "The side effects are ... best left unsaid.",
+    "DESCRIPTIONS": [
+      "Upon pickup, set your Max HP to #b30. NL At the end of combat, heal to full HP."
+    ]
+  },
+  "vexMod:LichBottle": {
+    "NAME": "Lich's Phylactery",
+    "FLAVOR": "It feels cold in your hands, no matter what you do ...",
+    "DESCRIPTIONS": [
+      "Your Max HP is ALWAYS #b1. Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rdie."
+    ]
+  },
+  "vexMod:BarristanHead": {
+    "NAME": "Bandanna of Resilience",
+    "FLAVOR": "In your strangest dreams, it appears and yells orders at you.",
+    "DESCRIPTIONS": [
+      "If you have #b30 or less HP at the start of your turn, gain #b5 #yBlock."
+    ]
+  },
+  "vexMod:HeadHunter": {
+    "NAME": "Skull Hunter",
+    "FLAVOR": "You're bringing this conflict to a head.",
+    "DESCRIPTIONS": [
+      "Elites drop an additional, Rare card reward."
+    ]
+  },
+  "vexMod:ChestStatue": {
+    "NAME": "Chest Statue",
+    "FLAVOR": "Made by a famous lootomancer.",
+    "DESCRIPTIONS": [
+      "Non-Boss chests contain #b2 Relics."
+    ]
+  },
+  "vexMod:MallPass": {
+    "NAME": "Mall Pass",
+    "FLAVOR": "Now you can get the great discounts!",
+    "DESCRIPTIONS": [
+      "ALL #y? rooms contain The Merchant. Whenever you encounter The Merchant, gain #b50 #yGold."
+    ]
+  },
+  "vexMod:FloorLord": {
+    "NAME": "Ssserpent's Blood",
+    "FLAVOR": "You can buy anything!",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, gain #b1 #yGold for each floor you have climbed."
+    ]
+  },
+  "vexMod:HatredEngine": {
+    "NAME": "Hatred Engine",
+    "FLAVOR": "They all deserve your blade! Go! Fight!",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. ALL #y? rooms contain normal enemy combats."
+    ]
+  },
+  "vexMod:EndlessSickness": {
+    "NAME": "Endless Sickness",
+    "FLAVOR": "Always multiplying.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the start of each combat, shuffle a #rVirus into your draw pile."
+    ]
+  },
+  "vexMod:GoldBooster": {
+    "NAME": "Gilded Shrine",
+    "FLAVOR": "Molten gold pours endlessly down the shrine.",
+    "DESCRIPTIONS": [
+      "Whenever you add a card into your deck, gain #b7 #yGold."
+    ]
+  },
+  "vexMod:TreasureMap": {
+    "NAME": "Adventure Map",
+    "FLAVOR": "The real treasure was the friends we made along the way.",
+    "DESCRIPTIONS": [
+      "ALL #y? rooms contain events."
+    ]
+  },
+  "vexMod:RandomRelic": {
+    "NAME": "Randomized Relic",
+    "FLAVOR": "Different every time!",
+    "DESCRIPTIONS": [
+      "Start each combat with #b9 #yBlock.",
+      "At the start of each combat, apply #b4 #yPoison to ALL enemies.",
+      "At the start of your turn, deal #b2 damage to ALL enemies.",
+      "At the start of each combat, deal #b9 damage to ALL enemies.",
+      "At the start of each combat, draw #b2 additional cards.",
+      "The first time your #yBlock is broken each combat, heal #b4 HP.",
+      "Start each combat with #b3 #yPlated #yArmor.",
+      "Gain [E] at the start of your first #b2 turns.",
+      "Upon pickup, raise your Max HP by #b9.",
+      "Start each combat with #b2 #yThorns.",
+      "At the start of each combat, heal #b2 HP.",
+      "You are #b8% more likely to find treasure in #y? rooms.",
+      "At the start of each combat, add a random upgraded Colorless card into your hand.",
+      "Whenever an enemy dies, gain #b6 #yGold.",
+      "Upon pickup, brews #b3 random potions.",
+      "Upon pickup, gain #b125 #yGold.",
+      "Start each combat with #b5 #yBlock.",
+      "At the start of each combat, apply #b3 #yPoison to ALL enemies.",
+      "At the start of your turn, deal #b1 damage to ALL enemies.",
+      "At the start of each combat, deal #b5 damage to ALL enemies.",
+      "At the start of each combat, draw #b1 additional card.",
+      "The first time your #yBlock is broken each combat, heal #b2 HP.",
+      "Start each combat with #b2 #yPlated #yArmor.",
+      "Start each combat with an additional [E] .",
+      "Upon pickup, raise your Max HP by #b5.",
+      "Start each combat with #b1 #yThorns.",
+      "At the start of each combat, heal #b1 HP.",
+      "You are #b4% more likely to find treasure in #y? rooms.",
+      "At the start of each combat, add a random Colorless card into your hand.",
+      "Whenever an enemy dies, gain #b3 #yGold.",
+      "Upon pickup, brews #b1 random potion.",
+      "Upon pickup, gain #b40 #yGold.",
+      "#gHas #gdifferent #gqualities #gevery #gtime #gyou #gfind #git.",
+      "An artifact from ",
+      "Found at ",
+      "A rare find from ",
+      "Smuggled out of ",
+      "This antique is from ",
+      "This item was originally from ",
+      "This may have been from ",
+      "Perhaps a relic from ",
+      "It seems like it's from ",
+      "Definitely from ",
+      "It could be from ",
+      "Discovered in ",
+      "the SCP Foundation.",
+      "the tribes outside the Spire.",
+      "the Spire.",
+      "the middle of the ocean.",
+      "Constantinople.",
+      "the Mushroom Kingdom.",
+      "Hoenn.",
+      "Archanta.",
+      "New York.",
+      "Jerry Seinfeld's apartment.",
+      "the Golden Pyramid.",
+      "Starbucks.",
+      "Ravnica.",
+      "Wall Street.",
+      "Terabitha.",
+      "Istanbul.",
+      "Melbourne.",
+      "Amboy.",
+      "D'Hara.",
+      "Ix.",
+      "Wisconsin.",
+      "Delft.",
+      "Australia.",
+      "Gorgossium.",
+      "the Gungeon.",
+      "the Crypt of the Necrodancer.",
+      "the Tomb of Tyrants.",
+      "the Deathstate.",
+      "Black Mesa.",
+      "the Darkest Dungeon.",
+      "the middle of space.",
+      "the MOTHERGUNSHIP.",
+      "Hallownest.",
+      "Blackwell Academy.",
+      "the Norwood Suite.",
+      "the Nuclear Throne.",
+      "Arstotzka.",
+      "Aperture Science.",
+      "Whispering Rock Psychic Summer Camp.",
+      "the Shrouded Isle.",
+      "the Tower of Guns.",
+      "Monkey Island.",
+      "New Vegas.",
+      "This one",
+      "The item",
+      "This relic",
+      "It",
+      "The antique",
+      "The artifact",
+      "The knickknack",
+      "This curio",
+      "The mystical object",
+      "This curiosity",
+      "This small ring",
+      "This letter of recommendation",
+      "This scroll with a bright smile",
+      "This amulet with a phrog on it",
+      "This aged love letter",
+      "This bottle of soda",
+      "This large toupee",
+      "This simple metronome",
+      "This brightly colored tissue box",
+      "This dessicated eyeball",
+      "This collection of gummy candies",
+      "This large pill bottle",
+      "This cracked mug",
+      "This table leg",
+      "This thumb-sized tooth",
+      "This purple fingernail",
+      "This discolored ribbon",
+      "This Q-shaped stone",
+      "This ominous ointment",
+      "This fascinating rock",
+      "This glass shard",
+      "This lanyard",
+      "This shadow",
+      "This sack of beans",
+      "This jigsaw piece",
+      "This goopy lump",
+      "This scorched doll's head",
+      "This rotting mouse head",
+      "These incomprehensible gears",
+      "This cursed map",
+      "This denim jacket",
+      "This clunky device",
+      "These smelly socks",
+      "This half-eaten sandwich",
+      "This badminton racket",
+      "This severed hand",
+      "This cowboy hat",
+      "This jaw worm figurine",
+      "This broken pair of sunglasses",
+      "This ornate ornament",
+      "This cracked marble",
+      "This oily rag",
+      "This piece of parchment",
+      "This fried circuit",
+      "This dragonfly wing",
+      "This waxy paper",
+      "This dimpled ball",
+      "This deflated balloon",
+      "This dented doorknob",
+      "This shredded fabric",
+      "This rainbow-colored crabshell",
+      "This meaty morsel",
+      "This savory cheese",
+      "This unrefined gelatin",
+      "This discarded hoof",
+      "This ashen pot",
+      "This flimsy shoelace",
+      "This stiff shirt collar",
+      "This golden hair barrette",
+      "This porcelain cat",
+      "This reflective oval",
+      " shines brightly.",
+      " glows blue.",
+      " makes noises intermittently.",
+      " smells awful.",
+      " shakes violently.",
+      " jiggles a bit when left alone.",
+      " is a little slimy.",
+      " trembles in your hands.",
+      " seems like it may hatch.",
+      " is warm to the touch.",
+      " sucks the light in.",
+      " watches you when you sleep.",
+      " smells like peppermint.",
+      " slowly grins at you.",
+      " glares at you sometimes.",
+      " sticks to your palm.",
+      " flings itself at shiny things.",
+      " lurches for your throat.",
+      " ticks every other second.",
+      "'s label always seems different.",
+      " makes your bag immensely heavy.",
+      " buzzes sometimes.",
+      " clinks, even when touching nothing.",
+      " emits an alarming stench.",
+      " hums your favorite song.",
+      " can't seem to stay upright.",
+      " wobbles, but never falls down.",
+      " lunges at whatever's next to it.",
+      " would scream if it had a mouth.",
+      "'s colors shift constantly.",
+      " beats like a heart.",
+      " won't let go of your finger.",
+      " looks like a nightmare.",
+      " disappears when not looked at.",
+      " keeps moving unless held still.",
+      " seems to disappear and reappear.",
+      " scrapes incessantly.",
+      " makes you feel hungry.",
+      " always ends up in your pocket.",
+      " sparkles when water is nearby.",
+      " gives you a sense of hope.",
+      " talks gibberish endlessly.",
+      " makes you forgetful.",
+      " ribbits sometimes.",
+      " stinks like blighted cabbage.",
+      " produces loud noises when shaken.",
+      " makes you feel famished.",
+      "#gHas #gdifferent #gqualities #gevery #gtime #gyou #gfind #git."
+    ]
+  },
+  "vexMod:BerryBomb": {
+    "NAME": "Berry Bomb",
+    "FLAVOR": "Tastes explosive!",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b6. After #b8 combats, explodes and deals #b100 damage to ALL enemies."
+    ]
+  },
+  "vexMod:GazerBeam": {
+    "NAME": "Gazer Beam",
+    "FLAVOR": "Last used to spell \"KRONOS\".",
+    "DESCRIPTIONS": [
+      "When you play your first targeted #yAttack each combat, apply #b2 #yLock-On."
+    ]
+  },
+  "vexMod:TimesightGlass": {
+    "NAME": "Timesight Glass",
+    "FLAVOR": "You can see yourself a few minutes before.",
+    "DESCRIPTIONS": [
+      "At the start of every even-numbered turn, put a random card from your discard pile into your hand."
+    ]
+  },
+  "vexMod:MadnessLens": {
+    "NAME": "Madness Lens",
+    "FLAVOR": "The Spire looks like a hellish, twisting wasteland through this glass.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, reduce the cost of a random card in your hand to #b0 this combat."
+    ]
+  },
+  "vexMod:BrainBlaster": {
+    "NAME": "Brain Blaster",
+    "FLAVOR": "Holding it near your head, you feel a terrible buzzing dizziness.",
+    "DESCRIPTIONS": [
+      "ALL enemies start combat #yReactive."
+    ]
+  },
+  "vexMod:PlasmaPancake": {
+    "NAME": "Plasma Pancake",
+    "FLAVOR": "It's literally on fire.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b6. NL At the start of each combat, deal #b11 damage to ALL enemies."
+    ]
+  },
+  "vexMod:ChompingNoodles": {
+    "NAME": "Chomping Noodles",
+    "FLAVOR": "These noodles bite back.",
+    "DESCRIPTIONS": [
+      "Whenever you enter a #y? room, raise your Max HP by #b3 and lose #b9 HP."
+    ]
+  },
+  "vexMod:RedPlottingStone": {
+    "NAME": "Red Plotting Stone",
+    "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
+    "DESCRIPTIONS": [
+      "#pGlows #pon #pa #prandom #pfloor. NL Right click on it while it's glowing for a #gmassive #greward. NL Right click on it while it's not glowing to #rdie."
+    ]
+  },
+  "vexMod:TealTab": {
+    "NAME": "Teal Tab",
+    "FLAVOR": "Useful for categorization.",
+    "DESCRIPTIONS": [
+      "Add #b2 copies of the #b18th card you draw each combat into your hand. They cost #b0 this combat."
+    ]
+  },
+  "vexMod:DeviousBotling": {
+    "NAME": "Devious Botling",
+    "FLAVOR": "A tiny little mini-bot whose prime directive is to mess with people. Twitter at @DBotling.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Torments you randomly in annoying ways. Insults you on Twitter when you die.",
+      "Enjoy the Weak, ",
+      "Hoho, have some Weak, ",
+      "Taste weakness, ",
+      "You look pretty Weak, ",
+      "Have some Frail, ",
+      "Hehe, enjoy the Frail, ",
+      "Heh, taste Frail, ",
+      "Looking rather Frail, ",
+      "I'll be taking that gold, ",
+      "Thanks for the gold, ",
+      "Heh, my gold now, ",
+      "I'll enjoy the gold, ",
+      "I hope you didn't need that ",
+      "I'll be taking that ",
+      "Thanks for the ",
+      "Yoink! Got your ",
+      "Let's tone down that ",
+      "Couldn't help but nerf ",
+      "Ha, weakened your ",
+      "I'm gonna rebalance ",
+      "I don't feel like giving you Energy this turn, ",
+      "Not sharing my Energy this turn, ",
+      "Hope you didn't need my Energy this turn, ",
+      "No Energy for you this turn, ",
+      "Dodge this, ",
+      "Blasters incoming, ",
+      "Taste firepower, ",
+      "Here comes my chip damage, ",
+      "Want a little help, ",
+      "Care for some Block, ",
+      "Need some help, ",
+      "Require some support, ",
+      "Want some assistance, ",
+      "moron!",
+      "loser!",
+      "dork!",
+      "nerd!",
+      "fool!",
+      "curmudgeon!",
+      "pleb!",
+      "noob!",
+      "newbie!",
+      "tool!",
+      "buffoon!",
+      "cretin!",
+      "dipstick!",
+      "wanker!",
+      "weakling!",
+      "bonehead!",
+      "dummy!",
+      "imbecile!",
+      "pinhead!",
+      "troglodyte!",
+      "twit!",
+      "amateur!",
+      "bozo!",
+      "clown!",
+      "coward!",
+      "dimwit!",
+      "dolt!",
+      "dummy!",
+      "dunce!",
+      "goofball!",
+      "ignoramus!",
+      "idiot!",
+      "lowlife!",
+      "nerd!",
+      "dweeb!",
+      "wacko!",
+      "bilge rat!",
+      "sucker!",
+      "numbskull!",
+      "Meet my Gremlin friend!",
+      "I cast Summon Gremlin!",
+      "Thrash this loser for me, Gremlin.",
+      "Gain [E] at the start of your turn. Torments you at random occasions in unique ways.",
+      "Nice try. LOL.",
+      "You didn't have a chance.",
+      "LOL, noob.",
+      "When you try so hard and you don't succeed...",
+      "Press F.",
+      "Wrecked.",
+      "Thrashed.",
+      "Deee-stroyed.",
+      "Pathetic!",
+      "Next time, try thinking?",
+      "That must have hurt.",
+      "That run was weak.",
+      "Better luck next time.",
+      "LOL, pleb.",
+      "Hah, nerd.",
+      "Git gud.",
+      "You tried so hard and got so far NL but in the end, it didn't even matter...",
+      "Good game, well played.",
+      "GG WP",
+      "Get rekt scrub.",
+      "U ded.",
+      "Say hi to Neow for me!",
+      "See you next time!",
+      "That deck was weak.",
+      "Get that weak deck outta here!",
+      "LOL. Get wrecked.",
+      "Try not to die next time.",
+      "Roses are red, violets are blue. NL A loser is dead, that loser is you.",
+      "This card reward is better off without ",
+      "I'll be taking that nice ",
+      "Looks like your deck will go without ",
+      "Mmm, hope you didn't want "
+    ]
+  },
+  "vexMod:WellWornAnklet": {
+    "NAME": "Well-Worn Anklet",
+    "FLAVOR": "Still gotta dig up the paper on this one.",
+    "DESCRIPTIONS": [
+      "At the start of turns #b3 and #b7, gain #b7 #yBlock."
+    ]
+  },
+  "vexMod:GoldFlippers": {
+    "NAME": "Flippers of Frivolty",
+    "FLAVOR": "These flippers make you want to spend a lot.",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, gain #b15 #yGold. Whenever you leave The Merchant, lose #b1 HP for every #b5 #yGold you have."
+    ]
+  },
+  "vexMod:GorgonsHead": {
+    "NAME": "Gorgon's Head",
+    "FLAVOR": "Pretty, but still formidable.",
+    "DESCRIPTIONS": [
+      "ALL enemies start combat with #b3 less #yStrength."
+    ]
+  },
+  "vexMod:ExplorationPack": {
+    "NAME": "Adventure Pack",
+    "FLAVOR": "You're about to have a trip!",
+    "DESCRIPTIONS": [
+      "Upon pickup, replace all cards in your deck with Discoveries.",
+      "A land of adventure!"
+    ]
+  },
+  "vexMod:OrbOfGreed": {
+    "NAME": "Orb of Greed",
+    "FLAVOR": "Mmm, money!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #yChannel #b1 #yGolden #yπLightning."
+    ]
+  },
+  "vexMod:ImprovementManual": {
+    "NAME": "Improvement Manual",
+    "FLAVOR": "Ahh, so THAT's how you make a card Innate!",
+    "DESCRIPTIONS": [
+      "Upon pickup, #yUpgrade #b3 cards.",
+      "Upgrading cards...!"
+    ]
+  },
+  "vexMod:TheWave": {
+    "NAME": "Pulse Stone",
+    "FLAVOR": "So entrancing to look at.",
+    "DESCRIPTIONS": [
+      "Right click in combat to make your relics do the Wave."
+    ]
+  },
+  "vexMod:ThirteenHourStone": {
+    "NAME": "Thirteen-Hour Stone",
+    "FLAVOR": "Number nine is the most important.",
+    "DESCRIPTIONS": [
+      "Whenever you draw #b13 cards, draw #b1 card."
+    ]
+  },
+  "vexMod:LastWill": {
+    "NAME": "Last Will",
+    "FLAVOR": "Your possessions are bequeathed to The Merchant.",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b111 #yGold. NL When you die or win, @DBotling tweets about your run.",
+      "Upon pickup, gain #b111 #yGold."
+    ]
+  },
+  "vexMod:Starfruit": {
+    "NAME": "Starfruit",
+    "FLAVOR": "Tastes like stars.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your Max HP by #b6. At the start of each combat, shuffle #b3 #yMagical #yFruit into your draw pile."
+    ]
+  },
+  "vexMod:FallenStar": {
+    "NAME": "Fallen Fruit",
+    "FLAVOR": "This one must have fallen off the Spire.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, shuffle #b2 #yMagical #yFruit into your draw pile."
+    ]
+  },
+  "vexMod:Jellybean": {
+    "NAME": "Jellybean",
+    "FLAVOR": "Tastes gummy.",
+    "DESCRIPTIONS": [
+      "Upon pickup, raise your max HP by #b6. At the start of each combat, gain #b2 #yMalleable."
+    ]
+  },
+  "vexMod:PuzzleBox1": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox2": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "Right click #b",
+    " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox3": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox4": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox5": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox6": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
+    ]
+  },
+  "vexMod:PuzzleBox7": {
+    "NAME": "Puzzle Box(?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " time to gain #b1000 #yGold."
+    ]
+  }
+}

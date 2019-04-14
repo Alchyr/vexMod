@@ -1,0 +1,28 @@
+{
+  "vexMod:BlazePotion": {
+    "NAME": "Blaze Potion",
+    "DESCRIPTIONS": [
+      "Gain #b",
+      " stacks of ANY random buff."
+    ]
+  },
+  "vexMod:GoldPotion": {
+    "NAME": "Bottle o' Gold",
+    "DESCRIPTIONS": [
+      "Deal #b",
+      " damage. Gain some #yGold."
+    ]
+  },
+  "vexMod:LightningBottle": {
+    "NAME": "Lightning in a Bottle",
+    "DESCRIPTIONS": [
+      "Channel #b1 Lightning."
+    ]
+  },
+  "vexMod:CameraPotion": {
+    "NAME": "Tweet Potion",
+    "DESCRIPTIONS": [
+      "Gain #b1 stack of ANY random buff. @DBotling tweets about your run."
+    ]
+  }
+}

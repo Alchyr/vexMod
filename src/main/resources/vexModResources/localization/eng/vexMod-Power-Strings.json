@@ -1,0 +1,123 @@
+{
+  "vexMod:ChaoticReactorPower": {
+    "NAME": "Chaotic Reactor",
+    "DESCRIPTIONS": [
+      "Channel #b",
+      " random Orb at the start of your turn.",
+      " random Orbs at the start of your turn."
+    ]
+  },
+  "vexMod:StrikeStormPower": {
+    "NAME": "Strike Storm",
+    "DESCRIPTIONS": [
+      "Whenever you play a non-Attack card, play #b",
+      " πStrike.",
+      " πStrikes."
+    ]
+  },
+  "vexMod:MidasTouchPower": {
+    "NAME": "Golden Touch",
+    "DESCRIPTIONS": [
+      "Whenever you deal unblocked Attack damage, gain that much Gold.",
+      "Give me your gold!",
+      "Hand it over!"
+    ]
+  },
+  "vexMod:EvasivePower": {
+    "NAME": "Evasive Thoughts",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " random Skill to your hand. It costs #b0 this turn.",
+      " random Skills to your hand. They cost #b0 this turn."
+    ]
+  },
+  "vexMod:HatredPower": {
+    "NAME": "Hatred",
+    "DESCRIPTIONS":[
+      "At the start of your turn, add #b",
+      " random Attack to your hand.",
+      " random Attacks to your hand."
+    ]
+  },
+  "vexMod:SharpOrbsPower": {
+    "NAME": "Sharp Orbs",
+    "DESCRIPTIONS": [
+      "At the end of your turn, deal #b1 damage to a random enemy for each #yOrb you have #b",
+      " time.",
+      " times."
+    ]
+  },
+  "vexMod:LoseFocusPower": {
+    "NAME": "Lose Focus",
+    "DESCRIPTIONS": [
+    "At the end of your turn, lose #b",
+    " Focus."
+    ]
+  },
+  "vexMod:ForceCubePower": {
+    "NAME": "Cubic Shield",
+    "DESCRIPTIONS": [
+      "At the start of its turn, gains #b",
+      " #yBuffer.",
+      " #yBuffers."
+    ]
+  },
+  "vexMod:EnemyBufferPower": {
+    "NAME": "Buffer",
+    "DESCRIPTIONS": [
+      "Prevent damage yadda yadda get real DESC"
+    ]
+  },
+  "vexMod:InkPower": {
+    "NAME": "Ink Splat",
+    "DESCRIPTIONS": [
+      "At the start of your turn, discard #b",
+      " card randomly.",
+      " cards randomly."
+    ]
+  },
+  "vexMod:FadingPlayerPower": {
+    "NAME": "Fading",
+    "DESCRIPTIONS": [
+      "Dies in #b",
+      " turns.",
+      "Dies this turn."
+    ]
+  },
+  "vexMod:PlayerTimeWarpPower": {
+    "NAME": "Time Warp",
+    "DESCRIPTIONS": [
+      "Whenever you play #b",
+      " cards, ends your turn and you gain #b",
+      " #yStrength.",
+      "Whenever you play #b12 cards, ends your turn and you gain #b2 #yStrength."
+    ]
+  },
+  "vexMod:MedusaPower": {
+    "NAME": "Stonegaze",
+    "DESCRIPTIONS": [
+      "At the end of your turn, Exhaust your hand."
+    ]
+  },
+  "vexMod:EvilFumesPower": {
+    "NAME": "Noxious Fumes",
+    "DESCRIPTIONS": [
+      "At the start of its turn, applies #b",
+      " Poison to you."
+    ]
+  },
+  "vexMod:EndOfTurnDamagePower": {
+    "NAME": "Incoming Damage",
+    "DESCRIPTIONS": [
+      "At the end of your turn, take #b",
+      " damage and this wears off."
+    ]
+  },
+  "vexMod:StoneSkinPower": {
+    "NAME": "Snake Skin",
+    "DESCRIPTIONS": [
+      "Prevent #b",
+      " incoming Attack damage."
+    ]
+  }
+}

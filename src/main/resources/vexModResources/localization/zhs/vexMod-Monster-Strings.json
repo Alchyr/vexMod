@@ -1,0 +1,91 @@
+{
+  "vexMod:BaseMonster": {
+    "NAME": "基本怪物",
+    "MOVES": [
+      "咆哮"
+    ],
+    "DIALOG": [
+      "山豆根士大夫阿萨德……这是啥？"
+    ]
+  },
+  "vexMod:EvilCube": {
+    "NAME": "邪恶立方",
+    "DIALOG": [
+      "摧毁？ NL 摧毁？ NL 摧毁……？"
+    ]
+  },
+  "vexMod:Octiver": {
+    "NAME": "章利弗",
+    "MOVES": [
+      "喷洒墨汁"
+    ],
+    "DIALOG": [
+      "~噗噜~ NL ~噗噜~"
+    ]
+  },
+  "vexMod:Gorgon": {
+    "NAME": "蛇发女妖",
+    "MOVES": [
+      "石化凝视"
+    ],
+    "DIALOG": [
+      "你 …… 还硬气嘛！"
+    ]
+  },
+  "vexMod:InfectionBeast": {
+    "NAME": "感染兽",
+    "MOVES": [
+      "深层疫病"
+    ],
+    "DIALOG": [
+      "这个强大的负面效果…… NL 是 ~永久的~ ~。~ ~。~ ~。~"
+    ]
+  },
+  "vexMod:CardEater": {
+    "NAME": "卡牌收藏家",
+    "MOVES": [
+      "不祥洗牌"
+    ],
+    "DIALOG": [
+      "想…… NL 交换…… NL 卡牌吗？"
+    ]
+  },
+  "vexMod:SickeningThing": {
+    "NAME": "令人恶心之物",
+    "MOVES": [
+      "腐烂抽动"
+    ],
+    "DIALOG": [
+      "感觉…… NL ~恶~ ~心~ ~么~ ~？~"
+    ]
+  },
+  "vexMod:CurseLord": {
+    "NAME": "诅咒之王",
+    "MOVES": [
+      "诅咒感染"
+    ],
+    "DIALOG": [
+      "~我的~ ~诅咒~ ~会~ ~永远~ ~持续~ ~。~ ~。~ ~。~",
+      "~危险的~ ~永久~ ~诅咒~ ~要来了~ ~！~"
+    ]
+  },
+  "vexMod:EvilSsserpent": {
+    "NAME": "蛇~",
+    "MOVES": [
+      "哦，如此金光闪闪……"
+    ],
+    "DIALOG": [
+      "~我~ ~。~ ~。~ ~。~ NL ~什~ ~么~ ~都~ ~。~ ~。~ NL ~买~ ~得~ ~起~ ~。~ ~。~ ~。~",
+      " ~哈~ ~哈~ ~哈~ NL ~哈~ ~哈~ ~哈~ NL ~哈~ ~哈~ ~哈~ NL ~哈~ ~哈~ ~哈~ ~！~"
+    ]
+  },
+  "vexMod:GildedGorgon": {
+    "NAME": "镶金蛇发女妖",
+    "MOVES": [
+      "金色凝视"
+    ],
+    "DIALOG": [
+      "哦，想要跟我战斗。 NL 真 ~可爱！~ "
+    ]
+  }
+}

@@ -1,0 +1,423 @@
+{
+  "vexMod:BlockBeam": {
+    "NAME": "格挡光束",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。"
+  },
+  "vexMod:DrainingDoom": {
+    "NAME": "枯渴之灾",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 失去 5 点最大生命。 NL 消耗 。 NL  虚无 。"
+  },
+  "vexMod:CursedBody": {
+    "NAME": "诅咒之躯",
+    "DESCRIPTION": "获得 !M! 层 无实体 。 NL 被 诅咒 - 受伤 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 !M! 层 无实体 。 NL 被 诅咒 - 笨拙 。 NL  消耗 。"
+  },
+  "vexMod:CleverClash": {
+    "NAME": "机敏斩击",
+    "DESCRIPTION": "如果敌人的意图是攻击，获得 !B! 点 格挡 。 NL 否则，造成 !D! 点伤害。"
+  },
+  "vexMod:DeadlyDodge": {
+    "NAME": "致命回避",
+    "DESCRIPTION": "如果敌人的意图是攻击，获得 !M! 层 无实体 并 消耗 。  NL  否则 给予 !vexMod:SecondMagic! 层 中毒 。"
+  },
+  "vexMod:ReflexChannel": {
+    "NAME": "反射充能",
+    "DESCRIPTION": "如果敌人的意图是攻击， 生成 1 个 冰霜 充能球 。 NL 否则，  生成 1 个 闪电 充能球 。",
+    "UPGRADE_DESCRIPTION": "如果敌人的意图是攻击， 生成 1 个 冰霜 充能球 。 NL 否则，  生成 1 个 闪电 充能球 。 NL 抽一张牌。"
+  },
+  "vexMod:Fear": {
+    "NAME": "畏怯",
+    "DESCRIPTION": "在你的回合结束时， 消耗 并获得 1 层 易伤 。"
+  },
+  "vexMod:Greed": {
+    "NAME": "贪欲",
+    "DESCRIPTION": " 无法被打出 。 NL 在你的回合结束时，失去 6 点金币。"
+  },
+  "vexMod:StrikeStorm": {
+    "NAME": "打击风暴",
+    "DESCRIPTION": " 虚无 。 NL 每打出一张非攻击牌，打出一张 打击 。",
+    "UPGRADE_DESCRIPTION": "每打出一张非攻击牌，打出一张 打击 。"
+  },
+  "vexMod:ChaoticReactor": {
+    "NAME": "混沌反应堆",
+    "DESCRIPTION": "在你的回合开始时， 生成  1 个随机 充能球 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在每回合开始时， 生成  1 个随机 充能球 。"
+  },
+  "vexMod:VenomSigh": {
+    "NAME": "剧毒吐息",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 给予 !M! 层 中毒 。"
+  },
+  "vexMod:BurstPulse": {
+    "NAME": "脉冲迸发",
+    "DESCRIPTION": "触发所有 充能球 的被动能力。",
+    "UPGRADE_DESCRIPTION": " 生成 一个 闪电 充能球 。 NL 触发所有 充能球 的被动能力。"
+  },
+  "vexMod:Overload": {
+    "NAME": "过载",
+    "DESCRIPTION": "你每有一个 充能球 栏位，就随机生成一个随机 充能球 。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "你每有一个 充能球 栏位，就随机生成一个随机 充能球 。 NL 获得 2 个 充能球 栏位。 NL  消耗 。"
+  },
+  "vexMod:CrumblingCrash": {
+    "NAME": "崩解撞击",
+    "DESCRIPTION": "移除敌人的所有 格挡 。 NL 获得 !B! 点 格挡 。 NL 给予 2 层 易伤 。"
+  },
+  "vexMod:ComboTrick": {
+    "NAME": "连招",
+    "DESCRIPTION": "增加一张 小刀 到你的手牌。 NL 给予 3 层 中毒 。 NL 在下一回合获得 !B! 点 格挡 。 NL 抽 2 张牌。 NL 丢弃 1 张牌。"
+  },
+  "vexMod:TuneUp": {
+    "NAME": "调谐",
+    "DESCRIPTION": "获得 !B! 点格挡。 NL 手牌中一张随机 攻击牌 的伤害增加 !M! 。"
+  },
+  "vexMod:MidasTouch": {
+    "NAME": "点金之触",
+    "DESCRIPTION": "每当你造成未被格挡的伤害时，获得同等数值的金币。 NL  虚无 。"
+  },
+  "vexMod:PotOfGreed": {
+    "NAME": "足智多谋",
+    "DESCRIPTION": "抽 2 张牌。",
+    "UPGRADE_DESCRIPTION": "将抽牌堆中的 1 张牌放入你的手牌。 NL 抽 1 张牌。"
+  },
+  "vexMod:BloodGuard": {
+    "NAME": "鲜血防壁",
+    "DESCRIPTION": "失去 !M! 点生命。 NL 获得 !B! 点 格挡 。"
+  },
+  "vexMod:Jackpot": {
+    "NAME": "头彩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 点金币。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 点金币。 NL  消耗 。"
+  },
+  "vexMod:SnowShield": {
+    "NAME": "冰雪护盾",
+    "DESCRIPTION": "触发所有 冰霜  充能球 的被动能力。 NL 生成 1 个 冰霜 充能球 。",
+    "UPGRADE_DESCRIPTION": "触发所有 充能球 的被动能力。 NL 生成 1 个 冰霜 充能球。"
+  },
+  "vexMod:DebrisGuard": {
+    "NAME": "碎片防壁",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 如果这张牌被 消耗 ， 获得 !M! 点 格挡 。"
+  },
+  "vexMod:DebrisSlash": {
+    "NAME": "碎片斩击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌被 消耗 ， 抽 !M! 张牌。 NL 虚无 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌被 消耗 ， 抽 !M! 张牌。 NL 虚无 。"
+  },
+  "vexMod:EntryPlan": {
+    "NAME": "突入计划",
+    "DESCRIPTION": "抽一张牌。 NL 如果抽到的是 攻击牌 ，造成 !D! 点 伤害 。"
+  },
+  "vexMod:PrepareVictim": {
+    "NAME": "准备下手",
+    "DESCRIPTION": "给予 缓慢 。 NL 消耗 。"
+  },
+  "vexMod:ShockKick": {
+    "NAME": "高压踢",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 直到你的下一回合开始， 获得 !M! 点 集中 。"
+  },
+  "vexMod:Taunt": {
+    "NAME": "侮辱",
+    "DESCRIPTION": "给予 X 层 虚弱 。 NL 给予 X 层 易伤 。 NL 获得 X 点 力量 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予 X+1 层 虚弱 。 NL 给予 X+1 层 易伤 。 NL 获得 X+1 点 力量 。 NL 消耗 。"
+  },
+  "vexMod:BandageWhip": {
+    "NAME": "绷带抽击",
+    "DESCRIPTION": "造成 !D! 伤害。 NL 敌人在本回合内失去 !M! 点 力量 。"
+  },
+  "vexMod:BeamPop": {
+    "NAME": "光束冲击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 跟踪锁定 。"
+  },
+  "vexMod:BlazeBeam": {
+    "NAME": "高热踢",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层任意的随机增益效果。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 层任意的随机增益效果。 NL  消耗 。"
+  },
+  "vexMod:ChargeBeam": {
+    "NAME": "充能激光",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 在下一回合多抽 1 张牌。"
+  },
+  "vexMod:Devastation": {
+    "NAME": "荒败",
+    "DESCRIPTION": "失去 !M! 点生命。 NL 造成与你已失去的生命数值相等的伤害。 NL 消耗 。"
+  },
+  "vexMod:Elimination": {
+    "NAME": "抹消",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL  消耗 你的所有手牌。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL  消耗 你手牌中的任意张牌。"
+  },
+  "vexMod:FullService": {
+    "NAME": "全套服务",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 获得 !M! 点金币。 NL 给予 !vexMod:SecondMagic! 层 虚弱 。 NL 给予 !vexMod:SecondMagic! 层 易伤 。 NL 给予 !vexMod:SecondMagic! 层 中毒 。 NL 抽 !vexMod:SecondMagic! 张牌。 NL 回复 !vexMod:SecondMagic! 点生命。 NL 在下一回合获得 !M! 点 格挡 。 NL 在下一回合获得 1 点 能量  。 NL 在下一回合多抽 1 张牌。 NL  升级 一张手牌。 NL 消耗 。"
+  },
+  "vexMod:PinpointKick": {
+    "NAME": "精准踢击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果突破了敌人的 格挡 ，给予 !M! 层 易伤 。"
+  },
+  "vexMod:Plotting": {
+    "NAME": "谋划",
+    "DESCRIPTION": "在下一回合多抽 !M! 张牌。"
+  },
+  "vexMod:ShadowStrike": {
+    "NAME": "暗影打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 在下一回合获得 !B! 点 格挡 。"
+  },
+  "vexMod:CardboardBlock": {
+    "NAME": "硬卡护壁",
+    "DESCRIPTION": "获得与当前你抽牌堆中牌数相等的 格挡 。",
+    "UPGRADE_DESCRIPTION": "获得你当前抽牌堆中牌数+3的 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !B! 点 格挡 。）"
+    ]
+  },
+  "vexMod:MidnightStrike": {
+    "NAME": "午夜打击",
+    "DESCRIPTION": "只有当你在本场战斗中恰好打出了 !M! 张牌时才能打出。 NL 造成 !D! 点伤害。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （还需要打出 !vexMod:SecondMagic! 张牌。）",
+      "我还没有打到 ",
+      " 张牌！",
+      " NL （时机已过！）"
+    ]
+  },
+  "vexMod:GatherTools": {
+    "NAME": "搜集工具",
+    "DESCRIPTION": "获得当前你的手牌数的两倍的 格挡 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （获得 !B! 点 格挡 。）"
+    ]
+  },
+  "vexMod:BattleStance": {
+    "NAME": "战姿",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 获得 !M!  多层护甲 。"
+  },
+  "vexMod:EvasiveThoughts": {
+    "NAME": "脱身秘策",
+    "DESCRIPTION": "在你的回合开始时，添加一张 技能牌 到你的手牌。 NL 它在本回合的耗费变为 0 。"
+  },
+  "vexMod:GroundPound": {
+    "NAME": "锤地",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 对所有敌人造成 !D! 点伤害。"
+  },
+  "vexMod:Hatred": {
+    "NAME": "仇恨",
+    "DESCRIPTION": "在你的回合开始时，添加一张 攻击牌 到你的手牌。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在你的回合开始时，添加一张 攻击牌 到你的手牌。"
+  },
+  "vexMod:Hex": {
+    "NAME": "邪咒",
+    "DESCRIPTION": "给予 !M! 层 易伤 。 NL 给予 !M! 层 跟踪锁定 。 NL 激发 你最右侧的 充能球 。"
+  },
+  "vexMod:RocketPunch": {
+    "NAME": "火箭拳",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 选择手牌中的一张 攻击牌 。 NL 在弃牌堆放入它的一张复制品。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 选择手牌中的一张 攻击牌 。 NL 添加它的一张复制品到手牌。"
+  },
+  "vexMod:SharpOrbs": {
+    "NAME": "锋锐充能球",
+    "DESCRIPTION": "获得 1 个 充能球 栏位。 NL 在你的回合结束时，你每有一个 充能球 ，就对一个随机敌人造成 1 点伤害一次。"
+  },
+  "vexMod:Sloth": {
+    "NAME": "倦怠",
+    "DESCRIPTION": " 无法被打出 。 NL 在你的回合结束时，在下一回合少抽一张牌。"
+  },
+  "vexMod:CoinToss": {
+    "NAME": "钱币飞溅",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得随机数量的金钱。 NL  消耗 。"
+  },
+  "vexMod:SystemUpdate": {
+    "NAME": "系统升级",
+    "DESCRIPTION": "获得 1 点 力量 。 NL 获得 1 点 敏捷 。 NL 获得 1 点 集中 。"
+  },
+  "vexMod:Division": {
+    "NAME": "增殖",
+    "DESCRIPTION": "向牌组中加入一张 无色牌 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "向牌组中加入一张已 升级 的 无色牌 。 NL 消耗 。"
+  },
+  "vexMod:EndTurnCard": {
+    "NAME": "积攒力量",
+    "DESCRIPTION": "获得 2 点 力量 。 NL 结束你的回合。"
+  },
+  "vexMod:Virus": {
+    "NAME": "病毒",
+    "DESCRIPTION": " 无法被打出 。 NL 每当你抽到这张牌，都增加一张其复制品到你的手牌。"
+  },
+  "vexMod:AntiqueFury": {
+    "NAME": "古董之怒",
+    "DESCRIPTION": "造成等于你所拥有的遗物数量3倍的伤害。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成等于你所拥有的遗物数量3倍的伤害。 ",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）"
+    ]
+  },
+  "vexMod:OrbBoomerang": {
+    "NAME": "充能球飞镖",
+    "DESCRIPTION": "造成 !D! 点伤害。 根据你最右侧的 充能球 的种类产生特殊效果。",
+    "EXTENDED_DESCRIPTION": [
+      "造成 !D! 点伤害。",
+      " NL 触发你最右侧 充能球 的被动效果。",
+      " NL 获得 6 点 格挡 。",
+      " NL 给予所有敌人 3 层 中毒 。",
+      " NL 获得 [E] 。"
+    ]
+  },
+  "vexMod:DefensiveStance": {
+    "NAME": "守势",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 在你的回合结束时，获得 !M! 点 格挡 。"
+  },
+  "vexMod:FaceSlap": {
+    "NAME": "打脸",
+    "DESCRIPTION": "移除敌人的所有 格挡 。 NL 造成 !D! 点伤害。 NL 给予 !M!  层 易伤 。"
+  },
+  "vexMod:Insult": {
+    "NAME": "嘲讽",
+    "DESCRIPTION": "给予 !M! 层 虚弱 。 NL 给予 !M! 层 易伤 。",
+    "EXTENDED_DESCRIPTION": [
+      "你管这叫武器？",
+      "来和我战啊！",
+      "有什么招数尽管上！ NL @哈哈哈！@",
+      "来啊我让你打！ NL 没用的弱者！"
+    ]
+  },
+  "vexMod:HeavySlash": {
+    "NAME": "重斩",
+    "DESCRIPTION": "造成 !D! 点伤害。"
+  },
+  "vexMod:Gloat": {
+    "NAME": "自满",
+    "DESCRIPTION": "获得 !M! 点 力量 。"
+  },
+  "vexMod:FightResponse": {
+    "NAME": "战斗狂怒",
+    "DESCRIPTION": "移除所有负面效果。 NL 获得 !M! 点 力量 。 NL 只有在当前生命值低于最大生命值的50%时才能打出。 NL  消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "我的生命值还不够低。",
+      "~你惹火我了……~",
+      "@败北？@ NL @不可能的！！@ "
+    ]
+  },
+  "vexMod:Execute": {
+    "NAME": "处决",
+    "DESCRIPTION": "造成 !D! 点伤害两次。 NL 只有在当前生命值低于最大生命值的50%时才能打出。",
+    "EXTENDED_DESCRIPTION": [
+      "我的生命值还不够低。",
+      "~去~ ~死~ ~。~ ~。~ ~。~",
+      "接受我的怒火吧！"
+    ]
+  },
+  "vexMod:StairwayStrike": {
+    "NAME": "高塔打击",
+    "DESCRIPTION": "耗费总是等于你所在的幕数。  NL 造成等于你所在的层数的伤害。 NL 消耗 。",    
+    "UPGRADE_DESCRIPTION": "耗费总是等于你所在的幕数。 NL 造成等于你所在的层数的伤害。  ",
+    "EXTENDED_DESCRIPTION": [
+  " NL (Deals !D! damage.)"]
+  },
+  "vexMod:GoldenStrike": {
+    "NAME": "镶金打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点金币。 NL 消耗 。"
+  },
+  "vexMod:InfectiousLoot": {
+    "NAME": "染毒宝藏",
+    "DESCRIPTION": "给予与你所拥有的遗物数量相等层数的 中毒 。"
+  },
+  "vexMod:CursedStrike": {
+    "NAME": "诅咒打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加一张随机 诅咒牌 到你的手牌。"
+  },
+  "vexMod:ScaledPoison": {
+    "NAME": "等比毒药",
+    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 在这场战斗中翻倍这张卡牌给予的 中毒 层数。"
+  },
+  "vexMod:FocusPunch": {
+    "NAME": "焦点之拳",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每当你抽到这张牌，它的消耗都减少1点。 NL 消耗 。"
+  },
+  "vexMod:ShieldSwipe": {
+    "NAME": "盾击",
+    "DESCRIPTION": "窃取敌人的 格挡 。 NL 抽一张牌。"
+  },
+  "vexMod:GrowingStorm": {
+    "NAME": "雷云渐长",
+    "DESCRIPTION": " 生成 !M! 个 闪电 充能球 。 NL  在本场战斗中，这张卡牌生成的 闪电 充能球数增加 1 。"
+  },
+  "vexMod:PowerUpPunch": {
+    "NAME": "充能之拳",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 为增加你最左边的充能球 2 点 集中 。"
+  },
+  "vexMod:DiverseOrb": {
+    "NAME": "充能球护盾",
+    "DESCRIPTION": "你每有一个充能球，就获得一次 !B! 点 格挡 。"
+  },
+  "vexMod:DarkConflux": {
+    "NAME": "黑暗汇流",
+    "DESCRIPTION": "生成1个 黑暗 充能球 。 NL 激发所有 黑暗 充能球 的被动效果X次。",
+    "UPGRADE_DESCRIPTION": "生成1个 黑暗 充能球 。 NL 激发所有 黑暗 充能球 的被动效果X+1次。"
+  },
+  "vexMod:LeechLife": {
+    "NAME": "吸取生命",
+    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 敌人每有5层 中毒 ，就回复1点生命。 NL 消耗 。"
+  },
+  "vexMod:BloodToGold": {
+    "NAME": "化血为金",
+    "DESCRIPTION": "失去3点生命。 NL 获得 !M! 点金币。 NL 抽一张牌。"
+  },
+  "vexMod:GhostlyBlitz": {
+    "NAME": "幽灵闪击",
+    "DESCRIPTION": "打出你 消耗 堆中的所有 攻击牌 1次。 NL 消耗 。"
+  },
+  "vexMod:CurseBlast": {
+    "NAME": "诅咒爆发",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果没有杀死一名敌人，向你的牌组中添加一张随机 诅咒 。"
+  },
+  "vexMod:Weakness": {
+    "NAME": "软肋",
+    "DESCRIPTION": " 不能被打出 。 NL 每当你抽到这张牌，手上一张随机 攻击牌 的伤害减少2点。"
+  },
+  "vexMod:GoldenLightningCard": {
+    "NAME": "金色闪电",
+    "DESCRIPTION": " 生成 1 个 [#EFC851]金色闪电 充能球。"
+  },
+  "vexMod:NamedBlast": {
+    "NAME": "名谓爆发",
+    "DESCRIPTION": "你的玩家名称里每有一个字符，就获得 !B! 点 格挡 一次。 NL  消耗 。"
+  },
+  "vexMod:CalendarSmash": {
+    "NAME": "时日碎击",
+    "DESCRIPTION": "给予等于日期数值层数的 中毒 。 NL 消耗 。"
+  },
+  "vexMod:TrainingStrike": {
+    "NAME": "训练打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 增加你手中的一张随机卡牌的伤害 !M! 点。"
+  },
+  "vexMod:GorgonsGaze": {
+    "NAME": "石化凝视",
+    "DESCRIPTION": " 不能被打出 。 NL 在你的回合结束时， 消耗 所有其它手牌。"
+  },
+  "vexMod:GorgonsGlare": {
+    "NAME": "石化瞪视",
+    "DESCRIPTION": "敌人失去 !M! 点 力量 。 NL 回复 !M! 点生命。 NL 抽一张牌。 NL  消耗 。"
+  },
+  "vexMod:EyeBeam": {
+    "NAME": "眼波射线",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层虚弱。 NL 给予 !M! 层 易伤 。 NL 消耗 。"
+  },
+  "vexMod:SnakeSkin": {
+    "NAME": "蛇肤",
+    "DESCRIPTION": "每当你即将受到未被格挡的攻击伤害时，防止其中 !M! 点。"
+  },
+  "vexMod:EmailVexCard": {
+    "NAME": "推特打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，@dbotling会发一条推特公告此事。 NL  消耗 。"
+  },
+  "vexMod:StarBlast": {
+    "NAME": "魔法果实",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 抽 1 张牌。 NL  消耗 。"
+  },
+  "vexMod:Stardash": {
+    "NAME": "果实冲刺",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 !M!  魔法果实 放入你的抽牌堆中。 NL  消耗 。"
+  },
+  "vexMod:Deathsprout": {
+    "NAME": "死亡之芽",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，将一张 魔法果实 加入你的牌组中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，将一张已 升级 的 魔法果实 加入你的牌组中。 NL 消耗 。"
+  }
+}

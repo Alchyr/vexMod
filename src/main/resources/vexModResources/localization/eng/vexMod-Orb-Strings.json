@@ -1,0 +1,12 @@
+{
+  "GoldenLightning": {
+    "NAME": "Golden Lightning",
+    "DESCRIPTION": [
+      "#yPassive: At the end of turn, deal #b",
+      " damage to a random enemy and gain #b",
+      " #yGold. NL #yEvoke: Deal #b",
+      " damage to a random enemy and gain #b",
+      " #yGold. NL Can only produce a total of #b20 #yGold."
+    ]
+  }
+}

@@ -1,0 +1,385 @@
+{
+  "vexMod:BlockBeam": {
+    "NAME": "Block Beam",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage."
+  },
+  "vexMod:DrainingDoom": {
+    "NAME": "Draining Doom",
+    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Lose 5 Max HP. NL Exhaust."
+  },
+  "vexMod:CursedBody": {
+    "NAME": "Cursed Body",
+    "DESCRIPTION": "Gain !M! Intangible. NL Add an Injury Curse into your deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Add a Clumsy Curse into your deck. NL Exhaust."
+  },
+  "vexMod:CleverClash": {
+    "NAME": "Clever Clash",
+    "DESCRIPTION": "If the enemy intends to attack, gain !B! Block. NL Otherwise, deal !D! damage."
+  },
+  "vexMod:DeadlyDodge": {
+    "NAME": "Deadly Dodge",
+    "DESCRIPTION": "If the enemy intends to attack, gain !M! Intangible and Exhaust. NL Otherwise, apply !vexMod:SecondMagic! Poison."
+  },
+  "vexMod:ReflexChannel": {
+    "NAME": "Reflex Channel",
+    "DESCRIPTION": "If the enemy intends to attack, Channel 1 Frost. NL Otherwise, Channel 1 Lightning.",
+    "UPGRADE_DESCRIPTION": "If the enemy intends to attack, Channel 1 Frost. NL Otherwise, Channel 1 Lightning. NL Draw 1 card."
+  },
+  "vexMod:Fear": {
+    "NAME": "Fear",
+    "DESCRIPTION": "Ethereal. NL At the end of your turn, gain 1 Vulnerable."
+  },
+  "vexMod:Greed": {
+    "NAME": "Greed",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, lose 6 Gold."
+  },
+  "vexMod:StrikeStorm": {
+    "NAME": "Strike Storm",
+    "DESCRIPTION": "Ethereal. NL Whenever you play a non-Attack card, play a πStrike.",
+    "UPGRADE_DESCRIPTION": "Whenever you play a non-Attack card, play a πStrike."
+  },
+  "vexMod:ChaoticReactor": {
+    "NAME": "Chaotic Reactor",
+    "DESCRIPTION": "At the start of your turn, Channel !M! random Orb.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, Channel !M! random Orb."
+  },
+  "vexMod:VenomSigh": {
+    "NAME": "Venom Sigh",
+    "DESCRIPTION": "Gain !B! Block. NL Apply !M! Poison."
+  },
+  "vexMod:Overload": {
+    "NAME": "Overload",
+    "DESCRIPTION": "Channel 1 random Orb for each Orb slot you have. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Channel 1 random Orb for each Orb slot you have. NL Gain !M! Orb slots. NL Exhaust."
+  },
+  "vexMod:CrumblingCrash": {
+    "NAME": "Crumbling Crash",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Gain !B! Block. NL Apply 2 Vulnerable."
+  },
+  "vexMod:ComboTrick": {
+    "NAME": "Combo Trick",
+    "DESCRIPTION": "Add a Shiv into your hand. NL Apply 3 Poison. NL Next turn, gain !B! Block. NL Draw 2 cards. NL Discard 1 card."
+  },
+  "vexMod:TuneUp": {
+    "NAME": "Tune Up",
+    "DESCRIPTION": "Gain !B! Block. NL Increase the damage of a random Attack in your hand by !M! this combat."
+  },
+  "vexMod:MidasTouch": {
+    "NAME": "Golden Touch",
+    "DESCRIPTION": "Ethereal. NL Whenever an Attack deals unblocked damage, gain Gold equal to unblocked damage dealt."
+  },
+  "vexMod:PotOfGreed": {
+    "NAME": "Resourcefulness",
+    "DESCRIPTION": "Draw 2 cards.",
+    "UPGRADE_DESCRIPTION": "Put a card from your draw pile into your hand. NL Draw 1 card."
+  },
+  "vexMod:BloodGuard": {
+    "NAME": "Blood Guard",
+    "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block."
+  },
+  "vexMod:Jackpot": {
+    "NAME": "Jackpot!",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Poison. NL Gain !vexMod:SecondMagic! Gold. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Innate. NL Deal !D! damage. NL Apply !M! Poison. NL Gain !vexMod:SecondMagic! Gold. NL Exhaust."
+  },
+  "vexMod:EntryPlan": {
+    "NAME": "Entry Plan",
+    "DESCRIPTION": "Draw 1 card. NL If you draw an Attack, deal !D! damage."
+  },
+  "vexMod:PrepareVictim": {
+    "NAME": "Prepare Victim",
+    "DESCRIPTION": "Apply Slow. NL Exhaust."
+  },
+  "vexMod:ShockKick": {
+    "NAME": "Shock Kick",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Focus. NL At the end of this turn, lose !M! Focus."
+  },
+  "vexMod:Taunt": {
+    "NAME": "Insult",
+    "DESCRIPTION": "Apply X Weak. NL Apply X Vulnerable. NL Gain X Strength. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Apply X+1 Weak. NL Apply X+1 Vulnerable. NL Gain X+1 Strength. NL Exhaust."
+  },
+  "vexMod:BandageWhip": {
+    "NAME": "Bandage Whip",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy loses !M! Strength this turn."
+  },
+  "vexMod:BeamPop": {
+    "NAME": "Beam Pop",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Lock-On."
+  },
+  "vexMod:BlazeBeam": {
+    "NAME": "Blaze Kick",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! stack of ANY random buff. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !M! stacks of ANY random buff. NL Exhaust."
+  },
+  "vexMod:ChargeBeam": {
+    "NAME": "Charge Beam",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, draw 1 additional card."
+  },
+  "vexMod:Devastation": {
+    "NAME": "Devastation",
+    "DESCRIPTION": "Lose !M! HP. NL Deal damage equal to your missing HP. NL Exhaust."
+  },
+  "vexMod:Elimination": {
+    "NAME": "Elimination",
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust your hand.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust any number of cards in your hand."
+  },
+  "vexMod:FullService": {
+    "NAME": "Full Service",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL Gain !M! Block next turn. NL Gain !M! Gold. NL Apply !vexMod:SecondMagic! Weak. NL Apply !vexMod:SecondMagic! Vulnerable. NL Apply !vexMod:SecondMagic! Poison. NL Draw !vexMod:SecondMagic! cards. NL Draw !vexMod:SecondMagic! more cards next turn. NL Heal !vexMod:SecondMagic! HP. NL Next turn, gain 1 Energy. NL Upgrade a card in your hand. NL Exhaust."
+  },
+  "vexMod:PinpointKick": {
+    "NAME": "Pinpoint Kick",
+    "DESCRIPTION": "Deal !D! damage. NL If this breaks the enemy's Block, apply !M! Vulnerable."
+  },
+  "vexMod:Plotting": {
+    "NAME": "Plotting",
+    "DESCRIPTION": "Next turn, draw !M! additional cards."
+  },
+  "vexMod:ShadowStrike": {
+    "NAME": "Shadow Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
+  },
+  "vexMod:CardboardBlock": {
+    "NAME": "Cardboard Shield",
+    "DESCRIPTION": "Gain Block equal to the number of cards in your draw pile.",
+    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your draw pile +3.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Gains !B! Block.)"
+    ]
+  },
+  "vexMod:MidnightStrike": {
+    "NAME": "Midnight Strike",
+    "DESCRIPTION": "Can only be played if you have played exactly !M! cards this combat. NL Deal !D! damage. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( !vexMod:SecondMagic! cards left.)",
+      "I haven't played ",
+      " cards!",
+      " NL (TOO LATE!)"
+    ]
+  },
+  "vexMod:BattleStance": {
+    "NAME": "Battle Stance",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Plated Armor."
+  },
+  "vexMod:EvasiveThoughts": {
+    "NAME": "Evasive Thoughts",
+    "DESCRIPTION": "At the start of your turn, add a random Skill to your hand. It costs 0 this turn."
+  },
+  "vexMod:GroundPound": {
+    "NAME": "Ground Pound",
+    "DESCRIPTION": "Deal !D! damage. NL Deal !D! damage to ALL enemies."
+  },
+  "vexMod:Hatred": {
+    "NAME": "Hatred",
+    "DESCRIPTION": "At the start of your turn, add a random Attack to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a random Attack to your hand."
+  },
+  "vexMod:Hex": {
+    "NAME": "Hex",
+    "DESCRIPTION": "Apply !M! Vulnerable. NL Apply !M! Lock-On. NL Evoke your next Orb."
+  },
+  "vexMod:RocketPunch": {
+    "NAME": "Rocket Punch",
+    "DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand. NL Add a copy of that card into your discard pile.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand. NL Add a copy of that card into your hand."
+  },
+  "vexMod:SharpOrbs": {
+    "NAME": "Sharp Orbs",
+    "DESCRIPTION": "Gain 1 Orb Slot. NL At the end of your turn, deal 1 damage to a random enemy for each Channeled Orb."
+  },
+  "vexMod:Sloth": {
+    "NAME": "Sloth",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, draw 1 less card next turn."
+  },
+  "vexMod:CoinToss": {
+    "NAME": "Coin Blast",
+    "DESCRIPTION": "Deal !D! damage. NL Gain some Gold. NL Exhaust."
+  },
+  "vexMod:SystemUpdate": {
+    "NAME": "System Update",
+    "DESCRIPTION": "Gain 1 Strength. NL Gain 1 Dexterity. NL Gain 1 Focus."
+  },
+  "vexMod:Division": {
+    "NAME": "Mitosis",
+    "DESCRIPTION": "Add a random Colorless card into your deck. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Add a random upgraded Colorless card into your deck. NL Exhaust."
+  },
+  "vexMod:Virus": {
+    "NAME": "Virus",
+    "DESCRIPTION": "Unplayable. NL Whenever you draw this card, add a copy of it into your hand."
+  },
+  "vexMod:AntiqueFury": {
+    "NAME": "Antique Fury",
+    "DESCRIPTION": "Deal damage equal to 3 times the number of Relics you have. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Deal damage equal to 3 times the number of Relics you have.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
+  },
+  "vexMod:OrbBoomerang": {
+    "NAME": "Orb Boomerang",
+    "DESCRIPTION": "Deal !D! damage. NL Does an additional effect based on your next Orb.",
+    "EXTENDED_DESCRIPTION": [
+      "Deal !D! damage.",
+      " NL Trigger the passive ability of your next Orb.",
+      " NL Gain !B! Block.",
+      " NL Apply 3 Poison to ALL enemies.",
+      " NL Gain [E] ."
+    ]
+  },
+  "vexMod:DefensiveStance": {
+    "NAME": "Defensive Stance",
+    "DESCRIPTION": "Gain !B! Block. NL At the end of your turn, gain !M! Block."
+  },
+  "vexMod:FaceSlap": {
+    "NAME": "Face Slap",
+    "DESCRIPTION": "Remove all Block from the enemy. NL Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "vexMod:Insult": {
+    "NAME": "Taunt",
+    "DESCRIPTION": "Apply !M! Weak. NL Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": [
+      "You call that a weapon?",
+      "Come at me!",
+      "Do your worst! NL @HAHAHA!@",
+      "Have a free shot! NL Futile weakling!"
+    ]
+  },
+  "vexMod:HeavySlash": {
+    "NAME": "Heavy Slash",
+    "DESCRIPTION": "Deal !D! damage."
+  },
+  "vexMod:Gloat": {
+    "NAME": "Gloat",
+    "DESCRIPTION": "Gain !M! Strength."
+  },
+  "vexMod:FightResponse": {
+    "NAME": "Battle Rage",
+    "DESCRIPTION": "Can only be played at or below 50% HP. NL Remove all your Debuffs. NL Gain !M! Strength. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "My health is not low enough.",
+      "~You've~ ~done~ ~it~ ~now...~",
+      "@DEFEAT??@ NL @IMPOSSIBLE!!@"
+    ]
+  },
+  "vexMod:Execute": {
+    "NAME": "Execute",
+    "DESCRIPTION": "Can only be played at or below 50% HP. NL Deal !D! damage twice.",
+    "EXTENDED_DESCRIPTION": [
+      "My health is not low enough.",
+      "~DIE~ ~.~ ~.~ ~.~",
+      "Face my wrath!"
+    ]
+  },
+  "vexMod:StairwayStrike": {
+    "NAME": "Spire Strike",
+    "DESCRIPTION": "Cost is always equal to your Act number. NL Deal damage equal to your floor number. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Cost is always equal to your Act number. NL Deal damage equal to your floor number.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !D! damage.)"
+    ]
+  },
+  "vexMod:GoldenStrike": {
+    "NAME": "Gilded Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Gold. NL Exhaust."
+  },
+  "vexMod:InfectiousLoot": {
+    "NAME": "Infectious Loot",
+    "DESCRIPTION": "Apply Poison equal to the number of Relics you have."
+  },
+  "vexMod:CursedStrike": {
+    "NAME": "Cursed Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Add a random Curse into your hand."
+  },
+  "vexMod:ScaledPoison": {
+    "NAME": "Scaled Poison",
+    "DESCRIPTION": "Apply !M! Poison. NL Double this card's Poison this combat."
+  },
+  "vexMod:FocusPunch": {
+    "NAME": "Focus Punch",
+    "DESCRIPTION": "Whenever you draw this card, reduce its cost by 1. NL Deal !D! damage. NL Exhaust."
+  },
+  "vexMod:ShieldSwipe": {
+    "NAME": "Shield Swipe",
+    "DESCRIPTION": "Steal the enemy's Block. NL Draw 1 card."
+  },
+  "vexMod:GrowingStorm": {
+    "NAME": "Growing Storm",
+    "DESCRIPTION": "Channel !M! Lightning. NL Increase the number of Lightning this card Channels by 1 this combat."
+  },
+  "vexMod:DiverseOrb": {
+    "NAME": "Orb Shield",
+    "DESCRIPTION": "Gain !B! Block for each unique Orb you have."
+  },
+  "vexMod:DarkConflux": {
+    "NAME": "Dark Conflux",
+    "DESCRIPTION": "Channel 1 Dark. NL Trigger the passive ability of all Dark orbs X times.",
+    "UPGRADE_DESCRIPTION": "Channel 1 Dark. NL Trigger the passive ability of all Dark orbs X+1 times."
+  },
+  "vexMod:BloodToGold": {
+    "NAME": "Blood to Gold",
+    "DESCRIPTION": "Lose 3 HP. NL Gain !M! Gold. NL Draw 1 card."
+  },
+  "vexMod:GhostlyBlitz": {
+    "NAME": "Ghostly Blitz",
+    "DESCRIPTION": "Play a copy of all Attacks in your Exhaust pile. NL Exhaust."
+  },
+  "vexMod:CurseBlast": {
+    "NAME": "Curse Blast",
+    "DESCRIPTION": "Deal !D! damage. If this does not kill an enemy, add a random Curse into your deck."
+  },
+  "vexMod:Weakness": {
+    "NAME": "Weakness",
+    "DESCRIPTION": "Unplayable. NL Whenever you draw this card, reduce the damage of a random Attack in your hand by 2 this combat."
+  },
+  "vexMod:GoldenLightningCard": {
+    "NAME": "Golden Lightning",
+    "DESCRIPTION": "Channel 1 [#EFC851]Golden [#EFC851]πLightning. NL Exhaust."
+  },
+  "vexMod:NamedBlast": {
+    "NAME": "Name Guard",
+    "DESCRIPTION": "Gain !B! Block for each character in your name. NL Exhaust."
+  },
+  "vexMod:CalendarSmash": {
+    "NAME": "Calendar Illness",
+    "DESCRIPTION": "Apply Poison equal to the day of the month. NL Exhaust."
+  },
+  "vexMod:TrainingStrike": {
+    "NAME": "Training Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Increase the damage of a random Attack in your hand or this card by !M! this combat."
+  },
+  "vexMod:GorgonsGaze": {
+    "NAME": "Gorgon's Gaze",
+    "DESCRIPTION": "Unplayable. NL At the end of your turn, Exhaust all other cards in your hand."
+  },
+  "vexMod:GorgonsGlare": {
+    "NAME": "Gorgon's Glare",
+    "DESCRIPTION": "Enemy loses !M! Strength. NL Heal !M! HP. NL Draw 1 card. NL Exhaust."
+  },
+  "vexMod:EyeBeam": {
+    "NAME": "Eye Beam",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL Apply !M! Vulnerable. NL Exhaust."
+  },
+  "vexMod:SnakeSkin": {
+    "NAME": "Snake's Skin",
+    "DESCRIPTION": "Whenever you would receive unblocked Attack damage, reduce it by !M!."
+  },
+  "vexMod:EmailVexCard": {
+    "NAME": "Tweet Strike",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills a non-minion enemy, @DBotling tweets about it. NL Exhaust."
+  },
+  "vexMod:StarBlast": {
+    "NAME": "Magic Fruit",
+    "DESCRIPTION": "Deal !D! damage. NL Heal !M! HP. NL Draw 1 card. NL Exhaust."
+  },
+  "vexMod:Stardash": {
+    "NAME": "Fruity Dash",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! [#EFC851]Magical [#EFC851]Fruit into your draw pile. NL Exhaust."
+  },
+  "vexMod:Deathsprout": {
+    "NAME": "Death Sprout",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, add a [#EFC851]Magical [#EFC851]Fruit to your deck. NL Exhaust."
+  }
+}

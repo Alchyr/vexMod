@@ -1,0 +1,274 @@
+{
+  "vexMod:GenieBoonEvent": {
+    "NAME": "Genie's Boon",
+    "DESCRIPTIONS": [
+      "As you're going through The Spire, you find a ~Genie's~ ~Lamp.~ NL A Genie soon emerges and says, \"Wow, you're such a champ!\" NL \"Hello there! Have a wish!\" he says, with a wink. NL You have a feeling that this wish is really gonna stink.",
+      "\"Ho ho!\" the Genie says, waving his arms, NL \"I promise, with this gold, you'll win with no harm.\"",
+      "\"Take a look, a unique gift. Sure to give your run a shift!\"",
+      "\"Here you are, a deadly Blight. This run shall be quite the fight!\""
+    ],
+    "OPTIONS": [
+      "[Money] #gGain #g50 #gGold.",
+      "[Risk] #gFind #ga #grandom #gspecial #gRelic. #rLose #r8 #rHP.",
+      "[Challenge] #rGain #ra #rrandom #rBlight.",
+      "[Leave]"
+    ]
+  },
+  "vexMod:TripleChoiceEvent": {
+    "NAME": "Triple Choice",
+    "DESCRIPTIONS": [
+      "As you climb, you have a sudden burst of insight.",
+      "The ghostly blade shall serve you well.",
+      "Surely, this shall help in a pinch.",
+      "This one's always fun to use."
+    ],
+    "OPTIONS": [
+      "[Attack] #gGain #gan #gInfernal #gBlade+.",
+      "[Skill] #gGain #ga #gDistraction+.",
+      "[Power] #gGain #ga #gWhite #gNoise+.",
+      "[Leave]"
+    ]
+  },
+  "vexMod:StrangeSmithEvent": {
+    "NAME": "Strange Smith",
+    "DESCRIPTIONS": [
+      "A smith has housed herself here. NL She's hard at work when you pass by, but invites you in to rest. NL \"So, anything I can do for you? I've a variety of skills.\"",
+      "The smith looks intensely embarrassed. NL \"Uh... I broke it... Sorry.\" NL You shrug and go on your way.",
+      "\"Hi-yah!\" the smith yells, finishing up. NL She gives you a smile. NL \"Happy to help!\"",
+      "\"Hoo, this was hard work. Here's a perfectly fine blade!\" NL The smith seems quite proud of her creation. NL You are a touch fazed by the ~unique~ ~aspect...~",
+      "The smith watches expectantly as you down the meal, NL some soup with slightly Blighted potatoes. NL It tastes good, but you feel slightly ill...",
+      "You shake your head and get ready to continue. NL The smith seems disappointed."
+    ],
+    "OPTIONS": [
+      "[Smith Card] #g50%: #gUpgrade #gCard. #g50%: #gRemove #gCard.",
+      "[Smith Sword] #gGain #ga #gspecial #grelic... #rwith #rstrings #rattached.",
+      "[Smith Meal] #gHeal #g30 #gHP. #rLose #r10 #rMax #rHP.",
+      "[Leave]",
+      "[Leave]",
+      "Smithing...?"
+    ]
+  },
+  "vexMod:LookAheadEvent": {
+    "NAME": "Glimpse Ahead",
+    "DESCRIPTIONS": [
+      "You see ahead of you a strange window in the air. NL There's something faint through it. NL What do you want to see?",
+      "Just ahead, a fight... or what could have been one.",
+      "You stare deeply into riches, ignoring a slight stomach pain. NL You feel sickly, but enriched.",
+      "As the great whale roars, you feel terrible, dead... and strong.",
+      "The window fades as you continue on."
+    ],
+    "OPTIONS": [
+      "[Battle] #rFight #ran #rAct #r1 #rBoss. #gGain #ggreat #grewards.",
+      "[Riches] #rLose #r5 #rMax #rHP. #gGain #ga #grandom #gcommon #gRelic.",
+      "[Life] #rBecome #rCursed. #gGain #ga #gNeow's #gLament.",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:VoiceBoxEvent": {
+    "NAME": "Mad Scientist",
+    "DESCRIPTIONS": [
+      "A funny looking fellow stops you as you walk by. NL \"Hey, buddy! I got some great stuff! Check it out?\" NL He seems trustworthy, but a little kooky.",
+      "\"Hoo hoo! Always good to refresh the mind!\"",
+      "\"Hey, will you look at that! The experiment worked! Thanks, buddy.\"",
+      "\"My goodness, you didn't have a voice box! Here ya go, buddy.\" NL You thank the scientist and go on your way. NL You are feeling ~rather~ ~talkative...~",
+      "\"Hoo hoo! Thank goodness Mr. Shopkeep lent me this! It works great in your digestive system!\"",
+      "\"Aw, what a spoilsport. Okay, see you later, buddy!\""
+    ],
+    "OPTIONS": [
+      "[Brain Food] #gHeal #g6 #gHP.",
+      "[Bodily Improvement] #gGain #ga #gspecial #grelic.",
+      "[Implantation] #gGain #ga #grandom #gShop #grelic. #rLose #r8 #rMax #rHP.",
+      "[Leave]",
+      "[Leave]",
+      "Improving...?"
+    ]
+  },
+  "vexMod:DeadIroncladEvent": {
+    "NAME": "Downed Ironclad",
+    "DESCRIPTIONS": [
+      "Here on the floor of the City is the unconscious body of a heavily armored man. NL The ground around him is burned and scratched. NL Must have been quite the fight.",
+      "Poor fool. NL At least he can help you along.",
+      "You help the soldier recover. NL He offers you a technique from his arsenal before continuing his quest.",
+      "You desecrate his body, burdening him with your mistakes.",
+      "You leave him be. Hopefully he'll recover soon."
+    ],
+    "OPTIONS": [
+      "[Rob] #gGain #g50-80 #gGold.",
+      "[Assist] #gGain #gsome #gspecial #gcards.",
+      "[Desecrate] #gRemove #gall #gCurses.",
+      "[LOCKED: Requires Curses]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:DeadSilentEvent": {
+    "NAME": "Downed Silent",
+    "DESCRIPTIONS": [
+      "Lying dazed on the City floor is a young huntress in a cloak. NL To her side is a grandeur mask and set of shivs. NL She seems wounded.",
+      "Poor lady. NL Should have been more careful.",
+      "You assist the traveler. NL She is thankful, and offers you a unique skill. NL With that, she goes silently on her way.",
+      "You burden this weaker traveler with your failures.",
+      "You let her alone. Hopefully the Slavers aren't around..."
+    ],
+    "OPTIONS": [
+      "[Rob] #gGain #g50-80 #gGold.",
+      "[Assist] #gGain #gsome #gspecial #gcards.",
+      "[Desecrate] #gRemove #gall #gCurses.",
+      "[LOCKED: Requires Curses]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:DeadDefectEvent": {
+    "NAME": "Downed Defect",
+    "DESCRIPTIONS": [
+      "In a heap on the cold City ground is a damaged Spire automaton. NL Lightning and ice fizzle from its cracked core. NL Something or someone must have thrashed it.",
+      "You demolish it fully and sell it for parts. NL Go commerce!",
+      "You use your knowledge from past encounters to repair this bot. NL It seems oddly thankful, and gives you a small machine core and instructions. NL It soon leaves, driven by strange purpose.",
+      "You desecrate the robot with your curses. NL Not like they have feelings anyways.",
+      "You leave it be. Could be hostile..."
+    ],
+    "OPTIONS": [
+      "[Scrap] #gGain #g80-120 #gGold.",
+      "[Assist] #gGain #gsome #gspecial #gcards.",
+      "[Desecrate] #gRemove #gall #gCurses.",
+      "[LOCKED: Requires Curses]",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:ZooEvent": {
+    "NAME": "The Zoo",
+    "DESCRIPTIONS": [
+      "At this patch of The City there is a large, creaky sign above a door reading ~THE~ ~ZOO.~ NL A smaller sign below it warns that the creatures inside are dangerous... NL Dangerously unbalanced! NL Luckily, there's a free Smoke Bomb for escape if necessary. NL Please comment on vexMod if the enemy you fight is too strong or weak! NL Also, feel free to comment any enemy ideas. NL I'll make anything for the Zoo!",
+      "You enter a more benign exhibit.",
+      "You enter a dangerous exhibit!",
+      "You move to leave, but before you can go a penny with ~THE~ ~ZOO~ printed on it is thrown at you. NL You collect the souvenir and carry on."
+    ],
+    "OPTIONS": [
+      "[Exhibit A] #rEncounter #ra #rstrange #renemy. #gGain #ga #gSmoke #gBomb.",
+      "[Exhibit B] #rEncounter #ra #rstrange #rElite. #gGain #ga #gSmoke #gBomb.",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:ChampiresEvent": {
+    "NAME": "Champires(?)",
+    "DESCRIPTIONS": [
+      "Navigating an unlit street, you come across several crowned figures in the midst of some jolly ritual. As you approach, they turn to you, grunting. The tallest among them shakes their helmet and extends a long, pale hand towards you. NL ~\"Join~ ~us~ ~laddy-o,~ ~and~ ~feel~ ~the~ ~awesomeness~ ~of~ ~The~ ~Champ.\"~",
+      "The tall figure grabs your arm, pulls you forward, and yells @\"DEFEAT??@ @IMPOSSIBLE!!\".@ You feel a @dark@ @force@ pour into your neck and @course@ through your body. NL ... NL You wake up some time later, alone. An intense ~pride~ passes through your belly. You #rmust #rChamp...",
+      "You step back and raise your weapon in defiance. The tall figure sighs. \"You call that a weapon!?\" The entire group of hooded figures morph into a big Champ that flows away from you. NL You are alone once more.",
+      "The pale figures gasp as you take out the #yBusted #yCrown. NL ~\"The~ ~Champ's~ ~pride...~ ~the~ ~champ's~ ~pride!~ @THE@ @CHAMP'S@ @PRIDE!\"@ NL They all chant fervently as the tall one bows before you. \"Drink from His crown, and become one with #y~Him.\"~ NL The chant growing louder, you consume the entire crown. Your vision immediately ~warps~ and fades to darkness. NL NL You wake up some time later, alone. An intense ~pride~ passes through your belly. You #rmust #rChamp."
+    ],
+    "OPTIONS": [
+      "[Accept] #gRemove #gall Defends. #gBecome #gChampier. #rSet #ryour #rMax #rHP #rto #r42.",
+      "[Refuse]",
+      "[Lose ",
+      "] #gRemove #gall Defends. #gBecome #gChampier.",
+      "[Leave]"
+    ]
+  },
+  "vexMod:BuccaneerEvent": {
+    "NAME": "Buccaneer's Bar",
+    "DESCRIPTIONS": [
+      "Navigating an unlit street, you come across a drunk old man with a massive beard. As you approach, he turns to you, grunting. He stares into your eyes and shakes his head. NL \"'Arr matey! Want some ~special~ ~rum~ ? \"",
+      "The peg-legged man grabs your arm, pulls you forward, and thrusts a large drink into your hand. You can't help but down half the bottle and party with the pirates all night. NL ... NL You wake up some time later, alone. An intense ~greed~ passes through your belly. You #rmust #rShop...",
+      "You step back and raise your weapon in defiance. The buccaneer sighs. \"Aw, beh, you spoilsport.\" The pirate rushes away from you. NL You are alone once more.",
+      "The bearded man gasps as you take out the #yOld #yCoin. NL \"Me old coin!!\" he yells happily. NL The pirate bows for you. \"Give me that n I'll give you a special rum.\"~ NL You make the trade and sip some of his unique concoction. Your vision immediately ~warps~ and fades to darkness. NL NL You wake up some time later, alone. An intense ~greed~ passes through your belly. You #rmust #rShop..."
+    ],
+    "OPTIONS": [
+      "[Accept] #gRemove #gall Strikes. #gReceive #g5 #gGilded #gStrikes. #rLose #r10 #rMax #rHP.",
+      "[Refuse]",
+      "[Lose ",
+      "] #gRemove #gall Strikes. #gRecieve #g5 #gGilded #gStrikes",
+      "[Leave]"
+    ]
+  },
+  "vexMod:SerpentsRevenge": {
+    "NAME": "Ssserpent's Revenge",
+    "DESCRIPTIONS": [
+      "You walk into a room to find it contains an enormous hole. NL As you approach the hole, a massive golden serpent emerges. It seems familiar... NL ~\"Ho~ ~hooo!~ ~Greeetings!~ ~heyo!~ Hello adventurer, I ask, yet again, a simplistic question. NL @The@ @most@ @fulfilling@ @of@ @lives@ @is@ @that@ @in@ @which@ @you@ @can@ #y~buy~ #y~anything!~ NL @Do@ @you@ @agree?\"@",
+      "~\"Yeeeeeeessssssssssessss!~ NL ~Thisss~ ~will~ ~all~ ~be~ ~worthhh~ ~it.~ NL ~..ssSSs.....~ ~ss...~ ~sssss....!\"~ NL The Ssserpent lunges forwards and sinks its fangs into your arm. NL You feel terribly ill...",
+      "The Ssserpent lunges at you for the attack!",
+      "The serpent stares at you with a look of extreme disappointment, infernal anger, and slight doubt."
+    ],
+    "OPTIONS":[
+      "[Agree] #gGain #ga #gspecial #gRelic. #rBecome #rCursed #r- #r4x #rDoubt.",
+      "[Dissent] #rFight #rthe #rSsserpent.",
+      "[Disagree]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:RareCardShrine": {
+    "NAME": "Rare Shrine",
+    "DESCRIPTIONS": [
+      "Before you lies a decorated altar to some ancient entity.",
+      "You kneel respectfully. NL A golden spirit appears from the shrine and swarms around you before flying away.",
+      "You smash the shrine into golden pieces. NL You don't even notice the peal of a golden spirit as the shrine crumbles.",
+      "You leave the shrine, confident in your strength."
+    ],
+    "OPTIONS": [
+      "[Pray] #gChoose #g1 #gof #g3 #gRare #gcards #gto #gadd #gto #gyour #gdeck.",
+      "[Desecrate] #gChoose #g1 #gof #g6 #gRare #gcards #gto #gadd #gto #gyour #gdeck. #rBecome #rCursed #r- #rVirus.",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:GorgonEncounterEvent": {
+    "NAME": "Snake Woman",
+    "DESCRIPTIONS": [
+      "Traveling up the City, an unfamiliar shop promises good drinks and training. NL The shop's owner glances at you through dark glasses. \"Ah, welcome! I hope you'll find everything sssatisssfactory.\" NL You realize her hair is composed of ~swarming~ ~snakes!~ NL This must be the hideout of a mythical ~Gorgon.~",
+      "You chat with the Gorgon for a while. She seems entertained. NL After finishing a delicious drink, she gives you a friendly kiss on the cheek. NL \"Ah, this was fun. Good luck on your quest!\" NL You feel a little woozy as you exit. NL Her hair must have bitten you...",
+      "You inquire as to the training and pay the fee. NL The Gorgon lowers her shades, revealing a single, massive eye, and stares at you. NL You feel ~sleepy...~ NL ... NL Hours later, you wake up outside on the City floor. NL There's no indication a shop was ever here... NL You feel a strange power manifest, though.",
+      "\"Hissss! So you wish to ssssspar? ~Pathetic...~\"",
+      "You leave. The serpent lady shrugs as you go and gets back to tidying her shop."
+    ],
+    "OPTIONS": [
+      "[Drink] #gGain #g9 #gMax #gHP. #rBecome #rCursed #r- #rGorgon's #rGaze.",
+      "[Train] #rLose #r",
+      "[Attack] #rFight #rthe #rGorgon.",
+      "[Leave]",
+      "[Leave]",
+      "[Locked] Requires: At least 100 Gold.",
+      " #rGold. #gGain #ga #gspecial #gcard."
+    ]
+  },
+  "vexMod:TweeterEvent": {
+    "NAME": "Tweeter",
+    "DESCRIPTIONS": [
+      "Someone has left a small mechanical device on the floor. NL It seems to be opened to a so-called ~\"Tweeter\".~ NL There is a message box for you to type in. NL Share anything?",
+      "Card tweeted to @DBotling on Twitter! NL You continue upwards ... ",
+      "Relic tweeted to @DBotling on Twitter! NL You continue upwards ... ",
+      "You type up a thoughtful statement and hit send. NL Message tweeted to @DBotling on Twitter! NL You continue upwards ... " ,
+      "You ignore the machine and continue onwards ... "
+    ],
+    "OPTIONS": [
+      "[Tweet Card] Choose a card in your deck to share online.",
+      "[Tweet ",
+      "] Share this relic online.",
+      "[Leave]",
+      "[Leave]",
+      "Tweeting..."
+    ]
+  },
+  "vexMod:TweetThroughAges": {
+    "NAME": "Trade Through Time",
+    "DESCRIPTIONS": [
+      "You spot a panel within a wall that catches your eye. NL It displays a strange list of options. NL Something about ~trading~ ~cards~ ~.~ ~.~ ~.~ NL Will you use it?",
+      "The machine accepts your card and spits out a card. NL It seems you've received this card from fellow Spire climber ",
+      ".",
+      "You ignore the strange machinery and continue on your way.",
+      "The machine accepts your card and spits out a card, along with some #yGold! NL \"Thank you for taking on ",
+      "!\" the machine beeps at you. NL You continue onwards... ",
+      "The machine accepts your card and spits out a card, along with a slip of paper. NL \"You should be ashamed of yourself!\""
+    ],
+    "OPTIONS": [
+      "[Trade] #gRecieve ",
+      " #gand #gStore #ga #gCard #gfor #ganother #gplayer.",
+      "[Leave]",
+      "[Leave]",
+      "Storing card..."
+    ]
+  }
+}

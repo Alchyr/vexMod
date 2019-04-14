@@ -1,0 +1,123 @@
+{
+  "vexMod:ChaoticReactorPower": {
+    "NAME": "混沌反应堆",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，生成 #b",
+      " 个随机充能球。",
+      " 个随机充能球。"
+    ]
+  },
+  "vexMod:StrikeStormPower": {
+    "NAME": "打击风暴",
+    "DESCRIPTIONS": [
+      "每当你打出一张非攻击牌时，打出 #b",
+      " 张 π打击 。",
+      " 张 π打击 。"
+    ]
+  },
+  "vexMod:MidasTouchPower": {
+    "NAME": "点金之触",
+    "DESCRIPTIONS": [
+      "每当你造成未被格挡的攻击伤害时，获得等于伤害数值的金币。",
+      "把钱都给我！",
+      "交出来！"
+    ]
+  },
+  "vexMod:EvasivePower": {
+    "NAME": "脱身秘策",
+    "DESCRIPTIONS": [
+      "在你的回合开始时候，添加 #b",
+      " 张随机技能牌到你的手牌。它在本回合的耗费变为 #b0 。",
+      " 张随机技能牌到你的手牌。它在本回合的耗费变为 #b0 。"
+    ]
+  },
+  "vexMod:HatredPower": {
+    "NAME": "仇恨",
+    "DESCRIPTIONS":[
+      "在你的回合开始时候，添加 #b",
+      " 张随机攻击牌到你的手牌。",
+      " 张随机攻击牌到你的手牌。"
+    ]
+  },
+  "vexMod:SharpOrbsPower": {
+    "NAME": "锋锐充能球",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，你每有一个 #y充能球 ，就对一个随机敌人造成 #b1 点伤害 #b",
+      " 次。",
+      " 次。"
+    ]
+  },
+  "vexMod:LoseFocusPower": {
+    "NAME": "失去集中",
+    "DESCRIPTIONS": [
+    "在你的回合结束时，失去 #b",
+    " 点 集中 。"
+    ]
+  },
+  "vexMod:ForceCubePower": {
+    "NAME": "立方护盾",
+    "DESCRIPTIONS": [
+      "在回合开始时获得 #b",
+      " 层 #y缓冲 。",
+      " 层 #y缓冲 。"
+    ]
+  },
+  "vexMod:EnemyBufferPower": {
+    "NAME": "缓冲",
+    "DESCRIPTIONS": [
+      "阻止伤害。"
+    ]
+  },
+  "vexMod:InkPower": {
+    "NAME": "沾染墨汁",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，丢弃 #b",
+      " 张随机手牌。",
+      " 张随机手牌。"
+    ]
+  },
+  "vexMod:FadingPlayerPower": {
+    "NAME": "消逝",
+    "DESCRIPTIONS": [
+      "在 #b",
+      " 回合后死亡。",
+      "在本回合结束时死亡。"
+    ]
+  },
+  "vexMod:PlayerTimeWarpPower": {
+    "NAME": "时间扭曲",
+    "DESCRIPTIONS": [
+      "每当你打出 #b",
+      " 张牌时，结束你的回合并获得 #b",
+      " 点 #y力量 。",
+      "每当你打出 #b12 张牌时，结束你的回合并获得 #b2 点 #y力量 。"
+    ]
+  },
+  "vexMod:MedusaPower": {
+    "NAME": "石化凝视",
+    "DESCRIPTIONS": [
+      "在你的回合结束时， 消耗 你的手牌。"
+    ]
+  },
+  "vexMod:EvilFumesPower": {
+    "NAME": "毒雾",
+    "DESCRIPTIONS": [
+      "在其回合开始时候，给予你 #b",
+      " 层 中毒 。"
+    ]
+  },
+  "vexMod:EndOfTurnDamagePower": {
+    "NAME": "伤害将至",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，受到 #b",
+      " 伤害，然后中止该状态。"
+    ]
+  },
+  "vexMod:StoneSkinPower": {
+    "NAME": "蛇肤",
+    "DESCRIPTIONS": [
+      "阻止 #b",
+      " 点即将到来的攻击伤害。"
+    ]
+  }
+}
