@@ -1106,7 +1106,7 @@
     ]
   },
   "vexMod:PuzzleBox1": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1114,7 +1114,7 @@
     ]
   },
   "vexMod:PuzzleBox2": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1122,7 +1122,7 @@
     ]
   },
   "vexMod:PuzzleBox3": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1130,7 +1130,7 @@
     ]
   },
   "vexMod:PuzzleBox4": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1138,7 +1138,7 @@
     ]
   },
   "vexMod:PuzzleBox5": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1146,7 +1146,7 @@
     ]
   },
   "vexMod:PuzzleBox6": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
@@ -1154,11 +1154,19 @@
     ]
   },
   "vexMod:PuzzleBox7": {
-    "NAME": "Puzzle Box(?)",
+    "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
-      " time to gain #b1000 #yGold."
+      " time to gain #b1500 #yGold."
+    ]
+  },
+  "vexMod:PuzzleBox8": {
+    "NAME": "Puzzle Box (?)",
+    "FLAVOR": "So complex...",
+    "DESCRIPTIONS": [
+      "Right click #b",
+      " times to gain a special #yRelic."
     ]
   }
 }

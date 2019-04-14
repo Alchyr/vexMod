@@ -328,13 +328,6 @@ public class VexMod implements
         BaseMod.addRelic(new LastWill(), RelicType.SHARED);
         BaseMod.addRelic(new Starfruit(), RelicType.SHARED);
         BaseMod.addRelic(new FallenStar(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox1(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox2(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox3(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox4(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox5(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox6(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox7(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -416,13 +409,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(LastWill.ID);
         UnlockTracker.markRelicAsSeen(Starfruit.ID);
         UnlockTracker.markRelicAsSeen(FallenStar.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox1.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox2.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox3.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox4.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox5.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox6.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox7.ID);
 
         logger.info("Done adding relics!");
     }
@@ -668,13 +654,6 @@ public class VexMod implements
         if (AbstractDungeon.player == null) return;
         if (AbstractDungeon.player.hasRelic(BerryBomb.ID)) BerryBomb.relicBullshit();
         if (AbstractDungeon.player.hasRelic(RedPlottingStone.ID)) RedPlottingStone.FuckShitPoo();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox1.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox2.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox3.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox4.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox5.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox6.ID)) BerryBomb.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox7.ID)) BerryBomb.relicBullshit();
     }
 
     @Override

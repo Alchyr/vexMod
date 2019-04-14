@@ -8,8 +8,8 @@
       "\"Here you are, a deadly Blight. This run shall be quite the fight!\""
     ],
     "OPTIONS": [
-      "[Money] #gGain #g50 #gGold.",
-      "[Risk] #gFind #ga #grandom #gspecial #gRelic. #rLose #r8 #rHP.",
+      "[Money] #gGain #g100 #gGold.",
+      "[Risk] #gFind #ga #grandom #gspecial #gRelic.",
       "[Challenge] #rGain #ra #rrandom #rBlight.",
       "[Leave]"
     ]

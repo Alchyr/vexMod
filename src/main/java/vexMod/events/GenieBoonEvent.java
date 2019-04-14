@@ -57,7 +57,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
                         // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
                         // (in our case, that's the final screen, but you can chain as many as you want like that)
-                        AbstractDungeon.effectList.add(new RainingGoldEffect(50));
+                        AbstractDungeon.effectList.add(new RainingGoldEffect(100));
                         AbstractDungeon.player.gainGold(50);
 
                         break; // Onto screen 1 we go.
@@ -66,8 +66,6 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
-
-                        AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, 8));
 
                         ArrayList<AbstractRelic> themRelics = new ArrayList();
                         themRelics.add(RelicLibrary.getRelic(BerrySword.ID));
@@ -86,7 +84,6 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(TreasureMap.ID));
                         themRelics.add(RelicLibrary.getRelic(TheWave.ID));
                         themRelics.add(RelicLibrary.getRelic(LastWill.ID));
-                        themRelics.add(RelicLibrary.getRelic(PuzzleBox1.ID));
 
                         AbstractRelic relicToGive = (AbstractRelic) themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
                         AbstractDungeon.getCurrRoom().rewards.clear();
