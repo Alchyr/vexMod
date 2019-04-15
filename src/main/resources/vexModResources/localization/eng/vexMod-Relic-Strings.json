@@ -844,7 +844,8 @@
     "NAME": "Berry Bomb",
     "FLAVOR": "Tastes explosive!",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b6. After #b8 combats, explodes and deals #b100 damage to ALL enemies."
+      "Upon pickup, raise your Max HP by #b6. After #b",
+      " combats, explodes and deals #b100 damage to ALL enemies."
     ]
   },
   "vexMod:GazerBeam": {
@@ -893,7 +894,7 @@
     "NAME": "Red Plotting Stone",
     "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
     "DESCRIPTIONS": [
-      "#pGlows #pon #pa #prandom #pfloor. NL Right click on it while it's glowing for a #gmassive #greward. NL Right click on it while it's not glowing to #rdie."
+      "#pGlows #pon #pa #prandom #pfloor. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rdie."
     ]
   },
   "vexMod:TealTab": {
@@ -1058,7 +1059,7 @@
     "NAME": "Improvement Manual",
     "FLAVOR": "Ahh, so THAT's how you make a card Innate!",
     "DESCRIPTIONS": [
-      "Upon pickup, #yUpgrade #b3 cards.",
+      "Upon pickup, #yUpgrade #b4 cards.",
       "Upgrading cards...!"
     ]
   },
@@ -1066,7 +1067,7 @@
     "NAME": "Pulse Stone",
     "FLAVOR": "So entrancing to look at.",
     "DESCRIPTIONS": [
-      "Right click in combat to make your relics do the Wave."
+      "Right click to make your relics do the Wave."
     ]
   },
   "vexMod:ThirteenHourStone": {
@@ -1105,68 +1106,20 @@
       "Upon pickup, raise your max HP by #b6. At the start of each combat, gain #b2 #yMalleable."
     ]
   },
-  "vexMod:PuzzleBox1": {
+  "vexMod:PuzzleBox": {
     "NAME": "Puzzle Box (?)",
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
-      " times to gain a special #yRelic."
+      " times to gain a special bonus."
     ]
   },
-  "vexMod:PuzzleBox2": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
+  "vexMod:PaidLearning": {
+    "NAME": "Paid Education",
+    "FLAVOR": "That was just the down payment. Two hundred thousand dollars in loans remain.",
     "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
-    ]
-  },
-  "vexMod:PuzzleBox3": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
-    ]
-  },
-  "vexMod:PuzzleBox4": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
-    ]
-  },
-  "vexMod:PuzzleBox5": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
-    ]
-  },
-  "vexMod:PuzzleBox6": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
-    ]
-  },
-  "vexMod:PuzzleBox7": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " time to gain #b1500 #yGold."
-    ]
-  },
-  "vexMod:PuzzleBox8": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a special #yRelic."
+      "Upon pickup, #yUpgrade #b2 cards.",
+      "Upgrading cards...!"
     ]
   }
 }

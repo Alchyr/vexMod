@@ -41,9 +41,9 @@ public class TrainingStrike extends AbstractDefaultCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int DAMAGE = 6;
+    private static final int DAMAGE = 5;
     private static final int DAMAGE_UP = 2;
-    private static final int IMPROVE = 2;
+    private static final int IMPROVE = 3;
     private static final int IMPROVE_UP = 1;
 
 

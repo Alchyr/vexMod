@@ -42,7 +42,7 @@ public class BattleStance extends AbstractDefaultCard {
 
     private static final int COST = 3;  // COST = ${COST}
 
-    private static final int BLOCK = 9;
+    private static final int BLOCK = 12;
 
     private static final int METALLICIZE = 3;
     private static final int METALLICIZE_UP = 1;

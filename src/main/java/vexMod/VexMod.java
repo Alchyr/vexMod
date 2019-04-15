@@ -328,6 +328,8 @@ public class VexMod implements
         BaseMod.addRelic(new LastWill(), RelicType.SHARED);
         BaseMod.addRelic(new Starfruit(), RelicType.SHARED);
         BaseMod.addRelic(new FallenStar(), RelicType.SHARED);
+        BaseMod.addRelic(new PaidLearning(), RelicType.SHARED);
+        BaseMod.addRelic(new PuzzleBox(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -409,6 +411,8 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(LastWill.ID);
         UnlockTracker.markRelicAsSeen(Starfruit.ID);
         UnlockTracker.markRelicAsSeen(FallenStar.ID);
+        UnlockTracker.markRelicAsSeen(PaidLearning.ID);
+        UnlockTracker.markRelicAsSeen(PuzzleBox.ID);
 
         logger.info("Done adding relics!");
     }
@@ -654,6 +658,7 @@ public class VexMod implements
         if (AbstractDungeon.player == null) return;
         if (AbstractDungeon.player.hasRelic(BerryBomb.ID)) BerryBomb.relicBullshit();
         if (AbstractDungeon.player.hasRelic(RedPlottingStone.ID)) RedPlottingStone.FuckShitPoo();
+        if (AbstractDungeon.player.hasRelic(PuzzleBox.ID)) PuzzleBox.relicBullshit();
     }
 
     @Override

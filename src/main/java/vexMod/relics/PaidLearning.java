@@ -20,18 +20,18 @@ import java.util.Iterator;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class ImprovementManual extends CustomRelic {
+public class PaidLearning extends CustomRelic {
 
     // ID, images, text.
-    public static final String ID = VexMod.makeID("ImprovementManual");
+    public static final String ID = VexMod.makeID("PaidLearning");
 
-    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ImprovementManual.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ImprovementManual.png"));
+    private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PaidLearning.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     private boolean cardSelected = true;
 
-    public ImprovementManual() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+    public PaidLearning() {
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
     private int upgradeAbleCards;
@@ -47,9 +47,9 @@ public class ImprovementManual extends CustomRelic {
         }
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-        if (upgradeAbleCards > 4)
+        if (upgradeAbleCards > 2)
         {
-            upgradeAbleCards = 4;
+            upgradeAbleCards = 2;
         }
         if (upgradeAbleCards > 0)
         {

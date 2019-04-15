@@ -40,7 +40,7 @@ public class VenomSigh extends AbstractDefaultCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int BLOCK = 3;
+    private static final int BLOCK = 4;
     private static final int UPGRADE_PLUS_BLOCK = 1;
 
     private static final int POISON = 3;

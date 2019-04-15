@@ -44,7 +44,7 @@ public class EntryPlan extends AbstractDefaultCard {
 
     private static final int COST = 0;  // COST = ${COST}
 
-    private static final int DAMAGE = 3;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 4;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_DAMAGE = 2;
 
     // /STAT DECLARATION/

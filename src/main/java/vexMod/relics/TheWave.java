@@ -3,12 +3,11 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
-import vexMod.actions.ShitRelicFlashAction;
 import vexMod.util.TextureLoader;
+import vexMod.vfx.RelicWaveEffect;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -35,13 +34,8 @@ public class TheWave extends CustomRelic implements ClickableRelic { // You must
         if (!isObtained) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
             return; // Don't do anything.
         }
-
         CardCrawlGame.sound.play("GOLD_GAIN");
-        for (int i = 0; i < AbstractDungeon.player.relics.size(); i++)
-        {
-            AbstractDungeon.actionManager.addToBottom(new ShitRelicFlashAction(i));
-            AbstractDungeon.actionManager.addToBottom(new WaitAction(0.02F));
-        }
+        AbstractDungeon.effectList.add(new RelicWaveEffect(0, AbstractDungeon.miscRng.random(0.25F)));
     }
 
     @Override

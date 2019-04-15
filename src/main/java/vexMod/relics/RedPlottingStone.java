@@ -24,8 +24,15 @@ import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
+import twitter4j.Status;
+import twitter4j.Twitter;
+import twitter4j.TwitterException;
+import twitter4j.TwitterFactory;
+import twitter4j.conf.ConfigurationBuilder;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+
+import java.util.List;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -44,8 +51,6 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic { //
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("RedPlottingStone.png"));
 
     private static boolean gainRelic = false;
-    private boolean usedThisTurn = false; // You can also have a relic be only usable once per combat. Check out Hubris for more examples, including other StSlib things.
-
     private static int chosenFloor;
 
     public RedPlottingStone() {
@@ -59,11 +64,11 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic { //
 
     @Override
     public void onRightClick() {// On right click
-        if (!isObtained || usedThisTurn) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
+        if (!isObtained) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
             return; // Don't do anything.
         }
-         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.floorNum == chosenFloor) { // Only if you're in combat
-            usedThisTurn = true; // Set relic as "Used this turn"
+        if (AbstractDungeon.floorNum == chosenFloor && !this.usedUp) { // Only if you're in combat
+            this.usedUp();
             flash(); // Flash
             stopPulse(); // And stop the pulsing animation (which is started in atPreBattle() below)
 
@@ -71,20 +76,42 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic { //
                 AbstractMonster c = AbstractDungeon.getRandomMonster();
                 AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new CollectorCurseEffect(c.hb.cX, c.hb.cY), 2.0F));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(AbstractDungeon.player, 66, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(AbstractDungeon.player, 100, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             }
+
+            Thread t = new Thread() {
+                public void run() {
+                    ConfigurationBuilder cb = new ConfigurationBuilder();
+                    cb.setDebugEnabled(true)
+                            .setOAuthConsumerKey("dSpsG146tUir9joAnM49c92aM")
+                            .setOAuthConsumerSecret("ua4n3m4hcq3hwbpsEGwogLto8fFWIzzVxG9vXtARWNY0FmV9k1")
+                            .setOAuthAccessToken("1114339198247493632-a0gde0NOIWImc7EHPXC2xJsqQbJCCM")
+                            .setOAuthAccessTokenSecret("7VfNOz9fiDbKaz2JlW8QpRtenvcXIhLWAFpBDhZzuZGCm");
+                    TwitterFactory tf = new TwitterFactory(cb.build());
+                    Twitter twitter = tf.getInstance();
+                    try {
+                        if (VexMod.enablePlaceholder) {
+                                Status status = twitter.updateStatus(CardCrawlGame.playerName + " just unlocked the secret of the Red Plotting Stone!");
+                        }
+                    } catch (TwitterException e) {
+                        e.printStackTrace();
+                    }
+                }
+            };
+            t.run();
 
             CardCrawlGame.sound.play("GOLD_GAIN");
             AbstractDungeon.player.gainGold(200);
-            AbstractDungeon.player.increaseMaxHp(5, true);
+            AbstractDungeon.player.increaseMaxHp(10, true);
             AbstractDungeon.player.heal(10, true);
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             gainRelic = true;
-        } else if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.floorNum != chosenFloor) {
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("MONSTER_COLLECTOR_DEBUFF")); // Sound Effect Action of The Collector Nails
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new CollectorCurseEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY), 2.0F));
-            AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 9999, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+
+        } else if (AbstractDungeon.floorNum != chosenFloor && !this.usedUp) {
+            this.usedUp();
+            CardCrawlGame.sound.play("MONSTER_COLLECTOR_DEBUFF");
+            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 999, DamageInfo.DamageType.HP_LOSS));
         }
 
     }

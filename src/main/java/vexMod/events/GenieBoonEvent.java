@@ -84,6 +84,10 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(TreasureMap.ID));
                         themRelics.add(RelicLibrary.getRelic(TheWave.ID));
                         themRelics.add(RelicLibrary.getRelic(LastWill.ID));
+                        if (AbstractDungeon.cardRandomRng.random(3) == 0)
+                        {
+                            themRelics.add(RelicLibrary.getRelic(PuzzleBox.ID));
+                        }
 
                         AbstractRelic relicToGive = (AbstractRelic) themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
                         AbstractDungeon.getCurrRoom().rewards.clear();
