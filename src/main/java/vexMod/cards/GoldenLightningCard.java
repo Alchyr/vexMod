@@ -33,6 +33,7 @@ public class GoldenLightningCard extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -65,7 +66,7 @@ public class GoldenLightningCard extends AbstractDefaultCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo("Golden Lightning", "Orb: Deals damage to random enemies. NL Produces #yGold."));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
 

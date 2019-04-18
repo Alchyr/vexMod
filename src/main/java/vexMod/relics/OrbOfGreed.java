@@ -23,7 +23,7 @@ public class OrbOfGreed extends CustomRelic {
 
     public OrbOfGreed() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
-        this.tips.add(new PowerTip("Golden Lightning", "Orb: Deals damage to random enemies. NL Produces #yGold."));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     @Override

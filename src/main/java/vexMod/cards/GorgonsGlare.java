@@ -53,6 +53,7 @@ public class GorgonsGlare extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseMagicNumber = magicNumber = LOCKED;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
 

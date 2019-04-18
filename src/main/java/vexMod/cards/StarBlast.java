@@ -56,6 +56,7 @@ public class StarBlast extends AbstractDefaultCard {
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = LOCKED;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
 

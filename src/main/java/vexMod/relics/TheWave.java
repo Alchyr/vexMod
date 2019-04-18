@@ -34,7 +34,7 @@ public class TheWave extends CustomRelic implements ClickableRelic { // You must
         if (!isObtained) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
             return; // Don't do anything.
         }
-        CardCrawlGame.sound.play("GOLD_GAIN");
+        CardCrawlGame.sound.play("UI_CLICK_1");
         AbstractDungeon.effectList.add(new RelicWaveEffect(0, AbstractDungeon.miscRng.random(0.25F)));
     }
 

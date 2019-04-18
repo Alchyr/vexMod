@@ -17,34 +17,24 @@ import vexMod.VexMod;
 import vexMod.cards.*;
 import vexMod.events.*;
 import vexMod.potions.CameraPotion;
-import vexMod.relics.CursedCompass;
-import vexMod.relics.MidasArmor;
-import vexMod.relics.NotEnergy;
-import vexMod.relics.TheWave;
+import vexMod.relics.*;
 
 @SpirePatch(
         clz=AbstractDungeon.class,
-        method="initializeCardPools"
+        method="initializeRelicList"
 )
-public class EventRemovalPatch
+public class RelicRemovalPatch
 {
-    public static void Prefix(AbstractDungeon dungeon_instance)
+    public static void Postfix(AbstractDungeon dungeon_instance)
     {
-        if (AbstractDungeon.player instanceof Ironclad)
-        {
-            dungeon_instance.eventList.remove(DeadIroncladEvent.ID);
-        }
-        if (AbstractDungeon.player instanceof TheSilent)
-        {
-            dungeon_instance.eventList.remove(DeadSilentEvent.ID);
-        }
-        if (AbstractDungeon.player instanceof Defect)
-        {
-            dungeon_instance.eventList.remove(DeadDefectEvent.ID);
-        }
         if (!VexMod.enablePlaceholder) {
-            AbstractDungeon.eventList.remove(TweeterEvent.ID);
+            dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
         }
-
+        if (!VexMod.enableMemes)
+        {
+            dungeon_instance.shopRelicPool.remove(NotEnergy.ID);
+            dungeon_instance.shopRelicPool.remove(TheWave.ID);
+            dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
+        }
     }
 }

@@ -10,7 +10,10 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.*;
 import com.megacrit.cardcrawl.powers.PoisonPower;
+import com.megacrit.cardcrawl.relics.Ectoplasm;
+import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
+import vexMod.orbs.GoldenLightning;
 
 import java.util.Iterator;
 
@@ -48,8 +51,6 @@ public class OrbBoomerang extends AbstractDefaultCard {
 
     private static final int BLOCK = 6;
 
-    private static int DARKDAMAGE[];
-
 
     // private static final int LOCKED = 1;
     // private static final int UPGRADE_PLUS_LOCKED = 1;
@@ -70,7 +71,7 @@ public class OrbBoomerang extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         if (p.orbs.get(0) instanceof EmptyOrbSlot) {
 
-        } else if (p.orbs.get(0) instanceof Lightning) {
+        } else if (p.orbs.get(0) instanceof Lightning || p.orbs.get(0) instanceof GoldenLightning) {
             for (int i = 0; i < 1; ++i) {
                 ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onStartOfTurn();
                 ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onEndOfTurn();
@@ -98,7 +99,7 @@ public class OrbBoomerang extends AbstractDefaultCard {
 
         if (AbstractDungeon.player.orbs.get(0) instanceof EmptyOrbSlot) {
             this.rawDescription = DESCRIPTION;
-        } else if (AbstractDungeon.player.orbs.get(0) instanceof Lightning) {
+        } else if (AbstractDungeon.player.orbs.get(0) instanceof Lightning || AbstractDungeon.player.orbs.get(0) instanceof GoldenLightning) {
             this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1];
         } else if (AbstractDungeon.player.orbs.get(0) instanceof Frost) {
             this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[2];
@@ -107,7 +108,6 @@ public class OrbBoomerang extends AbstractDefaultCard {
         } else if (AbstractDungeon.player.orbs.get(0) instanceof Plasma) {
             this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[4];
         }
-
         this.initializeDescription();
     }
 

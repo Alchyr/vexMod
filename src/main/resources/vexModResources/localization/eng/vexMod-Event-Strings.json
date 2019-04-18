@@ -10,7 +10,7 @@
     "OPTIONS": [
       "[Money] #gGain #g100 #gGold.",
       "[Risk] #gFind #ga #grandom #gspecial #gRelic.",
-      "[Challenge] #rGain #ra #rrandom #rBlight.",
+      "[Challenge] #rObtain #ra #rrandom #rBlight.",
       "[Leave]"
     ]
   },
@@ -131,7 +131,7 @@
     ],
     "OPTIONS": [
       "[Scrap] #gGain #g80-120 #gGold.",
-      "[Assist] #gGain #gsome #gspecial #gcards.",
+      "[Assist] #gGain #gsome #gspecial #gitems.",
       "[Desecrate] #gRemove #gall #gCurses.",
       "[LOCKED: Requires Curses]",
       "[Leave]",

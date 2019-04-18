@@ -156,7 +156,8 @@
       " NL ( !vexMod:SecondMagic! cards left.)",
       "I haven't played ",
       " cards!",
-      " NL (TOO LATE!)"
+      " NL (TOO LATE!)",
+      " NL (It's time!)"
     ]
   },
   "vexMod:BattleStance": {
@@ -226,7 +227,8 @@
       " NL Trigger the passive ability of your next Orb.",
       " NL Gain !B! Block.",
       " NL Apply 3 Poison to ALL enemies.",
-      " NL Gain [E] ."
+      " NL Gain [E] .",
+      " NL Gain 20 Gold. NL Exhaust."
     ]
   },
   "vexMod:DefensiveStance": {
@@ -336,7 +338,11 @@
   },
   "vexMod:GoldenLightningCard": {
     "NAME": "Golden Lightning",
-    "DESCRIPTION": "Channel 1 [#EFC851]Golden [#EFC851]πLightning. NL Exhaust."
+    "DESCRIPTION": "Channel 1 [#EFC851]Golden [#EFC851]πLightning. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Golden Lightning",
+      "Orb: Deals damage to random enemies. NL Produces #yGold."
+    ]
   },
   "vexMod:NamedBlast": {
     "NAME": "Name Guard",
@@ -376,10 +382,36 @@
   },
   "vexMod:Stardash": {
     "NAME": "Fruity Dash",
-    "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! [#EFC851]Magical [#EFC851]Fruit into your draw pile. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle !M! [#EFC851]Magical [#EFC851]Fruit into your draw pile. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Magical Fruit",
+      "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
+    ]
   },
   "vexMod:Deathsprout": {
     "NAME": "Death Sprout",
-    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, add a [#EFC851]Magical [#EFC851]Fruit to your deck. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, add a [#EFC851]Magical [#EFC851]Fruit intto your deck. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Magical Fruit",
+      "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
+    ]
+  },
+  "vexMod:WeekCard": {
+    "NAME": "Very Week Card",
+    "DESCRIPTION": "Effect varies based on day of the week. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Effect varies based on day of the week.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage. Gain !B! Block.)",
+      " NL (Deal !D! damage.)",
+      " NL (Gain !B! Block.)",
+      " NL (Apply !M! Poison.)",
+      " NL (Gain !B! Block. Draw !M! cards.)",
+      " NL (Gain !M! Strength.)",
+      " NL (Heal !M! HP.)"
+    ]
+  },
+  "vexMod:UltimateCard": {
+    "NAME": "The Ultimate Card",
+    "DESCRIPTION": ""
   }
 }

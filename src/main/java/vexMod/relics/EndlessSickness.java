@@ -28,7 +28,7 @@ public class EndlessSickness extends CustomRelic {
 
     public EndlessSickness() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
-        this.tips.add(new PowerTip("Virus", "Viruses are #rCurse cards that duplicate when drawn."));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     // Gain 1 energy on equip.

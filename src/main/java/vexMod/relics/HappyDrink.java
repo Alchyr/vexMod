@@ -37,7 +37,7 @@ public class HappyDrink extends CustomRelic {
         if (room instanceof ShopRoom || (AbstractDungeon.player.hasRelic(MallPass.ID) && room instanceof EventRoom)) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.player.increaseMaxHp(1, true);
+            AbstractDungeon.player.increaseMaxHp(2, true);
         }
 
     }

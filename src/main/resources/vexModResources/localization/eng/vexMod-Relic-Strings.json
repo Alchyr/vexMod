@@ -124,7 +124,7 @@
     "NAME": "Happy Drink",
     "FLAVOR": "The shop offers free refills.",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b2. Whenever you enter a shop, increase your Max HP by #b1."
+      "Upon pickup, raise your Max HP by #b2. Whenever you enter a shop, increase your Max HP by #b2."
     ]
   },
   "vexMod:ShortStop": {
@@ -208,7 +208,7 @@
     "NAME": "Sword of Lies",
     "FLAVOR": "\"I am the Sword of Truth.\"",
     "DESCRIPTIONS": [
-      "Start each combat with #b1 #yStrength. At the start of each combat, add a random #rCurse into your hand."
+      "Start each combat with #b2 #yStrength. At the start of each combat, add a random #rCurse into your hand."
     ]
   },
   "vexMod:DrawConverter": {
@@ -610,7 +610,9 @@
     "NAME": "Endless Sickness",
     "FLAVOR": "Always multiplying.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the start of each combat, shuffle a #rVirus into your draw pile."
+      "Gain [E] at the start of your turn. At the start of each combat, shuffle a #rVirus into your draw pile.",
+      "Virus",
+      "Viruses are #rCurse cards that duplicate when drawn."
     ]
   },
   "vexMod:GoldBooster": {
@@ -894,7 +896,7 @@
     "NAME": "Red Plotting Stone",
     "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
     "DESCRIPTIONS": [
-      "#pGlows #pon #pa #prandom #pfloor. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rdie."
+      "#pGlows #psometime. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rdie."
     ]
   },
   "vexMod:TealTab": {
@@ -1052,7 +1054,9 @@
     "NAME": "Orb of Greed",
     "FLAVOR": "Mmm, money!",
     "DESCRIPTIONS": [
-      "At the start of each combat, #yChannel #b1 #yGolden #yπLightning."
+      "At the start of each combat, #yChannel #b1 #yGolden #yπLightning.",
+      "Golden Lightning",
+      "Orb: Deals damage to random enemies. NL Produces #yGold."
     ]
   },
   "vexMod:ImprovementManual": {
@@ -1089,14 +1093,18 @@
     "NAME": "Starfruit",
     "FLAVOR": "Tastes like stars.",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b6. At the start of each combat, shuffle #b3 #yMagical #yFruit into your draw pile."
+      "Upon pickup, raise your Max HP by #b6. At the start of each combat, shuffle #b3 #yMagical #yFruit into your draw pile.",
+      "Magical Fruit",
+      "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
     ]
   },
   "vexMod:FallenStar": {
     "NAME": "Fallen Fruit",
     "FLAVOR": "This one must have fallen off the Spire.",
     "DESCRIPTIONS": [
-      "At the start of each combat, shuffle #b2 #yMagical #yFruit into your draw pile."
+      "At the start of each combat, shuffle #b2 #yMagical #yFruit into your draw pile.",
+      "Magical Fruit",
+      "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
     ]
   },
   "vexMod:Jellybean": {
@@ -1111,7 +1119,7 @@
     "FLAVOR": "So complex...",
     "DESCRIPTIONS": [
       "Right click #b",
-      " times to gain a special bonus."
+      " times to gain a #gmassive #greward."
     ]
   },
   "vexMod:PaidLearning": {
@@ -1120,6 +1128,28 @@
     "DESCRIPTIONS": [
       "Upon pickup, #yUpgrade #b2 cards.",
       "Upgrading cards...!"
+    ]
+  },
+  "vexMod:NotEnergy": {
+    "NAME": "Ne donne pas d'énergie",
+    "FLAVOR": "The images are looking awfully treacherous today.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, Energy.",
+      "Energy."
+    ]
+  },
+  "vexMod:NewsTicker": {
+    "NAME": "News Ticker",
+    "FLAVOR": "Keep up with the latest and greatest of the Spire!",
+    "DESCRIPTIONS": [
+      "Right click once per combat to see the latest Tweet by @DBotling."
+    ]
+  },
+  "vexMod:MailBox": {
+    "NAME": "Mail Box",
+    "FLAVOR": "Messages from above...",
+    "DESCRIPTIONS": [
+      "Right click once per combat to see any messages Vex, the developer, may have sent you."
     ]
   }
 }

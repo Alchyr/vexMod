@@ -1,6 +1,7 @@
 package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -37,7 +38,7 @@ import java.util.List;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class RedPlottingStone extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
+public class RedPlottingStone extends CustomRelic implements ClickableRelic, CustomSavable<Integer> { // You must implement things you want to use from StSlib
     /*
      * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
      * StSLib for Clickable Relics
@@ -79,27 +80,6 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic { //
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(c, new DamageInfo(AbstractDungeon.player, 100, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
             }
 
-            Thread t = new Thread() {
-                public void run() {
-                    ConfigurationBuilder cb = new ConfigurationBuilder();
-                    cb.setDebugEnabled(true)
-                            .setOAuthConsumerKey("dSpsG146tUir9joAnM49c92aM")
-                            .setOAuthConsumerSecret("ua4n3m4hcq3hwbpsEGwogLto8fFWIzzVxG9vXtARWNY0FmV9k1")
-                            .setOAuthAccessToken("1114339198247493632-a0gde0NOIWImc7EHPXC2xJsqQbJCCM")
-                            .setOAuthAccessTokenSecret("7VfNOz9fiDbKaz2JlW8QpRtenvcXIhLWAFpBDhZzuZGCm");
-                    TwitterFactory tf = new TwitterFactory(cb.build());
-                    Twitter twitter = tf.getInstance();
-                    try {
-                        if (VexMod.enablePlaceholder) {
-                                Status status = twitter.updateStatus(CardCrawlGame.playerName + " just unlocked the secret of the Red Plotting Stone!");
-                        }
-                    } catch (TwitterException e) {
-                        e.printStackTrace();
-                    }
-                }
-            };
-            t.run();
-
             CardCrawlGame.sound.play("GOLD_GAIN");
             AbstractDungeon.player.gainGold(200);
             AbstractDungeon.player.increaseMaxHp(10, true);
@@ -114,6 +94,23 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic { //
             AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 999, DamageInfo.DamageType.HP_LOSS));
         }
 
+    }
+
+    @Override
+    public Integer onSave()
+    {
+        int SavedFloor = chosenFloor;
+        return SavedFloor;
+        // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
+    }
+
+    @Override
+    public void onLoad(Integer SavedFloor)
+    {
+        // onLoad automatically has the Integer saved in onSave upon loading into the game.
+
+        chosenFloor = SavedFloor;
+        // Uses the card's index saved before to search for the card in the deck and put it in a custom SpireField.
     }
 
     public static void FuckShitPoo() {

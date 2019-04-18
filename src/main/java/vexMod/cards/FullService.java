@@ -64,6 +64,7 @@ public class FullService extends AbstractDefaultCard {
         baseMagicNumber = magicNumber = GOLD;
         defaultBaseSecondMagicNumber = defaultSecondMagicNumber = WACK;
         this.exhaust = true;
+        this.tags.add(CardTags.HEALING);
     }
 
 

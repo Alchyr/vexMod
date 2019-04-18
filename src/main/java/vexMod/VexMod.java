@@ -47,8 +47,6 @@ public class VexMod implements
         PostUpdateSubscriber,
         MaxHPChangeSubscriber,
         PostDungeonInitializeSubscriber {
-    // Make sure to implement the subscribers *you* are using (read basemod wiki). Editing cards? EditCardsSubscriber.
-    // Making relics? EditRelicsSubscriber. etc., etc., for a full list and how to make your own, visit the basemod wiki.
     public static final Logger logger = LogManager.getLogger(VexMod.class.getName());
     private static String modID;
 
@@ -60,8 +58,9 @@ public class VexMod implements
     public static Properties vexModDefaultSettings = new Properties();
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true;
+    public static final String ENABLE_MEME_CARDS = "enableMemes";
+    public static boolean enableMemes = true;
 
-    public static String lastMailSubject;
 
     // =============== INPUT TEXTURE LOCATION =================
 
@@ -160,7 +159,15 @@ public class VexMod implements
         // Create the Mod Menu
         ModPanel settingsPanel = new ModPanel();
 
-        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton("Opt-in to Twitter services? This will display your floor number, username, and gold amount on Twitter.",
+        String labelText1;
+
+        if (language == Settings.GameLanguage.ZHS) {
+            labelText1 = "是否参与推特互动？这将允许你的玩家名和游戏信息展示在@DBotling的推特上。";
+        } else {
+            labelText1 = "Opt-in to Twitter services? This will display your username and game info on Twitter at @DBotling.";
+        }
+
+        ModLabeledToggleButton enableNormalsButton = new ModLabeledToggleButton(labelText1,
                 350.0f, 700.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
                 enablePlaceholder, settingsPanel, (label) -> {
         }, (button) -> {
@@ -174,6 +181,29 @@ public class VexMod implements
             }
         });
         settingsPanel.addUIElement(enableNormalsButton);
+
+        String labelText2;
+
+        if (language == Settings.GameLanguage.ZHS) {
+            labelText2 = "是否允许瞎搞 / 玩梗的卡牌 / 遗物出现在游戏中？（这些内容的平衡很可能没有好好考虑过）";
+        } else {
+            labelText2 = "Enable silly / meme cards and relics? (They are not very balanced.)";
+        }
+
+        ModLabeledToggleButton enableMemesButton = new ModLabeledToggleButton(labelText2,
+                350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                enablePlaceholder, settingsPanel, (label) -> {
+        }, (button) -> {
+            enablePlaceholder = button.enabled;
+            try {
+                SpireConfig config = new SpireConfig("vexMod", "vexModConfig", vexModDefaultSettings);
+                config.setBool(ENABLE_MEME_CARDS, enableMemes);
+                config.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement(enableMemesButton);
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
@@ -330,6 +360,9 @@ public class VexMod implements
         BaseMod.addRelic(new FallenStar(), RelicType.SHARED);
         BaseMod.addRelic(new PaidLearning(), RelicType.SHARED);
         BaseMod.addRelic(new PuzzleBox(), RelicType.SHARED);
+        BaseMod.addRelic(new HeadHunter(), RelicType.SHARED);
+        BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
+        BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -412,7 +445,9 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(Starfruit.ID);
         UnlockTracker.markRelicAsSeen(FallenStar.ID);
         UnlockTracker.markRelicAsSeen(PaidLearning.ID);
-        UnlockTracker.markRelicAsSeen(PuzzleBox.ID);
+        UnlockTracker.markRelicAsSeen(HeadHunter.ID);
+        UnlockTracker.markRelicAsSeen(NotEnergy.ID);
+        UnlockTracker.markRelicAsSeen(NewsTicker.ID);
 
         logger.info("Done adding relics!");
     }
@@ -435,7 +470,6 @@ public class VexMod implements
         // Add the cards
 
         BaseMod.addCard(new BlockBeam()); //
-        BaseMod.addCard(new DrainingDoom()); //
         BaseMod.addCard(new CursedBody()); //
         BaseMod.addCard(new CleverClash()); //
         BaseMod.addCard(new DeadlyDodge()); //
@@ -512,6 +546,8 @@ public class VexMod implements
         BaseMod.addCard(new StarBlast()); //
         BaseMod.addCard(new Stardash()); //
         BaseMod.addCard(new Deathsprout()); //
+        BaseMod.addCard(new WeekCard()); //
+        BaseMod.addCard(new UltimateCard());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -519,7 +555,6 @@ public class VexMod implements
         // before playing your mod.
 
         UnlockTracker.unlockCard(BlockBeam.ID);
-        UnlockTracker.unlockCard(DrainingDoom.ID);
         UnlockTracker.unlockCard(CursedBody.ID);
         UnlockTracker.unlockCard(CleverClash.ID);
         UnlockTracker.unlockCard(DeadlyDodge.ID);
@@ -596,6 +631,8 @@ public class VexMod implements
         UnlockTracker.unlockCard(StarBlast.ID);
         UnlockTracker.unlockCard(Stardash.ID);
         UnlockTracker.unlockCard(Deathsprout.ID);
+        UnlockTracker.unlockCard(WeekCard.ID);
+        UnlockTracker.unlockCard(UltimateCard.ID);
 
         logger.info("Done adding cards!");
     }
@@ -605,8 +642,7 @@ public class VexMod implements
 
     // ================ LOAD THE TEXT ===================
 
-    private String languageSupport()
-    {
+    private String languageSupport() {
         switch (language) {
             case ZHS:
                 return "zhs";
@@ -677,10 +713,10 @@ public class VexMod implements
     @Override
     public void receivePostDungeonInitialize() {
         if (!VexMod.enablePlaceholder) {
-            AbstractDungeon.colorlessCardPool.removeCard(EmailVexCard.ID);
             PotionHelper.potions.remove(CameraPotion.POTION_ID);
         }
     }
+
 
     // ================ /LOAD THE KEYWORDS AND OTHER/ ===================
 

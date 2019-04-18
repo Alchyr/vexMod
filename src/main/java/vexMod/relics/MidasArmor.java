@@ -5,6 +5,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
@@ -53,7 +54,7 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
 
     @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
-        if (damageAmount > 0 && AbstractDungeon.player.currentHealth > 0) {
+        if (damageAmount > 0 && AbstractDungeon.player.currentHealth > 0 && damageAmount!=999) {
             AbstractDungeon.player.loseGold(damageAmount * 2);
             this.flash();
             if (info.owner != null && info.owner != AbstractDungeon.player) {
@@ -87,6 +88,10 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
 
     @Override
     public void onLoseGold() {
+        if (AbstractDungeon.player.gold == 0)
+        {
+            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 999, DamageInfo.DamageType.HP_LOSS));
+        }
         AbstractDungeon.player.maxHealth = AbstractDungeon.player.gold;
         AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
     }

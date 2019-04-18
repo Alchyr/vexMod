@@ -34,10 +34,10 @@ public class GildedGorgon extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 177; // Always good to back up your health and move values.
-    private static final int HP_MAX = 199;
-    private static final int A_7_HP_MIN = 200; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 215;
+    private static final int HP_MIN = 250; // Always good to back up your health and move values.
+    private static final int HP_MAX = 300;
+    private static final int A_7_HP_MIN = 350; // HP moves up at Ascension 7.
+    private static final int A_7_HP_MAX = 400;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;

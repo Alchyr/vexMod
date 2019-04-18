@@ -35,9 +35,12 @@ public class GoldFlippers extends CustomRelic {
     public void onEnterRoom(AbstractRoom room) {
         AbstractDungeon.player.gainGold(15);
         if (room instanceof MonsterRoom || room instanceof MonsterRoomElite || room instanceof MonsterRoomBoss || room instanceof TreasureRoom || room instanceof ShopRoom && !AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
-            for (int i = 0; i < 15; i++) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.currentX, this.currentY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+            if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
+                for (int i = 0; i < 15; i++) {
+                    AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.currentX, this.currentY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                }
             }
+
             if (room instanceof ShopRoom) {
                 this.flash();
                 this.beginLongPulse();

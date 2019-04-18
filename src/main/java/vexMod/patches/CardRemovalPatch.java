@@ -24,27 +24,22 @@ import vexMod.relics.TheWave;
 
 @SpirePatch(
         clz=AbstractDungeon.class,
-        method="initializeCardPools"
+        method="addColorlessCards"
 )
-public class EventRemovalPatch
+public class CardRemovalPatch
 {
-    public static void Prefix(AbstractDungeon dungeon_instance)
+    public static void Postfix(AbstractDungeon dungeon_instance)
     {
-        if (AbstractDungeon.player instanceof Ironclad)
-        {
-            dungeon_instance.eventList.remove(DeadIroncladEvent.ID);
-        }
-        if (AbstractDungeon.player instanceof TheSilent)
-        {
-            dungeon_instance.eventList.remove(DeadSilentEvent.ID);
-        }
-        if (AbstractDungeon.player instanceof Defect)
-        {
-            dungeon_instance.eventList.remove(DeadDefectEvent.ID);
-        }
         if (!VexMod.enablePlaceholder) {
-            AbstractDungeon.eventList.remove(TweeterEvent.ID);
+            dungeon_instance.colorlessCardPool.removeCard(EmailVexCard.ID);
         }
-
+        if (!VexMod.enableMemes)
+        {
+            dungeon_instance.colorlessCardPool.removeCard(EmailVexCard.ID);
+            dungeon_instance.colorlessCardPool.removeCard(FullService.ID);
+            dungeon_instance.colorlessCardPool.removeCard(CalendarSmash.ID);
+            dungeon_instance.colorlessCardPool.removeCard(WeekCard.ID);
+            dungeon_instance.colorlessCardPool.removeCard(NamedBlast.ID);
+        }
     }
 }

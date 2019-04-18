@@ -28,7 +28,7 @@ public class Starfruit extends CustomRelic {
 
     public Starfruit() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
-        this.tips.add(new PowerTip("Magical Fruit", "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     @Override

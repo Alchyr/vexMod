@@ -3,6 +3,7 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.orbs.Frost;
@@ -25,34 +26,32 @@ public class HeadHunter extends CustomRelic {
 
 
     public HeadHunter() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
-        if (room instanceof MonsterRoomElite) {
-            this.pulse = true;
+    public void atBattleStart() {
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
             this.beginPulse();
-            AbstractCard card1 = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE);
-            AbstractCard card2 = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE);
-            AbstractCard card3 = AbstractDungeon.getCard(AbstractCard.CardRarity.RARE);
+            CardGroup rareCards = CardLibrary.getEachRare(AbstractDungeon.player);
+            rareCards.shuffle();
+            AbstractCard card1 = rareCards.getTopCard();
+            AbstractCard card2 = rareCards.getNCardFromTop(1);
+            AbstractCard card3 = rareCards.getNCardFromTop(2);
             RewardItem reward = new RewardItem();
             reward.cards.clear();
             reward.cards.add(card1);
             reward.cards.add(card2);
             reward.cards.add(card3);
             AbstractDungeon.getCurrRoom().addCardReward(reward);
-        } else {
-            this.pulse = false;
         }
-
     }
 
     @Override
     public void onVictory() {
         if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite) {
             this.flash();
-            this.pulse = false;
+            this.stopPulse();
         }
     }
 

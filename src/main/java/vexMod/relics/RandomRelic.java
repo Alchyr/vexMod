@@ -1,6 +1,7 @@
 package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
+import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,7 +32,7 @@ import java.util.Random;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class RandomRelic extends CustomRelic implements OnLoseBlockRelic {
+public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, CustomSavable<Integer[]> {
 
     // ID, images, text.
     public static final String ID = VexMod.makeID("RandomRelic");
@@ -206,6 +207,25 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic {
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
+    }
+
+    public Integer[] onSave() {
+        Integer[] integerList = {ID_MINOR, ID_MAJOR};
+        return integerList;
+        // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
+    }
+
+    @Override
+    public void onLoad(Integer[] integerList) {
+        // onLoad automatically has the Integer saved in onSave upon loading into the game.
+        ID_MINOR = integerList[0];
+        ID_MAJOR = integerList[1];
+        this.description = DESCRIPTIONS[ID_MAJOR] + " NL " + DESCRIPTIONS[ID_MINOR + 16] + " NL " + DESCRIPTIONS[32];
+        this.flavorText = DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(88, 157)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(158, 205)] + " " + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(33, 44)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(45, 87)];
+        this.tips.clear();
+        this.tips.add(new PowerTip(this.name, this.description));
+        this.initializeTips();
+        // Uses the card's index saved before to search for the card in the deck and put it in a custom SpireField.
     }
 
     @Override

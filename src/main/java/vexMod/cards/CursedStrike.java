@@ -42,8 +42,8 @@ public class CursedStrike extends AbstractDefaultCard {
 
     private static final int COST = 1;  // COST = ${COST}
 
-    private static final int DAMAGE = 14;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 5;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
+    private static final int DAMAGE = 13;    // DAMAGE = ${DAMAGE}
+    private static final int UPGRADE_PLUS_DMG = 6;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 

@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.JuzuBracelet;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -34,7 +35,7 @@ public class HatredEngine extends CustomRelic {
     }
 
     public boolean canSpawn() {
-        return Settings.isEndless || AbstractDungeon.floorNum <= 40 && !AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(TreasureMap.ID);
+        return Settings.isEndless || AbstractDungeon.floorNum <= 40 && !AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(TreasureMap.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID);
     }
 
     // Description

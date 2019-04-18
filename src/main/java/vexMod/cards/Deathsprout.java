@@ -29,6 +29,7 @@ public class Deathsprout extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -65,7 +66,7 @@ public class Deathsprout extends AbstractDefaultCard {
     @Override
     public List<TooltipInfo> getCustomTooltips() {
         List<TooltipInfo> tips = new ArrayList<>();
-        tips.add(new TooltipInfo("Magical Fruit", "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."));
+        tips.add(new TooltipInfo(EXTENDED_DESCRIPTION[0], EXTENDED_DESCRIPTION[1]));
         return tips;
     }
 

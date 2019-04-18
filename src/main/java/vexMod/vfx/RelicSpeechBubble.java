@@ -46,11 +46,11 @@ public class RelicSpeechBubble extends AbstractGameEffect {
         this.duration = duration;
 
         if (TOP) {
-            AbstractDungeon.topLevelEffectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.7f, msg, DialogWord.AppearEffect.BUMP_IN));
+            AbstractDungeon.topLevelEffectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.35f, msg, DialogWord.AppearEffect.BUMP_IN));
         }
         else
         {
-            AbstractDungeon.effectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.7f, msg, DialogWord.AppearEffect.BUMP_IN));
+            AbstractDungeon.effectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.35f, msg, DialogWord.AppearEffect.BUMP_IN));
         }
 
         this.hb = new Hitbox(x - 350.0F * Settings.scale, y, 350.0F * Settings.scale, 270.0F * Settings.scale);

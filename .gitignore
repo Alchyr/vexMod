@@ -11,6 +11,8 @@ src/main/java/vexMod/potions/CameraPotion.java
 src/main/java/vexMod/events/TweeterEvent.java
 src/main/java/vexMod/events/TweetThroughAges.java
 src/main/java/vexMod/actions/EmailAttackAction.java
+src/main/java/vexMod/relics/NewsTicker.java
+src/main/java/vexMod/relics/MailBox.java
 
 # Eclipse
 .classpath

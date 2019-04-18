@@ -39,10 +39,10 @@ public class EvilSsserpent extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 222; // Always good to back up your health and move values.
-    private static final int HP_MAX = 222;
-    private static final int A_7_HP_MIN = 222; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 222;
+    private static final int HP_MIN = 333; // Always good to back up your health and move values.
+    private static final int HP_MAX = 333;
+    private static final int A_7_HP_MIN = 444; // HP moves up at Ascension 7.
+    private static final int A_7_HP_MAX = 444;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;

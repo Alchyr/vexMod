@@ -31,7 +31,7 @@
   },
   "vexMod:Greed": {
     "NAME": "贪欲",
-    "DESCRIPTION": " 无法被打出 。 NL 在你的回合结束时，失去 6 点金币。"
+    "DESCRIPTION": " 无法被打出 。 NL 在你的回合结束时，失去 6 金币。"
   },
   "vexMod:StrikeStorm": {
     "NAME": "打击风暴",
@@ -80,12 +80,12 @@
   },
   "vexMod:BloodGuard": {
     "NAME": "鲜血防壁",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 获得 !B! 点 格挡 。"
+    "DESCRIPTION": "失去 !M! 生命。 NL 获得 !B! 点 格挡 。"
   },
   "vexMod:Jackpot": {
     "NAME": "头彩",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 点金币。 NL  消耗 。",
-    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 点金币。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 金币。 NL  消耗 。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 中毒 。 NL 获得 !vexMod:SecondMagic! 金币。 NL  消耗 。"
   },
   "vexMod:SnowShield": {
     "NAME": "冰雪护盾",
@@ -137,7 +137,7 @@
   },
   "vexMod:Devastation": {
     "NAME": "荒败",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 造成与你已失去的生命数值相等的伤害。 NL 消耗 。"
+    "DESCRIPTION": "失去 !M! 生命。 NL 造成与你已失去的生命数值相等的伤害。 NL 消耗 。"
   },
   "vexMod:Elimination": {
     "NAME": "抹消",
@@ -146,7 +146,7 @@
   },
   "vexMod:FullService": {
     "NAME": "全套服务",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 获得 !M! 点金币。 NL 给予 !vexMod:SecondMagic! 层 虚弱 。 NL 给予 !vexMod:SecondMagic! 层 易伤 。 NL 给予 !vexMod:SecondMagic! 层 中毒 。 NL 抽 !vexMod:SecondMagic! 张牌。 NL 回复 !vexMod:SecondMagic! 点生命。 NL 在下一回合获得 !M! 点 格挡 。 NL 在下一回合获得 1 点 能量  。 NL 在下一回合多抽 1 张牌。 NL  升级 一张手牌。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !B! 点 格挡 。 NL 获得 !M! 金币。 NL 给予 !vexMod:SecondMagic! 层 虚弱 。 NL 给予 !vexMod:SecondMagic! 层 易伤 。 NL 给予 !vexMod:SecondMagic! 层 中毒 。 NL 抽 !vexMod:SecondMagic! 张牌。 NL 回复 !vexMod:SecondMagic! 生命。 NL 在下一回合获得 !M! 点 格挡 。 NL 在下一回合获得 1 点 能量  。 NL 在下一回合多抽 1 张牌。 NL  升级 一张手牌。 NL 消耗 。"
   },
   "vexMod:PinpointKick": {
     "NAME": "精准踢击",
@@ -256,7 +256,8 @@
       " NL 触发你最右侧 充能球 的被动效果。",
       " NL 获得 6 点 格挡 。",
       " NL 给予所有敌人 3 层 中毒 。",
-      " NL 获得 [E] 。"
+      " NL 获得 [E] 。",
+      " NL 获得20金币。 NL  消耗 。"
     ]
   },
   "vexMod:DefensiveStance": {
@@ -312,7 +313,7 @@
   },
   "vexMod:GoldenStrike": {
     "NAME": "镶金打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 点金币。 NL 消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 获得 !M! 金币。 NL 消耗 。"
   },
   "vexMod:InfectiousLoot": {
     "NAME": "染毒宝藏",
@@ -353,11 +354,11 @@
   },
   "vexMod:LeechLife": {
     "NAME": "吸取生命",
-    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 敌人每有5层 中毒 ，就回复1点生命。 NL 消耗 。"
+    "DESCRIPTION": "给予 !M! 层 中毒 。 NL 敌人每有5层 中毒 ，就回复1生命。 NL 消耗 。"
   },
   "vexMod:BloodToGold": {
     "NAME": "化血为金",
-    "DESCRIPTION": "失去3点生命。 NL 获得 !M! 点金币。 NL 抽一张牌。"
+    "DESCRIPTION": "失去3生命。 NL 获得 !M! 金币。 NL 抽一张牌。"
   },
   "vexMod:GhostlyBlitz": {
     "NAME": "幽灵闪击",
@@ -373,7 +374,11 @@
   },
   "vexMod:GoldenLightningCard": {
     "NAME": "金色闪电",
-    "DESCRIPTION": " 生成 1 个 [#EFC851]金色闪电 充能球。"
+    "DESCRIPTION": " 生成 1 个 [#EFC851]金[] [#EFC851]色[] [#EFC851]闪[] [#EFC851]电[] 充能球。",
+    "EXTENDED_DESCRIPTION": [
+      "金色闪电",
+      "充能球： 对随机敌人造成伤害。 NL 获得 #y金币 。"
+    ]
   },
   "vexMod:NamedBlast": {
     "NAME": "名谓爆发",
@@ -393,7 +398,7 @@
   },
   "vexMod:GorgonsGlare": {
     "NAME": "石化瞪视",
-    "DESCRIPTION": "敌人失去 !M! 点 力量 。 NL 回复 !M! 点生命。 NL 抽一张牌。 NL  消耗 。"
+    "DESCRIPTION": "敌人失去 !M! 点 力量 。 NL 回复 !M! 生命。 NL 抽一张牌。 NL  消耗 。"
   },
   "vexMod:EyeBeam": {
     "NAME": "眼波射线",
@@ -401,7 +406,7 @@
   },
   "vexMod:SnakeSkin": {
     "NAME": "蛇肤",
-    "DESCRIPTION": "每当你即将受到未被格挡的攻击伤害时，防止其中 !M! 点。"
+    "DESCRIPTION": "每当你即将受到未被格挡的攻击伤害时，将其减少 !M! 点。"
   },
   "vexMod:EmailVexCard": {
     "NAME": "推特打击",
@@ -409,15 +414,40 @@
   },
   "vexMod:StarBlast": {
     "NAME": "魔法果实",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 点生命。 NL 抽 1 张牌。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 回复 !M! 生命。 NL 抽 1 张牌。 NL  消耗 。"
   },
   "vexMod:Stardash": {
     "NAME": "果实冲刺",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 !M!  魔法果实 放入你的抽牌堆中。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 !M!  魔法果实 放入你的抽牌堆中。 NL  消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      "魔法果实",
+      "魔法果实是费用为0并具有 #y消耗 的攻击牌 ，效果是造成伤害、回复生命并抽一张牌。"
+    ]
   },
   "vexMod:Deathsprout": {
     "NAME": "死亡之芽",
     "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，将一张 魔法果实 加入你的牌组中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，将一张已 升级 的 魔法果实 加入你的牌组中。 NL 消耗 。"
+    "EXTENDED_DESCRIPTION": [
+      "魔法果实",
+      "魔法果实是费用为0并具有 #y消耗 的攻击牌 ，效果是造成伤害、回复生命并抽一张牌。"
+    ]
+  },
+  "vexMod:WeekCard": {
+    "NAME": "彩虹卡",
+    "DESCRIPTION": "根据今天在一周中的位置产生不同的效果。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "根据今天在一周中的位置产生不同的效果。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 15 点伤害）",
+      " NL （获得 13 点格挡）",
+      " NL （给予 7 层中毒）",
+      " NL （获得 5 点格挡，抽 3 张牌。）",
+      " NL （获得 2 点力量。）",
+      " NL （回复 6 生命。）",
+      " NL （造成 9 点伤害，获得 9 点格挡。）"
+    ]
+  },
+  "vexMod:UltimateCard": {
+    "NAME": "终极卡牌",
+    "DESCRIPTION": ""
   }
 }
