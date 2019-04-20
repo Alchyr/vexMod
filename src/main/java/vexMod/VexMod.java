@@ -112,15 +112,9 @@ public class VexMod implements
     // IF YOU MODIFY THIS I WILL HUNT YOU DOWN AND DOWNVOTE YOUR MOD ON WORKSHOP
     // I DID IT ANYWAYS :P
 
-    public static void setModID(String ID) { // DON'T EDIT
-        if (ID.equals("theDefault")) { // DO *NOT* CHANGE THIS ESPECIALLY, TO EDIT YOUR MOD ID, SCROLL UP JUST A LITTLE, IT'S JUST ABOVE
-            throw new RuntimeException("Go to your constructor in your class with SpireInitializer and change your mod ID from theDefault"); // THIS ALSO DON'T EDIT
-        } else if (ID.equals("theDefaultDev")) { // NO
-            modID = "theDefault"; // DON'T
-        } else { // NO EDIT AREA
-            modID = ID; // DON'T WRITE OR CHANGE THINGS NOT EVEN A LITTLE
-        } // NO
-    } // NO
+    public static void setModID(String ID) {
+            modID = ID;
+    }
 
     public static String getModID() { // NO
         return modID; // DOUBLE NO
@@ -142,9 +136,9 @@ public class VexMod implements
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= Initializing Default Mod. Hi. =========================");
+        logger.info("========================= Initializing vexMod. Hi. =========================");
         VexMod vexmod = new VexMod();
-        logger.info("========================= /Default Mod Initialized. Hello World./ =========================");
+        logger.info("========================= /vexMod Initialized. Hello Gamer./ =========================");
     }
 
     // =============== POST-INITIALIZE =================
@@ -363,6 +357,7 @@ public class VexMod implements
         BaseMod.addRelic(new HeadHunter(), RelicType.SHARED);
         BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
         BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
+        BaseMod.addRelic(new DevilBotling(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -448,6 +443,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(HeadHunter.ID);
         UnlockTracker.markRelicAsSeen(NotEnergy.ID);
         UnlockTracker.markRelicAsSeen(NewsTicker.ID);
+        UnlockTracker.markRelicAsSeen(DevilBotling.ID);
 
         logger.info("Done adding relics!");
     }
@@ -701,10 +697,6 @@ public class VexMod implements
     public int receiveMaxHPChange(int amount) {
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(MidasArmor.ID)) {
             MidasArmor relic = (MidasArmor) AbstractDungeon.player.getRelic(MidasArmor.ID);
-            amount = relic.onMaxHPChange(amount);
-        }
-        if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(LichBottle.ID)) {
-            LichBottle relic = (LichBottle) AbstractDungeon.player.getRelic(LichBottle.ID);
             amount = relic.onMaxHPChange(amount);
         }
         return amount;

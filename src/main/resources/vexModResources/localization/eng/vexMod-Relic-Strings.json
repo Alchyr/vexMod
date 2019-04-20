@@ -243,7 +243,9 @@
     "NAME": "Writhing Mask",
     "FLAVOR": "It squirms on your face uncomfortably.",
     "DESCRIPTIONS": [
-      "At the start of each combat, gain #b4 #yMalleable."
+      "At the start of each combat, gain #b4 #yMalleable.",
+      "Malleable",
+      "Upon receiving Attack damage, gains #b4 #yBlock. NL #yBlock gain increases as #yMalleable is triggered. NL Resets to #b4 at the start of your turn."
     ]
   },
   "vexMod:ToySword": {
@@ -519,7 +521,7 @@
     "NAME": "Golden Armor",
     "FLAVOR": "Expensive... but worth it?",
     "DESCRIPTIONS": [
-      "Your HP is ALWAYS equal to your #yGold. NL Instead of losing HP, lose twice that much #yGold."
+      "Your HP and Max HP are ALWAYS set equal to your #yGold. NL Instead of losing HP, lose twice that much #yGold."
     ]
   },
   "vexMod:TimeEaterHat": {
@@ -533,7 +535,7 @@
     "NAME": "Berry Sword",
     "FLAVOR": "Tiny bites of this sword invigorate you.",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b8. The first #b2 cards you play each combat are removed from your deck."
+      "Upon pickup, raise your Max HP by #b8. The first card you play each combat is removed from your deck."
     ]
   },
   "vexMod:Dragonfruit": {
@@ -561,7 +563,7 @@
     "NAME": "Lich's Phylactery",
     "FLAVOR": "It feels cold in your hands, no matter what you do ...",
     "DESCRIPTIONS": [
-      "Your Max HP is ALWAYS #b1. Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rdie."
+      "Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rdie."
     ]
   },
   "vexMod:BarristanHead": {
@@ -875,7 +877,9 @@
     "NAME": "Brain Blaster",
     "FLAVOR": "Holding it near your head, you feel a terrible buzzing dizziness.",
     "DESCRIPTIONS": [
-      "ALL enemies start combat #yReactive."
+      "ALL enemies start combat #yReactive.",
+      "Reactive",
+      "Upon receiving attack damage, changes its intent."
     ]
   },
   "vexMod:PlasmaPancake": {
@@ -889,7 +893,7 @@
     "NAME": "Chomping Noodles",
     "FLAVOR": "These noodles bite back.",
     "DESCRIPTIONS": [
-      "Whenever you enter a #y? room, raise your Max HP by #b3 and lose #b9 HP."
+      "Whenever you enter a #y? room, raise your Max HP by #b3 and lose #b5 HP."
     ]
   },
   "vexMod:RedPlottingStone": {
@@ -1150,6 +1154,121 @@
     "FLAVOR": "Messages from above...",
     "DESCRIPTIONS": [
       "Right click once per combat to see any messages Vex, the developer, may have sent you."
+    ]
+  },
+  "vexMod:DevilBotling": {
+    "NAME": "Devil Bot",
+    "FLAVOR": "A massive bot of pure evil. Devious Botling's dad. Only appears on full moons.",
+    "DESCRIPTIONS": [
+      "Gain [E] [E] at the start of your turn. Torments you every turn.",
+      "Enjoy the Weak, ",
+      "Hoho, have some Weak, ",
+      "Taste weakness, ",
+      "You look pretty Weak, ",
+      "Have some Frail, ",
+      "Hehe, enjoy the Frail, ",
+      "Heh, taste Frail, ",
+      "Looking rather Frail, ",
+      "I'll be taking that gold, ",
+      "Thanks for the gold, ",
+      "Heh, my gold now, ",
+      "I'll enjoy the gold, ",
+      "I hope you didn't need that ",
+      "I'll be taking that ",
+      "Thanks for the ",
+      "Yoink! Got your ",
+      "Let's tone down that ",
+      "Couldn't help but nerf ",
+      "Ha, weakened your ",
+      "I'm gonna rebalance ",
+      "I don't feel like giving you Energy this turn, ",
+      "Not sharing my Energy this turn, ",
+      "Hope you didn't need my Energy this turn, ",
+      "No Energy for you this turn, ",
+      "Dodge this, ",
+      "Blasters incoming, ",
+      "Taste firepower, ",
+      "Here comes my chip damage, ",
+      "Want a little help, ",
+      "Care for some Block, ",
+      "Need some help, ",
+      "Require some support, ",
+      "Want some assistance, ",
+      "moron!",
+      "loser!",
+      "dork!",
+      "nerd!",
+      "fool!",
+      "curmudgeon!",
+      "pleb!",
+      "noob!",
+      "newbie!",
+      "tool!",
+      "buffoon!",
+      "cretin!",
+      "dipstick!",
+      "wanker!",
+      "weakling!",
+      "bonehead!",
+      "dummy!",
+      "imbecile!",
+      "pinhead!",
+      "troglodyte!",
+      "twit!",
+      "amateur!",
+      "bozo!",
+      "clown!",
+      "coward!",
+      "dimwit!",
+      "dolt!",
+      "dummy!",
+      "dunce!",
+      "goofball!",
+      "ignoramus!",
+      "idiot!",
+      "lowlife!",
+      "nerd!",
+      "dweeb!",
+      "wacko!",
+      "bilge rat!",
+      "sucker!",
+      "numbskull!",
+      "Meet my Gremlin friend!",
+      "I cast Summon Gremlin!",
+      "Thrash this loser for me, Gremlin.",
+      "Gain [E] at the start of your turn. Torments you at random occasions in unique ways.",
+      "Nice try. LOL.",
+      "You didn't have a chance.",
+      "LOL, noob.",
+      "When you try so hard and you don't succeed...",
+      "Press F.",
+      "Wrecked.",
+      "Thrashed.",
+      "Deee-stroyed.",
+      "Pathetic!",
+      "Next time, try thinking?",
+      "That must have hurt.",
+      "That run was weak.",
+      "Better luck next time.",
+      "LOL, pleb.",
+      "Hah, nerd.",
+      "Git gud.",
+      "You tried so hard and got so far NL but in the end, it didn't even matter...",
+      "Good game, well played.",
+      "GG WP",
+      "Get rekt scrub.",
+      "U ded.",
+      "Say hi to Neow for me!",
+      "See you next time!",
+      "That deck was weak.",
+      "Get that weak deck outta here!",
+      "LOL. Get wrecked.",
+      "Try not to die next time.",
+      "Roses are red, violets are blue. NL A loser is dead, that loser is you.",
+      "This card reward is better off without ",
+      "I'll be taking that nice ",
+      "Looks like your deck will go without ",
+      "Mmm, hope you didn't want "
     ]
   }
 }

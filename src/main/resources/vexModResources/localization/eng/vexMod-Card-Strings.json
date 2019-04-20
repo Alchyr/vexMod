@@ -401,7 +401,7 @@
     "DESCRIPTION": "Effect varies based on day of the week. NL Exhaust.",
     "UPGRADE_DESCRIPTION": "Effect varies based on day of the week.",
     "EXTENDED_DESCRIPTION": [
-      " NL (Deal !D! damage. Gain !B! Block.)",
+      " NL (Gain !B! Block. Deal !D! damage.)",
       " NL (Deal !D! damage.)",
       " NL (Gain !B! Block.)",
       " NL (Apply !M! Poison.)",

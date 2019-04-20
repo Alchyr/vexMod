@@ -6,15 +6,16 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowReward;
 import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
-import com.megacrit.cardcrawl.relics.CallingBell;
+import vexMod.relics.DevilBotling;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage.ZHS;
 
-public class NeowBellPatch {
+public class NeowDemonPatch {
     @SpireEnum
-    public static NeowReward.NeowRewardType GET_BELL;
+    public static NeowReward.NeowRewardType DEVIL_BOTLING;
 
     @SpirePatch(
             clz = NeowReward.class,
@@ -24,14 +25,14 @@ public class NeowBellPatch {
     public static class blessAddBlight {
         public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
             if (category == 3) {
-                if (AbstractDungeon.cardRandomRng.random(4) == 0) {
+                if ((new Date().getDay() == 19 && new Date().getMonth() == 4) && AbstractDungeon.cardRandomRng.random(1) == 0) {
                     String tmp;
                     if (Settings.language == ZHS) {
                         tmp = "#r获得召唤铃铛 。";
                     } else {
-                        tmp = "#rObtain #rCalling #rBell";
+                        tmp = "#rObtain #rthe #elusive #rDevil #rBotling.";
                     }
-                    __result.add(new NeowRewardDef(GET_BELL, "[ " + tmp + " ]"));
+                    __result.add(new NeowRewardDef(DEVIL_BOTLING, "[ " + tmp + " ]"));
                 }
             }
             return __result;
@@ -44,8 +45,8 @@ public class NeowBellPatch {
     )
     public static class ActivatePatch {
         public static void Prefix(NeowReward __instance) {
-            if (__instance.type == GET_BELL) {
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new CallingBell());
+            if (__instance.type == DEVIL_BOTLING) {
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new DevilBotling());
             }
         }
     }

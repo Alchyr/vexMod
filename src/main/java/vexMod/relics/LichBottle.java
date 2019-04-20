@@ -8,9 +8,11 @@ import com.megacrit.cardcrawl.actions.common.ExhaustSpecificCardAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.Frost;
+import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import vexMod.VexMod;
@@ -39,14 +41,6 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
     }
 
     @Override
-    public void onEquip() {
-        AbstractDungeon.player.maxHealth = 1;
-        if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth) {
-            AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
-        }
-    }
-
-    @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
         if (damageAmount > 0 && AbstractDungeon.player.masterDeck.size() > 0) {
             for (int i = 0; i < damageAmount; i++) {
@@ -72,13 +66,10 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
         }
         else
         {
-            return 999;
+            AbstractDungeon.player.isDead = true;
+            AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
+            return 0;
         }
-    }
-
-    public int onMaxHPChange(int amount)
-    {
-        return 0;
     }
 
     // Description

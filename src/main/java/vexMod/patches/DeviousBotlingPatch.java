@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import javassist.CtBehavior;
 import vexMod.actions.RelicTalkAction;
+import vexMod.relics.DevilBotling;
 import vexMod.relics.DeviousBotling;
 import vexMod.vfx.RelicSpeechBubble;
 
@@ -23,34 +24,44 @@ public class DeviousBotlingPatch {
     )
     public static void Insert(@ByRef int[] numCards) {
         if (AbstractDungeon.player.hasRelic(DeviousBotling.ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMPLETE) {
-            int BotlingStealChance = AbstractDungeon.cardRandomRng.random(0,3);
+            int BotlingStealChance = AbstractDungeon.cardRandomRng.random(0, 3);
             if (BotlingStealChance == 0) {
                 AbstractDungeon.player.getRelic(DeviousBotling.ID).flash();
                 if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
-                    if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0))
-                    {
-                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105,108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + "+, " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
-                    }
-                    else
-                    {
-                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105,108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + ", " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                    if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0)) {
+                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + "+, " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                    } else {
+                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + ", " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
                     }
 
-                }
-                else
-                {
-                    if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0))
-                    {
-                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105,108)] + AbstractDungeon.returnRandomCard().name + "+, " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
-                    }
-                    else
-                    {
-                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105,108)] + AbstractDungeon.returnRandomCard().name + ", " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                } else {
+                    if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0)) {
+                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.returnRandomCard().name + "+, " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                    } else {
+                        AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DeviousBotling.ID).currentX, AbstractDungeon.player.getRelic(DeviousBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.returnRandomCard().name + ", " + AbstractDungeon.player.getRelic(DeviousBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
                     }
 
                 }
                 --numCards[0];
             }
+        } else if (AbstractDungeon.player.hasRelic(DevilBotling.ID) && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMPLETE) {
+            AbstractDungeon.player.getRelic(DevilBotling.ID).flash();
+            if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomElite || AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+                if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0)) {
+                    AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DevilBotling.ID).currentX, AbstractDungeon.player.getRelic(DevilBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + "+, " + AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                } else {
+                    AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DevilBotling.ID).currentX, AbstractDungeon.player.getRelic(DevilBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).name + ", " + AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                }
+
+            } else {
+                if (AbstractDungeon.actNum > 1 && (AbstractDungeon.cardRandomRng.random(1) == 0)) {
+                    AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DevilBotling.ID).currentX, AbstractDungeon.player.getRelic(DevilBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.returnRandomCard().name + "+, " + AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                } else {
+                    AbstractDungeon.topLevelEffects.add(new RelicSpeechBubble(AbstractDungeon.player.getRelic(DevilBotling.ID).currentX, AbstractDungeon.player.getRelic(DevilBotling.ID).currentY, 5.0F, (AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(105, 108)] + AbstractDungeon.returnRandomCard().name + ", " + AbstractDungeon.player.getRelic(DevilBotling.ID).DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), true));
+                }
+
+            }
+            --numCards[0];
         }
     }
 

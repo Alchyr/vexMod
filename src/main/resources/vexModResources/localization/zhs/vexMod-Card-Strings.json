@@ -175,7 +175,8 @@
       " NL （还需要打出 !vexMod:SecondMagic! 张牌。）",
       "我还没有打到 ",
       " 张牌！",
-      " NL （时机已过！）"
+      " NL （时机已过！）",
+      " NL （时机已至！）"
     ]
   },
   "vexMod:GatherTools": {
@@ -306,10 +307,11 @@
   },
   "vexMod:StairwayStrike": {
     "NAME": "高塔打击",
-    "DESCRIPTION": "耗费总是等于你所在的幕数。  NL 造成等于你所在的层数的伤害。 NL 消耗 。",    
+    "DESCRIPTION": "耗费总是等于你所在的幕数。  NL 造成等于你所在的层数的伤害。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "耗费总是等于你所在的幕数。 NL 造成等于你所在的层数的伤害。  ",
     "EXTENDED_DESCRIPTION": [
-  " NL (Deals !D! damage.)"]
+      " NL (Deals !D! damage.)"
+    ]
   },
   "vexMod:GoldenStrike": {
     "NAME": "镶金打击",
@@ -345,7 +347,7 @@
   },
   "vexMod:DiverseOrb": {
     "NAME": "充能球护盾",
-    "DESCRIPTION": "你每有一个充能球，就获得一次 !B! 点 格挡 。"
+    "DESCRIPTION": "你每有一种充能球，获得一次 !B! 点 格挡 。"
   },
   "vexMod:DarkConflux": {
     "NAME": "黑暗汇流",
@@ -374,7 +376,7 @@
   },
   "vexMod:GoldenLightningCard": {
     "NAME": "金色闪电",
-    "DESCRIPTION": " 生成 1 个 [#EFC851]金[] [#EFC851]色[] [#EFC851]闪[] [#EFC851]电[] 充能球。",
+    "DESCRIPTION": " 生成 1 个 [#EFC851]金[] [#EFC851]色[] [#EFC851]闪[] [#EFC851]电[] 充能球。 NL 消耗 。",
     "EXTENDED_DESCRIPTION": [
       "金色闪电",
       "充能球： 对随机敌人造成伤害。 NL 获得 #y金币 。"
@@ -410,7 +412,7 @@
   },
   "vexMod:EmailVexCard": {
     "NAME": "推特打击",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，@dbotling会发一条推特公告此事。 NL  消耗 。"
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果这张牌杀死一个不是 爪牙 的敌人，奸诈小bot（@dbotling）会发一条推特公告此事。 NL  消耗 。"
   },
   "vexMod:StarBlast": {
     "NAME": "魔法果实",
@@ -418,7 +420,7 @@
   },
   "vexMod:Stardash": {
     "NAME": "果实冲刺",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 !M!  魔法果实 放入你的抽牌堆中。 NL  消耗 。",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将 !M! 张 魔法果实 放入你的抽牌堆中。 NL  消耗 。",
     "EXTENDED_DESCRIPTION": [
       "魔法果实",
       "魔法果实是费用为0并具有 #y消耗 的攻击牌 ，效果是造成伤害、回复生命并抽一张牌。"
@@ -437,13 +439,13 @@
     "DESCRIPTION": "根据今天在一周中的位置产生不同的效果。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "根据今天在一周中的位置产生不同的效果。",
     "EXTENDED_DESCRIPTION": [
-      " NL （造成 15 点伤害）",
-      " NL （获得 13 点格挡）",
-      " NL （给予 7 层中毒）",
-      " NL （获得 5 点格挡，抽 3 张牌。）",
-      " NL （获得 2 点力量。）",
-      " NL （回复 6 生命。）",
-      " NL （造成 9 点伤害，获得 9 点格挡。）"
+      " NL （获得 !B! 点 格挡 。造成 !D! 点伤害。）",
+      " NL （造成 !D! 点伤害）",
+      " NL （获得 !B! 点格挡）",
+      " NL （给予 !M! 层中毒）",
+      " NL （获得 !B! 点格挡，抽 !M! 张牌。）",
+      " NL （获得 !M! 点力量。）",
+      " NL （回复 !M! 生命。）"
     ]
   },
   "vexMod:UltimateCard": {

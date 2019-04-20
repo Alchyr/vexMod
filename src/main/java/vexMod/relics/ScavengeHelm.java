@@ -25,7 +25,7 @@ public class ScavengeHelm extends CustomRelic {
 
     public ScavengeHelm() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
-        this.tips.add(new PowerTip("Malleable", "Upon receiving Attack damage, gains #b4 #yBlock. NL #yBlock gain increases as #yMalleable is triggered. NL Resets to #b4 at the start of your turn."));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     @Override

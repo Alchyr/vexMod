@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 
 import java.util.ArrayList;
 
+import static com.megacrit.cardcrawl.core.Settings.GameLanguage.ZHS;
+
 public class NeowBlightPatch {
     @SpireEnum
     public static NeowReward.NeowRewardType BLIGHT_BOSS;
@@ -26,7 +28,14 @@ public class NeowBlightPatch {
                 if (AbstractDungeon.cardRandomRng.random(4) == 0)
                 {
                     String tmp;
-                    tmp = "#rObtain #ra #rrandom #rBlight #gObtain #g2 #grandom #gboss #gRelics";
+                    if (Settings.language == ZHS)
+                    {
+                         tmp = "#r获得一样随机的荒疫。 #g获得2件随机的BOSS遗物。";
+                    }
+                    else
+                    {
+                        tmp = "#rObtain #ra #rrandom #rBlight #gObtain #g2 #grandom #gboss #gRelics";
+                    }
                     __result.add(new NeowRewardDef(BLIGHT_BOSS, "[ " + tmp + " ]"));
                 }
             }

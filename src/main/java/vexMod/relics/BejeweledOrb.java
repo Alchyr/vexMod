@@ -19,7 +19,6 @@ public class BejeweledOrb extends CustomRelic implements OnChannelRelic {
     public static final String ID = VexMod.makeID("BejeweledOrb");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BejeweledOrb.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BejeweledOrb.png"));
-    private static final int CHANNEL_AMOUNT = 2;
 
     public BejeweledOrb() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);

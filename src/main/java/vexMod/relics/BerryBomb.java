@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import vexMod.VexMod;
@@ -71,6 +72,10 @@ public class BerryBomb extends CustomRelic {
         AbstractDungeon.player.increaseMaxHp(6, true);
     }
 
+    @Override
+    public boolean canSpawn() {
+        return Settings.isEndless || AbstractDungeon.floorNum <= 33;
+    }
 
     // Description
     @Override

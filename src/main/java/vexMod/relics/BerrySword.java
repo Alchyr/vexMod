@@ -40,14 +40,14 @@ public class BerrySword extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        if (counter < 2) {
+        if (counter < 1) {
             this.beginLongPulse();
         }
     }
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (counter < 2) {
+        if (counter < 1) {
             this.flash();
             AbstractCard c = getMasterDeckEquivalent(card);
             AbstractDungeon.player.masterDeck.removeCard(c);

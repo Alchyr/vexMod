@@ -28,7 +28,7 @@ public class BrainBlaster extends CustomRelic {
 
     public BrainBlaster() {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
-        this.tips.add(new PowerTip("Reactive", "Upon receiving attack damage, changes its intent."));
+        this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
     @Override

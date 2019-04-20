@@ -31,7 +31,7 @@ public class ChompingNoodles extends CustomRelic {
         if (room instanceof EventRoom) {
             this.flash();
             AbstractDungeon.player.increaseMaxHp(3, true);
-            AbstractDungeon.player.damage(new DamageInfo((AbstractCreature)null, 9));
+            AbstractDungeon.player.damage(new DamageInfo((AbstractCreature)null, 5));
         }
 
     }
