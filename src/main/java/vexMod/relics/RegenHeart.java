@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -47,6 +48,12 @@ public class RegenHeart extends CustomRelic {
         }
 
     }
+
+    public boolean canSpawn() {
+        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(MidasArmor.ID));// 50 51
+    }
+
+
     // Description
     @Override
     public String getUpdatedDescription() {

@@ -383,11 +383,11 @@
     ]
   },
   "vexMod:NamedBlast": {
-    "NAME": "名谓爆发",
+    "NAME": "名谓守御",
     "DESCRIPTION": "你的玩家名称里每有一个字符，就获得 !B! 点 格挡 一次。 NL  消耗 。"
   },
   "vexMod:CalendarSmash": {
-    "NAME": "时日碎击",
+    "NAME": "时疫",
     "DESCRIPTION": "给予等于日期数值层数的 中毒 。 NL 消耗 。"
   },
   "vexMod:TrainingStrike": {
@@ -445,11 +445,25 @@
       " NL （给予 !M! 层中毒）",
       " NL （获得 !B! 点格挡，抽 !M! 张牌。）",
       " NL （获得 !M! 点力量。）",
-      " NL （回复 !M! 生命。）"
+      " NL （获得 !M! 层 多层护甲 。）"
     ]
   },
   "vexMod:UltimateCard": {
     "NAME": "终极卡牌",
     "DESCRIPTION": ""
+  },
+  "vexMod:WellTimedStrike": {
+    "NAME": "适时打击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 伤害数值会在0到50之间快速变动。",
+    "UPGRADE_DESCRIPTION": "造成 !D! 点伤害。 NL 伤害数值会在0到50之间缓慢变动。"
+  },
+  "vexMod:VolumeVengeance": {
+    "NAME": "共振",
+    "DESCRIPTION": "效果根据游戏设置中的主音量的不同而变化。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （造成 !D! 点伤害。）",
+      " NL （所有敌人在本回合失去 !M! 点 力量 。）",
+      " NL （抽一张牌。）"
+    ]
   }
 }

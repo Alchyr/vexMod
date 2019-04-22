@@ -35,6 +35,7 @@ public class RelicRemovalPatch
             dungeon_instance.shopRelicPool.remove(NotEnergy.ID);
             dungeon_instance.shopRelicPool.remove(TheWave.ID);
             dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
+            dungeon_instance.shopRelicPool.remove(TimeMachine.ID);
         }
     }
 }

@@ -40,9 +40,9 @@ public class HeadHunter extends CustomRelic {
             AbstractCard card3 = rareCards.getNCardFromTop(2);
             RewardItem reward = new RewardItem();
             reward.cards.clear();
-            reward.cards.add(card1);
-            reward.cards.add(card2);
-            reward.cards.add(card3);
+            reward.cards.add(card1.makeCopy());
+            reward.cards.add(card2.makeCopy());
+            reward.cards.add(card3.makeCopy());
             AbstractDungeon.getCurrRoom().addCardReward(reward);
         }
     }

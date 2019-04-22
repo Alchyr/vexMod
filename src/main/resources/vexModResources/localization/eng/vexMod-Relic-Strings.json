@@ -563,7 +563,7 @@
     "NAME": "Lich's Phylactery",
     "FLAVOR": "It feels cold in your hands, no matter what you do ...",
     "DESCRIPTIONS": [
-      "Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rdie."
+      "Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rlose."
     ]
   },
   "vexMod:BarristanHead": {
@@ -651,6 +651,11 @@
       "Whenever an enemy dies, gain #b6 #yGold.",
       "Upon pickup, brews #b3 random potions.",
       "Upon pickup, gain #b125 #yGold.",
+      "At the start of your turn, gain #b3 #yBlock.",
+      "Whenever you would take unblocked #yAttack damage, prevent #b2 of it.",
+      "When you would die, heal to #b33% of your Max HP instead (works once).",
+      "Start each combat with #b2 additional Orb slots.",
+      "Start each combat with #b4 #yStrength. At the end of your first turn, lose #b4 #yStrength.",
       "Start each combat with #b5 #yBlock.",
       "At the start of each combat, apply #b3 #yPoison to ALL enemies.",
       "At the start of your turn, deal #b1 damage to ALL enemies.",
@@ -667,6 +672,11 @@
       "Whenever an enemy dies, gain #b3 #yGold.",
       "Upon pickup, brews #b1 random potion.",
       "Upon pickup, gain #b40 #yGold.",
+      "At the start of your turn, gain #b1 #yBlock.",
+      "Whenever you would take unblocked #yAttack damage, prevent #b1 of it.",
+      "When you would die, heal to #b10% of your Max HP instead (works once).",
+      "Start each combat with #b1 additional Orb slot.",
+      "Start each combat with #b2 #yStrength. At the end of your first turn, lose #b2 #yStrength.",
       "#gHas #gdifferent #gqualities #gevery #gtime #gyou #gfind #git.",
       "An artifact from ",
       "Found at ",
@@ -841,7 +851,8 @@
       " stinks like blighted cabbage.",
       " produces loud noises when shaken.",
       " makes you feel famished.",
-      "#gHas #gdifferent #gqualities #gevery #gtime #gyou #gfind #git."
+      "#gHas #gdifferent #gqualities #gevery #gtime #gyou #gfind #git.",
+      "Potions...!"
     ]
   },
   "vexMod:BerryBomb": {
@@ -900,7 +911,7 @@
     "NAME": "Red Plotting Stone",
     "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
     "DESCRIPTIONS": [
-      "#pGlows #psometime. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rdie."
+      "#pGlows #psometime. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rlose."
     ]
   },
   "vexMod:TealTab": {
@@ -1007,7 +1018,7 @@
       "LOL, pleb.",
       "Hah, nerd.",
       "Git gud.",
-      "You tried so hard and got so far NL but in the end, it didn't even matter...",
+      "You tried so hard and got so far NL but in the end, NL it didn't even matter...",
       "Good game, well played.",
       "GG WP",
       "Get rekt scrub.",
@@ -1253,7 +1264,7 @@
       "LOL, pleb.",
       "Hah, nerd.",
       "Git gud.",
-      "You tried so hard and got so far NL but in the end, it didn't even matter...",
+      "You tried so hard and got so far NL but in the end, NL it didn't even matter...",
       "Good game, well played.",
       "GG WP",
       "Get rekt scrub.",
@@ -1269,6 +1280,41 @@
       "I'll be taking that nice ",
       "Looks like your deck will go without ",
       "Mmm, hope you didn't want "
+    ]
+  },
+  "vexMod:TimeMachine": {
+    "NAME": "Time Machine",
+    "FLAVOR": "Speedrun strats...?",
+    "DESCRIPTIONS": [
+      "Whenever you enter a #yRest #ySite, rewind your run timer by #b3 minutes."
+    ]
+  },
+  "vexMod:MagicMissile": {
+    "NAME": "Wand of Magic Missile",
+    "FLAVOR": "The end of this plain wooden staff glows dimly with magical force.",
+    "DESCRIPTIONS": [
+      "Whenever you shuffle your draw pile, deal #b2-5 damage to a random enemy #b3 times."
+    ]
+  },
+  "vexMod:RockLover": {
+    "NAME": "Stone Age",
+    "FLAVOR": "For the real rock lover.",
+    "DESCRIPTIONS": [
+      "All future relics you find are Randomized Relics."
+    ]
+  },
+  "vexMod:GildedClover": {
+    "NAME": "Gilded Clover",
+    "FLAVOR": "Super-duper rare!",
+    "DESCRIPTIONS": [
+      "Card rewards from combat contain only Rare cards."
+    ]
+  },
+  "vexMod:FluxCapacitor": {
+    "NAME": "Clock Rock",
+    "FLAVOR": "Tick tock goes the clock rock.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Upon pickup, set your run timer to #b-10 minutes. Whenever you climb a floor, rewind your run timer by #b30 seconds. When your run timer hits #b0, you #rlose."
     ]
   }
 }

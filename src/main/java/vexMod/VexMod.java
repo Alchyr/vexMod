@@ -358,6 +358,11 @@ public class VexMod implements
         BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
         BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
         BaseMod.addRelic(new DevilBotling(), RelicType.SHARED);
+        BaseMod.addRelic(new TimeMachine(), RelicType.SHARED);
+        BaseMod.addRelic(new MagicMissile(), RelicType.SHARED);
+        BaseMod.addRelic(new RockLover(), RelicType.SHARED);
+        BaseMod.addRelic(new GildedClover(), RelicType.SHARED);
+        BaseMod.addRelic(new FluxCapacitor(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -444,6 +449,11 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(NotEnergy.ID);
         UnlockTracker.markRelicAsSeen(NewsTicker.ID);
         UnlockTracker.markRelicAsSeen(DevilBotling.ID);
+        UnlockTracker.markRelicAsSeen(TimeMachine.ID);
+        UnlockTracker.markRelicAsSeen(MagicMissile.ID);
+        UnlockTracker.markRelicAsSeen(RockLover.ID);
+        UnlockTracker.markRelicAsSeen(GildedClover.ID);
+        UnlockTracker.markRelicAsSeen(FluxCapacitor.ID);
 
         logger.info("Done adding relics!");
     }
@@ -544,6 +554,8 @@ public class VexMod implements
         BaseMod.addCard(new Deathsprout()); //
         BaseMod.addCard(new WeekCard()); //
         BaseMod.addCard(new UltimateCard());
+        BaseMod.addCard(new WellTimedStrike());
+        BaseMod.addCard(new VolumeVengeance());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -629,6 +641,8 @@ public class VexMod implements
         UnlockTracker.unlockCard(Deathsprout.ID);
         UnlockTracker.unlockCard(WeekCard.ID);
         UnlockTracker.unlockCard(UltimateCard.ID);
+        UnlockTracker.unlockCard(WellTimedStrike.ID);
+        UnlockTracker.unlockCard(VolumeVengeance.ID);
 
         logger.info("Done adding cards!");
     }
@@ -691,6 +705,7 @@ public class VexMod implements
         if (AbstractDungeon.player.hasRelic(BerryBomb.ID)) BerryBomb.relicBullshit();
         if (AbstractDungeon.player.hasRelic(RedPlottingStone.ID)) RedPlottingStone.FuckShitPoo();
         if (AbstractDungeon.player.hasRelic(PuzzleBox.ID)) PuzzleBox.relicBullshit();
+        if (AbstractDungeon.player.hasRelic(FluxCapacitor.ID)) FluxCapacitor.relicBullshit();
     }
 
     @Override

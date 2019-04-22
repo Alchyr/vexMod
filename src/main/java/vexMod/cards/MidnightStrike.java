@@ -1,17 +1,13 @@
 package vexMod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
 import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
@@ -47,9 +43,6 @@ public class MidnightStrike extends AbstractDefaultCard {
     private static final int DAMAGE = 100;    // DAMAGE = ${DAMAGE}
 
     private static final int TIMELEFT = 11;
-
-    private static int TIMER;
-
     // /STAT DECLARATION/
 
 
@@ -61,7 +54,6 @@ public class MidnightStrike extends AbstractDefaultCard {
         this.exhaust = true;
         this.tags.add(CardTags.STRIKE);
     }
-
 
     // Actions the card should do.
     @Override
@@ -77,6 +69,11 @@ public class MidnightStrike extends AbstractDefaultCard {
         this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = this.magicNumber - AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
 
         if (this.defaultSecondMagicNumber < 0) {
+            this.type = CardType.CURSE;
+            this.target = CardTarget.NONE;
+            this.color = CardColor.CURSE;
+            this.costForTurn = -2;
+            loadCardImage(makeCardPath("MidnightStrikeFailed.png"));
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[3];
         } else if (this.defaultSecondMagicNumber == 0) {
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[4];

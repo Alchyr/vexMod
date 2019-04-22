@@ -17,10 +17,12 @@ import com.megacrit.cardcrawl.cards.curses.Doubt;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
@@ -69,6 +71,7 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
             return; // Don't do anything.
         }
         if (AbstractDungeon.floorNum == chosenFloor && !this.usedUp) { // Only if you're in combat
+            this.img = TextureLoader.getTexture(makeRelicPath("RedPlottingStoneUsed.png"));
             this.usedUp();
             flash(); // Flash
             stopPulse(); // And stop the pulsing animation (which is started in atPreBattle() below)
@@ -89,24 +92,23 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
             gainRelic = true;
 
         } else if (AbstractDungeon.floorNum != chosenFloor && !this.usedUp) {
+            this.img = TextureLoader.getTexture(makeRelicPath("RedPlottingStoneUsed.png"));
             this.usedUp();
-            CardCrawlGame.sound.play("MONSTER_COLLECTOR_DEBUFF");
-            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 999, DamageInfo.DamageType.HP_LOSS));
+            AbstractDungeon.player.isDead = true;
+            AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
         }
 
     }
 
     @Override
-    public Integer onSave()
-    {
+    public Integer onSave() {
         int SavedFloor = chosenFloor;
         return SavedFloor;
         // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
     }
 
     @Override
-    public void onLoad(Integer SavedFloor)
-    {
+    public void onLoad(Integer SavedFloor) {
         // onLoad automatically has the Integer saved in onSave upon loading into the game.
 
         chosenFloor = SavedFloor;
@@ -127,6 +129,11 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
             this.beginLongPulse();
         } else {
             this.stopPulse();
+        }
+        if (AbstractDungeon.floorNum > chosenFloor)
+        {
+            this.img = TextureLoader.getTexture(makeRelicPath("RedPlottingStoneUsed.png"));
+            this.usedUp();
         }
     }
 

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.neow.NeowReward.NeowRewardDef;
 import vexMod.relics.DevilBotling;
 
 import java.util.ArrayList;
-import java.util.Date;
 
 import static com.megacrit.cardcrawl.core.Settings.GameLanguage.ZHS;
 
@@ -25,7 +24,7 @@ public class NeowDemonPatch {
     public static class blessAddBlight {
         public static ArrayList<NeowRewardDef> Postfix(ArrayList<NeowRewardDef> __result, NeowReward __instance, final int category) {
             if (category == 3) {
-                if ((new Date().getDay() == 19 && new Date().getMonth() == 4) && AbstractDungeon.cardRandomRng.random(1) == 0) {
+                if (AbstractDungeon.cardRandomRng.random(9) == 0) {
                     String tmp;
                     if (Settings.language == ZHS) {
                         tmp = "#r获得召唤铃铛 。";

@@ -97,7 +97,7 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
     }
 
     public boolean canSpawn() {
-        return (!Settings.isEndless && AbstractDungeon.floorNum <= 40);// 50 51
+        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(RegenHeart.ID));// 50 51
     }
 
     // Description

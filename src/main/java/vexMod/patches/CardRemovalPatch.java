@@ -40,6 +40,7 @@ public class CardRemovalPatch
             dungeon_instance.colorlessCardPool.removeCard(CalendarSmash.ID);
             dungeon_instance.colorlessCardPool.removeCard(WeekCard.ID);
             dungeon_instance.colorlessCardPool.removeCard(NamedBlast.ID);
+            dungeon_instance.colorlessCardPool.removeCard(WellTimedStrike.ID);
         }
     }
 }

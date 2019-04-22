@@ -65,6 +65,16 @@ public class DeadSilentEvent extends AbstractImageEvent {
         imageEventText.setDialogOption(OPTIONS[4]); // Leave
     }
 
+    public static AbstractCard getRandomRewardColorSpecificCard(AbstractCard.CardColor color) {
+        ArrayList<AbstractCard> tmp = new ArrayList<>();
+        for(AbstractCard card : CardLibrary.getAllCards()) {
+            if(card.color == color && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL) {
+                tmp.add(card);
+            }
+        }
+        return tmp.get(AbstractDungeon.cardRandomRng.random(tmp.size() -1));
+    }
+
     @Override
     protected void buttonEffect(int i) { // This is the event:
         switch (screenNum) {
@@ -88,17 +98,17 @@ public class DeadSilentEvent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         AbstractDungeon.getCurrRoom().rewards.clear();
-                        AbstractCard card1 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card2 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card3 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
+                        AbstractCard card1 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card2 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card3 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
                         RewardItem reward = new RewardItem();
-                        AbstractCard card4 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card5 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card6 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
+                        AbstractCard card4 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card5 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card6 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
                         RewardItem reward2 = new RewardItem();
-                        AbstractCard card7 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card8 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
-                        AbstractCard card9 = CardLibrary.getRandomColorSpecificCard(AbstractCard.CardColor.GREEN, AbstractDungeon.cardRandomRng);
+                        AbstractCard card7 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card8 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
+                        AbstractCard card9 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.GREEN).makeCopy();
                         RewardItem reward3 = new RewardItem();
                         reward.cards.clear();
                         reward.cards.add(card1);

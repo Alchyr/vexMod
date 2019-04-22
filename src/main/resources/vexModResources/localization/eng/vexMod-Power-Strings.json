@@ -119,5 +119,13 @@
       "Prevent #b",
       " incoming Attack damage."
     ]
+  },
+  "vexMod:PropogationPower": {
+    "NAME": "Propogation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b",
+      " Evolving Card to your hand.",
+      " Evolving Cards to your hand."
+    ]
   }
 }

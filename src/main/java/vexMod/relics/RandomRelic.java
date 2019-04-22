@@ -4,10 +4,16 @@ import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.mod.stslib.relics.OnLoseBlockRelic;
+import com.evacipated.cardcrawl.mod.stslib.relics.OnPlayerDeathRelic;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.defect.IncreaseMaxOrbAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.characters.Defect;
+import com.megacrit.cardcrawl.characters.Ironclad;
+import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -22,6 +28,7 @@ import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
+import vexMod.powers.StoneSkinPower;
 import vexMod.util.TextureLoader;
 
 import java.util.ArrayList;
@@ -32,7 +39,7 @@ import java.util.Random;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, CustomSavable<Integer[]> {
+public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlayerDeathRelic, CustomSavable<Integer[]> {
 
     // ID, images, text.
     public static final String ID = VexMod.makeID("RandomRelic");
@@ -43,20 +50,28 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
     private int ID_MINOR;
     private int ID_MAJOR;
 
-    private boolean beenTaken = false;
-
-    private boolean firstTurn = true;
-
     public RandomRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        this.counter = -1;
     }
 
     @Override
     public void onEquip() {
         ArrayList<String> list = new ArrayList<>();
-        list.add("CombatStartBlockGain");
-        list.add("CombatStartPoison");
+        if (AbstractDungeon.player instanceof TheSilent)
+        {
+            list.add("CombatStartPoison");
+        }
+        if (AbstractDungeon.player instanceof Defect)
+        {
+            list.add("OrbSlotGain");
+        }
+        if (AbstractDungeon.player instanceof Ironclad)
+        {
+            list.add("CombatTempStrength");
+        }
         list.add("TurnStartDamage");
+        list.add("CombatStartBlockGain");;
         list.add("CombatStartDamage");
         list.add("CombatStartDraw");
         list.add("BlockBrokenHeal");
@@ -71,6 +86,8 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
         list.add("KillGoldGain");
         list.add("PickupPotionBrew");
         list.add("PickupGold");
+        list.add("TurnStartBlock");
+        list.add("CombatStartSnakeSkin");
         Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
         switch (list.get(0)) {
             case "CombatStartBlockGain":
@@ -120,6 +137,21 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
                 break;
             case "PickupGold":
                 ID_MINOR = 15;
+                break;
+            case "TurnStartBlock":
+                ID_MINOR = 16;
+                break;
+            case "CombatStartSnakeSkin":
+                ID_MINOR = 17;
+                break;
+            case "DeathAversionHealth":
+                ID_MINOR = 18;
+                break;
+            case "OrbSlotGain":
+                ID_MINOR = 19;
+                break;
+            case "CombatTempStrength":
+                ID_MINOR = 20;
                 break;
         }
         Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
@@ -172,6 +204,21 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             case "PickupGold":
                 ID_MAJOR = 15;
                 break;
+            case "TurnStartBlock":
+                ID_MAJOR = 16;
+                break;
+            case "CombatStartSnakeSkin":
+                ID_MAJOR = 17;
+                break;
+            case "DeathAversionHealth":
+                ID_MAJOR = 18;
+                break;
+            case "OrbSlotGain":
+                ID_MAJOR = 19;
+                break;
+            case "CombatTempStrength":
+                ID_MAJOR = 20;
+                break;
         }
         if (ID_MINOR == 8) {
             AbstractDungeon.player.increaseMaxHp(5, true);
@@ -180,12 +227,46 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             AbstractDungeon.player.increaseMaxHp(9, true);
         }
         if (ID_MINOR == 14) {
-            AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion());
+            int remove;
+            for (remove = 0; remove < 1; ++remove) {// 22
+                AbstractDungeon.getCurrRoom().addPotionToRewards(PotionHelper.getRandomPotion());// 23
+            }
+
+            AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[217]);// 26
+            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0F;// 27
+            remove = -1;// 30
+
+            for (int i = 0; i < AbstractDungeon.combatRewardScreen.rewards.size(); ++i) {// 31
+                if (((RewardItem) AbstractDungeon.combatRewardScreen.rewards.get(i)).type == RewardItem.RewardType.CARD) {// 32
+                    remove = i;// 33
+                    break;// 34
+                }
+            }
+
+            if (remove != -1) {// 37
+                AbstractDungeon.combatRewardScreen.rewards.remove(remove);// 38
+            }
         }
         if (ID_MAJOR == 14) {
-            AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion());
-            AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion());
-            AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion());
+            int remove;
+            for (remove = 0; remove < 3; ++remove) {// 22
+                AbstractDungeon.getCurrRoom().addPotionToRewards(PotionHelper.getRandomPotion());// 23
+            }
+
+            AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[217]);// 26
+            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0F;// 27
+            remove = -1;// 30
+
+            for (int i = 0; i < AbstractDungeon.combatRewardScreen.rewards.size(); ++i) {// 31
+                if (((RewardItem) AbstractDungeon.combatRewardScreen.rewards.get(i)).type == RewardItem.RewardType.CARD) {// 32
+                    remove = i;// 33
+                    break;// 34
+                }
+            }
+
+            if (remove != -1) {// 37
+                AbstractDungeon.combatRewardScreen.rewards.remove(remove);// 38
+            }
         }
         if (ID_MINOR == 11) {
             EventHelper.TREASURE_CHANCE += 0.04F;
@@ -201,31 +282,42 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             CardCrawlGame.sound.play("GOLD_GAIN");
             AbstractDungeon.player.gainGold(125);
         }
-        beenTaken = true;
-        this.description = DESCRIPTIONS[ID_MAJOR] + " NL " + DESCRIPTIONS[ID_MINOR + 16] + " NL " + DESCRIPTIONS[32];
-        this.flavorText = DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(88, 157)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(158, 205)] + " " + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(33, 44)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(45, 87)];
+        this.description = DESCRIPTIONS[ID_MAJOR] + " NL " + DESCRIPTIONS[ID_MINOR + 21] + " NL " + DESCRIPTIONS[42];
+        this.flavorText = DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(98, 167)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(168, 215)] + " " + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(43, 54)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(55, 97)];
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
+    }
+
+    @Override
+    public boolean onPlayerDeath(AbstractPlayer p, DamageInfo info) {
+        if (ID_MINOR == 18 && this.counter == -1) {
+            this.counter = -2;
+            AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth / 10);
+            return false;
+        }
+        if (ID_MAJOR == 18 && this.counter == -1) {
+            this.counter = -2;
+            AbstractDungeon.player.heal(AbstractDungeon.player.maxHealth / 3);
+            return false;
+        }
+        return true;
     }
 
     public Integer[] onSave() {
         Integer[] integerList = {ID_MINOR, ID_MAJOR};
         return integerList;
-        // Return the location of the card in your deck. AbstractCard cannot be serialized so we use an Integer instead.
     }
 
     @Override
     public void onLoad(Integer[] integerList) {
-        // onLoad automatically has the Integer saved in onSave upon loading into the game.
         ID_MINOR = integerList[0];
         ID_MAJOR = integerList[1];
-        this.description = DESCRIPTIONS[ID_MAJOR] + " NL " + DESCRIPTIONS[ID_MINOR + 16] + " NL " + DESCRIPTIONS[32];
-        this.flavorText = DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(88, 157)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(158, 205)] + " " + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(33, 44)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(45, 87)];
+        this.description = DESCRIPTIONS[ID_MAJOR] + " NL " + DESCRIPTIONS[ID_MINOR + 21] + " NL " + DESCRIPTIONS[42];
+        this.flavorText = DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(98, 167)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(168, 215)] + " " + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(43, 54)] + DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(55, 97)];
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));
         this.initializeTips();
-        // Uses the card's index saved before to search for the card in the deck and put it in a custom SpireField.
     }
 
     @Override
@@ -338,6 +430,42 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, false));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
+        if (ID_MINOR == 17) {
+            this.flash();// 24
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));// 25
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 31
+        }
+        if (ID_MAJOR == 17) {
+            this.flash();// 24
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 2), 2));// 25
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 31
+        }
+        if (ID_MINOR == 19)
+        {
+            this.flash();// 29
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
+            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(1));// 31
+        }
+        if (ID_MAJOR== 19)
+        {
+            this.flash();// 29
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
+            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(2));// 31
+        }
+        if (ID_MINOR == 20)
+        {
+            this.flash();// 24
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2), 2));// 25
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 2), 2));// 31
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 37
+        }
+        if (ID_MINOR == 20)
+        {
+            this.flash();// 24
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 4), 4));// 25
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 4), 4));// 31
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 37
+        }
     }
 
     @Override
@@ -364,7 +492,6 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             }
 
         }
-
     }
 
     @Override
@@ -379,12 +506,22 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, Custom
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
+        if (ID_MINOR == 16) {
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 1));
+        }
+        if (ID_MAJOR == 16) {
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3));
+        }
     }
 
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[206];
+        return DESCRIPTIONS[216];
     }
 
 }

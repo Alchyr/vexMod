@@ -1,37 +1,35 @@
 package vexMod.cards;
 
+import com.badlogic.gdx.Gdx;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.VFXAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.GainBlockAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.combat.SweepingBeamEffect;
+import com.megacrit.cardcrawl.powers.GainStrengthPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
 // public class ${NAME} extends AbstractDefaultCard
-public class StairwayStrike extends AbstractDefaultCard {
+public class WellTimedStrike extends AbstractDefaultCard {
 
     // TEXT DECLARATION
 
-    public static final String ID = VexMod.makeID("StairwayStrike"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("WellTimedStrike"); // VexMod.makeID("${NAME}");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
 
-    public static final String IMG = makeCardPath("SpireStrike.png");// "public static final String IMG = makeCardPath("${NAME}.png");
+    public static final String IMG = makeCardPath("WellTimedStrike.png");// "public static final String IMG = makeCardPath("${NAME}.png");
     // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -43,34 +41,34 @@ public class StairwayStrike extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.ATTACK;       //
     public static final CardColor COLOR = CardColor.COLORLESS;
 
-    private static final int COST = 0;  // COST = ${COST}
+    private static final int COST = 3;  // COST = ${COST}
 
-    private static final int DAMAGE = 0;
+    private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
+    private static double DDDAMA = 0;
 
     // /STAT DECLARATION/
 
 
-    public StairwayStrike() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public WellTimedStrike() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        this.baseDamage = DAMAGE;
-        this.exhaust = true;
+        baseDamage = DAMAGE;
         this.tags.add(CardTags.STRIKE);
     }
 
     @Override
-    public void applyPowers() {
-        this.baseDamage = AbstractDungeon.floorNum;
-        this.costForTurn = AbstractDungeon.actNum-1;
+    public void update() {
+        super.update();
+        if (AbstractDungeon.player != null) {
+            if (upgraded) {
+                DDDAMA += 30 * Gdx.graphics.getDeltaTime();
+            } else {
+                DDDAMA += 60 * Gdx.graphics.getDeltaTime();
+            }
 
-        super.applyPowers();
-        if (!this.upgraded) {
-            this.rawDescription = DESCRIPTION;
-        } else {
-            this.rawDescription = UPGRADE_DESCRIPTION;
+            DDDAMA = DDDAMA % 51;
+            this.baseDamage = (int) DDDAMA;
+            this.applyPowers();
         }
-
-        this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[0];
-        this.initializeDescription();
     }
 
     // Actions the card should do.
@@ -84,7 +82,6 @@ public class StairwayStrike extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.exhaust = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

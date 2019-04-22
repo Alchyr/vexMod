@@ -277,8 +277,8 @@
   },
   "vexMod:StairwayStrike": {
     "NAME": "Spire Strike",
-    "DESCRIPTION": "Cost is always equal to your Act number. NL Deal damage equal to your floor number. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Cost is always equal to your Act number. NL Deal damage equal to your floor number.",
+    "DESCRIPTION": "Costs 1 more for each Act cleared. NL Deal damage equal to your floor number. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Costs 1 more for each Act cleared. NL Deal damage equal to your floor number.",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !D! damage.)"
     ]
@@ -407,11 +407,25 @@
       " NL (Apply !M! Poison.)",
       " NL (Gain !B! Block. Draw !M! cards.)",
       " NL (Gain !M! Strength.)",
-      " NL (Heal !M! HP.)"
+      " NL (Gain !M! Plated Armor.)"
     ]
   },
   "vexMod:UltimateCard": {
     "NAME": "The Ultimate Card",
     "DESCRIPTION": ""
+  },
+  "vexMod:WellTimedStrike": {
+    "NAME": "Well-Timed Strike",
+    "DESCRIPTION": "Deal !D! damage. NL Damage cycles from 0 to 50 quickly.",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Damage cycles from 0 to 50 slowly."
+  },
+  "vexMod:VolumeVengeance": {
+    "NAME": "Resonance",
+    "DESCRIPTION": "Effect varies based on current master volume. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deal !D! damage.)",
+      " NL (ALL enemies lose !M! Strength this turn.)",
+      " NL (Draw 2 cards.)"
+    ]
   }
 }

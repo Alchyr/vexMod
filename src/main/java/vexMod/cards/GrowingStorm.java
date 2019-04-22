@@ -37,7 +37,7 @@ public class GrowingStorm extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.BLUE;
 
-    private static final int COST = 2;  // COST = ${COST}
+    private static final int COST = 1;  // COST = ${COST}
 
     private static final int BASIC = 1;
     private static final int BASIC_UP = 1;

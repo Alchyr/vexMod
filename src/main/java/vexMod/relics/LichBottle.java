@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.daily.mods.Midas;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.screens.DeathScreen;
@@ -70,6 +71,10 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
             AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
             return 0;
         }
+    }
+
+    public boolean canSpawn() {
+        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(MidasArmor.ID) && !AbstractDungeon.player.hasRelic(RegenHeart.ID));// 50 51
     }
 
     // Description

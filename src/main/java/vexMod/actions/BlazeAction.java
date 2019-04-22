@@ -93,6 +93,7 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new HatredPower(p, p, this.amount));
         blazeList.add(new StoneSkinPower(p, p, this.amount));
         blazeList.add(new EvasivePower(p, p, this.amount));
+        blazeList.add(new PropogationPower(p, p, this.amount));
 
         BlazePower = blazeList.get(AbstractDungeon.cardRandomRng.random(0, (blazeList.size()-1)));
 
