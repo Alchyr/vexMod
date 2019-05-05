@@ -11,18 +11,27 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.cards.colorless.Discovery;
+import com.megacrit.cardcrawl.cards.curses.AscendersBane;
+import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.daily.mods.Chimera;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
 import vexMod.events.*;
+import vexMod.modifiers.ShiftingDeckMod;
 import vexMod.monsters.*;
 import vexMod.potions.BlazePotion;
 import vexMod.potions.CameraPotion;
@@ -32,6 +41,8 @@ import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
@@ -46,7 +57,8 @@ public class VexMod implements
         PostInitializeSubscriber,
         PostUpdateSubscriber,
         MaxHPChangeSubscriber,
-        PostDungeonInitializeSubscriber {
+        PostDungeonInitializeSubscriber,
+        AddCustomModeModsSubscriber {
     public static final Logger logger = LogManager.getLogger(VexMod.class.getName());
     private static String modID;
 
@@ -113,7 +125,7 @@ public class VexMod implements
     // I DID IT ANYWAYS :P
 
     public static void setModID(String ID) {
-            modID = ID;
+        modID = ID;
     }
 
     public static String getModID() { // NO
@@ -476,7 +488,6 @@ public class VexMod implements
         // Add the cards
 
         BaseMod.addCard(new BlockBeam()); //
-        BaseMod.addCard(new CursedBody()); //
         BaseMod.addCard(new CleverClash()); //
         BaseMod.addCard(new DeadlyDodge()); //
         BaseMod.addCard(new ReflexChannel()); //
@@ -556,6 +567,8 @@ public class VexMod implements
         BaseMod.addCard(new UltimateCard());
         BaseMod.addCard(new WellTimedStrike());
         BaseMod.addCard(new VolumeVengeance());
+        BaseMod.addCard(new ChimeraCard());
+        BaseMod.addCard(new EvolveCard());
 
         logger.info("Making sure the cards are unlocked.");
         // Unlock the cards
@@ -563,7 +576,6 @@ public class VexMod implements
         // before playing your mod.
 
         UnlockTracker.unlockCard(BlockBeam.ID);
-        UnlockTracker.unlockCard(CursedBody.ID);
         UnlockTracker.unlockCard(CleverClash.ID);
         UnlockTracker.unlockCard(DeadlyDodge.ID);
         UnlockTracker.unlockCard(ReflexChannel.ID);
@@ -643,6 +655,8 @@ public class VexMod implements
         UnlockTracker.unlockCard(UltimateCard.ID);
         UnlockTracker.unlockCard(WellTimedStrike.ID);
         UnlockTracker.unlockCard(VolumeVengeance.ID);
+        UnlockTracker.unlockCard(ChimeraCard.ID);
+        UnlockTracker.unlockCard(EvolveCard.ID);
 
         logger.info("Done adding cards!");
     }
@@ -692,6 +706,9 @@ public class VexMod implements
         BaseMod.loadCustomStringsFile(OrbStrings.class,
                 getModID() + path + "vexMod-Orb-Strings.json");
 
+        BaseMod.loadCustomStringsFile(RunModStrings.class,
+                getModID() + path + "vexMod-RunMod-Strings.json");
+
         logger.info("Done edittting strings");
     }
 
@@ -705,7 +722,11 @@ public class VexMod implements
         if (AbstractDungeon.player.hasRelic(BerryBomb.ID)) BerryBomb.relicBullshit();
         if (AbstractDungeon.player.hasRelic(RedPlottingStone.ID)) RedPlottingStone.FuckShitPoo();
         if (AbstractDungeon.player.hasRelic(PuzzleBox.ID)) PuzzleBox.relicBullshit();
-        if (AbstractDungeon.player.hasRelic(FluxCapacitor.ID)) FluxCapacitor.relicBullshit();
+        if (AbstractDungeon.player.hasRelic(FluxCapacitor.ID)) {
+            if (AbstractDungeon.player.getRelic(FluxCapacitor.ID).counter == -2) {
+                FluxCapacitor.relicBullshit();
+            }
+        }
     }
 
     @Override
@@ -719,9 +740,19 @@ public class VexMod implements
 
     @Override
     public void receivePostDungeonInitialize() {
-        if (!VexMod.enablePlaceholder) {
-            PotionHelper.potions.remove(CameraPotion.POTION_ID);
+        if (CardCrawlGame.trial != null) {
+            if (CardCrawlGame.trial.dailyModIDs().contains(ShiftingDeckMod.ID)) {
+                AbstractDungeon.player.masterDeck.clear();
+                for (int i = 0; i < 10; i++) {
+                    AbstractDungeon.player.masterDeck.group.add(new ChimeraCard().makeCopy());
+                }
+            }
         }
+    }
+
+    @Override
+    public void receiveCustomModeMods(List<CustomMod> list) {
+        list.add(new CustomMod(ShiftingDeckMod.ID, "b", true));
     }
 
 

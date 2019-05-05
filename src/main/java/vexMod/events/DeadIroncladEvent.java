@@ -97,7 +97,7 @@ public class DeadIroncladEvent extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[5]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
-                        AbstractDungeon.getCurrRoom().rewards.clear();
+
                         AbstractCard card1 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.RED).makeCopy();
                         AbstractCard card2 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.RED).makeCopy();
                         AbstractCard card3 = getRandomRewardColorSpecificCard(AbstractCard.CardColor.RED).makeCopy();

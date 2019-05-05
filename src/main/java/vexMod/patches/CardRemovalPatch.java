@@ -41,6 +41,8 @@ public class CardRemovalPatch
             dungeon_instance.colorlessCardPool.removeCard(WeekCard.ID);
             dungeon_instance.colorlessCardPool.removeCard(NamedBlast.ID);
             dungeon_instance.colorlessCardPool.removeCard(WellTimedStrike.ID);
+            dungeon_instance.colorlessCardPool.removeCard(VolumeVengeance.ID);
+            dungeon_instance.colorlessCardPool.removeCard(ChimeraCard.ID);
         }
     }
 }

@@ -69,25 +69,32 @@ public class OrbBoomerang extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (p.orbs.get(0) instanceof EmptyOrbSlot) {
+        if (p.maxOrbs > 0) {
+            if (p.orbs.get(0) instanceof EmptyOrbSlot) {
 
-        } else if (p.orbs.get(0) instanceof Lightning || p.orbs.get(0) instanceof GoldenLightning) {
-            for (int i = 0; i < 1; ++i) {
-                ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onStartOfTurn();
-                ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onEndOfTurn();
-            }
-        } else if (p.orbs.get(0) instanceof Frost) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        } else if (p.orbs.get(0) instanceof Dark) {
-            Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
-            while (var3.hasNext()) {
-                AbstractMonster monster = (AbstractMonster) var3.next();
-                if (!monster.isDead && !monster.isDying) {
-                    AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, 3), 3));
+            } else if (p.orbs.get(0) instanceof Lightning || p.orbs.get(0) instanceof GoldenLightning) {
+                for (int i = 0; i < 1; ++i) {
+                    ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onStartOfTurn();
+                    ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onEndOfTurn();
+                }
+            } else if (p.orbs.get(0) instanceof Frost) {
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+            } else if (p.orbs.get(0) instanceof Dark) {
+                Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
+                while (var3.hasNext()) {
+                    AbstractMonster monster = (AbstractMonster) var3.next();
+                    if (!monster.isDead && !monster.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(monster, p, new PoisonPower(monster, p, 3), 3));
+                    }
+                }
+            } else if (p.orbs.get(0) instanceof Plasma) {
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
+            } else {
+                for (int i = 0; i < 1; ++i) {
+                    ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onStartOfTurn();
+                    ((AbstractOrb) AbstractDungeon.player.orbs.get(0)).onEndOfTurn();
                 }
             }
-        } else if (p.orbs.get(0) instanceof Plasma) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
     }
 
@@ -97,18 +104,22 @@ public class OrbBoomerang extends AbstractDefaultCard {
         super.applyPowers();
         this.rawDescription = EXTENDED_DESCRIPTION[0];
 
-        if (AbstractDungeon.player.orbs.get(0) instanceof EmptyOrbSlot) {
-            this.rawDescription = DESCRIPTION;
-        } else if (AbstractDungeon.player.orbs.get(0) instanceof Lightning || AbstractDungeon.player.orbs.get(0) instanceof GoldenLightning) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1];
-        } else if (AbstractDungeon.player.orbs.get(0) instanceof Frost) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[2];
-        } else if (AbstractDungeon.player.orbs.get(0) instanceof Dark) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[3];
-        } else if (AbstractDungeon.player.orbs.get(0) instanceof Plasma) {
-            this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[4];
+        if (AbstractDungeon.player.maxOrbs > 0) {
+            if (AbstractDungeon.player.orbs.get(0) instanceof EmptyOrbSlot) {
+                this.rawDescription = DESCRIPTION;
+            } else if (AbstractDungeon.player.orbs.get(0) instanceof Lightning || AbstractDungeon.player.orbs.get(0) instanceof GoldenLightning) {
+                this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1];
+            } else if (AbstractDungeon.player.orbs.get(0) instanceof Frost) {
+                this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[2];
+            } else if (AbstractDungeon.player.orbs.get(0) instanceof Dark) {
+                this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[3];
+            } else if (AbstractDungeon.player.orbs.get(0) instanceof Plasma) {
+                this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[4];
+            } else {
+                this.rawDescription = this.rawDescription + EXTENDED_DESCRIPTION[1];
+            }
+            this.initializeDescription();
         }
-        this.initializeDescription();
     }
 
 

@@ -58,7 +58,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
                         // (in our case, that's the final screen, but you can chain as many as you want like that)
                         AbstractDungeon.effectList.add(new RainingGoldEffect(100));
-                        AbstractDungeon.player.gainGold(50);
+                        AbstractDungeon.player.gainGold(100);
 
                         break; // Onto screen 1 we go.
                     case 1: // If you press button the second button (Button at index 1), in this case: Ease

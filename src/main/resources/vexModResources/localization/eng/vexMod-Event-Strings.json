@@ -69,16 +69,15 @@
     "NAME": "Mad Scientist",
     "DESCRIPTIONS": [
       "A funny looking fellow stops you as you walk by. NL \"Hey, buddy! I got some great stuff! Check it out?\" NL He seems trustworthy, but a little kooky.",
-      "\"Hoo hoo! Always good to refresh the mind!\"",
-      "\"Hey, will you look at that! The experiment worked! Thanks, buddy.\"",
-      "\"My goodness, you didn't have a voice box! Here ya go, buddy.\" NL You thank the scientist and go on your way. NL You are feeling ~rather~ ~talkative...~",
-      "\"Hoo hoo! Thank goodness Mr. Shopkeep lent me this! It works great in your digestive system!\"",
+      "\"Always important to grab cool stuff!\"",
+      "\"Always important to change things up!\"",
+      "\"Always important to take some risks!",
       "\"Aw, what a spoilsport. Okay, see you later, buddy!\""
     ],
     "OPTIONS": [
-      "[Brain Food] #gHeal #g6 #gHP.",
-      "[Bodily Improvement] #gGain #ga #gspecial #grelic.",
-      "[Implantation] #gGain #ga #grandom #gShop #grelic. #rLose #r8 #rMax #rHP.",
+      "[Tailoring] #gChoose #g1 #gof #g3 #gColorless #gRare #gcards #gto #gadd #gto #gyour #gdeck.",
+      "[Improvement] #gTransform #ga #gcard #gfrom #gyour #gdeck #ginto #ga #gRare #gcard.",
+      "[Implantation] #gGain #ga #grandom #gRare #grelic. #rLose #r10 #rMax #rHP.",
       "[Leave]",
       "[Leave]",
       "Improving...?"

@@ -43,7 +43,7 @@ public class BloodGuard extends AbstractDefaultCard {
     private static final int MAGIC = 4;
     private static final int MAGIC_DOWN = -1;
 
-    private static final int BLOCK = 16;    // DAMAGE = ${DAMAGE}
+    private static final int BLOCK = 15;    // DAMAGE = ${DAMAGE}
     private static final int UPGRADE_PLUS_BLOCK = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/

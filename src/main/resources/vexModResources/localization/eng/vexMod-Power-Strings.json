@@ -121,7 +121,7 @@
     ]
   },
   "vexMod:PropogationPower": {
-    "NAME": "Propogation",
+    "NAME": "Propagation",
     "DESCRIPTIONS": [
       "At the start of your turn, add #b",
       " Evolving Card to your hand.",

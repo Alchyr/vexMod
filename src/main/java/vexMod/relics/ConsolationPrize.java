@@ -43,7 +43,7 @@ public class ConsolationPrize
 
     @Override
     public boolean canSpawn() {
-        return (Settings.isEndless || AbstractDungeon.floorNum <= 48) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40) && !(AbstractDungeon.getCurrRoom() instanceof ShopRoom);
     }
 
     // Description

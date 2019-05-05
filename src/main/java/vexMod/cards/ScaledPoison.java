@@ -23,7 +23,7 @@ public class ScaledPoison
 
     public ScaledPoison() {
         super(ID, NAME, IMG, COST, DESCRIPTION, AbstractCard.CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.magicNumber = this.baseMagicNumber = 1;
+        this.magicNumber = this.baseMagicNumber = 2;
     }
 
     @Override
@@ -36,7 +36,7 @@ public class ScaledPoison
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(2);
             this.initializeDescription();
         }
     }

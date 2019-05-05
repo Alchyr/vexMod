@@ -50,7 +50,6 @@ public class PropogationPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void atStartOfTurn() { // At the start of your turn
         for (int i = 0; i < amount; i++) {
-            AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(new EvolveCard().makeCopy(), true));
         }
     }

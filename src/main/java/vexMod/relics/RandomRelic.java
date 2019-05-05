@@ -22,6 +22,7 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Frost;
+import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.potions.SmokeBomb;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
@@ -227,46 +228,12 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
             AbstractDungeon.player.increaseMaxHp(9, true);
         }
         if (ID_MINOR == 14) {
-            int remove;
-            for (remove = 0; remove < 1; ++remove) {// 22
-                AbstractDungeon.getCurrRoom().addPotionToRewards(PotionHelper.getRandomPotion());// 23
-            }
-
-            AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[217]);// 26
-            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0F;// 27
-            remove = -1;// 30
-
-            for (int i = 0; i < AbstractDungeon.combatRewardScreen.rewards.size(); ++i) {// 31
-                if (((RewardItem) AbstractDungeon.combatRewardScreen.rewards.get(i)).type == RewardItem.RewardType.CARD) {// 32
-                    remove = i;// 33
-                    break;// 34
-                }
-            }
-
-            if (remove != -1) {// 37
-                AbstractDungeon.combatRewardScreen.rewards.remove(remove);// 38
-            }
+            AbstractDungeon.player.obtainPotion(PotionHelper.getRandomPotion());
         }
         if (ID_MAJOR == 14) {
-            int remove;
-            for (remove = 0; remove < 3; ++remove) {// 22
-                AbstractDungeon.getCurrRoom().addPotionToRewards(PotionHelper.getRandomPotion());// 23
-            }
-
-            AbstractDungeon.combatRewardScreen.open(this.DESCRIPTIONS[217]);// 26
-            AbstractDungeon.getCurrRoom().rewardPopOutTimer = 0.0F;// 27
-            remove = -1;// 30
-
-            for (int i = 0; i < AbstractDungeon.combatRewardScreen.rewards.size(); ++i) {// 31
-                if (((RewardItem) AbstractDungeon.combatRewardScreen.rewards.get(i)).type == RewardItem.RewardType.CARD) {// 32
-                    remove = i;// 33
-                    break;// 34
-                }
-            }
-
-            if (remove != -1) {// 37
-                AbstractDungeon.combatRewardScreen.rewards.remove(remove);// 38
-            }
+            AbstractDungeon.player.obtainPotion(PotionHelper.getRandomPotion());
+            AbstractDungeon.player.obtainPotion(PotionHelper.getRandomPotion());
+            AbstractDungeon.player.obtainPotion(PotionHelper.getRandomPotion());
         }
         if (ID_MINOR == 11) {
             EventHelper.TREASURE_CHANCE += 0.04F;

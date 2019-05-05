@@ -38,18 +38,17 @@ public class CrumblingCrash extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.SKILL;       //
     public static final CardColor COLOR = CardColor.RED;
 
-    private static final int COST = 1;  // COST = ${COST}
+    private static final int COST = 0;  // COST = ${COST}
 
-    private static final int BLOCK = 3;
-    private static final int UPGRADE_PLUS_BLOCK = 3;
-
+    private static final int VULN = 1;
+    private static final int VULN_UP = 1;
 
     // /STAT DECLARATION/
 
 
     public CrumblingCrash() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        baseBlock = BLOCK;
+        baseMagicNumber = magicNumber = VULN;
     }
 
 
@@ -57,8 +56,7 @@ public class CrumblingCrash extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(m, p));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, 2, false), 2, true, AbstractGameAction.AttackEffect.NONE));
-        AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), magicNumber));
     }
 
 
@@ -67,7 +65,7 @@ public class CrumblingCrash extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+            upgradeMagicNumber(VULN_UP);
             initializeDescription();
         }
     }

@@ -25,10 +25,10 @@ public class FluxCapacitor extends CustomRelic {
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FluxCapacitor.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("FluxCapacitor.png"));
-    private static boolean taken = false;
 
     public FluxCapacitor() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        this.counter = -1;
     }
 
     // Gain 1 energy on equip.
@@ -36,11 +36,11 @@ public class FluxCapacitor extends CustomRelic {
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
         CardCrawlGame.playtime = -600.0F;
-        taken = true;
+        this.counter = -2;
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
+    public void onVictory() {
         this.flash();// 25
         if (TwitchConfig.readConfig().get().isEnabled())
         {
@@ -63,7 +63,7 @@ public class FluxCapacitor extends CustomRelic {
     }
 
     public static void relicBullshit() {
-        if (CardCrawlGame.playtime >= 0.0F && !AbstractDungeon.player.isDead && taken) {
+        if (CardCrawlGame.playtime >= 0.0F && !AbstractDungeon.player.isDead) {
             AbstractDungeon.player.isDead = true;
             AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
         }

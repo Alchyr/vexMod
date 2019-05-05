@@ -34,18 +34,18 @@ public class GildedGorgon extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 250; // Always good to back up your health and move values.
-    private static final int HP_MAX = 300;
-    private static final int A_7_HP_MIN = 350; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 400;
+    private static final int HP_MIN = 177; // Always good to back up your health and move values.
+    private static final int HP_MAX = 200;
+    private static final int A_7_HP_MIN = 250; // HP moves up at Ascension 7.
+    private static final int A_7_HP_MAX = 300;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;
     private static final float HB_H = 150.0F;
-    private static final int ATTACKVOID_DAMAGE = 20;
-    private static final int A_2_ATTACKVOID_DAMAGE = 25;
-    private static final int DEBUFF_AMT = 10;
-    private static final int A_17_DEBUFF_AMT = 20;
+    private static final int ATTACKVOID_DAMAGE = 17;
+    private static final int A_2_ATTACKVOID_DAMAGE = 23;
+    private static final int DEBUFF_AMT = 8;
+    private static final int A_17_DEBUFF_AMT = 15;
     private int attackVoidDmg;
     private int debuffAmt;
     private static final byte ATTACKVOID = 1; // Not sure what this is for myself. Guess it's just attack names.

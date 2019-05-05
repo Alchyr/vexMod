@@ -3,7 +3,7 @@
   "name": "vexMod",
   "author_list": ["DarkVexon"],
   "description": "A minor content mod.",
-  "version": "1.9",
+  "version": "2",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
   "credits": "Saitaeia: Front art, relic names, ideas, support!",

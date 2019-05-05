@@ -54,7 +54,7 @@
   },
   "vexMod:CrumblingCrash": {
     "NAME": "Crumbling Crash",
-    "DESCRIPTION": "Remove all Block from the enemy. NL Gain !B! Block. NL Apply 2 Vulnerable."
+    "DESCRIPTION": "Remove all Block from the enemy. NL Apply !M! Vulnerable."
   },
   "vexMod:ComboTrick": {
     "NAME": "Combo Trick",
@@ -390,7 +390,7 @@
   },
   "vexMod:Deathsprout": {
     "NAME": "Death Sprout",
-    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, add a [#EFC851]Magical [#EFC851]Fruit intto your deck. NL Exhaust.",
+    "DESCRIPTION": "Deal !D! damage. NL If this kills an enemy, add a [#EFC851]Magical [#EFC851]Fruit into your deck. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Magical Fruit",
       "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
@@ -427,5 +427,37 @@
       " NL (ALL enemies lose !M! Strength this turn.)",
       " NL (Draw 2 cards.)"
     ]
+  },
+  "vexMod:EvolveCard": {
+    "NAME": "Evolving Card",
+    "DESCRIPTION": "Evolves based on current situation.",
+    "UPGRADE_DESCRIPTION": "Evolves based on current situation. NL This upgrade does nothing.",
+    "EXTENDED_DESCRIPTION": [
+      "Heal 20 HP.",
+      "Deal !D! damage.",
+      "Gain [E] [E] . NL Draw 3 cards.",
+      "Draw 5 cards.",
+      "Gain [E] [E] [E] .",
+      "At the start of your turn, add an Evolving Card to your hand.",
+      "Remove all your Debuffs.",
+      "Exhaust all Statuses in your hand. Gain !B! Block X times.",
+      "Gain !B! Block. NL Deal !D! damage.",
+      "Exhaust all Statuses and Curses in your hand.",
+      "Deal !D! damage. NL Apply 3 Weak.",
+      "Gain 2 stacks of ANY random buff.",
+      "Gain !B! Block and deal !D! damage X times.",
+      "Gain !B! Block.",
+      "Deal !D! damage. NL Obtain a random potion.",
+      "Gain !B! Block.",
+      "Always costs 0. Draw 3 cards.",
+      "Deal !D! damage to ALL enemies.",
+      "Remove all Block from the enemy. NL Draw 1 card.",
+      "Gain 50 Gold.",
+      "Deal !D! damage. NL You have no problems."
+    ]
+  },
+  "vexMod:ChimeraCard": {
+    "NAME": "Chimeric Card",
+    "DESCRIPTION": "Always changing, never stable... can be anything."
   }
 }

@@ -18,14 +18,16 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class StabbyXAction extends AbstractGameAction {
     private int damage;
+    private int block;
     private boolean freeToPlayOnce = false;
     private AbstractPlayer p;
     private AbstractMonster m;
     private DamageInfo.DamageType damageTypeForTurn;
     private int energyOnUse = -1;
 
-    public StabbyXAction(AbstractPlayer p, AbstractMonster m, int amount, boolean freeToPlayOnce, int energyOnUse) {
-        this.amount = amount;// 18
+    public StabbyXAction(AbstractPlayer p, AbstractMonster m, int amountdmg, int amountblk, boolean freeToPlayOnce, int energyOnUse) {
+        this.damage = amountdmg;
+        this.block = amountblk;
         this.p = p;// 19
         this.m = m;// 30
         this.freeToPlayOnce = freeToPlayOnce;// 20
@@ -47,7 +49,7 @@ public class StabbyXAction extends AbstractGameAction {
 
         if (effect > 0) {// 38
             for(int i = 0; i < effect; ++i) {// 39
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.p, this.p, this.amount));// 40
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.p, this.p, this.block));// 40
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.m, new DamageInfo(this.p, this.damage, this.damageTypeForTurn), AttackEffect.BLUNT_LIGHT));// 53
             }
 

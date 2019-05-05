@@ -563,7 +563,7 @@
     "NAME": "Lich's Phylactery",
     "FLAVOR": "It feels cold in your hands, no matter what you do ...",
     "DESCRIPTIONS": [
-      "Prevent ALL HP loss. For every #b6 damage prevented, remove a random card from your deck. When your deck has no cards, you #rlose."
+      "Prevent ALL HP loss. For every #b8 damage prevented, remove a random card from your deck. When your deck has no cards, you #rlose."
     ]
   },
   "vexMod:BarristanHead": {
@@ -1307,14 +1307,14 @@
     "NAME": "Gilded Clover",
     "FLAVOR": "Super-duper rare!",
     "DESCRIPTIONS": [
-      "Card rewards from combat contain only Rare cards."
+      "ALL future cards are Rare."
     ]
   },
   "vexMod:FluxCapacitor": {
     "NAME": "Clock Rock",
     "FLAVOR": "Tick tock goes the clock rock.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. Upon pickup, set your run timer to #b-10 minutes. Whenever you climb a floor, rewind your run timer by #b30 seconds. When your run timer hits #b0, you #rlose."
+      "Gain [E] at the start of your turn. Upon pickup, set your run timer to #b-10 minutes. At the end of combat, rewind your run timer by #b30 seconds. When your run timer hits #b0, you #rlose."
     ]
   }
 }

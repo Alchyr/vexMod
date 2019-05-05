@@ -29,7 +29,7 @@ public class NeowDemonPatch {
                     if (Settings.language == ZHS) {
                         tmp = "#r获得召唤铃铛 。";
                     } else {
-                        tmp = "#rObtain #rthe #elusive #rDevil #rBotling.";
+                        tmp = "#rObtain #rthe #pelusive #rDevil #rBotling.";
                     }
                     __result.add(new NeowRewardDef(DEVIL_BOTLING, "[ " + tmp + " ]"));
                 }

@@ -44,7 +44,7 @@ public class WellTimedStrike extends AbstractDefaultCard {
     private static final int COST = 3;  // COST = ${COST}
 
     private static final int DAMAGE = 0;    // DAMAGE = ${DAMAGE}
-    private static double DDDAMA = 0;
+    private double DDDAMA = 0;
 
     // /STAT DECLARATION/
 

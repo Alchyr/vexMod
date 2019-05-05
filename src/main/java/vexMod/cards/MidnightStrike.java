@@ -69,11 +69,6 @@ public class MidnightStrike extends AbstractDefaultCard {
         this.defaultBaseSecondMagicNumber = this.defaultSecondMagicNumber = this.magicNumber - AbstractDungeon.actionManager.cardsPlayedThisCombat.size();
 
         if (this.defaultSecondMagicNumber < 0) {
-            this.type = CardType.CURSE;
-            this.target = CardTarget.NONE;
-            this.color = CardColor.CURSE;
-            this.costForTurn = -2;
-            loadCardImage(makeCardPath("MidnightStrikeFailed.png"));
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[3];
         } else if (this.defaultSecondMagicNumber == 0) {
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[4];

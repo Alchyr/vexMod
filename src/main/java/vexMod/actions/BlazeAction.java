@@ -52,7 +52,7 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new AngryPower(p, this.amount));
         blazeList.add(new AmplifyPower(p, this.amount));
         blazeList.add(new BarricadePower(p));
-        blazeList.add(new BerserkPower("Boosted", p, this.amount));
+        blazeList.add(new BerserkPower("Berserk", p, this.amount));
         blazeList.add(new BufferPower(p, this.amount));
         blazeList.add(new BlurPower(p, this.amount));
         blazeList.add(new ConservePower(p, this.amount));
