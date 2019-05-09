@@ -24,23 +24,19 @@ import java.util.Iterator;
 public class RocketPunchAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
-    private static final float DURATION_PER_CARD = 0.25F;
     private AbstractPlayer p;
     private ArrayList<AbstractCard> cannotDuplicate = new ArrayList();
-    private boolean upgraded;
 
-    public RocketPunchAction(AbstractCreature source, boolean upgraded) {
+    public RocketPunchAction(AbstractCreature source) {
         this.setValues(AbstractDungeon.player, source, amount);
         this.actionType = ActionType.DRAW;
         this.duration = 0.25F;
         this.p = AbstractDungeon.player;
-        this.upgraded = upgraded;
     }
 
     public void update() {
         Iterator var1;
         AbstractCard c;
-        int i;
         if (this.duration == Settings.ACTION_DUR_FAST) {
             var1 = this.p.hand.group.iterator();
 
@@ -62,12 +58,7 @@ public class RocketPunchAction extends AbstractGameAction {
                 while (var1.hasNext()) {
                     c = (AbstractCard) var1.next();
                     if (this.isDualWieldable(c)) {
-                        if (upgraded) {
-                            AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
-                        } else {
-                            AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(c.makeStatEquivalentCopy(), 1));
-                        }
-
+                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(c.makeStatEquivalentCopy(), 1));
                         this.isDone = true;
                         return;
                     }
@@ -82,12 +73,7 @@ public class RocketPunchAction extends AbstractGameAction {
             }
 
             if (this.p.hand.group.size() == 1) {
-                    if (upgraded) {
-                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(this.p.hand.getTopCard().makeStatEquivalentCopy(), 1));;
-                    } else {
-                        AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(this.p.hand.getTopCard().makeStatEquivalentCopy(), 1));
-                    }
-
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(this.p.hand.getTopCard().makeStatEquivalentCopy(), 1));
                 this.returnCards();
                 this.isDone = true;
             }
@@ -98,13 +84,8 @@ public class RocketPunchAction extends AbstractGameAction {
 
             while (var1.hasNext()) {
                 c = (AbstractCard) var1.next();
-                if (upgraded) {
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
-                } else {
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(c.makeStatEquivalentCopy(), 1));
-                    AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
-                }
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInDiscardAction(c.makeStatEquivalentCopy(), 1));
+                AbstractDungeon.actionManager.addToTop(new MakeTempCardInHandAction(c.makeStatEquivalentCopy(), 1));
             }
 
             this.returnCards();
@@ -128,7 +109,7 @@ public class RocketPunchAction extends AbstractGameAction {
     }
 
     private boolean isDualWieldable(AbstractCard card) {
-        return card.type.equals(CardType.ATTACK);
+        return true;
     }
 
     static {

@@ -18,8 +18,8 @@ public class LoseFocusPower extends AbstractPower {
     public static final String NAME = POWER_STRINGS.NAME;
     public static final String[] DESCRIPTIONS = POWER_STRINGS.DESCRIPTIONS;
 
-    private static final Texture tex84 = TextureLoader.getTexture("vexModResources/images/powers/placeholder_power84.png");
-    private static final Texture tex32 = TextureLoader.getTexture("vexModResources/images/powers/placeholder_power32.png");
+    private static final Texture tex84 = TextureLoader.getTexture("vexModResources/images/powers/LoseFocus_84.png");
+    private static final Texture tex32 = TextureLoader.getTexture("vexModResources/images/powers/LoseFocus_32.png");
 
     public LoseFocusPower(AbstractCreature owner, int amount) {
         name = NAME;

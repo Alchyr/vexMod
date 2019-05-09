@@ -37,7 +37,7 @@ public class ChargeUpper extends CustomRelic {
     {
         this.flash();
         this.counter += blockAmount;
-        if (this.counter>=35)
+        if (this.counter>=30)
         {
             this.counter = 0;
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1),1));

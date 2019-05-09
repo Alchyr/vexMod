@@ -27,7 +27,7 @@ public class NeowDemonPatch {
                 if (AbstractDungeon.cardRandomRng.random(9) == 0) {
                     String tmp;
                     if (Settings.language == ZHS) {
-                        tmp = "#r获得召唤铃铛 。";
+                        tmp = " #r获得恶魔bot。 ";
                     } else {
                         tmp = "#rObtain #rthe #pelusive #rDevil #rBotling.";
                     }

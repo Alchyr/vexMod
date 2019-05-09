@@ -38,7 +38,6 @@ public class Fear extends AbstractDefaultCard {
     private static final CardType TYPE = CardType.CURSE;       //
     public static final CardColor COLOR = CardColor.CURSE;
     private static final int COST = 1;  // COST = ${COST}
-    private static final int VULN_AMT = 1;
 
 
     // /STAT DECLARATION/
@@ -69,6 +68,7 @@ public class Fear extends AbstractDefaultCard {
 
         }
         else {
+            this.exhaust = true;
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, true), 1));
         }
     }

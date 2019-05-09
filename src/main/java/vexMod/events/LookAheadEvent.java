@@ -68,13 +68,13 @@ public class LookAheadEvent extends AbstractImageEvent {
                         list.add("The Guardian");
                         list.add("Hexaghost");
                         list.add("Slime Boss");
+                        list.add("vexMod:DaggerThrower");
                         Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
                         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((String) list.get(0));
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addGoldToRewards(100);
                         AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
                         this.enterCombatFromImage();
-                        AbstractDungeon.lastCombatMetricKey = "Mind Bloom Boss Battle";
                         break; // Onto screen 1 we go.
                     case 1: // If you press button the second button (Button at index 1), in this case: Ease
                         AbstractDungeon.player.maxHealth -= 5;

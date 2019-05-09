@@ -1,5 +1,6 @@
 package vexMod.cards;
 
+import basemod.patches.whatmod.WhatMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -159,18 +160,17 @@ public class ChimeraCard extends AbstractDefaultCard {
     private AbstractCard getRandomChimeraCard() {
         if (AbstractDungeon.player != null) {
             ArrayList<AbstractCard> tmp = new ArrayList<>();
-            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.masterDeck.contains(this))
-            {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.masterDeck.contains(this)) {
                 for (AbstractCard card : CardLibrary.getAllCards()) {
-                    if (!card.cardID.contains("Poker") && !card.cardID.contains("theDuelist") && !card.cardID.contains("theCatGirl") && !card.cardID.contains("anomaly") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && card.cost <= EnergyPanel.getCurrentEnergy() && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
+                    String modID = WhatMod.findModID(card.getClass());
+                    if ((modID == null || modID == "vexMod") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && card.cost <= EnergyPanel.getCurrentEnergy() && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
                         tmp.add(card);
                     }
                 }
-            }
-            else
-            {
+            } else {
                 for (AbstractCard card : CardLibrary.getAllCards()) {
-                    if (!card.cardID.contains("Poker") && !card.cardID.contains("theDuelist") && !card.cardID.contains("theCatGirl") && !card.cardID.contains("anomaly") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
+                    String modID = WhatMod.findModID(card.getClass());
+                    if ((modID == null || modID == "vexMod") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
                         tmp.add(card);
                     }
                 }

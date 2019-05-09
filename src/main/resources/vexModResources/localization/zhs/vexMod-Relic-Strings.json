@@ -152,7 +152,7 @@
     "NAME": "充电插槽",
     "FLAVOR": "“哦，一拔掉它我就开始犯困……”",
     "DESCRIPTIONS": [
-      "每当你获得 #b35 点 #y格挡 时 ， 获得 #b1  点 #y力量 。"
+      "每当你获得 #b30 点 #y格挡 时 ， 获得 #b1  点 #y力量 。"
     ]
   },
   "vexMod:FocusSash": {
@@ -1308,6 +1308,13 @@
     "FLAVOR": "石中时钟，嘀咚嘀咚。",
     "DESCRIPTIONS": [
       "在每回合开始时获得 [E] 。拾起时，将你的游戏计时设定为 #b-10 分钟。在战斗结束时，将计时倒转 #b30 秒。当计时达到 #b0 时，你 #r输掉本场游戏 。"
+    ]
+  },
+  "vexMod:StoryBook": {
+    "NAME": "Story Book",
+    "FLAVOR": " ",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, the Story grows."
     ]
   }
 }

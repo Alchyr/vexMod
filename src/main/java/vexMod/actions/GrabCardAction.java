@@ -13,7 +13,7 @@ import vexMod.cards.GhostlyBlitz;
 
 public class GrabCardAction extends AbstractGameAction
 {
-    AbstractRelic botling;
+    private AbstractRelic botling;
     public GrabCardAction(AbstractRelic EvilRelic)
     {
         duration = Settings.ACTION_DUR_MED;
@@ -24,10 +24,13 @@ public class GrabCardAction extends AbstractGameAction
     public void update()
     {
         AbstractCard c = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
-        AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(botling, (botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(13,16)] + c.name + ", " + botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), 0.0F, 5.0F));
-        botling.flash();
-        AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
-        AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, botling));
+        if (c!=null)
+        {
+            AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(botling, (botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(13,16)] + c.name + ", " + botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), 0.0F, 5.0F));
+            botling.flash();
+            AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, botling));
+        }
         this.isDone = true;
     }
 }

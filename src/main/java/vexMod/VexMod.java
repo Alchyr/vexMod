@@ -21,16 +21,21 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.daily.mods.Chimera;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
 import vexMod.events.*;
+import vexMod.modifiers.NoRelicMode;
 import vexMod.modifiers.ShiftingDeckMod;
 import vexMod.monsters.*;
 import vexMod.potions.BlazePotion;
@@ -41,7 +46,6 @@ import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
 
-import java.util.Iterator;
 import java.util.List;
 import java.util.Properties;
 
@@ -223,7 +227,6 @@ public class VexMod implements
         BaseMod.addEvent(DeadIroncladEvent.ID, DeadIroncladEvent.class, TheCity.ID);
         BaseMod.addEvent(DeadSilentEvent.ID, DeadSilentEvent.class, TheCity.ID);
         BaseMod.addEvent(DeadDefectEvent.ID, DeadDefectEvent.class, TheCity.ID);
-        //  BaseMod.addEvent(ZooEvent.ID, ZooEvent.class, TheCity.ID);
         BaseMod.addEvent(ChampiresEvent.ID, ChampiresEvent.class, TheCity.ID);
         BaseMod.addEvent(SerpentsRevenge.ID, SerpentsRevenge.class, TheCity.ID);
         BaseMod.addEvent(RareCardShrine.ID, RareCardShrine.class);
@@ -237,21 +240,24 @@ public class VexMod implements
 
         // =============== MONSTERS ===============
 
-        // BaseMod.addMonster(BaseMonster.ID, "Base Monster", () -> new BaseMonster(0.0F, 25.0F));
-        // BaseMod.addMonster(EvilCube.ID, "Evil Cube", () -> new EvilCube(0.0F, 100.0F));
-        // BaseMod.addMonster(Octiver.ID, "Octiver", () -> new Octiver(0.0F, 100.0F));
-        // BaseMod.addMonster(Gorgon.ID, "Gorgon", () -> new Gorgon(0.0F, 100.0F));
-        // BaseMod.addMonster(InfectionBeast.ID, "Infection Beast", () -> new InfectionBeast(0.0F, 100.0F));
-        // BaseMod.addMonster(CardEater.ID, "Card Eater", () -> new CardEater(0.0F, 25.0F));
-        // BaseMod.addMonster(SickeningThing.ID, "Sickening Thing", () -> new SickeningThing(0.0F, 100.0F));
-        // BaseMod.addMonster(CurseLord.ID, "Curse Lord", () -> new CurseLord(0.0F, 100.0F));
         BaseMod.addMonster(EvilSsserpent.ID, "Ssserpent", () -> new EvilSsserpent(0.0F, 100.0F));
         BaseMod.addMonster(GildedGorgon.ID, "Gilded Gorgon", () -> new GildedGorgon(0.0F, 100.0F));
+        BaseMod.addMonster(BeyondKing.ID, "King of the Beyond", () -> new BeyondKing(0.0F, 100.0F));
+        BaseMod.addMonster(DaggerThrower.ID, "Dagger Pharaoh", () -> new DaggerThrower(0.0F, 100.0F));
+        BaseMod.addMonster(LichLord.ID, () -> new MonsterGroup(new AbstractMonster[]{
+                new LichLord(-200.0F, 100.0F),
+                new LichPhylac(150.0F, 0.0F)
+        }));
 
         // ============== /MONSTERS/ ==============
 
         // ============== ENCOUNTERS ==============
 
+        if (language == Settings.GameLanguage.ENG) {
+            BaseMod.addBoss(TheBeyond.ID, BeyondKing.ID, makeEventPath("beyondKing.png"), makeEventPath("beyondKingOutline.png"));
+        }
+        BaseMod.addBoss(Exordium.ID, DaggerThrower.ID, makeEventPath("daggerThrower.png"), makeEventPath("daggerThrowerOutline.png"));
+        BaseMod.addBoss(TheCity.ID, LichLord.ID, makeEventPath("lichLord.png"), makeEventPath("lichLordOutline.png"));
 
         // ============== /ENCOUNTERS/ ============
 
@@ -375,6 +381,7 @@ public class VexMod implements
         BaseMod.addRelic(new RockLover(), RelicType.SHARED);
         BaseMod.addRelic(new GildedClover(), RelicType.SHARED);
         BaseMod.addRelic(new FluxCapacitor(), RelicType.SHARED);
+        BaseMod.addRelic(new StoryBook(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -466,6 +473,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(RockLover.ID);
         UnlockTracker.markRelicAsSeen(GildedClover.ID);
         UnlockTracker.markRelicAsSeen(FluxCapacitor.ID);
+        UnlockTracker.markRelicAsSeen(StoryBook.ID);
 
         logger.info("Done adding relics!");
     }
@@ -753,6 +761,7 @@ public class VexMod implements
     @Override
     public void receiveCustomModeMods(List<CustomMod> list) {
         list.add(new CustomMod(ShiftingDeckMod.ID, "b", true));
+        list.add(new CustomMod(NoRelicMode.ID, "b", true));
     }
 
 

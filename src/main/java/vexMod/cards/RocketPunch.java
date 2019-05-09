@@ -28,7 +28,6 @@ public class RocketPunch extends AbstractDefaultCard {
 
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
 
     // /TEXT DECLARATION/
 
@@ -43,10 +42,7 @@ public class RocketPunch extends AbstractDefaultCard {
     private static final int COST = 1;  // COST = ${COST}
 
     private static final int DAMAGE = 9;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 2;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-
-    private static final int COPIES = 1;
-    private static final int COPIESUP = 1;
+    private static final int UPGRADE_PLUS_DMG = 4;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
 
     // /STAT DECLARATION/
 
@@ -54,7 +50,6 @@ public class RocketPunch extends AbstractDefaultCard {
     public RocketPunch() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
-        baseMagicNumber = magicNumber = COPIES;
     }
 
 
@@ -62,7 +57,7 @@ public class RocketPunch extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        AbstractDungeon.actionManager.addToBottom(new RocketPunchAction(p, upgraded));
+        AbstractDungeon.actionManager.addToBottom(new RocketPunchAction(p));
     }
 
 
@@ -73,8 +68,6 @@ public class RocketPunch extends AbstractDefaultCard {
         if (!upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            upgradeMagicNumber(COPIESUP);
-            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

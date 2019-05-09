@@ -87,5 +87,41 @@
     "DIALOG": [
       "哦，想要跟我战斗。 NL 真 ~可爱！~ "
     ]
+  },
+  "vexMod:BeyondKing": {
+    "NAME": "深部君主",
+    "MOVES": [
+      "死亡凝视"
+    ],
+    "DIALOG": [
+      "挑战我…… NL 毫无胜算……"
+    ]
+  },
+  "vexMod:DaggerThrower": {
+    "NAME": "刃之法老",
+    "MOVES": [
+      "投掷匕首！"
+    ],
+    "DIALOG": [
+      "我是不灭的…… NL 而你不是！"
+    ]
+  },
+  "vexMod:LichLord": {
+    "NAME": "Undercity Lichlady",
+    "MOVES": [
+      "Dread Drain"
+    ],
+    "DIALOG": [
+      "I hold power over NL life and death alike!"
+    ]
+  },
+  "vexMod:LichPhylac": {
+    "NAME": "Lich's Phylactery",
+    "MOVES": [
+
+    ],
+    "DIALOG": [
+
+    ]
   }
 }

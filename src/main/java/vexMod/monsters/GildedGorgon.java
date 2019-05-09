@@ -54,7 +54,7 @@ public class GildedGorgon extends AbstractMonster {
     private boolean firstTurn = true;
 
     public GildedGorgon(float x, float y) {
-        super(NAME, "GildedGorgon", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/hex.png", x, y); // Initializes the monster.
+        super(NAME, "GildedGorgon", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/GildedGorgon.png", x, y); // Initializes the monster.
 
         if (AbstractDungeon.ascensionLevel >= 7) { // Checks if your Ascension is 7 or above...
             this.setHp(A_7_HP_MIN, A_7_HP_MAX); // and increases HP if so.

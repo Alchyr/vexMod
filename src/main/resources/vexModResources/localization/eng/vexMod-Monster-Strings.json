@@ -87,5 +87,41 @@
     "DIALOG": [
       "Aww, wanting to fight me. NL How ~cute!~"
     ]
+  },
+  "vexMod:BeyondKing": {
+    "NAME": "King of the Beyond",
+    "MOVES": [
+      "Gaze of Death"
+    ],
+    "DIALOG": [
+      "You try ... NL and you fail ..."
+    ]
+  },
+  "vexMod:DaggerThrower": {
+    "NAME": "Dagger Pharaoh",
+    "MOVES": [
+      "Dagger Throw!"
+    ],
+    "DIALOG": [
+      "I am eternal! NL ...you are not."
+    ]
+  },
+  "vexMod:LichLord": {
+    "NAME": "Undercity Lichlady",
+    "MOVES": [
+      "Dread Drain"
+    ],
+    "DIALOG": [
+      "I hold power over NL life and death alike!"
+    ]
+  },
+  "vexMod:LichPhylac": {
+    "NAME": "Lich's Phylactery",
+    "MOVES": [
+
+    ],
+    "DIALOG": [
+
+    ]
   }
 }

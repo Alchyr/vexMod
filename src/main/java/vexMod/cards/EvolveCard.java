@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,6 +30,7 @@ import vexMod.powers.PropogationPower;
 
 import java.util.ArrayList;
 
+import static com.megacrit.cardcrawl.core.Settings.language;
 import static vexMod.VexMod.makeCardPath;
 
 public class EvolveCard extends AbstractDefaultCard {
@@ -83,8 +85,8 @@ public class EvolveCard extends AbstractDefaultCard {
     private static final int EXECUTION_DAMAGE = 15;
     private static final int NO_CARDS_AND_ENERGY_DRAW = 3;
     private static final int NO_CARDS_AND_ENERGY_ENERGY = 2;
-    private static final int NO_CARDS_DRAW = 5;
-    private static final int NO_ENERGY_ENERGY_GAIN = 3;
+    private static final int NO_CARDS_DRAW = 4;
+    private static final int NO_ENERGY_ENERGY_GAIN = 2;
     private static final int STABBY_FIGHT_X_POWER = 6;
     private static final int NOB_FIGHT_DAMAGE = 12;
     private static final int NOB_FIGHT_BLOCK = 12;
@@ -223,7 +225,14 @@ public class EvolveCard extends AbstractDefaultCard {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             if (AbstractDungeon.player.currentHealth <= 20) {
                 playerNearDeath = true;
-                this.name = "Phoenix Revival";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "凤凰涅槃";
+                }
+                else
+                {
+                    this.name = "Phoenix Revival";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 0;
@@ -232,7 +241,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.player.hand.size() == 1 && EnergyPanel.totalCount == 0) {
                 noCardsAndEnergy = true;
-                this.name = "Repower";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "一键重启";
+                }
+                else
+                {
+                    this.name = "Repower";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 0;
@@ -241,7 +257,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (EnergyPanel.totalCount == 0) {
                 noEnergyLeft = true;
-                this.name = "Energize";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "瞬时充能";
+                }
+                else
+                {
+                    this.name = "Energize";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 0;
@@ -250,7 +273,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkNearDead()) {
                 monstersNearDeath = true;
-                this.name = "Execution";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "手起刀落";
+                }
+                else
+                {
+                    this.name = "Execution";
+                }
                 this.baseDamage = EXECUTION_DAMAGE;
                 this.type = CardType.ATTACK;
                 this.target = CardTarget.ENEMY;
@@ -260,7 +290,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (GameActionManager.turn == 1) {
                 turnOne = true;
-                this.name = "Propagation";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "繁衍生息";
+                }
+                else
+                {
+                    this.name = "Propagation";
+                }
                 this.type = CardType.POWER;
                 this.target = CardTarget.SELF;
                 this.cost = 1;
@@ -269,7 +306,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardPower.png"));
             } else if (AbstractDungeon.player.hand.size() == 1) {
                 emptyHand = true;
-                this.name = "Redraw";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "即时补牌";
+                }
+                else
+                {
+                    this.name = "Redraw";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 1;
@@ -278,7 +322,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkDebuffCount()) {
                 twoDebuffs = true;
-                this.name = "Shake it Off";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "神清气爽";
+                }
+                else
+                {
+                    this.name = "Shake it Off";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 1;
@@ -287,7 +338,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkStabby()) {
                 fightingStabby = true;
-                this.name = "Book Blaster";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "焚书秘技";
+                }
+                else
+                {
+                    this.name = "Book Blaster";
+                }
                 this.baseBlock = STABBY_FIGHT_X_POWER;
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
@@ -297,7 +355,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkNob()) {
                 nobBattle = true;
-                this.name = "Nobsbane";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "猛男克星";
+                }
+                else
+                {
+                    this.name = "Nobsbane";
+                }
                 this.baseDamage = NOB_FIGHT_DAMAGE;
                 this.baseBlock = NOB_FIGHT_BLOCK;
                 this.type = CardType.ATTACK;
@@ -308,7 +373,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkCursedStatused()) {
                 statusOrCurse = true;
-                this.name = "Elixir Purge";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "净化灵药";
+                }
+                else
+                {
+                    this.name = "Elixir Purge";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 1;
@@ -317,7 +389,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkEnemyDebuffing()) {
                 enemyDebuffing = true;
-                this.name = "Debuff Punisher";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "兵来将挡";
+                }
+                else
+                {
+                    this.name = "Debuff Punisher";
+                }
                 this.baseDamage = ENEMY_DEBUFF_DMG;
                 this.type = CardType.ATTACK;
                 this.target = CardTarget.ENEMY;
@@ -327,7 +406,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkEnemyUnknown()) {
                 unknownIntent = true;
-                this.name = "Unknown Mirroring";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "幻惑之镜";
+                }
+                else
+                {
+                    this.name = "Unknown Mirroring";
+                }
                 this.type = CardType.POWER;
                 this.target = CardTarget.SELF;
                 this.cost = 1;
@@ -336,7 +422,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardPower.png"));
             } else if (AbstractDungeon.player.energy.energy >= 5) {
                 fiveOrMoreEnergy = true;
-                this.name = "Charge Blast";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "充能爆发";
+                }
+                else
+                {
+                    this.name = "Charge Blast";
+                }
                 this.baseDamage = FIVE_ENERGY_X_POWER;
                 this.baseBlock = FIVE_ENERGY_X_POWER;
                 this.type = CardType.ATTACK;
@@ -347,7 +440,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (AbstractDungeon.player.getPower("Barricade") != null) {
                 isBarricaded = true;
-                this.name = "Barricade Boost";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "添砖加瓦";
+                }
+                else
+                {
+                    this.name = "Barricade Boost";
+                }
                 this.baseBlock = BARRICADE_BLOCK;
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
@@ -357,7 +457,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
                 bossBattle = true;
-                this.name = "Boss Bash";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "痛殴BOSS";
+                }
+                else
+                {
+                    this.name = "Boss Bash";
+                }
                 this.baseDamage = BOSSFIGHT_DAMAGE;
                 this.type = CardType.ATTACK;
                 this.target = CardTarget.SELF_AND_ENEMY;
@@ -367,7 +474,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (AbstractDungeon.player.currentBlock == 0) {
                 noBlock = true;
-                this.name = "Emergency Shielding";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "紧急护盾";
+                }
+                else
+                {
+                    this.name = "Emergency Shielding";
+                }
                 this.baseBlock = NO_BLOCK_BLOCK;
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
@@ -377,7 +491,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.player.getPower("Confusion") != null) {
                 isConfused = true;
-                this.name = "Snecko Mulligan";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "紧急护盾";
+                }
+                else
+                {
+                    this.name = "Snecko Mulligan";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 0;
@@ -386,7 +507,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkMultiCombat()) {
                 multiFight = true;
-                this.name = "Splash Crash";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "戏蛇窍门";
+                }
+                else
+                {
+                    this.name = "Splash Crash";
+                }
                 this.baseDamage = MULTI_FIGHT_ENEMY_DAMAGE;
                 this.isMultiDamage = true;
                 this.type = CardType.ATTACK;
@@ -397,7 +525,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkEnemyBlock()) {
                 enemyBlocking = true;
-                this.name = "Peeler";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "雨露均沾";
+                }
+                else
+                {
+                    this.name = "Peeler";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.ENEMY;
                 this.cost = 0;
@@ -406,7 +541,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.player.gold <= 150) {
                 lowGold = true;
-                this.name = "Moolah Maker";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "就地印钞";
+                }
+                else
+                {
+                    this.name = "Moolah Maker";
+                }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
                 this.cost = 2;
@@ -414,7 +556,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.rawDescription = EXTENDED_DESCRIPTION[19];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else {
-                this.name = "Easy-Going Damage";
+                if (language == Settings.GameLanguage.ZHS)
+                {
+                    this.name = "随便打打";
+                }
+                else
+                {
+                    this.name = "Easy-Going Damage";
+                }
                 this.baseDamage = 8;
                 this.type = CardType.ATTACK;
                 this.target = CardTarget.ENEMY;
@@ -424,7 +573,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             }
         } else {
-            this.name = "Evolving Card";
+            if (language == Settings.GameLanguage.ZHS)
+            {
+                this.name = "演变之牌";
+            }
+            else
+            {
+                this.name = "Evolving Card";
+            }
             this.cost = 1;
             this.rawDescription = DESCRIPTION;
             this.type = CardType.SKILL;

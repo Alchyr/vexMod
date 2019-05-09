@@ -89,6 +89,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(TimeMachine.ID));
                         themRelics.add(RelicLibrary.getRelic(RockLover.ID));
                         themRelics.add(RelicLibrary.getRelic(GildedClover.ID));
+                        themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
                         if (AbstractDungeon.cardRandomRng.random(2) == 0)
                         {
                             themRelics.add(RelicLibrary.getRelic(PuzzleBox.ID));
@@ -98,6 +99,11 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(relicToGive);
                         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
+                        AbstractDungeon.commonRelicPool.remove(relicToGive.relicId);
+                        AbstractDungeon.uncommonRelicPool.remove(relicToGive.relicId);
+                        AbstractDungeon.rareRelicPool.remove(relicToGive.relicId);
+                        AbstractDungeon.shopRelicPool.remove(relicToGive.relicId);
+
                         AbstractDungeon.combatRewardScreen.open();
                         break;
                     case 2:

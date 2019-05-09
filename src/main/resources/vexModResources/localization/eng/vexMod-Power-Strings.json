@@ -33,7 +33,7 @@
   },
   "vexMod:HatredPower": {
     "NAME": "Hatred",
-    "DESCRIPTIONS":[
+    "DESCRIPTIONS": [
       "At the start of your turn, add #b",
       " random Attack to your hand.",
       " random Attacks to your hand."
@@ -50,8 +50,8 @@
   "vexMod:LoseFocusPower": {
     "NAME": "Lose Focus",
     "DESCRIPTIONS": [
-    "At the end of your turn, lose #b",
-    " Focus."
+      "At the end of your turn, lose #b",
+      " Focus."
     ]
   },
   "vexMod:ForceCubePower": {
@@ -126,6 +126,200 @@
       "At the start of your turn, add #b",
       " Evolving Card to your hand.",
       " Evolving Cards to your hand."
+    ]
+  },
+  "vexMod:CursedAPower": {
+    "NAME": "Outlawed A",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pA in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedBPower": {
+    "NAME": "Outlawed B",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pB in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedCPower": {
+    "NAME": "Outlawed C",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pC in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedDPower": {
+    "NAME": "Outlawed D",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pD in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedEPower": {
+    "NAME": "Outlawed E",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pE in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedFPower": {
+    "NAME": "Outlawed F",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pF in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedGPower": {
+    "NAME": "Outlawed G",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pG in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedHPower": {
+    "NAME": "Outlawed H",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pH in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedIPower": {
+    "NAME": "Outlawed I",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pI in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedJPower": {
+    "NAME": "Outlawed J",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pJ in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedKPower": {
+    "NAME": "Outlawed K",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pK in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedLPower": {
+    "NAME": "Outlawed L",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pL in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedMPower": {
+    "NAME": "Outlawed M",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pM in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedNPower": {
+    "NAME": "Outlawed N",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pN in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedOPower": {
+    "NAME": "Outlawed O",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pO in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedPPower": {
+    "NAME": "Outlawed P",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pP in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedQPower": {
+    "NAME": "Outlawed Q",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pQ in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedRPower": {
+    "NAME": "Outlawed R",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pR in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedSPower": {
+    "NAME": "Outlawed S",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pS in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedTPower": {
+    "NAME": "Outlawed T",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pT in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedUPower": {
+    "NAME": "Outlawed U",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pU in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedVPower": {
+    "NAME": "Outlawed V",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pV in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedWPower": {
+    "NAME": "Outlawed W",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pW in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedXPower": {
+    "NAME": "Outlawed X",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pX in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedYPower": {
+    "NAME": "Outlawed Y",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pY in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:CursedZPower": {
+    "NAME": "Outlawed Z",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #pZ in the name, take #b",
+      " damage at the end of your turn."
+    ]
+  },
+  "vexMod:SlowDoomPower": {
+    "NAME": "Slow Doom",
+    "DESCRIPTIONS": [
+      "At the end of your turn, if you haven't played any cards, lose #b5 hp."
+    ]
+  },
+  "vexMod:LichPhylacPower": {
+    "NAME": "Lich's Undeath",
+    "DESCRIPTIONS": [
+      "Immune to damage while a Lich's Phylactery is alive."
     ]
   }
 }

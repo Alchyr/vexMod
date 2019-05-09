@@ -3,5 +3,9 @@
   {
     "NAME": "流变卡组",
     "DESCRIPTION": "练练手速！"
+  },
+  "vexMod:noRelicMode": {
+    "NAME": "高开低走",
+    "DESCRIPTION": "开始时获得数件遗物，但之后的游戏中不会再出现遗物。"
   }
 }

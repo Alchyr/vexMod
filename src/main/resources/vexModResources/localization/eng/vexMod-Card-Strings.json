@@ -183,8 +183,7 @@
   },
   "vexMod:RocketPunch": {
     "NAME": "Rocket Punch",
-    "DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand. NL Add a copy of that card into your discard pile.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Choose an Attack in your hand. NL Add a copy of that card into your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Choose a card in your hand. NL Add a copy of that card into your discard pile."
   },
   "vexMod:SharpOrbs": {
     "NAME": "Sharp Orbs",
@@ -436,8 +435,8 @@
       "Heal 20 HP.",
       "Deal !D! damage.",
       "Gain [E] [E] . NL Draw 3 cards.",
-      "Draw 5 cards.",
-      "Gain [E] [E] [E] .",
+      "Draw 4 cards.",
+      "Gain [E] [E] .",
       "At the start of your turn, add an Evolving Card to your hand.",
       "Remove all your Debuffs.",
       "Exhaust all Statuses in your hand. Gain !B! Block X times.",

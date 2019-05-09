@@ -152,7 +152,7 @@
     "NAME": "Charge Upper",
     "FLAVOR": "\"Oops, I fell asleep without plugging it in...\"",
     "DESCRIPTIONS": [
-      "Every time you gain #b35 #yBlock, gain #b1 #yStrength."
+      "Every time you gain #b30 #yBlock, gain #b1 #yStrength."
     ]
   },
   "vexMod:FocusSash": {
@@ -1315,6 +1315,13 @@
     "FLAVOR": "Tick tock goes the clock rock.",
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. Upon pickup, set your run timer to #b-10 minutes. At the end of combat, rewind your run timer by #b30 seconds. When your run timer hits #b0, you #rlose."
+    ]
+  },
+  "vexMod:StoryBook": {
+    "NAME": "Story Book",
+    "FLAVOR": " ",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, the Story grows."
     ]
   }
 }
