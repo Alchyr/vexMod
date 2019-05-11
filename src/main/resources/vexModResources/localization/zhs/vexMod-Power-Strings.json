@@ -325,7 +325,7 @@
   "vexMod:GriftingPower": {
     "NAME": "Grifting",
     "DESCRIPTIONS": [
-      "Steals #b1 #yRelic whenever it attacks."
+      "Grifter steals #b1 #yRelic whenever it attacks."
     ]
   }
 }

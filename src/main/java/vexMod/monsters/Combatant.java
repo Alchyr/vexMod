@@ -39,8 +39,8 @@ public class Combatant extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 160; // Always good to back up your health and move values.
-    private static final int HP_MAX = 170;
+    private static final int HP_MIN = 125; // Always good to back up your health and move values.
+    private static final int HP_MAX = 131;
     private static final int A_8_HP_MIN = 180; // HP moves up at Ascension 7.
     private static final int A_8_HP_MAX = 190;
     private static final float HB_X = 0.0F;
@@ -109,10 +109,10 @@ public class Combatant extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.attackBlockBlock));
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.SLASH_DIAGONAL));// 93 94
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(1), AttackEffect.SLASH_DIAGONAL));// 93 94
                 break;
             case 3:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.SMASH));// 93 94
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(2), AttackEffect.SMASH));// 93 94
                 AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 5));
                 break;
             case 4:

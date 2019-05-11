@@ -52,19 +52,17 @@
     "NAME": "Glimpse Ahead",
     "DESCRIPTIONS": [
       "You see ahead of you a strange window in the air. NL There's something faint through it. NL What do you want to see?",
-      "Just ahead, a fight... or what could have been one.",
-      "You stare deeply into riches, ignoring a slight stomach pain. NL You feel sickly, but enriched.",
-      "As the great whale roars, you feel terrible, dead... and strong.",
-      "The window fades as you continue on.",
-      "You bask within new, cursed powers."
+      "You realize it now, looking into the window ahead. NL Seeing the whale once again, you realize ... NL NL You are so powerful... and so damned.",
+      "You realize it now, looking through this break in time. NL Seeing the fearsome monsters thrash you, you realize ... NL NL You have failed before.",
+      "You realize it now, looking back upon the whale. NL As it roars alone, you feel terrible, NL dead, NL and strong.",
+      "The window fades as you continue on."
     ],
     "OPTIONS": [
-      "[Boon] #rLose #r20 #rGold. #gUpgrade #ga #grandom #gcard.",
-      "[Riches] #rLose #r5 #rMax #rHP. #gGain #ga #grandom #gcommon #gRelic.",
-      "[Death] #rBecome #rCursed. #gObtain #ga #gNeow's #gLament.",
+      "[Strength] #rBecome #rCursed. #gUpgrade #g2 #grandom #gcards.",
+      "[Fear] #rLose #r5 #rMax #rHP. #gObtain #ga #grandom #gcommon #gRelic.",
+      "[Death] #rObtain #ra #rrandom #rBlight. #gGain #g1000 #gGold.",
       "[Leave]",
-      "[Leave]",
-      "[Life] #rBecome #rCursed. #gObtain #ga #grandom #gUncommon #grelic."
+      "[Leave]"
     ]
   },
   "vexMod:VoiceBoxEvent": {
@@ -158,7 +156,7 @@
   "vexMod:SerpentsRevenge": {
     "NAME": "Ssserpent's Revenge",
     "DESCRIPTIONS": [
-      "You walk into a room to find it contains an enormous hole. NL As you approach the hole, a massive golden serpent emerges. It seems familiar... NL ~\"Ho~ ~hooo!~ ~Greeetings!~ ~heyo!~ Hello adventurer, I ask, yet again, a simplistic question. NL @The@ @most@ @fulfilling@ @of@ @lives@ @is@ @that@ @in@ @which@ @you@ @can@ #y~buy~ #y~anything!~ NL @Do@ @you@ @agree?\"@",
+      "You walk into a room to find it contains a gargantuan hole. NL As you approach the hole, a brilliant golden serpent emerges. It seems familiar... NL ~\"Ho~ ~hooo!~ ~Greeetings!~ ~heyo!~ Hello adventurer, I ask, yet again, a simplistic question. NL @The@ @most@ @fulfilling@ @of@ @lives@ @is@ @that@ @in@ @which@ @you@ @can@ #y~buy~ #y~anything!~ NL @Do@ @you@ @agree?\"@",
       "~\"Yeeeeeeessssssssssessss!~ NL ~Thisss~ ~will~ ~all~ ~be~ ~worthhh~ ~it.~ NL ~..ssSSs.....~ ~ss...~ ~sssss....!\"~ NL The Ssserpent lunges forwards and sinks its fangs into your arm. NL You feel terribly ill...",
       "The Ssserpent lunges at you for the attack!",
       "The serpent stares at you with a look of extreme disappointment, infernal anger, and slight doubt."

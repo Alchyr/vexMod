@@ -11,10 +11,7 @@ import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.random.Random;
 import com.megacrit.cardcrawl.relics.*;
 import vexMod.modifiers.NoRelicMode;
-import vexMod.relics.ChestStatue;
-import vexMod.relics.CursedCompass;
-import vexMod.relics.ImprovementManual;
-import vexMod.relics.PaidLearning;
+import vexMod.relics.*;
 
 @SpirePatch(
         clz = NeowEvent.class,
@@ -49,6 +46,5 @@ public class OnPostNeowTalkNoRelicModePatch {
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.BOSS).instantObtain();
             }
         }
-
     }
 }

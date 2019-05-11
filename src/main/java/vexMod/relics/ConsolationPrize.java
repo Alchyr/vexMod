@@ -6,6 +6,7 @@ import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
@@ -34,8 +35,11 @@ public class ConsolationPrize
         if (damageAmount > 0 && AbstractDungeon.player.currentHealth > 0) {
             AbstractDungeon.player.gainGold(damageAmount);
             this.flash();
-            for (int i = 0; i < damageAmount; ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+            if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID))
+            {
+                for (int i = 0; i < damageAmount; ++i) {
+                    AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                }
             }
         }
         return damageAmount;

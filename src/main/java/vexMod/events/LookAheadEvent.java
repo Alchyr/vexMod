@@ -12,12 +12,14 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
+import com.megacrit.cardcrawl.helpers.BlightHelper;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
 import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.NeowsLament;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
@@ -51,15 +53,7 @@ public class LookAheadEvent extends AbstractImageEvent {
         // The first dialogue options available to us.
         imageEventText.setDialogOption(OPTIONS[0]); // Into the Clash: Fight another Floor Boss.
         imageEventText.setDialogOption(OPTIONS[1]); // Into the City: Fight a simple City battle.
-        if (AbstractDungeon.player.hasRelic(NeowsLament.ID)) {
-            if (!AbstractDungeon.player.getRelic(NeowsLament.ID).usedUp) {
-                imageEventText.setDialogOption(OPTIONS[5]);
-            } else {
-                imageEventText.setDialogOption(OPTIONS[2]);
-            }
-        } else {
-            imageEventText.setDialogOption(OPTIONS[2]);
-        }
+        imageEventText.setDialogOption(OPTIONS[2]);
         imageEventText.setDialogOption(OPTIONS[3]); // Leave
     }
 
@@ -69,10 +63,11 @@ public class LookAheadEvent extends AbstractImageEvent {
             case 0: // While you are on screen number 0 (The starting screen)
                 switch (i) {
                     case 0:
-                        AbstractDungeon.player.loseGold(20);
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]); // Update the text of the event
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]); // Update the text of the event
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
                         this.imageEventText.clearRemainingOptions(); // 2. and remove all others
+                        AbstractCard b = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(b, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));// 99
                         ArrayList<AbstractCard> upgradableCards = new ArrayList();// 100
                         Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();// 101
@@ -88,9 +83,11 @@ public class LookAheadEvent extends AbstractImageEvent {
                         Collections.shuffle(upgradableCards, new Random(AbstractDungeon.miscRng.randomLong()));// 109
                         if (!upgradableCards.isEmpty()) {// 111
                             ((AbstractCard) upgradableCards.get(0)).upgrade();// 114
-                            cardMetrics.add(((AbstractCard) upgradableCards.get(0)).cardID);// 115
+                            ((AbstractCard) upgradableCards.get(1)).upgrade();
                             AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard) upgradableCards.get(0));// 116
+                            AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard) upgradableCards.get(1));// 116
                             AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(((AbstractCard) upgradableCards.get(0)).makeStatEquivalentCopy()));// 117
+                            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(((AbstractCard) upgradableCards.get(1)).makeStatEquivalentCopy()));
                         }
                         screenNum = 1;
                         break; // Onto screen 1 we go.
@@ -113,18 +110,9 @@ public class LookAheadEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break; // Onto screen 1 we go.
                     case 2: // If you press button the third button (Button at index 2), in this case: Acceptance
-                        AbstractCard b = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(b, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        if (AbstractDungeon.player.hasRelic(NeowsLament.ID)) {
-                            if (!AbstractDungeon.player.getRelic(NeowsLament.ID).usedUp) {
-                                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON));
-                            } else {
-                                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
-                            }
-                        } else {
-                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
-                        }
-
+                        AbstractDungeon.getCurrRoom().spawnBlightAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), BlightHelper.getRandomBlight());
+                        AbstractDungeon.player.gainGold(1000);
+                        AbstractDungeon.effectList.add(new RainingGoldEffect(1000));
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]); // Update the text of the event
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
                         this.imageEventText.clearRemainingOptions(); // 2. and remove all others

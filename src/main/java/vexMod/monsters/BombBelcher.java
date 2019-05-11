@@ -110,12 +110,12 @@ public class BombBelcher extends AbstractMonster {
                 this.setMove((byte) 2, Intent.ATTACK_BUFF, ((DamageInfo) this.damage.get(1)).base);
                 break;
             case 2:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.BLUNT_HEAVY));// 93 94
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(1), AttackEffect.BLUNT_HEAVY));// 93 94
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
                 this.setMove((byte) 3, Intent.ATTACK_DEBUFF, ((DamageInfo) this.damage.get(2)).base);
                 break;
             case 3:
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.FIRE));// 93 94
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(2), AttackEffect.FIRE));// 93 94
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
                 this.setMove((byte) 2, Intent.ATTACK_DEFEND, ((DamageInfo) this.damage.get(0)).base);
         }

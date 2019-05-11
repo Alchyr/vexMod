@@ -133,5 +133,23 @@
       "You're a fool to challenge NL the Spire's greatest thief!",
       "Goodbye, traveler, NL and thank you for the loot!"
     ]
+  },
+  "vexMod:Combatant": {
+    "NAME": "Mechanical Combatant",
+    "MOVES": [
+      "Robotic Rush"
+    ],
+    "DIALOG": [
+      "ENGAGING COMBAT FUNCTIONS!"
+    ]
+  },
+  "vexMod:BombBelcher": {
+    "NAME": "Bomb Belcher",
+    "MOVES": [
+      "Bomb Belch"
+    ],
+    "DIALOG": [
+      "~burp~"
+    ]
   }
 }
