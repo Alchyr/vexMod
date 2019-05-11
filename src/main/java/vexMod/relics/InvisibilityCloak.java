@@ -32,10 +32,10 @@ public class InvisibilityCloak extends CustomRelic {
     public void atBattleStart() {
         Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while(var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var1.next();
+        while (var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster) var1.next();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -1),-1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -1), -1));
         }
 
         AbstractDungeon.onModifyPower();

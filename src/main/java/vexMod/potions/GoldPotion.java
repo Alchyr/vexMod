@@ -59,7 +59,7 @@ public class GoldPotion extends AbstractPotion {
         DamageInfo info = new DamageInfo(AbstractDungeon.player, this.potency, DamageInfo.DamageType.THORNS);
         info.applyEnemyPowersOnly(target);
         AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AbstractGameAction.AttackEffect.SMASH));
-        int coins = AbstractDungeon.cardRandomRng.random(25,50);
+        int coins = AbstractDungeon.cardRandomRng.random(25, 50);
         AbstractDungeon.player.gainGold(coins);
         if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
             for (int i = 0; i < coins; ++i) {

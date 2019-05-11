@@ -60,11 +60,9 @@ public class VolumeVengeance extends AbstractDefaultCard {
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         super.update();
-        if (AbstractDungeon.player!=null)
-        {
+        if (AbstractDungeon.player != null) {
             applyPowers();
         }
     }
@@ -114,17 +112,13 @@ public class VolumeVengeance extends AbstractDefaultCard {
             this.target = CardTarget.ENEMY;
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[0];
             loadCardImage(makeCardPath("VolumeVengeanceAttack.png"));
-        }
-        else if (vol >= 0.8F)
-        {
+        } else if (vol >= 0.8F) {
             baseMagicNumber = magicNumber = LOUD_DEBUFF;
             this.type = CardType.SKILL;
             this.target = CardTarget.ALL_ENEMY;
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[1];
             loadCardImage(makeCardPath("VolumeVengeanceSkill.png"));
-        }
-        else
-        {
+        } else {
             this.type = CardType.SKILL;
             this.target = CardTarget.SELF;
             this.rawDescription = DESCRIPTION + EXTENDED_DESCRIPTION[2];

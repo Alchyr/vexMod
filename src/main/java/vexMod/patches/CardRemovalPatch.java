@@ -23,18 +23,15 @@ import vexMod.relics.NotEnergy;
 import vexMod.relics.TheWave;
 
 @SpirePatch(
-        clz=AbstractDungeon.class,
-        method="addColorlessCards"
+        clz = AbstractDungeon.class,
+        method = "addColorlessCards"
 )
-public class CardRemovalPatch
-{
-    public static void Postfix(AbstractDungeon dungeon_instance)
-    {
+public class CardRemovalPatch {
+    public static void Postfix(AbstractDungeon dungeon_instance) {
         if (!VexMod.enablePlaceholder) {
             dungeon_instance.colorlessCardPool.removeCard(EmailVexCard.ID);
         }
-        if (!VexMod.enableMemes)
-        {
+        if (!VexMod.enableMemes) {
             dungeon_instance.colorlessCardPool.removeCard(EmailVexCard.ID);
             dungeon_instance.colorlessCardPool.removeCard(FullService.ID);
             dungeon_instance.colorlessCardPool.removeCard(CalendarSmash.ID);

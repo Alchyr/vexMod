@@ -130,8 +130,7 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
         } else {
             this.stopPulse();
         }
-        if (AbstractDungeon.floorNum > chosenFloor)
-        {
+        if (AbstractDungeon.floorNum > chosenFloor) {
             this.img = TextureLoader.getTexture(makeRelicPath("RedPlottingStoneUsed.png"));
             this.usedUp();
         }

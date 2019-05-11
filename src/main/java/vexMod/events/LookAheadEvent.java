@@ -115,7 +115,15 @@ public class LookAheadEvent extends AbstractImageEvent {
                     case 2: // If you press button the third button (Button at index 2), in this case: Acceptance
                         AbstractCard b = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(b, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
+                        if (AbstractDungeon.player.hasRelic(NeowsLament.ID)) {
+                            if (!AbstractDungeon.player.getRelic(NeowsLament.ID).usedUp) {
+                                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON));
+                            } else {
+                                AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
+                            }
+                        } else {
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
+                        }
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]); // Update the text of the event
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
@@ -128,15 +136,6 @@ public class LookAheadEvent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;
-                    case 4:
-                        AbstractCard c = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON));
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[5]); // Update the text of the event
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
-                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
-                        screenNum = 1;
-                        break; // Onto screen 1 we go.
                 }
                 break;
             case 1: // Welcome to screenNum = 1;

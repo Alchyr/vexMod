@@ -32,14 +32,12 @@ public class PinpointKickAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
-            if (target.currentBlock>0)
-            {
+            if (target.currentBlock > 0) {
                 hasBlock = true;
             }
             AbstractDungeon.effectList.add(new FlashAtkImgEffect(this.target.hb.cX, this.target.hb.cY, AttackEffect.BLUNT_LIGHT));
             this.target.damage(this.info);
-            if(target.currentBlock==0 && hasBlock)
-            {
+            if (target.currentBlock == 0 && hasBlock) {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(target, AbstractDungeon.player, new VulnerablePower(target, vulnAmount, false), vulnAmount));
             }
             if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {

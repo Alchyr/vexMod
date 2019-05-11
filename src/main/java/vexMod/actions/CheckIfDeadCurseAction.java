@@ -27,11 +27,9 @@ public class CheckIfDeadCurseAction extends AbstractGameAction {
     }
 
     public void update() {
-        if ((((AbstractMonster)m).isDying || m.currentHealth <= 0)) {
+        if ((((AbstractMonster) m).isDying || m.currentHealth <= 0)) {
 
-        }
-        else
-        {
+        } else {
             AbstractCard c = CardLibrary.getCurse().makeCopy();
             AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(c.makeCopy()));
         }

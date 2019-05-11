@@ -39,7 +39,7 @@ public class CoinToss extends AbstractDefaultCard {
     public static final CardColor COLOR = CardColor.COLORLESS;
 
     private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1  ; // UPGRADED_COST = ${UPGRADED_COST}
+    private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
 
     private static final int DAMAGE = 12;    // DAMAGE = ${DAMAGE}
 

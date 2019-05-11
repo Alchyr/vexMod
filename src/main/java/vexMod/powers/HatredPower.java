@@ -47,8 +47,7 @@ public class HatredPower extends AbstractPower implements CloneablePowerInterfac
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        for (int i=0; i<amount; i++)
-        {
+        for (int i = 0; i < amount; i++) {
             AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.ATTACK).makeCopy();
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
         }

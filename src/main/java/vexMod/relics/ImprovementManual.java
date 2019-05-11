@@ -47,12 +47,10 @@ public class ImprovementManual extends CustomRelic {
         }
 
         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.INCOMPLETE;
-        if (upgradeAbleCards > 4)
-        {
+        if (upgradeAbleCards > 4) {
             upgradeAbleCards = 4;
         }
-        if (upgradeAbleCards > 0)
-        {
+        if (upgradeAbleCards > 0) {
             AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getUpgradableCards(), upgradeAbleCards, this.DESCRIPTIONS[1], false, false, false, false);
         }
     }
@@ -64,11 +62,11 @@ public class ImprovementManual extends CustomRelic {
             this.cardSelected = true;
             Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
-            while(var1.hasNext()) {
-                AbstractCard card = (AbstractCard)var1.next();
+            while (var1.hasNext()) {
+                AbstractCard card = (AbstractCard) var1.next();
                 card.upgrade();
-                float x = MathUtils.random(0.1F, 0.9F) * (float)Settings.WIDTH;
-                float y = MathUtils.random(0.2F, 0.8F) * (float)Settings.HEIGHT;
+                float x = MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH;
+                float y = MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT;
                 AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(card.makeStatEquivalentCopy(), x, y));
                 AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect(x, y));
                 card.stopGlowing();

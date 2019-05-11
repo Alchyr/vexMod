@@ -35,19 +35,15 @@ public class GazerBeam extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart()
-    {
-        if (activated==false)
-        {
+    public void atTurnStart() {
+        if (activated == false) {
             this.beginLongPulse();
         }
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if (card.type == AbstractCard.CardType.ATTACK && activated == false && action.target!=null)
-        {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK && activated == false && action.target != null) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(action.target, AbstractDungeon.player, new LockOnPower(action.target, 2)));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(action.target, this));
@@ -55,7 +51,6 @@ public class GazerBeam extends CustomRelic {
             activated = true;
         }
     }
-
 
 
     // Description

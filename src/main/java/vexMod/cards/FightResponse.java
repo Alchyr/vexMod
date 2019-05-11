@@ -83,7 +83,7 @@ public class FightResponse extends AbstractDefaultCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
-        } else if (AbstractDungeon.player.currentHealth > (Math.floorDiv(AbstractDungeon.player.maxHealth,2))) {
+        } else if (AbstractDungeon.player.currentHealth > (Math.floorDiv(AbstractDungeon.player.maxHealth, 2))) {
             this.cantUseMessage = EXTENDED_DESCRIPTION[0];
             return false;
         } else {

@@ -26,10 +26,8 @@ public class PowerCharger extends CustomRelic {
     }
 
     @Override
-    public void onPlayerEndTurn()
-    {
-        if (AbstractDungeon.player.maxOrbs - AbstractDungeon.player.filledOrbCount() > 0)
-        {
+    public void onPlayerEndTurn() {
+        if (AbstractDungeon.player.maxOrbs - AbstractDungeon.player.filledOrbCount() > 0) {
             this.flash();
             AbstractDungeon.actionManager.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 3));
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

@@ -61,7 +61,6 @@ public class RocketPunch extends AbstractDefaultCard {
     }
 
 
-
     // Upgraded stats.
     @Override
     public void upgrade() {

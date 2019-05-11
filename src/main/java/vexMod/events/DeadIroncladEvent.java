@@ -67,12 +67,12 @@ public class DeadIroncladEvent extends AbstractImageEvent {
 
     public static AbstractCard getRandomRewardColorSpecificCard(AbstractCard.CardColor color) {
         ArrayList<AbstractCard> tmp = new ArrayList<>();
-        for(AbstractCard card : CardLibrary.getAllCards()) {
-            if(card.color == color && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL) {
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.color == color && card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL) {
                 tmp.add(card);
             }
         }
-        return tmp.get(AbstractDungeon.cardRandomRng.random(tmp.size() -1));
+        return tmp.get(AbstractDungeon.cardRandomRng.random(tmp.size() - 1));
     }
 
     @Override
@@ -127,7 +127,6 @@ public class DeadIroncladEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().addCardReward(reward3);
                         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
                         AbstractDungeon.combatRewardScreen.open();
-
 
 
                         break; // Onto screen 1 we go.

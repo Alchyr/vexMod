@@ -23,23 +23,18 @@ import vexMod.relics.NotEnergy;
 import vexMod.relics.TheWave;
 
 @SpirePatch(
-        clz=AbstractDungeon.class,
-        method="initializeCardPools"
+        clz = AbstractDungeon.class,
+        method = "initializeCardPools"
 )
-public class EventRemovalPatch
-{
-    public static void Prefix(AbstractDungeon dungeon_instance)
-    {
-        if (AbstractDungeon.player instanceof Ironclad)
-        {
+public class EventRemovalPatch {
+    public static void Prefix(AbstractDungeon dungeon_instance) {
+        if (AbstractDungeon.player instanceof Ironclad) {
             dungeon_instance.eventList.remove(DeadIroncladEvent.ID);
         }
-        if (AbstractDungeon.player instanceof TheSilent)
-        {
+        if (AbstractDungeon.player instanceof TheSilent) {
             dungeon_instance.eventList.remove(DeadSilentEvent.ID);
         }
-        if (AbstractDungeon.player instanceof Defect)
-        {
+        if (AbstractDungeon.player instanceof Defect) {
             dungeon_instance.eventList.remove(DeadDefectEvent.ID);
         }
         if (!VexMod.enablePlaceholder) {

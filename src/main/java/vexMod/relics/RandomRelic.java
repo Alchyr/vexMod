@@ -60,20 +60,18 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
     @Override
     public void onEquip() {
         ArrayList<String> list = new ArrayList<>();
-        if (AbstractDungeon.player instanceof TheSilent)
-        {
+        if (AbstractDungeon.player instanceof TheSilent) {
             list.add("CombatStartPoison");
         }
-        if (AbstractDungeon.player instanceof Defect)
-        {
+        if (AbstractDungeon.player instanceof Defect) {
             list.add("OrbSlotGain");
         }
-        if (AbstractDungeon.player instanceof Ironclad)
-        {
+        if (AbstractDungeon.player instanceof Ironclad) {
             list.add("CombatTempStrength");
         }
         list.add("TurnStartDamage");
-        list.add("CombatStartBlockGain");;
+        list.add("CombatStartBlockGain");
+        ;
         list.add("CombatStartDamage");
         list.add("CombatStartDraw");
         list.add("BlockBrokenHeal");
@@ -292,18 +290,18 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
     public int onLoseBlock(DamageInfo info, int damageAmount) {
         if (!triggered && damageAmount >= AbstractDungeon.player.currentBlock && ID_MINOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
-            this.triggered=true;
+            this.triggered = true;
         }
         if (!triggered && damageAmount >= AbstractDungeon.player.currentBlock && ID_MAJOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 4));
-            this.triggered=true;
+            this.triggered = true;
         }
         return damageAmount;
     }
 
     @Override
     public void atBattleStart() {
-        this.triggered=false;
+        this.triggered = false;
         if (ID_MINOR == 0) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));
@@ -411,27 +409,23 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 2), 2));// 25
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 31
         }
-        if (ID_MINOR == 19)
-        {
+        if (ID_MINOR == 19) {
             this.flash();// 29
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
             AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(1));// 31
         }
-        if (ID_MAJOR== 19)
-        {
+        if (ID_MAJOR == 19) {
             this.flash();// 29
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
             AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(2));// 31
         }
-        if (ID_MINOR == 20)
-        {
+        if (ID_MINOR == 20) {
             this.flash();// 24
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2), 2));// 25
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 2), 2));// 31
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 37
         }
-        if (ID_MINOR == 20)
-        {
+        if (ID_MINOR == 20) {
             this.flash();// 24
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 4), 4));// 25
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 4), 4));// 31

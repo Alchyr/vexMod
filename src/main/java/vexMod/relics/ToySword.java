@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
 import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -31,10 +32,8 @@ public class ToySword extends CustomRelic {
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if (card.type == AbstractCard.CardType.ATTACK && action.target!=null)
-        {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK && action.target != null) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(action.target, AbstractDungeon.player, new StrengthPower(action.target, -2), -2));
             if (action.target != null && !action.target.hasPower("Artifact")) {
@@ -47,7 +46,7 @@ public class ToySword extends CustomRelic {
     @Override
     public void atBattleStart() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player,  -1),1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -1), 1));
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 

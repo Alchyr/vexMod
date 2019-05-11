@@ -28,8 +28,7 @@ public class SlimeArmor extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart()
-    {
+    public void atBattleStart() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new RetainCardPower(AbstractDungeon.player, 1), 1));
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

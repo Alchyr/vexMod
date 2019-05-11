@@ -55,12 +55,12 @@ public class ImaginarySword extends CustomRelic {
         super.update();
         if (!this.cardSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == 2) {
             this.cardSelected = true;
-            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard)AbstractDungeon.gridSelectScreen.selectedCards.get(0), (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard)AbstractDungeon.gridSelectScreen.selectedCards.get(1), (float)Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
+            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(0), (float) Settings.WIDTH / 2.0F - 30.0F * Settings.scale - AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+            AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard) AbstractDungeon.gridSelectScreen.selectedCards.get(1), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
             Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
-            while(var1.hasNext()) {
-                AbstractCard card = (AbstractCard)var1.next();
+            while (var1.hasNext()) {
+                AbstractCard card = (AbstractCard) var1.next();
                 AbstractDungeon.player.masterDeck.removeCard(card);
                 AbstractDungeon.transformCard(card, true, AbstractDungeon.miscRng);
             }

@@ -62,8 +62,7 @@ public class TrainingStrike extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if (AbstractDungeon.player.hand.getAttacks().size() > 0)
-        {
+        if (AbstractDungeon.player.hand.getAttacks().size() > 0) {
             AbstractCard c = AbstractDungeon.player.hand.getAttacks().getRandomCard(false);
             c.baseDamage += magicNumber;
             c.superFlash();

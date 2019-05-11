@@ -26,22 +26,18 @@ public class DrawConverter extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
-    public void onCardDraw(AbstractCard drawnCard)
-    {
-        if (working)
-        {
+    public void onCardDraw(AbstractCard drawnCard) {
+        if (working) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
     }
 
-    public void onPlayerEndTurn()
-    {
+    public void onPlayerEndTurn() {
         working = false;
     }
 
-    public void atBattleStart()
-    {
+    public void atBattleStart() {
         working = false;
     }
 
@@ -49,7 +45,7 @@ public class DrawConverter extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new AbstractGameAction() {
             public void update() {
                 working = true;
-                isDone=true;
+                isDone = true;
             }
         });
     }

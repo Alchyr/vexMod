@@ -57,8 +57,7 @@ public class PuzzleBox extends CustomRelic implements ClickableRelic { // You mu
         tips.clear();
         tips.add(new PowerTip(name, description));
         initializeTips();
-        if (this.counter == 0)
-        {
+        if (this.counter == 0) {
             this.flash();
             loseRelic = true;
         }
@@ -67,20 +66,15 @@ public class PuzzleBox extends CustomRelic implements ClickableRelic { // You mu
     public static void relicBullshit() {
         if (loseRelic) {
             int v = AbstractDungeon.cardRandomRng.random(2);
-            if (v == 0)
-            {
+            if (v == 0) {
                 CardCrawlGame.sound.play("GOLD_GAIN");
                 AbstractDungeon.player.gainGold(777);
-            }
-            else if (v == 1)
-            {
+            } else if (v == 1) {
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
                 AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-            }
-            else if (v == 2)
-            {
+            } else if (v == 2) {
                 ArrayList<AbstractRelic> themRelics = new ArrayList();
                 themRelics.add(RelicLibrary.getRelic(EmptyCage.ID));
                 themRelics.add(RelicLibrary.getRelic(ImprovementManual.ID));
@@ -95,7 +89,7 @@ public class PuzzleBox extends CustomRelic implements ClickableRelic { // You mu
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS [1];
+        return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];
     }
 
 }

@@ -47,8 +47,7 @@ public class EvasivePower extends AbstractPower implements CloneablePowerInterfa
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        for (int i=0; i<amount; i++)
-        {
+        for (int i = 0; i < amount; i++) {
             AbstractCard c = AbstractDungeon.returnTrulyRandomCardInCombat(AbstractCard.CardType.SKILL).makeCopy();
             c.setCostForTurn(-99);
             AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));

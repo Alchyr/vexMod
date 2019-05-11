@@ -60,7 +60,7 @@ public class Hatred extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isInnate=true;
+            this.isInnate = true;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

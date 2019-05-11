@@ -54,11 +54,10 @@ public class GrowingStorm extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i=0; i<this.magicNumber; i++)
-        {
+        for (int i = 0; i < this.magicNumber; i++) {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
         }
-        this.baseMagicNumber+=1;
+        this.baseMagicNumber += 1;
     }
 
 

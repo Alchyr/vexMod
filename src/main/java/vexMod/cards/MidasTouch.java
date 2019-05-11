@@ -46,7 +46,7 @@ public class MidasTouch extends CustomCard {
     public MidasTouch() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = MAGIC;
-        this.isEthereal=true;
+        this.isEthereal = true;
     }
 
     // Actions the card should do.

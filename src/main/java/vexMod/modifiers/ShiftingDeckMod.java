@@ -6,8 +6,7 @@ import com.megacrit.cardcrawl.localization.RunModStrings;
 import vexMod.VexMod;
 
 public class ShiftingDeckMod
-        extends AbstractDailyMod
-{
+        extends AbstractDailyMod {
     public static final String ID = VexMod.makeID("shiftingDeck");
     private static final RunModStrings modStrings = CardCrawlGame.languagePack.getRunModString(ID);
     public static final String NAME = modStrings.NAME;

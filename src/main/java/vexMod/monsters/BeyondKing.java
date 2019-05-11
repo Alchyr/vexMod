@@ -164,7 +164,7 @@ public class BeyondKing extends AbstractMonster {
         } else if (waaa == 2) {
             this.setMove((byte) 3, Intent.DEFEND_DEBUFF);
         } else if (waaa == 3) {
-            this.setMove((byte) 4, Intent.ATTACK_DEBUFF, this.decree_damage);
+            this.setMove((byte) 4, Intent.ATTACK_DEBUFF, this.damage.get(0).base);
         }
     }
 

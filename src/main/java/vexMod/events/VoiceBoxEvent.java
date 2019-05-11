@@ -59,7 +59,7 @@ public class VoiceBoxEvent extends AbstractImageEvent {
         if (this.pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             AbstractDungeon.player.masterDeck.removeCard(c);
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).makeCopy(), (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));// 73
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(AbstractDungeon.getCard(AbstractCard.CardRarity.RARE).makeCopy(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));// 73
             AbstractDungeon.gridSelectScreen.selectedCards.clear();// 50
             this.pickCard = false;
         }

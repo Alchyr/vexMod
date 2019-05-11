@@ -29,7 +29,7 @@ public class TimeEaterHat extends CustomRelic {
 
     @Override
     public void atPreBattle() {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlayerTimeWarp(AbstractDungeon.player, 12, 2),1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new PlayerTimeWarp(AbstractDungeon.player, 12, 2), 1));
     }
 
     // Description

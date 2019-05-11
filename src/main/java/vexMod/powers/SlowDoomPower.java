@@ -47,8 +47,7 @@ public class SlowDoomPower extends AbstractPower implements CloneablePowerInterf
 
     @Override
     public void atEndOfTurn(boolean isPlayer) { // At the start of your turn
-        if (AbstractDungeon.player.cardsPlayedThisTurn < 1)
-        {
+        if (AbstractDungeon.player.cardsPlayedThisTurn < 1) {
             this.flash();// 36
             AbstractDungeon.actionManager.addToBottom(new LoseHPAction(this.owner, this.owner, this.amount));// 38
         }

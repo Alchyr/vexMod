@@ -11,22 +11,19 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import vexMod.cards.GhostlyBlitz;
 
-public class GrabCardAction extends AbstractGameAction
-{
+public class GrabCardAction extends AbstractGameAction {
     private AbstractRelic botling;
-    public GrabCardAction(AbstractRelic EvilRelic)
-    {
+
+    public GrabCardAction(AbstractRelic EvilRelic) {
         duration = Settings.ACTION_DUR_MED;
         botling = EvilRelic;
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         AbstractCard c = AbstractDungeon.player.hand.getRandomCard(AbstractDungeon.cardRandomRng);
-        if (c!=null)
-        {
-            AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(botling, (botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(13,16)] + c.name + ", " + botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), 0.0F, 5.0F));
+        if (c != null) {
+            AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(botling, (botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(13, 16)] + c.name + ", " + botling.DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(34, 72)]), 0.0F, 5.0F));
             botling.flash();
             AbstractDungeon.actionManager.addToBottom(new ExhaustSpecificCardAction(c, AbstractDungeon.player.hand));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, botling));

@@ -35,8 +35,8 @@ public class BrainBlaster extends CustomRelic {
     public void atBattleStart() {
         Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while(var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var1.next();
+        while (var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster) var1.next();
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(m, this));
             m.addPower(new ReactivePower(m));
         }

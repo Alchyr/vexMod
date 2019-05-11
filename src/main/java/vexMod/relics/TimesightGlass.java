@@ -32,7 +32,7 @@ public class TimesightGlass extends CustomRelic {
 
     public void atTurnStart() {
         ++this.counter;
-        if (this.counter%2 == 0) {
+        if (this.counter % 2 == 0) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(new RandomCardFromDiscardPileToHandAction());

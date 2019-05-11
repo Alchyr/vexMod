@@ -15,6 +15,7 @@ import vexMod.relics.Cooldron;
 
 public class CooldronPatch {
     public static boolean isActive = true;
+
     public static SpireReturn<AbstractPotion> Prefix() {
         if (isActive && AbstractDungeon.player.hasRelic(Cooldron.ID)) {
             return SpireReturn.Return(new EntropicBrew());

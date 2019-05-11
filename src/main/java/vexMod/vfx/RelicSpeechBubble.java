@@ -47,9 +47,7 @@ public class RelicSpeechBubble extends AbstractGameEffect {
 
         if (TOP) {
             AbstractDungeon.topLevelEffectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.35f, msg, DialogWord.AppearEffect.BUMP_IN));
-        }
-        else
-        {
+        } else {
             AbstractDungeon.effectsQueue.add(new SpeechTextEffect(x + ADJUST_X, y - (ADJUST_Y - (10 * Settings.scale)), duration - 0.35f, msg, DialogWord.AppearEffect.BUMP_IN));
         }
 

@@ -56,8 +56,7 @@ public class Devastation extends AbstractDefaultCard {
 
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
+    public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, magicNumber));
         AbstractDungeon.actionManager.addToBottom(new DevastationAction(p, m, damageTypeForTurn));
     }

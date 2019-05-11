@@ -95,13 +95,12 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new EvasivePower(p, p, this.amount));
         blazeList.add(new PropogationPower(p, p, this.amount));
 
-        BlazePower = blazeList.get(AbstractDungeon.cardRandomRng.random(0, (blazeList.size()-1)));
+        BlazePower = blazeList.get(AbstractDungeon.cardRandomRng.random(0, (blazeList.size() - 1)));
 
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, BlazePower, this.amount, AbstractGameAction.AttackEffect.NONE));
 
-        if (IsSkin)
-        {
-            ((ShiftingSkin)AbstractDungeon.player.getRelic(ShiftingSkin.ID)).transformDescription(BlazePower.name);
+        if (IsSkin) {
+            ((ShiftingSkin) AbstractDungeon.player.getRelic(ShiftingSkin.ID)).transformDescription(BlazePower.name);
         }
 
         this.isDone = true;

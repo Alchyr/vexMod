@@ -23,18 +23,15 @@ import vexMod.relics.*;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpirePatch(
-        clz=AbstractDungeon.class,
-        method="initializeRelicList"
+        clz = AbstractDungeon.class,
+        method = "initializeRelicList"
 )
-public class RelicRemovalPatch
-{
-    public static void Postfix(AbstractDungeon dungeon_instance)
-    {
+public class RelicRemovalPatch {
+    public static void Postfix(AbstractDungeon dungeon_instance) {
         if (!VexMod.enablePlaceholder) {
             dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
         }
-        if (language == Settings.GameLanguage.ZHS)
-        {
+        if (language == Settings.GameLanguage.ZHS) {
             dungeon_instance.shopRelicPool.remove(StoryBook.ID);
         }
     }

@@ -47,7 +47,7 @@ public class MedusaPower extends AbstractPower implements CloneablePowerInterfac
     @Override
     public void atEndOfTurn(boolean isPlayer) { // At the start of your turn
         int count = AbstractDungeon.player.hand.size();
-        for(int i = 0; i < count; ++i) {
+        for (int i = 0; i < count; ++i) {
             AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
         }
     }

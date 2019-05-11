@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
 import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -25,10 +26,8 @@ public class GhostlyGear extends CustomRelic {
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if (card.hasTag(BASIC_STRIKE) || card.hasTag(BASIC_DEFEND))
-        {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.hasTag(BASIC_STRIKE) || card.hasTag(BASIC_DEFEND)) {
             action.exhaustCard = true;
         }
     }

@@ -50,8 +50,7 @@ public class StrikeStormPower extends AbstractPower implements CloneablePowerInt
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!card.purgeOnUse && card.type != AbstractCard.CardType.ATTACK) {
-            for (int i=0; i<amount; i++)
-            {
+            for (int i = 0; i < amount; i++) {
                 AbstractCard playCard = new Strike_Red(); // Declare Card - the Strike card. We will name it 'playCard'.
                 this.flash();
                 AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.

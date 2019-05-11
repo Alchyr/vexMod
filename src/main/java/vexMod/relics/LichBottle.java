@@ -61,12 +61,9 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
                 }
             }
         }
-        if (AbstractDungeon.player.masterDeck.size() > 0)
-        {
+        if (AbstractDungeon.player.masterDeck.size() > 0) {
             return 0;
-        }
-        else
-        {
+        } else {
             AbstractDungeon.player.isDead = true;
             AbstractDungeon.deathScreen = new DeathScreen(AbstractDungeon.getMonsters());
             return 0;

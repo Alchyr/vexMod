@@ -13,6 +13,7 @@ import com.megacrit.cardcrawl.powers.GainStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+
 import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
 import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -32,10 +33,8 @@ public class DrainingSword extends CustomRelic {
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if (card.type == AbstractCard.CardType.ATTACK)
-        {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 1));
         }
@@ -44,7 +43,7 @@ public class DrainingSword extends CustomRelic {
     @Override
     public void atBattleStart() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player,  -1),-1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -1), -1));
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 

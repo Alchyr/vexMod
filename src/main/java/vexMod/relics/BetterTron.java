@@ -12,8 +12,7 @@ import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class BetterTron
-        extends CustomRelic
-{
+        extends CustomRelic {
 
     // ID, images, text.
     public static final String ID = VexMod.makeID("BetterTron");
@@ -28,10 +27,8 @@ public class BetterTron
 
     // Upgrade unupgraded gained cards.
     @Override
-    public void onObtainCard(AbstractCard c)
-    {
-        if (this.counter >= 1 && c.canUpgrade() && !c.upgraded)
-        {
+    public void onObtainCard(AbstractCard c) {
+        if (this.counter >= 1 && c.canUpgrade() && !c.upgraded) {
             c.upgrade();
             this.counter -= 1;
             if (this.counter == 0) {

@@ -24,8 +24,7 @@ public class CardConverter extends CustomRelic {
     }
 
     @Override
-    public void onObtainCard(AbstractCard c)
-    {
+    public void onObtainCard(AbstractCard c) {
         AbstractDungeon.player.heal(3);
     }
 

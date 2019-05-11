@@ -6,16 +6,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.relics.RandomRelic;
 import vexMod.relics.RockLover;
 
-public class RockLoverPatch
-{
+public class RockLoverPatch {
     @SpirePatch(
-            clz=AbstractDungeon.class,
-            method="returnEndRandomRelicKey"
+            clz = AbstractDungeon.class,
+            method = "returnEndRandomRelicKey"
     )
-    public static class ReturnEndRandomRelicKey
-    {
-        public static String Postfix(String __result, AbstractRelic.RelicTier tier)
-        {
+    public static class ReturnEndRandomRelicKey {
+        public static String Postfix(String __result, AbstractRelic.RelicTier tier) {
             if (AbstractDungeon.player.hasRelic(RockLover.ID)) {
                 return RandomRelic.ID;
             } else {
@@ -23,14 +20,13 @@ public class RockLoverPatch
             }
         }
     }
+
     @SpirePatch(
-            clz=AbstractDungeon.class,
-            method="returnRandomRelicKey"
+            clz = AbstractDungeon.class,
+            method = "returnRandomRelicKey"
     )
-    public static class ReturnRandomRelicKey
-    {
-        public static String Postfix(String __result, AbstractRelic.RelicTier tier)
-        {
+    public static class ReturnRandomRelicKey {
+        public static String Postfix(String __result, AbstractRelic.RelicTier tier) {
             if (AbstractDungeon.player.hasRelic(RockLover.ID)) {
                 return RandomRelic.ID;
             } else {

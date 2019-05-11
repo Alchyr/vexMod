@@ -29,7 +29,7 @@ public class ScaledPoison
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber));
-        this.baseMagicNumber*=2;
+        this.baseMagicNumber *= 2;
     }
 
     @Override

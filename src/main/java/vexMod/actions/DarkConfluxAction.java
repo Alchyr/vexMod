@@ -50,8 +50,7 @@ public class DarkConfluxAction extends AbstractGameAction {
 
 
         if (effect > 0) {
-            for (int i=0; i<effect;i++)
-            {
+            for (int i = 0; i < effect; i++) {
                 AbstractDungeon.actionManager.addToBottom(new DarkImpulseAction());
             }
             if (!this.freeToPlayOnce) {

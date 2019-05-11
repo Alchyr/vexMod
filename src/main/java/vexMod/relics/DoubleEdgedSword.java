@@ -33,12 +33,12 @@ public class DoubleEdgedSword extends CustomRelic {
     @Override
     public void atBattleStart() {
         this.flash();
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player,  2),2));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2), 2));
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while(var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var1.next();
+        while (var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster) var1.next();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             m.addPower(new ThornsPower(m, 1));
         }

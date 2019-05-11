@@ -13,20 +13,16 @@ import vexMod.relics.ShortStop;
 import java.util.ArrayList;
 
 @SpirePatch(
-        clz=MapGenerator.class,
-        method="generateDungeon"
+        clz = MapGenerator.class,
+        method = "generateDungeon"
 )
-public class ShortStopPatch
-{
+public class ShortStopPatch {
     @SpirePrefixPatch
-    public static void Prefix(@ByRef int height[], int width, int pathDensity, Random rng)
-    {
-        if (AbstractDungeon.player.hasRelic(ShortStop.ID))
-        {
-            height[0]/=2;
-            if (height[0]<9)
-            {
-                height[0]=9;
+    public static void Prefix(@ByRef int height[], int width, int pathDensity, Random rng) {
+        if (AbstractDungeon.player.hasRelic(ShortStop.ID)) {
+            height[0] /= 2;
+            if (height[0] < 9) {
+                height[0] = 9;
             }
         }
     }

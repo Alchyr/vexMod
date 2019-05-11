@@ -135,8 +135,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
             return 0;// 93
         } else {
             int theGold = AbstractDungeon.player.gold;
-            if (theGold>127)
-            {
+            if (theGold > 127) {
                 theGold = 127;
             }
             return AbstractDungeon.miscRng.random(100, theGold);// 95 96 98

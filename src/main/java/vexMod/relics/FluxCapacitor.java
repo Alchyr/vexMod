@@ -42,12 +42,9 @@ public class FluxCapacitor extends CustomRelic {
     @Override
     public void onVictory() {
         this.flash();// 25
-        if (TwitchConfig.readConfig().get().isEnabled())
-        {
+        if (TwitchConfig.readConfig().get().isEnabled()) {
             CardCrawlGame.playtime -= (30.0F + TwitchConfig.readConfig().get().getTimer());
-        }
-        else
-        {
+        } else {
             CardCrawlGame.playtime -= 30.0F;
         }
     }// 29

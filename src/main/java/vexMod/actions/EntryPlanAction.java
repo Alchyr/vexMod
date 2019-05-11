@@ -28,11 +28,9 @@ public class EntryPlanAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.1F && this.target != null) {
-            if (AbstractDungeon.player.drawPile.isEmpty())
-            {
+            if (AbstractDungeon.player.drawPile.isEmpty()) {
                 this.isDone = true;
-            } else
-            {
+            } else {
                 AbstractCard card = AbstractDungeon.player.drawPile.getTopCard();
                 if (card.type == AbstractCard.CardType.ATTACK) {
                     AbstractDungeon.actionManager.addToBottom(new DamageAction(target, info, AttackEffect.SLASH_DIAGONAL));

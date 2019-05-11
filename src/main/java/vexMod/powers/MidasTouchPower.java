@@ -60,12 +60,10 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && !target.hasPower(MinionPower.POWER_ID) && !target.id.equals(Darkling.ID) && !target.id.equals(Centurion.ID) && !target.id.equals(Healer.ID)) {
             this.flash();
             int goldGain = damageAmount;
-            if (target.hasPower(IntangiblePower.POWER_ID))
-            {
+            if (target.hasPower(IntangiblePower.POWER_ID)) {
                 goldGain = 1;
             }
-            if (target.currentHealth < damageAmount)
-            {
+            if (target.currentHealth < damageAmount) {
                 goldGain = target.currentHealth;
             }
             AbstractDungeon.player.gainGold(goldGain);
@@ -74,8 +72,7 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
                     AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, target.hb.cX, target.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
                 }
             }
-            if (MathUtils.randomBoolean(0.05f))
-            {
+            if (MathUtils.randomBoolean(0.05f)) {
                 playSfx();
                 AbstractDungeon.actionManager.addToBottom(new TalkAction(true, getTaunt(), 0.0F, 2.0F));
             }

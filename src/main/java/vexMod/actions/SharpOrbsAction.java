@@ -45,7 +45,7 @@ public class SharpOrbsAction extends AbstractGameAction {
                 this.target.damage(this.info);
                 if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     --this.numTimes;
-                    AbstractDungeon.actionManager.addToTop(new SharpOrbsAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
+                    AbstractDungeon.actionManager.addToTop(new SharpOrbsAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
                 }
 
                 AbstractDungeon.actionManager.addToTop(new WaitAction(0.05F));

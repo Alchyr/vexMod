@@ -62,9 +62,7 @@ public class UltimateCard extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (p.hasRelic("Blue Candle")) {
             this.useBlueCandle(p);
-        }
-        else
-        {
+        } else {
 
         }
     }

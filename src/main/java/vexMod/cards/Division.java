@@ -55,8 +55,7 @@ public class Division extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractCard c = AbstractDungeon.returnTrulyRandomColorlessCardInCombat(AbstractDungeon.cardRandomRng).makeCopy();
-        if (upgraded)
-        {
+        if (upgraded) {
             c.upgrade();
         }
         AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(c));

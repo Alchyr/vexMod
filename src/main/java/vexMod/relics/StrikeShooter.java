@@ -25,7 +25,7 @@ public class StrikeShooter extends CustomRelic {
 
     public StrikeShooter() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
-        this.counter=-1;
+        this.counter = -1;
     }
 
     @Override
@@ -36,8 +36,7 @@ public class StrikeShooter extends CustomRelic {
     @Override
     public void atTurnStart() {
         ++this.counter;
-        if (this.counter == 3)
-        {
+        if (this.counter == 3) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractCard funCard = new Strike_Red();

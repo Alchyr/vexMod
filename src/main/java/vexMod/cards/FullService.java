@@ -85,8 +85,8 @@ public class FullService extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber, AbstractGameAction.AttackEffect.POISON));
         AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.defaultSecondMagicNumber));
         AbstractDungeon.actionManager.addToBottom(new HealAction(p, p, this.defaultSecondMagicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p,this.defaultSecondMagicNumber),this.defaultSecondMagicNumber));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, 1),1));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DrawCardNextTurnPower(p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new EnergizedPower(p, 1), 1));
         AbstractDungeon.actionManager.addToBottom(new ArmamentsAction(false));
     }
 

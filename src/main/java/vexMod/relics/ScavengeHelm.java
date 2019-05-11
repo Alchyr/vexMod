@@ -29,8 +29,7 @@ public class ScavengeHelm extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart()
-    {
+    public void atBattleStart() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MalleablePower(AbstractDungeon.player, 4), 4));
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));

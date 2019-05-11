@@ -90,8 +90,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(RockLover.ID));
                         themRelics.add(RelicLibrary.getRelic(GildedClover.ID));
                         themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
-                        if (AbstractDungeon.cardRandomRng.random(2) == 0)
-                        {
+                        if (AbstractDungeon.cardRandomRng.random(2) == 0) {
                             themRelics.add(RelicLibrary.getRelic(PuzzleBox.ID));
                         }
 

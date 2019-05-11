@@ -8,16 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import vexMod.cards.GhostlyBlitz;
 
-public class GhostBlitzAction extends AbstractGameAction
-{
-    public GhostBlitzAction()
-    {
+public class GhostBlitzAction extends AbstractGameAction {
+    public GhostBlitzAction() {
         duration = Settings.ACTION_DUR_MED;
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         if (duration == Settings.ACTION_DUR_MED) {
             for (AbstractCard c : AbstractDungeon.player.exhaustPile.getAttacks().group) {
 

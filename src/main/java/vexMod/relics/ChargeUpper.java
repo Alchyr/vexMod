@@ -33,14 +33,12 @@ public class ChargeUpper extends CustomRelic {
     }
 
     @Override
-    public int onPlayerGainedBlock(float blockAmount)
-    {
+    public int onPlayerGainedBlock(float blockAmount) {
         this.flash();
         this.counter += blockAmount;
-        if (this.counter>=30)
-        {
+        if (this.counter >= 30) {
             this.counter = 0;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1),1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
         return MathUtils.floor(blockAmount);

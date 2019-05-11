@@ -30,8 +30,7 @@ public class MadnessLens extends CustomRelic {
     }
 
     @Override
-    public void atBattleStart()
-    {
+    public void atBattleStart() {
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         AbstractDungeon.actionManager.addToBottom(new MadnessAction());
     }

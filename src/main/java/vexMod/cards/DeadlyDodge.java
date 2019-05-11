@@ -59,12 +59,11 @@ public class DeadlyDodge extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m == null || m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.defaultSecondMagicNumber), this.defaultSecondMagicNumber, AbstractGameAction.AttackEffect.POISON));
+        } else {
+            this.exhaust = true;
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber), this.magicNumber));
         }
-        else {
-            this.exhaust=true;
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new IntangiblePlayerPower(p, this.magicNumber ), this.magicNumber));
-        }
-  }
+    }
 
 
     // Upgraded stats.

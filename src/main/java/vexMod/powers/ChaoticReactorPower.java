@@ -45,8 +45,7 @@ public class ChaoticReactorPower extends AbstractPower implements CloneablePower
 
     @Override
     public void atStartOfTurn() { // At the start of your turn
-        for (int i=0; i<amount; i++)
-        {
+        for (int i = 0; i < amount; i++) {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
         }
     }

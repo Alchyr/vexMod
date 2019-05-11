@@ -1,72 +1,11 @@
 {
-  "vexMod:BaseMonster": {
-    "NAME": "Base Monster",
-    "MOVES": [
-      "Bellow"
-    ],
-    "DIALOG": [
-      "rawr XD uWu NL whats this?"
-    ]
-  },
-  "vexMod:EvilCube": {
-    "NAME": "Evil Cube",
-    "DIALOG": [
-      "DESTROY? NL DESTROY? NL DESTROY...?"
-    ]
-  },
-  "vexMod:Octiver": {
-    "NAME": "Octiver",
-    "MOVES": [
-      "Ink Spray"
-    ],
-    "DIALOG": [
-      "~bloorp~ NL ~bloorp~"
-    ]
-  },
-  "vexMod:Gorgon": {
-    "NAME": "Gorgon",
-    "MOVES": [
-      "Stone Gaze"
-    ],
-    "DIALOG": [
-      "You ... rock!"
-    ]
-  },
   "vexMod:InfectionBeast": {
     "NAME": "Infection Beast",
     "MOVES": [
       "Deep Illness"
     ],
     "DIALOG": [
-      "The big debuff ... NL is ~permanent~ ~.~ ~.~ ~.~"
-    ]
-  },
-  "vexMod:CardEater": {
-    "NAME": "Card Collector",
-    "MOVES": [
-      "Sickening Shuffle"
-    ],
-    "DIALOG": [
-      "Want ... NL to trade ... NL cards?"
-    ]
-  },
-  "vexMod:SickeningThing": {
-    "NAME": "Sickening Thing",
-    "MOVES": [
-      "Putrid Pulse"
-    ],
-    "DIALOG": [
       "Feeling ... NL ~i~ ~l~ ~l~ ~?~"
-    ]
-  },
-  "vexMod:CurseLord": {
-    "NAME": "Curse Lord",
-    "MOVES": [
-      "Curse Infection"
-    ],
-    "DIALOG": [
-      "~My~ ~curses~ ~stay~ ~forever~ ~.~ ~.~ ~.~",
-      "~Deadly~ ~permanent~ ~curse~ ~incoming~ ~!~"
     ]
   },
   "vexMod:EvilSsserpent": {
@@ -107,7 +46,7 @@
     ]
   },
   "vexMod:LichLord": {
-    "NAME": "Undercity Lichlady",
+    "NAME": "Undercity Lichlord",
     "MOVES": [
       "Dread Drain"
     ],
@@ -132,6 +71,24 @@
     "DIALOG": [
       "You're a fool to challenge NL the Spire's greatest thief!",
       "Goodbye, traveler, NL and thank you for the loot!"
+    ]
+  },
+  "vexMod:Combatant": {
+    "NAME": "Mechanical Combatant",
+    "MOVES": [
+      "Robotic Rush"
+    ],
+    "DIALOG": [
+      "ENGAGING COMBAT FUNCTIONS!"
+    ]
+  },
+  "vexMod:BombBelcher": {
+    "NAME": "Bomb Belcher",
+    "MOVES": [
+      "Bomb Belch"
+    ],
+    "DIALOG": [
+      "~burp~"
     ]
   }
 }

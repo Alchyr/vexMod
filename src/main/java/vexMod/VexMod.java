@@ -28,6 +28,7 @@ import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -242,9 +243,12 @@ public class VexMod implements
 
         // =============== MONSTERS ===============
 
+        BaseMod.addMonster(Combatant.ID, "Mechanical Combatant", () -> new Combatant(-50.0F, 100.0F));
+        BaseMod.addMonster(InfectionBeast.ID, "Infection Beast", () -> new InfectionBeast(-100.0F, 0.0F));
+        BaseMod.addMonster(BombBelcher.ID, "Bomb Belcher", () -> new BombBelcher(0.0F, 100.0F));
         BaseMod.addMonster(EvilSsserpent.ID, "Ssserpent", () -> new EvilSsserpent(0.0F, 100.0F));
         BaseMod.addMonster(GildedGorgon.ID, "Gilded Gorgon", () -> new GildedGorgon(0.0F, 100.0F));
-        BaseMod.addMonster(Grifter.ID, "Grifter", () -> new Grifter (-175.0F, 0.0F));
+        BaseMod.addMonster(Grifter.ID, "Grifter", () -> new Grifter(-175.0F, 0.0F));
         BaseMod.addMonster(BeyondKing.ID, "King of the Beyond", () -> new BeyondKing(0.0F, 100.0F));
         BaseMod.addMonster(DaggerThrower.ID, "Dagger Pharaoh", () -> new DaggerThrower(0.0F, 100.0F));
         BaseMod.addMonster(LichLord.ID, () -> new MonsterGroup(new AbstractMonster[]{
@@ -261,6 +265,9 @@ public class VexMod implements
         }
         BaseMod.addBoss(Exordium.ID, DaggerThrower.ID, makeEventPath("daggerThrower.png"), makeEventPath("daggerThrowerOutline.png"));
         BaseMod.addBoss(TheCity.ID, LichLord.ID, makeEventPath("lichLord.png"), makeEventPath("lichLordOutline.png"));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(Combatant.ID, 1.0F));
+        BaseMod.addEliteEncounter(TheCity.ID, new MonsterInfo(InfectionBeast.ID, 1.0F));
+        BaseMod.addEliteEncounter(TheBeyond.ID, new MonsterInfo(BombBelcher.ID, 1.0F));
 
         // ============== /ENCOUNTERS/ ============
 

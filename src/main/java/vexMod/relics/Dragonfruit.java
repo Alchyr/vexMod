@@ -26,8 +26,7 @@ public class Dragonfruit extends CustomRelic {
     }
 
     @Override
-    public void onEquip()
-    {
+    public void onEquip() {
         AbstractDungeon.player.increaseMaxHp(5, true);
     }
 

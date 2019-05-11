@@ -57,15 +57,12 @@ public class Elimination extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        if(!upgraded)
-        {
+        if (!upgraded) {
             int count = AbstractDungeon.player.hand.size();
-            for(int i = 0; i < count; ++i) {
+            for (int i = 0; i < count; ++i) {
                 AbstractDungeon.actionManager.addToTop(new ExhaustAction(AbstractDungeon.player, AbstractDungeon.player, 1, true, true));
             }
-        }
-        else
-        {
+        } else {
             AbstractDungeon.actionManager.addToBottom(new ExhaustAction(p, p, AbstractDungeon.player.hand.size(), false, true, true));
         }
     }

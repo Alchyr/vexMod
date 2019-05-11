@@ -71,7 +71,6 @@ public class Deathsprout extends AbstractDefaultCard {
     }
 
 
-
     // Upgraded stats.
     @Override
     public void upgrade() {

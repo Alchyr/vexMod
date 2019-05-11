@@ -26,8 +26,7 @@ public class ProtectorBot extends CustomRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= 2)
-        {
+        if (AbstractDungeon.actionManager.cardsPlayedThisTurn.size() <= 2) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));

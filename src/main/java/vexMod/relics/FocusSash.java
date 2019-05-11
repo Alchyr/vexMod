@@ -27,11 +27,10 @@ public class FocusSash extends CustomRelic implements BetterOnLoseHpRelic {
 
     @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
-        if (damageAmount >= AbstractDungeon.player.currentHealth && AbstractDungeon.player.currentHealth >= 10)
-        {
+        if (damageAmount >= AbstractDungeon.player.currentHealth && AbstractDungeon.player.currentHealth >= 10) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            return (AbstractDungeon.player.currentHealth-1);
+            return (AbstractDungeon.player.currentHealth - 1);
         }
         return damageAmount;
     }

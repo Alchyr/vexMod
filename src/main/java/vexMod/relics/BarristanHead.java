@@ -27,8 +27,7 @@ public class BarristanHead extends CustomRelic {
 
     @Override
     public void atTurnStart() {
-        if (AbstractDungeon.player.currentHealth <= 30)
-        {
+        if (AbstractDungeon.player.currentHealth <= 30) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));

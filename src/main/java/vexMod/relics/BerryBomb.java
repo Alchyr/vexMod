@@ -41,19 +41,17 @@ public class BerryBomb extends CustomRelic {
     }
 
     public void atBattleStart() {
-        this.counter -=1;
+        this.counter -= 1;
         description = getUpdatedDescription();
         tips.clear();
         tips.add(new PowerTip(name, description));
         initializeTips();
     }
 
-    public void atTurnStart()
-    {
-        if (this.counter == 0)
-        {
+    public void atTurnStart() {
+        if (this.counter == 0) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature)null, DamageInfo.createDamageMatrix(100, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(100, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             loseRelic = true;
         }
@@ -67,8 +65,7 @@ public class BerryBomb extends CustomRelic {
     }
 
     @Override
-    public void onEquip()
-    {
+    public void onEquip() {
         AbstractDungeon.player.increaseMaxHp(6, true);
     }
 
@@ -80,7 +77,7 @@ public class BerryBomb extends CustomRelic {
     // Description
     @Override
     public String getUpdatedDescription() {
-        return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS [1];
+        return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];
     }
 
 }

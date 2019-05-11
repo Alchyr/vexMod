@@ -190,11 +190,9 @@ public class WeekCard extends AbstractDefaultCard {
     }
 
     @Override
-    public void update()
-    {
+    public void update() {
         super.update();
-        if (AbstractDungeon.player!=null)
-        {
+        if (AbstractDungeon.player != null) {
             applyPowers();
         }
     }

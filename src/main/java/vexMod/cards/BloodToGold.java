@@ -59,9 +59,8 @@ public class BloodToGold extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, 3));
         p.gainGold(this.magicNumber);
-        if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID))
-        {
-            for(int i = 0; i < this.magicNumber; ++i) {
+        if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
+            for (int i = 0; i < this.magicNumber; ++i) {
                 AbstractDungeon.effectList.add(new GainPennyEffect(p, p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY, true));
             }
         }

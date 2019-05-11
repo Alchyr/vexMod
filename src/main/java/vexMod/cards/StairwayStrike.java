@@ -60,7 +60,7 @@ public class StairwayStrike extends AbstractDefaultCard {
     @Override
     public void applyPowers() {
         this.baseDamage = AbstractDungeon.floorNum;
-        this.costForTurn = AbstractDungeon.actNum-1;
+        this.costForTurn = AbstractDungeon.actNum - 1;
 
         super.applyPowers();
         if (!this.upgraded) {

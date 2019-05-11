@@ -29,8 +29,7 @@ public class NotEnergy extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart()
-    {
+    public void atTurnStart() {
         AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, getEnergyTaunt(), 0.0F, 3.5F));
     }
 

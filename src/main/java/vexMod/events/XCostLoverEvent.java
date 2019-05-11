@@ -53,15 +53,14 @@ public class XCostLoverEvent extends AbstractImageEvent {
         imageEventText.setDialogOption(OPTIONS[3]); // Leave
     }
 
-    AbstractCard getXCostCard()
-    {
+    AbstractCard getXCostCard() {
         ArrayList<AbstractCard> allCards = new ArrayList<>();
-        for(AbstractCard card : CardLibrary.getAllCards()) {
-            if(card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.cost==-1) {
+        for (AbstractCard card : CardLibrary.getAllCards()) {
+            if (card.rarity != AbstractCard.CardRarity.BASIC && card.rarity != AbstractCard.CardRarity.SPECIAL && card.cost == -1) {
                 allCards.add(card);
             }
         }
-        return allCards.get(AbstractDungeon.cardRandomRng.random(allCards.size() -1)).makeCopy();
+        return allCards.get(AbstractDungeon.cardRandomRng.random(allCards.size() - 1)).makeCopy();
     }
 
     @Override
@@ -70,7 +69,7 @@ public class XCostLoverEvent extends AbstractImageEvent {
         if (this.pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
             AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
             AbstractDungeon.player.masterDeck.removeCard(c);
-            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(getXCostCard().makeCopy(), (float)(Settings.WIDTH / 2), (float)(Settings.HEIGHT / 2)));// 73
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(getXCostCard().makeCopy(), (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));// 73
             AbstractDungeon.gridSelectScreen.selectedCards.clear();// 50
             this.pickCard = false;
         }
@@ -82,7 +81,7 @@ public class XCostLoverEvent extends AbstractImageEvent {
             case 0: // While you are on screen number 0 (The starting screen)
                 switch (i) {
                     case 0:
-                        int hpLoss = (int)((float)AbstractDungeon.player.maxHealth * 0.75F);// 67
+                        int hpLoss = (int) ((float) AbstractDungeon.player.maxHealth * 0.75F);// 67
                         int diff = AbstractDungeon.player.maxHealth - hpLoss;// 68
                         AbstractDungeon.player.maxHealth = hpLoss;// 69
                         if (AbstractDungeon.player.maxHealth <= 0) {// 70

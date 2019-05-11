@@ -102,8 +102,7 @@ public class LichLord extends AbstractMonster {
         AbstractDungeon.scene.fadeOutAmbiance();// 110
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");// 111
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new LichPhylacPower(this, this, 1), 1));
-        if (AbstractDungeon.ascensionLevel>=19)
-        {
+        if (AbstractDungeon.ascensionLevel >= 19) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, 3), 3));
         }
     }
@@ -154,31 +153,27 @@ public class LichLord extends AbstractMonster {
             wahoo.add(1);
             wahoo.add(2);
             wahoo.add(3);
-            if (this.lastMove((byte)1))
-            {
+            if (this.lastMove((byte) 1)) {
                 wahoo.remove(0);
             }
-            if (this.lastMove((byte)2))
-            {
+            if (this.lastMove((byte) 2)) {
                 wahoo.remove(1);
             }
-            if (this.lastMove((byte)3))
-            {
+            if (this.lastMove((byte) 3)) {
                 wahoo.remove(2);
             }
-            if (this.lastMove((byte)4))
-            {
+            if (this.lastMove((byte) 4)) {
                 wahoo.remove(3);
             }
-            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size()-1));
+            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
             if (waaa == 0) {
-                this.setMove((byte) 1, Intent.ATTACK_BUFF, ((DamageInfo)this.damage.get(0)).base);
+                this.setMove((byte) 1, Intent.ATTACK_BUFF, ((DamageInfo) this.damage.get(0)).base);
             } else if (waaa == 1) {
-                this.setMove((byte) 2, Intent.ATTACK_BUFF, ((DamageInfo)this.damage.get(1)).base);
+                this.setMove((byte) 2, Intent.ATTACK_BUFF, ((DamageInfo) this.damage.get(1)).base);
             } else if (waaa == 2) {
                 this.setMove((byte) 3, Intent.STRONG_DEBUFF);
             } else if (waaa == 3) {
-                this.setMove((byte) 4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
+                this.setMove((byte) 4, Intent.ATTACK_DEBUFF, ((DamageInfo) this.damage.get(2)).base);
             }
         }
     }

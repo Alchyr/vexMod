@@ -28,8 +28,7 @@ public class GoldBooster extends CustomRelic {
     }
 
     @Override
-    public void onObtainCard(AbstractCard c)
-    {
+    public void onObtainCard(AbstractCard c) {
         this.flash();
         CardCrawlGame.sound.play("GOLD_GAIN");
         AbstractDungeon.player.gainGold(7);

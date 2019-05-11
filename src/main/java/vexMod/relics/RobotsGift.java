@@ -25,7 +25,7 @@ public class RobotsGift extends CustomRelic {
 
     @Override
     public void atPreBattle() {
-        AbstractDungeon.player.increaseMaxOrbSlots(2,false);
+        AbstractDungeon.player.increaseMaxOrbSlots(2, false);
     }
 
     // Description

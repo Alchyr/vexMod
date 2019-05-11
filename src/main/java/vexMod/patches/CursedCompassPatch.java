@@ -9,17 +9,14 @@ import com.megacrit.cardcrawl.random.Random;
 import vexMod.relics.CursedCompass;
 
 @SpirePatch(
-        clz=MapGenerator.class,
-        method="generateDungeon"
+        clz = MapGenerator.class,
+        method = "generateDungeon"
 )
-public class CursedCompassPatch
-{
+public class CursedCompassPatch {
     @SpirePrefixPatch
-    public static void Prefix(int height, int width, @ByRef int[] pathDensity, Random rng)
-    {
-        if (AbstractDungeon.player.hasRelic(CursedCompass.ID))
-        {
-            pathDensity[0]=1;
+    public static void Prefix(int height, int width, @ByRef int[] pathDensity, Random rng) {
+        if (AbstractDungeon.player.hasRelic(CursedCompass.ID)) {
+            pathDensity[0] = 1;
         }
     }
 }

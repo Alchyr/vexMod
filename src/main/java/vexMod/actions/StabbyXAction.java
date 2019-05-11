@@ -48,7 +48,7 @@ public class StabbyXAction extends AbstractGameAction {
         }
 
         if (effect > 0) {// 38
-            for(int i = 0; i < effect; ++i) {// 39
+            for (int i = 0; i < effect; ++i) {// 39
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this.p, this.p, this.block));// 40
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(this.m, new DamageInfo(this.p, this.damage, this.damageTypeForTurn), AttackEffect.BLUNT_LIGHT));// 53
             }

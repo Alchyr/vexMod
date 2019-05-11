@@ -16,19 +16,16 @@ import static com.evacipated.cardcrawl.modthespire.lib.SpireReturn.Return;
 import static com.megacrit.cardcrawl.cards.AbstractCard.CardRarity.RARE;
 
 @SpirePatch(
-        clz=AbstractDungeon.class,
-        method="rollRarity",
+        clz = AbstractDungeon.class,
+        method = "rollRarity",
         paramtypez = {
                 Random.class
         }
 )
 
-public class GildedCloverPatch
-{
-    public static SpireReturn<AbstractCard.CardRarity> Prefix(Random rng)
-    {
-        if (AbstractDungeon.player.hasRelic(GildedClover.ID))
-        {
+public class GildedCloverPatch {
+    public static SpireReturn<AbstractCard.CardRarity> Prefix(Random rng) {
+        if (AbstractDungeon.player.hasRelic(GildedClover.ID)) {
             return SpireReturn.Return(AbstractCard.CardRarity.RARE);
         }
         return SpireReturn.Continue();

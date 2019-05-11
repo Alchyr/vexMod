@@ -57,8 +57,7 @@ public class ReflexChannel extends AbstractDefaultCard {
         } else {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
         }
-        if (upgraded)
-        {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
         }
     }

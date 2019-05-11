@@ -35,7 +35,7 @@ public class SalvageTools extends CustomRelic {
         ArrayList<AbstractCard> groupCopy = new ArrayList();
         Iterator var4 = AbstractDungeon.player.hand.group.iterator();
 
-        while(true) {
+        while (true) {
             while (var4.hasNext()) {
                 AbstractCard c = (AbstractCard) var4.next();
                 if (c.cost > 0 && c.costForTurn > 0 && !c.freeToPlayOnce) {
@@ -53,8 +53,7 @@ public class SalvageTools extends CustomRelic {
             }
 
             AbstractCard c = null;
-            if (!groupCopy.isEmpty())
-            {
+            if (!groupCopy.isEmpty()) {
                 Iterator var9 = groupCopy.iterator();
                 while (var9.hasNext()) {
                     AbstractCard cc = (AbstractCard) var9.next();

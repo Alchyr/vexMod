@@ -34,19 +34,15 @@ public class KeyChain extends CustomRelic {
     }
 
     @Override
-    public void atTurnStart()
-    {
-        if (activated==false)
-        {
+    public void atTurnStart() {
+        if (activated == false) {
             this.beginLongPulse();
         }
     }
 
     @Override
-    public void onUseCard(AbstractCard card, UseCardAction action)
-    {
-        if (card.type == AbstractCard.CardType.ATTACK && activated == false && action.target!=null)
-        {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type == AbstractCard.CardType.ATTACK && activated == false && action.target != null) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(action.target, AbstractDungeon.player, new StrengthPower(action.target, -card.damage), -card.damage));
             if (action.target != null && !action.target.hasPower("Artifact")) {
@@ -57,7 +53,6 @@ public class KeyChain extends CustomRelic {
             activated = true;
         }
     }
-
 
 
     // Description

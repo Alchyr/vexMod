@@ -42,17 +42,16 @@ public class MindDevourer extends CustomRelic {
     }
 
     @Override
-    public void onVictory()
-    {
+    public void onVictory() {
         ArrayList<AbstractCard> removablecards = new ArrayList();
         Iterator plop = AbstractDungeon.player.masterDeck.group.iterator();
-        while(plop.hasNext()) {
-            AbstractCard c = (AbstractCard)plop.next();
+        while (plop.hasNext()) {
+            AbstractCard c = (AbstractCard) plop.next();
             removablecards.add(c);
         }
         Collections.shuffle(removablecards, new Random(AbstractDungeon.miscRng.randomLong()));
-        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard)removablecards.get(0), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float)Settings.HEIGHT / 2.0F));
-        AbstractCard card = (AbstractCard)removablecards.get(0);
+        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard) removablecards.get(0), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+        AbstractCard card = (AbstractCard) removablecards.get(0);
         AbstractDungeon.player.masterDeck.removeCard(card);
     }
 

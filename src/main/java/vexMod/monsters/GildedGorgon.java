@@ -78,7 +78,7 @@ public class GildedGorgon extends AbstractMonster {
 
     public void usePreBattleAction() {
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StoneSkinPower(this, this, 3),3));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StoneSkinPower(this, this, 3), 3));
 
     }
 
@@ -110,9 +110,7 @@ public class GildedGorgon extends AbstractMonster {
         if (this.firstTurn) {
             this.setMove((byte) 3, Intent.STRONG_DEBUFF);
             this.firstTurn = false;
-        }
-        else
-        {
+        } else {
             if ((AbstractDungeon.aiRng.randomBoolean(0.6F))) {
                 this.setMove((byte) 1, Intent.ATTACK_DEBUFF, ((DamageInfo) this.damage.get(0)).base); // Sets the move to regular attack if the last move wasn't regular attack.
             } else {

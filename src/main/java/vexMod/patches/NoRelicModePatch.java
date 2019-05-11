@@ -17,8 +17,7 @@ public class NoRelicModePatch {
     public static class norm_obtain {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(AbstractRelic __instance) {
-            if (CardCrawlGame.trial!=null)
-            {
+            if (CardCrawlGame.trial != null) {
                 if (AbstractDungeon.player != null && CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID) && AbstractDungeon.floorNum > 1) {
                     __instance.isDone = true;
                     __instance.isObtained = false;
@@ -38,8 +37,7 @@ public class NoRelicModePatch {
     public static class norm_instantObtain {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(AbstractRelic __instance) {
-            if (CardCrawlGame.trial!=null)
-            {
+            if (CardCrawlGame.trial != null) {
                 if (AbstractDungeon.player != null && CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID) && AbstractDungeon.floorNum > 1) {
                     __instance.isDone = true;
                     __instance.isObtained = false;
@@ -63,8 +61,7 @@ public class NoRelicModePatch {
     public static class param_instantObtain {
         @SpirePrefixPatch
         public static SpireReturn<?> Prefix(AbstractRelic __instance, AbstractPlayer p, int slot, boolean callOnEquip) {
-            if (CardCrawlGame.trial!=null)
-            {
+            if (CardCrawlGame.trial != null) {
                 if (AbstractDungeon.player != null && CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID) && AbstractDungeon.floorNum > 1) {
                     __instance.isDone = true;
                     __instance.isObtained = false;

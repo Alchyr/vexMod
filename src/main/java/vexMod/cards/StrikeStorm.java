@@ -47,7 +47,7 @@ public class StrikeStorm extends CustomCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
 
         magicNumber = baseMagicNumber = MAGIC;
-        this.isEthereal=true;
+        this.isEthereal = true;
         this.tags.add(CardTags.STRIKE);
 
     }
@@ -64,7 +64,7 @@ public class StrikeStorm extends CustomCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            this.isEthereal=false;
+            this.isEthereal = false;
             this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }

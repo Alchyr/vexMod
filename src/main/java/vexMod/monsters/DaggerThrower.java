@@ -224,7 +224,7 @@ public class DaggerThrower extends AbstractMonster {
             }
             int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
             if (waaa == 0) {
-                this.setMove((byte) 1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base, 2, true);
+                this.setMove((byte) 1, Intent.ATTACK, ((DamageInfo) this.damage.get(0)).base, 2, true);
             } else if (waaa == 1) {
                 this.setMove((byte) 2, Intent.BUFF);
             } else if (waaa == 2) {
@@ -247,13 +247,13 @@ public class DaggerThrower extends AbstractMonster {
             }
             int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
             if (waaa == 0) {
-                this.setMove((byte) 4, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
+                this.setMove((byte) 4, Intent.ATTACK, ((DamageInfo) this.damage.get(1)).base, 2, true);
             } else if (waaa == 1) {
                 this.setMove((byte) 5, Intent.BUFF);
             } else if (waaa == 2) {
                 this.setMove((byte) 6, Intent.DEBUFF);
             }
-            if (dagToggleToggle || AbstractDungeon.ascensionLevel>=19) {
+            if (dagToggleToggle || AbstractDungeon.ascensionLevel >= 19) {
                 dagToggle = true;
                 dagToggleToggle = false;
             } else {

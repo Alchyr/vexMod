@@ -63,11 +63,9 @@ public class Fear extends AbstractDefaultCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
             this.useBlueCandle(p);
-        }
-        else if (!this.dontTriggerOnUseCard) {
+        } else if (!this.dontTriggerOnUseCard) {
 
-        }
-        else {
+        } else {
             this.exhaust = true;
             AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new VulnerablePower(AbstractDungeon.player, 1, true), 1));
         }

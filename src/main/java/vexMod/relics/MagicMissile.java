@@ -33,9 +33,8 @@ public class MagicMissile extends CustomRelic {
     public void onShuffle() {
         this.flash();// 22
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 23
-        for (int i = 0; i < 3; i++)
-        {
-            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(2,5), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));// 32
+        for (int i = 0; i < 3; i++) {
+            AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(2, 5), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));// 32
         }
     }// 26
 

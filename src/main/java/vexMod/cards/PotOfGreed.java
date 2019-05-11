@@ -51,14 +51,11 @@ public class PotOfGreed extends AbstractDefaultCard {
 
     // Actions the card should do.
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m)
-    {
-        if (upgraded)
-        {
+    public void use(AbstractPlayer p, AbstractMonster m) {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new SeekAction(1));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 1));
-        }
-        else {
+        } else {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
         }
     }

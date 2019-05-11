@@ -32,15 +32,15 @@ public class DeviousBlockAction extends AbstractGameAction {
             ArrayList<AbstractMonster> validMonsters = new ArrayList();
             Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
 
-            while(var2.hasNext()) {
-                AbstractMonster m = (AbstractMonster)var2.next();
+            while (var2.hasNext()) {
+                AbstractMonster m = (AbstractMonster) var2.next();
                 if (m != this.source && m.intent != Intent.ESCAPE && !m.isDying) {
                     validMonsters.add(m);
                 }
             }
 
             if (!validMonsters.isEmpty()) {
-                this.target = (AbstractCreature)validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
+                this.target = (AbstractCreature) validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
             } else {
                 this.target = this.source;
             }

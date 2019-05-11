@@ -24,10 +24,8 @@ public class BrokenBowl extends CustomRelic {
 
     // Upgrade unupgraded gained cards at the cost of Max HP.
     @Override
-    public void onObtainCard(AbstractCard c)
-    {
-        if (c.canUpgrade() && !c.upgraded)
-        {
+    public void onObtainCard(AbstractCard c) {
+        if (c.canUpgrade() && !c.upgraded) {
             AbstractDungeon.player.decreaseMaxHealth(2);
             c.upgrade();
         }

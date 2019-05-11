@@ -55,12 +55,10 @@ public class Overload extends AbstractDefaultCard {
     // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (int i=0; i < AbstractDungeon.player.maxOrbs; i++)
-        {
+        for (int i = 0; i < AbstractDungeon.player.maxOrbs; i++) {
             AbstractDungeon.actionManager.addToBottom(new ChannelAction(AbstractOrb.getRandomOrb(true)));
         }
-        if (upgraded)
-        {
+        if (upgraded) {
             AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(this.magicNumber));
         }
     }

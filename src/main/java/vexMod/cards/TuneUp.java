@@ -59,8 +59,7 @@ public class TuneUp extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
-        if (AbstractDungeon.player.hand.getAttacks().size() > 0)
-        {
+        if (AbstractDungeon.player.hand.getAttacks().size() > 0) {
             AbstractCard c = AbstractDungeon.player.hand.getAttacks().getRandomCard(false);
             c.baseDamage += magicNumber;
             c.superFlash();

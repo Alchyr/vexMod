@@ -28,14 +28,14 @@ public class ThoughtMold extends CustomRelic {
     }
 
     @Override
-    public int onPlayerGainedBlock(float blockAmount)
-    {
+    public int onPlayerGainedBlock(float blockAmount) {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1),1));
+        AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 1), 1));
         AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 1), 1));
         return MathUtils.floor(blockAmount);
     }
+
     // Description
     @Override
     public String getUpdatedDescription() {

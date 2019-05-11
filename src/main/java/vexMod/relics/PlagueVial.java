@@ -32,8 +32,7 @@ public class PlagueVial extends CustomRelic {
     // Gain 1 Strength on on equip.
     @Override
     public void atBattleStart() {
-        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss))
-        {
+        if (!(AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss)) {
             this.flash();
             Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();
             while (var1.hasNext()) {

@@ -24,6 +24,7 @@ public class CursedEPower extends AbstractPower implements CloneablePowerInterfa
     // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("vexModResources/images/powers/CursedE_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("vexModResources/images/powers/CursedE_32.png");
+
     public CursedEPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
         ID = POWER_ID;

@@ -116,9 +116,9 @@ public class VoiceBox extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom room) {
         if (room instanceof ShopRoom) {
-            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX,AbstractDungeon.player.dialogY,  getShopTaunt(), true));
+            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, getShopTaunt(), true));
         } else if (room instanceof TreasureRoom || room instanceof TreasureRoomBoss) {
-            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX,AbstractDungeon.player.dialogY,  getChestTaunt(room), true));
+            AbstractDungeon.effectList.add(new SpeechBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, getChestTaunt(room), true));
         }
 
     }
@@ -292,8 +292,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[116]);
             taunts.add(DESCRIPTIONS[117]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[195]);
             taunts.add(DESCRIPTIONS[196]);
         }
@@ -326,8 +325,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[101]);
             taunts.add(DESCRIPTIONS[102]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[193]);
             taunts.add(DESCRIPTIONS[194]);
         }
@@ -368,8 +366,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[181]);
             taunts.add(DESCRIPTIONS[182]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[191]);
             taunts.add(DESCRIPTIONS[192]);
             taunts.add(DESCRIPTIONS[197]);
@@ -411,8 +408,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(m.id.toUpperCase() + DESCRIPTIONS[83]);
             taunts.add(DESCRIPTIONS[84]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[189]);
             taunts.add(DESCRIPTIONS[190]);
         }
@@ -442,8 +438,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[14] + AbstractDungeon.cardRandomRng.random(0, 100) + "%");
             taunts.add(DESCRIPTIONS[15]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[187]);
             taunts.add(DESCRIPTIONS[188]);
         }
@@ -488,8 +483,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[29] + AbstractDungeon.cardRandomRng.random(0, 50) + "%");
             taunts.add(DESCRIPTIONS[30]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[185]);
             taunts.add(DESCRIPTIONS[186]);
         }
@@ -519,8 +513,7 @@ public class VoiceBox extends CustomRelic {
             taunts.add(DESCRIPTIONS[53]);
             taunts.add(DESCRIPTIONS[54]);
         }
-        if (taunts.size()<1)
-        {
+        if (taunts.size() < 1) {
             taunts.add(DESCRIPTIONS[183]);
             taunts.add(DESCRIPTIONS[184]);
         }

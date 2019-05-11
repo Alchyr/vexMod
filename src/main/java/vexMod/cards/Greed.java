@@ -55,7 +55,7 @@ public class Greed extends AbstractDefaultCard {
         } else {
             AbstractDungeon.player.loseGold(6);
             for (int i = 0; i < (6); ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, (AbstractDungeon.player.hb.cY-125), false));
+                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, (AbstractDungeon.player.hb.cY - 125), false));
             }
         }
     }
