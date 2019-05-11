@@ -45,7 +45,7 @@
   },
   "vexMod:BetterTron": {
     "NAME": "Better-O-Tron",
-    "FLAVOR": "This mechanical grub lurches for your head intermittently.",
+    "FLAVOR": "Mechanical device certain to improve your life!",
     "DESCRIPTIONS": [
       "The next #b3 unupgraded cards you add into your deck are #yupgraded."
     ]
@@ -1150,7 +1150,15 @@
     "FLAVOR": "The images are looking awfully treacherous today.",
     "DESCRIPTIONS": [
       "At the start of your turn, Energy.",
-      "Energy."
+      "Energy.",
+      "Energy!",
+      "Energy?",
+      "ENERGY.",
+      "ENERGY!",
+      "ENERGY?",
+      "energy.",
+      "energy!",
+      "energy?"
     ]
   },
   "vexMod:NewsTicker": {
@@ -1322,6 +1330,13 @@
     "FLAVOR": " ",
     "DESCRIPTIONS": [
       "Whenever you climb a floor, the Story grows."
+    ]
+  },
+  "vexMod:GrifterSatchel": {
+    "NAME": "Grifter Satchel",
+    "FLAVOR": "Used for many a not-so-good deed.",
+    "DESCRIPTIONS": [
+      "All combats drop an additional, Colorless card reward."
     ]
   }
 }

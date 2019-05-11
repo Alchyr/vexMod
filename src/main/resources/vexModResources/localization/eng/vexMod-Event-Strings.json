@@ -55,14 +55,16 @@
       "Just ahead, a fight... or what could have been one.",
       "You stare deeply into riches, ignoring a slight stomach pain. NL You feel sickly, but enriched.",
       "As the great whale roars, you feel terrible, dead... and strong.",
-      "The window fades as you continue on."
+      "The window fades as you continue on.",
+      "You bask within new, cursed powers."
     ],
     "OPTIONS": [
-      "[Battle] #rFight #ran #rAct #r1 #rBoss. #gGain #ggreat #grewards.",
+      "[Boon] #rLose #r20 #rGold. #gUpgrade #ga #grandom #gcard.",
       "[Riches] #rLose #r5 #rMax #rHP. #gGain #ga #grandom #gcommon #gRelic.",
-      "[Life] #rBecome #rCursed. #gGain #ga #gNeow's #gLament.",
+      "[Death] #rBecome #rCursed. #gObtain #ga #gNeow's #gLament.",
       "[Leave]",
-      "[Leave]"
+      "[Leave]",
+      "[Life] #rBecome #rCursed. #gObtain #ga #grandom #gUncommon #grelic."
     ]
   },
   "vexMod:VoiceBoxEvent": {
@@ -137,21 +139,6 @@
       "[Leave]"
     ]
   },
-  "vexMod:ZooEvent": {
-    "NAME": "The Zoo",
-    "DESCRIPTIONS": [
-      "At this patch of The City there is a large, creaky sign above a door reading ~THE~ ~ZOO.~ NL A smaller sign below it warns that the creatures inside are dangerous... NL Dangerously unbalanced! NL Luckily, there's a free Smoke Bomb for escape if necessary. NL Please comment on vexMod if the enemy you fight is too strong or weak! NL Also, feel free to comment any enemy ideas. NL I'll make anything for the Zoo!",
-      "You enter a more benign exhibit.",
-      "You enter a dangerous exhibit!",
-      "You move to leave, but before you can go a penny with ~THE~ ~ZOO~ printed on it is thrown at you. NL You collect the souvenir and carry on."
-    ],
-    "OPTIONS": [
-      "[Exhibit A] #rEncounter #ra #rstrange #renemy. #gGain #ga #gSmoke #gBomb.",
-      "[Exhibit B] #rEncounter #ra #rstrange #rElite. #gGain #ga #gSmoke #gBomb.",
-      "[Leave]",
-      "[Leave]"
-    ]
-  },
   "vexMod:ChampiresEvent": {
     "NAME": "Champires(?)",
     "DESCRIPTIONS": [
@@ -165,22 +152,6 @@
       "[Refuse]",
       "[Lose ",
       "] #gRemove #gall Defends. #gBecome #gChampier.",
-      "[Leave]"
-    ]
-  },
-  "vexMod:BuccaneerEvent": {
-    "NAME": "Buccaneer's Bar",
-    "DESCRIPTIONS": [
-      "Navigating an unlit street, you come across a drunk old man with a massive beard. As you approach, he turns to you, grunting. He stares into your eyes and shakes his head. NL \"'Arr matey! Want some ~special~ ~rum~ ? \"",
-      "The peg-legged man grabs your arm, pulls you forward, and thrusts a large drink into your hand. You can't help but down half the bottle and party with the pirates all night. NL ... NL You wake up some time later, alone. An intense ~greed~ passes through your belly. You #rmust #rShop...",
-      "You step back and raise your weapon in defiance. The buccaneer sighs. \"Aw, beh, you spoilsport.\" The pirate rushes away from you. NL You are alone once more.",
-      "The bearded man gasps as you take out the #yOld #yCoin. NL \"Me old coin!!\" he yells happily. NL The pirate bows for you. \"Give me that n I'll give you a special rum.\"~ NL You make the trade and sip some of his unique concoction. Your vision immediately ~warps~ and fades to darkness. NL NL You wake up some time later, alone. An intense ~greed~ passes through your belly. You #rmust #rShop..."
-    ],
-    "OPTIONS": [
-      "[Accept] #gRemove #gall Strikes. #gReceive #g5 #gGilded #gStrikes. #rLose #r10 #rMax #rHP.",
-      "[Refuse]",
-      "[Lose ",
-      "] #gRemove #gall Strikes. #gRecieve #g5 #gGilded #gStrikes",
       "[Leave]"
     ]
   },
@@ -268,6 +239,43 @@
       "[Leave]",
       "[Leave]",
       "Storing card..."
+    ]
+  },
+  "vexMod:GrifterEvent": {
+    "NAME": "Grifter's Shop",
+    "DESCRIPTIONS": [
+      "As you're ascending the City, a formidable, bulky man in bandit gear steps out in front of you. NL \"Hello, hello! Wish to buy something, traveler? I've many wares.\" NL \"Or perhaps you're looking to sell? I'll take a trinket off your hands.\" NL \"Come now, buy something.\" NL \"I insist.\"",
+      "\"What a deal, am I right or am I right?\" NL \"You made the right choice here, laddy.\" NL The bandit pockets your gold. NL You continue, frustrated.",
+      "\"I'll put it to good use, don't worry!\" the bandit snarls. NL \"Thanks for shopping with me, friend.\" NL The bandit stashes his new relic. NL You continue, annoyed.",
+      "\"You'll get immeasurable use out of this trinket, I'm sure!\" NL \"You've made a good choice shopping with me, bucko.\" NL The bandit pockets the gold piece. NL You continue, confused.",
+      "Don't even try it, moron!"
+    ],
+    "OPTIONS": [
+      "[Purchase] #rLose #rall #ryour #rGold. #gObtain #ga #gCommon #grelic.",
+      "[Sell: ",
+      "] #rLose #rthis #rrelic. #gObtain #g50 #gGold.",
+      "[Trinket] #rLose #r1 #rGold. #gObtain #ga #gtrinket.",
+      "[Fight] #rBattle #rthe #rGrifter.",
+      "[Leave]",
+      "[Leave]"
+    ]
+  },
+  "vexMod:XCostLoverEvent": {
+    "NAME": "X-Man",
+    "DESCRIPTIONS": [
+      "Ahead of you, a little man is kicking slimes and rats. NL He turns to you when you approach and flashes a grin. NL His shirt has a massive X on it. NL \"It's me, famous hero X-Man!\" NL \"What can I do for you, random citizen?\" NL You have never heard of this man in your life.",
+      "\"Voila! The ichor of dreams, Chemical X!\" NL \"Side effects may vary, but that's your problem!\" NL X-Man winks and runs away.",
+      "\"Here you are, a little splash of my powers! Use them wisely.\" NL \"And now, I'm off!\" NL X-Man grins as he dashes away.",
+      "\"Ahh, wishing for a boost?\" NL \"Try my X-cost cards! They're flexible!\" NL \"Enjoy, citizen!\" NL X-Man runs away giggling.",
+      "\"Really. No need for my ... awesome power. Okay.\" NL \"I see how it is. Yeah. Have fun.\" NL X-Man walks away, clearly crestfallen."
+    ],
+    "OPTIONS": [
+      "[Chem Power] #rLose #r25% #rMax #rHP. #gObtain #gChem. #gX.",
+      "[Power Infusion] #gTransform #ga #gcard #gin #gyour #gdeck #ginto #gan #gX-cost #gcard.",
+      "[Power Boost] #gObtain #gan #gX-Cost #gcard #greward.",
+      "[Leave]",
+      "[Leave]",
+      "Transforming..."
     ]
   }
 }

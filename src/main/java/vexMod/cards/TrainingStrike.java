@@ -54,6 +54,7 @@ public class TrainingStrike extends AbstractDefaultCard {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseMagicNumber = magicNumber = IMPROVE;
+        this.tags.add(CardTags.STRIKE);
     }
 
 

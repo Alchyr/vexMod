@@ -42,6 +42,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
     public static final String IMG = makeEventPath("GorgonEncounterEvent.png");
 
     private AbstractCard gorgonCard;
+    private int goldAmount;
 
     private int screenNum = 0; // The initial screen we will see when encountering the event - screen 0;
 
@@ -53,7 +54,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
 
         // The first dialogue options available to us.
         imageEventText.setDialogOption(OPTIONS[0]); // Flirt: Gain 9 max HP. Become cursed - Gorgon's Gaze.
-        int goldAmount = this.getGoldAmount();// 53
+        this.goldAmount = this.getGoldAmount();// 53
         if (goldAmount != 0) {// 54
             this.imageEventText.setDialogOption(OPTIONS[1] + goldAmount + OPTIONS[6]);// 55
         } else {
@@ -82,7 +83,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
                     case 1: // If you press button the second button (Button at index 1), in this case: Ease
 
 
-                        AbstractDungeon.player.loseGold(112);
+                        AbstractDungeon.player.loseGold(this.goldAmount);
 
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
@@ -133,7 +134,12 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
         if (AbstractDungeon.player.gold < 100) {// 92
             return 0;// 93
         } else {
-            return AbstractDungeon.miscRng.random(100, AbstractDungeon.player.gold);// 95 96 98
+            int theGold = AbstractDungeon.player.gold;
+            if (theGold>127)
+            {
+                theGold = 127;
+            }
+            return AbstractDungeon.miscRng.random(100, theGold);// 95 96 98
         }
     }
 

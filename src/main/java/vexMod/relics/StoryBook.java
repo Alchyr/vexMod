@@ -26,7 +26,7 @@ public class StoryBook extends CustomRelic {
     private String lastThingDone;
 
     public StoryBook() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override

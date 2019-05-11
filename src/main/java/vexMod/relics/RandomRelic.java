@@ -50,6 +50,7 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
 
     private int ID_MINOR;
     private int ID_MAJOR;
+    private boolean triggered;
 
     public RandomRelic() {
         super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
@@ -289,17 +290,20 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
 
     @Override
     public int onLoseBlock(DamageInfo info, int damageAmount) {
-        if (damageAmount >= AbstractDungeon.player.currentBlock && ID_MINOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
+        if (!triggered && damageAmount >= AbstractDungeon.player.currentBlock && ID_MINOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 2));
+            this.triggered=true;
         }
-        if (damageAmount >= AbstractDungeon.player.currentBlock && ID_MAJOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
+        if (!triggered && damageAmount >= AbstractDungeon.player.currentBlock && ID_MAJOR == 5 && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0) {
             AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 4));
+            this.triggered=true;
         }
         return damageAmount;
     }
 
     @Override
     public void atBattleStart() {
+        this.triggered=false;
         if (ID_MINOR == 0) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 5));

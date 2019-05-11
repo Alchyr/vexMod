@@ -1146,11 +1146,19 @@
     ]
   },
   "vexMod:NotEnergy": {
-    "NAME": "这不是一件能量遗物",
-    "FLAVOR": "如今看来，这些形象真是极度叛逆。",
+    "NAME": "Ne donne pas d'énergie",
+    "FLAVOR": "The images are looking awfully treacherous today.",
     "DESCRIPTIONS": [
-      "在每回合开始时， 得到能量。",
-      "能量"
+      "At the start of your turn, Energy.",
+      "Energy.",
+      "Energy!",
+      "Energy?",
+      "ENERGY.",
+      "ENERGY!",
+      "ENERGY?",
+      "energy.",
+      "energy!",
+      "energy?"
     ]
   },
   "vexMod:NewsTicker": {
@@ -1315,6 +1323,13 @@
     "FLAVOR": " ",
     "DESCRIPTIONS": [
       "Whenever you climb a floor, the Story grows."
+    ]
+  },
+  "vexMod:GrifterSatchel": {
+    "NAME": "Grifter Satchel",
+    "FLAVOR": "Used for many a not-so-good deed.",
+    "DESCRIPTIONS": [
+      "All combats drop an additional, Colorless card reward."
     ]
   }
 }

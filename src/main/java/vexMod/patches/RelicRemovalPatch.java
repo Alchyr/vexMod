@@ -33,14 +33,6 @@ public class RelicRemovalPatch
         if (!VexMod.enablePlaceholder) {
             dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
         }
-        if (!VexMod.enableMemes)
-        {
-            dungeon_instance.shopRelicPool.remove(NotEnergy.ID);
-            dungeon_instance.shopRelicPool.remove(TheWave.ID);
-            dungeon_instance.shopRelicPool.remove(NewsTicker.ID);
-            dungeon_instance.shopRelicPool.remove(TimeMachine.ID);
-            dungeon_instance.shopRelicPool.remove(StoryBook.ID);
-        }
         if (language == Settings.GameLanguage.ZHS)
         {
             dungeon_instance.shopRelicPool.remove(StoryBook.ID);

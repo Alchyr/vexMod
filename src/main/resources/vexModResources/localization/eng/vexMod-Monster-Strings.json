@@ -123,5 +123,15 @@
     "DIALOG": [
 
     ]
+  },
+  "vexMod:Grifter": {
+    "NAME": "Grifter",
+    "MOVES": [
+      "Thievery Thrash"
+    ],
+    "DIALOG": [
+      "You're a fool to challenge NL the Spire's greatest thief!",
+      "Goodbye, traveler, NL and thank you for the loot!"
+    ]
   }
 }

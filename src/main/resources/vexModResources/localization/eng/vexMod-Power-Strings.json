@@ -321,5 +321,11 @@
     "DESCRIPTIONS": [
       "Immune to damage while a Lich's Phylactery is alive."
     ]
+  },
+  "vexMod:GriftingPower": {
+    "NAME": "Grifting",
+    "DESCRIPTIONS": [
+      "Steals #b1 #yRelic whenever it attacks."
+    ]
   }
 }

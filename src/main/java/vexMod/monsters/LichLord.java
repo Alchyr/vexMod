@@ -43,19 +43,20 @@ public class LichLord extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 110; // Always good to back up your health and move values.
-    private static final int HP_MAX = 125;
-    private static final int A_7_HP_MIN = 150; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 150;
+    private static final int HP_MIN = 135; // Always good to back up your health and move values.
+    private static final int HP_MAX = 135;
+    private static final int A_9_HP_MIN = 150; // HP moves up at Ascension 7.
+    private static final int A_9_HP_MAX = 150;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
-    private static final int DAMAGE_BLAAAM = 17;
-    private static final int ASC_17_DAMAGE_BLAAAM = 20;
-    private static final int DAMAGE_LIFESTEAL = 13;
-    private static final int ASC_17_DAMAGE_LIFESTEAL = 16;
-    private static final int DISCARD_DAMAGE = 10;
+    private static final float HB_W = 379.0F;
+    private static final float HB_H = 434.0F;
+    private static final int DAMAGE_BLAAAM = 21;
+    private static final int ASC_4_DAMAGE_BLAAAM = 25;
+    private static final int DAMAGE_LIFESTEAL = 18;
+    private static final int ASC_4_DAMAGE_LIFESTEAL = 22;
+    private static final int DISCARD_DAMAGE = 15; // actually it's now apply 2 poison
+    private static final int ASC_4_DISCARD_DAMAGE = 18; // actually it's now apply 2 poison
     private int damageBlaaam;
     private int damageLifesteal;
     private int discardDamage;
@@ -71,25 +72,26 @@ public class LichLord extends AbstractMonster {
 
         this.type = EnemyType.BOSS;
 
-        if (AbstractDungeon.ascensionLevel >= 7) { // Checks if your Ascension is 7 or above...
-            this.setHp(A_7_HP_MIN, A_7_HP_MAX); // and increases HP if so.
+        if (AbstractDungeon.ascensionLevel >= 9) { // Checks if your Ascension is 7 or above...
+            this.setHp(A_9_HP_MIN, A_9_HP_MAX); // and increases HP if so.
         } else {
             this.setHp(HP_MIN, HP_MAX); // Provides regular HP values here otherwise.
         }
 
-        if (AbstractDungeon.ascensionLevel >= 17) {
-            this.damageBlaaam = ASC_17_DAMAGE_BLAAAM;
-            this.damageLifesteal = ASC_17_DAMAGE_LIFESTEAL;
-            this.discardDamage = DISCARD_DAMAGE;
-        } else if (AbstractDungeon.ascensionLevel >= 2) {
-            this.damageBlaaam = DAMAGE_BLAAAM;
-            this.damageLifesteal = DAMAGE_LIFESTEAL;
-            this.discardDamage = DISCARD_DAMAGE;
+        if (AbstractDungeon.ascensionLevel >= 19) {// 82
+            this.damageBlaaam = ASC_4_DAMAGE_BLAAAM;// 83
+            this.damageLifesteal = ASC_4_DAMAGE_LIFESTEAL;
+            this.discardDamage = ASC_4_DISCARD_DAMAGE;
+        } else if (AbstractDungeon.ascensionLevel >= 4) {// 86
+            this.damageBlaaam = ASC_4_DAMAGE_BLAAAM;// 83
+            this.damageLifesteal = ASC_4_DAMAGE_LIFESTEAL;
+            this.discardDamage = ASC_4_DISCARD_DAMAGE;
         } else {
-            this.damageBlaaam = DAMAGE_BLAAAM;
+            this.damageBlaaam = DAMAGE_BLAAAM;// 83
             this.damageLifesteal = DAMAGE_LIFESTEAL;
             this.discardDamage = DISCARD_DAMAGE;
         }
+
         this.damage.add(new DamageInfo(this, this.damageBlaaam));
         this.damage.add(new DamageInfo(this, this.damageLifesteal));
         this.damage.add(new DamageInfo(this, this.discardDamage));
@@ -100,6 +102,10 @@ public class LichLord extends AbstractMonster {
         AbstractDungeon.scene.fadeOutAmbiance();// 110
         AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_CITY");// 111
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new LichPhylacPower(this, this, 1), 1));
+        if (AbstractDungeon.ascensionLevel>=19)
+        {
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new RegenerateMonsterPower(this, 3), 3));
+        }
     }
 
     public void takeTurn() {
@@ -107,18 +113,18 @@ public class LichLord extends AbstractMonster {
             AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F)); // Speak the stuff in DIALOG[0],
             this.firstTurn = false; // Then ensure it's no longer the first turn.
         }
-        AbstractDungeon.actionManager.addToBottom(new AnimateHopAction(this));
         switch (this.nextMove) {
             case 1:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.POISON));
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(this, this, new StrengthPower(this, 2), 2));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new VampirePhylacAction(AbstractDungeon.player, (DamageInfo) this.damage.get(1), AttackEffect.POISON));
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new DrawReductionPower(AbstractDungeon.player, 1)));// 154
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 1, true), 1));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(2), AttackEffect.POISON));
@@ -166,13 +172,13 @@ public class LichLord extends AbstractMonster {
             }
             int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size()-1));
             if (waaa == 0) {
-                this.setMove((byte) 1, Intent.ATTACK_BUFF, this.damageBlaaam);
+                this.setMove((byte) 1, Intent.ATTACK_BUFF, ((DamageInfo)this.damage.get(0)).base);
             } else if (waaa == 1) {
-                this.setMove((byte) 2, Intent.ATTACK_BUFF, this.damageLifesteal);
+                this.setMove((byte) 2, Intent.ATTACK_BUFF, ((DamageInfo)this.damage.get(1)).base);
             } else if (waaa == 2) {
                 this.setMove((byte) 3, Intent.STRONG_DEBUFF);
             } else if (waaa == 3) {
-                this.setMove((byte) 4, Intent.ATTACK_DEBUFF, this.discardDamage);
+                this.setMove((byte) 4, Intent.ATTACK_DEBUFF, ((DamageInfo)this.damage.get(2)).base);
             }
         }
     }

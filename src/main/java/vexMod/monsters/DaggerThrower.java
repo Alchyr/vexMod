@@ -47,16 +47,16 @@ public class DaggerThrower extends AbstractMonster {
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
     private static final int HP_MIN = 230; // Always good to back up your health and move values.
     private static final int HP_MAX = 230;
-    private static final int A_7_HP_MIN = 250; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 250;
+    private static final int A_9_HP_MIN = 244; // HP moves up at Ascension 7.
+    private static final int A_9_HP_MAX = 244;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;
     private static final float HB_H = 150.0F;
-    private static final int DAMAGE_NO_DAGGER = 4;
-    private static final int ASC_17_DAMAGE_NO_DAGGER = 5;
-    private static final int DAMAGE_DAG = 2;
-    private static final int ASC_17_DAMAGE_DAG = 3;
+    private static final int DAMAGE_NO_DAGGER = 5;
+    private static final int ASC_4_DAMAGE_NO_DAGGER = 6;
+    private static final int DAMAGE_DAG = 4;
+    private static final int ASC_4_DAMAGE_DAG = 5;
     private int damageDagger;
     private int damageNoDagger;
     private static final byte DAMAGE_DAGGER = 1; // Not sure what this is for myself. Guess it's just attack names.
@@ -74,22 +74,23 @@ public class DaggerThrower extends AbstractMonster {
 
         this.type = EnemyType.BOSS;
 
-        if (AbstractDungeon.ascensionLevel >= 7) { // Checks if your Ascension is 7 or above...
-            this.setHp(A_7_HP_MIN, A_7_HP_MAX); // and increases HP if so.
+        if (AbstractDungeon.ascensionLevel >= 9) { // Checks if your Ascension is 7 or above...
+            this.setHp(A_9_HP_MIN, A_9_HP_MAX); // and increases HP if so.
         } else {
             this.setHp(HP_MIN, HP_MAX); // Provides regular HP values here otherwise.
         }
 
-        if (AbstractDungeon.ascensionLevel >= 17) {
-            this.damageDagger = ASC_17_DAMAGE_DAG;
-            this.damageNoDagger = ASC_17_DAMAGE_NO_DAGGER;
-        } else if (AbstractDungeon.ascensionLevel >= 2) {
-            this.damageDagger = DAMAGE_DAG;
-            this.damageNoDagger = DAMAGE_NO_DAGGER;
+        if (AbstractDungeon.ascensionLevel >= 19) {// 82
+            this.damageDagger = ASC_4_DAMAGE_DAG;// 83
+            this.damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
+        } else if (AbstractDungeon.ascensionLevel >= 4) {// 86
+            this.damageDagger = ASC_4_DAMAGE_DAG;// 83
+            this.damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
         } else {
-            this.damageDagger = DAMAGE_DAG;
+            this.damageDagger = DAMAGE_DAG;// 83
             this.damageNoDagger = DAMAGE_NO_DAGGER;
         }
+
         dagToggle = true;
         dagToggleToggle = false;
         this.damage.add(new DamageInfo(this, this.damageDagger));
@@ -133,18 +134,6 @@ public class DaggerThrower extends AbstractMonster {
                 }
                 break;
             case 2:
-                Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();// 116
-
-                while (true) {
-                    if (!var1.hasNext()) {
-                        break;
-                    }
-
-                    AbstractMonster m = (AbstractMonster) var1.next();
-                    if (!m.isDying) {// 121
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));// 122
-                    }
-                }
                 Iterator var4 = AbstractDungeon.getMonsters().monsters.iterator();
                 while (var4.hasNext()) {
                     AbstractMonster m = (AbstractMonster) var4.next();
@@ -158,6 +147,18 @@ public class DaggerThrower extends AbstractMonster {
                     AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));// 63
                 } else if (numOfDaggers == 2) {// 64
                     AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));// 65
+                }
+                Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();// 116
+
+                while (true) {
+                    if (!var1.hasNext()) {
+                        break;
+                    }
+
+                    AbstractMonster m = (AbstractMonster) var1.next();
+                    if (!m.isDying) {// 121
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));// 122
+                    }
                 }
                 break;
             case 3:
@@ -208,25 +209,51 @@ public class DaggerThrower extends AbstractMonster {
 
     protected void getMove(int num) { // Gets a number for movement.
         if (dagToggle) {
-            int wahoo = AbstractDungeon.aiRng.random(2);
-            if (wahoo == 0) {
-                this.setMove((byte) 1, Intent.ATTACK, this.damageDagger, 2, true);
-            } else if (wahoo == 1) {
+            ArrayList<Integer> wahoo = new ArrayList<>();
+            wahoo.add(0);
+            wahoo.add(1);
+            wahoo.add(2);
+            if (this.lastMove((byte) 1) || this.lastMove((byte) 4)) {
+                wahoo.remove(0);
+            }
+            if (this.lastMove((byte) 2) || this.lastMove((byte) 5)) {
+                wahoo.remove(1);
+            }
+            if (this.lastMove((byte) 3) || this.lastMove((byte) 6)) {
+                wahoo.remove(2);
+            }
+            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
+            if (waaa == 0) {
+                this.setMove((byte) 1, Intent.ATTACK, ((DamageInfo)this.damage.get(0)).base, 2, true);
+            } else if (waaa == 1) {
                 this.setMove((byte) 2, Intent.BUFF);
-            } else if (wahoo == 2) {
+            } else if (waaa == 2) {
                 this.setMove((byte) 3, Intent.DEBUFF);
             }
             dagToggle = false;
         } else {
-            int wahoo = AbstractDungeon.aiRng.random(2);
-            if (wahoo == 0) {
-                this.setMove((byte) 4, Intent.ATTACK, this.damageNoDagger, 2, true);
-            } else if (wahoo == 1) {
-                this.setMove((byte) 5, Intent.DEFEND_BUFF);
-            } else if (wahoo == 2) {
-                this.setMove((byte) 6, Intent.STRONG_DEBUFF);
+            ArrayList<Integer> wahoo = new ArrayList<>();
+            wahoo.add(0);
+            wahoo.add(1);
+            wahoo.add(2);
+            if (this.lastMove((byte) 1) || this.lastMove((byte) 4)) {
+                wahoo.remove(0);
             }
-            if (dagToggleToggle) {
+            if (this.lastMove((byte) 2) || this.lastMove((byte) 5)) {
+                wahoo.remove(1);
+            }
+            if (this.lastMove((byte) 3) || this.lastMove((byte) 6)) {
+                wahoo.remove(2);
+            }
+            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
+            if (waaa == 0) {
+                this.setMove((byte) 4, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base, 2, true);
+            } else if (waaa == 1) {
+                this.setMove((byte) 5, Intent.BUFF);
+            } else if (waaa == 2) {
+                this.setMove((byte) 6, Intent.DEBUFF);
+            }
+            if (dagToggleToggle || AbstractDungeon.ascensionLevel>=19) {
                 dagToggle = true;
                 dagToggleToggle = false;
             } else {
@@ -243,8 +270,8 @@ public class DaggerThrower extends AbstractMonster {
         this.onBossVictoryLogic();// 264
         Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();// 266
 
-        while(var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster)var1.next();
+        while (var1.hasNext()) {
+            AbstractMonster m = (AbstractMonster) var1.next();
             if (!m.isDead && !m.isDying) {// 267
                 AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));// 268
                 AbstractDungeon.actionManager.addToTop(new SuicideAction(m));// 269

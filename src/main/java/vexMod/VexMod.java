@@ -233,6 +233,8 @@ public class VexMod implements
         BaseMod.addEvent(GorgonEncounterEvent.ID, GorgonEncounterEvent.class, TheCity.ID);
         BaseMod.addEvent(TweeterEvent.ID, TweeterEvent.class);
         BaseMod.addEvent(TweetThroughAges.ID, TweetThroughAges.class);
+        BaseMod.addEvent(GrifterEvent.ID, GrifterEvent.class, TheCity.ID);
+        BaseMod.addEvent(XCostLoverEvent.ID, XCostLoverEvent.class, Exordium.ID);
 
         // =============== /EVENTS/ =================
 
@@ -242,10 +244,11 @@ public class VexMod implements
 
         BaseMod.addMonster(EvilSsserpent.ID, "Ssserpent", () -> new EvilSsserpent(0.0F, 100.0F));
         BaseMod.addMonster(GildedGorgon.ID, "Gilded Gorgon", () -> new GildedGorgon(0.0F, 100.0F));
+        BaseMod.addMonster(Grifter.ID, "Grifter", () -> new Grifter (-175.0F, 0.0F));
         BaseMod.addMonster(BeyondKing.ID, "King of the Beyond", () -> new BeyondKing(0.0F, 100.0F));
         BaseMod.addMonster(DaggerThrower.ID, "Dagger Pharaoh", () -> new DaggerThrower(0.0F, 100.0F));
         BaseMod.addMonster(LichLord.ID, () -> new MonsterGroup(new AbstractMonster[]{
-                new LichLord(-200.0F, 100.0F),
+                new LichLord(-200.0F, 0.0F),
                 new LichPhylac(150.0F, 0.0F)
         }));
 
@@ -290,7 +293,6 @@ public class VexMod implements
 
         // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelic(new ColdYogurt(), RelicType.BLUE);
-        BaseMod.addRelic(new BejeweledOrb(), RelicType.BLUE);
         BaseMod.addRelic(new CoolingFan(), RelicType.BLUE);
         BaseMod.addRelic(new CodeSmelter(), RelicType.BLUE);
         BaseMod.addRelic(new PowerCharger(), RelicType.BLUE);
@@ -382,6 +384,7 @@ public class VexMod implements
         BaseMod.addRelic(new GildedClover(), RelicType.SHARED);
         BaseMod.addRelic(new FluxCapacitor(), RelicType.SHARED);
         BaseMod.addRelic(new StoryBook(), RelicType.SHARED);
+        BaseMod.addRelic(new GrifterSatchel(), RelicType.SHARED);
 
         // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -393,7 +396,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(BetterTron.ID);
         UnlockTracker.markRelicAsSeen(GhostlyGear.ID);
         UnlockTracker.markRelicAsSeen(CursedCompass.ID);
-        UnlockTracker.markRelicAsSeen(BejeweledOrb.ID);
         UnlockTracker.markRelicAsSeen(MemoryStick.ID);
         UnlockTracker.markRelicAsSeen(CoolingFan.ID);
         UnlockTracker.markRelicAsSeen(Cooldron.ID);
@@ -474,6 +476,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(GildedClover.ID);
         UnlockTracker.markRelicAsSeen(FluxCapacitor.ID);
         UnlockTracker.markRelicAsSeen(StoryBook.ID);
+        UnlockTracker.markRelicAsSeen(GrifterSatchel.ID);
 
         logger.info("Done adding relics!");
     }

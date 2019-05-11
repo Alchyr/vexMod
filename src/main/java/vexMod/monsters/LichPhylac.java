@@ -37,22 +37,22 @@ public class LichPhylac extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
     public static final String NAME = monsterstrings.NAME; // Pulls name,
     public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 80; // Always good to back up your health and move values.
-    private static final int HP_MAX = 92;
-    private static final int A_7_HP_MIN = 90; // HP moves up at Ascension 7.
-    private static final int A_7_HP_MAX = 102;
+    private static final int HP_MIN = 100; // Always good to back up your health and move values.
+    private static final int HP_MAX = 100;
+    private static final int A_9_HP_MIN = 110; // HP moves up at Ascension 7.
+    private static final int A_9_HP_MAX = 110;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 239.0F;
+    private static final float HB_H = 295.0F;
     private static final byte SIT_AROUND = 1;
     private boolean firstTurn = true;
 
     public LichPhylac(float x, float y) {
         super(NAME, "LichPhylac", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/LichPhylac.png", x, y); // Initializes the monster.
 
-        if (AbstractDungeon.ascensionLevel >= 7) { // Checks if your Ascension is 7 or above...
-            this.setHp(A_7_HP_MIN, A_7_HP_MAX); // and increases HP if so.
+        if (AbstractDungeon.ascensionLevel >= 9) { // Checks if your Ascension is 7 or above...
+            this.setHp(A_9_HP_MIN, A_9_HP_MAX); // and increases HP if so.
         } else {
             this.setHp(HP_MIN, HP_MAX); // Provides regular HP values here otherwise.
         }
@@ -64,7 +64,6 @@ public class LichPhylac extends AbstractMonster {
             case 1:
 
         }
-
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 

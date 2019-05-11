@@ -2,12 +2,15 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.Frost;
 import vexMod.VexMod;
 import vexMod.actions.RelicTalkAction;
 import vexMod.util.TextureLoader;
+
+import java.util.ArrayList;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -22,13 +25,27 @@ public class NotEnergy extends CustomRelic {
 
 
     public NotEnergy() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     @Override
     public void atTurnStart()
     {
-        AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, DESCRIPTIONS[1], 0.0F, 3.5F));
+        AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, getEnergyTaunt(), 0.0F, 3.5F));
+    }
+
+    private String getEnergyTaunt() {
+        ArrayList<String> taunts = new ArrayList<>();
+        taunts.add(DESCRIPTIONS[1]);
+        taunts.add(DESCRIPTIONS[2]);
+        taunts.add(DESCRIPTIONS[3]);
+        taunts.add(DESCRIPTIONS[4]);
+        taunts.add(DESCRIPTIONS[5]);
+        taunts.add(DESCRIPTIONS[6]);
+        taunts.add(DESCRIPTIONS[7]);
+        taunts.add(DESCRIPTIONS[8]);
+        taunts.add(DESCRIPTIONS[9]);
+        return taunts.get(MathUtils.random(taunts.size() - 1));
     }
 
     @Override

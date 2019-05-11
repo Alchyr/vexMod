@@ -62,6 +62,7 @@ public class LichPhylacPower extends AbstractPower implements CloneablePowerInte
             }
         }
         if (isTherePhylac) {
+            this.flash();
             return 0;
         }
         return damageAmount;

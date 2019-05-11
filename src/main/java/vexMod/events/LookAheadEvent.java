@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.events.AbstractEvent;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
@@ -24,9 +25,7 @@ import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import vexMod.VexMod;
 import vexMod.relics.*;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
+import java.util.*;
 
 import static vexMod.VexMod.makeEventPath;
 
@@ -52,7 +51,15 @@ public class LookAheadEvent extends AbstractImageEvent {
         // The first dialogue options available to us.
         imageEventText.setDialogOption(OPTIONS[0]); // Into the Clash: Fight another Floor Boss.
         imageEventText.setDialogOption(OPTIONS[1]); // Into the City: Fight a simple City battle.
-        imageEventText.setDialogOption(OPTIONS[2]); // Into the Beyond: Fight a simple Beyond battle.
+        if (AbstractDungeon.player.hasRelic(NeowsLament.ID)) {
+            if (!AbstractDungeon.player.getRelic(NeowsLament.ID).usedUp) {
+                imageEventText.setDialogOption(OPTIONS[5]);
+            } else {
+                imageEventText.setDialogOption(OPTIONS[2]);
+            }
+        } else {
+            imageEventText.setDialogOption(OPTIONS[2]);
+        }
         imageEventText.setDialogOption(OPTIONS[3]); // Leave
     }
 
@@ -62,19 +69,30 @@ public class LookAheadEvent extends AbstractImageEvent {
             case 0: // While you are on screen number 0 (The starting screen)
                 switch (i) {
                     case 0:
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        CardCrawlGame.music.playTempBgmInstantly("MINDBLOOM", true);
-                        ArrayList<String> list = new ArrayList();
-                        list.add("The Guardian");
-                        list.add("Hexaghost");
-                        list.add("Slime Boss");
-                        list.add("vexMod:DaggerThrower");
-                        Collections.shuffle(list, new Random(AbstractDungeon.miscRng.randomLong()));
-                        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((String) list.get(0));
-                        AbstractDungeon.getCurrRoom().rewards.clear();
-                        AbstractDungeon.getCurrRoom().addGoldToRewards(100);
-                        AbstractDungeon.getCurrRoom().addRelicToRewards(AbstractRelic.RelicTier.RARE);
-                        this.enterCombatFromImage();
+                        AbstractDungeon.player.loseGold(20);
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]); // Update the text of the event
+                        this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
+                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
+                        AbstractDungeon.topLevelEffects.add(new UpgradeShineEffect((float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));// 99
+                        ArrayList<AbstractCard> upgradableCards = new ArrayList();// 100
+                        Iterator var2 = AbstractDungeon.player.masterDeck.group.iterator();// 101
+
+                        while (var2.hasNext()) {
+                            AbstractCard c = (AbstractCard) var2.next();
+                            if (c.canUpgrade()) {// 102
+                                upgradableCards.add(c);// 103
+                            }
+                        }
+
+                        List<String> cardMetrics = new ArrayList();// 107
+                        Collections.shuffle(upgradableCards, new Random(AbstractDungeon.miscRng.randomLong()));// 109
+                        if (!upgradableCards.isEmpty()) {// 111
+                            ((AbstractCard) upgradableCards.get(0)).upgrade();// 114
+                            cardMetrics.add(((AbstractCard) upgradableCards.get(0)).cardID);// 115
+                            AbstractDungeon.player.bottledCardUpgradeCheck((AbstractCard) upgradableCards.get(0));// 116
+                            AbstractDungeon.effectList.add(new ShowCardBrieflyEffect(((AbstractCard) upgradableCards.get(0)).makeStatEquivalentCopy()));// 117
+                        }
+                        screenNum = 1;
                         break; // Onto screen 1 we go.
                     case 1: // If you press button the second button (Button at index 1), in this case: Ease
                         AbstractDungeon.player.maxHealth -= 5;
@@ -95,7 +113,6 @@ public class LookAheadEvent extends AbstractImageEvent {
                         screenNum = 1;
                         break; // Onto screen 1 we go.
                     case 2: // If you press button the third button (Button at index 2), in this case: Acceptance
-
                         AbstractCard b = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(b, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new NeowsLament());
@@ -111,6 +128,15 @@ public class LookAheadEvent extends AbstractImageEvent {
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;
+                    case 4:
+                        AbstractCard c = AbstractDungeon.getCard(AbstractCard.CardRarity.CURSE);
+                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON));
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[5]); // Update the text of the event
+                        this.imageEventText.updateDialogOption(0, OPTIONS[4]); // 1. Change the first button to the [Leave] button
+                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
+                        screenNum = 1;
+                        break; // Onto screen 1 we go.
                 }
                 break;
             case 1: // Welcome to screenNum = 1;

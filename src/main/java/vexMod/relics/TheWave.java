@@ -26,7 +26,7 @@ public class TheWave extends CustomRelic implements ClickableRelic { // You must
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("TheWave.png"));
 
     public TheWave() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
     }
 
     @Override
