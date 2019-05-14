@@ -3,19 +3,15 @@ package vexMod.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.characters.TheSilent;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import vexMod.cards.BlazeBeam;
 import vexMod.powers.*;
 import vexMod.relics.ShiftingSkin;
 
 import java.util.ArrayList;
 
 public class BlazeAction extends AbstractGameAction {
-    private AbstractPower BlazePower;
     private AbstractPlayer p;
     private boolean IsSkin;
 
@@ -36,7 +32,7 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new FocusPower(p, this.amount));
         blazeList.add(new IntangiblePlayerPower(p, this.amount));
         blazeList.add(new MalleablePower(p, this.amount));
-        blazeList.add(new MidasTouchPower(p, p, this.amount));
+        blazeList.add(new MidasTouchPower(p, p));
         blazeList.add(new StrikeStormPower(p, p, this.amount));
         blazeList.add(new ChaoticReactorPower(p, p, this.amount));
         blazeList.add(new RupturePower(p, this.amount));
@@ -95,12 +91,12 @@ public class BlazeAction extends AbstractGameAction {
         blazeList.add(new EvasivePower(p, p, this.amount));
         blazeList.add(new PropogationPower(p, p, this.amount));
 
-        BlazePower = blazeList.get(AbstractDungeon.cardRandomRng.random(0, (blazeList.size() - 1)));
+        AbstractPower blazePower = blazeList.get(AbstractDungeon.cardRandomRng.random(0, (blazeList.size() - 1)));
 
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, BlazePower, this.amount, AbstractGameAction.AttackEffect.NONE));
+        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, blazePower, this.amount, AbstractGameAction.AttackEffect.NONE));
 
         if (IsSkin) {
-            ((ShiftingSkin) AbstractDungeon.player.getRelic(ShiftingSkin.ID)).transformDescription(BlazePower.name);
+            ((ShiftingSkin) AbstractDungeon.player.getRelic(ShiftingSkin.ID)).transformDescription(blazePower.name);
         }
 
         this.isDone = true;

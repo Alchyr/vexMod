@@ -6,7 +6,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -16,7 +15,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ChargeUpper extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ChargeUpper");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ChargeUpper.png"));
@@ -49,7 +48,7 @@ public class ChargeUpper extends CustomRelic {
         this.counter = -1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

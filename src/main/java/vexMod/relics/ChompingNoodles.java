@@ -3,7 +3,6 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
@@ -15,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ChompingNoodles extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ChompingNoodles");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ChompingNoodles.png"));
@@ -31,12 +30,12 @@ public class ChompingNoodles extends CustomRelic {
         if (room instanceof EventRoom) {
             this.flash();
             AbstractDungeon.player.increaseMaxHp(3, true);
-            AbstractDungeon.player.damage(new DamageInfo((AbstractCreature) null, 5));
+            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 3, DamageInfo.DamageType.HP_LOSS));
         }
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

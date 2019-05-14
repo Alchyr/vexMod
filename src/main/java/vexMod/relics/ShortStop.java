@@ -11,7 +11,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ShortStop extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ShortStop");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ShortStop.png"));
@@ -22,7 +22,7 @@ public class ShortStop extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

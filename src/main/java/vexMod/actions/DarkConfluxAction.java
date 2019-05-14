@@ -1,25 +1,19 @@
 package vexMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.defect.ChannelAction;
 import com.megacrit.cardcrawl.actions.defect.DarkImpulseAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.Dark;
-import com.megacrit.cardcrawl.powers.StrengthPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class DarkConfluxAction extends AbstractGameAction {
-    private boolean freeToPlayOnce = false;
-    private boolean upgraded = false;
+    private boolean freeToPlayOnce;
+    private boolean upgraded;
     private AbstractPlayer p;
-    private AbstractMonster m;
-    private int energyOnUse = -1;
+    private int energyOnUse;
 
     public DarkConfluxAction(AbstractPlayer p, boolean upgraded, boolean freeToPlayOnce, int energyOnUse) {
         this.p = p;

@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 public class DevastationAction extends AbstractGameAction {
-    private DamageInfo info;
-    private static final float DURATION = 0.1F;
     private AbstractPlayer p;
     private AbstractCreature target;
     private DamageInfo.DamageType type;

@@ -6,20 +6,16 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.powers.ReactivePower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-
-import java.util.Iterator;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class BrainBlaster extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BrainBlaster");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BrainBlaster.png"));
@@ -33,10 +29,8 @@ public class BrainBlaster extends CustomRelic {
 
     @Override
     public void atBattleStart() {
-        Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while (var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster) var1.next();
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(m, this));
             m.addPower(new ReactivePower(m));
         }
@@ -44,7 +38,7 @@ public class BrainBlaster extends CustomRelic {
         AbstractDungeon.onModifyPower();
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

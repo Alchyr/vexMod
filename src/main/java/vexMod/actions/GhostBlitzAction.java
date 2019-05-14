@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import vexMod.cards.GhostlyBlitz;
 
 public class GhostBlitzAction extends AbstractGameAction {
     public GhostBlitzAction() {

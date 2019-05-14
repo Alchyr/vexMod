@@ -14,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class FocusSash extends CustomRelic implements BetterOnLoseHpRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("FocusSash");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FocusSash.png"));
@@ -35,7 +35,7 @@ public class FocusSash extends CustomRelic implements BetterOnLoseHpRelic {
         return damageAmount;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

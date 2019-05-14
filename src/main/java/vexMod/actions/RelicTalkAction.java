@@ -1,10 +1,10 @@
 package vexMod.actions;
 
-import vexMod.vfx.RelicSpeechBubble;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import vexMod.vfx.RelicSpeechBubble;
 
 public class RelicTalkAction extends AbstractGameAction {
     private AbstractRelic src;
@@ -22,10 +22,6 @@ public class RelicTalkAction extends AbstractGameAction {
         this.msg = text;
         this.actionType = AbstractGameAction.ActionType.TEXT;
         this.bubbleDuration = bubbleDuration;
-    }
-
-    public RelicTalkAction(AbstractRelic source, String text) {
-        this(source, text, 2.0F, 2.0F);
     }
 
     public void update() {

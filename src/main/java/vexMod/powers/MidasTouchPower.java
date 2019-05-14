@@ -2,8 +2,8 @@ package vexMod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.*;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -25,18 +25,15 @@ import vexMod.util.TextureLoader;
 import java.util.ArrayList;
 
 public class MidasTouchPower extends AbstractPower implements CloneablePowerInterface {
-    public AbstractCreature source;
-
     public static final String POWER_ID = VexMod.makeID("MidasTouchPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("vexModResources/images/powers/MidasTouch_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("vexModResources/images/powers/MidasTouch_32.png");
+    public AbstractCreature source;
 
-    public MidasTouchPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
+    public MidasTouchPower(final AbstractCreature owner, final AbstractCreature source) {
         name = NAME;
         ID = POWER_ID;
 
@@ -48,7 +45,7 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
         isTurnBased = false;
         canGoNegative = false;
 
-        // We load those textures here.
+
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
@@ -80,7 +77,7 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
     }
 
     private String getTaunt() {
-        ArrayList<String> taunts = new ArrayList();
+        ArrayList<String> taunts = new ArrayList<>();
         taunts.add(powerStrings.DESCRIPTIONS[1]);
         taunts.add(powerStrings.DESCRIPTIONS[2]);
         return taunts.get(MathUtils.random(taunts.size() - 1));
@@ -99,7 +96,7 @@ public class MidasTouchPower extends AbstractPower implements CloneablePowerInte
 
     @Override
     public AbstractPower makeCopy() {
-        return new MidasTouchPower(owner, source, amount);
+        return new MidasTouchPower(owner, source);
     }
 
     @Override

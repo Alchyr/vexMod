@@ -6,10 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
 import com.megacrit.cardcrawl.cards.colorless.Discovery;
 import com.megacrit.cardcrawl.cards.curses.AscendersBane;
-import com.megacrit.cardcrawl.cards.curses.Clumsy;
 import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -21,7 +19,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ExplorationPack extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ExplorationPack");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ExplorationPack.png"));
@@ -76,7 +74,7 @@ public class ExplorationPack extends CustomRelic {
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

@@ -3,21 +3,17 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
-import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class TealTab extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("TealTab");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("TealTab.png"));
@@ -49,7 +45,7 @@ public class TealTab extends CustomRelic {
         this.counter = -1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

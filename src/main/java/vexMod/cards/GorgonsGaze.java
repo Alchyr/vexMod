@@ -9,46 +9,27 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
-// public class ${NAME} extends AbstractDefaultCard
+
 public class GorgonsGaze extends AbstractDefaultCard {
-
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("GorgonsGaze"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("GorgonsGaze");
+    public static final String IMG = makeCardPath("GorgonsGaze.png");
+    public static final CardColor COLOR = CardColor.CURSE;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("GorgonsGaze.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final CardRarity RARITY = CardRarity.CURSE;
+    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardType TYPE = CardType.CURSE;
+    private static final int COST = -2;
 
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.CURSE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
-    private static final CardType TYPE = CardType.CURSE;       //
-    public static final CardColor COLOR = CardColor.CURSE;
-
-    private static final int COST = -2;  // COST = ${COST}
-
-    // /STAT DECLARATION/
-
-
-    public GorgonsGaze() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public GorgonsGaze() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
@@ -77,7 +58,7 @@ public class GorgonsGaze extends AbstractDefaultCard {
         return new GorgonsGaze();
     }
 
-    // Upgraded stats.
+
     @Override
     public void upgrade() {
     }

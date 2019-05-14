@@ -17,49 +17,35 @@ import vexMod.VexMod;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;
+import java.util.Objects;
 
 import static vexMod.VexMod.makeCardPath;
 
 public class ChimeraCard extends AbstractDefaultCard {
-
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("ChimeraCard"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("ChimeraCard");
+    public static final String IMG = makeCardPath("UltimateCard.png");
+    public static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("UltimateCard.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final int COST = 0;
 
-    // /TEXT DECLARATION/
+    private float TRANSFORMATION = 119;
 
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
-
-    private static final int COST = 0;  // COST = ${COST}
-
-    public float TRANSFORMATION = 119;
-
-    public int TRANSFORMS_LEFT = 10;
+    private int TRANSFORMS_LEFT = 10;
 
     private AbstractCard transformedCard;
 
-    // /STAT DECLARATION/
 
-    public ChimeraCard() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public ChimeraCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.dontTriggerOnUseCard = true;
     }
 
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         TRANSFORMS_LEFT = 10;
@@ -80,7 +66,7 @@ public class ChimeraCard extends AbstractDefaultCard {
             if (TRANSFORMATION >= 120 && TRANSFORMS_LEFT > 0 && !AbstractDungeon.player.masterDeck.contains(this)) {
                 TRANSFORMS_LEFT -= 1;
                 TRANSFORMATION = 0;
-                transformedCard = getRandomChimeraCard().makeCopy();
+                transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
                 if (this.upgraded) {
                     transformedCard.upgrade();
                 }
@@ -96,7 +82,7 @@ public class ChimeraCard extends AbstractDefaultCard {
                     this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformations left.";
                 } else if (TRANSFORMS_LEFT == 1) {
                     this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformation left.";
-                } else if (TRANSFORMS_LEFT < 1) {
+                } else {
                     this.rawDescription = transformedCard.rawDescription + " NL " + "No longer transforms until played.";
                 }
 
@@ -121,7 +107,7 @@ public class ChimeraCard extends AbstractDefaultCard {
         } else {
             if (TRANSFORMATION >= 120) {
                 TRANSFORMATION = 0;
-                transformedCard = getRandomChimeraCard().makeCopy();
+                transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
                 if (this.upgraded) {
                     transformedCard.upgrade();
                 }
@@ -163,14 +149,14 @@ public class ChimeraCard extends AbstractDefaultCard {
             if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.player.masterDeck.contains(this)) {
                 for (AbstractCard card : CardLibrary.getAllCards()) {
                     String modID = WhatMod.findModID(card.getClass());
-                    if ((modID == null || modID == "vexMod") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && card.cost <= EnergyPanel.getCurrentEnergy() && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
+                    if ((modID == null || modID.equals("vexMod")) && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && card.cost <= EnergyPanel.getCurrentEnergy() && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
                         tmp.add(card);
                     }
                 }
             } else {
                 for (AbstractCard card : CardLibrary.getAllCards()) {
                     String modID = WhatMod.findModID(card.getClass());
-                    if ((modID == null || modID == "vexMod") && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
+                    if ((modID == null || modID.equals("vexMod")) && !card.cardID.equals("vexMod:ChimeraCard") && !card.cardID.equals("vexMod:WellTimedStrike") && !card.cardID.equals("vexMod:MidnightStrike") && !card.cardID.equals("Tactician") && !card.cardID.equals("Reflex") && !card.hasTag(CardTags.HEALING) && card.type != CardType.CURSE && card.type != CardType.STATUS) {
                         tmp.add(card);
                     }
                 }
@@ -211,7 +197,7 @@ public class ChimeraCard extends AbstractDefaultCard {
         }
     }
 
-    // Upgraded stats.
+
     @Override
     public void upgrade() {
         if (!upgraded) {

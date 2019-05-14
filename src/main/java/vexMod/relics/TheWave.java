@@ -12,14 +12,8 @@ import vexMod.vfx.RelicWaveEffect;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class TheWave extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
-    /*
-     * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
-     * StSLib for Clickable Relics
-     *
-     */
+public class TheWave extends CustomRelic implements ClickableRelic {
 
-    // ID, images, text.
     public static final String ID = VexMod.makeID("TheWave");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("TheWave.png"));
@@ -30,9 +24,9 @@ public class TheWave extends CustomRelic implements ClickableRelic { // You must
     }
 
     @Override
-    public void onRightClick() {// On right click
-        if (!isObtained) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
-            return; // Don't do anything.
+    public void onRightClick() {
+        if (!isObtained) {
+            return;
         }
         CardCrawlGame.sound.play("UI_CLICK_1");
         AbstractDungeon.effectList.add(new RelicWaveEffect(0, AbstractDungeon.miscRng.random(0.25F)));
@@ -43,7 +37,7 @@ public class TheWave extends CustomRelic implements ClickableRelic { // You must
         return 1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

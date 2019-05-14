@@ -1,30 +1,20 @@
 package vexMod.events;
 
 
-import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.WhiteNoise;
-import com.megacrit.cardcrawl.cards.curses.Doubt;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.MonsterHelper;
-import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import vexMod.VexMod;
 import vexMod.cards.EyeBeam;
 import vexMod.cards.GorgonsGaze;
 import vexMod.cards.GorgonsGlare;
 import vexMod.cards.SnakeSkin;
-import vexMod.relics.*;
+import vexMod.relics.GorgonsHead;
 
 import java.util.ArrayList;
 
@@ -34,41 +24,37 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
 
 
     public static final String ID = VexMod.makeID("GorgonEncounterEvent");
+    public static final String IMG = makeEventPath("GorgonEncounterEvent.png");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
-
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("GorgonEncounterEvent.png");
-
-    private AbstractCard gorgonCard;
     private int goldAmount;
 
-    private int screenNum = 0; // The initial screen we will see when encountering the event - screen 0;
-
-    private boolean pickCard = false;
+    private int screenNum = 0;
 
     public GorgonEncounterEvent() {
         super(NAME, DESCRIPTIONS[0], IMG);
         this.noCardsInRewards = true;
 
-        // The first dialogue options available to us.
-        imageEventText.setDialogOption(OPTIONS[0]); // Flirt: Gain 9 max HP. Become cursed - Gorgon's Gaze.
-        this.goldAmount = this.getGoldAmount();// 53
-        if (goldAmount != 0) {// 54
-            this.imageEventText.setDialogOption(OPTIONS[1] + goldAmount + OPTIONS[6]);// 55
+
+        imageEventText.setDialogOption(OPTIONS[0]);
+        this.goldAmount = this.getGoldAmount();
+        if (goldAmount != 0) {
+            this.imageEventText.setDialogOption(OPTIONS[1] + goldAmount + OPTIONS[6]);
         } else {
-            this.imageEventText.setDialogOption(OPTIONS[5], true);// 57
+            this.imageEventText.setDialogOption(OPTIONS[5], true);
         }
-        imageEventText.setDialogOption(OPTIONS[2]); // Fight the Gorgon.
-        imageEventText.setDialogOption(OPTIONS[3]); // Leave
+        imageEventText.setDialogOption(OPTIONS[2]);
+        imageEventText.setDialogOption(OPTIONS[3]);
     }
 
 
     @Override
-    protected void buttonEffect(int i) { // This is the event:
+    protected void buttonEffect(int i) {
         switch (screenNum) {
-            case 0: // While you are on screen number 0 (The starting screen)
+            case 0:
+                AbstractCard gorgonCard;
                 switch (i) {
                     case 0:
 
@@ -76,11 +62,11 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
-                        AbstractDungeon.player.increaseMaxHp(9, true);
+                        AbstractDungeon.player.increaseMaxHp(12, true);
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new GorgonsGaze(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
 
-                        break; // Onto screen 1 we go.
-                    case 1: // If you press button the second button (Button at index 1), in this case: Ease
+                        break;
+                    case 1:
 
 
                         AbstractDungeon.player.loseGold(this.goldAmount);
@@ -99,19 +85,19 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
                             gorgonCard = new SnakeSkin().makeCopy();
                         }
 
-                        // Get a random "bonus" relic
+
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(gorgonCard, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
 
-                        break; // Onto screen 1 we go.
-                    case 2: // If you press button the third button (Button at index 2), in this case: Acceptance
+                        break;
+                    case 2:
                         this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        ArrayList<String> list = new ArrayList();
+                        ArrayList<String> list = new ArrayList<>();
                         list.add("vexMod:GildedGorgon");
-                        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((String) (list.get(0)));
+                        AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((list.get(0)));
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new GorgonsHead());
                         this.enterCombatFromImage();
-                        break; // Onto screen 1 we go.
+                        break;
                     case 3:
                         this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
@@ -120,25 +106,19 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
                         break;
                 }
                 break;
-            case 1: // Welcome to screenNum = 1;
-                switch (i) {
-                    case 0: // If you press the first (and this should be the only) button,
-                        openMap(); // You'll open the map and end the event.
-                        break;
+            case 1:
+                if (i == 0) {
+                    openMap();
                 }
                 break;
         }
     }
 
     private int getGoldAmount() {
-        if (AbstractDungeon.player.gold < 100) {// 92
-            return 0;// 93
+        if (AbstractDungeon.player.gold < 127) {
+            return 0;
         } else {
-            int theGold = AbstractDungeon.player.gold;
-            if (theGold > 127) {
-                theGold = 127;
-            }
-            return AbstractDungeon.miscRng.random(100, theGold);// 95 96 98
+            return 127;
         }
     }
 

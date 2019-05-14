@@ -1,20 +1,12 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package vexMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DiverseOrbAction extends AbstractGameAction {
     private int block;
@@ -26,11 +18,9 @@ public class DiverseOrbAction extends AbstractGameAction {
     }
 
     public void update() {
-        ArrayList<String> orbList = new ArrayList();
-        Iterator var2 = AbstractDungeon.player.orbs.iterator();
+        ArrayList<String> orbList = new ArrayList<String>();
 
-        while (var2.hasNext()) {
-            AbstractOrb o = (AbstractOrb) var2.next();
+        for (AbstractOrb o : AbstractDungeon.player.orbs) {
             if (o.ID != null && !o.ID.equals("Empty") && !orbList.contains(o.ID)) {
                 orbList.add(o.ID);
             }

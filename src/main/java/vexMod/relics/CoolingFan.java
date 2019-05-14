@@ -14,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class CoolingFan extends CustomRelic implements OnChannelRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("CoolingFan");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CoolingFan.png"));
@@ -31,7 +31,7 @@ public class CoolingFan extends CustomRelic implements OnChannelRelic {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 2));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

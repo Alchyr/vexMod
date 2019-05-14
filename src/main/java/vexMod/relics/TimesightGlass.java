@@ -4,7 +4,6 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.actions.unique.RandomCardFromDiscardPileToHandAction;
-import com.megacrit.cardcrawl.actions.unique.RemoveDebuffsAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -14,7 +13,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class TimesightGlass extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("TimesightGlass");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("TimesightGlass.png"));
@@ -45,7 +44,7 @@ public class TimesightGlass extends CustomRelic {
         this.stopPulse();
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

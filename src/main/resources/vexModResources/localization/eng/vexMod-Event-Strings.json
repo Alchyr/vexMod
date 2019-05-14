@@ -59,7 +59,7 @@
     ],
     "OPTIONS": [
       "[Strength] #rBecome #rCursed. #gUpgrade #g2 #grandom #gcards.",
-      "[Fear] #rLose #r5 #rMax #rHP. #gObtain #ga #grandom #gcommon #gRelic.",
+      "[Fear] #rLose #r7 #rMax #rHP. #gObtain #ga #grandom #gcommon #gRelic.",
       "[Death] #rObtain #ra #rrandom #rBlight. #gGain #g1000 #gGold.",
       "[Leave]",
       "[Leave]"
@@ -75,9 +75,9 @@
       "\"Aw, what a spoilsport. Okay, see you later, buddy!\""
     ],
     "OPTIONS": [
-      "[Tailoring] #gChoose #g1 #gof #g3 #gColorless #gRare #gcards #gto #gadd #gto #gyour #gdeck.",
+      "[Tailoring] #rLose #rhalf #ryour #rGold. #gObtain #g1 #gof #g3 #gColorless #gRare #gcards.",
       "[Improvement] #gTransform #ga #gcard #gfrom #gyour #gdeck #ginto #ga #gRare #gcard.",
-      "[Implantation] #gGain #ga #grandom #gRare #grelic. #rLose #r10 #rMax #rHP.",
+      "[Implantation] #gGain #ga #grandom #gRare #grelic. #rLose #r12 #rMax #rHP.",
       "[Leave]",
       "[Leave]",
       "Improving...?"
@@ -193,7 +193,7 @@
       "You leave. The serpent lady shrugs as you go and gets back to tidying her shop."
     ],
     "OPTIONS": [
-      "[Drink] #gGain #g9 #gMax #gHP. #rBecome #rCursed #r- #rGorgon's #rGaze.",
+      "[Drink] #gGain #g12 #gMax #gHP. #rBecome #rCursed #r- #rGorgon's #rGaze.",
       "[Train] #rLose #r",
       "[Attack] #rFight #rthe #rGorgon.",
       "[Leave]",

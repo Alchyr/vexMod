@@ -2,13 +2,13 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.EventHelper;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
-import com.megacrit.cardcrawl.rooms.*;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
+import com.megacrit.cardcrawl.rooms.MonsterRoom;
+import com.megacrit.cardcrawl.rooms.ShopRoom;
+import com.megacrit.cardcrawl.rooms.TreasureRoom;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -18,7 +18,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class FloorLord extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("FloorLord");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SsserpentHead.png"));
@@ -40,7 +40,7 @@ public class FloorLord extends CustomRelic {
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

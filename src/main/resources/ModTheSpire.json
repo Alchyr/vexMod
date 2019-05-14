@@ -3,7 +3,7 @@
   "name": "vexMod",
   "author_list": ["DarkVexon"],
   "description": "A minor content mod.",
-  "version": "6",
+  "version": "700",
   "sts_version": "${SlayTheSpire.version}",
   "mts_version": "${ModTheSpire.version}",
   "credits": "Slay the Spire Discord: Ideas, assistance, other help.",

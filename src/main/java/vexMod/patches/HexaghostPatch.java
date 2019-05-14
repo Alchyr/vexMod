@@ -1,19 +1,12 @@
 package vexMod.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.*;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.monsters.exordium.Hexaghost;
-import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import com.megacrit.cardcrawl.rooms.MonsterRoomElite;
 import javassist.CtBehavior;
-import vexMod.actions.RelicTalkAction;
-import vexMod.relics.DeviousBotling;
 import vexMod.relics.MidasArmor;
-import vexMod.vfx.RelicSpeechBubble;
 
 import java.util.ArrayList;
 

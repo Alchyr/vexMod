@@ -2,7 +2,6 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.JuzuBracelet;
 import vexMod.VexMod;
@@ -23,23 +22,23 @@ public class HatredEngine extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
     }
 
-    // Gain 1 energy on equip.
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
     }
 
-    // Lose 1 energy on unequip.
+
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
     }
 
     public boolean canSpawn() {
-        return Settings.isEndless || AbstractDungeon.floorNum <= 40 && !AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(TreasureMap.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID);
+        return (!AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(TreasureMap.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

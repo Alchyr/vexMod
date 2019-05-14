@@ -1,55 +1,34 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package vexMod.orbs;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.defect.LightningOrbEvokeAction;
 import com.megacrit.cardcrawl.actions.defect.LightningOrbPassiveAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.DamageInfo.DamageType;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.OrbStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.orbs.AbstractOrb;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
-import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningOrbActivateEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningOrbPassiveEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect;
 import com.megacrit.cardcrawl.vfx.combat.OrbFlareEffect.OrbFlareColor;
 import vexMod.util.TextureLoader;
 
-import java.util.Iterator;
-
 import static vexMod.VexMod.makeOrbPath;
 
 public class GoldenLightning extends AbstractOrb {
-    public static final String ORB_ID = "GoldenLightning";
+    private static final String ORB_ID = "GoldenLightning";
     private static final OrbStrings orbString = CardCrawlGame.languagePack.getOrbString(ORB_ID);
-    public static final String[] DESC = orbString.DESCRIPTION;
+    private static final String[] DESC = orbString.DESCRIPTION;
     private float vfxTimer = 1.0F;
-    private float vfxIntervalMin = 0.15F;
-    private float vfxIntervalMax = 0.8F;
-    private static final float PI_DIV_16 = 0.19634955F;
-    private static final float ORB_WAVY_DIST = 0.05F;
-    private static final float PI_4 = 12.566371F;
-    private static final float ORB_BORDER_SCALE = 1.2F;
     private int GOLD_MADE;
 
     public GoldenLightning() {
@@ -115,41 +94,6 @@ public class GoldenLightning extends AbstractOrb {
 
     }
 
-    private void triggerPassiveEffect(DamageInfo info, boolean hitAll) {
-        if (!hitAll) {
-            AbstractCreature m = AbstractDungeon.getRandomMonster();
-            if (m != null) {
-                float speedTime = 0.2F / (float) AbstractDungeon.player.orbs.size();
-                if (Settings.FAST_MODE) {
-                    speedTime = 0.0F;
-                }
-
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(m, info, AttackEffect.NONE, true));
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareColor.LIGHTNING), speedTime));
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(m.drawX, m.drawY), speedTime));
-                AbstractDungeon.actionManager.addToBottom(new SFXAction("ORB_LIGHTNING_EVOKE"));
-            }
-        } else {
-            float speedTime = 0.2F / (float) AbstractDungeon.player.orbs.size();
-            if (Settings.FAST_MODE) {
-                speedTime = 0.0F;
-            }
-
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new OrbFlareEffect(this, OrbFlareColor.LIGHTNING), speedTime));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(AbstractDungeon.player, DamageInfo.createDamageMatrix(info.base, true), DamageType.THORNS, AttackEffect.NONE));
-            Iterator var7 = AbstractDungeon.getMonsters().monsters.iterator();
-
-            while (var7.hasNext()) {
-                AbstractMonster m3 = (AbstractMonster) var7.next();
-                if (!m3.isDeadOrEscaped() && !m3.halfDead) {
-                    AbstractDungeon.actionManager.addToBottom(new VFXAction(new LightningEffect(m3.drawX, m3.drawY), speedTime));
-                }
-            }
-
-            AbstractDungeon.actionManager.addToBottom(new SFXAction("ORB_LIGHTNING_EVOKE"));
-        }
-    }
-
     public void triggerEvokeAnimation() {
         CardCrawlGame.sound.play("ORB_LIGHTNING_EVOKE", 0.1F);
         AbstractDungeon.effectsQueue.add(new LightningOrbActivateEffect(this.cX, this.cY));
@@ -165,7 +109,9 @@ public class GoldenLightning extends AbstractOrb {
                 AbstractDungeon.effectList.add(new LightningOrbPassiveEffect(this.cX, this.cY));
             }
 
-            this.vfxTimer = MathUtils.random(this.vfxIntervalMin, this.vfxIntervalMax);
+            float vfxIntervalMin = 0.15F;
+            float vfxIntervalMax = 0.8F;
+            this.vfxTimer = MathUtils.random(vfxIntervalMin, vfxIntervalMax);
         }
 
     }

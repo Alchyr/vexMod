@@ -3,9 +3,7 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
-import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import vexMod.VexMod;
 import vexMod.actions.RelicTalkAction;
 import vexMod.util.TextureLoader;
@@ -17,7 +15,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class NotEnergy extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("NotEnergy");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("NotEnergy.png"));
@@ -44,6 +42,9 @@ public class NotEnergy extends CustomRelic {
         taunts.add(DESCRIPTIONS[7]);
         taunts.add(DESCRIPTIONS[8]);
         taunts.add(DESCRIPTIONS[9]);
+        taunts.add(DESCRIPTIONS[10]);
+        taunts.add(DESCRIPTIONS[11]);
+        taunts.add(DESCRIPTIONS[12]);
         return taunts.get(MathUtils.random(taunts.size() - 1));
     }
 
@@ -52,7 +53,7 @@ public class NotEnergy extends CustomRelic {
         return 1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

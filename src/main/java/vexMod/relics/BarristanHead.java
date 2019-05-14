@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -14,7 +13,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class BarristanHead extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BarristanHead");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BarristanHead.png"));
@@ -34,7 +33,7 @@ public class BarristanHead extends CustomRelic {
         }
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

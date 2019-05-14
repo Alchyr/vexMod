@@ -5,6 +5,6 @@
   },
   "vexMod:noRelicMode": {
     "NAME": "Low-Relics Mode",
-    "DESCRIPTION": "Start with a bunch of relics, but then you don't find any more."
+    "DESCRIPTION": "Start with a bunch of relics, but then you don't find any more normally."
   }
 }

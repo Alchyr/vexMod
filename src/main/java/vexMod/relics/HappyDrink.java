@@ -16,7 +16,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class HappyDrink extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("HappyDrink");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("HappyDrink.png"));
@@ -42,7 +42,7 @@ public class HappyDrink extends CustomRelic {
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

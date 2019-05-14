@@ -14,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class DrawConverter extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("DrawConverter");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("GameCart.png"));
@@ -50,7 +50,7 @@ public class DrawConverter extends CustomRelic {
         });
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

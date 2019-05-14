@@ -17,17 +17,13 @@ import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
 public class StrikeStormPower extends AbstractPower implements CloneablePowerInterface {
-    public AbstractCreature source;
-
     public static final String POWER_ID = VexMod.makeID("StrikeStormPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-
-
-    // We create 2 new textures *Using This Specific Texture Loader* - an 84x84 image and a 32x32 one.
     private static final Texture tex84 = TextureLoader.getTexture("vexModResources/images/powers/StrikeStorm_84.png");
     private static final Texture tex32 = TextureLoader.getTexture("vexModResources/images/powers/StrikeStorm_32.png");
+    public AbstractCreature source;
 
     public StrikeStormPower(final AbstractCreature owner, final AbstractCreature source, final int amount) {
         name = NAME;
@@ -40,7 +36,7 @@ public class StrikeStormPower extends AbstractPower implements CloneablePowerInt
         type = PowerType.BUFF;
         isTurnBased = false;
 
-        // We load those textures here.
+
         this.region128 = new TextureAtlas.AtlasRegion(tex84, 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(tex32, 0, 0, 32, 32);
 
@@ -51,10 +47,10 @@ public class StrikeStormPower extends AbstractPower implements CloneablePowerInt
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (!card.purgeOnUse && card.type != AbstractCard.CardType.ATTACK) {
             for (int i = 0; i < amount; i++) {
-                AbstractCard playCard = new Strike_Red(); // Declare Card - the Strike card. We will name it 'playCard'.
+                AbstractCard playCard = new Strike_Red();
                 this.flash();
-                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster(); // Declare Target - Random Monster. We will name the monster 'targetMonster'.
-                playCard.freeToPlayOnce = true; //Self Explanatory
+                AbstractMonster targetMonster = AbstractDungeon.getRandomMonster();
+                playCard.freeToPlayOnce = true;
                 if (playCard.type != AbstractCard.CardType.POWER) {
                     playCard.purgeOnUse = true;
                 }

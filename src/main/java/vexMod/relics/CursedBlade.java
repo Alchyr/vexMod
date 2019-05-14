@@ -15,7 +15,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class CursedBlade extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("CursedBlade");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("CursedBlade.png"));
@@ -34,7 +34,7 @@ public class CursedBlade extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(AbstractDungeon.returnRandomCurse().makeCopy()));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

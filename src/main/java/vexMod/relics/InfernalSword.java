@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -14,7 +13,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class InfernalSword extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("InfernalSword");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("InfernalSword.png"));
@@ -32,7 +31,7 @@ public class InfernalSword extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInHandAction(c, true));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

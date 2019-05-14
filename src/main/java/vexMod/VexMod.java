@@ -5,31 +5,23 @@ import basemod.ModLabeledToggleButton;
 import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
-import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardGroup;
-import com.megacrit.cardcrawl.cards.colorless.Discovery;
-import com.megacrit.cardcrawl.cards.curses.AscendersBane;
-import com.megacrit.cardcrawl.cards.curses.Necronomicurse;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.daily.mods.Chimera;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.dungeons.TheBeyond;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.FontHelper;
-import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import com.megacrit.cardcrawl.relics.*;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -65,26 +57,40 @@ public class VexMod implements
         PostDungeonInitializeSubscriber,
         AddCustomModeModsSubscriber {
     public static final Logger logger = LogManager.getLogger(VexMod.class.getName());
-    private static String modID;
-
-    //This is for the in-game mod settings panel.
+    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
+    public static final String ENABLE_MEME_CARDS = "enableMemes";
+    public static final String BADGE_IMAGE = "vexModResources/images/Badge.png";
     private static final String MODNAME = "VexMod";
     private static final String AUTHOR = "DarkVexon";
     private static final String DESCRIPTION = "A minor content mod.";
-
     public static Properties vexModDefaultSettings = new Properties();
-    public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static boolean enablePlaceholder = true;
-    public static final String ENABLE_MEME_CARDS = "enableMemes";
     public static boolean enableMemes = true;
+    private static String modID;
 
 
-    // =============== INPUT TEXTURE LOCATION =================
+    public VexMod() {
+        logger.info("Subscribe to BaseMod hooks");
 
-    //Mod Badge - A small icon that appears in the mod settings menu next to your mod.
-    public static final String BADGE_IMAGE = "vexModResources/images/Badge.png";
+        BaseMod.subscribe(this);
+        setModID("vexMod");
 
-    // =============== MAKE IMAGE PATHS =================
+        logger.info("Done subscribing");
+
+        logger.info("Adding mod settings");
+        vexModDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "TRUE");
+        vexModDefaultSettings.setProperty(ENABLE_MEME_CARDS, "TRUE");
+        try {
+            SpireConfig config = new SpireConfig("vexMod", "vexModConfig", vexModDefaultSettings);
+            config.load();
+            enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
+            enableMemes = config.getBool(ENABLE_MEME_CARDS);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        logger.info("Done adding mod settings");
+
+    }
 
     public static String makeCardPath(String resourcePath) {
         return getModID() + "Resources/images/cards/" + resourcePath;
@@ -106,50 +112,13 @@ public class VexMod implements
         return getModID() + "Resources/images/orbs/" + resourcePath;
     }
 
-
-    // =============== /MAKE IMAGE PATHS/ =================
-
-    // =============== /INPUT TEXTURE LOCATION/ =================
-
-    // =============== SUBSCRIBE, INITIALIZE =================
-
-    public VexMod() {
-        logger.info("Subscribe to BaseMod hooks");
-
-        BaseMod.subscribe(this);
-        // CHANGE YOUR MOD ID HERE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        setModID("vexMod");
-
-        logger.info("Done subscribing");
-
+    public static String getModID() {
+        return modID;
     }
-
-    // ====== NO EDIT AREA ======
-    // DON'T TOUCH THIS STUFF. IT IS HERE FOR STANDARDIZATION BETWEEN MODS AND TO ENSURE GOOD CODE PRACTICES.
-    // IF YOU MODIFY THIS I WILL HUNT YOU DOWN AND DOWNVOTE YOUR MOD ON WORKSHOP
-    // I DID IT ANYWAYS :P
 
     public static void setModID(String ID) {
         modID = ID;
     }
-
-    public static String getModID() { // NO
-        return modID; // DOUBLE NO
-    } // NU-UH
-
-    private static void pathCheck() { // ALSO NO
-        String packageName = VexMod.class.getPackage().getName(); // STILL NOT EDIT ZONE
-        FileHandle resourcePathExists = Gdx.files.internal(getModID() + "Resources"); // PLEASE DON'T EDIT THINGS
-        if (!modID.equals("theDefaultDev")) { // LEAVE THIS EDIT-LESS
-            if (!packageName.equals(getModID())) { // NOT HERE ETHER
-                throw new RuntimeException("Rename your theDefault folder to match your mod ID! " + getModID()); // THIS IS A NO-NO
-            } // WHY WOULD U EDIT THIS
-            if (!resourcePathExists.exists()) { // DON'T CHANGE THIS
-                throw new RuntimeException("Rename your theDefaultResources folder to match your mod ID! " + getModID() + "Resources"); // NOT THIS
-            }// NO
-        }// NO
-    }// NO
-    // ====== YOU CAN EDIT AGAIN ======
 
     @SuppressWarnings("unused")
     public static void initialize() {
@@ -158,16 +127,17 @@ public class VexMod implements
         logger.info("========================= /vexMod Initialized. Hello Gamer./ =========================");
     }
 
-    // =============== POST-INITIALIZE =================
-
+    public static String makeID(String idText) {
+        return getModID() + ":" + idText;
+    }
 
     @Override
     public void receivePostInitialize() {
         logger.info("Loading badge image and mod options");
-        // Load the Mod Badge
+
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
 
-        // Create the Mod Menu
+
         ModPanel settingsPanel = new ModPanel();
 
         String labelText1;
@@ -203,9 +173,9 @@ public class VexMod implements
 
         ModLabeledToggleButton enableMemesButton = new ModLabeledToggleButton(labelText2,
                 350.0f, 600.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
-                enablePlaceholder, settingsPanel, (label) -> {
+                enableMemes, settingsPanel, (label) -> {
         }, (button) -> {
-            enablePlaceholder = button.enabled;
+            enableMemes = button.enabled;
             try {
                 SpireConfig config = new SpireConfig("vexMod", "vexModConfig", vexModDefaultSettings);
                 config.setBool(ENABLE_MEME_CARDS, enableMemes);
@@ -218,13 +188,12 @@ public class VexMod implements
 
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
-        // =============== EVENTS =================
 
         BaseMod.addEvent(GenieBoonEvent.ID, GenieBoonEvent.class, Exordium.ID);
         BaseMod.addEvent(TripleChoiceEvent.ID, TripleChoiceEvent.class);
         BaseMod.addEvent(StrangeSmithEvent.ID, StrangeSmithEvent.class, TheCity.ID);
         BaseMod.addEvent(LookAheadEvent.ID, LookAheadEvent.class, Exordium.ID);
-        BaseMod.addEvent(VoiceBoxEvent.ID, VoiceBoxEvent.class);
+        BaseMod.addEvent(VoiceBoxEvent.ID, VoiceBoxEvent.class, TheCity.ID);
         BaseMod.addEvent(DeadIroncladEvent.ID, DeadIroncladEvent.class, TheCity.ID);
         BaseMod.addEvent(DeadSilentEvent.ID, DeadSilentEvent.class, TheCity.ID);
         BaseMod.addEvent(DeadDefectEvent.ID, DeadDefectEvent.class, TheCity.ID);
@@ -237,11 +206,9 @@ public class VexMod implements
         BaseMod.addEvent(GrifterEvent.ID, GrifterEvent.class, TheCity.ID);
         BaseMod.addEvent(XCostLoverEvent.ID, XCostLoverEvent.class, Exordium.ID);
 
-        // =============== /EVENTS/ =================
 
         receiveEditPotions();
 
-        // =============== MONSTERS ===============
 
         BaseMod.addMonster(Combatant.ID, "Mechanical Combatant", () -> new Combatant(-50.0F, 100.0F));
         BaseMod.addMonster(InfectionBeast.ID, "Infection Beast", () -> new InfectionBeast(-100.0F, 0.0F));
@@ -256,9 +223,6 @@ public class VexMod implements
                 new LichPhylac(150.0F, 0.0F)
         }));
 
-        // ============== /MONSTERS/ ==============
-
-        // ============== ENCOUNTERS ==============
 
         if (language == Settings.GameLanguage.ENG) {
             BaseMod.addBoss(TheBeyond.ID, BeyondKing.ID, makeEventPath("beyondKing.png"), makeEventPath("beyondKingOutline.png"));
@@ -269,15 +233,10 @@ public class VexMod implements
         BaseMod.addEliteEncounter(TheCity.ID, new MonsterInfo(InfectionBeast.ID, 1.0F));
         BaseMod.addEliteEncounter(TheBeyond.ID, new MonsterInfo(BombBelcher.ID, 1.0F));
 
-        // ============== /ENCOUNTERS/ ============
 
         logger.info("Done loading badge Image and mod options");
 
     }
-
-    // =============== / POST-INITIALIZE/ =================
-
-    // ================ ADD POTIONS ===================
 
     public void receiveEditPotions() {
         logger.info("Beginning to edit potions");
@@ -290,15 +249,10 @@ public class VexMod implements
         logger.info("Done editing potions");
     }
 
-    // ================ /ADD POTIONS/ ===================
-
-    // ================ ADD RELICS ===================
-
     @Override
     public void receiveEditRelics() {
         logger.info("Adding relics");
 
-        // This adds a character specific relic. Only when you play with the mentioned color, will you get this relic.
         BaseMod.addRelic(new ColdYogurt(), RelicType.BLUE);
         BaseMod.addRelic(new CoolingFan(), RelicType.BLUE);
         BaseMod.addRelic(new CodeSmelter(), RelicType.BLUE);
@@ -314,7 +268,6 @@ public class VexMod implements
         BaseMod.addRelic(new StrikeShooter(), RelicType.RED);
         BaseMod.addRelic(new CursedBlade(), RelicType.RED);
 
-        // This adds a relic to the Shared pool. Every character can find this relic.
         BaseMod.addRelic(new ConsolationPrize(), RelicType.SHARED);
         BaseMod.addRelic(new PlagueVial(), RelicType.SHARED);
         BaseMod.addRelic(new ShiftingSkin(), RelicType.SHARED);
@@ -352,7 +305,6 @@ public class VexMod implements
         BaseMod.addRelic(new Dragonfruit(), RelicType.SHARED);
         BaseMod.addRelic(new RegenHeart(), RelicType.SHARED);
         BaseMod.addRelic(new LichBottle(), RelicType.SHARED);
-        BaseMod.addRelic(new ChestStatue(), RelicType.SHARED);
         BaseMod.addRelic(new MallPass(), RelicType.SHARED);
         BaseMod.addRelic(new FloorLord(), RelicType.SHARED);
         BaseMod.addRelic(new HatredEngine(), RelicType.SHARED);
@@ -384,16 +336,16 @@ public class VexMod implements
         BaseMod.addRelic(new HeadHunter(), RelicType.SHARED);
         BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
         BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
-        BaseMod.addRelic(new DevilBotling(), RelicType.SHARED);
-        BaseMod.addRelic(new TimeMachine(), RelicType.SHARED);
         BaseMod.addRelic(new MagicMissile(), RelicType.SHARED);
         BaseMod.addRelic(new RockLover(), RelicType.SHARED);
         BaseMod.addRelic(new GildedClover(), RelicType.SHARED);
         BaseMod.addRelic(new FluxCapacitor(), RelicType.SHARED);
         BaseMod.addRelic(new StoryBook(), RelicType.SHARED);
         BaseMod.addRelic(new GrifterSatchel(), RelicType.SHARED);
+        BaseMod.addRelic(new Pepega(), RelicType.SHARED);
+        BaseMod.addRelic(new MegatonBomb(), RelicType.SHARED);
+        BaseMod.addRelic(new BarristanHead(), RelicType.SHARED);
 
-        // Mark relics as seen (the others are all starters so they're marked as seen in the character file
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
         UnlockTracker.markRelicAsSeen(PlagueVial.ID);
@@ -443,7 +395,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(Dragonfruit.ID);
         UnlockTracker.markRelicAsSeen(RegenHeart.ID);
         UnlockTracker.markRelicAsSeen(LichBottle.ID);
-        UnlockTracker.markRelicAsSeen(ChestStatue.ID);
         UnlockTracker.markRelicAsSeen(MallPass.ID);
         UnlockTracker.markRelicAsSeen(FloorLord.ID);
         UnlockTracker.markRelicAsSeen(EndlessSickness.ID);
@@ -476,123 +427,109 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(HeadHunter.ID);
         UnlockTracker.markRelicAsSeen(NotEnergy.ID);
         UnlockTracker.markRelicAsSeen(NewsTicker.ID);
-        UnlockTracker.markRelicAsSeen(DevilBotling.ID);
-        UnlockTracker.markRelicAsSeen(TimeMachine.ID);
         UnlockTracker.markRelicAsSeen(MagicMissile.ID);
         UnlockTracker.markRelicAsSeen(RockLover.ID);
         UnlockTracker.markRelicAsSeen(GildedClover.ID);
         UnlockTracker.markRelicAsSeen(FluxCapacitor.ID);
         UnlockTracker.markRelicAsSeen(StoryBook.ID);
         UnlockTracker.markRelicAsSeen(GrifterSatchel.ID);
+        UnlockTracker.markRelicAsSeen(Pepega.ID);
+        UnlockTracker.markRelicAsSeen(MegatonBomb.ID);
+        UnlockTracker.markRelicAsSeen(BarristanHead.ID);
 
         logger.info("Done adding relics!");
     }
 
-    // ================ /ADD RELICS/ ===================
-
-    // ================ ADD CARDS ===================
-
     @Override
     public void receiveEditCards() {
         logger.info("Adding variables");
-        //Ignore this
-        pathCheck();
-        // Add the Custom Dynamic Variables
         logger.info("Add variabls");
-        // Add the Custom Dynamic variabls
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-
         logger.info("Adding cards");
-        // Add the cards
-
-        BaseMod.addCard(new BlockBeam()); //
-        BaseMod.addCard(new CleverClash()); //
-        BaseMod.addCard(new DeadlyDodge()); //
-        BaseMod.addCard(new ReflexChannel()); //
-        BaseMod.addCard(new Fear()); //
-        BaseMod.addCard(new Greed()); //
-        BaseMod.addCard(new StrikeStorm()); //
-        BaseMod.addCard(new ChaoticReactor()); //
-        BaseMod.addCard(new VenomSigh()); //
-        BaseMod.addCard(new Overload()); //
-        BaseMod.addCard(new CrumblingCrash()); //
-        BaseMod.addCard(new ComboTrick()); //
-        BaseMod.addCard(new TuneUp()); //
-        BaseMod.addCard(new MidasTouch()); //
-        BaseMod.addCard(new PotOfGreed()); //
-        BaseMod.addCard(new BloodGuard()); //
-        BaseMod.addCard(new Jackpot()); //
-        BaseMod.addCard(new EntryPlan()); //
-        BaseMod.addCard(new PrepareVictim()); //
-        BaseMod.addCard(new ShockKick()); //
-        BaseMod.addCard(new Taunt()); //
-        BaseMod.addCard(new BandageWhip()); //
-        BaseMod.addCard(new BeamPop()); //
-        BaseMod.addCard(new ChargeBeam()); //
-        BaseMod.addCard(new Devastation()); //
-        BaseMod.addCard(new Elimination()); //
-        BaseMod.addCard(new FullService()); //
-        BaseMod.addCard(new PinpointKick()); //
-        BaseMod.addCard(new Plotting()); //
-        BaseMod.addCard(new ShadowStrike()); //
-        BaseMod.addCard(new BattleStance()); //
-        BaseMod.addCard(new CoinToss()); //
-        BaseMod.addCard(new EvasiveThoughts()); //
-        BaseMod.addCard(new GroundPound()); //
-        BaseMod.addCard(new Hatred()); //
-        BaseMod.addCard(new Hex()); //
-        BaseMod.addCard(new MidnightStrike()); //
-        BaseMod.addCard(new RocketPunch()); //
-        BaseMod.addCard(new SharpOrbs()); //
-        BaseMod.addCard(new Sloth()); //
-        BaseMod.addCard(new BlazeBeam()); //
-        BaseMod.addCard(new SystemUpdate()); //
-        BaseMod.addCard(new Division()); //
-        BaseMod.addCard(new Virus()); //
-        BaseMod.addCard(new AntiqueFury()); //
-        BaseMod.addCard(new OrbBoomerang()); //
-        BaseMod.addCard(new DefensiveStance()); //
-        BaseMod.addCard(new FightResponse()); //
-        BaseMod.addCard(new Execute()); //
-        BaseMod.addCard(new FaceSlap()); //
-        BaseMod.addCard(new Gloat()); //
-        BaseMod.addCard(new HeavySlash()); //
-        BaseMod.addCard(new Insult()); //
-        BaseMod.addCard(new StairwayStrike()); //
-        BaseMod.addCard(new ScaledPoison()); //
-        BaseMod.addCard(new ShieldSwipe()); //
-        BaseMod.addCard(new GrowingStorm()); //
-        BaseMod.addCard(new DarkConflux()); //
-        BaseMod.addCard(new DiverseOrb()); //
-        BaseMod.addCard(new BloodToGold()); //
-        BaseMod.addCard(new GhostlyBlitz()); //
-        BaseMod.addCard(new CurseBlast()); //
-        BaseMod.addCard(new Weakness()); //
-        BaseMod.addCard(new GoldenLightningCard()); //
-        BaseMod.addCard(new NamedBlast()); //
-        BaseMod.addCard(new CalendarSmash()); //
-        BaseMod.addCard(new EmailVexCard()); //
-        BaseMod.addCard(new TrainingStrike()); //
-        BaseMod.addCard(new GorgonsGaze()); //
-        BaseMod.addCard(new GorgonsGlare()); //
-        BaseMod.addCard(new EyeBeam()); //
-        BaseMod.addCard(new SnakeSkin()); //
-        BaseMod.addCard(new CursedStrike()); //
-        BaseMod.addCard(new StarBlast()); //
-        BaseMod.addCard(new Stardash()); //
-        BaseMod.addCard(new Deathsprout()); //
-        BaseMod.addCard(new WeekCard()); //
+        BaseMod.addCard(new BlockBeam());
+        BaseMod.addCard(new CleverClash());
+        BaseMod.addCard(new DeadlyDodge());
+        BaseMod.addCard(new ReflexChannel());
+        BaseMod.addCard(new Fear());
+        BaseMod.addCard(new Greed());
+        BaseMod.addCard(new StrikeStorm());
+        BaseMod.addCard(new ChaoticReactor());
+        BaseMod.addCard(new VenomSigh());
+        BaseMod.addCard(new Overload());
+        BaseMod.addCard(new CrumblingCrash());
+        BaseMod.addCard(new TuneUp());
+        BaseMod.addCard(new MidasTouch());
+        BaseMod.addCard(new PotOfGreed());
+        BaseMod.addCard(new BloodGuard());
+        BaseMod.addCard(new Jackpot());
+        BaseMod.addCard(new EntryPlan());
+        BaseMod.addCard(new PrepareVictim());
+        BaseMod.addCard(new ShockKick());
+        BaseMod.addCard(new Taunt());
+        BaseMod.addCard(new BandageWhip());
+        BaseMod.addCard(new BeamPop());
+        BaseMod.addCard(new ChargeBeam());
+        BaseMod.addCard(new Devastation());
+        BaseMod.addCard(new Elimination());
+        BaseMod.addCard(new FullService());
+        BaseMod.addCard(new PinpointKick());
+        BaseMod.addCard(new Plotting());
+        BaseMod.addCard(new ShadowStrike());
+        BaseMod.addCard(new BattleStance());
+        BaseMod.addCard(new CoinToss());
+        BaseMod.addCard(new EvasiveThoughts());
+        BaseMod.addCard(new GroundPound());
+        BaseMod.addCard(new Hatred());
+        BaseMod.addCard(new Hex());
+        BaseMod.addCard(new MidnightStrike());
+        BaseMod.addCard(new RocketPunch());
+        BaseMod.addCard(new SharpOrbs());
+        BaseMod.addCard(new Sloth());
+        BaseMod.addCard(new BlazeBeam());
+        BaseMod.addCard(new SystemUpdate());
+        BaseMod.addCard(new Division());
+        BaseMod.addCard(new Virus());
+        BaseMod.addCard(new AntiqueFury());
+        BaseMod.addCard(new OrbBoomerang());
+        BaseMod.addCard(new DefensiveStance());
+        BaseMod.addCard(new FightResponse());
+        BaseMod.addCard(new Execute());
+        BaseMod.addCard(new FaceSlap());
+        BaseMod.addCard(new Gloat());
+        BaseMod.addCard(new HeavySlash());
+        BaseMod.addCard(new Insult());
+        BaseMod.addCard(new StairwayStrike());
+        BaseMod.addCard(new ScaledPoison());
+        BaseMod.addCard(new ShieldSwipe());
+        BaseMod.addCard(new GrowingStorm());
+        BaseMod.addCard(new DarkConflux());
+        BaseMod.addCard(new DiverseOrb());
+        BaseMod.addCard(new BloodToGold());
+        BaseMod.addCard(new GhostlyBlitz());
+        BaseMod.addCard(new CurseBlast());
+        BaseMod.addCard(new Weakness());
+        BaseMod.addCard(new GoldenLightningCard());
+        BaseMod.addCard(new NamedBlast());
+        BaseMod.addCard(new CalendarSmash());
+        BaseMod.addCard(new EmailVexCard());
+        BaseMod.addCard(new TrainingStrike());
+        BaseMod.addCard(new GorgonsGaze());
+        BaseMod.addCard(new GorgonsGlare());
+        BaseMod.addCard(new EyeBeam());
+        BaseMod.addCard(new SnakeSkin());
+        BaseMod.addCard(new CursedStrike());
+        BaseMod.addCard(new StarBlast());
+        BaseMod.addCard(new Stardash());
+        BaseMod.addCard(new Deathsprout());
+        BaseMod.addCard(new WeekCard());
         BaseMod.addCard(new UltimateCard());
         BaseMod.addCard(new WellTimedStrike());
         BaseMod.addCard(new VolumeVengeance());
         BaseMod.addCard(new ChimeraCard());
         BaseMod.addCard(new EvolveCard());
+        BaseMod.addCard(new NiftyMoves());
 
         logger.info("Making sure the cards are unlocked.");
-        // Unlock the cards
-        // This is so that they are all "seen" in the library, for people who like to look at the card list
-        // before playing your mod.
-
         UnlockTracker.unlockCard(BlockBeam.ID);
         UnlockTracker.unlockCard(CleverClash.ID);
         UnlockTracker.unlockCard(DeadlyDodge.ID);
@@ -604,7 +541,6 @@ public class VexMod implements
         UnlockTracker.unlockCard(VenomSigh.ID);
         UnlockTracker.unlockCard(Overload.ID);
         UnlockTracker.unlockCard(CrumblingCrash.ID);
-        UnlockTracker.unlockCard(ComboTrick.ID);
         UnlockTracker.unlockCard(TuneUp.ID);
         UnlockTracker.unlockCard(MidasTouch.ID);
         UnlockTracker.unlockCard(PotOfGreed.ID);
@@ -675,14 +611,10 @@ public class VexMod implements
         UnlockTracker.unlockCard(VolumeVengeance.ID);
         UnlockTracker.unlockCard(ChimeraCard.ID);
         UnlockTracker.unlockCard(EvolveCard.ID);
+        UnlockTracker.unlockCard(NiftyMoves.ID);
 
         logger.info("Done adding cards!");
     }
-
-    // ================ /ADD CARDS/ ===================
-
-
-    // ================ LOAD THE TEXT ===================
 
     private String languageSupport() {
         switch (language) {
@@ -699,19 +631,15 @@ public class VexMod implements
 
         String path = "Resources/localization/" + languageSupport() + "/";
 
-        // CardStrings
         BaseMod.loadCustomStringsFile(CardStrings.class,
                 getModID() + path + "vexMod-Card-Strings.json");
 
-        // PowerStrings
         BaseMod.loadCustomStringsFile(PowerStrings.class,
                 getModID() + path + "vexMod-Power-Strings.json");
 
-        // RelicStrings
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 getModID() + path + "vexMod-Relic-Strings.json");
 
-        // Event Strings
         BaseMod.loadCustomStringsFile(EventStrings.class,
                 getModID() + path + "vexMod-Event-Strings.json");
 
@@ -730,10 +658,6 @@ public class VexMod implements
         logger.info("Done edittting strings");
     }
 
-    // ================ /LOAD THE TEXT/ ===================
-
-    // ================ LOAD THE KEYWORDS AND OTHER ===================
-
     @Override
     public void receivePostUpdate() {
         if (AbstractDungeon.player == null) return;
@@ -745,13 +669,14 @@ public class VexMod implements
                 FluxCapacitor.relicBullshit();
             }
         }
+        if (AbstractDungeon.player.hasRelic(MegatonBomb.ID)) MegatonBomb.relicBullshit();
     }
 
     @Override
     public int receiveMaxHPChange(int amount) {
         if (AbstractDungeon.player != null && AbstractDungeon.player.hasRelic(MidasArmor.ID)) {
             MidasArmor relic = (MidasArmor) AbstractDungeon.player.getRelic(MidasArmor.ID);
-            amount = relic.onMaxHPChange(amount);
+            amount = relic.onMaxHPChange();
         }
         return amount;
     }
@@ -766,21 +691,27 @@ public class VexMod implements
                 }
             }
         }
+        if (!VexMod.enablePlaceholder) {
+            AbstractDungeon.removeCardFromPool(EmailVexCard.ID, EmailVexCard.NAME, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardColor.COLORLESS);
+        }
+        if (!VexMod.enableMemes) {
+            AbstractDungeon.removeCardFromPool(EmailVexCard.ID, EmailVexCard.NAME, AbstractCard.CardRarity.UNCOMMON, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(FullService.ID, FullService.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(CalendarSmash.ID, CalendarSmash.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(WeekCard.ID, WeekCard.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(CalendarSmash.ID, CalendarSmash.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(NamedBlast.ID, NamedBlast.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(WellTimedStrike.ID, WellTimedStrike.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(VolumeVengeance.ID, VolumeVengeance.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(ChimeraCard.ID, ChimeraCard.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+            AbstractDungeon.removeCardFromPool(Division.ID, Division.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+        }
     }
 
     @Override
     public void receiveCustomModeMods(List<CustomMod> list) {
         list.add(new CustomMod(ShiftingDeckMod.ID, "b", true));
         list.add(new CustomMod(NoRelicMode.ID, "b", true));
-    }
-
-
-    // ================ /LOAD THE KEYWORDS AND OTHER/ ===================
-
-    // this adds "ModName:" before the ID of any card/relic/power etc.
-    // in order to avoid conflicts if any other mod uses the same ID.
-    public static String makeID(String idText) {
-        return getModID() + ":" + idText;
     }
 
 }

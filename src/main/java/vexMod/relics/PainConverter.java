@@ -18,19 +18,17 @@ public class PainConverter
         extends CustomRelic
         implements BetterOnLoseHpRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("PainConverter");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PainConverter.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PainConverter.png"));
+    private int triggered = 0;
 
     public PainConverter() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.HEAVY);
     }
 
-    private int triggered = 0;
-
-    // Gain 1 boon for 15 hp lost
     @Override
     public int betterOnLoseHp(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount >= 10) {
@@ -51,7 +49,7 @@ public class PainConverter
         this.stopPulse();
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

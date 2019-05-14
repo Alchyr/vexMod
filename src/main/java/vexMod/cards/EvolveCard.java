@@ -16,7 +16,8 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -30,58 +31,25 @@ import vexMod.powers.PropogationPower;
 
 import java.util.ArrayList;
 
+import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static com.megacrit.cardcrawl.core.Settings.language;
 import static vexMod.VexMod.makeCardPath;
 
 public class EvolveCard extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("EvolveCard"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("EvolveCard");
+    public static final String IMG = makeCardPath("EvolveCardSkill.png");
+    public static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("EvolveCardSkill.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.NONE;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;   //
-    public static final CardColor COLOR = CardColor.COLORLESS;
-
-    private static final int COST = 1;  // COST = ${COST}
-
-    boolean playerNearDeath;
-    boolean noCardsAndEnergy;
-    boolean noEnergyLeft;
-    boolean monstersNearDeath;
-    boolean turnOne;
-    boolean emptyHand;
-    boolean twoDebuffs;
-    boolean fightingStabby;
-    boolean nobBattle;
-    boolean statusOrCurse;
-    boolean enemyDebuffing;
-    boolean unknownIntent;
-    boolean fiveOrMoreEnergy;
-    boolean isBarricaded;
-    boolean bossBattle;
-    boolean noBlock;
-    boolean isConfused;
-    boolean multiFight;
-    boolean enemyBlocking;
-    boolean lowGold;
-
-    private static final int PERIL_HEAL = 20;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.NONE;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final int COST = 1;
+    private static final int PERIL_HEAL = 25;
     private static final int EXECUTION_DAMAGE = 15;
     private static final int NO_CARDS_AND_ENERGY_DRAW = 3;
     private static final int NO_CARDS_AND_ENERGY_ENERGY = 2;
@@ -100,26 +68,46 @@ public class EvolveCard extends AbstractDefaultCard {
     private static final int MULTI_FIGHT_ENEMY_DAMAGE = 7;
     private static final int ENEMY_BLOCKING_DRAW = 1;
     private static final int BROKE_MOOLAH = 50;
+    private boolean playerNearDeath;
+    private boolean noCardsAndEnergy;
+    private boolean noEnergyLeft;
+    private boolean monstersNearDeath;
+    private boolean turnOne;
+    private boolean emptyHand;
+    private boolean twoDebuffs;
+    private boolean fightingStabby;
+    private boolean nobBattle;
+    private boolean statusOrCurse;
+    private boolean enemyDebuffing;
+    private boolean unknownIntent;
+    private boolean fiveOrMoreEnergy;
+    private boolean isBarricaded;
+    private boolean bossBattle;
+    private boolean noBlock;
+    private boolean isConfused;
+    private boolean multiFight;
+    private boolean enemyBlocking;
+    private boolean lowGold;
 
 
-    // /STAT DECLARATION/
-
-    public EvolveCard() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public EvolveCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
+        this.upgraded = true;
     }
 
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (playerNearDeath) {
+            this.exhaust = true;
             AbstractDungeon.player.heal(PERIL_HEAL, true);
+            AbstractDungeon.player.masterDeck.removeCard(getMasterDeckEquivalent(this));
         } else if (noCardsAndEnergy) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdrenalineEffect(), 0.15F));// 41
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(NO_CARDS_AND_ENERGY_ENERGY));// 45
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new AdrenalineEffect(), 0.15F));
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(NO_CARDS_AND_ENERGY_ENERGY));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, NO_CARDS_AND_ENERGY_DRAW));
         } else if (noEnergyLeft) {
-            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(NO_ENERGY_ENERGY_GAIN));// 4
+            AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(NO_ENERGY_ENERGY_GAIN));
         } else if (monstersNearDeath) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         } else if (turnOne) {
@@ -132,7 +120,7 @@ public class EvolveCard extends AbstractDefaultCard {
             if (this.energyOnUse < EnergyPanel.totalCount) {
                 this.energyOnUse = EnergyPanel.totalCount;
             }
-            ArrayList<AbstractCard> handCopy = new ArrayList();
+            ArrayList<AbstractCard> handCopy = new ArrayList<>();
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if ((c.type == AbstractCard.CardType.STATUS)) {
                     handCopy.add(c);
@@ -149,7 +137,7 @@ public class EvolveCard extends AbstractDefaultCard {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
         } else if (statusOrCurse) {
-            ArrayList<AbstractCard> handCopy = new ArrayList();
+            ArrayList<AbstractCard> handCopy = new ArrayList<>();
             for (AbstractCard c : AbstractDungeon.player.hand.group) {
                 if ((c.type == AbstractCard.CardType.STATUS) || (c.type == AbstractCard.CardType.CURSE) || (c.color == AbstractCard.CardColor.CURSE)) {
                     handCopy.add(c);
@@ -163,7 +151,7 @@ public class EvolveCard extends AbstractDefaultCard {
             }
         } else if (enemyDebuffing) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, ENEMY_DEBUFF_WEAK, false), ENEMY_DEBUFF_WEAK));// 49
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new WeakPower(m, ENEMY_DEBUFF_WEAK, false), ENEMY_DEBUFF_WEAK));
         } else if (unknownIntent) {
             AbstractDungeon.actionManager.addToBottom(new BlazeAction(AbstractDungeon.player, 2, false));
         } else if (fiveOrMoreEnergy) {
@@ -172,21 +160,21 @@ public class EvolveCard extends AbstractDefaultCard {
             }
             AbstractDungeon.actionManager.addToBottom(new StabbyXAction(p, m, damage, block, this.freeToPlayOnce, this.energyOnUse));
         } else if (isBarricaded) {
-            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));// 38
+            AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, this.block));
         } else if (bossBattle) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-            AbstractDungeon.actionManager.addToBottom(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));// 36
+            AbstractDungeon.actionManager.addToBottom(new ObtainPotionAction(AbstractDungeon.returnRandomPotion(true)));
         } else if (noBlock) {
             AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
         } else if (isConfused) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, CONFUSED_CARD_DRAW));
         } else if (multiFight) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));// 41 42
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));// 43
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));// 45 46
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));// 47
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(new DaggerSprayEffect(AbstractDungeon.getMonsters().shouldFlipVfx()), 0.0F));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(p, this.multiDamage, this.damageTypeForTurn, AbstractGameAction.AttackEffect.NONE));
         } else if (enemyBlocking) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(m, p));// 39
+            AbstractDungeon.actionManager.addToBottom(new RemoveAllBlockAction(m, p));
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, ENEMY_BLOCKING_DRAW));
         } else if (lowGold) {
             AbstractDungeon.player.gainGold(BROKE_MOOLAH);
@@ -223,7 +211,7 @@ public class EvolveCard extends AbstractDefaultCard {
         enemyBlocking = false;
         lowGold = false;
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            if (AbstractDungeon.player.currentHealth <= 20) {
+            if (AbstractDungeon.player.currentHealth <= 10) {
                 playerNearDeath = true;
                 if (language == Settings.GameLanguage.ZHS) {
                     this.name = "凤凰涅槃";
@@ -234,8 +222,9 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = true;
                 this.rawDescription = EXTENDED_DESCRIPTION[0];
-                loadCardImage(makeCardPath("EvolveCardSkill.png"));
+                loadCardImage(makeCardPath("PhoenixRevival.png"));
             } else if (AbstractDungeon.player.hand.size() == 1 && EnergyPanel.totalCount == 0) {
                 noCardsAndEnergy = true;
                 if (language == Settings.GameLanguage.ZHS) {
@@ -247,6 +236,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[2];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (EnergyPanel.totalCount == 0) {
@@ -260,6 +250,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[4];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkNearDead()) {
@@ -274,6 +265,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.ENEMY;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[1];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (GameActionManager.turn == 1) {
@@ -285,8 +277,9 @@ public class EvolveCard extends AbstractDefaultCard {
                 }
                 this.type = CardType.POWER;
                 this.target = CardTarget.SELF;
-                this.cost = 1;
-                this.costForTurn = 1;
+                this.cost = 3;
+                this.costForTurn = 3;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[5];
                 loadCardImage(makeCardPath("EvolveCardPower.png"));
             } else if (AbstractDungeon.player.hand.size() == 1) {
@@ -300,6 +293,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 1;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[3];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkDebuffCount()) {
@@ -313,6 +307,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[6];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkStabby()) {
@@ -327,6 +322,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = -1;
                 this.costForTurn = -1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[7];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkNob()) {
@@ -342,6 +338,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF_AND_ENEMY;
                 this.cost = 2;
                 this.costForTurn = 2;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[8];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkCursedStatused()) {
@@ -355,6 +352,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[9];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkEnemyDebuffing()) {
@@ -369,6 +367,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.ENEMY;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[10];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkEnemyUnknown()) {
@@ -382,6 +381,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[11];
                 loadCardImage(makeCardPath("EvolveCardPower.png"));
             } else if (AbstractDungeon.player.energy.energy >= 5) {
@@ -397,6 +397,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF_AND_ENEMY;
                 this.cost = -1;
                 this.costForTurn = -1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[12];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (AbstractDungeon.player.getPower("Barricade") != null) {
@@ -411,6 +412,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 2;
                 this.costForTurn = 2;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[13];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
@@ -425,6 +427,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF_AND_ENEMY;
                 this.cost = 2;
                 this.costForTurn = 2;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[14];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (AbstractDungeon.player.currentBlock == 0) {
@@ -439,6 +442,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.costForTurn = 1;
                 this.cost = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[15];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.player.getPower("Confusion") != null) {
@@ -452,6 +456,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.SELF;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[16];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (checkMultiCombat()) {
@@ -467,6 +472,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.ALL_ENEMY;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[17];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             } else if (checkEnemyBlock()) {
@@ -480,6 +486,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.ENEMY;
                 this.cost = 0;
                 this.costForTurn = 0;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[18];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else if (AbstractDungeon.player.gold <= 150) {
@@ -491,8 +498,9 @@ public class EvolveCard extends AbstractDefaultCard {
                 }
                 this.type = CardType.SKILL;
                 this.target = CardTarget.SELF;
-                this.cost = 2;
-                this.costForTurn = 2;
+                this.cost = 3;
+                this.costForTurn = 3;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[19];
                 loadCardImage(makeCardPath("EvolveCardSkill.png"));
             } else {
@@ -506,6 +514,7 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.target = CardTarget.ENEMY;
                 this.cost = 1;
                 this.costForTurn = 1;
+                this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[20];
                 loadCardImage(makeCardPath("EvolveCardAttack.png"));
             }
@@ -516,13 +525,14 @@ public class EvolveCard extends AbstractDefaultCard {
                 this.name = "Evolving Card";
             }
             this.cost = 1;
+            this.exhaust = false;
             this.rawDescription = DESCRIPTION;
             this.type = CardType.SKILL;
         }
         this.initializeDescription();
     }
 
-    public boolean checkMultiCombat() {
+    private boolean checkMultiCombat() {
         int monstersInCombat = 0;
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped()) {
@@ -532,7 +542,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return monstersInCombat >= 2;
     }
 
-    public boolean checkEnemyBlock() {
+    private boolean checkEnemyBlock() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m.currentBlock > 0) {
                 return true;
@@ -541,7 +551,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkCursedStatused() {
+    private boolean checkCursedStatused() {
         for (AbstractCard c : AbstractDungeon.player.hand.group) {
             if (c.type == CardType.CURSE || c.type == CardType.STATUS || c.color == CardColor.CURSE) {
                 return true;
@@ -550,7 +560,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkEnemyDebuffing() {
+    private boolean checkEnemyDebuffing() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m.intent == AbstractMonster.Intent.STRONG_DEBUFF) {
                 return true;
@@ -559,7 +569,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkEnemyUnknown() {
+    private boolean checkEnemyUnknown() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m.intent == AbstractMonster.Intent.UNKNOWN) {
                 return true;
@@ -568,7 +578,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkDebuffCount() {
+    private boolean checkDebuffCount() {
         int debuffsOwned = 0;
         for (AbstractPower p : AbstractDungeon.player.powers) {
             if (p.type == AbstractPower.PowerType.DEBUFF) {
@@ -578,7 +588,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return debuffsOwned >= 2;
     }
 
-    public boolean checkNob() {
+    private boolean checkNob() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m instanceof GremlinNob) {
                 return true;
@@ -587,7 +597,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkStabby() {
+    private boolean checkStabby() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m instanceof BookOfStabbing) {
                 return true;
@@ -596,7 +606,7 @@ public class EvolveCard extends AbstractDefaultCard {
         return false;
     }
 
-    public boolean checkNearDead() {
+    private boolean checkNearDead() {
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             if (!m.isDeadOrEscaped() && m.currentHealth <= 15) {
                 return true;
@@ -613,13 +623,8 @@ public class EvolveCard extends AbstractDefaultCard {
         }
     }
 
-    // Upgraded stats.
+
     @Override
     public void upgrade() {
-        if (!upgraded) {
-            upgradeName();
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            initializeDescription();
-        }
     }
 }

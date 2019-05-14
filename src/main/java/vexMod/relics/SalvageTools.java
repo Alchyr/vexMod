@@ -17,7 +17,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class SalvageTools extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("SalvageTools");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SalvageTools.png"));
@@ -32,7 +32,7 @@ public class SalvageTools extends CustomRelic {
     public void onManualDiscard() {
         this.flash();
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        ArrayList<AbstractCard> groupCopy = new ArrayList();
+        ArrayList<AbstractCard> groupCopy = new ArrayList<>();
         Iterator var4 = AbstractDungeon.player.hand.group.iterator();
 
         while (true) {
@@ -54,11 +54,7 @@ public class SalvageTools extends CustomRelic {
 
             AbstractCard c = null;
             if (!groupCopy.isEmpty()) {
-                Iterator var9 = groupCopy.iterator();
-                while (var9.hasNext()) {
-                    AbstractCard cc = (AbstractCard) var9.next();
-                }
-                c = (AbstractCard) groupCopy.get(AbstractDungeon.cardRandomRng.random(0, groupCopy.size() - 1));
+                c = groupCopy.get(AbstractDungeon.cardRandomRng.random(0, groupCopy.size() - 1));
             }
 
             if (c != null) {
@@ -68,7 +64,7 @@ public class SalvageTools extends CustomRelic {
         }
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

@@ -13,48 +13,29 @@ import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
-// public class ${NAME} extends AbstractDefaultCard
+
 public class DeadlyDodge extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("DeadlyDodge"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("DeadlyDodge");
+    public static final String IMG = makeCardPath("DeadlyDodge.png");
+    public static final CardColor COLOR = CardColor.GREEN;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("DeadlyDodge.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = CardColor.GREEN;
-
-    private static final int COST = 2;  // COST = ${COST}
-    private static final int UPGRADED_COST = 1; // UPGRADED_COST = ${UPGRADED_COST}
-
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final int COST = 2;
+    private static final int UPGRADED_COST = 1;
     private static final int INTANG = 1;
-
     private static final int POISON = 4;
 
-    // /STAT DECLARATION/
-
-
-    public DeadlyDodge() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public DeadlyDodge() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         magicNumber = baseMagicNumber = INTANG;
         defaultSecondMagicNumber = defaultBaseSecondMagicNumber = POISON;
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m == null || m.intent != AbstractMonster.Intent.ATTACK && m.intent != AbstractMonster.Intent.ATTACK_BUFF && m.intent != AbstractMonster.Intent.ATTACK_DEBUFF && m.intent != AbstractMonster.Intent.ATTACK_DEFEND) {
@@ -65,8 +46,6 @@ public class DeadlyDodge extends AbstractDefaultCard {
         }
     }
 
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

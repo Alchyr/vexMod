@@ -5,15 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireReturn;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.random.Random;
-import vexMod.VexMod;
-import vexMod.cards.*;
 import vexMod.relics.GildedClover;
-
-import javax.smartcardio.Card;
-
-import static com.evacipated.cardcrawl.modthespire.lib.SpireReturn.Continue;
-import static com.evacipated.cardcrawl.modthespire.lib.SpireReturn.Return;
-import static com.megacrit.cardcrawl.cards.AbstractCard.CardRarity.RARE;
 
 @SpirePatch(
         clz = AbstractDungeon.class,

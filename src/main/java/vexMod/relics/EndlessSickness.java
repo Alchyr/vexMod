@@ -1,19 +1,14 @@
 package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
-import basemod.helpers.TooltipInfo;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import vexMod.VexMod;
 import vexMod.cards.Virus;
 import vexMod.util.TextureLoader;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -31,13 +26,13 @@ public class EndlessSickness extends CustomRelic {
         this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 
-    // Gain 1 energy on equip.
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
     }
 
-    // Lose 1 energy on unequip.
+
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
@@ -50,7 +45,6 @@ public class EndlessSickness extends CustomRelic {
     }
 
 
-    // Description
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

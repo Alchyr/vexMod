@@ -11,10 +11,9 @@ import vexMod.util.TextureLoader;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class BetterTron
-        extends CustomRelic {
+public class BetterTron extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BetterTron");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BetterTron.png"));
@@ -25,7 +24,7 @@ public class BetterTron
         this.counter = 3;
     }
 
-    // Upgrade unupgraded gained cards.
+
     @Override
     public void onObtainCard(AbstractCard c) {
         if (this.counter >= 1 && c.canUpgrade() && !c.upgraded) {
@@ -42,7 +41,7 @@ public class BetterTron
         return Settings.isEndless || AbstractDungeon.floorNum <= 40;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

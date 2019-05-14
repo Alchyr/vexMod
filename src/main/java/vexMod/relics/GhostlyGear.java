@@ -14,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class GhostlyGear extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("GhostlyGear");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("GhostlyGear.png"));
@@ -32,7 +32,7 @@ public class GhostlyGear extends CustomRelic {
         }
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

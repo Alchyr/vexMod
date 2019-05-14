@@ -6,13 +6,9 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.DexterityPower;
-import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-
-import java.util.Iterator;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -34,10 +30,8 @@ public class RustySword extends CustomRelic {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, -1), -1));
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-        Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-        while (var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster) var1.next();
+        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
             m.addPower(new StrengthPower(m, -2));
         }
@@ -46,7 +40,6 @@ public class RustySword extends CustomRelic {
     }
 
 
-    // Description
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

@@ -11,7 +11,6 @@ import vexMod.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.Random;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -29,13 +28,13 @@ public class MindDevourer extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
-    // Gain 1 energy on equip.
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
     }
 
-    // Lose 1 energy on unequip.
+
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
@@ -43,19 +42,14 @@ public class MindDevourer extends CustomRelic {
 
     @Override
     public void onVictory() {
-        ArrayList<AbstractCard> removablecards = new ArrayList();
-        Iterator plop = AbstractDungeon.player.masterDeck.group.iterator();
-        while (plop.hasNext()) {
-            AbstractCard c = (AbstractCard) plop.next();
-            removablecards.add(c);
-        }
+        ArrayList<AbstractCard> removablecards = new ArrayList<>(AbstractDungeon.player.masterDeck.group);
         Collections.shuffle(removablecards, new Random(AbstractDungeon.miscRng.randomLong()));
-        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect((AbstractCard) removablecards.get(0), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-        AbstractCard card = (AbstractCard) removablecards.get(0);
+        AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(removablecards.get(0), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+        AbstractCard card = removablecards.get(0);
         AbstractDungeon.player.masterDeck.removeCard(card);
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

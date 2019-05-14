@@ -2,26 +2,30 @@ package vexMod.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.RollMoveAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import vexMod.VexMod;
 import vexMod.powers.*;
 
 import java.util.ArrayList;
 
 public class BeyondKing extends AbstractMonster {
-    public static final String ID = VexMod.makeID("BeyondKing"); // Makes the monster ID based on your mod's ID. For example: theDefault:BaseMonster
-    private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
-    public static final String NAME = monsterstrings.NAME; // Pulls name,
-    public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 800; // Always good to back up your health and move values.
+    public static final String ID = VexMod.makeID("BeyondKing");
+    private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
+    public static final String NAME = monsterstrings.NAME;
+    public static final String[] DIALOG = monsterstrings.DIALOG;
+    private static final int HP_MIN = 800;
     private static final int HP_MAX = 800;
-    private static final int A_9_HP_MIN = 880; // HP moves up at Ascension 7.
+    private static final int A_9_HP_MIN = 880;
     private static final int A_9_HP_MAX = 880;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
@@ -34,46 +38,42 @@ public class BeyondKing extends AbstractMonster {
     private static final int BIG_DEBUFF_AMOUNT = 1;
     private static final int ASC_19_BIG_DEBUFF_AMOUNT = 2;
     private int block_gain;
-    private int decree_damage;
     private int big_debuff_amt;
-    private static final byte DOUBLECURSE = 1; // Not sure what this is for myself. Guess it's just attack names.
-    private static final byte WEAKCURSE = 2;
-    private static final byte BLOCKCURSE = 3;
-    private static final byte ATTACKTIME = 4;
     private boolean firstTurn = true;
 
     public BeyondKing(float x, float y) {
-        super(NAME, "BeyondKing", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/BeyondKing.png", x, y); // Initializes the monster.
+        super(NAME, "BeyondKing", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/BeyondKing.png", x, y);
 
         this.type = EnemyType.BOSS;
 
-        if (AbstractDungeon.ascensionLevel >= 9) { // Checks if your Ascension is 7 or above...
-            this.setHp(A_9_HP_MIN, A_9_HP_MAX); // and increases HP if so.
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_9_HP_MIN, A_9_HP_MAX);
         } else {
-            this.setHp(HP_MIN, HP_MAX); // Provides regular HP values here otherwise.
+            this.setHp(HP_MIN, HP_MAX);
         }
 
+        int decree_damage;
         if (AbstractDungeon.ascensionLevel >= 19) {
             this.block_gain = ASC_4_BLOCK_GAIN;
-            this.decree_damage = ASC_4_DECREE_DAMAGE;
+            decree_damage = ASC_4_DECREE_DAMAGE;
             this.big_debuff_amt = ASC_19_BIG_DEBUFF_AMOUNT;
         } else if (AbstractDungeon.ascensionLevel >= 2) {
             this.block_gain = ASC_4_BLOCK_GAIN;
-            this.decree_damage = ASC_4_DECREE_DAMAGE;
+            decree_damage = ASC_4_DECREE_DAMAGE;
             this.big_debuff_amt = BIG_DEBUFF_AMOUNT;
         } else {
             this.block_gain = BLOCK_GAIN;
-            this.decree_damage = DECREE_DAMAGE;
+            decree_damage = DECREE_DAMAGE;
             this.big_debuff_amt = BIG_DEBUFF_AMOUNT;
         }
 
-        this.damage.add(new DamageInfo(this, this.decree_damage));
+        this.damage.add(new DamageInfo(this, decree_damage));
     }
 
     public void usePreBattleAction() {
-        CardCrawlGame.music.unsilenceBGM();// 97
-        AbstractDungeon.scene.fadeOutAmbiance();// 98
-        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");// 99
+        CardCrawlGame.music.unsilenceBGM();
+        AbstractDungeon.scene.fadeOutAmbiance();
+        AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BEYOND");
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new SlowDoomPower(AbstractDungeon.player, this, 5), 5));
     }
 
@@ -113,9 +113,9 @@ public class BeyondKing extends AbstractMonster {
     }
 
     public void takeTurn() {
-        if (this.firstTurn) { // If this is the first turn,
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F)); // Speak the stuff in DIALOG[0],
-            this.firstTurn = false; // Then ensure it's no longer the first turn.
+        if (this.firstTurn) {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F));
+            this.firstTurn = false;
         }
         switch (this.nextMove) {
             case 1:
@@ -132,13 +132,13 @@ public class BeyondKing extends AbstractMonster {
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(1), 1));
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.SMASH));// 93 94
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.SMASH));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
-    protected void getMove(int num) { // Gets a number for movement.
+    protected void getMove(int num) {
         ArrayList<Integer> wahoo = new ArrayList<>();
         wahoo.add(0);
         wahoo.add(1);
@@ -168,14 +168,14 @@ public class BeyondKing extends AbstractMonster {
         }
     }
 
-    public void die() { // When this monster dies...
-        if (!AbstractDungeon.getCurrRoom().cannotLose) {// 240
-            this.useFastShakeAnimation(5.0F);// 241
-            CardCrawlGame.screenShake.rumble(4.0F);// 242
-            super.die();// 243
-            this.onBossVictoryLogic();// 244
-            this.onFinalBossVictoryLogic();// 247
+    public void die() {
+        if (!AbstractDungeon.getCurrRoom().cannotLose) {
+            this.useFastShakeAnimation(5.0F);
+            CardCrawlGame.screenShake.rumble(4.0F);
+            super.die();
+            this.onBossVictoryLogic();
+            this.onFinalBossVictoryLogic();
         }
     }
 
-}// You made it! End of monster.
+}

@@ -40,7 +40,7 @@
     "NAME": "Pain Converter",
     "FLAVOR": "The machine seems to be magnetically attracted to your exposed injuries.",
     "DESCRIPTIONS": [
-      "Whenever you receive #b10 or more unblocked attack damage, gain [E] next turn and draw #b1 additional card next turn."
+      "Whenever you receive #b10 or more unblocked attack damage, draw #b1 additional card and gain [E] next turn."
     ]
   },
   "vexMod:BetterTron": {
@@ -252,21 +252,21 @@
     "NAME": "Toy Sword",
     "FLAVOR": "The smith fashioned you a little sword charm!",
     "DESCRIPTIONS": [
-      "Start each combat with #b1 less #yStrength. Whenever you play an #yAttack, the enemy loses #b2 #yStrength this turn."
+      "Start each combat with #b2 less #yStrength. Whenever you play an #yAttack, the enemy loses #b2 #yStrength this turn."
     ]
   },
   "vexMod:DoubleEdgedSword": {
     "NAME": "Double-Edged Sword",
     "FLAVOR": "The smith fashioned you an overly sharp blade!",
     "DESCRIPTIONS": [
-      "Start each combat with #b2 #yStrength. ALL enemies start combat with #b1 #yThorns."
+      "Start each combat with #b3 #yStrength. ALL enemies start combat with #b1 #yThorns."
     ]
   },
   "vexMod:BroadSword": {
     "NAME": "Broadsword",
     "FLAVOR": "The smith fashioned you a slightly oversized weapon!",
     "DESCRIPTIONS": [
-      "At the start of your turn, draw #b1 less card. Start each combat with #b2 #yStrength."
+      "At the start of your turn, draw #b1 less card. Start each combat with #b4 #yStrength."
     ]
   },
   "vexMod:RustySword": {
@@ -904,7 +904,7 @@
     "NAME": "Chomping Noodles",
     "FLAVOR": "These noodles bite back.",
     "DESCRIPTIONS": [
-      "Whenever you enter a #y? room, raise your Max HP by #b3 and lose #b5 HP."
+      "Whenever you enter a #y? room, raise your Max HP by #b3 and lose #b3 HP."
     ]
   },
   "vexMod:RedPlottingStone": {
@@ -1337,6 +1337,46 @@
     "FLAVOR": "Used for many a not-so-good deed.",
     "DESCRIPTIONS": [
       "All combats drop an additional, Colorless card reward."
+    ]
+  },
+  "vexMod:Nothing": {
+    "NAME": "Nothing",
+    "FLAVOR": "Nothing",
+    "DESCRIPTIONS": [
+      "Nothing"
+    ]
+  },
+  "vexMod:DoomRelic": {
+    "NAME": "Stone of Death",
+    "FLAVOR": "No, I'm not joking.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. If you die in the game, you die in real life."
+    ]
+  },
+  "vexMod:Pepega": {
+    "NAME": "Pepega.",
+    "FLAVOR": "That's just Pepega.",
+    "DESCRIPTIONS": [
+      "Really dude? That was just Pepega.",
+      "Pepega.",
+      "Pepega",
+      "Pepega!",
+      "PEPEGA",
+      "PEPAGA!",
+      "PUH-PAYGA!",
+      "Peh-payga.",
+      "Now that's just PUH PAYGA",
+      "That's just Pepega.",
+      "I mean ... Pepega.",
+      "Seriously? Pepega.",
+      "Thas Pepega."
+    ]
+  },
+  "vexMod:MegatonBomb": {
+    "NAME": "SuperBombBomb",
+    "FLAVOR": "A superweapon beyond any technology. Who made this...?",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, lose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rand #rall #renemies."
     ]
   }
 }

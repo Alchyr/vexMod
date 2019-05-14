@@ -3,23 +3,18 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
-import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class RegenHeart extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("RegenHeart");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("RegenVirus.png"));
@@ -50,11 +45,10 @@ public class RegenHeart extends CustomRelic {
     }
 
     public boolean canSpawn() {
-        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(MidasArmor.ID));// 50 51
+        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(MidasArmor.ID));
     }
 
 
-    // Description
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

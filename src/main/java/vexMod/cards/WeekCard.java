@@ -1,7 +1,10 @@
 package vexMod.cards;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -19,30 +22,19 @@ import static vexMod.VexMod.makeCardPath;
 
 public class WeekCard extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
 
-    public static final String ID = VexMod.makeID("WeekCard"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("WeekCard");
+    public static final String IMG = makeCardPath("WeekCardSkill.png");
+    public static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("WeekCardSkill.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.SKILL;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
-
-    private static final int COST = 1;  // COST = ${COST}
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final int COST = 1;
 
     private static final int MONDAY_DAMAGE = 15;
     private static final int TUESDAY_BLOCK = 15;
@@ -55,16 +47,13 @@ public class WeekCard extends AbstractDefaultCard {
     private static final int SUNDAY_DAMAGE = 9;
     private static final int SUNDAY_BLOCK = 9;
 
-    // /STAT DECLARATION/
 
-
-    public WeekCard() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public WeekCard() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         this.exhaust = true;
     }
 
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         int now = (new Date().getDay());
@@ -86,14 +75,14 @@ public class WeekCard extends AbstractDefaultCard {
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, p, new PoisonPower(m, p, this.magicNumber), this.magicNumber, AbstractGameAction.AttackEffect.POISON));
                 break;
             case "Thursday":
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));// 37
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));// 38
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
                 break;
             case "Friday":
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));// 41
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
                 break;
             case "Saturday":
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));// 41
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(p, this.magicNumber), this.magicNumber));
                 break;
         }
     }
@@ -197,7 +186,7 @@ public class WeekCard extends AbstractDefaultCard {
         }
     }
 
-    // Upgraded stats.
+
     @Override
     public void upgrade() {
         if (!upgraded) {

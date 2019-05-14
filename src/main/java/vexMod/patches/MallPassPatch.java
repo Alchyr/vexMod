@@ -1,13 +1,9 @@
 package vexMod.patches;
 
-import com.evacipated.cardcrawl.modthespire.lib.ByRef;
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.evacipated.cardcrawl.modthespire.lib.SpirePrefixPatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.EventHelper;
-import com.megacrit.cardcrawl.map.MapGenerator;
 import com.megacrit.cardcrawl.random.Random;
-import vexMod.relics.CursedCompass;
 import vexMod.relics.HatredEngine;
 import vexMod.relics.MallPass;
 import vexMod.relics.TreasureMap;

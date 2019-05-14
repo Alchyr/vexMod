@@ -13,7 +13,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class PillTracker extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("PillTracker");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PillTracker.png"));
@@ -44,7 +44,7 @@ public class PillTracker extends CustomRelic {
         this.stopPulse();
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

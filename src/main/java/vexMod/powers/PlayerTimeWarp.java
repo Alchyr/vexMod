@@ -1,14 +1,7 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package vexMod.powers;
 
 import basemod.interfaces.CloneablePowerInterface;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -16,19 +9,14 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.AbstractPower.PowerType;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.vfx.BorderFlashEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import com.megacrit.cardcrawl.vfx.combat.TimeWarpTurnEndEffect;
 import vexMod.VexMod;
-import vexMod.util.TextureLoader;
 
-import java.util.Iterator;
-
-public class PlayerTimeWarp extends AbstractPower {
+public class PlayerTimeWarp extends AbstractPower implements CloneablePowerInterface {
     public static final String POWER_ID = VexMod.makeID("PlayerTimeWarpPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String NAME = powerStrings.NAME;
@@ -56,6 +44,11 @@ public class PlayerTimeWarp extends AbstractPower {
         this.description = DESCRIPTIONS[3];
     }
 
+    @Override
+    public AbstractPower makeCopy() {
+        return new PlayerTimeWarp(owner, 12, 2);
+    }
+
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         this.flashWithoutSound();
         ++this.amount;
@@ -63,10 +56,8 @@ public class PlayerTimeWarp extends AbstractPower {
             this.amount = 0;
             this.playApplyPowerSfx();
             AbstractDungeon.actionManager.cardQueue.clear();
-            Iterator var3 = AbstractDungeon.player.limbo.group.iterator();
 
-            while (var3.hasNext()) {
-                AbstractCard c = (AbstractCard) var3.next();
+            for (AbstractCard c : AbstractDungeon.player.limbo.group) {
                 AbstractDungeon.effectList.add(new ExhaustCardEffect(c));
             }
 

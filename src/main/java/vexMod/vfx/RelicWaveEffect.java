@@ -11,8 +11,6 @@ public class RelicWaveEffect extends AbstractGameEffect {
 
     private float baseduration;
 
-    private boolean isFlashed = false;
-
     public RelicWaveEffect(int Index, float Timer) {
         this.toGet = Index;
         this.baseduration = Timer;
@@ -23,7 +21,7 @@ public class RelicWaveEffect extends AbstractGameEffect {
     @Override
     public void update() {
 
-        this.duration -= Gdx.graphics.getDeltaTime(); //tickDuration();
+        this.duration -= Gdx.graphics.getDeltaTime();
         if (duration < 0.0F) {
             if (toGet < (AbstractDungeon.player.relics.size() - 1)) {
                 AbstractDungeon.effectsQueue.add(new RelicWaveEffect(toGet + 1, baseduration));

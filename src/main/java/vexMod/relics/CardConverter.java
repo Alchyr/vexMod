@@ -12,7 +12,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class CardConverter extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("CardConverter");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BoxOfBandaids.png"));
@@ -28,7 +28,7 @@ public class CardConverter extends CustomRelic {
         AbstractDungeon.player.heal(3);
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

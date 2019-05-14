@@ -14,19 +14,14 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.Defect;
 import com.megacrit.cardcrawl.characters.Ironclad;
 import com.megacrit.cardcrawl.characters.TheSilent;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.helpers.PotionHelper;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.orbs.Frost;
-import com.megacrit.cardcrawl.potions.AbstractPotion;
-import com.megacrit.cardcrawl.potions.SmokeBomb;
 import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.relics.Ectoplasm;
-import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.powers.StoneSkinPower;
@@ -34,7 +29,6 @@ import vexMod.util.TextureLoader;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.Random;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
@@ -42,7 +36,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlayerDeathRelic, CustomSavable<Integer[]> {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("RandomRelic");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("RandomRelic.png"));
@@ -71,7 +65,6 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         }
         list.add("TurnStartDamage");
         list.add("CombatStartBlockGain");
-        ;
         list.add("CombatStartDamage");
         list.add("CombatStartDraw");
         list.add("BlockBrokenHeal");
@@ -271,8 +264,7 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
     }
 
     public Integer[] onSave() {
-        Integer[] integerList = {ID_MINOR, ID_MAJOR};
-        return integerList;
+        return new Integer[]{ID_MINOR, ID_MAJOR};
     }
 
     @Override
@@ -312,10 +304,8 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         }
         if (ID_MINOR == 1) {
             this.flash();
-            Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-            while (var1.hasNext()) {
-                AbstractMonster m = (AbstractMonster) var1.next();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDead && !m.isDying) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new PoisonPower(m, AbstractDungeon.player, 3), 3));
                 }
@@ -323,10 +313,8 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         }
         if (ID_MAJOR == 1) {
             this.flash();
-            Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
 
-            while (var1.hasNext()) {
-                AbstractMonster m = (AbstractMonster) var1.next();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (!m.isDead && !m.isDying) {
                     AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new PoisonPower(m, AbstractDungeon.player, 4), 4));
                 }
@@ -335,12 +323,12 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         if (ID_MINOR == 3) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(5, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(5, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         if (ID_MAJOR == 3) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(9, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(9, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         if (ID_MINOR == 4) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
@@ -400,36 +388,36 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
         if (ID_MINOR == 17) {
-            this.flash();// 24
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));// 25
-            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 31
+            this.flash();
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
         if (ID_MAJOR == 17) {
-            this.flash();// 24
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 2), 2));// 25
-            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 31
+            this.flash();
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StoneSkinPower(AbstractDungeon.player, AbstractDungeon.player, 2), 2));
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
         if (ID_MINOR == 19) {
-            this.flash();// 29
-            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
-            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(1));// 31
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(1));
         }
         if (ID_MAJOR == 19) {
-            this.flash();// 29
-            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 30
-            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(2));// 31
+            this.flash();
+            AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
+            AbstractDungeon.actionManager.addToBottom(new IncreaseMaxOrbAction(2));
         }
         if (ID_MINOR == 20) {
-            this.flash();// 24
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2), 2));// 25
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 2), 2));// 31
-            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 37
+            this.flash();
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 2), 2));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 2), 2));
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
-        if (ID_MINOR == 20) {
-            this.flash();// 24
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 4), 4));// 25
-            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 4), 4));// 31
-            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));// 37
+        if (ID_MAJOR == 20) {
+            this.flash();
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 4), 4));
+            AbstractDungeon.actionManager.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new LoseStrengthPower(AbstractDungeon.player, 4), 4));
+            AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         }
     }
 
@@ -464,12 +452,12 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         if (ID_MINOR == 2) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(1, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(1, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         if (ID_MAJOR == 2) {
             this.flash();
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(2, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.BLUNT_LIGHT));
         }
         if (ID_MINOR == 16) {
             this.flash();
@@ -483,7 +471,7 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
         }
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[216];

@@ -8,15 +8,13 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
 import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class BerrySword extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BerrySword");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BerrySword.png"));
@@ -62,7 +60,7 @@ public class BerrySword extends CustomRelic {
         this.counter = -1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

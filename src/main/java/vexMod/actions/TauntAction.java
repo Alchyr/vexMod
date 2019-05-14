@@ -12,11 +12,11 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class TauntAction extends AbstractGameAction {
-    private boolean freeToPlayOnce = false;
-    private boolean upgraded = false;
+    private boolean freeToPlayOnce;
+    private boolean upgraded;
     private AbstractPlayer p;
     private AbstractMonster m;
-    private int energyOnUse = -1;
+    private int energyOnUse;
 
     public TauntAction(AbstractPlayer p, AbstractMonster m, boolean upgraded, boolean freeToPlayOnce, int energyOnUse) {
         this.p = p;

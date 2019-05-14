@@ -16,41 +16,28 @@ import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
-// public class ${NAME} extends AbstractDefaultCard
+
 public class Jackpot extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
 
-    public static final String ID = VexMod.makeID("Jackpot"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("Jackpot");
+    public static final String IMG = makeCardPath("Jackpot.png");
+    public static final CardColor COLOR = CardColor.GREEN;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("Jackpot.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final int COST = 1;
 
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = CardColor.GREEN;
-
-    private static final int COST = 1;  // COST = ${COST}
-
-    private static final int DAMAGE = 7;    // DAMAGE = ${DAMAGE}
+    private static final int DAMAGE = 7;
     private static final int PSN = 7;
     private static final int GOLD = 7;
 
-    // /STAT DECLARATION/
 
-
-    public Jackpot() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Jackpot() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         magicNumber = baseMagicNumber = PSN;
@@ -59,7 +46,6 @@ public class Jackpot extends AbstractDefaultCard {
     }
 
 
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
@@ -73,7 +59,6 @@ public class Jackpot extends AbstractDefaultCard {
     }
 
 
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

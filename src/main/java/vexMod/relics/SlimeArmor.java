@@ -4,9 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.unique.RetainCardsAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.MalleablePower;
 import com.megacrit.cardcrawl.powers.RetainCardPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -16,7 +14,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class SlimeArmor extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("SlimeArmor");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("SlimeArmor.png"));
@@ -34,7 +32,7 @@ public class SlimeArmor extends CustomRelic {
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

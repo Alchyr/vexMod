@@ -13,7 +13,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ProtectorBot extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ProtectorBot");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ProtectorBot.png"));
@@ -33,7 +33,7 @@ public class ProtectorBot extends CustomRelic {
         }
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

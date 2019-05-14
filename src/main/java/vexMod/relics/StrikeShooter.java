@@ -16,7 +16,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class StrikeShooter extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("StrikeShooter");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("StrikeShooter.png"));
@@ -55,7 +55,7 @@ public class StrikeShooter extends CustomRelic {
         this.counter = -1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

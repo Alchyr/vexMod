@@ -21,14 +21,8 @@ import java.util.ArrayList;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class PuzzleBox extends CustomRelic implements ClickableRelic { // You must implement things you want to use from StSlib
-    /*
-     * https://github.com/daviscook477/BaseMod/wiki/Custom-Relics
-     * StSLib for Clickable Relics
-     *
-     */
+public class PuzzleBox extends CustomRelic implements ClickableRelic {
 
-    // ID, images, text.
     public static final String ID = VexMod.makeID("PuzzleBox");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("PuzzleBox.png"));
@@ -45,10 +39,33 @@ public class PuzzleBox extends CustomRelic implements ClickableRelic { // You mu
         initializeTips();
     }
 
+    public static void relicBullshit() {
+        if (loseRelic) {
+            int v = AbstractDungeon.cardRandomRng.random(2);
+            if (v == 0) {
+                CardCrawlGame.sound.play("GOLD_GAIN");
+                AbstractDungeon.player.gainGold(777);
+            } else if (v == 1) {
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+            } else if (v == 2) {
+                ArrayList<AbstractRelic> themRelics = new ArrayList<>();
+                themRelics.add(RelicLibrary.getRelic(EmptyCage.ID));
+                themRelics.add(RelicLibrary.getRelic(ImprovementManual.ID));
+                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1)));
+
+            }
+            AbstractDungeon.player.loseRelic(PuzzleBox.ID);
+            loseRelic = false;
+        }
+    }
+
     @Override
-    public void onRightClick() {// On right click
-        if (!isObtained) {// If it has been used this turn, or the player doesn't actually have the relic (i.e. it's on display in the shop room)
-            return; // Don't do anything.
+    public void onRightClick() {
+        if (!isObtained) {
+            return;
         }
 
         CardCrawlGame.sound.play("UI_CLICK_1");
@@ -63,30 +80,6 @@ public class PuzzleBox extends CustomRelic implements ClickableRelic { // You mu
         }
     }
 
-    public static void relicBullshit() {
-        if (loseRelic) {
-            int v = AbstractDungeon.cardRandomRng.random(2);
-            if (v == 0) {
-                CardCrawlGame.sound.play("GOLD_GAIN");
-                AbstractDungeon.player.gainGold(777);
-            } else if (v == 1) {
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new FlashOfSteel(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-                AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(new Finesse(), (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
-            } else if (v == 2) {
-                ArrayList<AbstractRelic> themRelics = new ArrayList();
-                themRelics.add(RelicLibrary.getRelic(EmptyCage.ID));
-                themRelics.add(RelicLibrary.getRelic(ImprovementManual.ID));
-                AbstractDungeon.getCurrRoom().spawnRelicAndObtain(Settings.WIDTH / 2.0F, Settings.HEIGHT / 2.0F, themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1)));
-
-            }
-            AbstractDungeon.player.loseRelic(PuzzleBox.ID);
-            loseRelic = false;
-        }
-    }
-
-    // Description
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];

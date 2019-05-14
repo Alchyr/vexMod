@@ -10,7 +10,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class Cooldron extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("Cooldron");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Cooldron.png"));
@@ -20,7 +20,7 @@ public class Cooldron extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

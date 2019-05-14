@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import vexMod.VexMod;
-import vexMod.actions.EmailAttackAction;
 import vexMod.actions.SproutAction;
 
 import java.util.ArrayList;
@@ -16,48 +15,29 @@ import java.util.List;
 
 import static vexMod.VexMod.makeCardPath;
 
-// public class ${NAME} extends AbstractDefaultCard
+
 public class Deathsprout extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("Deathsprout"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("Deathsprout");
+    public static final String IMG = makeCardPath("DeathSprout.png");
+    public static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("DeathSprout.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
-
-    private static final int COST = 2;  // COST = ${COST}
-
-    private static final int DAMAGE = 10;    // DAMAGE = ${DAMAGE}
-
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final int COST = 2;
+    private static final int DAMAGE = 10;
     private static final int UPGRADE_PLUS_DAMAGE = 5;
 
-    // /STAT DECLARATION/
-
-
-    public Deathsprout() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public Deathsprout() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         this.exhaust = true;
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new SproutAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn)));
@@ -70,8 +50,6 @@ public class Deathsprout extends AbstractDefaultCard {
         return tips;
     }
 
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

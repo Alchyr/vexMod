@@ -3,16 +3,13 @@ package vexMod.actions;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import vexMod.cards.GhostlyBlitz;
 import vexMod.relics.DeviousBotling;
 
 public class BotlingNerfAction extends AbstractGameAction {
-    AbstractRelic botling;
+    private AbstractRelic botling;
 
     public BotlingNerfAction(AbstractRelic EvilRelic) {
         duration = Settings.ACTION_DUR_MED;

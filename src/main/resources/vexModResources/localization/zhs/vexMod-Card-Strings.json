@@ -496,5 +496,10 @@
   "vexMod:ChimeraCard": {
     "NAME": "嵌合之牌",
     "DESCRIPTION": "效果总在改变，从来不会稳定下来……一切皆有可能。"
+  },
+  "vexMod:NiftyMoves": {
+    "NAME": "Nifty Moves",
+    "DESCRIPTION": "Play the top X cards of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile."
   }
 }

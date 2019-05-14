@@ -5,25 +5,19 @@ import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAllEnemiesAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.UseCardAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static basemod.helpers.BaseModCardTags.BASIC_DEFEND;
-import static basemod.helpers.BaseModCardTags.BASIC_STRIKE;
-import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class BerryBomb extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BerryBomb");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BerryBomb.png"));
@@ -40,6 +34,13 @@ public class BerryBomb extends CustomRelic {
         initializeTips();
     }
 
+    public static void relicBullshit() {
+        if (loseRelic) {
+            AbstractDungeon.player.loseRelic(BerryBomb.ID);
+            loseRelic = false;
+        }
+    }
+
     public void atBattleStart() {
         this.counter -= 1;
         description = getUpdatedDescription();
@@ -51,16 +52,9 @@ public class BerryBomb extends CustomRelic {
     public void atTurnStart() {
         if (this.counter == 0) {
             this.flash();
-            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction((AbstractCreature) null, DamageInfo.createDamageMatrix(100, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
+            AbstractDungeon.actionManager.addToBottom(new DamageAllEnemiesAction(null, DamageInfo.createDamageMatrix(100, true), DamageInfo.DamageType.THORNS, AbstractGameAction.AttackEffect.FIRE));
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             loseRelic = true;
-        }
-    }
-
-    public static void relicBullshit() {
-        if (loseRelic) {
-            AbstractDungeon.player.loseRelic(BerryBomb.ID);
-            loseRelic = false;
         }
     }
 
@@ -74,7 +68,7 @@ public class BerryBomb extends CustomRelic {
         return Settings.isEndless || AbstractDungeon.floorNum <= 33;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0] + this.counter + DESCRIPTIONS[1];

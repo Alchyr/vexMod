@@ -56,10 +56,6 @@
     "NAME": "Crumbling Crash",
     "DESCRIPTION": "Remove all Block from the enemy. NL Apply !M! Vulnerable."
   },
-  "vexMod:ComboTrick": {
-    "NAME": "Combo Trick",
-    "DESCRIPTION": "Add a Shiv into your hand. NL Apply 3 Poison. NL Next turn, gain !B! Block. NL Draw 2 cards. NL Discard 1 card."
-  },
   "vexMod:TuneUp": {
     "NAME": "Tune Up",
     "DESCRIPTION": "Gain !B! Block. NL Increase the damage of a random Attack in your hand by !M! this combat."
@@ -122,8 +118,7 @@
   },
   "vexMod:Elimination": {
     "NAME": "Elimination",
-    "DESCRIPTION": "Deal !D! damage. NL Exhaust your hand.",
-    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Exhaust any number of cards in your hand."
+    "DESCRIPTION": "Deal !D! damage. NL Exhaust any number of cards in your hand."
   },
   "vexMod:FullService": {
     "NAME": "Full Service",
@@ -432,7 +427,7 @@
     "DESCRIPTION": "Evolves based on current situation.",
     "UPGRADE_DESCRIPTION": "Evolves based on current situation. NL This upgrade does nothing.",
     "EXTENDED_DESCRIPTION": [
-      "Heal 20 HP.",
+      "Heal 25 HP. NL Remove this card from your deck. NL Exhaust.",
       "Deal !D! damage.",
       "Gain [E] [E] . NL Draw 3 cards.",
       "Draw 4 cards.",
@@ -458,5 +453,10 @@
   "vexMod:ChimeraCard": {
     "NAME": "Chimeric Card",
     "DESCRIPTION": "Always changing, never stable... can be anything."
+  },
+  "vexMod:NiftyMoves": {
+    "NAME": "Nifty Moves",
+    "DESCRIPTION": "Play the top X cards of your draw pile.",
+    "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile."
   }
 }

@@ -12,14 +12,13 @@ import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
-public class ScaledPoison
-        extends AbstractDefaultCard {
+public class ScaledPoison extends AbstractDefaultCard {
     public static final String ID = VexMod.makeID("ScaledPoison");
+    public static final int COST = 1;
+    public static final String IMG = makeCardPath("ScaledPoison.png");
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-    public static final int COST = 1;
-    public static final String IMG = makeCardPath("ScaledPoison.png");
 
     public ScaledPoison() {
         super(ID, NAME, IMG, COST, DESCRIPTION, AbstractCard.CardType.SKILL, CardColor.GREEN, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -36,7 +35,7 @@ public class ScaledPoison
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(2);
+            this.upgradeMagicNumber(1);
             this.initializeDescription();
         }
     }

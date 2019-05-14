@@ -14,28 +14,20 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.SpeechTextEffect;
 
 public class RelicSpeechBubble extends AbstractGameEffect {
-    private static final int RAW_W = 512;
-    private float shadow_offset = 0.0F;
     private static final float SHADOW_OFFSET = 16.0F * Settings.scale;
+    private static final float WAVY_SPEED = 6.0F * Settings.scale;
+    private static final float WAVY_DISTANCE = 2.0F * Settings.scale;
+    private static final float ADJUST_X = 15.0F * Settings.scale;
+    private static final float ADJUST_Y = 180.0F * Settings.scale;
+    public Hitbox hb;
+    private float shadow_offset = 0.0F;
     private float x;
     private float y;
     private float scale_x;
     private float scale_y;
     private float wavy_y;
     private float wavyHelper;
-    private static final float WAVY_SPEED = 6.0F * Settings.scale;
-    private static final float WAVY_DISTANCE = 2.0F * Settings.scale;
-    private static final float SCALE_TIME = 0.3F;
     private float scaleTimer = 0.3F;
-    private static final float ADJUST_X = 15.0F * Settings.scale;
-    private static final float ADJUST_Y = 180.0F * Settings.scale;
-    private static final float DEFAULT_DURATION = 2.0F;
-    public static final float FADE_TIME = 0.3F;
-    public Hitbox hb;
-
-    public RelicSpeechBubble(float x, float y, String msg, boolean TOP) {
-        this(x, y, 2.0F, msg, TOP);
-    }
 
     public RelicSpeechBubble(float x, float y, float duration, String msg, boolean TOP) {
         this.x = x + ADJUST_X;

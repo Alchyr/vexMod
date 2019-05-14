@@ -21,19 +21,19 @@ public class CursedCompass extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
     }
 
-    // Gain 1 energy on equip.
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
     }
 
-    // Lose 1 energy on unequip.
+
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

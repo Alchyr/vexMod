@@ -1,8 +1,8 @@
 package vexMod.patches;
 
 import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import vexMod.relics.RandomRelic;
 import vexMod.relics.RockLover;
 

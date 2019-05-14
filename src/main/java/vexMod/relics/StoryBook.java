@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import vexMod.VexMod;
@@ -18,7 +17,6 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class StoryBook extends CustomRelic {
 
-    // ID, images, text.
     public static final String ID = VexMod.makeID("StoryBook");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("StoryBook.png"));
@@ -32,31 +30,36 @@ public class StoryBook extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom room) {
         if ((AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && AbstractDungeon.actNum == 3 && (!Settings.hasEmeraldKey || !Settings.hasRubyKey || !Settings.hasSapphireKey)) || (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss && AbstractDungeon.actNum == 4) && !Settings.isEndless) {
-            if (lastThingDone == "BEGINNING") {
-                this.flavorText += "happy ending happened.";
-            } else if (lastThingDone == "NOUNONE") {
-                this.flavorText += "lived happily ever after.";
-            } else if (lastThingDone == "VERB") {
-                this.flavorText += "but then everyone had a happy ending.";
-            } else if (lastThingDone == "NOUNTWO") {
-                this.flavorText += "lived happily ever after.";
+            switch (lastThingDone) {
+                case "BEGINNING":
+                    this.flavorText += "happy ending happened.";
+                    break;
+                case "NOUNONE":
+                    this.flavorText += "lived happily ever after.";
+                    break;
+                case "VERB":
+                    this.flavorText += "but then everyone had a happy ending.";
+                    break;
+                case "NOUNTWO":
+                    this.flavorText += "lived happily ever after.";
+                    break;
             }
         } else if (lastThingDone == null) {
             this.flavorText += "Once, a ";
             lastThingDone = "BEGINNING";
-        } else if (lastThingDone == "BEGINNING") {
+        } else if (lastThingDone.equals("BEGINNING")) {
             this.flavorText += (getNewNoun() + " ");
             lastThingDone = "NOUNONE";
-        } else if (lastThingDone == "NOUNONE") {
+        } else if (lastThingDone.equals("NOUNONE")) {
             this.flavorText += (getNewVerb() + " a ");
             lastThingDone = "VERB";
-        } else if (lastThingDone == "VERB") {
+        } else if (lastThingDone.equals("VERB")) {
             this.flavorText += getNewNoun();
             lastThingDone = "NOUNTWO";
-        } else if (lastThingDone == "NOUNTWO") {
+        } else if (lastThingDone.equals("NOUNTWO")) {
             this.flavorText += getNewContinue();
             lastThingDone = "CONTINUATION";
-        } else if (lastThingDone == "CONTINUATION") {
+        } else if (lastThingDone.equals("CONTINUATION")) {
             this.flavorText += (getNewNoun() + " ");
             lastThingDone = "NOUNONE";
         }
@@ -11618,7 +11621,7 @@ public class StoryBook extends CustomRelic {
         return verbList.get(MathUtils.random(verbList.size() - 1));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

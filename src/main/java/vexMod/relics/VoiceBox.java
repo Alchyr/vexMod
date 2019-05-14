@@ -4,11 +4,8 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.characters.Defect;
 import com.megacrit.cardcrawl.characters.Ironclad;
 import com.megacrit.cardcrawl.characters.TheSilent;
@@ -17,10 +14,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.beyond.Nemesis;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.rooms.*;
 import com.megacrit.cardcrawl.vfx.SpeechBubble;
-import com.megacrit.cardcrawl.vfx.SpeechTextEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -31,7 +26,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class VoiceBox extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("VoiceBox");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("VoiceBox.png"));
@@ -123,7 +118,7 @@ public class VoiceBox extends CustomRelic {
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

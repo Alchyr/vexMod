@@ -1,10 +1,7 @@
 package vexMod.events;
 
 
-import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -15,6 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import vexMod.VexMod;
+import vexMod.modifiers.NoRelicMode;
 import vexMod.relics.*;
 
 import java.util.ArrayList;
@@ -25,49 +23,47 @@ public class GenieBoonEvent extends AbstractImageEvent {
 
 
     public static final String ID = VexMod.makeID("GenieBoonEvent");
+    public static final String IMG = makeEventPath("GenieBoonEvent.png");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
-
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("GenieBoonEvent.png");
-
-    private int screenNum = 0; // The initial screen we will see when encountering the event - screen 0;
+    private int screenNum = 0;
 
 
     public GenieBoonEvent() {
         super(NAME, DESCRIPTIONS[0], IMG);
         this.noCardsInRewards = true;
 
-        // The first dialogue options available to us.
-        imageEventText.setDialogOption(OPTIONS[0]); // Ease - Gain a very weak relic.
-        imageEventText.setDialogOption(OPTIONS[1]); // Speed - Gain a relic which Shortens the Spire.
-        imageEventText.setDialogOption(OPTIONS[2]); // Impossible Challenge - Gain a game-ending Relic.
+
+        imageEventText.setDialogOption(OPTIONS[0]);
+        imageEventText.setDialogOption(OPTIONS[1]);
+        imageEventText.setDialogOption(OPTIONS[2]);
     }
 
     @Override
-    protected void buttonEffect(int i) { // This is the event:
+    protected void buttonEffect(int i) {
         switch (screenNum) {
-            case 0: // While you are on screen number 0 (The starting screen)
+            case 0:
                 switch (i) {
-                    case 0: // If you press button the first button (Button at index 0), in this case: Inspiration.
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]); // Update the text of the event
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]); // 1. Change the first button to the [Leave] button
-                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
-                        screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
-                        // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
-                        // (in our case, that's the final screen, but you can chain as many as you want like that)
+                    case 0:
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+
+
                         AbstractDungeon.effectList.add(new RainingGoldEffect(100));
                         AbstractDungeon.player.gainGold(100);
 
-                        break; // Onto screen 1 we go.
-                    case 1: // If you press button the second button (Button at index 1), in this case: Ease
+                        break;
+                    case 1:
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
 
-                        ArrayList<AbstractRelic> themRelics = new ArrayList();
+                        ArrayList<AbstractRelic> themRelics = new ArrayList<>();
                         themRelics.add(RelicLibrary.getRelic(BerrySword.ID));
                         themRelics.add(RelicLibrary.getRelic(BrokenBowl.ID));
                         themRelics.add(RelicLibrary.getRelic(GoldFlippers.ID));
@@ -86,15 +82,24 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(LastWill.ID));
                         themRelics.add(RelicLibrary.getRelic(NotEnergy.ID));
                         themRelics.add(RelicLibrary.getRelic(NewsTicker.ID));
-                        themRelics.add(RelicLibrary.getRelic(TimeMachine.ID));
                         themRelics.add(RelicLibrary.getRelic(RockLover.ID));
                         themRelics.add(RelicLibrary.getRelic(GildedClover.ID));
                         themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
+                        themRelics.add(RelicLibrary.getRelic(Pepega.ID));
                         if (AbstractDungeon.cardRandomRng.random(2) == 0) {
                             themRelics.add(RelicLibrary.getRelic(PuzzleBox.ID));
                         }
 
-                        AbstractRelic relicToGive = (AbstractRelic) themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
+                        AbstractRelic relicToGive;
+                        if (!Settings.isDailyRun) {
+                            if (CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID)) {
+                                relicToGive = RelicLibrary.getRelic("nothingatall");
+                            } else {
+                                relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
+                            }
+                        } else {
+                            relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
+                        }
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(relicToGive);
                         AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
@@ -114,11 +119,9 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         screenNum = 1;
                 }
                 break;
-            case 1: // Welcome to screenNum = 1;
-                switch (i) {
-                    case 0: // If you press the first (and this should be the only) button,
-                        openMap(); // You'll open the map and end the event.
-                        break;
+            case 1:
+                if (i == 0) {
+                    openMap();
                 }
                 break;
         }

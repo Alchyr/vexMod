@@ -16,7 +16,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ThoughtMold extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ThoughtMold");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("HelpfulMold.png"));
@@ -36,7 +36,7 @@ public class ThoughtMold extends CustomRelic {
         return MathUtils.floor(blockAmount);
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

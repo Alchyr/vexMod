@@ -1,53 +1,34 @@
 package vexMod.monsters;
 
-import com.badlogic.gdx.math.MathUtils;
-import com.esotericsoftware.spine.AnimationState.TrackEntry;
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
-import com.megacrit.cardcrawl.actions.GameActionManager;
 import com.megacrit.cardcrawl.actions.animations.AnimateHopAction;
-import com.megacrit.cardcrawl.actions.animations.SetAnimationAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.unique.ApplyStasisAction;
-import com.megacrit.cardcrawl.actions.unique.SpawnDaggerAction;
 import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
-import com.megacrit.cardcrawl.actions.utility.SFXAction;
-import com.megacrit.cardcrawl.actions.utility.ShakeScreenAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.VoidCard;
-import com.megacrit.cardcrawl.cards.status.Wound;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeDur;
-import com.megacrit.cardcrawl.helpers.ScreenShake.ShakeIntensity;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.monsters.AbstractMonster.Intent;
 import com.megacrit.cardcrawl.monsters.beyond.SnakeDagger;
-import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.powers.FrailPower;
+import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
-import com.megacrit.cardcrawl.unlock.UnlockTracker;
-import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
-import com.megacrit.cardcrawl.vfx.combat.LaserBeamEffect;
 import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 import vexMod.VexMod;
-import vexMod.powers.*;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DaggerThrower extends AbstractMonster {
-    public static final String ID = VexMod.makeID("DaggerThrower"); // Makes the monster ID based on your mod's ID. For example: theDefault:BaseMonster
-    private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID); // Grabs strings from your language pack based on ID>
-    public static final String NAME = monsterstrings.NAME; // Pulls name,
-    public static final String[] DIALOG = monsterstrings.DIALOG; // and dialog text from strings.
-    private static final int HP_MIN = 230; // Always good to back up your health and move values.
+    public static final String ID = VexMod.makeID("DaggerThrower");
+    private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
+    public static final String NAME = monsterstrings.NAME;
+    public static final String[] DIALOG = monsterstrings.DIALOG;
+    private static final int HP_MIN = 230;
     private static final int HP_MAX = 230;
-    private static final int A_9_HP_MIN = 244; // HP moves up at Ascension 7.
+    private static final int A_9_HP_MIN = 244;
     private static final int A_9_HP_MAX = 244;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
@@ -57,148 +38,126 @@ public class DaggerThrower extends AbstractMonster {
     private static final int ASC_4_DAMAGE_NO_DAGGER = 6;
     private static final int DAMAGE_DAG = 4;
     private static final int ASC_4_DAMAGE_DAG = 5;
-    private int damageDagger;
-    private int damageNoDagger;
-    private static final byte DAMAGE_DAGGER = 1; // Not sure what this is for myself. Guess it's just attack names.
-    private static final byte BUFF_DAGGER = 2;
-    private static final byte WEAK_DAGGER = 3;
-    private static final byte DAMAGE_NODAG = 4;
-    private static final byte BUFF_NODAG = 5;
-    private static final byte WEAK_NODAG = 6;
     private boolean firstTurn = true;
     private boolean dagToggle;
     private boolean dagToggleToggle;
 
     public DaggerThrower(float x, float y) {
-        super(NAME, "DaggerThrower", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/DaggerPharaoh.png", x, y); // Initializes the monster.
+        super(NAME, "DaggerThrower", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/DaggerPharaoh.png", x, y);
 
         this.type = EnemyType.BOSS;
 
-        if (AbstractDungeon.ascensionLevel >= 9) { // Checks if your Ascension is 7 or above...
-            this.setHp(A_9_HP_MIN, A_9_HP_MAX); // and increases HP if so.
+        if (AbstractDungeon.ascensionLevel >= 9) {
+            this.setHp(A_9_HP_MIN, A_9_HP_MAX);
         } else {
-            this.setHp(HP_MIN, HP_MAX); // Provides regular HP values here otherwise.
+            this.setHp(HP_MIN, HP_MAX);
         }
 
-        if (AbstractDungeon.ascensionLevel >= 19) {// 82
-            this.damageDagger = ASC_4_DAMAGE_DAG;// 83
-            this.damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
-        } else if (AbstractDungeon.ascensionLevel >= 4) {// 86
-            this.damageDagger = ASC_4_DAMAGE_DAG;// 83
-            this.damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
+        int damageDagger;
+        int damageNoDagger;
+        if (AbstractDungeon.ascensionLevel >= 19) {
+            damageDagger = ASC_4_DAMAGE_DAG;
+            damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
+        } else if (AbstractDungeon.ascensionLevel >= 4) {
+            damageDagger = ASC_4_DAMAGE_DAG;
+            damageNoDagger = ASC_4_DAMAGE_NO_DAGGER;
         } else {
-            this.damageDagger = DAMAGE_DAG;// 83
-            this.damageNoDagger = DAMAGE_NO_DAGGER;
+            damageDagger = DAMAGE_DAG;
+            damageNoDagger = DAMAGE_NO_DAGGER;
         }
 
         dagToggle = true;
         dagToggleToggle = false;
-        this.damage.add(new DamageInfo(this, this.damageDagger));
-        this.damage.add(new DamageInfo(this, this.damageNoDagger));
+        this.damage.add(new DamageInfo(this, damageDagger));
+        this.damage.add(new DamageInfo(this, damageNoDagger));
     }
 
     public void usePreBattleAction() {
-        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {// 110
-            CardCrawlGame.music.unsilenceBGM();// 111
-            AbstractDungeon.scene.fadeOutAmbiance();// 112
-            AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");// 113
+        if (AbstractDungeon.getCurrRoom() instanceof MonsterRoomBoss) {
+            CardCrawlGame.music.unsilenceBGM();
+            AbstractDungeon.scene.fadeOutAmbiance();
+            AbstractDungeon.getCurrRoom().playBgmInstantly("BOSS_BOTTOM");
         }
-    }// 120
+    }
 
     public void takeTurn() {
         int numOfDaggers = 0;
-        if (this.firstTurn) { // If this is the first turn,
-            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F)); // Speak the stuff in DIALOG[0],
-            this.firstTurn = false; // Then ensure it's no longer the first turn.
+        if (this.firstTurn) {
+            AbstractDungeon.actionManager.addToBottom(new TalkAction(this, DIALOG[0], 0.5F, 2.0F));
+            this.firstTurn = false;
         }
         AbstractDungeon.actionManager.addToBottom(new AnimateHopAction(this));
         switch (this.nextMove) {
             case 1:
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));// 43
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.NONE));// 93 94
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));// 43
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(0), AttackEffect.NONE));// 93 94
-                Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
-                while (var3.hasNext()) {
-                    AbstractMonster m = (AbstractMonster) var3.next();
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.NONE));
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (m instanceof SnakeDagger && !m.isDead && !m.isDying) {
                         numOfDaggers++;
                     }
                 }
-                if (numOfDaggers < 1) {// 60
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));// 61
-                } else if (numOfDaggers == 1) {// 62
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));// 63
-                } else if (numOfDaggers == 2) {// 64
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));// 65
+                if (numOfDaggers < 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));
+                } else if (numOfDaggers == 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));
+                } else if (numOfDaggers == 2) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));
                 }
                 break;
             case 2:
-                Iterator var4 = AbstractDungeon.getMonsters().monsters.iterator();
-                while (var4.hasNext()) {
-                    AbstractMonster m = (AbstractMonster) var4.next();
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (m instanceof SnakeDagger && !m.isDead && !m.isDying) {
                         numOfDaggers++;
                     }
                 }
-                if (numOfDaggers < 1) {// 60
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));// 61
-                } else if (numOfDaggers == 1) {// 62
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));// 63
-                } else if (numOfDaggers == 2) {// 64
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));// 65
+                if (numOfDaggers < 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));
+                } else if (numOfDaggers == 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));
+                } else if (numOfDaggers == 2) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));
                 }
-                Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();// 116
 
-                while (true) {
-                    if (!var1.hasNext()) {
-                        break;
-                    }
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
 
-                    AbstractMonster m = (AbstractMonster) var1.next();
-                    if (!m.isDying) {// 121
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));// 122
+                    if (!m.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));
                     }
                 }
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
-                Iterator var5 = AbstractDungeon.getMonsters().monsters.iterator();
-                while (var5.hasNext()) {
-                    AbstractMonster m = (AbstractMonster) var5.next();
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                     if (m instanceof SnakeDagger && !m.isDead && !m.isDying) {
                         numOfDaggers++;
                     }
                 }
-                if (numOfDaggers < 1) {// 60
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));// 61
-                } else if (numOfDaggers == 1) {// 62
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));// 63
-                } else if (numOfDaggers == 2) {// 64
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));// 65
+                if (numOfDaggers < 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));
+                } else if (numOfDaggers == 1) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));
+                } else if (numOfDaggers == 2) {
+                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));
                 }
                 break;
             case 4:
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));// 43
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(1), AttackEffect.NONE));// 93 94
-                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));// 43
-                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, (DamageInfo) this.damage.get(1), AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.NONE));
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
+                AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.NONE));
                 break;
             case 5:
-                Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();// 116
 
-                while (true) {
-                    if (!var2.hasNext()) {
-                        break;
-                    }
+                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
 
-                    AbstractMonster m = (AbstractMonster) var2.next();
-                    if (!m.isDying) {// 121
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));// 122
+                    if (!m.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));
                     }
                 }
 
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 10));// 108
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 10));
                 break;
             case 6:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 1));
@@ -207,7 +166,7 @@ public class DaggerThrower extends AbstractMonster {
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
-    protected void getMove(int num) { // Gets a number for movement.
+    protected void getMove(int num) {
         if (dagToggle) {
             ArrayList<Integer> wahoo = new ArrayList<>();
             wahoo.add(0);
@@ -224,7 +183,7 @@ public class DaggerThrower extends AbstractMonster {
             }
             int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
             if (waaa == 0) {
-                this.setMove((byte) 1, Intent.ATTACK, ((DamageInfo) this.damage.get(0)).base, 2, true);
+                this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base, 2, true);
             } else if (waaa == 1) {
                 this.setMove((byte) 2, Intent.BUFF);
             } else if (waaa == 2) {
@@ -247,7 +206,7 @@ public class DaggerThrower extends AbstractMonster {
             }
             int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
             if (waaa == 0) {
-                this.setMove((byte) 4, Intent.ATTACK, ((DamageInfo) this.damage.get(1)).base, 2, true);
+                this.setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base, 2, true);
             } else if (waaa == 1) {
                 this.setMove((byte) 5, Intent.BUFF);
             } else if (waaa == 2) {
@@ -262,23 +221,21 @@ public class DaggerThrower extends AbstractMonster {
         }
     }
 
-    public void die() { // When this monster dies...
-        this.useFastShakeAnimation(5.0F);// 260
-        CardCrawlGame.screenShake.rumble(4.0F);// 261
-        ++this.deathTimer;// 262
-        super.die();// 263
-        this.onBossVictoryLogic();// 264
-        Iterator var1 = AbstractDungeon.getCurrRoom().monsters.monsters.iterator();// 266
+    public void die() {
+        this.useFastShakeAnimation(5.0F);
+        CardCrawlGame.screenShake.rumble(4.0F);
+        ++this.deathTimer;
+        super.die();
+        this.onBossVictoryLogic();
 
-        while (var1.hasNext()) {
-            AbstractMonster m = (AbstractMonster) var1.next();
-            if (!m.isDead && !m.isDying) {// 267
-                AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));// 268
-                AbstractDungeon.actionManager.addToTop(new SuicideAction(m));// 269
-                AbstractDungeon.actionManager.addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));// 270
+        for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!m.isDead && !m.isDying) {
+                AbstractDungeon.actionManager.addToTop(new HideHealthBarAction(m));
+                AbstractDungeon.actionManager.addToTop(new SuicideAction(m));
+                AbstractDungeon.actionManager.addToTop(new VFXAction(m, new InflameEffect(m), 0.2F));
             }
         }
-        // CardCrawlGame.sound.play("SOTE_SFX_POTION_1_v2"); // And it croaks too.
+
     }
 
-}// You made it! End of monster.
+}

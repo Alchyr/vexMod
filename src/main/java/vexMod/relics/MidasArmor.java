@@ -2,20 +2,12 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.relics.BetterOnLoseHpRelic;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.MindBloom;
 import com.megacrit.cardcrawl.events.city.KnowingSkull;
-import com.megacrit.cardcrawl.orbs.Frost;
-import com.megacrit.cardcrawl.relics.BloodyIdol;
-import com.megacrit.cardcrawl.relics.GoldenIdol;
-import com.megacrit.cardcrawl.rooms.ShopRoom;
 import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
@@ -26,7 +18,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("MidasArmor");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("GoldenArmor.png"));
@@ -69,7 +61,7 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
         return 0;
     }
 
-    public int onMaxHPChange(int amount) {
+    public int onMaxHPChange() {
         AbstractDungeon.player.maxHealth = AbstractDungeon.player.gold;
         if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth || AbstractDungeon.player.currentHealth < AbstractDungeon.player.maxHealth) {
             AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
@@ -97,10 +89,10 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
     }
 
     public boolean canSpawn() {
-        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(RegenHeart.ID));// 50 51
+        return (!Settings.isEndless && !AbstractDungeon.player.hasRelic(LichBottle.ID) && !AbstractDungeon.player.hasRelic(RegenHeart.ID));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

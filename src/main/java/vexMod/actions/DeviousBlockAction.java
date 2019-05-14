@@ -1,13 +1,6 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package vexMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -17,7 +10,6 @@ import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 import vexMod.relics.DeviousBotling;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class DeviousBlockAction extends AbstractGameAction {
     public DeviousBlockAction(AbstractCreature source, int amount) {
@@ -29,18 +21,16 @@ public class DeviousBlockAction extends AbstractGameAction {
 
     public void update() {
         if (this.duration == 0.5F) {
-            ArrayList<AbstractMonster> validMonsters = new ArrayList();
-            Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
+            ArrayList<AbstractMonster> validMonsters = new ArrayList<>();
 
-            while (var2.hasNext()) {
-                AbstractMonster m = (AbstractMonster) var2.next();
+            for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
                 if (m != this.source && m.intent != Intent.ESCAPE && !m.isDying) {
                     validMonsters.add(m);
                 }
             }
 
             if (!validMonsters.isEmpty()) {
-                this.target = (AbstractCreature) validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
+                this.target = validMonsters.get(AbstractDungeon.aiRng.random(validMonsters.size() - 1));
             } else {
                 this.target = this.source;
             }

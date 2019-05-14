@@ -4,7 +4,7 @@
     <groupId>vexMod</groupId>
     <artifactId>vexMod</artifactId>
     <!--<version>1.2.0</version>-->
-    <version>6</version>
+    <version>700</version>
     <name>vexMod</name>
 
     <properties>

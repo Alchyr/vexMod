@@ -12,7 +12,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class BrokenBowl extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("BrokenBowl");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BrokenBowl.png"));
@@ -22,7 +22,7 @@ public class BrokenBowl extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.SOLID);
     }
 
-    // Upgrade unupgraded gained cards at the cost of Max HP.
+
     @Override
     public void onObtainCard(AbstractCard c) {
         if (c.canUpgrade() && !c.upgraded) {
@@ -32,7 +32,6 @@ public class BrokenBowl extends CustomRelic {
     }
 
 
-    // Description
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

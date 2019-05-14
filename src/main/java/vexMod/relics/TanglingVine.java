@@ -24,7 +24,7 @@ public class TanglingVine extends CustomRelic {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
-    // Gain 1 energy on equip.
+
     @Override
     public void onEquip() {
         AbstractDungeon.player.energy.energyMaster += 1;
@@ -37,13 +37,13 @@ public class TanglingVine extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
-    // Lose 1 energy on unequip.
+
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

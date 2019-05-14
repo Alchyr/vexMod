@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.powers.MalleablePower;
-import com.megacrit.cardcrawl.powers.StrengthPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
@@ -16,7 +15,7 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ScavengeHelm extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ScavengeHelm");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("WrithingMask.png"));
@@ -35,7 +34,7 @@ public class ScavengeHelm extends CustomRelic {
         AbstractDungeon.actionManager.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

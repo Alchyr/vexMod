@@ -6,35 +6,29 @@ import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.vfx.UpgradeHammerImprintEffect;
 import com.megacrit.cardcrawl.vfx.UpgradeShineEffect;
-import com.megacrit.cardcrawl.vfx.cardManip.PurgeCardEffect;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardBrieflyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-
-import java.util.Iterator;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class ImprovementManual extends CustomRelic {
 
-    // ID, images, text.
+
     public static final String ID = VexMod.makeID("ImprovementManual");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ImprovementManual.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ImprovementManual.png"));
 
     private boolean cardSelected = true;
+    private int upgradeAbleCards;
 
     public ImprovementManual() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
-
-    private int upgradeAbleCards;
 
     @Override
     public void onEquip() {
@@ -60,10 +54,8 @@ public class ImprovementManual extends CustomRelic {
         super.update();
         if (!this.cardSelected && AbstractDungeon.gridSelectScreen.selectedCards.size() == upgradeAbleCards) {
             this.cardSelected = true;
-            Iterator var1 = AbstractDungeon.gridSelectScreen.selectedCards.iterator();
 
-            while (var1.hasNext()) {
-                AbstractCard card = (AbstractCard) var1.next();
+            for (AbstractCard card : AbstractDungeon.gridSelectScreen.selectedCards) {
                 card.upgrade();
                 float x = MathUtils.random(0.1F, 0.9F) * (float) Settings.WIDTH;
                 float y = MathUtils.random(0.2F, 0.8F) * (float) Settings.HEIGHT;
@@ -78,7 +70,7 @@ public class ImprovementManual extends CustomRelic {
 
     }
 
-    // Description
+
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

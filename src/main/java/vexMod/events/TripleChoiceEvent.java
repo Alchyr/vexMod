@@ -6,7 +6,6 @@ import com.megacrit.cardcrawl.cards.blue.WhiteNoise;
 import com.megacrit.cardcrawl.cards.green.Distraction;
 import com.megacrit.cardcrawl.cards.red.InfernalBlade;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
-
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
@@ -20,14 +19,12 @@ public class TripleChoiceEvent extends AbstractImageEvent {
 
 
     public static final String ID = VexMod.makeID("TripleChoiceEvent");
+    public static final String IMG = makeEventPath("TripleChoiceEvent.png");
     private static final EventStrings eventStrings = CardCrawlGame.languagePack.getEventString(ID);
-
     private static final String NAME = eventStrings.NAME;
     private static final String[] DESCRIPTIONS = eventStrings.DESCRIPTIONS;
     private static final String[] OPTIONS = eventStrings.OPTIONS;
-    public static final String IMG = makeEventPath("TripleChoiceEvent.png");
-
-    private int screenNum = 0; // The initial screen we will see when encountering the event - screen 0;
+    private int screenNum = 0;
 
 
     public TripleChoiceEvent() {
@@ -40,69 +37,62 @@ public class TripleChoiceEvent extends AbstractImageEvent {
         DemoDistraction.upgrade();
         DemoWhiteNoise.upgrade();
 
-        // The first dialogue options available to us.
-        imageEventText.setDialogOption(OPTIONS[0], DemoBlade); // Strength - Gain an Infernal Blade+.
-        imageEventText.setDialogOption(OPTIONS[1], DemoDistraction); // Skill - Gain a Distraction+.
-        imageEventText.setDialogOption(OPTIONS[2], DemoWhiteNoise); // Power - Gain a White Noise+.
+
+        imageEventText.setDialogOption(OPTIONS[0], DemoBlade);
+        imageEventText.setDialogOption(OPTIONS[1], DemoDistraction);
+        imageEventText.setDialogOption(OPTIONS[2], DemoWhiteNoise);
         imageEventText.setDialogOption(OPTIONS[3]);
     }
 
     @Override
-    protected void buttonEffect(int i) { // This is the event:
+    protected void buttonEffect(int i) {
         switch (screenNum) {
-            case 0: // While you are on screen number 0 (The starting screen)
+            case 0:
                 switch (i) {
                     case 0:
                         AbstractCard c = new InfernalBlade().makeCopy();
                         c.upgrade();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        // If you press button the first button (Button at index 0), in this case: Inspiration.
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]); // Update the text of the event
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]); // 1. Change the first button to the [Leave] button
-                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
-                        screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
-                        // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
-                        // (in our case, that's the final screen, but you can chain as many as you want like that)
+
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
 
 
-                        break; // Onto screen 1 we go.
-                    case 1: // If you press button the second button (Button at index 1), in this case: Ease
+                        break;
+                    case 1:
                         AbstractCard v = new Distraction().makeCopy();
                         v.upgrade();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(v, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        // If you press button the first button (Button at index 0), in this case: Inspiration.
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]); // Update the text of the event
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]); // 1. Change the first button to the [Leave] button
-                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
-                        screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
-                        // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
-                        // (in our case, that's the final screen, but you can chain as many as you want like that)
+
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
 
 
-                        break; // Onto screen 1 we go.
-                    case 2: // If you press button the third button (Button at index 2), in this case: Acceptance
+                        break;
+                    case 2:
                         AbstractCard d = new WhiteNoise().makeCopy();
                         d.upgrade();
                         AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(d, (float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2)));
-                        // If you press button the first button (Button at index 0), in this case: Inspiration.
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]); // Update the text of the event
-                        this.imageEventText.updateDialogOption(0, OPTIONS[3]); // 1. Change the first button to the [Leave] button
-                        this.imageEventText.clearRemainingOptions(); // 2. and remove all others
-                        screenNum = 1; // Screen set the screen number to 1. Once we exit the switch (i) statement,
-                        // we'll still continue the switch (screenNum) statement. It'll find screen 1 and do it's actions
-                        // (in our case, that's the final screen, but you can chain as many as you want like that)
 
-                        break; // Onto screen 1 we go.
+                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
+                        this.imageEventText.clearRemainingOptions();
+                        screenNum = 1;
+
+
+                        break;
                     case 3:
                         openMap();
                         break;
                 }
                 break;
-            case 1: // Welcome to screenNum = 1;
-                switch (i) {
-                    case 0: // If you press the first (and this should be the only) button,
-                        openMap(); // You'll open the map and end the event.
-                        break;
+            case 1:
+                if (i == 0) {
+                    openMap();
                 }
                 break;
         }

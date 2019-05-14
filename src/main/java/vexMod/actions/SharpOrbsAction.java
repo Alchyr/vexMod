@@ -1,24 +1,14 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
 package vexMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.ActionType;
-import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
 
 public class SharpOrbsAction extends AbstractGameAction {
     private DamageInfo info;
-    private static final float DURATION = 0.01F;
-    private static final float POST_ATTACK_WAIT_DUR = 0.2F;
     private int numTimes;
 
     public SharpOrbsAction(AbstractCreature target, DamageInfo info, int numTimes) {
@@ -45,10 +35,10 @@ public class SharpOrbsAction extends AbstractGameAction {
                 this.target.damage(this.info);
                 if (this.numTimes > 1 && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
                     --this.numTimes;
-                    AbstractDungeon.actionManager.addToTop(new SharpOrbsAction(AbstractDungeon.getMonsters().getRandomMonster((AbstractMonster) null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
+                    AbstractDungeon.actionManager.addToTop(new SharpOrbsAction(AbstractDungeon.getMonsters().getRandomMonster(null, true, AbstractDungeon.cardRandomRng), this.info, this.numTimes));
                 }
 
-                AbstractDungeon.actionManager.addToTop(new WaitAction(0.05F));
+                AbstractDungeon.actionManager.addToTop(new WaitAction(0.045F));
             }
 
             this.isDone = true;

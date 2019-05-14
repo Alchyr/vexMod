@@ -16,48 +16,29 @@ import vexMod.VexMod;
 
 import static vexMod.VexMod.makeCardPath;
 
-// public class ${NAME} extends AbstractDefaultCard
+
 public class FullService extends AbstractDefaultCard {
 
-    // TEXT DECLARATION
-
-    public static final String ID = VexMod.makeID("FullService"); // VexMod.makeID("${NAME}");
+    public static final String ID = VexMod.makeID("FullService");
+    public static final String IMG = makeCardPath("FullService.png");
+    public static final CardColor COLOR = CardColor.COLORLESS;
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
-
-    public static final String IMG = makeCardPath("FullService.png");// "public static final String IMG = makeCardPath("${NAME}.png");
-    // This does mean that you will need to have an image with the same NAME as the card in your image folder for it to run correctly.
-
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
-
-    // /TEXT DECLARATION/
-
-
-    // STAT DECLARATION
-
-    private static final CardRarity RARITY = CardRarity.RARE; //  Up to you, I like auto-complete on these
-    private static final CardTarget TARGET = CardTarget.ENEMY;  //   since they don't change much.
-    private static final CardType TYPE = CardType.ATTACK;       //
-    public static final CardColor COLOR = CardColor.COLORLESS;
-
-    private static final int COST = 3;  // COST = ${COST}
-
-    private static final int DAMAGE = 5;    // DAMAGE = ${DAMAGE}
-    private static final int UPGRADE_PLUS_DMG = 1;  // UPGRADE_PLUS_DMG = ${UPGRADED_DAMAGE_INCREASE}
-
+    private static final CardRarity RARITY = CardRarity.RARE;
+    private static final CardTarget TARGET = CardTarget.ENEMY;
+    private static final CardType TYPE = CardType.ATTACK;
+    private static final int COST = 3;
+    private static final int DAMAGE = 5;
+    private static final int UPGRADE_PLUS_DMG = 1;
     private static final int BLOCK = 5;
     private static final int UPGRADE_PLUS_BLOCK = 1;
-
     private static final int GOLD = 5;
     private static final int UPGRADE_PLUS_GOLD = 1;
-
     private static final int WACK = 2;
     private static final int WACKUP = 1;
 
-    // /STAT DECLARATION/
-
-
-    public FullService() { // public ${NAME}() - This one and the one right under the imports are the most important ones, don't forget them
+    public FullService() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
         baseDamage = DAMAGE;
         baseBlock = BLOCK;
@@ -67,8 +48,6 @@ public class FullService extends AbstractDefaultCard {
         this.tags.add(CardTags.HEALING);
     }
 
-
-    // Actions the card should do.
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new GainBlockAction(p, p, block));
@@ -90,8 +69,6 @@ public class FullService extends AbstractDefaultCard {
         AbstractDungeon.actionManager.addToBottom(new ArmamentsAction(false));
     }
 
-
-    // Upgraded stats.
     @Override
     public void upgrade() {
         if (!upgraded) {

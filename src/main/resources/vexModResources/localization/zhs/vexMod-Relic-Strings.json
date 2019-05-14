@@ -1331,5 +1331,33 @@
     "DESCRIPTIONS": [
       "All combats drop an additional, Colorless card reward."
     ]
+  },
+  "vexMod:Nothing": {
+    "NAME": "Nothing",
+    "FLAVOR": "Nothing",
+    "DESCRIPTIONS": [
+      "Nothing"
+    ]
+  },
+  "vexMod:DoomRelic": {
+    "NAME": "Stone of Death",
+    "FLAVOR": "No, I'm not joking.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. If you die in the game, you die in real life."
+    ]
+  },
+  "vexMod:Pepega": {
+    "NAME": "Pepega.",
+    "FLAVOR": "That's just Pepega.",
+    "DESCRIPTIONS": [
+      "Really dude? That was just Pepega."
+    ]
+  },
+  "vexMod:MegatonBomb": {
+    "NAME": "SuperBombBomb",
+    "FLAVOR": "A superweapon beyond any technology. Who made this...?",
+    "DESCRIPTIONS": [
+      "Whenever you climb a floor, lose #b1 HP from radiation poisoning. NL Right click: Destroy this and all enemies."
+    ]
   }
 }
