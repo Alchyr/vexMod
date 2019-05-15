@@ -21,7 +21,6 @@ public class NotEnergy extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("NotEnergy.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("NotEnergy.png"));
 
-
     public NotEnergy() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
@@ -47,12 +46,6 @@ public class NotEnergy extends CustomRelic {
         taunts.add(DESCRIPTIONS[12]);
         return taunts.get(MathUtils.random(taunts.size() - 1));
     }
-
-    @Override
-    public int getPrice() {
-        return 1;
-    }
-
 
     @Override
     public String getUpdatedDescription() {

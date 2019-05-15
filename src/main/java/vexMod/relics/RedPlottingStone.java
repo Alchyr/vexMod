@@ -117,7 +117,7 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
 
     @Override
     public boolean canSpawn() {
-        return (!Settings.isEndless || AbstractDungeon.floorNum <= 40);
+        return (!Settings.isEndless || AbstractDungeon.floorNum <= 48);
     }
 
 

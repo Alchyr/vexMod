@@ -33,12 +33,6 @@ public class TheWave extends CustomRelic implements ClickableRelic {
     }
 
     @Override
-    public int getPrice() {
-        return 1;
-    }
-
-
-    @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
     }

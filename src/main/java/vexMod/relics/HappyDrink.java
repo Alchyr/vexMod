@@ -3,6 +3,7 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
@@ -42,6 +43,9 @@ public class HappyDrink extends CustomRelic {
 
     }
 
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
+    }
 
     @Override
     public String getUpdatedDescription() {

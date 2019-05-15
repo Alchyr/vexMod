@@ -65,7 +65,7 @@ public class BerryBomb extends CustomRelic {
 
     @Override
     public boolean canSpawn() {
-        return Settings.isEndless || AbstractDungeon.floorNum <= 33;
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 33);
     }
 
 

@@ -605,7 +605,7 @@
     "NAME": "Hatred Engine",
     "FLAVOR": "They all deserve your blade! Go! Fight!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. ALL #y? rooms contain normal enemy combats."
+      "Gain [E] at the start of your turn. You are #b50% more likely to find normal enemy combats in #y? rooms."
     ]
   },
   "vexMod:EndlessSickness": {
@@ -1362,21 +1362,39 @@
       "Pepega",
       "Pepega!",
       "PEPEGA",
-      "PEPAGA!",
+      "PEPEGA!",
       "PUH-PAYGA!",
       "Peh-payga.",
       "Now that's just PUH PAYGA",
       "That's just Pepega.",
       "I mean ... Pepega.",
       "Seriously? Pepega.",
-      "Thas Pepega."
+      "Thas Pepega.",
+      "me god",
+      "who the fuck",
+      "fortnitedance",
+      "You're cancelled.",
+      "cancelled",
+      "You are cancelled.",
+      "Poggers.",
+      "POGGERS",
+      "poggers",
+      "POGGERS!",
+      "Whoa, that's poggers."
     ]
   },
   "vexMod:MegatonBomb": {
     "NAME": "SuperBombBomb",
     "FLAVOR": "A superweapon beyond any technology. Who made this...?",
     "DESCRIPTIONS": [
-      "Whenever you climb a floor, lose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rand #rall #renemies."
+      "Whenever you climb a floor, #rlose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rrelic #rand #rall #renemies."
+    ]
+  },
+  "vexMod:NewClearReactor": {
+    "NAME": "New, Clear Reactor",
+    "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an act, gain #b100 Energy."
     ]
   }
 }

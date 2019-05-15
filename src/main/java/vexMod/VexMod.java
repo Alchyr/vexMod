@@ -7,7 +7,6 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -43,7 +42,6 @@ import java.util.List;
 import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
-
 
 @SuppressWarnings("WeakerAccess")
 @SpireInitializer
@@ -313,7 +311,6 @@ public class VexMod implements
         BaseMod.addRelic(new TreasureMap(), RelicType.SHARED);
         BaseMod.addRelic(new RandomRelic(), RelicType.SHARED);
         BaseMod.addRelic(new BerryBomb(), RelicType.SHARED);
-        BaseMod.addRelic(new BrainBlaster(), RelicType.SHARED);
         BaseMod.addRelic(new MadnessLens(), RelicType.SHARED);
         BaseMod.addRelic(new TimesightGlass(), RelicType.SHARED);
         BaseMod.addRelic(new PlasmaPancake(), RelicType.SHARED);
@@ -345,6 +342,7 @@ public class VexMod implements
         BaseMod.addRelic(new Pepega(), RelicType.SHARED);
         BaseMod.addRelic(new MegatonBomb(), RelicType.SHARED);
         BaseMod.addRelic(new BarristanHead(), RelicType.SHARED);
+        BaseMod.addRelic(new NewClearReactor(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
@@ -404,7 +402,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(RandomRelic.ID);
         UnlockTracker.markRelicAsSeen(BerryBomb.ID);
         UnlockTracker.markRelicAsSeen(GazerBeam.ID);
-        UnlockTracker.markRelicAsSeen(BrainBlaster.ID);
+
         UnlockTracker.markRelicAsSeen(MadnessLens.ID);
         UnlockTracker.markRelicAsSeen(TimesightGlass.ID);
         UnlockTracker.markRelicAsSeen(ChompingNoodles.ID);
@@ -436,6 +434,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(Pepega.ID);
         UnlockTracker.markRelicAsSeen(MegatonBomb.ID);
         UnlockTracker.markRelicAsSeen(BarristanHead.ID);
+        UnlockTracker.markRelicAsSeen(NewClearReactor.ID);
 
         logger.info("Done adding relics!");
     }
@@ -617,12 +616,10 @@ public class VexMod implements
     }
 
     private String languageSupport() {
-        switch (language) {
-            case ZHS:
-                return "zhs";
-            default:
-                return "eng";
+        if (language == Settings.GameLanguage.ZHS) {
+            return "zhs";
         }
+        return "eng";
     }
 
     @Override

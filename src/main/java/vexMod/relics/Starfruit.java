@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
+import com.megacrit.cardcrawl.relics.SneckoEye;
 import vexMod.VexMod;
 import vexMod.cards.StarBlast;
 import vexMod.util.TextureLoader;
@@ -39,6 +40,9 @@ public class Starfruit extends CustomRelic {
         AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new StarBlast(), 3, true, true));
     }
 
+    public boolean canSpawn() {
+        return (!AbstractDungeon.player.hasRelic(SneckoEye.ID));
+    }
 
     @Override
     public String getUpdatedDescription() {

@@ -4,6 +4,7 @@ import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardGroup;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.rewards.RewardItem;
@@ -53,6 +54,9 @@ public class HeadHunter extends CustomRelic {
         }
     }
 
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
+    }
 
     @Override
     public String getUpdatedDescription() {

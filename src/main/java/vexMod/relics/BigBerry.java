@@ -27,7 +27,6 @@ public class BigBerry extends CustomRelic {
         AbstractDungeon.player.increaseMaxHp(22, true);
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

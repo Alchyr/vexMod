@@ -3,6 +3,7 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.EventRoom;
@@ -35,6 +36,9 @@ public class ChompingNoodles extends CustomRelic {
 
     }
 
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
+    }
 
     @Override
     public String getUpdatedDescription() {

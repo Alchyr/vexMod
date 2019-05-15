@@ -28,7 +28,6 @@ public class CardConverter extends CustomRelic {
         AbstractDungeon.player.heal(3);
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

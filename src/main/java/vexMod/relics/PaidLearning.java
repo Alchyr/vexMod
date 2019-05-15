@@ -67,7 +67,6 @@ public class PaidLearning extends CustomRelic {
             AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
             AbstractDungeon.gridSelectScreen.selectedCards.clear();
         }
-
     }
 
 

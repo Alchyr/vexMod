@@ -1359,5 +1359,12 @@
     "DESCRIPTIONS": [
       "Whenever you climb a floor, lose #b1 HP from radiation poisoning. NL Right click: Destroy this and all enemies."
     ]
+  },
+  "vexMod:NewClearReactor": {
+    "NAME": "New, Clear Reactor",
+    "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
+    "DESCRIPTIONS": [
+      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an act, gain #b100 Energy."
+    ]
   }
 }

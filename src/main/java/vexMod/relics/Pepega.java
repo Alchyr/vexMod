@@ -45,9 +45,22 @@ public class Pepega extends CustomRelic implements BetterOnLoseHpRelic {
         taunts.add(DESCRIPTIONS[7]);
         taunts.add(DESCRIPTIONS[8]);
         taunts.add(DESCRIPTIONS[9]);
+        taunts.add(DESCRIPTIONS[10]);
+        taunts.add(DESCRIPTIONS[11]);
+        taunts.add(DESCRIPTIONS[12]);
+        taunts.add(DESCRIPTIONS[13]);
+        taunts.add(DESCRIPTIONS[14]);
+        taunts.add(DESCRIPTIONS[15]);
+        taunts.add(DESCRIPTIONS[16]);
+        taunts.add(DESCRIPTIONS[17]);
+        taunts.add(DESCRIPTIONS[18]);
+        taunts.add(DESCRIPTIONS[19]);
+        taunts.add(DESCRIPTIONS[20]);
+        taunts.add(DESCRIPTIONS[21]);
+        taunts.add(DESCRIPTIONS[22]);
+        taunts.add(DESCRIPTIONS[23]);
         return taunts.get(MathUtils.random(taunts.size() - 1));
     }
-
 
 
     @Override

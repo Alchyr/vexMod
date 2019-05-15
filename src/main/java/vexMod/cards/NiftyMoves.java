@@ -39,7 +39,7 @@ public class NiftyMoves extends AbstractDefaultCard {
             this.energyOnUse = EnergyPanel.totalCount;
         }
 
-        AbstractDungeon.actionManager.addToBottom(new NiftyMovesAction(p, this.freeToPlayOnce, this.energyOnUse));
+        AbstractDungeon.actionManager.addToBottom(new NiftyMovesAction(p, this.upgraded, this.freeToPlayOnce, this.energyOnUse));
     }
 
 

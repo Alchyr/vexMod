@@ -38,9 +38,8 @@ public class BetterTron extends CustomRelic {
     }
 
     public boolean canSpawn() {
-        return Settings.isEndless || AbstractDungeon.floorNum <= 40;
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
     }
-
 
     @Override
     public String getUpdatedDescription() {

@@ -91,7 +91,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         }
 
                         AbstractRelic relicToGive;
-                        if (!Settings.isDailyRun) {
+                        if (!Settings.isDailyRun && Settings.isTrial) {
                             if (CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID)) {
                                 relicToGive = RelicLibrary.getRelic("nothingatall");
                             } else {

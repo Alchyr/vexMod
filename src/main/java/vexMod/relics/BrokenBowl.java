@@ -3,6 +3,7 @@ package vexMod.relics;
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
@@ -31,6 +32,9 @@ public class BrokenBowl extends CustomRelic {
         }
     }
 
+    public boolean canSpawn() {
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40);
+    }
 
     @Override
     public String getUpdatedDescription() {

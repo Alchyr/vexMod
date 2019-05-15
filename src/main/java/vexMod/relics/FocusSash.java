@@ -35,7 +35,6 @@ public class FocusSash extends CustomRelic implements BetterOnLoseHpRelic {
         return damageAmount;
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

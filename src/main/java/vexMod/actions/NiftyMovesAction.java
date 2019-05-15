@@ -9,11 +9,13 @@ import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 
 public class NiftyMovesAction extends AbstractGameAction {
     private boolean freeToPlayOnce;
+    private boolean upgraded;
     private AbstractPlayer p;
     private int energyOnUse;
 
-    public NiftyMovesAction(AbstractPlayer p, boolean freeToPlayOnce, int energyOnUse) {
+    public NiftyMovesAction(AbstractPlayer p, boolean upgraded, boolean freeToPlayOnce, int energyOnUse) {
         this.p = p;
+        this.upgraded = upgraded;
         this.freeToPlayOnce = freeToPlayOnce;
         this.duration = Settings.ACTION_DUR_XFAST;
         this.actionType = ActionType.SPECIAL;
@@ -30,6 +32,11 @@ public class NiftyMovesAction extends AbstractGameAction {
             effect += 2;
             this.p.getRelic("Chemical X").flash();
         }
+
+        if (this.upgraded) {
+            ++effect;
+        }
+
 
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {

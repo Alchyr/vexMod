@@ -22,7 +22,7 @@ public class BerrySword extends CustomRelic {
 
 
     public BerrySword() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
         this.counter = -1;
     }
 
@@ -59,7 +59,6 @@ public class BerrySword extends CustomRelic {
     public void onVictory() {
         this.counter = -1;
     }
-
 
     @Override
     public String getUpdatedDescription() {

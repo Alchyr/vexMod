@@ -32,7 +32,6 @@ public class GhostlyGear extends CustomRelic {
         }
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

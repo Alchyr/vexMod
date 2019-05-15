@@ -38,7 +38,6 @@ public class HatredEngine extends CustomRelic {
         return (!AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(TreasureMap.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID));
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

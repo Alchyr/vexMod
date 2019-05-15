@@ -21,7 +21,7 @@ public class MallPassPatch {
         if (AbstractDungeon.player.hasRelic(MallPass.ID)) {
             AbstractDungeon.player.getRelic(MallPass.ID).flash();
             return EventHelper.RoomResult.SHOP;
-        } else if (AbstractDungeon.player.hasRelic(HatredEngine.ID)) {
+        } else if (AbstractDungeon.player.hasRelic(HatredEngine.ID) && AbstractDungeon.eventRng.randomBoolean()) {
             AbstractDungeon.player.getRelic(HatredEngine.ID).flash();
             return EventHelper.RoomResult.MONSTER;
         } else if (AbstractDungeon.player.hasRelic(TreasureMap.ID)) {

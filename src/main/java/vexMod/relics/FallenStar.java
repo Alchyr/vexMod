@@ -40,7 +40,6 @@ public class FallenStar extends CustomRelic {
         return (!AbstractDungeon.player.hasRelic(SneckoEye.ID));
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];
