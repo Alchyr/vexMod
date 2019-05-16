@@ -403,7 +403,7 @@
       "Gain [E] [E] . NL Draw 3 cards.",
       "Draw 4 cards.",
       "Gain [E] [E] .",
-      "At the start of your turn, add an Evolving Card to your hand.",
+      "Gain 1 Strength. NL Gain 1 Dexterity. NL Gain 3 Plated Armor.",
       "Remove all your Debuffs.",
       "Exhaust all Statuses in your hand. Gain !B! Block X times.",
       "Gain !B! Block. NL Deal !D! damage.",
@@ -415,7 +415,7 @@
       "Deal !D! damage. NL Obtain a random potion.",
       "Gain !B! Block.",
       "Always costs 0. Draw 3 cards.",
-      "Deal !D! damage to ALL enemies.",
+      "Deal !D! damage to ALL enemies twice.",
       "Remove all Block from the enemy. NL Draw 1 card.",
       "Gain 50 Gold.",
       "Deal !D! damage. NL You have no problems."

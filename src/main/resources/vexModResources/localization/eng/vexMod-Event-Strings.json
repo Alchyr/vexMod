@@ -23,9 +23,9 @@
       "This one's always fun to use."
     ],
     "OPTIONS": [
-      "[Attack] #gGain #gan #gInfernal #gBlade+.",
-      "[Skill] #gGain #ga #gDistraction+.",
-      "[Power] #gGain #ga #gWhite #gNoise+.",
+      "[Attack] #gObtain #gInfernal #gBlade+.",
+      "[Skill] #gObtain #gDistraction+.",
+      "[Power] #gObtain #gWhite #gNoise+.",
       "[Leave]"
     ]
   },
@@ -40,8 +40,8 @@
       "You shake your head and get ready to continue. NL The smith seems disappointed."
     ],
     "OPTIONS": [
-      "[Smith Card] #g50%: #gUpgrade #gCard. #g50%: #gRemove #gCard.",
-      "[Smith Sword] #gGain #ga #gspecial #grelic... #rwith #rstrings #rattached.",
+      "[Smith Card] #gChoose #ga #gcard. #g50%: #gUpgrade #git. #g50%: #gRemove #git.",
+      "[Smith Sword] #gObtain #ga #gspecial #grelic... #rwith #rstrings #rattached.",
       "[Smith Meal] #gHeal #g30 #gHP. #rLose #r10 #rMax #rHP.",
       "[Leave]",
       "[Leave]",
@@ -58,8 +58,8 @@
       "The window fades as you continue on."
     ],
     "OPTIONS": [
-      "[Strength] #rBecome #rCursed. #gUpgrade #g2 #grandom #gcards.",
-      "[Fear] #rLose #r7 #rMax #rHP. #gObtain #ga #grandom #gcommon #gRelic.",
+      "[Strength] #rBecome #rCursed: #r???. #gUpgrade #g2 #grandom #gcards.",
+      "[Fear] #rLose #r7 #rMax #rHP. #gObtain #ga #gCommon #gRelic.",
       "[Death] #rObtain #ra #rrandom #rBlight. #gGain #g1000 #gGold.",
       "[Leave]",
       "[Leave]"
@@ -77,7 +77,7 @@
     "OPTIONS": [
       "[Tailoring] #rLose #rhalf #ryour #rGold. #gObtain #g1 #gof #g3 #gColorless #gRare #gcards.",
       "[Improvement] #gTransform #ga #gcard #gfrom #gyour #gdeck #ginto #ga #gRare #gcard.",
-      "[Implantation] #gGain #ga #grandom #gRare #grelic. #rLose #r12 #rMax #rHP.",
+      "[Implantation] #gObtain #ga #gRare #gRelic. #rLose #r12 #rMax #rHP.",
       "[Leave]",
       "[Leave]",
       "Improving...?"
@@ -94,8 +94,8 @@
     ],
     "OPTIONS": [
       "[Rob] #gGain #g50-80 #gGold.",
-      "[Assist] #gGain #gsome #gspecial #gcards.",
-      "[Desecrate] #gRemove #gall #gCurses.",
+      "[Assist] #gObtain #gsome #gspecial #gcards.",
+      "[Desecrate] #gRemove #gall #gCurses #gfrom #gyour #gdeck.",
       "[LOCKED: Requires Curses]",
       "[Leave]",
       "[Leave]"
@@ -112,8 +112,8 @@
     ],
     "OPTIONS": [
       "[Rob] #gGain #g50-80 #gGold.",
-      "[Assist] #gGain #gsome #gspecial #gcards.",
-      "[Desecrate] #gRemove #gall #gCurses.",
+      "[Assist] #gObtain #gsome #gspecial #gcards.",
+      "[Desecrate] #gRemove #gall #gCurses #gfrom #gyour #gdeck.",
       "[LOCKED: Requires Curses]",
       "[Leave]",
       "[Leave]"
@@ -130,8 +130,8 @@
     ],
     "OPTIONS": [
       "[Scrap] #gGain #g80-120 #gGold.",
-      "[Assist] #gGain #gsome #gspecial #gitems.",
-      "[Desecrate] #gRemove #gall #gCurses.",
+      "[Assist] #gObtain #gsome #gspecial #gitems.",
+      "[Desecrate] #gRemove #gall #gCurses #gfrom #gyour #gdeck.",
       "[LOCKED: Requires Curses]",
       "[Leave]",
       "[Leave]"
@@ -162,7 +162,7 @@
       "The serpent stares at you with a look of extreme disappointment, infernal anger, and slight doubt."
     ],
     "OPTIONS":[
-      "[Agree] #gGain #ga #gspecial #gRelic. #rBecome #rCursed #r- #r3x #rDoubt.",
+      "[Agree] #gObtain #ga #gspecial #gRelic. #rBecome #rCursed #r- #r3 #rDoubt.",
       "[Dissent] #rFight #rthe #rSsserpent.",
       "[Disagree]",
       "[Leave]"
@@ -199,7 +199,7 @@
       "[Leave]",
       "[Leave]",
       "[Locked] Requires: At least 100 Gold.",
-      " #rGold. #gGain #ga #gspecial #gcard."
+      " #rGold. #gObtain #ga #gspecial #gcard."
     ]
   },
   "vexMod:TweeterEvent": {
@@ -232,8 +232,8 @@
       "The machine accepts your card and spits out a card, along with a slip of paper. NL \"You should be ashamed of yourself!\""
     ],
     "OPTIONS": [
-      "[Trade] #gRecieve ",
-      " #gand #gStore #ga #gCard #gfor #ganother #gplayer.",
+      "[Trade] #gObtain ",
+      ". #gStore #ga #gcard #gfor #ganother #gplayer.",
       "[Leave]",
       "[Leave]",
       "Storing card..."
@@ -249,9 +249,9 @@
       "Don't even try it, moron!"
     ],
     "OPTIONS": [
-      "[Purchase] #rLose #rall #ryour #rGold. #gObtain #ga #gCommon #grelic.",
+      "[Purchase] #rLose #rall #ryour #rGold. #gObtain #ga #gCommon #gRelic.",
       "[Sell: ",
-      "] #rLose #rthis #rrelic. #gObtain #g50 #gGold.",
+      "] #rLose #rthis #rRelic. #gObtain #g50 #gGold.",
       "[Trinket] #rLose #r1 #rGold. #gObtain #ga #gtrinket.",
       "[Fight] #rBattle #rthe #rGrifter.",
       "[Leave]",
@@ -268,9 +268,9 @@
       "\"Really. No need for my ... awesome power. Okay.\" NL \"I see how it is. Yeah. Have fun.\" NL X-Man walks away, clearly crestfallen."
     ],
     "OPTIONS": [
-      "[Chem Power] #rLose #r25% #rMax #rHP. #gObtain #gChem. #gX.",
+      "[Chem Power] #rLose #r25% #rMax #rHP. #gObtain #gChemical #gX.",
       "[Power Infusion] #gTransform #ga #gcard #gin #gyour #gdeck #ginto #gan #gX-cost #gcard.",
-      "[Power Boost] #gObtain #gan #gX-Cost #gcard #greward.",
+      "[Power Boost] #gObtain #gan #gX-Cost #gcard.",
       "[Leave]",
       "[Leave]",
       "Transforming..."

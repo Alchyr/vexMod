@@ -317,9 +317,9 @@
     ]
   },
   "vexMod:LichPhylacPower": {
-    "NAME": "Lich's Undeath",
+    "NAME": "不死巫妖",
     "DESCRIPTIONS": [
-      "Immune to damage while a Lich's Phylactery is alive."
+      "场上还有存活的巫妖命匣时，免疫所有伤害。"
     ]
   },
   "vexMod:GriftingPower": {

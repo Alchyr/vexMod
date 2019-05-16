@@ -24,5 +24,17 @@
     "DESCRIPTIONS": [
       "获得 #b1 层任意的随机增益效果，并让 @DBotling 发一条推特公告你的这句游戏。"
     ]
+  },
+  "vexMod:FrostBottle": {
+    "NAME": "Ice in a Bottle",
+    "DESCRIPTIONS": [
+      "#yChannel #b1 #yFrost."
+    ]
+  },
+  "vexMod:PlasmaBottle": {
+    "NAME": "Plasma in a Bottle",
+    "DESCRIPTIONS": [
+      "#yChannel #b1 #yPlasma."
+    ]
   }
 }

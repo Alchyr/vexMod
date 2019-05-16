@@ -577,7 +577,7 @@
     "NAME": "Skull Hunter",
     "FLAVOR": "You're bringing this conflict to a head.",
     "DESCRIPTIONS": [
-      "Elites drop an additional, Rare card reward."
+      "Elites drop an additional Rare card reward."
     ]
   },
   "vexMod:ChestStatue": {
@@ -605,7 +605,7 @@
     "NAME": "Hatred Engine",
     "FLAVOR": "They all deserve your blade! Go! Fight!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. You are #b50% more likely to find normal enemy combats in #y? rooms."
+      "Gain [E] at the start of your turn. You have a 50% additional chance to find normal enemy combats in #y? rooms."
     ]
   },
   "vexMod:EndlessSickness": {
@@ -614,7 +614,7 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. At the start of each combat, shuffle a #rVirus into your draw pile.",
       "Virus",
-      "Viruses are #rCurse cards that duplicate when drawn."
+      "Viruses are #rCurse cards that duplicate themselves when drawn."
     ]
   },
   "vexMod:GoldBooster": {
@@ -1078,7 +1078,7 @@
     "NAME": "Thirteen-Hour Stone",
     "FLAVOR": "Number nine is the most important.",
     "DESCRIPTIONS": [
-      "Whenever you draw #b13 cards, draw #b1 card."
+      "Every time you you draw #b13 cards, draw #b1 card."
     ]
   },
   "vexMod:LastWill": {
@@ -1170,21 +1170,7 @@
     "NAME": "Grifter Satchel",
     "FLAVOR": "Used for many a not-so-good deed.",
     "DESCRIPTIONS": [
-      "All combats drop an additional, Colorless card reward."
-    ]
-  },
-  "vexMod:Nothing": {
-    "NAME": "Nothing",
-    "FLAVOR": "Nothing",
-    "DESCRIPTIONS": [
-      "Nothing"
-    ]
-  },
-  "vexMod:DoomRelic": {
-    "NAME": "Stone of Death",
-    "FLAVOR": "No, I'm not joking.",
-    "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. If you die in the game, you die in real life."
+      "All combats drop an additional Colorless card reward."
     ]
   },
   "vexMod:Pepega": {
@@ -1228,7 +1214,7 @@
     "NAME": "New, Clear Reactor",
     "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
     "DESCRIPTIONS": [
-      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an act, gain #b100 Energy."
+      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an Act, gain #b100 Energy."
     ]
   },
   "vexMod:SpireShuffle": {

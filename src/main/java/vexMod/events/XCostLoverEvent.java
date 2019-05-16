@@ -70,7 +70,7 @@ public class XCostLoverEvent extends AbstractImageEvent {
             case 0:
                 switch (i) {
                     case 0:
-                        AbstractDungeon.player.maxHealth = (int) ((float) AbstractDungeon.player.maxHealth * 0.75F);
+                        AbstractDungeon.player.maxHealth = (int) ((float) AbstractDungeon.player.maxHealth * 0.8F);
                         if (AbstractDungeon.player.maxHealth <= 0) {
                             AbstractDungeon.player.maxHealth = 1;
                         }

@@ -473,7 +473,7 @@
       "回复 20 生命。",
       "造成 !D! 点伤害",
       "获得 [E] [E] 。 NL 抽3张牌。",
-      "抽5张牌。",
+      "抽4张牌。",
       "获得 [E] [E] 。",
       "在你的回合开始时，将一张 演变之牌 添加到你的手牌。",
       "移除你身上的所有负面状态。",
@@ -498,8 +498,8 @@
     "DESCRIPTION": "效果总在改变，从来不会稳定下来……一切皆有可能。"
   },
   "vexMod:NiftyMoves": {
-    "NAME": "Nifty Moves",
-    "DESCRIPTION": "Play the top X cards of your draw pile.",
-    "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile."
+    "NAME": "精妙步伐",
+    "DESCRIPTION": "打出你抽牌堆顶部的 X 张牌。",
+    "UPGRADE_DESCRIPTION": "打出你抽牌堆顶的 X+1 张牌。"
   }
 }

@@ -16,8 +16,7 @@ import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.city.BookOfStabbing;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.*;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.rooms.MonsterRoomBoss;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
@@ -111,7 +110,9 @@ public class EvolveCard extends AbstractDefaultCard {
         } else if (monstersNearDeath) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         } else if (turnOne) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PropogationPower(p, p, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(AbstractDungeon.player, 1),1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(AbstractDungeon.player, 1),1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(AbstractDungeon.player, 3),3));
         } else if (emptyHand) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, NO_CARDS_DRAW));
         } else if (twoDebuffs) {
@@ -273,12 +274,12 @@ public class EvolveCard extends AbstractDefaultCard {
                 if (language == Settings.GameLanguage.ZHS) {
                     this.name = "繁衍生息";
                 } else {
-                    this.name = "Propagation";
+                    this.name = "Shielding Buddy";
                 }
                 this.type = CardType.POWER;
                 this.target = CardTarget.SELF;
-                this.cost = 3;
-                this.costForTurn = 3;
+                this.cost = 1;
+                this.costForTurn = 1;
                 this.exhaust = false;
                 this.rawDescription = EXTENDED_DESCRIPTION[5];
                 loadCardImage(makeCardPath("EvolveCardPower.png"));

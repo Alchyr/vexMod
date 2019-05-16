@@ -107,16 +107,16 @@
     ]
   },
   "vexMod:LichLord": {
-    "NAME": "Undercity Lichlady",
+    "NAME": "地底城女巫妖",
     "MOVES": [
-      "Dread Drain"
+      "枯渴之惧"
     ],
     "DIALOG": [
-      "I hold power over NL life and death alike!"
+      "我同时掌控着 NL 生与死的力量！"
     ]
   },
   "vexMod:LichPhylac": {
-    "NAME": "Lich's Phylactery",
+    "NAME": "巫妖命匣",
     "MOVES": [
 
     ],
