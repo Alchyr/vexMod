@@ -16,13 +16,25 @@
   "vexMod:LightningBottle": {
     "NAME": "Lightning in a Bottle",
     "DESCRIPTIONS": [
-      "Channel #b1 Lightning."
+      "#yChannel #b1 #yLightning."
     ]
   },
   "vexMod:CameraPotion": {
     "NAME": "Tweet Potion",
     "DESCRIPTIONS": [
       "Gain #b1 stack of ANY random buff. @DBotling tweets about your run."
+    ]
+  },
+  "vexMod:FrostBottle": {
+    "NAME": "Ice in a Bottle",
+    "DESCRIPTIONS": [
+      "#yChannel #b1 #yFrost."
+    ]
+  },
+  "vexMod:PlasmaBottle": {
+    "NAME": "Plasma in a Bottle",
+    "DESCRIPTIONS": [
+      "#yChannel #b1 #yPlasma."
     ]
   }
 }

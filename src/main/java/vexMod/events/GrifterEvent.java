@@ -77,6 +77,7 @@ public class GrifterEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(NewsTicker.ID));
                         themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
                         themRelics.add(RelicLibrary.getRelic(Pepega.ID));
+                        themRelics.add(RelicLibrary.getRelic(SpireShuffle.ID));
 
                         AbstractRelic relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), relicToGive);

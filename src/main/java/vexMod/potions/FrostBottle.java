@@ -6,22 +6,23 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.localization.PotionStrings;
+import com.megacrit.cardcrawl.orbs.Frost;
 import com.megacrit.cardcrawl.orbs.Lightning;
 import com.megacrit.cardcrawl.potions.AbstractPotion;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
-public class LightningBottle extends AbstractPotion {
+public class FrostBottle extends AbstractPotion {
 
 
-    public static final String POTION_ID = vexMod.VexMod.makeID("LightningBottle");
+    public static final String POTION_ID = vexMod.VexMod.makeID("FrostBottle");
     private static final PotionStrings potionStrings = CardCrawlGame.languagePack.getPotionString(POTION_ID);
 
     public static final String NAME = potionStrings.NAME;
     public static final String[] DESCRIPTIONS = potionStrings.DESCRIPTIONS;
 
-    private LightningBottle() {
+    private FrostBottle() {
 
-        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.M, PotionColor.EXPLOSIVE);
+        super(NAME, POTION_ID, PotionRarity.UNCOMMON, PotionSize.M, PotionColor.BLUE);
 
 
         potency = getPotency();
@@ -41,13 +42,13 @@ public class LightningBottle extends AbstractPotion {
     @Override
     public void use(AbstractCreature target) {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Lightning()));
+            AbstractDungeon.actionManager.addToBottom(new ChannelAction(new Frost()));
         }
     }
 
     @Override
     public AbstractPotion makeCopy() {
-        return new LightningBottle();
+        return new FrostBottle();
     }
 
 

@@ -17,7 +17,7 @@ public class ProtectorBot extends CustomRelic {
     public static final String ID = VexMod.makeID("ProtectorBot");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ProtectorBot.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ProtectorBot.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
 
     public ProtectorBot() {

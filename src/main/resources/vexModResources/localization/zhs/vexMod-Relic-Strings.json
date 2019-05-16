@@ -1366,5 +1366,12 @@
     "DESCRIPTIONS": [
       "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an act, gain #b100 Energy."
     ]
+  },
+  "vexMod:SpireShuffle": {
+    "NAME": "Spire Shuffle",
+    "FLAVOR": "To the left! To the right! Woo-hoo, now jump for joy!",
+    "DESCRIPTIONS": [
+      "Whenever you play an Attack, move to the right. Whenever you play a Skill, move to the left. Whenever you play a Power, move up."
+    ]
   }
 }

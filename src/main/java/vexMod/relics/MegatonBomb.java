@@ -5,7 +5,6 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
@@ -13,7 +12,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.PowerTip;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
-import com.megacrit.cardcrawl.rooms.TreasureRoomBoss;
 import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
 import com.megacrit.cardcrawl.vfx.combat.*;
 import vexMod.VexMod;
@@ -28,7 +26,7 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
     public static final String ID = VexMod.makeID("MegatonBomb");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("MegatonBomb.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MegatonBomb.png"));
 
     private static boolean loseRelic = false;
 
@@ -48,9 +46,9 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
     }
 
     @Override
-    public void onEnterRoom(AbstractRoom room) {
-        if (!(room instanceof TreasureRoomBoss))
-            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.HP_LOSS));
+    public void onPlayerEndTurn() {
+        this.flash();
+        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.HP_LOSS));
     }
 
     @Override
@@ -61,18 +59,21 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
 
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
             AbstractDungeon.actionManager.addToBottom(new VFXAction(new HeartBuffEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
-            // AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ScreenOnFireEffect(), 999.0F));
+            AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ScreenOnFireEffect(), 0.2F));
+            int boohoo = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
-                this.flash();
                 if (!m.isDead && !m.isDying) {
-                    for (int i = 0; i < 33; i++) {
-                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY),  AbstractDungeon.miscRng.random(0.15F, 0.2F)));
+                    boohoo++;
+                }
+            }
+            for (int i = 0; i < (30/boohoo); i++) {
+                for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
+                    this.flash();
+                    if (!m.isDead && !m.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
-                        // AbstractDungeon.actionManager.addToBottom(new WaitAction(0.05F));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GoldenSlashEffect(m.hb.cX, m.hb.cY, true)));
-                        // AbstractDungeon.actionManager.addToBottom(new WaitAction(0.05F));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ViceCrushEffect(m.hb.cX, m.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
-                        // AbstractDungeon.actionManager.addToBottom(new WaitAction(0.05F));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new CollectorCurseEffect(m.hb.cX, m.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                     }
                 }

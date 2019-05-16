@@ -4,7 +4,7 @@
   <groupId>vexMod</groupId>
   <artifactId>vexMod</artifactId>
   <name>vexMod</name>
-  <version>753</version>
+  <version>8008135</version>
   <description>A simple content mod.</description>
   <build>
     <resources>

@@ -19,8 +19,6 @@ import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import com.megacrit.cardcrawl.vfx.combat.ThrowDaggerEffect;
 import vexMod.VexMod;
 
-import java.util.ArrayList;
-
 public class DaggerThrower extends AbstractMonster {
     public static final String ID = VexMod.makeID("DaggerThrower");
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
@@ -34,13 +32,12 @@ public class DaggerThrower extends AbstractMonster {
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;
     private static final float HB_H = 150.0F;
-    private static final int DAMAGE_NO_DAGGER = 5;
-    private static final int ASC_4_DAMAGE_NO_DAGGER = 6;
-    private static final int DAMAGE_DAG = 4;
-    private static final int ASC_4_DAMAGE_DAG = 5;
+    private static final int DAMAGE_NO_DAGGER = 4;
+    private static final int ASC_4_DAMAGE_NO_DAGGER = 5;
+    private static final int DAMAGE_DAG = 3;
+    private static final int ASC_4_DAMAGE_DAG = 4;
     private boolean firstTurn = true;
-    private boolean dagToggle;
-    private boolean dagToggleToggle;
+    private int turnGoing;
 
     public DaggerThrower(float x, float y) {
         super(NAME, "DaggerThrower", 25, HB_X, HB_Y, HB_W, HB_H, "vexModResources/images/monsters/DaggerPharaoh.png", x, y);
@@ -66,8 +63,6 @@ public class DaggerThrower extends AbstractMonster {
             damageNoDagger = DAMAGE_NO_DAGGER;
         }
 
-        dagToggle = true;
-        dagToggleToggle = false;
         this.damage.add(new DamageInfo(this, damageDagger));
         this.damage.add(new DamageInfo(this, damageNoDagger));
     }
@@ -108,39 +103,15 @@ public class DaggerThrower extends AbstractMonster {
                 break;
             case 2:
                 for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                    if (m instanceof SnakeDagger && !m.isDead && !m.isDying) {
-                        numOfDaggers++;
+
+                    if (!m.isDying && !m.isDead) {
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));
                     }
                 }
-                if (numOfDaggers < 1) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));
-                } else if (numOfDaggers == 1) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));
-                } else if (numOfDaggers == 2) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));
-                }
-
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-
-                    if (!m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 1), 1));
-                    }
-                }
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 6));
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-                    if (m instanceof SnakeDagger && !m.isDead && !m.isDying) {
-                        numOfDaggers++;
-                    }
-                }
-                if (numOfDaggers < 1) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-220.0F, 90.0F), true));
-                } else if (numOfDaggers == 1) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(180.0F, 320.0F), true));
-                } else if (numOfDaggers == 2) {
-                    AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(new SnakeDagger(-250.0F, 310.0F), true));
-                }
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
@@ -148,76 +119,32 @@ public class DaggerThrower extends AbstractMonster {
                 AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.NONE));
                 break;
-            case 5:
-
-                for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-
-                    if (!m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, this, new StrengthPower(m, 2), 2));
-                    }
-                }
-
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, 10));
-                break;
-            case 6:
-                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 1));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
     }
 
     protected void getMove(int num) {
-        if (dagToggle) {
-            ArrayList<Integer> wahoo = new ArrayList<>();
-            wahoo.add(0);
-            wahoo.add(1);
-            wahoo.add(2);
-            if (this.lastMove((byte) 1) || this.lastMove((byte) 4)) {
-                wahoo.remove(0);
-            }
-            if (this.lastMove((byte) 2) || this.lastMove((byte) 5)) {
-                wahoo.remove(1);
-            }
-            if (this.lastMove((byte) 3) || this.lastMove((byte) 6)) {
-                wahoo.remove(2);
-            }
-            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
-            if (waaa == 0) {
-                this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base, 2, true);
-            } else if (waaa == 1) {
-                this.setMove((byte) 2, Intent.BUFF);
-            } else if (waaa == 2) {
-                this.setMove((byte) 3, Intent.DEBUFF);
-            }
-            dagToggle = false;
-        } else {
-            ArrayList<Integer> wahoo = new ArrayList<>();
-            wahoo.add(0);
-            wahoo.add(1);
-            wahoo.add(2);
-            if (this.lastMove((byte) 1) || this.lastMove((byte) 4)) {
-                wahoo.remove(0);
-            }
-            if (this.lastMove((byte) 2) || this.lastMove((byte) 5)) {
-                wahoo.remove(1);
-            }
-            if (this.lastMove((byte) 3) || this.lastMove((byte) 6)) {
-                wahoo.remove(2);
-            }
-            int waaa = wahoo.get(AbstractDungeon.monsterRng.random(wahoo.size() - 1));
-            if (waaa == 0) {
-                this.setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base, 2, true);
-            } else if (waaa == 1) {
-                this.setMove((byte) 5, Intent.BUFF);
-            } else if (waaa == 2) {
-                this.setMove((byte) 6, Intent.DEBUFF);
-            }
-            if (dagToggleToggle || AbstractDungeon.ascensionLevel >= 19) {
-                dagToggle = true;
-                dagToggleToggle = false;
-            } else {
-                dagToggleToggle = true;
-            }
+        if (turnGoing == 0)
+        {
+            this.setMove((byte)1, Intent.ATTACK, this.damage.get(0).base, 2, true);
+        }
+        else if (turnGoing == 1)
+        {
+            this.setMove((byte) 2, Intent.BUFF);
+        }
+        else if (turnGoing == 2)
+        {
+            this.setMove((byte) 3, Intent.DEBUFF);
+        }
+        else if (turnGoing == 3)
+        {
+            this.setMove ((byte) 4, Intent.ATTACK, this.damage.get(1).base, 2, true);
+        }
+        turnGoing++;
+        if (turnGoing == 4)
+        {
+            turnGoing = 0;
         }
     }
 

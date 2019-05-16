@@ -30,10 +30,7 @@ import vexMod.events.*;
 import vexMod.modifiers.NoRelicMode;
 import vexMod.modifiers.ShiftingDeckMod;
 import vexMod.monsters.*;
-import vexMod.potions.BlazePotion;
-import vexMod.potions.CameraPotion;
-import vexMod.potions.GoldPotion;
-import vexMod.potions.LightningBottle;
+import vexMod.potions.*;
 import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
@@ -60,7 +57,7 @@ public class VexMod implements
     public static final String BADGE_IMAGE = "vexModResources/images/Badge.png";
     private static final String MODNAME = "VexMod";
     private static final String AUTHOR = "DarkVexon";
-    private static final String DESCRIPTION = "A minor content mod.";
+    private static final String DESCRIPTION = "A major content mod.";
     public static Properties vexModDefaultSettings = new Properties();
     public static boolean enablePlaceholder = true;
     public static boolean enableMemes = true;
@@ -68,14 +65,14 @@ public class VexMod implements
 
 
     public VexMod() {
-        logger.info("Subscribe to BaseMod hooks");
+        logger.info("baseMod hooks BOYS");
 
         BaseMod.subscribe(this);
         setModID("vexMod");
 
-        logger.info("Done subscribing");
+        logger.info("aand done with hooks");
 
-        logger.info("Adding mod settings");
+        logger.info("settings time LOL");
         vexModDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "TRUE");
         vexModDefaultSettings.setProperty(ENABLE_MEME_CARDS, "TRUE");
         try {
@@ -86,7 +83,7 @@ public class VexMod implements
         } catch (Exception e) {
             e.printStackTrace();
         }
-        logger.info("Done adding mod settings");
+        logger.info("Mod settings concluded.");
 
     }
 
@@ -120,9 +117,9 @@ public class VexMod implements
 
     @SuppressWarnings("unused")
     public static void initialize() {
-        logger.info("========================= Initializing vexMod. Hi. =========================");
+        logger.info("========================= Here comes the vexMod. =========================");
         VexMod vexmod = new VexMod();
-        logger.info("========================= /vexMod Initialized. Hello Gamer./ =========================");
+        logger.info("========================= vex has infiltrated your PC =========================");
     }
 
     public static String makeID(String idText) {
@@ -131,7 +128,7 @@ public class VexMod implements
 
     @Override
     public void receivePostInitialize() {
-        logger.info("Loading badge image and mod options");
+        logger.info("it's badge and options time");
 
         Texture badgeTexture = TextureLoader.getTexture(BADGE_IMAGE);
 
@@ -232,24 +229,26 @@ public class VexMod implements
         BaseMod.addEliteEncounter(TheBeyond.ID, new MonsterInfo(BombBelcher.ID, 1.0F));
 
 
-        logger.info("Done loading badge Image and mod options");
+        logger.info("My image and mod options done.");
 
     }
 
     public void receiveEditPotions() {
-        logger.info("Beginning to edit potions");
+        logger.info("Potion edits begin.");
 
         BaseMod.addPotion(BlazePotion.class, Color.RED, Color.BLUE, Color.TEAL, BlazePotion.POTION_ID);
         BaseMod.addPotion(GoldPotion.class, Color.YELLOW, Color.GREEN, Color.BLACK, GoldPotion.POTION_ID);
         BaseMod.addPotion(LightningBottle.class, Color.YELLOW, Color.CYAN, Color.TEAL, LightningBottle.POTION_ID);
         BaseMod.addPotion(CameraPotion.class, Color.TEAL, Color.GOLD, Color.CORAL, CameraPotion.POTION_ID);
+        BaseMod.addPotion(FrostBottle.class, Color.BLUE, Color.NAVY, Color.BLACK, FrostBottle.POTION_ID);
+        BaseMod.addPotion(PlasmaBottle.class, Color.ORANGE, Color.CORAL, Color.OLIVE, PlasmaBottle.POTION_ID);
 
-        logger.info("Done editing potions");
+        logger.info("Potion edits concluded.");
     }
 
     @Override
     public void receiveEditRelics() {
-        logger.info("Adding relics");
+        logger.info("it's a me, relics");
 
         BaseMod.addRelic(new ColdYogurt(), RelicType.BLUE);
         BaseMod.addRelic(new CoolingFan(), RelicType.BLUE);
@@ -265,7 +264,6 @@ public class VexMod implements
         BaseMod.addRelic(new ChargeUpper(), RelicType.RED);
         BaseMod.addRelic(new StrikeShooter(), RelicType.RED);
         BaseMod.addRelic(new CursedBlade(), RelicType.RED);
-
         BaseMod.addRelic(new ConsolationPrize(), RelicType.SHARED);
         BaseMod.addRelic(new PlagueVial(), RelicType.SHARED);
         BaseMod.addRelic(new ShiftingSkin(), RelicType.SHARED);
@@ -278,7 +276,6 @@ public class VexMod implements
         BaseMod.addRelic(new TanglingVine(), RelicType.SHARED);
         BaseMod.addRelic(new MindDevourer(), RelicType.SHARED);
         BaseMod.addRelic(new HappyDrink(), RelicType.SHARED);
-        BaseMod.addRelic(new ShortStop(), RelicType.SHARED);
         BaseMod.addRelic(new FocusSash(), RelicType.SHARED);
         BaseMod.addRelic(new BigBerry(), RelicType.SHARED);
         BaseMod.addRelic(new KeyChain(), RelicType.SHARED);
@@ -319,9 +316,7 @@ public class VexMod implements
         BaseMod.addRelic(new TealTab(), RelicType.SHARED);
         BaseMod.addRelic(new DeviousBotling(), RelicType.SHARED);
         BaseMod.addRelic(new WellWornAnklet(), RelicType.SHARED);
-        BaseMod.addRelic(new GoldFlippers(), RelicType.SHARED);
         BaseMod.addRelic(new GorgonsHead(), RelicType.SHARED);
-        BaseMod.addRelic(new ExplorationPack(), RelicType.SHARED);
         BaseMod.addRelic(new ImprovementManual(), RelicType.SHARED);
         BaseMod.addRelic(new ThirteenHourStone(), RelicType.SHARED);
         BaseMod.addRelic(new TheWave(), RelicType.SHARED);
@@ -334,7 +329,6 @@ public class VexMod implements
         BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
         BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
         BaseMod.addRelic(new MagicMissile(), RelicType.SHARED);
-        BaseMod.addRelic(new RockLover(), RelicType.SHARED);
         BaseMod.addRelic(new GildedClover(), RelicType.SHARED);
         BaseMod.addRelic(new FluxCapacitor(), RelicType.SHARED);
         BaseMod.addRelic(new StoryBook(), RelicType.SHARED);
@@ -343,6 +337,7 @@ public class VexMod implements
         BaseMod.addRelic(new MegatonBomb(), RelicType.SHARED);
         BaseMod.addRelic(new BarristanHead(), RelicType.SHARED);
         BaseMod.addRelic(new NewClearReactor(), RelicType.SHARED);
+        BaseMod.addRelic(new SpireShuffle(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
@@ -361,7 +356,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(TanglingVine.ID);
         UnlockTracker.markRelicAsSeen(MindDevourer.ID);
         UnlockTracker.markRelicAsSeen(HappyDrink.ID);
-        UnlockTracker.markRelicAsSeen(ShortStop.ID);
         UnlockTracker.markRelicAsSeen(SalvageTools.ID);
         UnlockTracker.markRelicAsSeen(ThoughtMold.ID);
         UnlockTracker.markRelicAsSeen(ChargeUpper.ID);
@@ -402,7 +396,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(RandomRelic.ID);
         UnlockTracker.markRelicAsSeen(BerryBomb.ID);
         UnlockTracker.markRelicAsSeen(GazerBeam.ID);
-
         UnlockTracker.markRelicAsSeen(MadnessLens.ID);
         UnlockTracker.markRelicAsSeen(TimesightGlass.ID);
         UnlockTracker.markRelicAsSeen(ChompingNoodles.ID);
@@ -411,9 +404,7 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(TealTab.ID);
         UnlockTracker.markRelicAsSeen(DeviousBotling.ID);
         UnlockTracker.markRelicAsSeen(WellWornAnklet.ID);
-        UnlockTracker.markRelicAsSeen(GoldFlippers.ID);
         UnlockTracker.markRelicAsSeen(GorgonsHead.ID);
-        UnlockTracker.markRelicAsSeen(ExplorationPack.ID);
         UnlockTracker.markRelicAsSeen(OrbOfGreed.ID);
         UnlockTracker.markRelicAsSeen(ImprovementManual.ID);
         UnlockTracker.markRelicAsSeen(ThirteenHourStone.ID);
@@ -426,7 +417,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(NotEnergy.ID);
         UnlockTracker.markRelicAsSeen(NewsTicker.ID);
         UnlockTracker.markRelicAsSeen(MagicMissile.ID);
-        UnlockTracker.markRelicAsSeen(RockLover.ID);
         UnlockTracker.markRelicAsSeen(GildedClover.ID);
         UnlockTracker.markRelicAsSeen(FluxCapacitor.ID);
         UnlockTracker.markRelicAsSeen(StoryBook.ID);
@@ -435,16 +425,17 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(MegatonBomb.ID);
         UnlockTracker.markRelicAsSeen(BarristanHead.ID);
         UnlockTracker.markRelicAsSeen(NewClearReactor.ID);
+        UnlockTracker.markRelicAsSeen(SpireShuffle.ID);
 
-        logger.info("Done adding relics!");
+        logger.info("woo hoo relics be cool");
     }
 
     @Override
     public void receiveEditCards() {
-        logger.info("Adding variables");
-        logger.info("Add variabls");
+        logger.info("Variable time.");
         BaseMod.addDynamicVariable(new DefaultSecondMagicNumber());
-        logger.info("Adding cards");
+        logger.info("Variable added.");
+        logger.info("AND NOW, CARDS");
         BaseMod.addCard(new BlockBeam());
         BaseMod.addCard(new CleverClash());
         BaseMod.addCard(new DeadlyDodge());
@@ -528,7 +519,7 @@ public class VexMod implements
         BaseMod.addCard(new EvolveCard());
         BaseMod.addCard(new NiftyMoves());
 
-        logger.info("Making sure the cards are unlocked.");
+        logger.info("WOO HOO CARDS I LOVE CARDS");
         UnlockTracker.unlockCard(BlockBeam.ID);
         UnlockTracker.unlockCard(CleverClash.ID);
         UnlockTracker.unlockCard(DeadlyDodge.ID);
@@ -612,7 +603,7 @@ public class VexMod implements
         UnlockTracker.unlockCard(EvolveCard.ID);
         UnlockTracker.unlockCard(NiftyMoves.ID);
 
-        logger.info("Done adding cards!");
+        logger.info("Alright, cards are in boys");
     }
 
     private String languageSupport() {
@@ -624,7 +615,7 @@ public class VexMod implements
 
     @Override
     public void receiveEditStrings() {
-        logger.info("Beginning to edit strings");
+        logger.info("And now, the strings!!!!!");
 
         String path = "Resources/localization/" + languageSupport() + "/";
 
@@ -652,7 +643,7 @@ public class VexMod implements
         BaseMod.loadCustomStringsFile(RunModStrings.class,
                 getModID() + path + "vexMod-RunMod-Strings.json");
 
-        logger.info("Done edittting strings");
+        logger.info("Crazy, isn't it?");
     }
 
     @Override

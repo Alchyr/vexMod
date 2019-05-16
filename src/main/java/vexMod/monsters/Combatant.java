@@ -21,8 +21,8 @@ public class Combatant extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 130;
-    private static final int HP_MAX = 134;
+    private static final int HP_MIN = 128;
+    private static final int HP_MAX = 131;
     private static final int A_8_HP_MIN = 140;
     private static final int A_8_HP_MAX = 150;
     private static final float HB_X = 0.0F;
@@ -30,11 +30,11 @@ public class Combatant extends AbstractMonster {
     private static final float HB_W = 150.0F;
     private static final float HB_H = 150.0F;
     private static final int ATTACK_BLOCK_DAMAGE = 12;
-    private static final int ATTACK_BLOCK_BLOCK = 8;
+    private static final int ATTACK_BLOCK_BLOCK = 7;
     private static final int BIG_ATTACK_DAMAGE = 16;
     private static final int SELF_HEAL_ATTACK_DAMAGE = 10;
     private static final int A_3_ATTACK_BLOCK_DAMAGE = 14;
-    private static final int A_3_ATTACK_BLOCK_BLOCK = 10;
+    private static final int A_3_ATTACK_BLOCK_BLOCK = 9;
     private static final int A_3_BIG_ATTACK_DAMAGE = 19;
     private static final int A_3_SELF_HEAL_ATTACK_DAMAGE = 13;
     private int attackBlockBlock;

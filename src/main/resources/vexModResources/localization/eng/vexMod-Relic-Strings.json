@@ -89,7 +89,7 @@
     "NAME": "Cooldron",
     "FLAVOR": "This cauldron is a lot cooler than any regular old cauldron.",
     "DESCRIPTIONS": [
-      "All Potions you obtain are Entropic Brews."
+      "All Potions you find are Entropic Brews."
     ]
   },
   "vexMod:InvisibilityCloak": {
@@ -1315,7 +1315,7 @@
     "NAME": "Gilded Clover",
     "FLAVOR": "Super-duper rare!",
     "DESCRIPTIONS": [
-      "ALL future cards are Rare."
+      "ALL future cards are #yRare."
     ]
   },
   "vexMod:FluxCapacitor": {
@@ -1384,10 +1384,10 @@
     ]
   },
   "vexMod:MegatonBomb": {
-    "NAME": "SuperBombBomb",
+    "NAME": "Superbombomb",
     "FLAVOR": "A superweapon beyond any technology. Who made this...?",
     "DESCRIPTIONS": [
-      "Whenever you climb a floor, #rlose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rrelic #rand #rall #renemies."
+      "At the end of your turn, #rlose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rrelic #rand #rall #renemies."
     ]
   },
   "vexMod:NewClearReactor": {
@@ -1395,6 +1395,13 @@
     "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
     "DESCRIPTIONS": [
       "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an act, gain #b100 Energy."
+    ]
+  },
+  "vexMod:SpireShuffle": {
+    "NAME": "Spire Shuffle",
+    "FLAVOR": "To the left! To the right! Woo-hoo!",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yAttack, move to the right. Whenever you play a #ySkill, move to the left."
     ]
   }
 }
