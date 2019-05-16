@@ -24,7 +24,7 @@ public class StrikeShooter extends CustomRelic {
 
 
     public StrikeShooter() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
         this.counter = -1;
     }
 

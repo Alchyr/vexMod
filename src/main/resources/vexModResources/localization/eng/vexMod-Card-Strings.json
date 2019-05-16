@@ -3,15 +3,6 @@
     "NAME": "Block Beam",
     "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage."
   },
-  "vexMod:DrainingDoom": {
-    "NAME": "Draining Doom",
-    "DESCRIPTION": "Ethereal. NL Deal !D! damage. NL Lose 5 Max HP. NL Exhaust."
-  },
-  "vexMod:CursedBody": {
-    "NAME": "Cursed Body",
-    "DESCRIPTION": "Gain !M! Intangible. NL Add an Injury Curse into your deck. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Gain !M! Intangible. NL Add a Clumsy Curse into your deck. NL Exhaust."
-  },
   "vexMod:CleverClash": {
     "NAME": "Clever Clash",
     "DESCRIPTION": "If the enemy intends to attack, gain !B! Block. NL Otherwise, deal !D! damage."
@@ -135,14 +126,6 @@
   "vexMod:ShadowStrike": {
     "NAME": "Shadow Strike",
     "DESCRIPTION": "Deal !D! damage. NL Next turn, gain !B! Block."
-  },
-  "vexMod:CardboardBlock": {
-    "NAME": "Cardboard Shield",
-    "DESCRIPTION": "Gain Block equal to the number of cards in your draw pile.",
-    "UPGRADE_DESCRIPTION": "Gain Block equal to the number of cards in your draw pile +3.",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Gains !B! Block.)"
-    ]
   },
   "vexMod:MidnightStrike": {
     "NAME": "Midnight Strike",
@@ -277,14 +260,6 @@
       " NL (Deals !D! damage.)"
     ]
   },
-  "vexMod:GoldenStrike": {
-    "NAME": "Gilded Strike",
-    "DESCRIPTION": "Deal !D! damage. NL Gain !M! Gold. NL Exhaust."
-  },
-  "vexMod:InfectiousLoot": {
-    "NAME": "Infectious Loot",
-    "DESCRIPTION": "Apply Poison equal to the number of Relics you have."
-  },
   "vexMod:CursedStrike": {
     "NAME": "Cursed Strike",
     "DESCRIPTION": "Deal !D! damage. NL Add a random Curse into your hand."
@@ -292,10 +267,6 @@
   "vexMod:ScaledPoison": {
     "NAME": "Scaled Poison",
     "DESCRIPTION": "Apply !M! Poison. NL Double this card's Poison this combat."
-  },
-  "vexMod:FocusPunch": {
-    "NAME": "Focus Punch",
-    "DESCRIPTION": "Whenever you draw this card, reduce its cost by 1. NL Deal !D! damage. NL Exhaust."
   },
   "vexMod:ShieldSwipe": {
     "NAME": "Shield Swipe",

@@ -202,7 +202,16 @@ public class VexMod implements
         BaseMod.addEvent(XCostLoverEvent.ID, XCostLoverEvent.class, Exordium.ID);
 
 
-        receiveEditPotions();
+        logger.info("Potion edits begin.");
+
+        BaseMod.addPotion(BlazePotion.class, Color.RED, Color.BLUE, Color.TEAL, BlazePotion.POTION_ID);
+        BaseMod.addPotion(GoldPotion.class, Color.YELLOW, Color.GREEN, Color.BLACK, GoldPotion.POTION_ID);
+        BaseMod.addPotion(LightningBottle.class, Color.YELLOW, Color.CYAN, Color.TEAL, LightningBottle.POTION_ID);
+        BaseMod.addPotion(CameraPotion.class, Color.TEAL, Color.GOLD, Color.CORAL, CameraPotion.POTION_ID);
+        BaseMod.addPotion(FrostBottle.class, Color.BLUE, Color.NAVY, Color.BLACK, FrostBottle.POTION_ID);
+        BaseMod.addPotion(PlasmaBottle.class, Color.ORANGE, Color.CORAL, Color.OLIVE, PlasmaBottle.POTION_ID);
+
+        logger.info("Potion edits concluded.");
 
 
         BaseMod.addMonster(Combatant.ID, "Mechanical Combatant", () -> new Combatant(-50.0F, 100.0F));
@@ -231,19 +240,6 @@ public class VexMod implements
 
         logger.info("My image and mod options done.");
 
-    }
-
-    public void receiveEditPotions() {
-        logger.info("Potion edits begin.");
-
-        BaseMod.addPotion(BlazePotion.class, Color.RED, Color.BLUE, Color.TEAL, BlazePotion.POTION_ID);
-        BaseMod.addPotion(GoldPotion.class, Color.YELLOW, Color.GREEN, Color.BLACK, GoldPotion.POTION_ID);
-        BaseMod.addPotion(LightningBottle.class, Color.YELLOW, Color.CYAN, Color.TEAL, LightningBottle.POTION_ID);
-        BaseMod.addPotion(CameraPotion.class, Color.TEAL, Color.GOLD, Color.CORAL, CameraPotion.POTION_ID);
-        BaseMod.addPotion(FrostBottle.class, Color.BLUE, Color.NAVY, Color.BLACK, FrostBottle.POTION_ID);
-        BaseMod.addPotion(PlasmaBottle.class, Color.ORANGE, Color.CORAL, Color.OLIVE, PlasmaBottle.POTION_ID);
-
-        logger.info("Potion edits concluded.");
     }
 
     @Override
@@ -324,7 +320,6 @@ public class VexMod implements
         BaseMod.addRelic(new Starfruit(), RelicType.SHARED);
         BaseMod.addRelic(new FallenStar(), RelicType.SHARED);
         BaseMod.addRelic(new PaidLearning(), RelicType.SHARED);
-        BaseMod.addRelic(new PuzzleBox(), RelicType.SHARED);
         BaseMod.addRelic(new HeadHunter(), RelicType.SHARED);
         BaseMod.addRelic(new NotEnergy(), RelicType.SHARED);
         BaseMod.addRelic(new NewsTicker(), RelicType.SHARED);
@@ -651,7 +646,6 @@ public class VexMod implements
         if (AbstractDungeon.player == null) return;
         if (AbstractDungeon.player.hasRelic(BerryBomb.ID)) BerryBomb.relicBullshit();
         if (AbstractDungeon.player.hasRelic(RedPlottingStone.ID)) RedPlottingStone.FuckShitPoo();
-        if (AbstractDungeon.player.hasRelic(PuzzleBox.ID)) PuzzleBox.relicBullshit();
         if (AbstractDungeon.player.hasRelic(FluxCapacitor.ID)) {
             if (AbstractDungeon.player.getRelic(FluxCapacitor.ID).counter == -2) {
                 FluxCapacitor.relicBullshit();

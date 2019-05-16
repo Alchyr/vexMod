@@ -1043,26 +1043,11 @@
       "At the start of turns #b3 and #b7, gain #b7 #yBlock."
     ]
   },
-  "vexMod:GoldFlippers": {
-    "NAME": "Flippers of Frivolty",
-    "FLAVOR": "These flippers make you want to spend a lot.",
-    "DESCRIPTIONS": [
-      "Whenever you climb a floor, gain #b15 #yGold. Whenever you leave The Merchant, lose #b1 HP for every #b5 #yGold you have."
-    ]
-  },
   "vexMod:GorgonsHead": {
     "NAME": "Gorgon's Head",
     "FLAVOR": "Pretty, but still formidable.",
     "DESCRIPTIONS": [
       "ALL enemies start combat with #b3 less #yStrength."
-    ]
-  },
-  "vexMod:ExplorationPack": {
-    "NAME": "Adventure Pack",
-    "FLAVOR": "You're about to have a trip!",
-    "DESCRIPTIONS": [
-      "Upon pickup, replace all cards in your deck with Discoveries.",
-      "A land of adventure!"
     ]
   },
   "vexMod:OrbOfGreed": {
@@ -1122,21 +1107,6 @@
       "Magical Fruit are 0-cost Attacks that deal damage, heal you, draw a card, and Exhaust."
     ]
   },
-  "vexMod:Jellybean": {
-    "NAME": "Jellybean",
-    "FLAVOR": "Tastes gummy.",
-    "DESCRIPTIONS": [
-      "Upon pickup, raise your max HP by #b6. At the start of each combat, gain #b2 #yMalleable."
-    ]
-  },
-  "vexMod:PuzzleBox": {
-    "NAME": "Puzzle Box (?)",
-    "FLAVOR": "So complex...",
-    "DESCRIPTIONS": [
-      "Right click #b",
-      " times to gain a #gmassive #greward."
-    ]
-  },
   "vexMod:PaidLearning": {
     "NAME": "Paid Education",
     "FLAVOR": "That was just the down payment. Two hundred thousand dollars in loans remain.",
@@ -1168,147 +1138,11 @@
       "Right click once per combat to see the latest Tweet by @DBotling."
     ]
   },
-  "vexMod:MailBox": {
-    "NAME": "Mail Box",
-    "FLAVOR": "Messages from above...",
-    "DESCRIPTIONS": [
-      "Right click once per combat to see any messages Vex, the developer, may have sent you."
-    ]
-  },
-  "vexMod:DevilBotling": {
-    "NAME": "Devil Bot",
-    "FLAVOR": "A massive bot of pure evil. Devious Botling's dad. Only appears on full moons.",
-    "DESCRIPTIONS": [
-      "Gain [E] [E] at the start of your turn. Torments you every turn.",
-      "Enjoy the Weak, ",
-      "Hoho, have some Weak, ",
-      "Taste weakness, ",
-      "You look pretty Weak, ",
-      "Have some Frail, ",
-      "Hehe, enjoy the Frail, ",
-      "Heh, taste Frail, ",
-      "Looking rather Frail, ",
-      "I'll be taking that gold, ",
-      "Thanks for the gold, ",
-      "Heh, my gold now, ",
-      "I'll enjoy the gold, ",
-      "I hope you didn't need that ",
-      "I'll be taking that ",
-      "Thanks for the ",
-      "Yoink! Got your ",
-      "Let's tone down that ",
-      "Couldn't help but nerf ",
-      "Ha, weakened your ",
-      "I'm gonna rebalance ",
-      "I don't feel like giving you Energy this turn, ",
-      "Not sharing my Energy this turn, ",
-      "Hope you didn't need my Energy this turn, ",
-      "No Energy for you this turn, ",
-      "Dodge this, ",
-      "Blasters incoming, ",
-      "Taste firepower, ",
-      "Here comes my chip damage, ",
-      "Want a little help, ",
-      "Care for some Block, ",
-      "Need some help, ",
-      "Require some support, ",
-      "Want some assistance, ",
-      "moron!",
-      "loser!",
-      "dork!",
-      "nerd!",
-      "fool!",
-      "curmudgeon!",
-      "pleb!",
-      "noob!",
-      "newbie!",
-      "tool!",
-      "buffoon!",
-      "cretin!",
-      "dipstick!",
-      "wanker!",
-      "weakling!",
-      "bonehead!",
-      "dummy!",
-      "imbecile!",
-      "pinhead!",
-      "troglodyte!",
-      "twit!",
-      "amateur!",
-      "bozo!",
-      "clown!",
-      "coward!",
-      "dimwit!",
-      "dolt!",
-      "dummy!",
-      "dunce!",
-      "goofball!",
-      "ignoramus!",
-      "idiot!",
-      "lowlife!",
-      "nerd!",
-      "dweeb!",
-      "wacko!",
-      "bilge rat!",
-      "sucker!",
-      "numbskull!",
-      "Meet my Gremlin friend!",
-      "I cast Summon Gremlin!",
-      "Thrash this loser for me, Gremlin.",
-      "Gain [E] at the start of your turn. Torments you at random occasions in unique ways.",
-      "Nice try. LOL.",
-      "You didn't have a chance.",
-      "LOL, noob.",
-      "When you try so hard and you don't succeed...",
-      "Press F.",
-      "Wrecked.",
-      "Thrashed.",
-      "Deee-stroyed.",
-      "Pathetic!",
-      "Next time, try thinking?",
-      "That must have hurt.",
-      "That run was weak.",
-      "Better luck next time.",
-      "LOL, pleb.",
-      "Hah, nerd.",
-      "Git gud.",
-      "You tried so hard and got so far NL but in the end, NL it didn't even matter...",
-      "Good game, well played.",
-      "GG WP",
-      "Get rekt scrub.",
-      "U ded.",
-      "Say hi to Neow for me!",
-      "See you next time!",
-      "That deck was weak.",
-      "Get that weak deck outta here!",
-      "LOL. Get wrecked.",
-      "Try not to die next time.",
-      "Roses are red, violets are blue. NL A loser is dead, that loser is you.",
-      "This card reward is better off without ",
-      "I'll be taking that nice ",
-      "Looks like your deck will go without ",
-      "Mmm, hope you didn't want "
-    ]
-  },
-  "vexMod:TimeMachine": {
-    "NAME": "Time Machine",
-    "FLAVOR": "Speedrun strats...?",
-    "DESCRIPTIONS": [
-      "Whenever you enter a #yRest #ySite, rewind your run timer by #b3 minutes."
-    ]
-  },
   "vexMod:MagicMissile": {
     "NAME": "Wand of Magic Missile",
     "FLAVOR": "The end of this plain wooden staff glows dimly with magical force.",
     "DESCRIPTIONS": [
       "Whenever you shuffle your draw pile, deal #b2-5 damage to a random enemy #b3 times."
-    ]
-  },
-  "vexMod:RockLover": {
-    "NAME": "Stone Age",
-    "FLAVOR": "For the real rock lover.",
-    "DESCRIPTIONS": [
-      "All future relics you find are Randomized Relics."
     ]
   },
   "vexMod:GildedClover": {
