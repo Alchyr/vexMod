@@ -2,17 +2,17 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
-import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-import vexMod.vfx.RelicWaveEffect;
+import vexMod.vfx.RelicWave;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class TheWave extends CustomRelic implements ClickableRelic {
+public class TheWave extends CustomRelic {
 
     public static final String ID = VexMod.makeID("TheWave");
 
@@ -24,12 +24,13 @@ public class TheWave extends CustomRelic implements ClickableRelic {
     }
 
     @Override
-    public void onRightClick() {
-        if (!isObtained) {
-            return;
-        }
-        CardCrawlGame.sound.play("UI_CLICK_1");
-        AbstractDungeon.effectList.add(new RelicWaveEffect(0, AbstractDungeon.miscRng.random(0.25F)));
+    public void onEquip() {
+        AbstractDungeon.effectList.add(new RelicWave((float) Settings.HEIGHT - 102.0F * Settings.scale));
+    }
+
+    @Override
+    public void onEnterRoom(AbstractRoom room) {
+        AbstractDungeon.effectList.add(new RelicWave((float) Settings.HEIGHT - 102.0F * Settings.scale));
     }
 
     @Override

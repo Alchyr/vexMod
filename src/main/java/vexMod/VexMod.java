@@ -261,7 +261,6 @@ public class VexMod implements
         BaseMod.addRelic(new StrikeShooter(), RelicType.RED);
         BaseMod.addRelic(new CursedBlade(), RelicType.RED);
         BaseMod.addRelic(new ConsolationPrize(), RelicType.SHARED);
-        BaseMod.addRelic(new PlagueVial(), RelicType.SHARED);
         BaseMod.addRelic(new ShiftingSkin(), RelicType.SHARED);
         BaseMod.addRelic(new ProtectorBot(), RelicType.SHARED);
         BaseMod.addRelic(new PainConverter(), RelicType.SHARED);
@@ -333,10 +332,12 @@ public class VexMod implements
         BaseMod.addRelic(new BarristanHead(), RelicType.SHARED);
         BaseMod.addRelic(new NewClearReactor(), RelicType.SHARED);
         BaseMod.addRelic(new SpireShuffle(), RelicType.SHARED);
+        BaseMod.addRelic(new Bottle(), RelicType.SHARED);
+        BaseMod.addRelic(new HealthChanger(), RelicType.SHARED);
+        BaseMod.addRelic(new Incredibleness(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
-        UnlockTracker.markRelicAsSeen(PlagueVial.ID);
         UnlockTracker.markRelicAsSeen(ShiftingSkin.ID);
         UnlockTracker.markRelicAsSeen(ProtectorBot.ID);
         UnlockTracker.markRelicAsSeen(PainConverter.ID);
@@ -421,6 +422,9 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(BarristanHead.ID);
         UnlockTracker.markRelicAsSeen(NewClearReactor.ID);
         UnlockTracker.markRelicAsSeen(SpireShuffle.ID);
+        UnlockTracker.markRelicAsSeen(Bottle.ID);
+        UnlockTracker.markRelicAsSeen(HealthChanger.ID);
+        UnlockTracker.markRelicAsSeen(Incredibleness.ID);
 
         logger.info("woo hoo relics be cool");
     }
@@ -447,7 +451,6 @@ public class VexMod implements
         BaseMod.addCard(new PotOfGreed());
         BaseMod.addCard(new BloodGuard());
         BaseMod.addCard(new Jackpot());
-        BaseMod.addCard(new EntryPlan());
         BaseMod.addCard(new PrepareVictim());
         BaseMod.addCard(new ShockKick());
         BaseMod.addCard(new Taunt());
@@ -513,6 +516,7 @@ public class VexMod implements
         BaseMod.addCard(new ChimeraCard());
         BaseMod.addCard(new EvolveCard());
         BaseMod.addCard(new NiftyMoves());
+        BaseMod.addCard(new OrbHurl());
 
         logger.info("WOO HOO CARDS I LOVE CARDS");
         UnlockTracker.unlockCard(BlockBeam.ID);
@@ -531,7 +535,6 @@ public class VexMod implements
         UnlockTracker.unlockCard(PotOfGreed.ID);
         UnlockTracker.unlockCard(BloodGuard.ID);
         UnlockTracker.unlockCard(Jackpot.ID);
-        UnlockTracker.unlockCard(EntryPlan.ID);
         UnlockTracker.unlockCard(PrepareVictim.ID);
         UnlockTracker.unlockCard(ShockKick.ID);
         UnlockTracker.unlockCard(Taunt.ID);
@@ -597,6 +600,7 @@ public class VexMod implements
         UnlockTracker.unlockCard(ChimeraCard.ID);
         UnlockTracker.unlockCard(EvolveCard.ID);
         UnlockTracker.unlockCard(NiftyMoves.ID);
+        UnlockTracker.unlockCard(OrbHurl.ID);
 
         logger.info("Alright, cards are in boys");
     }

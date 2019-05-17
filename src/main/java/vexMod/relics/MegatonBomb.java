@@ -1,6 +1,7 @@
 package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
+import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.relics.ClickableRelic;
@@ -70,6 +71,7 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     this.flash();
                     if (!m.isDead && !m.isDying) {
+                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, new Color(MathUtils.random(1.0f), MathUtils.random(1.0f), MathUtils.random(1.0f), 1.0f), ShockWaveEffect.ShockWaveType.NORMAL)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GoldenSlashEffect(m.hb.cX, m.hb.cY, true)));

@@ -429,5 +429,9 @@
     "NAME": "Nifty Moves",
     "DESCRIPTION": "Play the top X cards of your draw pile.",
     "UPGRADE_DESCRIPTION": "Play the top X+1 cards of your draw pile."
+  },
+  "vexMod:OrbHurl": {
+    "NAME": "Orb Hurl",
+    "DESCRIPTION": "Deal !D! damage. NL Lose 1 Orb Slot."
   }
 }

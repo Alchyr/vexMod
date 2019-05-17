@@ -605,7 +605,7 @@
     "NAME": "Hatred Engine",
     "FLAVOR": "They all deserve your blade! Go! Fight!",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. You have a 50% additional chance to find normal enemy combats in #y? rooms."
+      "Gain [E] at the start of your turn. You are #b50% more likely to find normal enemy combats in #y? rooms."
     ]
   },
   "vexMod:EndlessSickness": {
@@ -911,7 +911,7 @@
     "NAME": "Red Plotting Stone",
     "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
     "DESCRIPTIONS": [
-      "#pGlows #psometime. NL Right click while glowing for a #gmassive #greward. NL Right click while not glowing to #rlose."
+      "#pGlows #psometime. NL #pRight#p click while glowing for a #gmassive #greward. NL #pRight #pclick while not glowing to #rlose."
     ]
   },
   "vexMod:TealTab": {
@@ -1071,7 +1071,7 @@
     "NAME": "Pulse Stone",
     "FLAVOR": "So entrancing to look at.",
     "DESCRIPTIONS": [
-      "Right click to make your relics do the Wave."
+      "Your relics do the Wave."
     ]
   },
   "vexMod:ThirteenHourStone": {
@@ -1222,6 +1222,28 @@
     "FLAVOR": "To the left! To the right! Woo-hoo!",
     "DESCRIPTIONS": [
       "Whenever you play an #yAttack, move to the right. Whenever you play a #ySkill, move to the left."
+    ]
+  },
+  "vexMod:HealthChanger": {
+    "NAME": "Place Exchanger",
+    "FLAVOR": "Works exactly as written!",
+    "DESCRIPTIONS": [
+      "#pRight #pclick: Exchange places with an enemy. Activate once per combat."
+    ]
+  },
+  "vexMod:Bottle": {
+    "NAME": "bottle",
+    "FLAVOR": "bottle",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card.",
+      "Choose a card."
+    ]
+  },
+  "vexMod:Incredibleness": {
+    "NAME": "Energy Relic",
+    "FLAVOR": "What do you mean you're still tired?",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [E] in real life."
     ]
   }
 }

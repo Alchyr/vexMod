@@ -323,9 +323,9 @@
     ]
   },
   "vexMod:GriftingPower": {
-    "NAME": "Grifting",
+    "NAME": "行窃",
     "DESCRIPTIONS": [
-      "Grifter steals #b1 #yRelic whenever it attacks."
+      "窃贼会在攻击时偷走 #b1 件 #y遗物 。"
     ]
   }
 }

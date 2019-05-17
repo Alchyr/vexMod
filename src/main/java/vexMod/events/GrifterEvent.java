@@ -70,7 +70,7 @@ public class GrifterEvent extends AbstractImageEvent {
                         break;
                     case 2:
                         AbstractDungeon.player.loseGold(1);
-                        ArrayList<AbstractRelic> themRelics = new ArrayList();
+                        ArrayList<AbstractRelic> themRelics = new ArrayList<>();
                         themRelics.add(RelicLibrary.getRelic(VoiceBox.ID));
                         themRelics.add(RelicLibrary.getRelic(TheWave.ID));
                         themRelics.add(RelicLibrary.getRelic(NotEnergy.ID));
@@ -78,6 +78,9 @@ public class GrifterEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
                         themRelics.add(RelicLibrary.getRelic(Pepega.ID));
                         themRelics.add(RelicLibrary.getRelic(SpireShuffle.ID));
+                        themRelics.add(RelicLibrary.getRelic(HealthChanger.ID));
+                        themRelics.add(RelicLibrary.getRelic(Bottle.ID));
+                        themRelics.add(RelicLibrary.getRelic(Incredibleness.ID));
 
                         AbstractRelic relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), relicToGive);

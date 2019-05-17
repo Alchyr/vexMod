@@ -25,13 +25,6 @@ public class OnPostNeowTalkNoRelicModePatch {
                 AbstractDungeon.uncommonRelicPool.remove(BottledTornado.ID);
                 AbstractDungeon.uncommonRelicPool.remove(Matryoshka.ID);
                 AbstractDungeon.rareRelicPool.remove(Shovel.ID);
-                AbstractDungeon.bossRelicPool.remove(Astrolabe.ID);
-                AbstractDungeon.bossRelicPool.remove(EmptyCage.ID);
-                AbstractDungeon.bossRelicPool.remove(TinyHouse.ID);
-                AbstractDungeon.bossRelicPool.remove(ImprovementManual.ID);
-                AbstractDungeon.bossRelicPool.remove(Orrery.ID);
-                AbstractDungeon.bossRelicPool.remove(CallingBell.ID);
-                AbstractDungeon.shopRelicPool.remove(PaidLearning.ID);
                 AbstractDungeon.shopRelicPool.remove(DollysMirror.ID);
                 AbstractDungeon.shopRelicPool.remove(Cauldron.ID);
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON).instantObtain();

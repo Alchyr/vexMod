@@ -26,15 +26,15 @@
     ]
   },
   "vexMod:FrostBottle": {
-    "NAME": "Ice in a Bottle",
+    "NAME": "瓶中冰霜",
     "DESCRIPTIONS": [
-      "#yChannel #b1 #yFrost."
+      " #y生成 #b1 个 #冰霜 充能球 。"
     ]
   },
   "vexMod:PlasmaBottle": {
-    "NAME": "Plasma in a Bottle",
+    "NAME": "瓶中电浆",
     "DESCRIPTIONS": [
-      "#yChannel #b1 #yPlasma."
+      " #y生成 #b1 个 #等离子 充能球 。"
     ]
   }
 }

@@ -125,31 +125,31 @@
     ]
   },
   "vexMod:Grifter": {
-    "NAME": "Grifter",
+    "NAME": "窃贼",
     "MOVES": [
-      "Thievery Thrash"
+      "盗行抽打"
     ],
     "DIALOG": [
-      "You're a fool to challenge NL the Spire's greatest thief!",
-      "Goodbye, traveler, NL and thank you for the loot!"
+      "真是个傻子！ NL 居然想挑战高塔里最强的窃贼！",
+      "再见啦，旅行者。 NL 顺便，谢谢你的战利品！"
     ]
   },
   "vexMod:Combatant": {
-    "NAME": "Mechanical Combatant",
+    "NAME": "机械战士",
     "MOVES": [
-      "Robotic Rush"
+      "机器冲刺"
     ],
     "DIALOG": [
-      "ENGAGING COMBAT FUNCTIONS!"
+      "战斗功能激活！"
     ]
   },
   "vexMod:BombBelcher": {
-    "NAME": "Bomb Belcher",
+    "NAME": "吐弹人",
     "MOVES": [
-      "Bomb Belch"
+      "喷吐炸弹"
     ],
     "DIALOG": [
-      "~burp~"
+      "~嗝~"
     ]
   }
 }
