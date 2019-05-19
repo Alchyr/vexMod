@@ -64,6 +64,7 @@ public class SerpentsRevenge extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((list.get(0)));
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addGoldToRewards(1234);
+                        AbstractDungeon.lastCombatMetricKey = "Ssserpent";
                         this.enterCombatFromImage();
                         break;
                     case 2:

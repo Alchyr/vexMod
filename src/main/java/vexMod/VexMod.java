@@ -21,6 +21,8 @@ import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
+import com.megacrit.cardcrawl.monsters.beyond.Exploder;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
@@ -34,6 +36,9 @@ import vexMod.potions.*;
 import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
+import vexMod.vfx.BouncingRelic;
+import vexMod.vfx.JuggleRelic;
+import vexMod.vfx.OrbitalRelics;
 
 import java.util.List;
 import java.util.Properties;
@@ -50,10 +55,12 @@ public class VexMod implements
         PostUpdateSubscriber,
         MaxHPChangeSubscriber,
         PostDungeonInitializeSubscriber,
-        AddCustomModeModsSubscriber {
+        AddCustomModeModsSubscriber,
+        RelicGetSubscriber {
     public static final Logger logger = LogManager.getLogger(VexMod.class.getName());
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static final String ENABLE_MEME_CARDS = "enableMemes";
+    public static final String DISABLE_ENEMIES = "disableEnemies";
     public static final String BADGE_IMAGE = "vexModResources/images/Badge.png";
     private static final String MODNAME = "VexMod";
     private static final String AUTHOR = "DarkVexon";
@@ -61,6 +68,7 @@ public class VexMod implements
     public static Properties vexModDefaultSettings = new Properties();
     public static boolean enablePlaceholder = true;
     public static boolean enableMemes = true;
+    public static boolean disableEnemies = false;
     private static String modID;
 
 
@@ -75,11 +83,13 @@ public class VexMod implements
         logger.info("settings time LOL");
         vexModDefaultSettings.setProperty(ENABLE_PLACEHOLDER_SETTINGS, "TRUE");
         vexModDefaultSettings.setProperty(ENABLE_MEME_CARDS, "TRUE");
+        vexModDefaultSettings.setProperty(DISABLE_ENEMIES, "FALSE");
         try {
             SpireConfig config = new SpireConfig("vexMod", "vexModConfig", vexModDefaultSettings);
             config.load();
             enablePlaceholder = config.getBool(ENABLE_PLACEHOLDER_SETTINGS);
             enableMemes = config.getBool(ENABLE_MEME_CARDS);
+            disableEnemies = config.getBool(DISABLE_ENEMIES);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -181,6 +191,29 @@ public class VexMod implements
         });
         settingsPanel.addUIElement(enableMemesButton);
 
+        String labelText3;
+
+        if (language == Settings.GameLanguage.ZHS) {
+            labelText3 = "Disable Elites and Bosses? (Requires a restart to take effect.)";
+        } else {
+            labelText3 = "Disable Elites and Bosses? (Requires a restart to take effect.)";
+        }
+
+        ModLabeledToggleButton disableEnemiesButton = new ModLabeledToggleButton(labelText3,
+                350.0f, 500.0f, Settings.CREAM_COLOR, FontHelper.charDescFont,
+                disableEnemies, settingsPanel, (label) -> {
+        }, (button) -> {
+            disableEnemies = button.enabled;
+            try {
+                SpireConfig config = new SpireConfig("vexMod", "vexModConfig", vexModDefaultSettings);
+                config.setBool(DISABLE_ENEMIES, disableEnemies);
+                config.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement(disableEnemiesButton);
+
         BaseMod.registerModBadge(badgeTexture, MODNAME, AUTHOR, DESCRIPTION, settingsPanel);
 
 
@@ -200,6 +233,7 @@ public class VexMod implements
         BaseMod.addEvent(TweetThroughAges.ID, TweetThroughAges.class);
         BaseMod.addEvent(GrifterEvent.ID, GrifterEvent.class, TheCity.ID);
         BaseMod.addEvent(XCostLoverEvent.ID, XCostLoverEvent.class, Exordium.ID);
+        BaseMod.addEvent(SpireWellEvent.ID, SpireWellEvent.class);
 
 
         logger.info("Potion edits begin.");
@@ -216,7 +250,12 @@ public class VexMod implements
 
         BaseMod.addMonster(Combatant.ID, "Mechanical Combatant", () -> new Combatant(-50.0F, 100.0F));
         BaseMod.addMonster(InfectionBeast.ID, "Infection Beast", () -> new InfectionBeast(-100.0F, 0.0F));
-        BaseMod.addMonster(BombBelcher.ID, "Bomb Belcher", () -> new BombBelcher(0.0F, 100.0F));
+        BaseMod.addMonster(BombBelcher.ID, () -> new MonsterGroup(new AbstractMonster[]{
+                new BombBelcher(0.0F, 0.0F),
+                new Exploder(-500.0F, 100.0F),
+                new Exploder(-250.0F, 250.0F)
+        }));
+
         BaseMod.addMonster(EvilSsserpent.ID, "Ssserpent", () -> new EvilSsserpent(0.0F, 100.0F));
         BaseMod.addMonster(GildedGorgon.ID, "Gilded Gorgon", () -> new GildedGorgon(0.0F, 100.0F));
         BaseMod.addMonster(Grifter.ID, "Grifter", () -> new Grifter(-175.0F, 0.0F));
@@ -228,15 +267,16 @@ public class VexMod implements
         }));
 
 
-        if (language == Settings.GameLanguage.ENG) {
-            BaseMod.addBoss(TheBeyond.ID, BeyondKing.ID, makeEventPath("beyondKing.png"), makeEventPath("beyondKingOutline.png"));
+        if (!disableEnemies) {
+            if (language == Settings.GameLanguage.ENG) {
+                BaseMod.addBoss(TheBeyond.ID, BeyondKing.ID, makeEventPath("beyondKing.png"), makeEventPath("beyondKingOutline.png"));
+            }
+            BaseMod.addBoss(Exordium.ID, DaggerThrower.ID, makeEventPath("daggerThrower.png"), makeEventPath("daggerThrowerOutline.png"));
+            BaseMod.addBoss(TheCity.ID, LichLord.ID, makeEventPath("lichLord.png"), makeEventPath("lichLordOutline.png"));
+            BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(Combatant.ID, 1.0F));
+            BaseMod.addEliteEncounter(TheCity.ID, new MonsterInfo(InfectionBeast.ID, 1.0F));
+            BaseMod.addEliteEncounter(TheBeyond.ID, new MonsterInfo(BombBelcher.ID, 1.0F));
         }
-        BaseMod.addBoss(Exordium.ID, DaggerThrower.ID, makeEventPath("daggerThrower.png"), makeEventPath("daggerThrowerOutline.png"));
-        BaseMod.addBoss(TheCity.ID, LichLord.ID, makeEventPath("lichLord.png"), makeEventPath("lichLordOutline.png"));
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(Combatant.ID, 1.0F));
-        BaseMod.addEliteEncounter(TheCity.ID, new MonsterInfo(InfectionBeast.ID, 1.0F));
-        BaseMod.addEliteEncounter(TheBeyond.ID, new MonsterInfo(BombBelcher.ID, 1.0F));
-
 
         logger.info("My image and mod options done.");
 
@@ -297,7 +337,6 @@ public class VexMod implements
         BaseMod.addRelic(new LichBottle(), RelicType.SHARED);
         BaseMod.addRelic(new MallPass(), RelicType.SHARED);
         BaseMod.addRelic(new FloorLord(), RelicType.SHARED);
-        BaseMod.addRelic(new HatredEngine(), RelicType.SHARED);
         BaseMod.addRelic(new EndlessSickness(), RelicType.SHARED);
         BaseMod.addRelic(new GoldBooster(), RelicType.SHARED);
         BaseMod.addRelic(new TreasureMap(), RelicType.SHARED);
@@ -335,6 +374,14 @@ public class VexMod implements
         BaseMod.addRelic(new Bottle(), RelicType.SHARED);
         BaseMod.addRelic(new HealthChanger(), RelicType.SHARED);
         BaseMod.addRelic(new Incredibleness(), RelicType.SHARED);
+        BaseMod.addRelic(new RockOfEvil(), RelicType.SHARED);
+        BaseMod.addRelic(new RockFriend(), RelicType.SHARED);
+        BaseMod.addRelic(new MiniSolarSystem(), RelicType.SHARED);
+        BaseMod.addRelic(new RealismEngine(), RelicType.SHARED);
+        BaseMod.addRelic(new FutureThief(), RelicType.SHARED);
+        BaseMod.addRelic(new PopTire(), RelicType.SHARED);
+        BaseMod.addRelic(new JugglerBalls(), RelicType.SHARED);
+        BaseMod.addRelic(new RockBasket(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
@@ -386,7 +433,6 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(MallPass.ID);
         UnlockTracker.markRelicAsSeen(FloorLord.ID);
         UnlockTracker.markRelicAsSeen(EndlessSickness.ID);
-        UnlockTracker.markRelicAsSeen(HatredEngine.ID);
         UnlockTracker.markRelicAsSeen(GoldBooster.ID);
         UnlockTracker.markRelicAsSeen(TreasureMap.ID);
         UnlockTracker.markRelicAsSeen(RandomRelic.ID);
@@ -425,6 +471,14 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(Bottle.ID);
         UnlockTracker.markRelicAsSeen(HealthChanger.ID);
         UnlockTracker.markRelicAsSeen(Incredibleness.ID);
+        UnlockTracker.markRelicAsSeen(RockOfEvil.ID);
+        UnlockTracker.markRelicAsSeen(RockFriend.ID);
+        UnlockTracker.markRelicAsSeen(RealismEngine.ID);
+        UnlockTracker.markRelicAsSeen(MiniSolarSystem.ID);
+        UnlockTracker.markRelicAsSeen(FutureThief.ID);
+        UnlockTracker.markRelicAsSeen(PopTire.ID);
+        UnlockTracker.markRelicAsSeen(JugglerBalls.ID);
+        UnlockTracker.markRelicAsSeen(RockBasket.ID);
 
         logger.info("woo hoo relics be cool");
     }
@@ -475,7 +529,6 @@ public class VexMod implements
         BaseMod.addCard(new Sloth());
         BaseMod.addCard(new BlazeBeam());
         BaseMod.addCard(new SystemUpdate());
-        BaseMod.addCard(new Division());
         BaseMod.addCard(new Virus());
         BaseMod.addCard(new AntiqueFury());
         BaseMod.addCard(new OrbBoomerang());
@@ -559,7 +612,6 @@ public class VexMod implements
         UnlockTracker.unlockCard(Sloth.ID);
         UnlockTracker.unlockCard(BlazeBeam.ID);
         UnlockTracker.unlockCard(SystemUpdate.ID);
-        UnlockTracker.unlockCard(Division.ID);
         UnlockTracker.unlockCard(Virus.ID);
         UnlockTracker.unlockCard(AntiqueFury.ID);
         UnlockTracker.unlockCard(OrbBoomerang.ID);
@@ -690,7 +742,19 @@ public class VexMod implements
             AbstractDungeon.removeCardFromPool(WellTimedStrike.ID, WellTimedStrike.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
             AbstractDungeon.removeCardFromPool(VolumeVengeance.ID, VolumeVengeance.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
             AbstractDungeon.removeCardFromPool(ChimeraCard.ID, ChimeraCard.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
-            AbstractDungeon.removeCardFromPool(Division.ID, Division.NAME, AbstractCard.CardRarity.RARE, AbstractCard.CardColor.COLORLESS);
+        }
+    }
+
+    @Override
+    public void receiveRelicGet(AbstractRelic relic) {
+        if (!CardCrawlGame.loadingSave) {
+            if (AbstractDungeon.player.hasRelic(MiniSolarSystem.ID)) {
+                AbstractDungeon.effectList.removeIf(effect -> effect instanceof OrbitalRelics);
+                AbstractDungeon.effectList.add(new OrbitalRelics());
+            }
+            if (AbstractDungeon.player.hasRelic(JugglerBalls.ID)) {
+                AbstractDungeon.effectList.add(new JuggleRelic(relic, false, 1.5F));
+            }
         }
     }
 

@@ -2,9 +2,12 @@ package vexMod.monsters;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction.AttackEffect;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.SuicideAction;
+import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -14,7 +17,9 @@ import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.RegenerateMonsterPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.ThornsPower;
+import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import vexMod.VexMod;
+import vexMod.actions.SummonExploderAction;
 
 public class BombBelcher extends AbstractMonster {
     public static final String ID = VexMod.makeID("BombBelcher");
@@ -27,8 +32,8 @@ public class BombBelcher extends AbstractMonster {
     private static final int A_8_HP_MAX = 195;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
-    private static final float HB_W = 150.0F;
-    private static final float HB_H = 150.0F;
+    private static final float HB_W = 359.0F;
+    private static final float HB_H = 218.0F;
     private static final int ATTACK_BLOCK_DAMAGE = 14;
     private static final int ATTACK_BLOCK_BLOCK = 14;
     private static final int BIG_ATTACK_DAMAGE = 16;
@@ -97,7 +102,7 @@ public class BombBelcher extends AbstractMonster {
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AttackEffect.FIRE));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 1, true), 1));
-                this.setMove((byte) 2, Intent.ATTACK_DEFEND, this.damage.get(0).base);
+                this.setMove((byte) 1, Intent.ATTACK_DEFEND, this.damage.get(0).base);
         }
     }
 

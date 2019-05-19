@@ -9,9 +9,10 @@
     ],
     "OPTIONS": [
       "[Money] #gGain #g100 #gGold.",
-      "[Risk] #gObtain #gANY #gcard #grandomly.",
+      "[Risk] #gTransform #ga #gcard #ginto #gANY #gcard #grandomly.",
       "[Challenge] #rObtain #ra #rrandom #rBlight.",
-      "[Leave]"
+      "[Leave]",
+      "Choose a card to transform."
     ]
   },
   "vexMod:TripleChoiceEvent": {
@@ -268,12 +269,30 @@
       "\"Really. No need for my ... awesome power. Okay.\" NL \"I see how it is. Yeah. Have fun.\" NL X-Man walks away, clearly crestfallen."
     ],
     "OPTIONS": [
-      "[Chem Power] #rLose #r25% #rMax #rHP. #gObtain #gChemical #gX.",
-      "[Power Infusion] #gTransform #ga #gcard #gin #gyour #gdeck #ginto #gan #gX-cost #gcard.",
-      "[Power Boost] #gObtain #gan #gX-Cost #gcard.",
+      "[Chem Power] #rLose #r20% #rMax #rHP. #gObtain #gChemical #gX.",
+      "[Power Infusion] #gTransform #ga #gcard #gin #gyour #gdeck #ginto #gan #gcost #gX #gcard.",
+      "[Power Boost] #gObtain #gan #gcost #gX #gcard.",
       "[Leave]",
       "[Leave]",
       "Transforming..."
+    ]
+  },
+  "vexMod:SpireWellEvent": {
+    "NAME": "Spire Well",
+    "DESCRIPTIONS": [
+      "You come upon a quaint well in the Spire. NL You can hear #bwater inside, and the sound of #ygold too... NL NL What will you do?",
+      "You deposit your gold into the well. NL The ground shakes before you hear a loud @BURP.@ NL NL A relic flies out of the well and lands in your hands! NL You continue onwards, surprised.",
+      "You deposit your gold into the well. NL ... NL NL ... NL Nothing happens. NL You sigh and continue.",
+      "You drink from the well's water. NL You feel ~invigorated.~ NL NL Glad for the rest, you continue onwards.",
+      "You bottle up some of the well's water. NL It seems to have a ~special~ ~quality.~ NL NL Glad for the tools, you continue onwards.",
+      "You peer into the well and see a single massive eye looking back. NL Leaning forwards for a better look, you NL fall NL in. NL NL You wake up next to the well with a splitting headache. NL You continue onwards..."
+    ],
+    "OPTIONS": [
+      "[Tithe] #rLose #r20% #rof #ryour #rGold. #g23%: #gObtain #ga #gRelic.",
+      "[Sip] #gHeal #g5% #gof #gyour #gMax #gHP.",
+      "[Bottle] #gObtain #ga #grandom #gPotion.",
+      "[Peer Into The Well] #gRemove #ga #rrandom #gcard #gfrom #gyour #gdeck.",
+      "[Leave]"
     ]
   }
 }

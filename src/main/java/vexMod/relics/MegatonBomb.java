@@ -33,10 +33,6 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
 
     public MegatonBomb() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
-        description = getUpdatedDescription();
-        tips.clear();
-        tips.add(new PowerTip(name, description));
-        initializeTips();
     }
 
     public static void relicBullshit() {
@@ -59,7 +55,6 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
         }
 
         if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            AbstractDungeon.actionManager.addToBottom(new VFXAction(new HeartBuffEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
             AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ScreenOnFireEffect(), 0.2F));
             int boohoo = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -67,11 +62,14 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
                     boohoo++;
                 }
             }
-            for (int i = 0; i < (30/boohoo); i++) {
+            for (int i = 0; i < (30 / boohoo); i++) {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     this.flash();
                     if (!m.isDead && !m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, new Color(MathUtils.random(1.0f), MathUtils.random(1.0f), MathUtils.random(1.0f), 1.0f), ShockWaveEffect.ShockWaveType.NORMAL)));
+                        AbstractDungeon.actionManager.addToBottom(new VFXAction(new HeartBuffEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY)));
+                        for (int p = 0; p < 6; p++) {
+                            AbstractDungeon.actionManager.addToBottom(new VFXAction(new ShockWaveEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, new Color(MathUtils.random(1.0f), MathUtils.random(1.0f), MathUtils.random(1.0f), 1.0f), ShockWaveEffect.ShockWaveType.NORMAL)));
+                        }
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new FireballEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY + MathUtils.random(200, 250) * Settings.scale, m.hb.cX, m.hb.cY), AbstractDungeon.miscRng.random(0.15F, 0.2F)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new ThrowDaggerEffect(m.hb.cX, m.hb.cY)));
                         AbstractDungeon.actionManager.addToBottom(new VFXAction(new GoldenSlashEffect(m.hb.cX, m.hb.cY, true)));
@@ -84,11 +82,10 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
                 AbstractDungeon.actionManager.addToBottom(new KillEnemyAction(m));
             }
             AbstractDungeon.getCurrRoom().cannotLose = false;
+            loseRelic = true;
+        } else {
+            CardCrawlGame.sound.play("UI_CLICK_1");
         }
-
-        CardCrawlGame.sound.play("UI_CLICK_1");
-        this.flash();
-        loseRelic = true;
     }
 
     @Override

@@ -28,6 +28,7 @@ public class GenieBoonEvent extends AbstractImageEvent {
     private static final String[] OPTIONS = eventStrings.OPTIONS;
     private int screenNum = 0;
 
+    private boolean pickCard = false;
 
     public GenieBoonEvent() {
         super(NAME, DESCRIPTIONS[0], IMG);
@@ -37,6 +38,20 @@ public class GenieBoonEvent extends AbstractImageEvent {
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
+    }
+
+    @Override
+    public void update() {
+        super.update();
+        if (this.pickCard && !AbstractDungeon.isScreenUp && !AbstractDungeon.gridSelectScreen.selectedCards.isEmpty()) {
+            AbstractCard c = AbstractDungeon.gridSelectScreen.selectedCards.get(0);
+            AbstractDungeon.player.masterDeck.removeCard(c);
+            ArrayList<AbstractCard> woohoo = CardLibrary.getAllCards();
+            AbstractCard doodle = woohoo.get(AbstractDungeon.eventRng.random(woohoo.size() - 1)).makeCopy();
+            AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(doodle, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
+            AbstractDungeon.gridSelectScreen.selectedCards.clear();
+            this.pickCard = false;
+        }
     }
 
     @Override
@@ -53,14 +68,13 @@ public class GenieBoonEvent extends AbstractImageEvent {
                         AbstractDungeon.player.gainGold(100);
                         break;
                     case 1:
-                        ArrayList<AbstractCard> woohoo = CardLibrary.getAllCards();
-                        AbstractCard c = woohoo.get(AbstractDungeon.eventRng.random(woohoo.size() - 1)).makeCopy();
-                        AbstractDungeon.effectList.add(new ShowCardAndObtainEffect(c, (float) Settings.WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
 
+                        this.pickCard = true;
+                        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 1, OPTIONS[4], false, false, false, true);
+                        screenNum = 1;
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
-                        screenNum = 1;
                         break;
                     case 2:
                         AbstractDungeon.getCurrRoom().spawnBlightAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), BlightHelper.getRandomBlight());

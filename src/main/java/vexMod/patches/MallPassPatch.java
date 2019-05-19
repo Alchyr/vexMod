@@ -4,7 +4,6 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.EventHelper;
 import com.megacrit.cardcrawl.random.Random;
-import vexMod.relics.HatredEngine;
 import vexMod.relics.MallPass;
 import vexMod.relics.TreasureMap;
 
@@ -21,9 +20,6 @@ public class MallPassPatch {
         if (AbstractDungeon.player.hasRelic(MallPass.ID)) {
             AbstractDungeon.player.getRelic(MallPass.ID).flash();
             return EventHelper.RoomResult.SHOP;
-        } else if (AbstractDungeon.player.hasRelic(HatredEngine.ID) && AbstractDungeon.eventRng.randomBoolean()) {
-            AbstractDungeon.player.getRelic(HatredEngine.ID).flash();
-            return EventHelper.RoomResult.MONSTER;
         } else if (AbstractDungeon.player.hasRelic(TreasureMap.ID)) {
             AbstractDungeon.player.getRelic(TreasureMap.ID).flash();
             return EventHelper.RoomResult.EVENT;

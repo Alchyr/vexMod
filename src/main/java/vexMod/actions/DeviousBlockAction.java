@@ -12,9 +12,8 @@ import vexMod.relics.DeviousBotling;
 import java.util.ArrayList;
 
 public class DeviousBlockAction extends AbstractGameAction {
-    public DeviousBlockAction(AbstractCreature source, int amount) {
+    public DeviousBlockAction(int amount) {
         this.duration = 0.5F;
-        this.source = source;
         this.amount = amount;
         this.actionType = ActionType.BLOCK;
     }

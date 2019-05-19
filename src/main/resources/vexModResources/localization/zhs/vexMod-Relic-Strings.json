@@ -1352,5 +1352,119 @@
     "DESCRIPTIONS": [
       "每当你打出一张 #y攻击牌 时，向右移动。每当你打出一张 #y技能牌 时，向左移动。"
     ]
+  },
+  "vexMod:HealthChanger": {
+    "NAME": "Place Exchanger",
+    "FLAVOR": "Works exactly as written!",
+    "DESCRIPTIONS": [
+      "#pRight #pclick: Exchange places with an enemy. Activate once per combat."
+    ]
+  },
+  "vexMod:Bottle": {
+    "NAME": "bottle",
+    "FLAVOR": "bottle",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a card.",
+      "Choose a card."
+    ]
+  },
+  "vexMod:Incredibleness": {
+    "NAME": "Energy Relic",
+    "FLAVOR": "What do you mean you're still tired?",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain [E] in real life."
+    ]
+  },
+  "vexMod:RockOfEvil": {
+    "NAME": "Horrorstone",
+    "FLAVOR": "Holding it fills you with terror. Your only goal is to lose it yet it always winds up back in your pocket.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Upon pickup, obtain #b666 #yGold and a random #rBlight."
+    ]
+  },
+  "vexMod:RockFriend": {
+    "NAME": "Stone Buddy",
+    "FLAVOR": "Your new teammate. It rocks!",
+    "DESCRIPTIONS": [
+      "Assists you randomly in helpful ways.",
+      "I'll hold them off!",
+      "I'll weaken those jerks!",
+      "No hurting my friend!",
+      "I've weakened them!",
+      "Let me protect you!",
+      "Here, I'll shield you.",
+      "Have some protection.",
+      "I'll block the hit!",
+      "Have some gold!",
+      "Enjoy some free cash.",
+      "Want some money?",
+      "Here's a little gold.",
+      "Have some more cards.",
+      "Here, extra cards for you.",
+      "Let's draw some more, shall we?",
+      "More cards should help!",
+      "I'll give you bonus Energy!",
+      "Here, have some Energy!",
+      "Here's some Energy.",
+      "Let me assist with Energy!",
+      "Have a potion!",
+      "Will a potion help?",
+      "Here's a potion!",
+      "Potion time!",
+      "Take that, baddies!",
+      "I'll get 'em for you!",
+      "Bam, gotcha jerks!",
+      "You're going down, monsters!",
+      "Lemme patch you up.",
+      "I'll bandage you up!",
+      "Here, have some heals!",
+      "Let me heal you."
+    ]
+  },
+  "vexMod:RealismEngine": {
+    "NAME": "Realism Engine",
+    "FLAVOR": "Now it all feels immersive.",
+    "DESCRIPTIONS": [
+      "Whenever you drink a potion, burp.",
+      "burp"
+    ]
+  },
+  "vexMod:MiniSolarSystem": {
+    "NAME": "Mini Solar System",
+    "FLAVOR": "Something we all revolve around.",
+    "DESCRIPTIONS": [
+      "Relics now orbit you."
+    ]
+  },
+  "vexMod:FutureThief": {
+    "NAME": "Future Thief Gloves",
+    "FLAVOR": "Self-destructive thievery.",
+    "DESCRIPTIONS": [
+      "#pRight #pclick: Steal a card from yourself in the future.",
+      " HAS BEEN STOLEN THROUGH TIME",
+      "NO FUTURE DETECTED"
+    ]
+  },
+  "vexMod:PopTire": {
+    "NAME": "Pop. Tire",
+    "FLAVOR": "DEFEAT THE INFIDELS",
+    "DESCRIPTIONS": [
+      "Bounces.",
+      " NL High Score: "
+    ]
+  },
+  "vexMod:JugglerBalls": {
+    "NAME": "Juggling Balls",
+    "FLAVOR": "Made of rubber.",
+    "DESCRIPTIONS": [
+      "Everything bounces."
+    ]
+  },
+  "vexMod:RockBasket": {
+    "NAME": "Rock Basket",
+    "FLAVOR": "Because y'all already know I'm the best.",
+    "DESCRIPTIONS": [
+      "You can only find relics from #pvexMod. At the start of your turn, deal damage to a random enemy equal to the number of #pvexMod relics you have."
+    ]
   }
 }

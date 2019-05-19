@@ -110,7 +110,7 @@
     "NAME": "Tangling Vine",
     "FLAVOR": "Don't take this the wrong way.",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the end of your turn, take #b1 damage. At the start of your turn, increase this damage by #b1 this combat."
+      "Gain [E] at the start of your turn. At the end of your turn, take #b2 damage for each card in your hand."
     ]
   },
   "vexMod:MindDevourer": {
@@ -563,7 +563,7 @@
     "NAME": "Lich's Phylactery",
     "FLAVOR": "It feels cold in your hands, no matter what you do ...",
     "DESCRIPTIONS": [
-      "Prevent ALL HP loss. For every #b8 damage prevented, remove a random card from your deck. When your deck has no cards, you #rlose."
+      "#pPrevent #pALL #pHP #ploss. For every #b10 damage prevented, remove a random card from your deck. When your deck has no cards, you #rlose."
     ]
   },
   "vexMod:BarristanHead": {
@@ -911,7 +911,7 @@
     "NAME": "Red Plotting Stone",
     "FLAVOR": "Great for nefarious plans - as opposed to the Green Plotting Stone.",
     "DESCRIPTIONS": [
-      "#pGlows #psometime. NL #pRight#p click while glowing for a #gmassive #greward. NL #pRight #pclick while not glowing to #rlose."
+      "#pGlows #psometime. NL #pRight #pclick while glowing for a #gmassive #greward. NL #pRight #pclick while not glowing to #rlose."
     ]
   },
   "vexMod:TealTab": {
@@ -1047,7 +1047,7 @@
     "NAME": "Gorgon's Head",
     "FLAVOR": "Pretty, but still formidable.",
     "DESCRIPTIONS": [
-      "ALL enemies start combat with #b3 less #yStrength."
+      "ALL enemies start combat with #b2 less #yStrength."
     ]
   },
   "vexMod:OrbOfGreed": {
@@ -1214,7 +1214,7 @@
     "NAME": "New, Clear Reactor",
     "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
     "DESCRIPTIONS": [
-      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you clear an Act, gain #b100 Energy."
+      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you defeat an Act boss, gain #b100 Energy."
     ]
   },
   "vexMod:SpireShuffle": {
@@ -1244,6 +1244,98 @@
     "FLAVOR": "What do you mean you're still tired?",
     "DESCRIPTIONS": [
       "At the start of your turn, gain [E] in real life."
+    ]
+  },
+  "vexMod:RockOfEvil": {
+    "NAME": "Horrorstone",
+    "FLAVOR": "Holding it fills you with terror. Your only goal is to lose it yet it always winds up back in your pocket.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. Upon pickup, obtain #b666 #yGold and a random #rBlight."
+    ]
+  },
+  "vexMod:RockFriend": {
+    "NAME": "Stone Buddy",
+    "FLAVOR": "Your new teammate. It rocks!",
+    "DESCRIPTIONS": [
+      "Assists you randomly in helpful ways.",
+      "I'll hold them off!",
+      "I'll weaken those jerks!",
+      "No hurting my friend!",
+      "I've weakened them!",
+      "Let me protect you!",
+      "Here, I'll shield you.",
+      "Have some protection.",
+      "I'll block the hit!",
+      "Have some gold!",
+      "Enjoy some free cash.",
+      "Want some money?",
+      "Here's a little gold.",
+      "Have some more cards.",
+      "Here, extra cards for you.",
+      "Let's draw some more, shall we?",
+      "More cards should help!",
+      "I'll give you bonus Energy!",
+      "Here, have some Energy!",
+      "Here's some Energy.",
+      "Let me assist with Energy!",
+      "Have a potion!",
+      "Will a potion help?",
+      "Here's a potion!",
+      "Potion time!",
+      "Take that, baddies!",
+      "I'll get 'em for you!",
+      "Bam, gotcha jerks!",
+      "You're going down, monsters!",
+      "Lemme patch you up.",
+      "I'll bandage you up!",
+      "Here, have some heals!",
+      "Let me heal you."
+    ]
+  },
+  "vexMod:RealismEngine": {
+    "NAME": "Realism Engine",
+    "FLAVOR": "Now it all feels immersive.",
+    "DESCRIPTIONS": [
+      "Whenever you drink a potion, burp.",
+      "burp"
+    ]
+  },
+  "vexMod:MiniSolarSystem": {
+    "NAME": "Mini Solar System",
+    "FLAVOR": "Something we all revolve around.",
+    "DESCRIPTIONS": [
+      "Relics now orbit you."
+    ]
+  },
+  "vexMod:FutureThief": {
+    "NAME": "Future Thief Gloves",
+    "FLAVOR": "Self-destructive thievery.",
+    "DESCRIPTIONS": [
+      "#pRight #pclick: Steal a card from yourself in the future.",
+      " HAS BEEN STOLEN THROUGH TIME",
+      "NO FUTURE DETECTED"
+    ]
+  },
+  "vexMod:PopTire": {
+    "NAME": "Pop. Tire",
+    "FLAVOR": "DEFEAT THE INFIDELS",
+    "DESCRIPTIONS": [
+      "Bounces.",
+      " NL High Score: "
+    ]
+  },
+  "vexMod:JugglerBalls": {
+    "NAME": "Juggling Balls",
+    "FLAVOR": "Made of rubber.",
+    "DESCRIPTIONS": [
+      "Everything bounces."
+    ]
+  },
+  "vexMod:RockBasket": {
+    "NAME": "Rock Basket",
+    "FLAVOR": "Because y'all already know I'm the best.",
+    "DESCRIPTIONS": [
+      "You can only find relics from #pvexMod. At the start of your turn, deal damage to a random enemy equal to the number of #pvexMod relics you have."
     ]
   }
 }

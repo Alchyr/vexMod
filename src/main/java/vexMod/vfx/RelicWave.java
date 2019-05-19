@@ -8,27 +8,58 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 
 public class RelicWave extends AbstractGameEffect {
 
-    private float defaultY;
-    private float offset = 0;
+    private final int amplitudeframes = 200;
+    private final float wavespeed = 0.01F * (float)Math.PI * 2;
+    private final float frequency = 1F;
+    private final float targetAmplitude = Settings.scale * 20;
+    private final float defaultY = (float) Settings.HEIGHT - 102.0F * Settings.scale;
 
-    public RelicWave(float defaultY) {
-        this.defaultY = defaultY;
+    private float phase;
+
+    private float currentAmplitude;
+
+    private int curAframes;
+
+    public RelicWave(Mode mode, float phase) {
+        this.phase = phase;
+        if(mode == Mode.AMPLITUDESLOW) {
+            currentAmplitude = 0;
+            curAframes = -amplitudeframes;
+        } else {
+            currentAmplitude = targetAmplitude;
+        }
+    }
+    public RelicWave(Mode mode) {
+        this(mode, 0);
+    }
+    public RelicWave(float phase) {
+        this(Mode.NONE, phase);
+    }
+    public RelicWave() {
+        this(Mode.NONE, 0);
     }
 
     public void update() {
-        offset += 0.01F;
-        double multiplyer = Math.PI * 2 / AbstractDungeon.player.relics.size();
-        for(int i = 0; i < AbstractDungeon.player.relics.size(); i++) {
+        int size = AbstractDungeon.player.relics.size();
+        phase += wavespeed;
+        if(currentAmplitude < targetAmplitude) {
+            currentAmplitude = targetAmplitude / (1 + (float)Math.pow(Math.E, (-6F / amplitudeframes) * curAframes++));
+        }
+        double multiplyer = Math.PI * 2 / size;
+        for(int i = 0; i < size; i++) {
             AbstractRelic ar = AbstractDungeon.player.relics.get(i);
-            ar.currentY = defaultY + ((float)Math.sin(i * multiplyer + offset) * Settings.scale * 20);
+            ar.currentY = defaultY + ((float)Math.sin((i * multiplyer + phase) * frequency) * currentAmplitude);
         }
     }
 
     public void render(SpriteBatch sb) {}
 
     public void dispose() {
-        for(final AbstractRelic relic : AbstractDungeon.player.relics) {
-            relic.currentY = defaultY;
-        }
+
+    }
+
+    public static enum Mode {
+        NONE,
+        AMPLITUDESLOW
     }
 }

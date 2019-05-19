@@ -38,7 +38,7 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
         if (damageAmount > 0 && AbstractDungeon.player.masterDeck.size() > 0) {
             for (int i = 0; i < damageAmount; i++) {
                 counter += 1;
-                if (this.counter == 8) {
+                if (this.counter == 10) {
                     this.counter = 0;
                     ArrayList<AbstractCard> removablecards = new ArrayList<>(AbstractDungeon.player.masterDeck.group);
                     Collections.shuffle(removablecards, new Random(AbstractDungeon.miscRng.randomLong()));

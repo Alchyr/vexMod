@@ -25,7 +25,7 @@ public class TreasureMap extends CustomRelic {
     }
 
     public boolean canSpawn() {
-        return (Settings.isEndless || AbstractDungeon.floorNum <= 40) && !AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(HatredEngine.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID);
+        return (Settings.isEndless || AbstractDungeon.floorNum <= 40) && !AbstractDungeon.player.hasRelic(MallPass.ID) && !AbstractDungeon.player.hasRelic(JuzuBracelet.ID);
     }
 
 

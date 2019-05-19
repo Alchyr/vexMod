@@ -96,6 +96,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((list.get(0)));
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new GorgonsHead());
+                        AbstractDungeon.lastCombatMetricKey = "Gilded Gorgon";
                         this.enterCombatFromImage();
                         break;
                     case 3:

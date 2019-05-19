@@ -21,16 +21,16 @@ public class InfectionBeast extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 224;
-    private static final int HP_MAX = 229;
-    private static final int A_8_HP_MIN = 250;
-    private static final int A_8_HP_MAX = 260;
+    private static final int HP_MIN = 200;
+    private static final int HP_MAX = 205;
+    private static final int A_8_HP_MIN = 212;
+    private static final int A_8_HP_MAX = 216;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 441.0F;
     private static final float HB_H = 450.0F;
-    private static final int ATTACK_LIFESTEAL_DAMAGE = 18;
-    private static final int A_3_ATTACK_LIFESTEAL_DAMAGE = 24;
+    private static final int ATTACK_LIFESTEAL_DAMAGE = 16;
+    private static final int A_3_ATTACK_LIFESTEAL_DAMAGE = 20;
     private boolean firstTurn = true;
 
     public InfectionBeast(float x, float y) {

@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.beyond.Darkling;
 
 public class CheckIfDeadCurseAction extends AbstractGameAction {
     private AbstractMonster m;
@@ -18,7 +19,7 @@ public class CheckIfDeadCurseAction extends AbstractGameAction {
     }
 
     public void update() {
-        if ((!m.isDying && m.currentHealth > 0)) {
+        if ((!m.isDying && m.currentHealth > 0 && !(m instanceof Darkling))) {
             AbstractCard c = CardLibrary.getCurse().makeCopy();
             AbstractDungeon.actionManager.addToBottom(new AddCardToDeckAction(c.makeCopy()));
         }

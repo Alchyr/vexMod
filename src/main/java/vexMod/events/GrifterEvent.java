@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import vexMod.VexMod;
 import vexMod.relics.*;
+import vexMod.vfx.BouncingRelic;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -81,6 +82,15 @@ public class GrifterEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(HealthChanger.ID));
                         themRelics.add(RelicLibrary.getRelic(Bottle.ID));
                         themRelics.add(RelicLibrary.getRelic(Incredibleness.ID));
+                        themRelics.add(RelicLibrary.getRelic(MiniSolarSystem.ID));
+                        themRelics.add(RelicLibrary.getRelic(RealismEngine.ID));
+                        themRelics.add(RelicLibrary.getRelic(PopTire.ID));
+                        themRelics.add(RelicLibrary.getRelic(JugglerBalls.ID));
+
+                        for (AbstractRelic m : AbstractDungeon.player.relics)
+                        {
+                            themRelics.remove(m);
+                        }
 
                         AbstractRelic relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), relicToGive);
@@ -96,6 +106,7 @@ public class GrifterEvent extends AbstractImageEvent {
                         AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((list.get(0)));
                         AbstractDungeon.getCurrRoom().rewards.clear();
                         AbstractDungeon.getCurrRoom().addRelicToRewards(new GrifterSatchel());
+                        AbstractDungeon.lastCombatMetricKey = "Grifter";
                         this.enterCombatFromImage();
                 }
                 break;

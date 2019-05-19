@@ -31,7 +31,7 @@ public class GorgonsHead extends CustomRelic {
 
         for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
             AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -3), -3));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new StrengthPower(m, -2), -2));
         }
 
         AbstractDungeon.onModifyPower();

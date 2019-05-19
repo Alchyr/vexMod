@@ -49,93 +49,89 @@ public class ChimeraCard extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         TRANSFORMS_LEFT = 10;
-        AbstractCard newTransformedCard = transformedCard.makeCopy();
-        if (this.upgraded) {
-            newTransformedCard.upgrade();
-        }
-        newTransformedCard.applyPowers();
-        newTransformedCard.setCostForTurn(0);
-        newTransformedCard.purgeOnUse = true;
-        AbstractDungeon.actionManager.cardQueue.add(new CardQueueItem(newTransformedCard, m));
+        transformedCard.use(p, m);
     }
 
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-            if (TRANSFORMATION >= 120 && TRANSFORMS_LEFT > 0 && !AbstractDungeon.player.masterDeck.contains(this)) {
-                TRANSFORMS_LEFT -= 1;
-                TRANSFORMATION = 0;
-                transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
-                if (this.upgraded) {
-                    transformedCard.upgrade();
-                }
-                if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                    transformedCard.applyPowers();
-                }
-                this.type = transformedCard.type;
-                this.target = transformedCard.target;
-                this.color = transformedCard.color;
-                this.rarity = transformedCard.rarity;
-                this.name = transformedCard.name;
-                if (TRANSFORMS_LEFT > 1) {
-                    this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformations left.";
-                } else if (TRANSFORMS_LEFT == 1) {
-                    this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformation left.";
-                } else {
-                    this.rawDescription = transformedCard.rawDescription + " NL " + "No longer transforms until played.";
-                }
+        if (AbstractDungeon.player!= null)
+        {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                if (TRANSFORMATION >= 120 && TRANSFORMS_LEFT > 0 && !AbstractDungeon.player.masterDeck.contains(this)) {
+                    TRANSFORMS_LEFT -= 1;
+                    TRANSFORMATION = 0;
+                    transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
+                    if (this.upgraded) {
+                        transformedCard.upgrade();
+                    }
+                    if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                        transformedCard.applyPowers();
+                    }
+                    this.type = transformedCard.type;
+                    this.target = transformedCard.target;
+                    this.color = transformedCard.color;
+                    this.rarity = transformedCard.rarity;
+                    this.name = transformedCard.name;
+                    if (TRANSFORMS_LEFT > 1) {
+                        this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformations left.";
+                    } else if (TRANSFORMS_LEFT == 1) {
+                        this.rawDescription = transformedCard.rawDescription + " NL " + this.TRANSFORMS_LEFT + " transformation left.";
+                    } else {
+                        this.rawDescription = transformedCard.rawDescription + " NL " + "No longer transforms until played.";
+                    }
 
-                this.costForTurn = transformedCard.cost;
-                this.cost = transformedCard.cost;
-                this.baseDamage = transformedCard.baseDamage;
-                this.multiDamage = transformedCard.multiDamage;
-                this.baseBlock = transformedCard.baseBlock;
-                this.baseMagicNumber = transformedCard.baseMagicNumber;
-                this.magicNumber = transformedCard.magicNumber;
-                this.exhaust = transformedCard.exhaust;
-                Field yuckyPrivateAtlas;
-                try {
-                    yuckyPrivateAtlas = AbstractCard.class.getDeclaredField("cardAtlas");
-                    yuckyPrivateAtlas.setAccessible(true);
-                    TextureAtlas cardAtlas = (TextureAtlas) yuckyPrivateAtlas.get(null);
-                    this.portrait = cardAtlas.findRegion(transformedCard.assetUrl);
-                } catch (NoSuchFieldException | IllegalAccessException e) {
-                    e.printStackTrace();
+                    this.costForTurn = transformedCard.cost;
+                    this.cost = transformedCard.cost;
+                    this.baseDamage = transformedCard.baseDamage;
+                    this.multiDamage = transformedCard.multiDamage;
+                    this.baseBlock = transformedCard.baseBlock;
+                    this.baseMagicNumber = transformedCard.baseMagicNumber;
+                    this.magicNumber = transformedCard.magicNumber;
+                    this.exhaust = transformedCard.exhaust;
+                    Field yuckyPrivateAtlas;
+                    try {
+                        yuckyPrivateAtlas = AbstractCard.class.getDeclaredField("cardAtlas");
+                        yuckyPrivateAtlas.setAccessible(true);
+                        TextureAtlas cardAtlas = (TextureAtlas) yuckyPrivateAtlas.get(null);
+                        this.portrait = cardAtlas.findRegion(transformedCard.assetUrl);
+                    } catch (NoSuchFieldException | IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
-        } else {
-            if (TRANSFORMATION >= 120) {
-                TRANSFORMATION = 0;
-                transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
-                if (this.upgraded) {
-                    transformedCard.upgrade();
-                }
-                if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
-                    transformedCard.applyPowers();
-                }
-                this.type = transformedCard.type;
-                this.target = transformedCard.target;
-                this.color = transformedCard.color;
-                this.rarity = transformedCard.rarity;
-                this.name = transformedCard.name;
-                this.rawDescription = transformedCard.rawDescription;
-                this.costForTurn = transformedCard.cost;
-                this.cost = transformedCard.cost;
-                this.baseDamage = transformedCard.baseDamage;
-                this.multiDamage = transformedCard.multiDamage;
-                this.baseBlock = transformedCard.baseBlock;
-                this.baseMagicNumber = transformedCard.baseMagicNumber;
-                this.magicNumber = transformedCard.magicNumber;
-                this.exhaust = transformedCard.exhaust;
-                Field yuckyPrivateAtlas;
-                try {
-                    yuckyPrivateAtlas = AbstractCard.class.getDeclaredField("cardAtlas");
-                    yuckyPrivateAtlas.setAccessible(true);
-                    TextureAtlas cardAtlas = (TextureAtlas) yuckyPrivateAtlas.get(null);
-                    this.portrait = cardAtlas.findRegion(transformedCard.assetUrl);
-                } catch (NoSuchFieldException | IllegalAccessException e) {
-                    e.printStackTrace();
+            } else {
+                if (TRANSFORMATION >= 120) {
+                    TRANSFORMATION = 0;
+                    transformedCard = Objects.requireNonNull(getRandomChimeraCard()).makeCopy();
+                    if (this.upgraded) {
+                        transformedCard.upgrade();
+                    }
+                    if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+                        transformedCard.applyPowers();
+                    }
+                    this.type = transformedCard.type;
+                    this.target = transformedCard.target;
+                    this.color = transformedCard.color;
+                    this.rarity = transformedCard.rarity;
+                    this.name = transformedCard.name;
+                    this.rawDescription = transformedCard.rawDescription;
+                    this.costForTurn = transformedCard.cost;
+                    this.cost = transformedCard.cost;
+                    this.baseDamage = transformedCard.baseDamage;
+                    this.multiDamage = transformedCard.multiDamage;
+                    this.baseBlock = transformedCard.baseBlock;
+                    this.baseMagicNumber = transformedCard.baseMagicNumber;
+                    this.magicNumber = transformedCard.magicNumber;
+                    this.exhaust = transformedCard.exhaust;
+                    Field yuckyPrivateAtlas;
+                    try {
+                        yuckyPrivateAtlas = AbstractCard.class.getDeclaredField("cardAtlas");
+                        yuckyPrivateAtlas.setAccessible(true);
+                        TextureAtlas cardAtlas = (TextureAtlas) yuckyPrivateAtlas.get(null);
+                        this.portrait = cardAtlas.findRegion(transformedCard.assetUrl);
+                    } catch (NoSuchFieldException | IllegalAccessException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }
