@@ -21,7 +21,7 @@ public class Dragonfruit extends CustomRelic {
 
 
     public Dragonfruit() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
     }
 
     @Override

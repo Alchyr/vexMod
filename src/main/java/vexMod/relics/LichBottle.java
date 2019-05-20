@@ -29,7 +29,7 @@ public class LichBottle extends CustomRelic implements BetterOnLoseHpRelic {
 
 
     public LichBottle() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
         this.counter = 0;
     }
 

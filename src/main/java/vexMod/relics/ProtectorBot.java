@@ -21,7 +21,7 @@ public class ProtectorBot extends CustomRelic {
 
 
     public ProtectorBot() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     @Override

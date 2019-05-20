@@ -25,6 +25,7 @@ import com.megacrit.cardcrawl.monsters.beyond.Exploder;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
@@ -32,12 +33,15 @@ import vexMod.events.*;
 import vexMod.modifiers.NoRelicMode;
 import vexMod.modifiers.ShiftingDeckMod;
 import vexMod.monsters.*;
-import vexMod.potions.*;
+import vexMod.potions.BlazePotion;
+import vexMod.potions.CameraPotion;
+import vexMod.potions.GoldPotion;
+import vexMod.potions.LightningBottle;
 import vexMod.relics.*;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
-import vexMod.vfx.BouncingRelic;
 import vexMod.vfx.JuggleRelic;
+import vexMod.vfx.OrbitalData;
 import vexMod.vfx.OrbitalRelics;
 
 import java.util.List;
@@ -235,15 +239,12 @@ public class VexMod implements
         BaseMod.addEvent(XCostLoverEvent.ID, XCostLoverEvent.class, Exordium.ID);
         BaseMod.addEvent(SpireWellEvent.ID, SpireWellEvent.class);
 
-
         logger.info("Potion edits begin.");
 
         BaseMod.addPotion(BlazePotion.class, Color.RED, Color.BLUE, Color.TEAL, BlazePotion.POTION_ID);
         BaseMod.addPotion(GoldPotion.class, Color.YELLOW, Color.GREEN, Color.BLACK, GoldPotion.POTION_ID);
         BaseMod.addPotion(LightningBottle.class, Color.YELLOW, Color.CYAN, Color.TEAL, LightningBottle.POTION_ID);
         BaseMod.addPotion(CameraPotion.class, Color.TEAL, Color.GOLD, Color.CORAL, CameraPotion.POTION_ID);
-        BaseMod.addPotion(FrostBottle.class, Color.BLUE, Color.NAVY, Color.BLACK, FrostBottle.POTION_ID);
-        BaseMod.addPotion(PlasmaBottle.class, Color.ORANGE, Color.CORAL, Color.OLIVE, PlasmaBottle.POTION_ID);
 
         logger.info("Potion edits concluded.");
 
@@ -382,6 +383,8 @@ public class VexMod implements
         BaseMod.addRelic(new PopTire(), RelicType.SHARED);
         BaseMod.addRelic(new JugglerBalls(), RelicType.SHARED);
         BaseMod.addRelic(new RockBasket(), RelicType.SHARED);
+        BaseMod.addRelic(new RelicLauncher(), RelicType.SHARED);
+        BaseMod.addRelic(new XConverter(), RelicType.SHARED);
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);
@@ -479,6 +482,8 @@ public class VexMod implements
         UnlockTracker.markRelicAsSeen(PopTire.ID);
         UnlockTracker.markRelicAsSeen(JugglerBalls.ID);
         UnlockTracker.markRelicAsSeen(RockBasket.ID);
+        UnlockTracker.markRelicAsSeen(RelicLauncher.ID);
+        UnlockTracker.markRelicAsSeen(XConverter.ID);
 
         logger.info("woo hoo relics be cool");
     }
@@ -748,9 +753,12 @@ public class VexMod implements
     @Override
     public void receiveRelicGet(AbstractRelic relic) {
         if (!CardCrawlGame.loadingSave) {
-            if (AbstractDungeon.player.hasRelic(MiniSolarSystem.ID)) {
-                AbstractDungeon.effectList.removeIf(effect -> effect instanceof OrbitalRelics);
-                AbstractDungeon.effectList.add(new OrbitalRelics());
+            if (AbstractDungeon.player.hasRelic(MiniSolarSystem.ID) && !(relic instanceof MiniSolarSystem)) {
+                for (AbstractGameEffect e : AbstractDungeon.effectList) {
+                    if (e instanceof OrbitalRelics) {
+                        ((OrbitalRelics) e).relics.put(relic, new OrbitalData());
+                    }
+                }
             }
             if (AbstractDungeon.player.hasRelic(JugglerBalls.ID)) {
                 AbstractDungeon.effectList.add(new JuggleRelic(relic, false, 1.5F));

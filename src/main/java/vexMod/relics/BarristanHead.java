@@ -19,9 +19,8 @@ public class BarristanHead extends CustomRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BarristanHead.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BarristanHead.png"));
 
-
     public BarristanHead() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.SOLID);
     }
 
     @Override

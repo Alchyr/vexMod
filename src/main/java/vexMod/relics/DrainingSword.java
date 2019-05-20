@@ -25,7 +25,7 @@ public class DrainingSword extends CustomRelic {
 
 
     public DrainingSword() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
     @Override

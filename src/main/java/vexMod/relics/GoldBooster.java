@@ -23,7 +23,7 @@ public class GoldBooster extends CustomRelic {
 
 
     public GoldBooster() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
     }
 
     @Override

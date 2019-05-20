@@ -21,7 +21,7 @@ public class ShiftingSkin extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ShiftingSkin.png"));
 
     public ShiftingSkin() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
     }
 
     public void atBattleStart() {

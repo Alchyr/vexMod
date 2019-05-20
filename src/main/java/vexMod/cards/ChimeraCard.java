@@ -4,7 +4,6 @@ import basemod.patches.whatmod.WhatMod;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.CardQueueItem;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -55,9 +54,8 @@ public class ChimeraCard extends AbstractDefaultCard {
     @Override
     public void applyPowers() {
         super.applyPowers();
-        if (AbstractDungeon.player!= null)
-        {
-            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrRoom() != null) {
+            if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && AbstractDungeon.player.hand.contains(this)) {
                 if (TRANSFORMATION >= 120 && TRANSFORMS_LEFT > 0 && !AbstractDungeon.player.masterDeck.contains(this)) {
                     TRANSFORMS_LEFT -= 1;
                     TRANSFORMATION = 0;

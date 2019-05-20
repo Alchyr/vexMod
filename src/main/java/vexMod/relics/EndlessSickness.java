@@ -22,7 +22,7 @@ public class EndlessSickness extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("EndlessSickness.png"));
 
     public EndlessSickness() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
         this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 

@@ -20,7 +20,7 @@ public class CardConverter extends CustomRelic {
 
 
     public CardConverter() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

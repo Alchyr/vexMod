@@ -24,7 +24,7 @@ public class PlasmaPancake extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("PlasmaPancake.png"));
 
     public PlasmaPancake() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
     }
 
     public void atBattleStart() {

@@ -20,7 +20,7 @@ public class BetterTron extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BetterTron.png"));
 
     public BetterTron() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
         this.counter = 3;
     }
 

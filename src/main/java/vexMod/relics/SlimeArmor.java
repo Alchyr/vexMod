@@ -22,7 +22,7 @@ public class SlimeArmor extends CustomRelic {
 
 
     public SlimeArmor() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override

@@ -23,7 +23,7 @@ public class DrawConverter extends CustomRelic {
     private boolean working = false;
 
     public DrawConverter() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     public void onCardDraw(AbstractCard drawnCard) {

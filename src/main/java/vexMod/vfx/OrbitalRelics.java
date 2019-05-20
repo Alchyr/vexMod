@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class OrbitalRelics extends AbstractGameEffect {
 
-    Map<AbstractRelic, OrbitalData> relics = new HashMap<>();
+    public Map<AbstractRelic, OrbitalData> relics = new HashMap<>();
 
     public OrbitalRelics() {
         for (final AbstractRelic ar : AbstractDungeon.player.relics) {

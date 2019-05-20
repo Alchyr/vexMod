@@ -1,15 +1,17 @@
 package vexMod.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import vexMod.VexMod;
-import vexMod.powers.MidasTouchPower;
+import vexMod.actions.MidasTouchAction;
+import vexMod.actions.TauntAction;
 
 import static vexMod.VexMod.makeCardPath;
+
 
 public class MidasTouch extends AbstractDefaultCard {
 
@@ -20,25 +22,26 @@ public class MidasTouch extends AbstractDefaultCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ID);
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
+    public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final CardRarity RARITY = CardRarity.RARE;
     private static final CardTarget TARGET = CardTarget.SELF;
-    private static final CardType TYPE = CardType.POWER;
-    private static final int COST = 3;
-    private static final int UPGRADED_COST = 2;
-
-    private static final int MAGIC = 1;
+    private static final CardType TYPE = CardType.SKILL;
+    private static final int COST = -1;
 
 
     public MidasTouch() {
         super(ID, NAME, IMG, COST, DESCRIPTION, TYPE, COLOR, RARITY, TARGET);
-        magicNumber = baseMagicNumber = MAGIC;
-        this.isEthereal = true;
+        this.exhaust = true;
     }
 
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new MidasTouchPower(p, p)));
+        if (this.energyOnUse < EnergyPanel.totalCount) {
+            this.energyOnUse = EnergyPanel.totalCount;
+        }
+
+        AbstractDungeon.actionManager.addToBottom(new MidasTouchAction(p, m, this.upgraded, this.freeToPlayOnce, this.energyOnUse));
     }
 
 
@@ -46,7 +49,7 @@ public class MidasTouch extends AbstractDefaultCard {
     public void upgrade() {
         if (!upgraded) {
             upgradeName();
-            upgradeBaseCost(UPGRADED_COST);
+            this.rawDescription = UPGRADE_DESCRIPTION;
             initializeDescription();
         }
     }

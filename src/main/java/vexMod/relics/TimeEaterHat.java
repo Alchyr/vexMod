@@ -21,7 +21,7 @@ public class TimeEaterHat extends CustomRelic {
 
 
     public TimeEaterHat() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
     }
 
     @Override

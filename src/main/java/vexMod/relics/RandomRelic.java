@@ -47,7 +47,7 @@ public class RandomRelic extends CustomRelic implements OnLoseBlockRelic, OnPlay
     private boolean triggered;
 
     public RandomRelic() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = -1;
     }
 

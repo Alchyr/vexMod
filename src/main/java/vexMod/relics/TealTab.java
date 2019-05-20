@@ -21,7 +21,7 @@ public class TealTab extends CustomRelic {
 
 
     public TealTab() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         this.counter = -1;
     }
 

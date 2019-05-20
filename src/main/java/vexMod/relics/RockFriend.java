@@ -31,7 +31,7 @@ public class RockFriend extends CustomRelic {
     private int turnNum;
 
     public RockFriend() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     private static void moveRelic(AbstractRelic r1, AbstractRelic r2) {
@@ -51,14 +51,14 @@ public class RockFriend extends CustomRelic {
     @Override
     public void onEnterRoom(AbstractRoom room) {
         if (AbstractDungeon.player.relics.size() == 3) {
-            if (!(AbstractDungeon.player.relics.get(2) instanceof RockFriend)) {
+            if (!(AbstractDungeon.player.relics.get(2) instanceof RockFriend) && (AbstractDungeon.player.relics.get(0) instanceof RockFriend || AbstractDungeon.player.relics.get(1) instanceof RockFriend)) {
                 AbstractRelic r1 = AbstractDungeon.player.getRelic(RockFriend.ID);
                 AbstractRelic r2 = AbstractDungeon.player.relics.get(2);
                 moveRelic(r1, r2);
                 Collections.swap(AbstractDungeon.player.relics, AbstractDungeon.player.relics.indexOf(this), 2);
             }
         } else if (AbstractDungeon.player.relics.size() >= 4) {
-            if (!(AbstractDungeon.player.relics.get(3) instanceof RockFriend)) {
+            if (!(AbstractDungeon.player.relics.get(3) instanceof RockFriend) && (AbstractDungeon.player.relics.get(0) instanceof RockFriend || AbstractDungeon.player.relics.get(1) instanceof RockFriend || AbstractDungeon.player.relics.get(2) instanceof RockFriend)) {
                 AbstractRelic r1 = AbstractDungeon.player.getRelic(RockFriend.ID);
                 AbstractRelic r2 = AbstractDungeon.player.relics.get(3);
                 moveRelic(r1, r2);

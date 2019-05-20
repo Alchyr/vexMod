@@ -38,7 +38,7 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
         this.noCardsInRewards = true;
 
 
-        imageEventText.setDialogOption(OPTIONS[0]);
+        imageEventText.setDialogOption((OPTIONS[0]), new GorgonsGaze());
         this.goldAmount = this.getGoldAmount();
         if (goldAmount != 0) {
             this.imageEventText.setDialogOption(OPTIONS[1] + goldAmount + OPTIONS[6]);
@@ -116,10 +116,10 @@ public class GorgonEncounterEvent extends AbstractImageEvent {
     }
 
     private int getGoldAmount() {
-        if (AbstractDungeon.player.gold < 127) {
+        if (AbstractDungeon.player.gold < 68) {
             return 0;
         } else {
-            return 127;
+            return 68;
         }
     }
 

@@ -25,7 +25,7 @@ public class SalvageTools extends CustomRelic {
 
 
     public SalvageTools() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.CLINK);
     }
 
     @Override

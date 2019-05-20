@@ -21,7 +21,7 @@ public class PowerCharger extends CustomRelic {
 
 
     public PowerCharger() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     @Override

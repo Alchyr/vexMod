@@ -21,7 +21,7 @@ public class RockOfEvil extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     public RockOfEvil() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
     }
 
     @Override

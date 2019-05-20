@@ -23,7 +23,7 @@ public class NewClearReactor extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     public NewClearReactor() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.HEAVY);
         this.counter = 100;
     }
 
@@ -59,7 +59,7 @@ public class NewClearReactor extends CustomRelic {
         AbstractDungeon.player.energy.energyMaster = 0;
         if (room instanceof TreasureRoomBoss) {
             this.flash();
-            this.counter += 100;
+            this.counter = 100;
         }
     }
 

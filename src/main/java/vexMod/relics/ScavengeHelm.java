@@ -23,7 +23,7 @@ public class ScavengeHelm extends CustomRelic {
 
 
     public ScavengeHelm() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
         this.tips.add(new PowerTip(DESCRIPTIONS[1], DESCRIPTIONS[2]));
     }
 

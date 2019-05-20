@@ -1,5 +1,8 @@
 package vexMod.cards;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -50,7 +53,8 @@ public class AntiqueFury extends AbstractDefaultCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(m, AbstractDungeon.player.relics.size(), false));
+        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(m, false));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(m, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
 
     @Override

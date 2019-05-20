@@ -24,7 +24,7 @@ public class RealismEngine extends CustomRelic {
 
 
     public RealismEngine() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     public void onUsePotion() {

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.rewards.RewardItem;
 import com.megacrit.cardcrawl.vfx.combat.SmokeBombEffect;
 import vexMod.VexMod;
 import vexMod.powers.GriftingPower;
+import vexMod.vfx.RelicYoinkEffect;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -98,6 +99,7 @@ public class Grifter extends AbstractMonster {
                     AbstractRelic crelic = relics.get(0);
                     crelic.flash();
                     AbstractDungeon.player.loseRelic(crelic.relicId);
+                    AbstractDungeon.effectList.add(new RelicYoinkEffect(crelic, this));
                     AbstractDungeon.getCurrRoom().addRelicToRewards(crelic);
                 }
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.BLUNT_LIGHT));
@@ -110,6 +112,7 @@ public class Grifter extends AbstractMonster {
                     AbstractRelic crelic = relics.get(0);
                     crelic.flash();
                     AbstractDungeon.player.loseRelic(crelic.relicId);
+                    AbstractDungeon.effectList.add(new RelicYoinkEffect(crelic, this));
                     AbstractDungeon.getCurrRoom().addRelicToRewards(crelic);
                 }
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.SLASH_HORIZONTAL));
@@ -122,6 +125,7 @@ public class Grifter extends AbstractMonster {
                     AbstractRelic crelic = relics.get(0);
                     crelic.flash();
                     AbstractDungeon.player.loseRelic(crelic.relicId);
+                    AbstractDungeon.effectList.add(new RelicYoinkEffect(crelic, this));
                     AbstractDungeon.getCurrRoom().addRelicToRewards(crelic);
                 }
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(1), AttackEffect.BLUNT_HEAVY));

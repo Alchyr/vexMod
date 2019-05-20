@@ -22,7 +22,7 @@ public class RustySword extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("RustySword.png"));
 
     public RustySword() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
     @Override

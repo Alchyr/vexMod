@@ -21,9 +21,6 @@ public class NewClearReactorPatch {
             AbstractDungeon.actionManager.updateEnergyGain(__instance.energy);
             return SpireReturn.Return(null);
         }
-        else
-        {
-            return SpireReturn.Continue();
-        }
+        return SpireReturn.Continue();
     }
 }

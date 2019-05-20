@@ -26,7 +26,7 @@ public class ConsolationPrize
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ConsolationPrize.png"));
 
     public ConsolationPrize() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
     }
 
 

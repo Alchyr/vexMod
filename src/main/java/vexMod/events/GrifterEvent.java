@@ -12,7 +12,6 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.vfx.RainingGoldEffect;
 import vexMod.VexMod;
 import vexMod.relics.*;
-import vexMod.vfx.BouncingRelic;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -40,9 +39,13 @@ public class GrifterEvent extends AbstractImageEvent {
         Collections.shuffle(relics, new Random(AbstractDungeon.miscRng.randomLong()));
         this.crelic = relics.get(0);
 
-        imageEventText.setDialogOption(OPTIONS[0]);
+        if (AbstractDungeon.player.gold > 1) {
+            imageEventText.setDialogOption(OPTIONS[0]);
+        }
         imageEventText.setDialogOption(OPTIONS[1] + crelic.name + OPTIONS[2]);
-        imageEventText.setDialogOption(OPTIONS[3]);
+        if (AbstractDungeon.player.gold > 1) {
+            imageEventText.setDialogOption(OPTIONS[3]);
+        }
         imageEventText.setDialogOption(OPTIONS[4]);
     }
 
@@ -52,23 +55,47 @@ public class GrifterEvent extends AbstractImageEvent {
             case 0:
                 switch (i) {
                     case 0:
-                        AbstractDungeon.player.loseGold(AbstractDungeon.player.gold);
-                        AbstractRelic r = AbstractDungeon.returnRandomScreenlessRelic(AbstractRelic.RelicTier.COMMON);
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), r);
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[5]);
-                        this.imageEventText.clearRemainingOptions();
-                        screenNum = 1;
-                        break;
+                        if (AbstractDungeon.player.gold == 0) {
+                            AbstractDungeon.effectList.add(new RainingGoldEffect(50));
+                            AbstractDungeon.player.loseRelic(crelic.relicId);
+                            AbstractDungeon.player.gainGold(50);
+                            this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                            this.imageEventText.updateDialogOption(0, OPTIONS[5]);
+                            this.imageEventText.clearRemainingOptions();
+                            screenNum = 1;
+                            break;
+                        } else {
+                            AbstractDungeon.player.loseGold(AbstractDungeon.player.gold);
+                            AbstractRelic r = AbstractDungeon.returnRandomScreenlessRelic(AbstractRelic.RelicTier.COMMON);
+                            AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), r);
+                            this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
+                            this.imageEventText.updateDialogOption(0, OPTIONS[5]);
+                            this.imageEventText.clearRemainingOptions();
+                            screenNum = 1;
+                            break;
+                        }
                     case 1:
-                        AbstractDungeon.effectList.add(new RainingGoldEffect(50));
-                        AbstractDungeon.player.loseRelic(crelic.relicId);
-                        AbstractDungeon.player.gainGold(50);
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[5]);
-                        this.imageEventText.clearRemainingOptions();
-                        screenNum = 1;
-                        break;
+                        if (AbstractDungeon.player.gold == 0) {
+                            this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
+                            ArrayList<String> list = new ArrayList<>();
+                            list.add("vexMod:Grifter");
+                            AbstractDungeon.getCurrRoom().monsters = MonsterHelper.getEncounter((list.get(0)));
+                            AbstractDungeon.getCurrRoom().rewards.clear();
+                            AbstractDungeon.getCurrRoom().addRelicToRewards(new GrifterSatchel());
+                            AbstractDungeon.lastCombatMetricKey = "Grifter";
+                            this.enterCombatFromImage();
+                            break;
+                        } else {
+                            AbstractDungeon.effectList.add(new RainingGoldEffect(50));
+                            AbstractDungeon.player.loseRelic(crelic.relicId);
+                            AbstractDungeon.player.gainGold(50);
+                            this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
+                            this.imageEventText.updateDialogOption(0, OPTIONS[5]);
+                            this.imageEventText.clearRemainingOptions();
+                            screenNum = 1;
+                            break;
+                        }
+
                     case 2:
                         AbstractDungeon.player.loseGold(1);
                         ArrayList<AbstractRelic> themRelics = new ArrayList<>();
@@ -87,8 +114,7 @@ public class GrifterEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(PopTire.ID));
                         themRelics.add(RelicLibrary.getRelic(JugglerBalls.ID));
 
-                        for (AbstractRelic m : AbstractDungeon.player.relics)
-                        {
+                        for (AbstractRelic m : AbstractDungeon.player.relics) {
                             themRelics.remove(m);
                         }
 

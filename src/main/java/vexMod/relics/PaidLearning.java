@@ -27,7 +27,7 @@ public class PaidLearning extends CustomRelic {
     private int upgradeAbleCards;
 
     public PaidLearning() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override

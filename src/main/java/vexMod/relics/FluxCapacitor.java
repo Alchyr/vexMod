@@ -21,7 +21,7 @@ public class FluxCapacitor extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("FluxCapacitor.png"));
 
     public FluxCapacitor() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.SOLID);
         this.counter = -1;
     }
 

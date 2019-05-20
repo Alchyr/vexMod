@@ -21,7 +21,7 @@ public class GrifterSatchel extends CustomRelic {
 
 
     public GrifterSatchel() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override

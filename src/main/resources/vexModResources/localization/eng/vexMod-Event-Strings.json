@@ -243,7 +243,7 @@
   "vexMod:GrifterEvent": {
     "NAME": "Grifter's Shop",
     "DESCRIPTIONS": [
-      "As you're ascending the City, a formidable, bulky man in bandit gear steps out in front of you. NL \"Hello, hello! Wish to buy something, traveler? I've many wares.\" NL \"Or perhaps you're looking to sell? I'll take a trinket off your hands.\" NL \"Come now, buy something.\" NL \"I insist.\"",
+      "As you're ascending the City, a formidable, bulky man in bandit gear steps out in front of you. NL \"Hello, hello! Wish to buy something, traveler? I've many wares.\" NL \"Or perhaps you're looking to sell? I'll take a relic off your hands.\" NL \"Come now, buy something.\" NL NL \"I insist.\"",
       "\"What a deal, am I right or am I right?\" NL \"You made the right choice here, laddy.\" NL The bandit pockets your gold. NL You continue, frustrated.",
       "\"I'll put it to good use, don't worry!\" the bandit snarls. NL \"Thanks for shopping with me, friend.\" NL The bandit stashes his new relic. NL You continue, annoyed.",
       "\"You'll get immeasurable use out of this trinket, I'm sure!\" NL \"You've made a good choice shopping with me, bucko.\" NL The bandit pockets the gold piece. NL You continue, confused.",
@@ -254,7 +254,7 @@
       "[Sell: ",
       "] #rLose #rthis #rRelic. #gObtain #g50 #gGold.",
       "[Trinket] #rLose #r1 #rGold. #gObtain #ga #gtrinket.",
-      "[Fight] #rBattle #rthe #rGrifter.",
+      "[Fight] #rFight #rthe #rGrifter.",
       "[Leave]",
       "[Leave]"
     ]

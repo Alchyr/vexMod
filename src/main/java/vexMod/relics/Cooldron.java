@@ -19,7 +19,7 @@ public class Cooldron extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Cooldron.png"));
 
     public Cooldron() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.HEAVY);
     }
 
     public boolean canSpawn() {

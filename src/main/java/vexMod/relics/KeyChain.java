@@ -25,7 +25,7 @@ public class KeyChain extends CustomRelic {
     private static boolean activated = false;
 
     public KeyChain() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.CLINK);
     }
 
     public void atBattleStart() {

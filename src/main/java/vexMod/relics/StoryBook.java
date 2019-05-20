@@ -24,7 +24,7 @@ public class StoryBook extends CustomRelic {
     private String lastThingDone;
 
     public StoryBook() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override
@@ -89,48 +89,14 @@ public class StoryBook extends CustomRelic {
         nounList.add("aardvark");
         nounList.add("abacus");
         nounList.add("abbey");
-        nounList.add("abbreviation");
         nounList.add("abdomen");
-        nounList.add("ability");
-        nounList.add("abnormality");
-        nounList.add("abolishment");
         nounList.add("abortion");
-        nounList.add("abrogation");
-        nounList.add("absence");
-        nounList.add("abundance");
-        nounList.add("abuse");
-        nounList.add("academics");
         nounList.add("academy");
-        nounList.add("accelerant");
-        nounList.add("accelerator");
-        nounList.add("accent");
-        nounList.add("acceptance");
-        nounList.add("access");
         nounList.add("accessory");
-        nounList.add("accident");
-        nounList.add("accommodation");
-        nounList.add("accompanist");
-        nounList.add("accomplishment");
-        nounList.add("accord");
-        nounList.add("accordance");
         nounList.add("accordion");
-        nounList.add("account");
-        nounList.add("accountability");
         nounList.add("accountant");
-        nounList.add("accounting");
-        nounList.add("accuracy");
-        nounList.add("accusation");
-        nounList.add("acetate");
-        nounList.add("achievement");
-        nounList.add("achiever");
-        nounList.add("acid");
-        nounList.add("acknowledgment");
         nounList.add("acorn");
-        nounList.add("acoustics");
         nounList.add("acquaintance");
-        nounList.add("acquisition");
-        nounList.add("acre");
-        nounList.add("acrylic");
         nounList.add("act");
         nounList.add("action");
         nounList.add("activation");
@@ -138,12 +104,7 @@ public class StoryBook extends CustomRelic {
         nounList.add("activity");
         nounList.add("actor");
         nounList.add("actress");
-        nounList.add("acupuncture");
-        nounList.add("ad");
-        nounList.add("adaptation");
         nounList.add("adapter");
-        nounList.add("addiction");
-        nounList.add("addition");
         nounList.add("address");
         nounList.add("adjective");
         nounList.add("adjustment");
@@ -2308,7 +2269,6 @@ public class StoryBook extends CustomRelic {
         nounList.add("explorer");
         nounList.add("explosion");
         nounList.add("export");
-        nounList.add("expose");
         nounList.add("exposition");
         nounList.add("exposure");
         nounList.add("expression");
@@ -2317,7 +2277,6 @@ public class StoryBook extends CustomRelic {
         nounList.add("exterior");
         nounList.add("external");
         nounList.add("extinction");
-        nounList.add("extreme");
         nounList.add("extremist");
         nounList.add("eye");
         nounList.add("eyeball");

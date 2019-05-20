@@ -8,8 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.neow.NeowEvent;
 import com.megacrit.cardcrawl.relics.*;
 import vexMod.modifiers.NoRelicMode;
-import vexMod.relics.ImprovementManual;
-import vexMod.relics.PaidLearning;
+import vexMod.relics.RockBasket;
 
 @SpirePatch(
         clz = NeowEvent.class,
@@ -18,8 +17,10 @@ import vexMod.relics.PaidLearning;
 public class OnPostNeowTalkNoRelicModePatch {
     @SpirePrefixPatch
     public static void Postfix() {
-        if (!Settings.isDailyRun) {
+        if (!Settings.isDailyRun && CardCrawlGame.trial != null) {
             if (CardCrawlGame.trial.dailyModIDs().contains(NoRelicMode.ID)) {
+                AbstractDungeon.commonRelicPool.remove(Whetstone.ID);
+                AbstractDungeon.commonRelicPool.remove(WarPaint.ID);
                 AbstractDungeon.uncommonRelicPool.remove(BottledFlame.ID);
                 AbstractDungeon.uncommonRelicPool.remove(BottledLightning.ID);
                 AbstractDungeon.uncommonRelicPool.remove(BottledTornado.ID);
@@ -27,20 +28,17 @@ public class OnPostNeowTalkNoRelicModePatch {
                 AbstractDungeon.rareRelicPool.remove(Shovel.ID);
                 AbstractDungeon.shopRelicPool.remove(DollysMirror.ID);
                 AbstractDungeon.shopRelicPool.remove(Cauldron.ID);
+                AbstractDungeon.shopRelicPool.remove(RockBasket.ID);
+                AbstractDungeon.shopRelicPool.remove(Sling.ID);
+                AbstractDungeon.bossRelicPool.remove(BlackStar.ID);
+                AbstractDungeon.bossRelicPool.remove(CallingBell.ID);
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON).instantObtain();
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.COMMON).instantObtain();
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON).instantObtain();
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.UNCOMMON).instantObtain();
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.RARE).instantObtain();
                 AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.SHOP).instantObtain();
-                AbstractDungeon.returnRandomRelic(AbstractRelic.RelicTier.BOSS).instantObtain();
-                int tmp = AbstractDungeon.bossRelicPool.size();
-                AbstractDungeon.bossRelicPool.clear();
-                for (int i = 0; i < tmp; i++) {
-                    AbstractDungeon.bossRelicPool.add("nothingatall");
-                }
-
-                tmp = AbstractDungeon.commonRelicPool.size();
+                int tmp = AbstractDungeon.commonRelicPool.size();
                 AbstractDungeon.commonRelicPool.clear();
                 for (int i = 0; i < tmp; i++) {
                     AbstractDungeon.commonRelicPool.add("nothingatall");

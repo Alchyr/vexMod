@@ -22,7 +22,7 @@ public class BerrySword extends CustomRelic {
 
 
     public BerrySword() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.HEAVY);
         this.counter = -1;
     }
 

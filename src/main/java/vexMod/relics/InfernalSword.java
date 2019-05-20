@@ -21,7 +21,7 @@ public class InfernalSword extends CustomRelic {
 
 
     public InfernalSword() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.HEAVY);
     }
 
     @Override

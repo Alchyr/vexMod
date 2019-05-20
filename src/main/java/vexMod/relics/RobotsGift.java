@@ -19,7 +19,7 @@ public class RobotsGift extends CustomRelic {
 
 
     public RobotsGift() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override

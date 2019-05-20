@@ -136,7 +136,7 @@
   },
   "vexMod:ThoughtMold": {
     "NAME": "Helpful Mold",
-    "FLAVOR": "This mold siphons off bits of your shield to feed you.",
+    "FLAVOR": "This mold siphons off bits of your shield to feed itself.",
     "DESCRIPTIONS": [
       "Whenever you gain #yBlock, gain #b1 #yStrength this turn."
     ]
@@ -1214,7 +1214,7 @@
     "NAME": "New, Clear Reactor",
     "FLAVOR": "Totally safe! Good for the environment! Fosters mutations!",
     "DESCRIPTIONS": [
-      "Upon pickup, gain #b100 Energy. Energy is conserved between turns and combats. You no longer gain Energy each turn. Whenever you defeat an Act boss, gain #b100 Energy."
+      "Energy is conserved between turns and combats. You no longer gain Energy each turn. Set your energy to #b100 upon pickup and at the start of each Act."
     ]
   },
   "vexMod:SpireShuffle": {
@@ -1336,6 +1336,20 @@
     "FLAVOR": "Because y'all already know I'm the best.",
     "DESCRIPTIONS": [
       "You can only find relics from #pvexMod. At the start of your turn, deal damage to a random enemy equal to the number of #pvexMod relics you have."
+    ]
+  },
+  "vexMod:RelicLauncher": {
+    "NAME": "Relic Launcher",
+    "FLAVOR": "Mostly an excuse to use the FX.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, deal damage to a random enemy equal to the number of Relics you have."
+    ]
+  },
+  "vexMod:XConverter": {
+    "NAME": "Xtacy",
+    "FLAVOR": "Sure to liven up your nights!",
+    "DESCRIPTIONS": [
+      "After you play a cost X card, gain [E] ."
     ]
   }
 }

@@ -25,7 +25,7 @@ public class RetaliationKit extends CustomRelic implements OnLoseBlockRelic {
     private static boolean activated = false;
 
     public RetaliationKit() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
     }
 
     public void atBattleStart() {

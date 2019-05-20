@@ -25,7 +25,7 @@ public class HappyDrink extends CustomRelic {
 
 
     public HappyDrink() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
     }
 
     @Override

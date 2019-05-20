@@ -28,7 +28,7 @@ public class FutureThief extends CustomRelic implements ClickableRelic {
     public ArrayList<AbstractCard> stolenCards = new ArrayList<>();
 
     public FutureThief() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override

@@ -20,7 +20,7 @@ public class MemoryStick extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MemoryLocket.png"));
 
     public MemoryStick() {
-        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.CLINK);
     }
 
     @Override

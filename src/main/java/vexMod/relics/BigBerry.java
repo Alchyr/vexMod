@@ -19,7 +19,7 @@ public class BigBerry extends CustomRelic {
 
 
     public BigBerry() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override

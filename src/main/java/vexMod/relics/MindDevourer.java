@@ -25,7 +25,7 @@ public class MindDevourer extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MindDevourer.png"));
 
     public MindDevourer() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
     }
 
 

@@ -79,6 +79,7 @@ public class XCostLoverEvent extends AbstractImageEvent {
                             AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
                         }
                         AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new ChemicalX());
+                        AbstractDungeon.shopRelicPool.remove(ChemicalX.ID);
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
                         this.imageEventText.updateDialogOption(0, OPTIONS[4]);
                         this.imageEventText.clearRemainingOptions();

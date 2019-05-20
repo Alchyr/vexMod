@@ -23,7 +23,7 @@ public class PopTire extends CustomRelic implements CustomSavable<Integer> {
     public static int highScore = 0;
 
     public PopTire() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override

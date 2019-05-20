@@ -2,7 +2,11 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import vexMod.VexMod;
 import vexMod.actions.RelicBallAction;
@@ -24,7 +28,7 @@ public class RockBasket extends CustomRelic {
 
 
     public RockBasket() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
     @Override
@@ -45,7 +49,9 @@ public class RockBasket extends CustomRelic {
                 numOfVexModRelics++;
             }
         }
-        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(AbstractDungeon.getRandomMonster(), numOfVexModRelics, true));
+        AbstractMonster m = AbstractDungeon.getRandomMonster();
+        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(m, true));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(m, numOfVexModRelics, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 
     @Override

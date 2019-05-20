@@ -37,7 +37,7 @@ public class RedPlottingStone extends CustomRelic implements ClickableRelic, Cus
     private static int chosenFloor;
 
     public RedPlottingStone() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.SOLID);
     }
 
     public static void FuckShitPoo() {

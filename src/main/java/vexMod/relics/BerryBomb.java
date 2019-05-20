@@ -26,7 +26,7 @@ public class BerryBomb extends CustomRelic {
 
 
     public BerryBomb() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.FLAT);
         this.counter = 8;
         description = getUpdatedDescription();
         tips.clear();

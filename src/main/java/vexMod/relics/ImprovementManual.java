@@ -27,7 +27,7 @@ public class ImprovementManual extends CustomRelic {
     private int upgradeAbleCards;
 
     public ImprovementManual() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     @Override

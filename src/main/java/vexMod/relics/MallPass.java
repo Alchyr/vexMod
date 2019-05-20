@@ -26,7 +26,7 @@ public class MallPass extends CustomRelic {
 
 
     public MallPass() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
     public void onEnterRoom(AbstractRoom room) {

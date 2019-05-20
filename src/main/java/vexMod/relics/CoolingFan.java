@@ -22,7 +22,7 @@ public class CoolingFan extends CustomRelic implements OnChannelRelic {
 
 
     public CoolingFan() {
-        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.HEAVY);
+        super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.FLAT);
     }
 
     @Override

@@ -24,10 +24,10 @@ public class DaggerThrower extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 230;
-    private static final int HP_MAX = 230;
-    private static final int A_9_HP_MIN = 244;
-    private static final int A_9_HP_MAX = 244;
+    private static final int HP_MIN = 200;
+    private static final int HP_MAX = 200;
+    private static final int A_9_HP_MIN = 211;
+    private static final int A_9_HP_MAX = 211;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;

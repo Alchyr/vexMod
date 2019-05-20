@@ -22,7 +22,7 @@ public class TanglingVine extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("TanglingVine.png"));
 
     public TanglingVine() {
-        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.FLAT);
     }
 
 

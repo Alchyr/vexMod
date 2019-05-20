@@ -52,8 +52,9 @@
     "DESCRIPTION": "Gain !B! Block. NL Increase the damage of a random Attack in your hand by !M! this combat."
   },
   "vexMod:MidasTouch": {
-    "NAME": "Golden Touch",
-    "DESCRIPTION": "Ethereal. NL Whenever an Attack deals unblocked damage, gain Gold equal to unblocked damage dealt."
+    "NAME": "Golden Burst",
+    "DESCRIPTION": "Gain X0 Gold. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain X0 Gold. NL Gain [E] . NL Exhaust."
   },
   "vexMod:PotOfGreed": {
     "NAME": "Resourcefulness",

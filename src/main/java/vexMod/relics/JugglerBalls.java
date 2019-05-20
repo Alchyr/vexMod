@@ -23,7 +23,7 @@ public class JugglerBalls extends CustomRelic implements CustomSavable<Integer> 
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
 
     public JugglerBalls() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.FLAT);
     }
 
     @Override

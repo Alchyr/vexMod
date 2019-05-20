@@ -26,7 +26,7 @@ public class FloorLord extends CustomRelic {
 
 
     public FloorLord() {
-        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);
+        super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
 
     public void onEnterRoom(AbstractRoom room) {

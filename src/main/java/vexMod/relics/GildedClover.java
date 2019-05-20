@@ -19,7 +19,7 @@ public class GildedClover extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("GildedClover.png"));
 
     public GildedClover() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
     public boolean canSpawn() {

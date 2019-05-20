@@ -21,7 +21,7 @@ public class ThirteenHourStone extends CustomRelic {
 
 
     public ThirteenHourStone() {
-        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.MAGICAL);
+        super(ID, IMG, OUTLINE, RelicTier.UNCOMMON, LandingSound.SOLID);
         this.counter = -1;
     }
 

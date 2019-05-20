@@ -20,7 +20,7 @@ public class BrokenBowl extends CustomRelic {
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("BrokenBowl.png"));
 
     public BrokenBowl() {
-        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.SOLID);
+        super(ID, IMG, OUTLINE, RelicTier.SHOP, LandingSound.FLAT);
     }
 
 

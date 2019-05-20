@@ -16,7 +16,7 @@ public class HolyMoleyGreatBallOfRelics extends AbstractGameEffect {
     public static final float bounceplanemin = 300 * Settings.scale;
     public static final float bounceplanemax = 500 * Settings.scale;
 
-    public static final float CHAOS = 3; //Determins the velocity at which the relics disperse after impact. No scaling necessary.
+    public static final float CHAOS = 1.5F; //Determins the velocity at which the relics disperse after impact. No scaling necessary.
 
     public static final float ballradius = 3 * Settings.scale; //Adds some randomness to the relic ball based on how many relics you have.
 
@@ -57,7 +57,7 @@ public class HolyMoleyGreatBallOfRelics extends AbstractGameEffect {
         phase = Phase.gathering;
 
         finishedAction = false;
-        faie = new FlashAtkImgEffect(ac.hb.cX, ac.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false);
+        // faie = new FlashAtkImgEffect(ac.hb.cX, ac.hb.cY, AbstractGameAction.AttackEffect.BLUNT_LIGHT, false);
     }
 
     public void render(SpriteBatch sb) {
@@ -65,8 +65,8 @@ public class HolyMoleyGreatBallOfRelics extends AbstractGameEffect {
             rd.render(sb);
         }
         sb.setColor(Color.WHITE);
-        if (finishedAction)
-            faie.render(sb);
+        // if (finishedAction)
+            // faie.render(sb);
     }
 
     public void update() {
@@ -112,8 +112,8 @@ public class HolyMoleyGreatBallOfRelics extends AbstractGameEffect {
                 }
                 break;
         }
-        if (finishedAction)
-            faie.update();
+         // if (finishedAction)
+            // faie.update();
     }
 
     public void dispose() {
