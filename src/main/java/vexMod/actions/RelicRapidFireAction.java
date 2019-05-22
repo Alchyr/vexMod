@@ -8,6 +8,7 @@ import vexMod.vfx.RelicRapidFireEffect;
 public class RelicRapidFireAction extends AbstractGameAction {
 
     private RelicRapidFireEffect rrfe;
+
     public RelicRapidFireAction(AbstractCreature source, int amount) {
         this.source = source;
         this.actionType = ActionType.DAMAGE;
@@ -17,7 +18,7 @@ public class RelicRapidFireAction extends AbstractGameAction {
     }
 
     public void update() {
-        if(rrfe.finishedAction)
+        if (rrfe.finishedAction)
             this.isDone = true;
     }
 }

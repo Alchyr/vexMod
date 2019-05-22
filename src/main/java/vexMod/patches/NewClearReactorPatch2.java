@@ -20,7 +20,7 @@ public class NewClearReactorPatch2 {
             locator = Locator.class,
             localvars = {"energyMsg"}
     )
-    public static void Insert(EnergyPanel __instance,SpriteBatch sb, @ByRef String[] energyMsg) {
+    public static void Insert(EnergyPanel __instance, SpriteBatch sb, @ByRef String[] energyMsg) {
         if (AbstractDungeon.player.hasRelic(NewClearReactor.ID)) {
             energyMsg[0] = String.valueOf(EnergyPanel.totalCount);
         }

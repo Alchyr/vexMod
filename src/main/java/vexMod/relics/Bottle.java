@@ -12,13 +12,11 @@ import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class Bottle extends CustomRelic {
-    private boolean cardSelected = true;
-
-
     // ID, images, text.
     public static final String ID = VexMod.makeID("Bottle");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("Bottle.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("Bottle.png"));
+    private boolean cardSelected = true;
 
     public Bottle() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.CLINK);

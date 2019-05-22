@@ -1480,5 +1480,163 @@
     "DESCRIPTIONS": [
       "After you play a cost X card, gain [E] ."
     ]
+  },
+  "vexMod:StarEater": {
+    "NAME": "Star Eater",
+    "FLAVOR": "One by one, the stars in the sky wink out.",
+    "DESCRIPTIONS": [
+      "Gain [E] at the start of your turn. At the end of your turn, decrease the #yStellar #yPhase by #b1."
+    ]
+  },
+  "vexMod:Spotlight": {
+    "NAME": "Spotlight",
+    "FLAVOR": "Light 'em up!",
+    "DESCRIPTIONS": [
+      "At the start of each combat, apply #b3 #yStarlit to ALL enemies."
+    ]
+  },
+  "vexMod:Trinoculars": {
+    "NAME": "Trinoculars",
+    "FLAVOR": "Lets you see three times as many stars!",
+    "DESCRIPTIONS": [
+      "The maximum #yStellar #yPhase is now #b63."
+    ]
+  },
+  "vexMod:FakeStar": {
+    "NAME": "Fake Star",
+    "FLAVOR": "But if you squint it looks pretty real!",
+    "DESCRIPTIONS": [
+      "The first #yStellar card you play each combat will be active."
+    ]
+  },
+  "vexMod:GravityRainbow": {
+    "NAME": "Gravitational Rainbow",
+    "FLAVOR": "\"But rainbows aren't affected by gravity!\" you say. Well, pah!",
+    "DESCRIPTIONS": [
+      "At the start of every odd-numbered turn, put the bottom card of your draw pile into your hand."
+    ]
+  },
+  "vexMod:MusicMaker": {
+    "NAME": "Pipes of Chaos",
+    "FLAVOR": "Crafted by an evil god, you shudder to play it.",
+    "DESCRIPTIONS": [
+      "Replaces ",
+      ".[] NL Draw #b2 less cards each turn. Your cards #ybard:Queue a [WildNote] [REMOVE_SPACE]."
+    ]
+  },
+  "vexMod:BottledTune": {
+    "NAME": "Bottled Tune",
+    "FLAVOR": "You crack the lid and hear a faint sound.",
+    "DESCRIPTIONS": [
+      "Upon pickup, choose a #ybard:Note. At the start of each combat, #ybard:Queue that #ybard:Note.",
+      "At the start of each combat, #ybard:Queue a ",
+      " [REMOVE_SPACE]."
+    ]
+  },
+  "vexMod:SingingFlower": {
+    "NAME": "Singing Flower",
+    "FLAVOR": "It's, like, in tune with the planet's energy, dude!",
+    "DESCRIPTIONS": [
+      "Every #b3 turns, #ybard:Queue a [BuffNote] [REMOVE_SPACE]."
+    ]
+  },
+  "vexMod:AutoTuner": {
+    "NAME": "Auto Tuner",
+    "FLAVOR": "Sure, it sounds strange, but it's technically tuned!",
+    "DESCRIPTIONS": [
+      "Every #b3 turns, perform any #ybard:Melody."
+    ]
+  },
+  "vexMod:Warpstrument": {
+    "NAME": "Warped Instrument",
+    "FLAVOR": "This twisted bunch of tubes never quite sounds the same.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, #ybard:Queue a [WildNote] [REMOVE_SPACE]."
+    ]
+  },
+  "vexMod:AudienceDoll": {
+    "NAME": "Audience Doll",
+    "FLAVOR": "Always there to listen and offer support!",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, draw #b1 card."
+    ]
+  },
+  "vexMod:DeadRequiem": {
+    "NAME": "Dead Requiem",
+    "FLAVOR": "Your toughest sheets.",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, #ybard:Queue a random #ybard:Note."
+    ]
+  },
+  "vexMod:SolarSystemDiorama": {
+    "NAME": "Solar System Diorama",
+    "FLAVOR": "Wholly innacurate.",
+    "DESCRIPTIONS": [
+      "The additional effects of your #ySolar and #yLunar cards are always active."
+    ]
+  },
+  "vexMod:CleansingRadio": {
+    "NAME": "Anger Radio",
+    "FLAVOR": "Plays frustrating music.",
+    "DESCRIPTIONS": [
+      "Every time you #ybard:Queue #b3 of the same #ybard:Note in a single turn, deal #b5 damage to ALL enemies."
+    ]
+  },
+  "vexMod:ThrowingStar": {
+    "NAME": "Throwing Star",
+    "FLAVOR": "Unorthodox use for the stars, but it's OK.",
+    "DESCRIPTIONS": [
+      "Every time you play #b3 #yStars in a single turn, gain #b1 #yStrength."
+    ]
+  },
+  "vexMod:RainbowShades": {
+    "NAME": "Rainbow Shades",
+    "FLAVOR": "Lookin' to the sky in style.",
+    "DESCRIPTIONS": [
+      "The first time you draw an #yEthereal card each combat, put a copy of it on top of your draw pile."
+    ]
+  },
+  "vexMod:Demotivationator": {
+    "NAME": "Demotivationator",
+    "FLAVOR": "\"ALL the people in the Tri-State Area will be too lazy to work! MWAHAHAHA!\"",
+    "DESCRIPTIONS": [
+      "Gain [E] and #ybard:Inspiration #b-50 at the start of your turn."
+    ]
+  },
+  "vexMod:PreRecordedMusic": {
+    "NAME": "Mediocre Mixtape",
+    "FLAVOR": "Sounds familiar.",
+    "DESCRIPTIONS": [
+      "At the start of each combat, perform a random #ybard:Melody."
+    ]
+  },
+  "vexMod:RestingRock": {
+    "NAME": "Rock of Resting",
+    "FLAVOR": "Just sit back and - for awhile.",
+    "DESCRIPTIONS": [
+      "Whenever you #yQueue a [RestNote] [REMOVE_SPACE], gain #b2 #yBlock."
+    ]
+  },
+  "vexMod:ElectroStars": {
+    "NAME": "Cyborg Telescope",
+    "FLAVOR": "You realize now that every electric volt is a tiny star too.",
+    "DESCRIPTIONS": [
+      "Start each combat with #b3 Orb slots. Whenever you play a #yStar, #yChannel #b1 #yLightning."
+    ]
+  },
+  "vexMod:FutureSight": {
+    "NAME": "Sight of Future Skies",
+    "FLAVOR": "You see it all laid out. One day the sky shall burn away.",
+    "DESCRIPTIONS": [
+      "Replaces ",
+      ".[] NL Whenever you play a card, put it on the bottom of your draw pile."
+    ]
+  },
+  "vexMod:MiniStar": {
+    "NAME": "Pet Star",
+    "FLAVOR": "Feed with hydrogen and helium daily.",
+    "DESCRIPTIONS": [
+      "At the start of your turn, increment the #yStellar #yPhase."
+    ]
   }
 }

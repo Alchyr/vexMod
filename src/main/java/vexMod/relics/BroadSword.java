@@ -29,6 +29,11 @@ public class BroadSword extends CustomRelic {
     }
 
     @Override
+    public void onUnequip() {
+        AbstractDungeon.player.masterHandSize += 1;
+    }
+
+    @Override
     public void atBattleStart() {
         this.flash();
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new StrengthPower(AbstractDungeon.player, 4), 4));

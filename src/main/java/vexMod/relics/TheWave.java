@@ -5,10 +5,8 @@ import basemod.abstracts.CustomSavable;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-import vexMod.vfx.OrbitalRelics;
 import vexMod.vfx.RelicWave;
 
 import static vexMod.VexMod.makeRelicOutlinePath;

@@ -15,6 +15,7 @@ public class BallRelicPosition {
         this.y = y;
         this.rotation = rotation;
     }
+
     public BallRelicPosition(float x, float y) {
         this(x, y, 0);
     }

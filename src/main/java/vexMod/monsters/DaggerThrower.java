@@ -125,25 +125,17 @@ public class DaggerThrower extends AbstractMonster {
     }
 
     protected void getMove(int num) {
-        if (turnGoing == 0)
-        {
-            this.setMove((byte)1, Intent.ATTACK, this.damage.get(0).base, 2, true);
-        }
-        else if (turnGoing == 1)
-        {
+        if (turnGoing == 0) {
+            this.setMove((byte) 1, Intent.ATTACK, this.damage.get(0).base, 2, true);
+        } else if (turnGoing == 1) {
             this.setMove((byte) 2, Intent.BUFF);
-        }
-        else if (turnGoing == 2)
-        {
+        } else if (turnGoing == 2) {
             this.setMove((byte) 3, Intent.DEBUFF);
-        }
-        else if (turnGoing == 3)
-        {
-            this.setMove ((byte) 4, Intent.ATTACK, this.damage.get(1).base, 2, true);
+        } else if (turnGoing == 3) {
+            this.setMove((byte) 4, Intent.ATTACK, this.damage.get(1).base, 2, true);
         }
         turnGoing++;
-        if (turnGoing == 4)
-        {
+        if (turnGoing == 4) {
             turnGoing = 0;
         }
     }

@@ -40,7 +40,7 @@ public class CoinToss extends AbstractDefaultCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL));
-        int coins = AbstractDungeon.cardRandomRng.random(0, 25);
+        int coins = AbstractDungeon.cardRandomRng.random(0, 10);
         AbstractDungeon.player.gainGold(coins);
         if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
             for (int i = 0; i < coins; ++i) {

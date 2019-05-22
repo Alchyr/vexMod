@@ -37,7 +37,7 @@ public class PopTire extends CustomRelic implements CustomSavable<Integer> {
     }
 
     @Override
-    public void updateDescription(AbstractPlayer.PlayerClass c){
+    public void updateDescription(AbstractPlayer.PlayerClass c) {
         this.description = getUpdatedDescription();
         this.tips.clear();
         this.tips.add(new PowerTip(this.name, this.description));

@@ -16,10 +16,17 @@ public class SummonExploderAction extends AbstractGameAction {
     private static final float MIN_Y = 100.0F;
     private static final float MIN_X = -200.0F;
     private static final float MAX_X = 200.0F;
+    private static final float BORDER = 20.0F * Settings.scale;
 
-    public SummonExploderAction()
-    {
+    public SummonExploderAction() {
         this.actionType = ActionType.SPECIAL;
+    }
+
+    private static boolean overlap(Hitbox a, Hitbox b) {
+        if (a.x > b.x + (b.width + BORDER) || b.x > a.x + (a.width + BORDER))
+            return false;
+
+        return !(a.y > b.y + (b.height + BORDER) || b.y > a.y + (a.height + BORDER));
     }
 
     @Override
@@ -43,15 +50,12 @@ public class SummonExploderAction extends AbstractGameAction {
         boolean success = false;
 
         //check if this is a fine position.
-        while (!success)
-        {
+        while (!success) {
             success = true;
-            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters)
-            {
+            for (AbstractMonster monster : AbstractDungeon.getMonsters().monsters) {
                 if (!(monster.isDeadOrEscaped() && monster.id.equals(m.id))) //we don't care about sparks that died, but other enemies could be issues (like repto daggers which have same pos)
                 {
-                    if (overlap(monster.hb, m.hb))
-                    {
+                    if (overlap(monster.hb, m.hb)) {
                         success = false;
 
                         adjustAngle = (adjustAngle + 0.1f) % (MathUtils.PI2);
@@ -78,15 +82,5 @@ public class SummonExploderAction extends AbstractGameAction {
         AbstractDungeon.actionManager.addToTop(new SpawnMonsterAction(m, true));
 
         this.isDone = true;
-    }
-
-    private static final float BORDER = 20.0F * Settings.scale;
-
-    private static boolean overlap(Hitbox a, Hitbox b)
-    {
-        if (a.x > b.x + (b.width + BORDER) || b.x > a.x + (a.width + BORDER))
-            return false;
-
-        return !(a.y > b.y + (b.height + BORDER) || b.y > a.y + (a.height + BORDER));
     }
 }

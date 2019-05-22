@@ -2,14 +2,11 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.abstracts.CustomSavable;
-import basemod.interfaces.RelicGetSubscriber;
 import com.badlogic.gdx.graphics.Texture;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
-import org.apache.logging.log4j.LogManager;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
-import vexMod.vfx.BouncingRelic;
 import vexMod.vfx.JuggleRelic;
 
 import static vexMod.VexMod.makeRelicOutlinePath;

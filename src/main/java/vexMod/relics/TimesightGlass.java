@@ -44,7 +44,6 @@ public class TimesightGlass extends CustomRelic {
         this.stopPulse();
     }
 
-
     @Override
     public String getUpdatedDescription() {
         return DESCRIPTIONS[0];

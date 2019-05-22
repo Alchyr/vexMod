@@ -2,19 +2,19 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
+import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.ConstrictedPower;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
 public class TanglingVine extends CustomRelic {
-
 
     public static final String ID = VexMod.makeID("TanglingVine");
 
@@ -34,7 +34,12 @@ public class TanglingVine extends CustomRelic {
     @Override
     public void onPlayerEndTurn() {
         this.flash();
-        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, (AbstractDungeon.player.hand.size()*2), DamageInfo.DamageType.THORNS));
+        try {
+            Method m = AbstractCreature.class.getDeclaredMethod("decrementBlock", DamageInfo.class, Integer.TYPE);// 37
+            m.setAccessible(true);// 38
+            m.invoke(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 3, DamageInfo.DamageType.NORMAL), 3);// 39
+        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException var3) {// 40
+        }
     }
 
     @Override

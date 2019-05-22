@@ -19,12 +19,11 @@ public class HealthChanger extends CustomRelic implements ClickableRelic {
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("HealthChanger.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private boolean usedThisCombat = false;
 
     public HealthChanger() {
         super(ID, IMG, OUTLINE, RelicTier.SPECIAL, LandingSound.MAGICAL);
     }
-
-    private boolean usedThisCombat = false;
 
     @Override
     public String getUpdatedDescription() {

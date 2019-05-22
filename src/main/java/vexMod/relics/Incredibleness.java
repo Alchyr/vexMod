@@ -2,8 +2,6 @@ package vexMod.relics;
 
 import basemod.abstracts.CustomRelic;
 import com.badlogic.gdx.graphics.Texture;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.orbs.Frost;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 

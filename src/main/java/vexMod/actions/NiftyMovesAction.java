@@ -1,7 +1,6 @@
 package vexMod.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -40,9 +39,8 @@ public class NiftyMovesAction extends AbstractGameAction {
 
         if (effect > 0) {
             for (int i = 0; i < effect; ++i) {
-                AbstractDungeon.actionManager.addToBottom(new PlayTopCardAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false));
+                AbstractDungeon.actionManager.addToBottom(new PlayTopCardIfItIsntNiftyMovesAction(AbstractDungeon.getCurrRoom().monsters.getRandomMonster(null, true, AbstractDungeon.cardRandomRng), false));
             }
-
             if (!this.freeToPlayOnce) {
                 this.p.energy.use(EnergyPanel.totalCount);
             }

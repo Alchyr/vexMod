@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.Ectoplasm;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
@@ -49,6 +50,11 @@ public class RockFriend extends CustomRelic {
     }
 
     @Override
+    public void onEquip() {
+        this.counter = 0;// 42
+    }// 43
+
+    @Override
     public void onEnterRoom(AbstractRoom room) {
         if (AbstractDungeon.player.relics.size() == 3) {
             if (!(AbstractDungeon.player.relics.get(2) instanceof RockFriend) && (AbstractDungeon.player.relics.get(0) instanceof RockFriend || AbstractDungeon.player.relics.get(1) instanceof RockFriend)) {
@@ -68,42 +74,45 @@ public class RockFriend extends CustomRelic {
     }
 
     @Override
-    public void atTurnStartPostDraw() {
-        turnNum++;
-        if (turnNum % 3 == 0) {
+    public void atTurnStart() {
+        this.counter++;
+        if (this.counter == 2) {
+            this.counter = 0;
             int upsideRoll = AbstractDungeon.cardRandomRng.random(0, 7);
             if (upsideRoll == 0) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(1, 4)]), 0.0F, 5.0F));
                 this.flash();
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     if (!m.isDead && !m.isDying) {
-                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 1, false), 1));
+                        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(AbstractDungeon.player, 2, false), 2));
                         AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(m, this));
                     }
                 }
             } else if (upsideRoll == 1) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(5, 8)]), 0.0F, 5.0F));
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(7, 9)));
+                AbstractDungeon.actionManager.addToBottom(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(10, 15)));
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             } else if (upsideRoll == 2) {
-                int goldTaken = AbstractDungeon.cardRandomRng.random(5, 15);
+                int goldTaken = AbstractDungeon.cardRandomRng.random(10, 20);
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(9, 12)]), 0.0F, 5.0F));
                 this.flash();
                 AbstractDungeon.player.gainGold(goldTaken);
-                for (int i = 0; i < goldTaken; ++i) {
-                    AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
+                    for (int i = 0; i < goldTaken; ++i) {
+                        AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                    }
                 }
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             } else if (upsideRoll == 3) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(13, 16)]), 0.0F, 5.0F));
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 2));
+                AbstractDungeon.actionManager.addToBottom(new DrawCardAction(AbstractDungeon.player, 3));
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             } else if (upsideRoll == 4) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(17, 20)]), 0.0F, 5.0F));
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(2));
+                AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(3));
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             } else if (upsideRoll == 5) {
                 if (AbstractDungeon.player.potions.size() < (AbstractDungeon.player.potionSlots - 1)) {
@@ -112,24 +121,26 @@ public class RockFriend extends CustomRelic {
                     AbstractDungeon.player.obtainPotion(AbstractDungeon.returnRandomPotion());
                     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 } else {
-                    int goldTaken = AbstractDungeon.cardRandomRng.random(5, 15);
+                    int goldTaken = AbstractDungeon.cardRandomRng.random(10, 20);
                     AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(9, 12)]), 0.0F, 5.0F));
                     this.flash();
                     AbstractDungeon.player.gainGold(goldTaken);
-                    for (int i = 0; i < goldTaken; ++i) {
-                        AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                    if (!AbstractDungeon.player.hasRelic(Ectoplasm.ID)) {
+                        for (int i = 0; i < goldTaken; ++i) {
+                            AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, this.hb.cX, this.hb.cY, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, true));
+                        }
                     }
                     AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
                 }
             } else if (upsideRoll == 6) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(25, 28)]), 0.0F, 5.0F));
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(7, 10), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+                AbstractDungeon.actionManager.addToBottom(new DamageRandomEnemyAction(new DamageInfo(AbstractDungeon.player, AbstractDungeon.cardRandomRng.random(12, 18), DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             } else if (upsideRoll == 7) {
                 AbstractDungeon.actionManager.addToBottom(new RelicTalkAction(this, (DESCRIPTIONS[AbstractDungeon.cardRandomRng.random(29, 32)]), 0.0F, 5.0F));
                 this.flash();
-                AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 4));
+                AbstractDungeon.actionManager.addToBottom(new HealAction(AbstractDungeon.player, AbstractDungeon.player, 5));
                 AbstractDungeon.actionManager.addToBottom(new RelicAboveCreatureAction(AbstractDungeon.player, this));
             }
         }

@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
@@ -29,12 +28,11 @@ public class SpireShuffle extends CustomRelic {
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK) {
-            AbstractDungeon.player.dialogX += 10.0F*Settings.scale;
-            AbstractDungeon.player.drawX += 10.0F*Settings.scale;
-        }
-        else if (card.type == AbstractCard.CardType.SKILL) {
-            AbstractDungeon.player.dialogX -= 10.0F*Settings.scale;
-            AbstractDungeon.player.drawX -= 10.0F*Settings.scale;
+            AbstractDungeon.player.dialogX += 10.0F * Settings.scale;
+            AbstractDungeon.player.drawX += 10.0F * Settings.scale;
+        } else if (card.type == AbstractCard.CardType.SKILL) {
+            AbstractDungeon.player.dialogX -= 10.0F * Settings.scale;
+            AbstractDungeon.player.drawX -= 10.0F * Settings.scale;
         }
     }
 

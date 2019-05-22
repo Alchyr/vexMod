@@ -17,6 +17,14 @@ public class RelicBallAction extends AbstractGameAction {
         AbstractDungeon.effectList.add(rrfe);
     }
 
+    public RelicBallAction(AbstractCreature target, boolean vexOnly, float CHAOS, int gatherspeed, int flighttime) {
+        this.target = target;
+        this.actionType = ActionType.DAMAGE;
+
+        rrfe = new HolyMoleyGreatBallOfRelics(target, vexOnly, CHAOS, gatherspeed, flighttime);
+        AbstractDungeon.effectList.add(rrfe);
+    }
+
     public void update() {
         if (rrfe.finishedAction)
             this.isDone = true;

@@ -10,10 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import vexMod.VexMod;
 import vexMod.actions.RelicBallAction;
-import vexMod.actions.RelicRapidFireAction;
 import vexMod.util.TextureLoader;
-import vexMod.vfx.BallRelicData;
-import vexMod.vfx.HolyMoleyGreatBallOfRelics;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -43,14 +40,13 @@ public class RockBasket extends CustomRelic {
     @Override
     public void atTurnStart() {
         int numOfVexModRelics = 0;
-        for (AbstractRelic ar : AbstractDungeon.player.relics)
-        {
+        for (AbstractRelic ar : AbstractDungeon.player.relics) {
             if (ar.relicId.startsWith("vexMod:")) {
                 numOfVexModRelics++;
             }
         }
         AbstractMonster m = AbstractDungeon.getRandomMonster();
-        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(m, true));
+        AbstractDungeon.actionManager.addToBottom(new RelicBallAction(m, true, 1.5F, 25, 10));
         AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(m, numOfVexModRelics, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
     }
 

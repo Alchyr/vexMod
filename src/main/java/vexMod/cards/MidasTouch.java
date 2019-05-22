@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.ui.panels.EnergyPanel;
 import vexMod.VexMod;
 import vexMod.actions.MidasTouchAction;
-import vexMod.actions.TauntAction;
 
 import static vexMod.VexMod.makeCardPath;
 

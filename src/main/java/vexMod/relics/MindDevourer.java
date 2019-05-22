@@ -10,8 +10,6 @@ import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Random;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -34,7 +32,6 @@ public class MindDevourer extends CustomRelic {
         AbstractDungeon.player.energy.energyMaster += 1;
     }
 
-
     @Override
     public void onUnequip() {
         AbstractDungeon.player.energy.energyMaster -= 1;
@@ -43,7 +40,6 @@ public class MindDevourer extends CustomRelic {
     @Override
     public void onVictory() {
         ArrayList<AbstractCard> removablecards = new ArrayList<>(AbstractDungeon.player.masterDeck.getPurgeableCards().group);
-        Collections.shuffle(removablecards, new Random(AbstractDungeon.miscRng.randomLong()));
         AbstractDungeon.topLevelEffects.add(new PurgeCardEffect(removablecards.get(0), (float) Settings.WIDTH / 2.0F + 30.0F * Settings.scale + AbstractCard.IMG_WIDTH / 2.0F, (float) Settings.HEIGHT / 2.0F));
         AbstractCard card = removablecards.get(0);
         AbstractDungeon.player.masterDeck.removeCard(card);

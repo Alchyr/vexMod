@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
 
-import static com.evacipated.cardcrawl.mod.stslib.StSLib.getMasterDeckEquivalent;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
@@ -28,8 +27,7 @@ public class XConverter extends CustomRelic {
 
     @Override
     public void onUseCard(AbstractCard card, UseCardAction action) {
-        if (card.cost == -1)
-        {
+        if (card.cost == -1) {
             AbstractDungeon.actionManager.addToBottom(new GainEnergyAction(1));
         }
     }

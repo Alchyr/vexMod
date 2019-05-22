@@ -4,7 +4,7 @@
     <groupId>vexMod</groupId>
     <artifactId>vexMod</artifactId>
     <!--<version>1.2.0</version>-->
-    <version>999999999</version>
+    <version>333666999</version>
     <name>vexMod</name>
 
     <properties>
@@ -12,8 +12,6 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <SlayTheSpire.version>01-23-2019</SlayTheSpire.version>
         <ModTheSpire.version>3.8.0</ModTheSpire.version>
-        <!--CHANGE THIS TO YOUR STEAM INSTALLATION-->
-        <!--Also change the path at the very bottom of the file.-->
         <Steam.path>C:/My Stuff/Games/Steam/steamapps</Steam.path>
     </properties>
 
@@ -24,7 +22,6 @@
             <version>${SlayTheSpire.version}</version>
             <scope>system</scope>
             <systemPath>C:/Program Files (x86)/Steam/steamapps/common/SlayTheSpire/desktop-1.0.jar</systemPath>
-            <!--<systemPath>${basedir}/../lib/desktop-1.0.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl</groupId>
@@ -33,7 +30,6 @@
             <scope>system</scope>
             <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605060445/ModTheSpire.jar
             </systemPath>
-            <!--<systemPath>${basedir}/../lib/ModTheSpire.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>basemod</groupId>
@@ -42,7 +38,6 @@
             <scope>system</scope>
             <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1605833019/BaseMod.jar
             </systemPath>
-            <!--<systemPath>${basedir}/../lib/BaseMod.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>com.evacipated.cardcrawl.mod</groupId>
@@ -51,12 +46,25 @@
             <scope>system</scope>
             <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1609158507/StSLib.jar
             </systemPath>
-            <!--<systemPath>${basedir}/../lib/StSLib.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>org.twitter4j</groupId>
             <artifactId>twitter4j-core</artifactId>
             <version>[4.0,)</version>
+        </dependency>
+        <dependency>
+            <groupId>com.evacipated.cardcrawl.mod</groupId>
+            <artifactId>bard</artifactId>
+            <version>1.2</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1744254855/Bard.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>Astrologer</groupId>
+            <artifactId>Astrologer</artifactId>
+            <version>0.2.4</version>
+            <scope>system</scope>
+            <systemPath>C:/Program Files (x86)/Steam/steamapps/workshop/content/646570/1720444689/Astrologer.jar</systemPath>
         </dependency>
     </dependencies>
 

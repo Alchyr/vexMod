@@ -7,6 +7,7 @@ import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.Loader;
 import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -29,6 +30,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
+import vexMod.crossovers.AstrologerCrossover;
+import vexMod.crossovers.BardCrossover;
 import vexMod.events.*;
 import vexMod.modifiers.NoRelicMode;
 import vexMod.modifiers.ShiftingDeckMod;
@@ -385,6 +388,14 @@ public class VexMod implements
         BaseMod.addRelic(new RockBasket(), RelicType.SHARED);
         BaseMod.addRelic(new RelicLauncher(), RelicType.SHARED);
         BaseMod.addRelic(new XConverter(), RelicType.SHARED);
+
+        if (Loader.isModLoaded("Astrologer")) {
+            AstrologerCrossover.Relics();
+        }
+
+        if (Loader.isModLoaded("bard")) {
+            BardCrossover.Relics();
+        }
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
         UnlockTracker.markRelicAsSeen(ConsolationPrize.ID);

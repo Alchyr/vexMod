@@ -1,5 +1,6 @@
 package vexMod.cards;
 
+import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.SetDontTriggerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.CardQueueItem;
@@ -8,8 +9,9 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
+import vexMod.vfx.CoinEffect;
+import vexMod.vfx.LoseGoldTextEffect;
 
 import static vexMod.VexMod.makeCardPath;
 
@@ -36,10 +38,11 @@ public class Greed extends AbstractDefaultCard {
         if (!this.dontTriggerOnUseCard && p.hasRelic("Blue Candle")) {
             this.useBlueCandle(p);
         } else {
-            AbstractDungeon.player.loseGold(6);
-            for (int i = 0; i < (6); ++i) {
-                AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, AbstractDungeon.player.hb.cX, (AbstractDungeon.player.hb.cY - 135), false));
+            for (int i = 0; i < 6; i++) {
+                AbstractDungeon.actionManager.addToBottom(new VFXAction(new CoinEffect(p.hb.cX, p.hb.cY)));
             }
+            AbstractDungeon.player.loseGold(6);
+            AbstractDungeon.effectList.add(new LoseGoldTextEffect(6));
         }
     }
 

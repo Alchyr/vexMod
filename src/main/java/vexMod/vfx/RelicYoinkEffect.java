@@ -36,7 +36,6 @@ public class RelicYoinkEffect extends AbstractGameEffect {
     }
 
 
-
     public void render(SpriteBatch sb) {
         sb.setColor(1F, 1F, 1F, opacity);
         sb.draw(ar.img, currentX - 64.0F, currentY - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, Settings.scale, Settings.scale, this.rotation, 0, 0, 128, 128, false, false);
@@ -44,12 +43,12 @@ public class RelicYoinkEffect extends AbstractGameEffect {
     }
 
     public void update() {
-        if(frames < flighttime) {
+        if (frames < flighttime) {
             this.currentX = this.startX + sigmoid(ac.hb.cX - this.startX, 6F / flighttime, frames);
             this.currentY = this.startY + sigmoid(ac.hb.y + ac.hb.height - this.startY, 6F / flighttime, frames++);
-        } else if(opacity > 0) {
+        } else if (opacity > 0) {
             opacity -= 1F / dispersalspeed;
-            if(opacity < 0F)
+            if (opacity < 0F)
                 opacity = 0F;
         } else {
             this.isDone = true;
@@ -62,6 +61,6 @@ public class RelicYoinkEffect extends AbstractGameEffect {
 
 
     private float sigmoid(float endvalue, float steepness, float curval) {
-        return endvalue / (1 + (float)Math.pow(Math.E, -steepness * curval));
+        return endvalue / (1 + (float) Math.pow(Math.E, -steepness * curval));
     }
 }

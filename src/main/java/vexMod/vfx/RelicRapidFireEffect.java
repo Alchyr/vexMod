@@ -27,18 +27,20 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
     public static final float frictionY = 0.2F * Settings.scale;
 
     public static final int dispersalspeed = 1;
-
+    public boolean finishedAction;
     private ArrayList<RelicInfo> relics = new ArrayList<>();
     private int damage;
     private int frames;
     private ArrayList<AbstractMonster> enemies = new ArrayList<>();
     private ArrayList<Integer> health = new ArrayList<>();
+
+
     public RelicRapidFireEffect(int damage) {
         this.damage = damage;
 
 
-        for(final AbstractMonster am : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            if(!am.isDead && !am.halfDead && !am.escaped) {
+        for (final AbstractMonster am : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            if (!am.isDead && !am.halfDead && !am.escaped) {
                 enemies.add(am);
                 health.add(am.currentHealth + am.currentBlock);
             }
@@ -46,16 +48,16 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
 
         ArrayList<AbstractRelic> tmp = new ArrayList<>();
         relics = new ArrayList<>();
-        for(final AbstractRelic ar : AbstractDungeon.player.relics) {
-            if(ar.relicId.startsWith("vexMod:")) {
+        for (final AbstractRelic ar : AbstractDungeon.player.relics) {
+            if (ar.relicId.startsWith("vexMod:")) {
                 tmp.add(ar);
             }
         }
 
-        while(tmp.size() > 0 && enemies.size() > 0) {
+        while (tmp.size() > 0 && enemies.size() > 0) {
             int index = AbstractDungeon.cardRandomRng.random(enemies.size() - 1);
             AbstractCreature ac = enemies.get(index);
-            if(health.get(index) - this.damage > 0) {
+            if (health.get(index) - this.damage > 0) {
                 health.add(index, health.get(index) - this.damage);
                 index++;
             } else {
@@ -70,22 +72,20 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
         }
     }
 
-
     @Override
     public void render(SpriteBatch sb) {
-        for(int i = 0; i <= frames / delay && i < relics.size(); i++) {
+        for (int i = 0; i <= frames / delay && i < relics.size(); i++) {
             relics.get(i).render(sb);
         }
         sb.setColor(Color.WHITE);
     }
 
-    public boolean finishedAction;
     public void update() {
         finishedAction = true;
         boolean finishedEffect = true;
 
-        for(int i = 0; i <= frames / delay && i < relics.size(); i++) {
-            switch(relics.get(i).update()) {
+        for (int i = 0; i <= frames / delay && i < relics.size(); i++) {
+            switch (relics.get(i).update()) {
                 case 0:
                     finishedAction = false;
                 case 1:
@@ -95,7 +95,7 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
         }
         frames++;
 
-        if(finishedEffect) {
+        if (finishedEffect) {
             this.isDone = true;
         }
     }
@@ -105,25 +105,19 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
     }
 
     class RelicInfo {
+        FlashAtkImgEffect faie;
         private float x;
         private float y;
         private float targetX;
         private float targetY;
-
         private float rotation;
         private float radialvelocity;
-
         private float bounceplane;
         private float opacity;
-
         private int hit;
-
         private int frames;
-
         private AbstractCreature ac;
         private AbstractRelic ar;
-
-        FlashAtkImgEffect faie;
 
         public RelicInfo(AbstractRelic ar, AbstractCreature ac) {
             targetX = ac.hb.cX + MathUtils.random(ac.hb.width) - ac.hb.width * 1 / 4;
@@ -151,16 +145,16 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
         public void render(SpriteBatch sb) {
             sb.setColor(1F, 1F, 1F, opacity);
             sb.draw(ar.img, this.x - 64.0F, this.y - 64.0F, 64.0F, 64.0F, 128.0F, 128.0F, Settings.scale, Settings.scale, this.rotation, 0, 0, 128, 128, false, false);
-            if(hit > 0 && !faie.isDone)
+            if (hit > 0 && !faie.isDone)
                 faie.render(sb);
         }
 
         public int update() {
-            if(hit == 0) {
-                x = ar.currentX + (targetX - ar.currentX) / (float)flighttime * frames;
-                y = ar.currentY + (targetY - ar.currentY) / (float)flighttime * frames;
+            if (hit == 0) {
+                x = ar.currentX + (targetX - ar.currentX) / (float) flighttime * frames;
+                y = ar.currentY + (targetY - ar.currentY) / (float) flighttime * frames;
 
-                if(frames++ == flighttime) {
+                if (frames++ == flighttime) {
                     frames = 0;
                     hit = 1;
 
@@ -174,24 +168,24 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
             } else {
                 this.targetX += (this.targetX > 0 ? -frictionX : frictionX);
 
-                if(y + this.targetY <= bounceplane) {
+                if (y + this.targetY <= bounceplane) {
                     this.targetY = Math.abs(this.targetY);
-                    if(this.targetY > 1 * Settings.scale) {
+                    if (this.targetY > 1 * Settings.scale) {
                         this.radialvelocity = MathUtils.random(-30, 30);
                     } else {
                         this.radialvelocity = 0;
                     }
                     hit = 2;
                 } else {
-                    this.targetY -= (this.targetY > 0 ? frictionY: -frictionY);
+                    this.targetY -= (this.targetY > 0 ? frictionY : -frictionY);
                     this.targetY -= gravity;
                 }
                 x += targetX;
                 y += targetY;
                 rotation += radialvelocity;
 
-                if(hit > 1) {
-                    if(opacity <= 0F) {
+                if (hit > 1) {
+                    if (opacity <= 0F) {
                         opacity = 0F;
                         hit = 3;
                     } else {
@@ -199,7 +193,7 @@ public class RelicRapidFireEffect extends AbstractGameEffect {
                     }
                 }
             }
-            if(hit > 0 && !faie.isDone)
+            if (hit > 0 && !faie.isDone)
                 faie.update();
             return hit;
         }

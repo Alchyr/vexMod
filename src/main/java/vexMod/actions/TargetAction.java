@@ -17,6 +17,13 @@ import vexMod.relics.HealthChanger;
 
 public class TargetAction implements RenderSubscriber, PostUpdateSubscriber {
     private AbstractRelic r;
+    private AbstractCreature hoveredCreature;
+    private Vector2 controlPoint;
+    private float arrowScale;
+    private float arrowScaleTimer;
+    private Vector2[] points = new Vector2[20];
+    private boolean isHidden;
+    private int amount;
 
     public TargetAction(AbstractRelic r) {
         this.r = r;
@@ -28,14 +35,6 @@ public class TargetAction implements RenderSubscriber, PostUpdateSubscriber {
             this.points[i] = new Vector2();
         }
     }
-
-    private AbstractCreature hoveredCreature;
-    private Vector2 controlPoint;
-    private float arrowScale;
-    private float arrowScaleTimer;
-    private Vector2[] points = new Vector2[20];
-    private boolean isHidden;
-    private int amount;
 
     private void close() {
         this.isHidden = true;
@@ -122,7 +121,7 @@ public class TargetAction implements RenderSubscriber, PostUpdateSubscriber {
         float radius = 7.0F * Settings.scale;
 
         for (int i = 0; i < this.points.length - 1; i++) {
-            this.points[i] = ((Vector2) com.badlogic.gdx.math.Bezier.quadratic(this.points[i], i / 20.0F, start, control, end, new Vector2()));
+            this.points[i] = com.badlogic.gdx.math.Bezier.quadratic(this.points[i], i / 20.0F, start, control, end, new Vector2());
             radius += 0.4F * Settings.scale;
 
             float angle;

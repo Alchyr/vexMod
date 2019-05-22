@@ -12,12 +12,10 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class ColdYogurt extends CustomRelic {
 
-
     public static final String ID = VexMod.makeID("ColdYogurt");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("ColdYogurt.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("ColdYogurt.png"));
-
 
     public ColdYogurt() {
         super(ID, IMG, OUTLINE, RelicTier.COMMON, LandingSound.MAGICAL);
@@ -27,7 +25,6 @@ public class ColdYogurt extends CustomRelic {
     public void atPreBattle() {
         AbstractDungeon.player.channelOrb(new Frost());
     }
-
 
     @Override
     public String getUpdatedDescription() {

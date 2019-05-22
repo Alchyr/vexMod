@@ -9,7 +9,7 @@
     ],
     "OPTIONS": [
       "[Money] #gGain #g100 #gGold.",
-      "[Risk] #gTransform #ga #gcard #ginto #gANY #gcard #grandomly.",
+      "[Risk] #gRemove #ga #gcard #gfrom #gyour #gdeck. #rObtain #rANY #rcard #rrandomly.",
       "[Challenge] #rObtain #ra #rrandom #rBlight.",
       "[Leave]",
       "Choose a card to transform."
@@ -62,7 +62,7 @@
       "[Strength] #rBecome #rCursed: #r???. #gUpgrade #g2 #grandom #gcards.",
       "[Fear] #rLose #r7 #rMax #rHP. #gObtain #ga #gCommon #gRelic.",
       "[Death] #rObtain #ra #rrandom #rBlight. #gGain #g1000 #gGold.",
-      "[Leave]",
+      "[The Path Onwards]",
       "[Leave]"
     ]
   },
@@ -77,7 +77,7 @@
     ],
     "OPTIONS": [
       "[Tailoring] #rLose #rhalf #ryour #rGold. #gObtain #g1 #gof #g3 #gColorless #gRare #gcards.",
-      "[Improvement] #gTransform #ga #gcard #gfrom #gyour #gdeck #ginto #ga #gRare #gcard.",
+      "[Improvement] #gRemove #ga #gcard #gfrom #gyour #gdeck. #gObtain #ga #grandom #gRare #gcard.",
       "[Implantation] #gObtain #ga #gRare #gRelic. #rLose #r12 #rMax #rHP.",
       "[Leave]",
       "[Leave]",
@@ -270,9 +270,9 @@
     ],
     "OPTIONS": [
       "[Chem Power] #rLose #r20% #rMax #rHP. #gObtain #gChemical #gX.",
-      "[Power Infusion] #gTransform #ga #gcard #gin #gyour #gdeck #ginto #gan #gcost #gX #gcard.",
+      "[Power Infusion] #gRemove #ga #gcard #gfrom #gyour #gdeck. #gObtain #ga #grandom #gcost #gX #gcard.",
       "[Power Boost] #gObtain #gan #gcost #gX #gcard.",
-      "[Leave]",
+      "[Back Away Slowly]",
       "[Leave]",
       "Transforming..."
     ]

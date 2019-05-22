@@ -26,7 +26,6 @@ import com.megacrit.cardcrawl.vfx.combat.DaggerSprayEffect;
 import vexMod.VexMod;
 import vexMod.actions.BlazeAction;
 import vexMod.actions.StabbyXAction;
-import vexMod.powers.PropogationPower;
 
 import java.util.ArrayList;
 
@@ -110,9 +109,9 @@ public class EvolveCard extends AbstractDefaultCard {
         } else if (monstersNearDeath) {
             AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, damage, damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         } else if (turnOne) {
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(AbstractDungeon.player, 1),1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(AbstractDungeon.player, 1),1));
-            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(AbstractDungeon.player, 3),3));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new StrengthPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DexterityPower(AbstractDungeon.player, 1), 1));
+            AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new PlatedArmorPower(AbstractDungeon.player, 3), 3));
         } else if (emptyHand) {
             AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, NO_CARDS_DRAW));
         } else if (twoDebuffs) {

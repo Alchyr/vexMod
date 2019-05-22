@@ -20,7 +20,7 @@ public class BouncingRelic extends AbstractGameEffect {
     private static final float hoveramplificationX = 22 * Settings.scale; //this gets multiplied by the angle you hit the relic at to calculate the end velocity after touching it.
     private static final float hoveramplificationY = 22 * Settings.scale; //this, too.
     private static final float verticalbias = 10 * Settings.scale; //upwards momentum when touching the relic is additively increased by this number, just to make it easier.
-    private static final int maxrotation = 40; //maximum rotational velocity in degree
+    private static final int maxrotation = 0; //maximum rotational velocity in degree
     private static final int difficultyincrease = 3; //every counter increases gravity and decreases friction by this much %. Resets when it hits the ground.
 
     private static final float bounceplane = AbstractRelic.PAD_X;
@@ -105,7 +105,7 @@ public class BouncingRelic extends AbstractGameEffect {
             float difficulty = 1 + ar.counter / (100F / difficultyincrease);
             this.velocityX += (this.velocityX > 0 ? -frictionX : frictionX) / difficulty;
             this.velocityY -= this.velocityY > 0 ? frictionY : -frictionY / difficulty;
-            this.velocityY -= difficulty * gravityY;
+            this.velocityY -= gravityY;
             this.mouseEntered = false;
         }
 
@@ -138,7 +138,7 @@ public class BouncingRelic extends AbstractGameEffect {
             }
         } else {
             this.velocityY -= (this.velocityY > 0 ? frictionY : -frictionY) / difficulty;
-            this.velocityY -= difficulty * gravityY;
+            this.velocityY -= gravityY;
         }
 
         //Move the relic

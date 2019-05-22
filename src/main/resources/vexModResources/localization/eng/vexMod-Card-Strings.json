@@ -174,7 +174,7 @@
   },
   "vexMod:CoinToss": {
     "NAME": "Coin Blast",
-    "DESCRIPTION": "Deal !D! damage. NL Gain some Gold. NL Exhaust."
+    "DESCRIPTION": "Deal !D! damage. NL Gain a little Gold. NL Exhaust."
   },
   "vexMod:SystemUpdate": {
     "NAME": "System Update",

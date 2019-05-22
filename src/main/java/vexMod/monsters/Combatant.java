@@ -11,7 +11,6 @@ import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.FrailPower;
 import com.megacrit.cardcrawl.powers.MetallicizePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import vexMod.VexMod;
 
 import java.util.ArrayList;
@@ -21,10 +20,10 @@ public class Combatant extends AbstractMonster {
     private static final MonsterStrings monsterstrings = CardCrawlGame.languagePack.getMonsterStrings(ID);
     public static final String NAME = monsterstrings.NAME;
     public static final String[] DIALOG = monsterstrings.DIALOG;
-    private static final int HP_MIN = 110;
-    private static final int HP_MAX = 113;
-    private static final int A_8_HP_MIN = 122;
-    private static final int A_8_HP_MAX = 125;
+    private static final int HP_MIN = 100;
+    private static final int HP_MAX = 108;
+    private static final int A_8_HP_MIN = 113;
+    private static final int A_8_HP_MAX = 117;
     private static final float HB_X = 0.0F;
     private static final float HB_Y = 0.0F;
     private static final float HB_W = 150.0F;
@@ -93,7 +92,7 @@ public class Combatant extends AbstractMonster {
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(2), AttackEffect.SMASH));
-                AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 5));
+                AbstractDungeon.actionManager.addToBottom(new HealAction(this, this, 4));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new FrailPower(AbstractDungeon.player, 2, true), 2));
