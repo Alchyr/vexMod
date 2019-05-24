@@ -12,6 +12,7 @@ import com.megacrit.cardcrawl.screens.DeathScreen;
 import com.megacrit.cardcrawl.vfx.GainPennyEffect;
 import vexMod.VexMod;
 import vexMod.util.TextureLoader;
+import vexMod.vfx.LoseGoldTextEffect;
 
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
@@ -56,6 +57,7 @@ public class MidasArmor extends CustomRelic implements BetterOnLoseHpRelic {
                 for (int i = 0; i < (damageAmount * 2); ++i) {
                     AbstractDungeon.effectList.add(new GainPennyEffect(AbstractDungeon.player, AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY, info.owner.hb.cX, info.owner.hb.cY, false));
                 }
+                AbstractDungeon.effectList.add(new LoseGoldTextEffect(damageAmount * 2));
             }
         }
         return 0;

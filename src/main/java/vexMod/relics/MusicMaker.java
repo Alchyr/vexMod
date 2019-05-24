@@ -29,13 +29,13 @@ public class MusicMaker extends CustomRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.masterHandSize -= 1;
+        AbstractDungeon.player.masterHandSize -= 2;
         AbstractDungeon.rareCardPool.removeCard(Sonata.ID);
     }
 
     @Override
     public void onUnequip() {
-        AbstractDungeon.player.masterHandSize += 1;
+        AbstractDungeon.player.masterHandSize += 2;
     }
 
     @Override

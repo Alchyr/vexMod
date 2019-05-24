@@ -13,20 +13,15 @@ import java.util.ArrayList;
 public class HolyMoleyGreatBallOfRelics extends AbstractGameEffect {
     public static final float bounceplanemin = 300 * Settings.scale;
     public static final float bounceplanemax = 500 * Settings.scale;
-
-    public static float CHAOS = 1.5F; //Determins the velocity at which the relics disperse after impact. No scaling necessary.
-
     public static final float ballradius = 3 * Settings.scale; //Adds some randomness to the relic ball based on how many relics you have.
-
-    public static int gatherspeed = 50; //Over how much time do the relics fly towards you
     public static final int maxdelay = 20; //Puts a bit of randomness on when the relics start flying towards you for forming the ball.
-
-    public static int flighttime = 20;
     public static final int dispersalspeed = 1;
-
     public static final float gravity = 0.5F * Settings.scale;
     public static final float frictionX = 0.2F * Settings.scale;
     public static final float frictionY = 0.2F * Settings.scale;
+    public static float CHAOS = 1.5F; //Determins the velocity at which the relics disperse after impact. No scaling necessary.
+    public static int gatherspeed = 50; //Over how much time do the relics fly towards you
+    public static int flighttime = 20;
     public boolean finishedAction;
     ArrayList<BallRelicData> relics = new ArrayList<>();
     private Phase phase;

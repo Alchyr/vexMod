@@ -33,12 +33,14 @@ public class TanglingVine extends CustomRelic {
 
     @Override
     public void onPlayerEndTurn() {
-        this.flash();
-        try {
-            Method m = AbstractCreature.class.getDeclaredMethod("decrementBlock", DamageInfo.class, Integer.TYPE);// 37
-            m.setAccessible(true);// 38
-            m.invoke(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 3, DamageInfo.DamageType.NORMAL), 3);// 39
-        } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException var3) {// 40
+        if (AbstractDungeon.player.currentBlock > 0) {
+            this.flash();
+            try {
+                Method m = AbstractCreature.class.getDeclaredMethod("decrementBlock", DamageInfo.class, Integer.TYPE);// 37
+                m.setAccessible(true);// 38
+                m.invoke(AbstractDungeon.player, new DamageInfo(AbstractDungeon.player, 3, DamageInfo.DamageType.NORMAL), 3);// 39
+            } catch (IllegalAccessException | InvocationTargetException | NoSuchMethodException var3) {// 40
+            }
         }
     }
 

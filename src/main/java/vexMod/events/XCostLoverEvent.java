@@ -7,12 +7,13 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.AbstractImageEvent;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
+import com.megacrit.cardcrawl.helpers.RelicLibrary;
 import com.megacrit.cardcrawl.localization.EventStrings;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.relics.ChemicalX;
-import com.megacrit.cardcrawl.rewards.RewardItem;
-import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.vfx.cardManip.ShowCardAndObtainEffect;
 import vexMod.VexMod;
+import vexMod.relics.XConverter;
 
 import java.util.ArrayList;
 
@@ -39,7 +40,6 @@ public class XCostLoverEvent extends AbstractImageEvent {
         imageEventText.setDialogOption(OPTIONS[0]);
         imageEventText.setDialogOption(OPTIONS[1]);
         imageEventText.setDialogOption(OPTIONS[2]);
-        imageEventText.setDialogOption(OPTIONS[3]);
     }
 
     private AbstractCard getXCostCard() {
@@ -78,45 +78,32 @@ public class XCostLoverEvent extends AbstractImageEvent {
                         if (AbstractDungeon.player.currentHealth > AbstractDungeon.player.maxHealth) {
                             AbstractDungeon.player.currentHealth = AbstractDungeon.player.maxHealth;
                         }
-                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), new ChemicalX());
-                        AbstractDungeon.shopRelicPool.remove(ChemicalX.ID);
+                        ArrayList<AbstractRelic> themRelics = new ArrayList<>();
+                        themRelics.add(RelicLibrary.getRelic(ChemicalX.ID));
+                        themRelics.add(RelicLibrary.getRelic(XConverter.ID));
+                        for (AbstractRelic m : AbstractDungeon.player.relics) {
+                            themRelics.remove(m);
+                        }
+
+                        AbstractRelic relicToGive = themRelics.get(AbstractDungeon.miscRng.random(themRelics.size() - 1));
+                        AbstractDungeon.getCurrRoom().spawnRelicAndObtain((float) (Settings.WIDTH / 2), (float) (Settings.HEIGHT / 2), relicToGive);
+                        AbstractDungeon.shopRelicPool.remove(relicToGive.relicId);
                         this.imageEventText.updateBodyText(DESCRIPTIONS[1]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;
                     case 1:
                         this.pickCard = true;
-                        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 1, OPTIONS[5], false, false, false, true);
+                        AbstractDungeon.gridSelectScreen.open(AbstractDungeon.player.masterDeck.getPurgeableCards(), 1, OPTIONS[4], false, false, false, true);
                         screenNum = 1;
                         this.imageEventText.updateBodyText(DESCRIPTIONS[2]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         break;
                     case 2:
-
-                        this.imageEventText.updateBodyText(DESCRIPTIONS[3]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4]);
-                        this.imageEventText.clearRemainingOptions();
-                        screenNum = 1;
-                        AbstractDungeon.getCurrRoom().rewards.clear();
-                        AbstractCard card1 = getXCostCard().makeCopy();
-                        AbstractCard card2 = getXCostCard().makeCopy();
-                        AbstractCard card3 = getXCostCard().makeCopy();
-                        RewardItem reward = new RewardItem();
-                        reward.cards.clear();
-                        reward.cards.add(card1);
-                        reward.cards.add(card2);
-                        reward.cards.add(card3);
-                        AbstractDungeon.getCurrRoom().addCardReward(reward);
-                        AbstractDungeon.getCurrRoom().phase = AbstractRoom.RoomPhase.COMPLETE;
-                        AbstractDungeon.combatRewardScreen.open();
-
-
-                        break;
-                    case 3:
                         this.imageEventText.updateBodyText(DESCRIPTIONS[4]);
-                        this.imageEventText.updateDialogOption(0, OPTIONS[4]);
+                        this.imageEventText.updateDialogOption(0, OPTIONS[3]);
                         this.imageEventText.clearRemainingOptions();
                         screenNum = 1;
                         break;

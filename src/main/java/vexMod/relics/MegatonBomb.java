@@ -29,23 +29,16 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("MegatonBomb.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("MegatonBomb.png"));
 
-    private static boolean loseRelic = false;
-
     public MegatonBomb() {
         super(ID, IMG, OUTLINE, RelicTier.BOSS, LandingSound.CLINK);
     }
 
-    public static void relicBullshit() {
-        if (loseRelic) {
-            AbstractDungeon.player.loseRelic(MegatonBomb.ID);
-            loseRelic = false;
-        }
-    }
-
     @Override
     public void onPlayerEndTurn() {
-        this.flash();
-        AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.HP_LOSS));
+        if (!this.usedUp) {
+            this.flash();
+            AbstractDungeon.player.damage(new DamageInfo(AbstractDungeon.player, 1, DamageInfo.DamageType.HP_LOSS));
+        }
     }
 
     @Override
@@ -54,7 +47,8 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
             return;
         }
 
-        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT) {
+        if (AbstractDungeon.getCurrRoom() != null && AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !this.usedUp) {
+            this.setCounter(-2);
             AbstractDungeon.actionManager.addToBottom(new VFXAction(AbstractDungeon.player, new ScreenOnFireEffect(), 0.2F));
             int boohoo = 0;
             for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
@@ -62,7 +56,7 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
                     boohoo++;
                 }
             }
-            for (int i = 0; i < (30 / boohoo); i++) {
+            for (int i = 0; i < ((AbstractDungeon.cardRandomRng.random(20, 40)) / boohoo); i++) {
                 for (AbstractMonster m : AbstractDungeon.getCurrRoom().monsters.monsters) {
                     this.flash();
                     if (!m.isDead && !m.isDying) {
@@ -84,11 +78,21 @@ public class MegatonBomb extends CustomRelic implements ClickableRelic {
                 AbstractDungeon.actionManager.addToBottom(new KillEnemyAction(m));
             }
             AbstractDungeon.getCurrRoom().cannotLose = false;
-            loseRelic = true;
         } else {
             CardCrawlGame.sound.play("UI_CLICK_1");
         }
     }
+
+    @Override
+    public void setCounter(int counter) {
+        this.counter = counter;// 40
+        if (counter == -2) {// 41
+            this.img = TextureLoader.getTexture(makeRelicPath("MegatonBombUsed.png"));
+            this.usedUp();// 43
+            this.counter = -2;// 44
+        }
+    }// 46
+
 
     @Override
     public boolean canSpawn() {

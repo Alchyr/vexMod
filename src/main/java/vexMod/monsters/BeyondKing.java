@@ -121,17 +121,21 @@ public class BeyondKing extends AbstractMonster {
             case 1:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
                 break;
             case 2:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 1, true)));
                 break;
             case 3:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
                 AbstractDungeon.actionManager.addToBottom(new GainBlockAction(this, this, this.block_gain));
                 break;
             case 4:
                 AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(1), 1));
+                AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(AbstractDungeon.player, this, getRandomLetterCurse(this.big_debuff_amt), this.big_debuff_amt));
                 AbstractDungeon.actionManager.addToBottom(new DamageAction(AbstractDungeon.player, this.damage.get(0), AttackEffect.SMASH));
         }
 

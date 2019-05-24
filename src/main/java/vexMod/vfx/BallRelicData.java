@@ -52,7 +52,6 @@ public class BallRelicData {
     }
 
     public void setupDispersal() {
-        //I'm just misusing old, no-longer used variables at this point for other purposes, because I don't like wasting RAM~
         this.targetX = (ballvarianceX - 0.5F) * HolyMoleyGreatBallOfRelics.CHAOS;
         this.targetY = (ballvarianceY + 0.25F) * HolyMoleyGreatBallOfRelics.CHAOS;
         this.amplitude = MathUtils.random(HolyMoleyGreatBallOfRelics.bounceplanemin, HolyMoleyGreatBallOfRelics.bounceplanemax);

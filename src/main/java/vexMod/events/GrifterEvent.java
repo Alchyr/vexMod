@@ -100,7 +100,6 @@ public class GrifterEvent extends AbstractImageEvent {
                         AbstractDungeon.player.loseGold(1);
                         ArrayList<AbstractRelic> themRelics = new ArrayList<>();
                         themRelics.add(RelicLibrary.getRelic(VoiceBox.ID));
-                        themRelics.add(RelicLibrary.getRelic(TheWave.ID));
                         themRelics.add(RelicLibrary.getRelic(NotEnergy.ID));
                         themRelics.add(RelicLibrary.getRelic(NewsTicker.ID));
                         themRelics.add(RelicLibrary.getRelic(StoryBook.ID));
@@ -109,10 +108,13 @@ public class GrifterEvent extends AbstractImageEvent {
                         themRelics.add(RelicLibrary.getRelic(HealthChanger.ID));
                         themRelics.add(RelicLibrary.getRelic(Bottle.ID));
                         themRelics.add(RelicLibrary.getRelic(Incredibleness.ID));
-                        themRelics.add(RelicLibrary.getRelic(MiniSolarSystem.ID));
                         themRelics.add(RelicLibrary.getRelic(RealismEngine.ID));
-                        themRelics.add(RelicLibrary.getRelic(PopTire.ID));
-                        themRelics.add(RelicLibrary.getRelic(JugglerBalls.ID));
+                        if (!AbstractDungeon.player.hasRelic(PopTire.ID) && !AbstractDungeon.player.hasRelic(JugglerBalls.ID) && !AbstractDungeon.player.hasRelic(MiniSolarSystem.ID) && !AbstractDungeon.player.hasRelic(TheWave.ID)) {
+                            themRelics.add(RelicLibrary.getRelic(TheWave.ID));
+                            themRelics.add(RelicLibrary.getRelic(PopTire.ID));
+                            themRelics.add(RelicLibrary.getRelic(JugglerBalls.ID));
+                            themRelics.add(RelicLibrary.getRelic(MiniSolarSystem.ID));
+                        }
 
                         for (AbstractRelic m : AbstractDungeon.player.relics) {
                             themRelics.remove(m);

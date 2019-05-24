@@ -11,7 +11,8 @@
       "[金钱] #g获得50点金币。 ",
       "[风险] #g获得一件特别的遗物。 #r失去8点生命 。",
       "[挑战] #r获得一样随机的荒疫。 ",
-      "[离开]"
+      "[离开]",
+      "Choose a card to transform."
     ]
   },
   "vexMod:TripleChoiceEvent": {

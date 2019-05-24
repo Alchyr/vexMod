@@ -17,7 +17,7 @@ public class FakeStar extends CustomRelic {
     public static final String ID = VexMod.makeID("FakeStar");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("FakeStar.png"));
-    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("placeholder_relic.png"));
+    private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("FakeStar.png"));
 
 
     public FakeStar() {

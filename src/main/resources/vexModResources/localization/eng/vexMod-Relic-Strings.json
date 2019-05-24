@@ -117,7 +117,7 @@
     "NAME": "Mind Devourer",
     "FLAVOR": "Mm, shiny! Wait, what was your name again?",
     "DESCRIPTIONS": [
-      "Gain [E] at the start of your turn. At the end of combat, remove the oldest card in your deck."
+      "Gain [E] at the start of your turn. At the end of combat, remove a random card in your deck."
     ]
   },
   "vexMod:HappyDrink": {
@@ -280,7 +280,7 @@
     "NAME": "Draining Sword",
     "FLAVOR": "The smith fashioned you a vampiric sword!",
     "DESCRIPTIONS": [
-      "Start each combat with #b1 less #yStrength. Whenever you play an #yAttack, heal #b1 HP."
+      "Start each combat with #b2 less #yStrength. Whenever you play an #yAttack, heal #b1 HP."
     ]
   },
   "vexMod:ImaginarySword": {
@@ -859,7 +859,7 @@
     "NAME": "Berry Bomb",
     "FLAVOR": "Tastes explosive!",
     "DESCRIPTIONS": [
-      "Upon pickup, raise your Max HP by #b6. After #b",
+      "Upon pickup, raise your Max HP by #b6. In #b",
       " combats, explodes and deals #b100 damage to ALL enemies."
     ]
   },
@@ -1149,7 +1149,7 @@
     "NAME": "Gilded Clover",
     "FLAVOR": "Super-duper rare!",
     "DESCRIPTIONS": [
-      "ALL future cards are #yRare."
+      "ALL future cards you find are #yRare."
     ]
   },
   "vexMod:FluxCapacitor": {
@@ -1207,7 +1207,7 @@
     "NAME": "Superbombomb",
     "FLAVOR": "A superweapon beyond any technology. Who made this...?",
     "DESCRIPTIONS": [
-      "At the end of your turn, #rlose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rrelic #rand #rall #renemies."
+      "At the end of your turn, #rlose #b1 HP from #gradiation #gpoisoning. NL #pRight #pclick: #rDestroy #rthis #rrelic #rand #gOBLITERATE #rall #renemies."
     ]
   },
   "vexMod:NewClearReactor": {
@@ -1308,7 +1308,7 @@
     ]
   },
   "vexMod:FutureThief": {
-    "NAME": "Future Thief Gloves",
+    "NAME": "Future Thief Glove",
     "FLAVOR": "Self-destructive thievery.",
     "DESCRIPTIONS": [
       "#pRight #pclick: Steal a card from yourself in the future.",
@@ -1393,7 +1393,7 @@
     "FLAVOR": "Crafted by an evil god, you shudder to play it.",
     "DESCRIPTIONS": [
       "Replaces ",
-      ".[] NL Draw #b1 less card each turn. Whenever you play a card, #ybard:Queue a [WildNote] [REMOVE_SPACE]."
+      ".[] NL Draw #b2 less cards each turn. Whenever you play a card, #ybard:Queue a [WildNote] [REMOVE_SPACE]."
     ]
   },
   "vexMod:BottledTune": {
@@ -1509,6 +1509,77 @@
     "FLAVOR": "Feed with hydrogen and helium daily.",
     "DESCRIPTIONS": [
       "At the start of your turn, increment the #yStellar #yPhase."
+    ]
+  },
+  "vexMod:StarlightTuner": {
+    "NAME": "Starlight Tuner",
+    "FLAVOR": "Listen to the music of the stars...",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, increment the #yStellar #yPhase and apply #b1 #yStarlit to ALL enemies."
+    ]
+  },
+  "vexMod:MidnightOcarina": {
+    "NAME": "Midnight Ocarina",
+    "FLAVOR": "The song of the stars is yours to echo...",
+    "DESCRIPTIONS": [
+      "Every time you play #b7 #yStars, perform a random #ybard:Melody."
+    ]
+  },
+  "vexMod:IndestructableDeckBox": {
+    "NAME": "Indestructible Card Box",
+    "FLAVOR": "The only way to truly keep your cards tricks safe.",
+    "DESCRIPTIONS": [
+      "Replaces ",
+      ".[] NL #yCurse and #yStatus cards cannot enter your deck or draw pile."
+    ]
+  },
+  "vexMod:PokerSong": {
+    "NAME": "Song of Poker",
+    "FLAVOR": "Sounds like a bunch of commentators.",
+    "DESCRIPTIONS": [
+      "Your #yPoker cards #ybard:Queue #ybard:Notes based on their #gs [REMOVE_SPACE]#bu [REMOVE_SPACE]#ri [REMOVE_SPACE]#pt as an additional #yShowdown effect."
+    ]
+  },
+  "vexMod:StarPokerPlayer": {
+    "NAME": "Star Player Flyer",
+    "FLAVOR": "A grim memory of your past in the tournaments.",
+    "DESCRIPTIONS": [
+      "Your #gDiamonds increment the #yStellar #yPhase as an additional #yShowdown effect. Your #bSpades apply #b1 #yStarlit to a random enemy as an additional #yShowdown effect. Your #pClubs do both."
+    ]
+  },
+  "vexMod:MusicalCard": {
+    "NAME": "Musical Card",
+    "FLAVOR": "Whistles when thrown.",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, add a random #yPoker card into your hand. It has #yEthereal."
+    ]
+  },
+  "vexMod:HeavenlyCard": {
+    "NAME": "Heavenly Card",
+    "FLAVOR": "The star card of the show!",
+    "DESCRIPTIONS": [
+      "Every time you play #b4 #yStars, add a random #yPoker card into your hand. It has #yEthereal."
+    ]
+  },
+  "vexMod:RoboticCards": {
+    "NAME": "Robotic Cards",
+    "FLAVOR": "BEEP BOOP. CALCULATING POKER SKILLS...",
+    "DESCRIPTIONS": [
+      "Start each combat with #b3 Orb slots. At the start of #yShowdown, #yChannel an Orb depending on the majority #gs [REMOVE_SPACE]#bu [REMOVE_SPACE]#ri [REMOVE_SPACE]#pt in your hand."
+    ]
+  },
+  "vexMod:MetalNotes": {
+    "NAME": "Robo-Notes",
+    "FLAVOR": "BEEEEP BOOOOOOP",
+    "DESCRIPTIONS": [
+      "Start each combat with #b3 Orb slots. Every #b5th #ybard:Note you #ybard:Queue #yChannels an Orb based on its type."
+    ]
+  },
+  "vexMod:Dootinator": {
+    "NAME": "Dootinator",
+    "FLAVOR": "Previously owned by a skeleton.",
+    "DESCRIPTIONS": [
+      "Whenever you #ybard:Queue a #ybard:Note, doot."
     ]
   }
 }

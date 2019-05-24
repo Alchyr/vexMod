@@ -269,9 +269,8 @@
       "\"Really. No need for my ... awesome power. Okay.\" NL \"I see how it is. Yeah. Have fun.\" NL X-Man walks away, clearly crestfallen."
     ],
     "OPTIONS": [
-      "[Chem Power] #rLose #r20% #rMax #rHP. #gObtain #gChemical #gX.",
-      "[Power Infusion] #gRemove #ga #gcard #gfrom #gyour #gdeck. #gObtain #ga #grandom #gcost #gX #gcard.",
-      "[Power Boost] #gObtain #gan #gcost #gX #gcard.",
+      "[X-Tastic] #rLose #r20% #rMax #rHP. #gBoost #gX-Cost #gcards.",
+      "[Power Infusion] #gRemove #ga #gcard #gfrom #gyour #gdeck. #gObtain #ga #gcost #gX #gcard.",
       "[Back Away Slowly]",
       "[Leave]",
       "Transforming..."

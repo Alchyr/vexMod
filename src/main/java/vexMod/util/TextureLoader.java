@@ -8,7 +8,6 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.HashMap;
 
-
 public class TextureLoader {
     private static final Logger logger = LogManager.getLogger(TextureLoader.class.getName());
     private static HashMap<String, Texture> textures = new HashMap<>();
@@ -19,7 +18,7 @@ public class TextureLoader {
                 loadTexture(textureString);
             } catch (GdxRuntimeException e) {
                 logger.error("Could not find texture: " + textureString);
-                return getTexture("theDefaultResources/images/ui/missing_texture.png");
+                return getTexture("vexModResources/images/ui/missing_texture.png");
             }
         }
         return textures.get(textureString);

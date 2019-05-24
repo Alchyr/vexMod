@@ -13,12 +13,10 @@ import static vexMod.VexMod.makeRelicPath;
 
 public class OrbOfGreed extends CustomRelic {
 
-
     public static final String ID = VexMod.makeID("OrbOfGreed");
 
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("OrbOfGreed.png"));
     private static final Texture OUTLINE = TextureLoader.getTexture(makeRelicOutlinePath("OrbOfGreed.png"));
-
 
     public OrbOfGreed() {
         super(ID, IMG, OUTLINE, RelicTier.RARE, LandingSound.MAGICAL);
@@ -29,7 +27,6 @@ public class OrbOfGreed extends CustomRelic {
     public void atPreBattle() {
         AbstractDungeon.player.channelOrb(new GoldenLightning());
     }
-
 
     @Override
     public String getUpdatedDescription() {

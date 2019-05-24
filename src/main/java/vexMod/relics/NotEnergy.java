@@ -41,9 +41,6 @@ public class NotEnergy extends CustomRelic {
         taunts.add(DESCRIPTIONS[7]);
         taunts.add(DESCRIPTIONS[8]);
         taunts.add(DESCRIPTIONS[9]);
-        taunts.add(DESCRIPTIONS[10]);
-        taunts.add(DESCRIPTIONS[11]);
-        taunts.add(DESCRIPTIONS[12]);
         return taunts.get(MathUtils.random(taunts.size() - 1));
     }
 

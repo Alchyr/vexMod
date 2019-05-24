@@ -21,7 +21,7 @@ import java.util.Iterator;
 import static vexMod.VexMod.makeRelicOutlinePath;
 import static vexMod.VexMod.makeRelicPath;
 
-public class BottledTune extends CustomRelic implements CustomSavable<AbstractNote> {
+public class BottledTune extends CustomRelic implements CustomSavable<String> {
 
     public static final String ID = VexMod.makeID("BottledTune");
     private static final Texture IMG = TextureLoader.getTexture(makeRelicPath("BottledTune.png"));
@@ -78,12 +78,12 @@ public class BottledTune extends CustomRelic implements CustomSavable<AbstractNo
         AbstractDungeon.actionManager.addToBottom(new QueueNoteAction(noteGotten));
     }// 92
 
-    public AbstractNote onSave() {
-        return this.noteGotten;
+    public String onSave() {
+        return this.noteGotten.ascii();
     }
 
-    public void onLoad(AbstractNote note) {
-        this.noteGotten = note;
+    public void onLoad(String asciinote) {
+        this.noteGotten = MelodyManager.getNoteByAscii(asciinote);
     }
 
     @Override

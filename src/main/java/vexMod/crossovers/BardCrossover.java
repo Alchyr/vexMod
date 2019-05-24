@@ -18,6 +18,8 @@ public class BardCrossover {
         BaseMod.addRelicToCustomPool(new Demotivationator(), Bard.Enums.COLOR);
         BaseMod.addRelicToCustomPool(new PreRecordedMusic(), Bard.Enums.COLOR);
         BaseMod.addRelicToCustomPool(new RestingRock(), Bard.Enums.COLOR);
+        BaseMod.addRelicToCustomPool(new MetalNotes(), Bard.Enums.COLOR);
+        BaseMod.addRelicToCustomPool(new Dootinator(), Bard.Enums.COLOR);
         UnlockTracker.markRelicAsSeen(MusicMaker.ID);
         UnlockTracker.markRelicAsSeen(BottledTune.ID);
         UnlockTracker.markRelicAsSeen(AutoTuner.ID);
@@ -29,5 +31,7 @@ public class BardCrossover {
         UnlockTracker.markRelicAsSeen(Demotivationator.ID);
         UnlockTracker.markRelicAsSeen(PreRecordedMusic.ID);
         UnlockTracker.markRelicAsSeen(RestingRock.ID);
+        UnlockTracker.markRelicAsSeen(MetalNotes.ID);
+        UnlockTracker.markRelicAsSeen(Dootinator.ID);
     }
 }

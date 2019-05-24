@@ -27,11 +27,11 @@ import com.megacrit.cardcrawl.relics.AbstractRelic;
 import com.megacrit.cardcrawl.screens.custom.CustomMod;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import javafx.util.Pair;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import vexMod.cards.*;
-import vexMod.crossovers.AstrologerCrossover;
-import vexMod.crossovers.BardCrossover;
+import vexMod.crossovers.*;
 import vexMod.events.*;
 import vexMod.modifiers.NoRelicMode;
 import vexMod.modifiers.ShiftingDeckMod;
@@ -41,6 +41,7 @@ import vexMod.potions.CameraPotion;
 import vexMod.potions.GoldPotion;
 import vexMod.potions.LightningBottle;
 import vexMod.relics.*;
+import vexMod.util.SoundEffects;
 import vexMod.util.TextureLoader;
 import vexMod.variables.DefaultSecondMagicNumber;
 import vexMod.vfx.JuggleRelic;
@@ -63,7 +64,8 @@ public class VexMod implements
         MaxHPChangeSubscriber,
         PostDungeonInitializeSubscriber,
         AddCustomModeModsSubscriber,
-        RelicGetSubscriber {
+        RelicGetSubscriber,
+        AddAudioSubscriber {
     public static final Logger logger = LogManager.getLogger(VexMod.class.getName());
     public static final String ENABLE_PLACEHOLDER_SETTINGS = "enablePlaceholder";
     public static final String ENABLE_MEME_CARDS = "enableMemes";
@@ -122,6 +124,10 @@ public class VexMod implements
 
     public static String makeOrbPath(String resourcePath) {
         return getModID() + "Resources/images/orbs/" + resourcePath;
+    }
+
+    public static String makeAudioPath(String resourcePath) {
+        return getModID() + "Resources/sounds/" + resourcePath;
     }
 
     public static String getModID() {
@@ -287,6 +293,19 @@ public class VexMod implements
     }
 
     @Override
+    public void receiveAddAudio() {
+        addAudio(SoundEffects.Attack);
+        addAudio(SoundEffects.Block);
+        addAudio(SoundEffects.Buff);
+        addAudio(SoundEffects.Debuff);
+    }
+
+    private void addAudio(Pair<String, String> audioData) {
+        BaseMod.addAudio(audioData.getKey(), audioData.getValue());
+    }
+
+
+    @Override
     public void receiveEditRelics() {
         logger.info("it's a me, relics");
 
@@ -395,6 +414,22 @@ public class VexMod implements
 
         if (Loader.isModLoaded("bard")) {
             BardCrossover.Relics();
+        }
+
+        if (Loader.isModLoaded("PokerPlayerMod")) {
+            PokerPlayerCrossover.Relics();
+        }
+
+        if (Loader.isModLoaded("Astrologer") && Loader.isModLoaded("bard")) {
+            BardXAstrologer.Relics();
+        }
+
+        if (Loader.isModLoaded("Astrologer") && Loader.isModLoaded("PokerPlayerMod")) {
+            AstrologerXPokerPlayer.Relics();
+        }
+
+        if (Loader.isModLoaded("bard") && Loader.isModLoaded("PokerPlayerMod")) {
+            BardXPokerPlayer.Relics();
         }
 
         UnlockTracker.markRelicAsSeen(ColdYogurt.ID);
@@ -723,7 +758,6 @@ public class VexMod implements
                 FluxCapacitor.relicBullshit();
             }
         }
-        if (AbstractDungeon.player.hasRelic(MegatonBomb.ID)) MegatonBomb.relicBullshit();
     }
 
     @Override

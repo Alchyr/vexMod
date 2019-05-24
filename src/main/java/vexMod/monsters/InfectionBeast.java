@@ -99,7 +99,7 @@ public class InfectionBeast extends AbstractMonster {
                 }
                 break;
             case 3:
-                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Virus(), 1, true, true));
+                AbstractDungeon.actionManager.addToBottom(new MakeTempCardInDrawPileAction(new Virus(), 2, true, true));
         }
 
         AbstractDungeon.actionManager.addToBottom(new RollMoveAction(this));
@@ -120,7 +120,6 @@ public class InfectionBeast extends AbstractMonster {
 
     public void die() {
         super.die();
-
     }
 
 }

@@ -1638,5 +1638,69 @@
     "DESCRIPTIONS": [
       "At the start of your turn, increment the #yStellar #yPhase."
     ]
+  },
+  "vexMod:StarlightTuner": {
+    "NAME": "Starlight Tuner",
+    "FLAVOR": "Listen to the music of the stars...",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, increment the #yStellar #yPhase and apply #b1 #yStarlit to ALL enemies."
+    ]
+  },
+  "vexMod:MidnightOcarina": {
+    "NAME": "Midnight Ocarina",
+    "FLAVOR": "The song of the stars is yours to echo...",
+    "DESCRIPTIONS": [
+      "Every time you play #b7 #yStars, perform a random #ybard:Melody."
+    ]
+  },
+  "vexMod:IndestructableDeckBox": {
+    "NAME": "Indestructible Card Box",
+    "FLAVOR": "The only way to truly keep your cards tricks safe.",
+    "DESCRIPTIONS": [
+      "Replaces ",
+      ".[] NL #yCurse and #yStatus cards cannot enter your deck or draw pile."
+    ]
+  },
+  "vexMod:PokerSong": {
+    "NAME": "Song of Poker",
+    "FLAVOR": "Sounds like a bunch of commentators.",
+    "DESCRIPTIONS": [
+      "Your Poker cards #ybard:Queue #ybard:Notes based on their suit as an additional #yShowdown effect."
+    ]
+  },
+  "vexMod:StarPokerPlayer": {
+    "NAME": "Poker Player Flyer",
+    "FLAVOR": "A grim memory of your past in the tournaments.",
+    "DESCRIPTIONS": [
+      "Your Diamonds increment the #yStellar #yPhase as an additional #yShowdown effect. Your Spades apply #b1 #yStarlit to a random enemy as an additional #yShowdown effect."
+    ]
+  },
+  "vexMod:MusicalCard": {
+    "NAME": "Musical Card",
+    "FLAVOR": "Whistles when thrown.",
+    "DESCRIPTIONS": [
+      "Whenever you perform a #ybard:Melody, add a random Poker card into your hand. It has #yEthereal."
+    ]
+  },
+  "vexMod:HeavenlyCard": {
+    "NAME": "Heavenly Card",
+    "FLAVOR": "The star card of the show!",
+    "DESCRIPTIONS": [
+      "Every time you play 4 #yStars, add a random Poker card into your hand. It has #yEthereal."
+    ]
+  },
+  "vexMod:RoboticCards": {
+    "NAME": "Robotic Cards",
+    "FLAVOR": "BEEP BOOP. CALCULATING POKER SKILLS...",
+    "DESCRIPTIONS": [
+      "Start each combat with #b3 Orb slots. At the start of #yShowdown, #yChannel an Orb depending on the majority Suit in your hand."
+    ]
+  },
+  "vexMod:MetalNotes": {
+    "NAME": "Robo-Notes",
+    "FLAVOR": "BEEEEP BOOOOOOP",
+    "DESCRIPTIONS": [
+      "Start each combat with #b3 Orb slots. Every #b5th #ybard:Note you #ybard:Queue #yChannels an Orb based on its type."
+    ]
   }
 }
